@@ -5,6 +5,7 @@ description: Posterior predictive eigenvalue testing for determining signal rank
 img:
 importance: 3
 category: "lead developer · in development"
+github: https://github.com/jcm-sci/pp-eigentest
 ---
 
 **pp-eigentest** provides a posterior predictive framework for determining the number of significant eigenvalues (signal rank) in covariance and Gram matrices. The method generates posterior predictive null distributions for each ordered eigenvalue and tests whether observed eigenvalues exceed noise expectations.

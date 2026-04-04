@@ -13,3 +13,11 @@ github_repos:
   - ACCIDDA/op_engine
   - ACCIDDA/op_system
   - ACCIDDA/flepimop2
+
+repo_descriptions:
+  yoavram-lab/VBPCApy: "Variational Bayesian PCA with native missing-data handling and C++-accelerated kernels."
+  jcm-sci/pp-eigentest: "Posterior predictive eigenvalue testing for signal rank determination."
+  jcm-sci/model-criticism: "Observable-based model evaluation with proper scoring rules and Pareto optimization."
+  ACCIDDA/op_engine: "Operator-partitioned numerical simulation engine for multi-physics dynamical systems."
+  ACCIDDA/op_system: "Declarative YAML-to-numerics compiler for structured dynamical systems."
+  ACCIDDA/flepimop2: "Modular simulation campaign orchestrator for infectious disease modeling."
