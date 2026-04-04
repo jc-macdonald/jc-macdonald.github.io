@@ -8,4 +8,8 @@ scholar_userid: VxTPRq8AAAAJ # your Google Scholar ID
 orcid_id: 0000-0002-3643-6266 # your ORCID ID
 linkedin_username: j-caleb-macdonald-674840a2 # your LinkedIn user name
 research_gate_profile: Joshua_Macdonald4 # your ResearchGate user name
+wos_id:
+  logo: ai ai-clarivate
+  title: Web of Science
+  url: https://www.webofscience.com/wos/author/record/IWE-2826-2023
 # rss_icon: true # comment this line to hide the RSS icon

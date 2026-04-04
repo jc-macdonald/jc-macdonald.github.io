@@ -30,11 +30,13 @@ latest_posts:
 
 I build methods, scientific AI/ML, and research software for partially observed systems across earth, environmental, and health sciences. My work integrates generative modeling — mechanistic, statistical, and hybrid — with Bayesian inference and scientific computing to develop production-grade tools: numerical solvers, inference algorithms, and forecasting pipelines that make defensible inference operational under structural incompleteness, because prediction alone is not enough.
 
-Currently I am a postdoctoral scholar at the [International Vaccine Access Center](https://www.jhsph.edu/ivac/) at Johns Hopkins, where I work with [Shaun Truelove](https://www.jhsph.edu/faculty/directory/profile/3866/shaun-truelove) on operational infectious disease forecasting and decision support systems, supported by the CDC Center for Forecasting and Outbreak Analytics. Previously I was a [Zuckerman STEM Leadership Fellow](https://zuckerman-scholars.org/) at Tel Aviv University, working with [Yoav Ram](https://www.yoavram.com/) on Bayesian dimensionality reduction and cultural transmission dynamics.
+Currently I am a postdoctoral scholar at the [International Vaccine Access Center](https://www.jhsph.edu/ivac/) at Johns Hopkins, where I work with [Shaun Truelove](https://www.jhsph.edu/faculty/directory/profile/3866/shaun-truelove) on operational infectious disease forecasting and decision support systems as part of [ACCIDDA](https://accidda.org/), supported by the CDC Center for Forecasting and Outbreak Analytics. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) at Oregon State University on cross-scale modeling of Crimean–Congo hemorrhagic fever (CCHF) in wildlife and livestock systems. Previously I was a [Zuckerman STEM Leadership Fellow](https://zuckerman-scholars.org/) at Tel Aviv University, working with [Yoav Ram](https://www.yoavram.com/) on Bayesian dimensionality reduction and cultural transmission dynamics.
 
 Application domains span within-host to between-host disease dynamics in wildlife, real-time epidemic forecasting pipelines for CDC scenario modeling hubs, variational Bayesian PCA for incomplete data, and structured population dynamics in plankton ecology. The common thread is building rigorous computational infrastructure — the solvers, the compilers, the pipelines — that makes principled inference operational under uncertainty.
 
 I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a BA in Archaeology from UNC Greensboro — a combination that continues to shape how I think about inference from incomplete records.
+
+{% include figure.liquid loading="eager" path="assets/img/research/obs_model_general.png" class="img-fluid rounded z-depth-1" %}
 
 ---
 

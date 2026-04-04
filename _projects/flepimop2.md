@@ -2,7 +2,7 @@
 layout: page
 title: FlepiMoP2
 description: Modular epidemic modeling and simulation pipeline for forecasting and scenario analysis. Core contributor to the redesign of ACCIDDA's operational infrastructure.
-img:
+img: assets/img/research/flepimop2_slide.png
 importance: 1
 category: collaborative infrastructure
 github: https://accidda.github.io/flepimop2/latest/

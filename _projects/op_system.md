@@ -2,7 +2,7 @@
 layout: page
 title: OP System
 description: Declarative governing equation specification compiler for structured dynamical systems. Transforms YAML model definitions into callable numerics.
-img:
+img: assets/img/research/op_system_slide.png
 importance: 3
 category: "lead developer · in development"
 github: https://github.com/ACCIDDA/op_system
