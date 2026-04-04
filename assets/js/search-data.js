@@ -51,6 +51,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
+        },{id: "nav-extracurricular",
+          title: "extracurricular",
+          description: "I love to travel, get outside, and move.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/extracurricular/";
+          },
         },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
@@ -153,6 +160,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://www.researchgate.net/profile/Joshua_Macdonald4/", "_blank");
+        },
+      },{
+        id: 'social-wos_id',
+        title: 'Wos_id',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.webofscience.com/wos/author/record/IWE-2826-2023", "_blank");
         },
       },{
       id: 'light-theme',
