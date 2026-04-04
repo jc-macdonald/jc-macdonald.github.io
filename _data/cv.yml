@@ -2,13 +2,12 @@ cv:
   name: Joshua C. Macdonald
   headline: Computational Scientist
   email: jmacdo16@jh.edu
-  phone: "+19104093469"
   location: Baltimore, Maryland, USA
   website: https://jcmacdonald.dev
 
   social_networks:
     - network: GitHub
-      username: MacdonaldJoshuaCaleb
+      username: jc-macdonald
     - network: LinkedIn
       username: joshuacmacdonald
     - network: ORCID

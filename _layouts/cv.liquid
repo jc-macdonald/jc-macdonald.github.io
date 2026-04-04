@@ -61,7 +61,7 @@ layout: default
         {% assign cv = site.data.cv.cv %}
 
         <!-- Header/Contact Information -->
-        {% if cv.name or cv.label or cv.location or cv.email or cv.phone or cv.website %}
+        {% if cv.name or cv.label or cv.headline or cv.location or cv.email or cv.website %}
           <div class="card mt-3 p-3">
             <h3 class="card-title font-weight-medium">Contact Information</h3>
             <table class="table table-cv table-sm table-borderless">
@@ -71,10 +71,11 @@ layout: default
                   <td class="p-1 pl-2 font-weight-light">{{ cv.name }}</td>
                 </tr>
               {% endif %}
-              {% if cv.label %}
+              {% assign prof_title = cv.label | default: cv.headline %}
+              {% if prof_title %}
                 <tr>
                   <td class="p-1 pr-2 font-weight-bold"><b>Professional Title</b></td>
-                  <td class="p-1 pl-2 font-weight-light">{{ cv.label }}</td>
+                  <td class="p-1 pl-2 font-weight-light">{{ prof_title }}</td>
                 </tr>
               {% endif %}
               {% if cv.email %}
@@ -181,14 +182,113 @@ layout: default
               {% else %}
                 <!-- Generic section -->
                 {% for entry in section_entries %}
-                  {% if entry.bullet %}
+                  {% if entry == blank %}
+                    {% continue %}
+                  {% endif %}
+
+                  {% comment %} TextEntry — plain string {% endcomment %}
+                  {% assign entry_type = entry | split: '' %}
+                  {% if entry.title == null and entry.name == null and entry.label == null and entry.bullet == null and entry.company == null and entry.institution == null and entry.position == null %}
+                    <p class="card-text font-weight-light">{{ entry | markdownify }}</p>
+
+                  {% comment %} PublicationEntry — has title + authors {% endcomment %}
+                  {% elsif entry.authors %}
+                    <ul class="card-text font-weight-light list-group list-group-flush">
+                      <li class="list-group-item">
+                        <div class="row">
+                          {% if entry.date %}
+                            <div class="col-xs-2 col-sm-2 col-md-2 text-center">
+                              <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
+                                {{- entry.date | split: '-' | first -}}
+                              </span>
+                            </div>
+                            <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
+                          {% else %}
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                          {% endif %}
+                              {% if entry.doi %}
+                                <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                  <a href="https://doi.org/{{ entry.doi }}">{{ entry.title }}</a>
+                                </h6>
+                              {% elsif entry.title %}
+                                <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
+                              {% endif %}
+                              <p class="ml-1 ml-md-4" style="font-size: 0.9rem">{{ entry.authors }}</p>
+                              {% if entry.journal %}
+                                <p class="ml-1 ml-md-4" style="font-size: 0.9rem"><em>{{ entry.journal }}</em></p>
+                              {% endif %}
+                            </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                  {% comment %} ExperienceEntry — has company or position {% endcomment %}
+                  {% elsif entry.company or entry.position %}
+                    {% assign entries = section_entries %}
+                    {% include cv/experience.liquid %}
+                    {% break %}
+
+                  {% comment %} EducationEntry — has institution {% endcomment %}
+                  {% elsif entry.institution %}
+                    {% assign entries = section_entries %}
+                    {% include cv/education.liquid %}
+                    {% break %}
+
+                  {% comment %} OneLineEntry — has label + details {% endcomment %}
+                  {% elsif entry.label %}
+                    <div class="card-text font-weight-light" style="padding: 0.25rem 0;">
+                      <strong>{{ entry.label }}:</strong> {{ entry.details }}
+                    </div>
+
+                  {% comment %} BulletEntry {% endcomment %}
+                  {% elsif entry.bullet %}
                     <ul class="card-text font-weight-light list-group list-group-flush">
                       <li class="list-group-item">{{ entry.bullet | markdownify | remove: '<p>' | remove: '</p>' }}</li>
                     </ul>
-                  {% elsif entry.label %}
-                    <div class="card-text font-weight-light">
-                      <strong>{{ entry.label }}:</strong> {{ entry.details }}
-                    </div>
+
+                  {% comment %} NormalEntry — has name (grants, talks, software, service, etc.) {% endcomment %}
+                  {% elsif entry.name %}
+                    <ul class="card-text font-weight-light list-group list-group-flush">
+                      <li class="list-group-item">
+                        <div class="row">
+                          {% if entry.date %}
+                            <div class="col-xs-2 col-sm-2 col-md-2 text-center">
+                              <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
+                                {{- entry.date | split: '-' | first -}}
+                              </span>
+                            </div>
+                            <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
+                          {% else %}
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                          {% endif %}
+                              {% if entry.url %}
+                                <h6 class="title font-weight-bold ml-1 ml-md-4">
+                                  <a href="{{ entry.url }}">{{ entry.name }}</a>
+                                </h6>
+                              {% else %}
+                                <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.name }}</h6>
+                              {% endif %}
+                              {% if entry.location %}
+                                <h6 class="ml-1 ml-md-4" style="font-size: 0.9rem; color: #666;">
+                                  <i class="fa-solid fa-location-dot"></i> {{ entry.location }}
+                                </h6>
+                              {% endif %}
+                              {% if entry.summary %}
+                                <p class="ml-1 ml-md-4" style="font-size: 0.95rem">
+                                  {{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}
+                                </p>
+                              {% endif %}
+                              {% if entry.highlights %}
+                                <ul class="items ml-1 ml-md-4">
+                                  {% for item in entry.highlights %}
+                                    <li><span class="item">{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            </div>
+                        </div>
+                      </li>
+                    </ul>
                   {% endif %}
                 {% endfor %}
               {% endif %}
