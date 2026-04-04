@@ -9,8 +9,7 @@ help:
 # ── Validation (no Ruby needed) ──────────────────────────────────────
 
 # Run all pre-push checks that don't require Ruby
-check: check-yaml check-includes check-assets check-bib
-	@echo "✓ All pre-push checks passed."
+check: check-yaml check-includes check-assets check-bib check-config check-cv
 
 # Validate YAML frontmatter in all pages and projects
 check-yaml:
@@ -96,6 +95,56 @@ check-bib:
 		}
 	' "$bib"
 	$ok && echo "✓ BibTeX entries OK"
+
+# Validate _config.yml plugin-consumed fields have correct types
+check-config:
+	#!/usr/bin/env bash
+	set -euo pipefail
+	err=0
+	# external_sources must be empty or a proper list (not a bare hash with stray keys)
+	# The external-posts plugin iterates it as an array; a hash/scalar crashes it.
+	es_block=$(awk '/^external_sources:/{found=1; next} found && /^[^ \t#]/{exit} found && /^[ \t]+[^ \t#]/{print}' _config.yml)
+	if [[ -n "$es_block" ]]; then
+		# If the block has indented content but no lines starting with "  - ", it's not a list
+		if ! echo "$es_block" | grep -qE '^\s+-\s'; then
+			echo "FAIL: external_sources has content but is not a YAML list (plugin will crash)"
+			echo "  Found: $es_block"
+			err=1
+		fi
+	fi
+	if [[ $err -eq 0 ]]; then echo "✓ Config validation OK"; else exit 1; fi
+
+# Validate _data/cv.yml matches RenderCV schema (basic structural check)
+check-cv:
+	#!/usr/bin/env bash
+	set -euo pipefail
+	[[ -f _data/cv.yml ]] || { echo "SKIP: _data/cv.yml not found"; exit 0; }
+	err=0
+	# Must have top-level cv: key
+	if ! grep -qE '^cv:' _data/cv.yml; then
+		echo "FAIL: _data/cv.yml missing top-level cv: key"
+		err=1
+	fi
+	# Must have cv.name
+	if ! grep -qE '^\s+name:\s+\S' _data/cv.yml; then
+		echo "FAIL: cv.name is required by RenderCV"
+		err=1
+	fi
+	# Detect common al-folio field names that RenderCV rejects
+	if grep -nE '^\s+studyType:' _data/cv.yml; then
+		echo "FAIL: cv.yml uses 'studyType' — RenderCV expects 'degree'"
+		err=1
+	fi
+	if grep -nE '^\s+awarder:' _data/cv.yml; then
+		echo "FAIL: cv.yml uses 'awarder' — not a RenderCV field (use summary)"
+		err=1
+	fi
+	# Skills should use label/details (OneLineEntry), not name/keywords
+	if grep -nE '^\s+keywords:' _data/cv.yml | head -1 | grep -q .; then
+		echo "FAIL: cv.yml uses 'keywords' — RenderCV OneLineEntry expects 'details'"
+		err=1
+	fi
+	if [[ $err -eq 0 ]]; then echo "✓ CV schema validation OK"; else exit 1; fi
 
 # ── Local build (requires Ruby + bundle) ─────────────────────────────
 

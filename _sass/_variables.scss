@@ -22,8 +22,8 @@ $purple-color: #b509ac !default;
 $light-purple-color: color.adjust($purple-color, $lightness: 25%);
 $indigo-color: #3949ab !default;
 $light-indigo-color: #7986cb !default;
-$indigo-color: #3949ab !default;
-$light-indigo-color: #7986cb !default;
+$violet-color: #5C2D91;
+$light-violet-color: #9B72CF;
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
@@ -38,7 +38,7 @@ $black-color: #000000 !default;
 
 // Theme colors
 
-$code-bg-color-light: rgba($indigo-color, 0.05);
+$code-bg-color-light: rgba($violet-color, 0.05);
 $code-bg-color-dark: #2c3237 !default;
 
 // Font awesome location

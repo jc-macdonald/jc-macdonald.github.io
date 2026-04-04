@@ -1,135 +1,431 @@
 cv:
   name: Joshua C. Macdonald
-  label: Computational Scientist
+  headline: Computational Scientist
   email: jmacdo16@jh.edu
-  location: Baltimore, MD
-  image: ""
-  summary: Computational scientist building methods and research software for partially observed systems in infectious disease, ecology, and global health.
+  phone: "+19104093469"
+  location: Baltimore, Maryland, USA
+  website: https://jcmacdonald.dev
 
   social_networks:
     - network: GitHub
       username: MacdonaldJoshuaCaleb
     - network: LinkedIn
       username: joshuacmacdonald
+    - network: ORCID
+      username: "0000-0002-3643-6266"
 
   sections:
+    Research Profile:
+      - "Computational scientist developing modeling, inference, and scientific software for global health research. My work spans human, animal, and environmental health systems, integrating mechanistic modeling, Bayesian and statistical inference, uncertainty quantification, and scientific computing to study partially observed processes under sparse, heterogeneous data. Current application areas include infectious disease dynamics, host--pathogen and comparative health systems, environmental hazards, and computational tools for forecasting and decision support."
+
     Education:
       - institution: University of Louisiana at Lafayette
-        location: Lafayette, Louisiana, USA
         area: Mathematics
-        studyType: PhD
+        degree: PhD
         start_date: 2017
         end_date: 2022
+        location: Lafayette, Louisiana, USA
         highlights:
           - "Advisor: Hayriye Gulbudak"
-          - "Dissertation: Population Dynamics Under Disturbance in Ecology and Epidemiology"
+          - "Dissertation: *Population Dynamics Under Disturbance in Ecology and Epidemiology*"
 
       - institution: University of Louisiana at Lafayette
-        location: Lafayette, Louisiana, USA
         area: Mathematics
-        studyType: MS
+        degree: MS
         start_date: 2017
         end_date: 2020
+        location: Lafayette, Louisiana, USA
 
       - institution: University of North Carolina Asheville
-        location: Asheville, North Carolina, USA
         area: Mathematics
-        studyType: BA
+        degree: BA
         start_date: 2014
         end_date: 2016
+        location: Asheville, North Carolina, USA
 
       - institution: University of North Carolina Greensboro
-        location: Greensboro, North Carolina, USA
         area: Archaeology
-        studyType: BA
+        degree: BA
         start_date: 2008
         end_date: 2013
+        location: Greensboro, North Carolina, USA
 
-    Experience:
+    Appointments:
       - company: Johns Hopkins Bloomberg School of Public Health
         position: Postdoctoral Scholar
-        location: Baltimore, Maryland, USA
         start_date: 2024
         end_date: present
+        location: Baltimore, Maryland, USA
         summary: "International Vaccine Access Center, Department of International Health. Mentor: Shaun Truelove. Research focus: infectious disease modeling and inference, scientific computing, decision support systems, and research software engineering."
 
       - company: Tel Aviv University
         position: Zuckerman STEM Leadership Postdoctoral Fellow
-        location: Tel Aviv, Israel
         start_date: 2022
         end_date: 2024
-        summary: "School of Zoology. Mentor: Yoav Ram. Research on Bayesian dimensionality reduction and cultural transmission dynamics, drawing on archaeological training in the study of material culture diversity."
+        location: Tel Aviv, Israel
+        summary: "School of Zoology. Mentor: Yoav Ram. Research drew directly on archaeological training in the study of material culture diversity and cultural transmission, applying Bayesian dimensionality reduction and multivariate data analysis to cultural datasets."
+
+    Published Papers:
+      - title: "Within-host viral growth and immune response rates predict FMDV transmission dynamics for African buffalo"
+        authors:
+          - "***J.C. Macdonald***"
+          - H. Gulbudak
+          - B. Beechler
+          - E. Gorsich
+          - S. Gubbins
+          - E. Perez
+          - A. Jolles
+        journal: The American Naturalist
+        doi: 10.1086/730703
+        date: 2024
+
+      - title: "Cultural transmission, networks, and clusters among Austronesian-speaking peoples"
+        authors:
+          - "***J.C. Macdonald***"
+          - J. Blanco-Portillo
+          - M.W. Feldman
+          - Y. Ram
+        journal: Evolutionary Human Sciences
+        doi: 10.1017/ehs.2024.45
+        date: 2024
+
+      - title: "Forward hysteresis and Hopf bifurcation in an NPZD model with application to harmful algal blooms"
+        authors:
+          - "***J.C. Macdonald***"
+          - H. Gulbudak
+        journal: Journal of Mathematical Biology
+        doi: 10.1007/s00285-023-01969-7
+        date: 2023
+
+      - title: "First and second wave outbreak size with reactive quarantine measures: a COVID-19 model applied to an epidemic in China"
+        authors:
+          - C.J. Browne
+          - H. Gulbudak
+          - J.C. Macdonald
+        journal: Journal of Theoretical Biology
+        doi: 10.1016/j.jtbi.2021.110919
+        date: 2022
+
+      - title: "Modeling COVID-19 outbreaks in the United States with distinct testing, lockdown speed, and fatigue rates"
+        authors:
+          - "***J.C. Macdonald***"
+          - C.J. Browne
+          - H. Gulbudak
+        journal: Royal Society Open Science
+        doi: 10.1098/rsos.210227
+        date: 2021
+
+    Papers Under Review:
+      - title: "An immuno-epidemiological model of foot-and-mouth disease in African buffalo with carrier transmission"
+        authors:
+          - S. Atkins
+          - H. Gulbudak
+          - S. Welker
+          - H. Smith
+          - "***J.C. Macdonald***"
+          - B.R. Beechler
+          - A.E. Jolles
+        journal: "Under review, Bulletin of Mathematical Biology"
+        date: 2026
+
+    Preprints:
+      - title: "Bayesian estimation of the number of significant principal components for cultural data"
+        authors:
+          - "***J.C. Macdonald***"
+          - J. Blanco-Portillo
+          - M.W. Feldman
+          - Y. Ram
+        doi: 10.48550/arXiv.2409.12129
+        date: 2024
+
+    Manuscripts in Preparation:
+      - title: "Lawful learning: a scientific machine learning approach to dynamical systems inference"
+        authors:
+          - "***J.C. Macdonald***"
+        journal: "In preparation for SIAM Journal on Scientific Computing"
+        date: 2026
+
+      - title: "Structured observables: a physics-based approach to dynamical systems inference"
+        authors:
+          - "***J.C. Macdonald***"
+        journal: "In preparation for SIAM Journal on Applied Dynamical Systems"
+        date: 2026
+
+      - title: "Shapelet analysis of infectious disease forecasts reveals heterogeneity across epidemic phases"
+        authors:
+          - K. Roosa
+          - L.A. White
+          - T.M. Leon
+          - "***J.C. Macdonald***"
+          - A. Srivastava
+          - S. Truelove
+        journal: "In preparation for Epidemics"
+        date: 2026
 
     Research Support:
-      - title: "CDC-RFA-FT-23-0069 (NU38FT000012)"
-        summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Postdoctoral Scholar (60% FTE). Insight Net center for infectious disease forecasting and outbreak analytics."
+      - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
         start_date: 2023
         end_date: present
+        summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Postdoctoral Scholar (60% FTE). Insight Net center for infectious disease forecasting and outbreak analytics. Research role: operational modeling, forecasting pipeline development, and computational infrastructure."
 
-      - title: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
-        summary: "Quiescence to emergence: nairovirus diversity loss and disease transmission. Collaborator (40% FTE). Mathematical model parameterization and data analysis."
+      - name: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
         start_date: 2025
         end_date: 2028
+        summary: "Quiescence to emergence: nairovirus diversity loss and disease transmission. Collaborator (40% FTE). Research role: mathematical model parameterization, data analysis, and advising on mathematical and statistical methods."
 
-      - title: "USDA-ARS Cooperative Agreement (3022-32000-021-018-S)"
-        summary: "Investigating the Epidemiology of CCHFV in an Endemic Setting: Uganda. Collaborator. Mathematical model parameterization and data analysis."
+      - name: "USDA-ARS Cooperative Agreement (3022-32000-021-018-S)"
         start_date: 2025
         end_date: present
+        summary: "Investigating the Epidemiology of CCHFV in an Endemic Setting: Uganda. Collaborator. Research role: mathematical model parameterization, data analysis, and advising on mathematical and statistical methods."
 
-      - title: "NSF EEID / UKRI UK--US Collaboration Grant"
-        summary: "Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. Senior Personnel (from 2024). Mathematical model development and parameterization of within-host viral and immune dynamics."
+      - name: "NSF EEID / UKRI UK--US Collaboration Grant ($4.05M / 5 years)"
         start_date: 2022
         end_date: 2027
+        summary: "Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. Senior Personnel (from 2024). Research role: mathematical model development and parameterization of within-host viral and immune dynamics."
 
-      - title: "Zuckerman Postdoctoral Scholarship"
-        summary: "Co-evolution of Cultural and Genetic Traits. Principal Investigator. Competitive postdoctoral fellowship."
+      - name: "Zuckerman Postdoctoral Scholarship ($120K total)"
         start_date: 2022
         end_date: 2024
+        summary: "Co-evolution of Cultural and Genetic Traits. Principal Investigator. Competitive postdoctoral fellowship; authored and defended research proposal."
 
-    Awards:
-      - title: Rhodes Outstanding Graduate Assistant Award
+      - name: "National One Health Mission India ($1M / 3 years)"
+        date: "Pending"
+        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Co-Investigator. Research role: mathematical model parameterization and data analysis; mechanistic modeling for HPAI and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
+
+    Operational Modeling:
+      - name: Flu Scenario Modeling Hub
+        start_date: 2024
+        end_date: present
+        summary: "ACCIDDA. Lead Model Developer. Operational modeling and forecasting pipeline development. Leading scientific overhaul of ACCIDDA flu model in advance of 2026/27 operational round."
+
+      - name: COVID-19 Scenario Modeling Hub
+        date: 2025
+        summary: "ACCIDDA. Support. Data cleaning and assimilation in support of ACCIDDA's health heterogeneities COVID-19 round."
+
+      - name: Hib Vaccination Modeling (Navajo Nation)
+        start_date: 2026
+        end_date: present
+        summary: "ACCIDDA. Technical supervisor managing PhD students in implementation of an age- and immune-status-structured Hib model for the Navajo Nation to evaluate the impact of long-running vaccination programs."
+
+    "Research Software -- Lead Developer":
+      - name: "OP System (Operator-Partitioned System)"
+        start_date: 2026
+        end_date: present
+        summary: "ACCIDDA. Declarative governing equation specification compiler for structured dynamical systems. Transforms YAML model definitions into callable numerics consumed by OP Engine or other solvers."
+        highlights:
+          - "[github.com/ACCIDDA/op_system](https://github.com/ACCIDDA/op_system)"
+
+      - name: pp-eigentest
+        start_date: 2026
+        end_date: present
+        summary: "Posterior predictive eigenvalue testing framework for determining signal rank in covariance and Gram matrices. Supports ordered hypothesis testing, family-wise error-rate control, and false discovery rate control."
+
+      - name: "OP Engine (Operator-Partitioned Engine)"
+        start_date: 2025
+        end_date: present
+        summary: "ACCIDDA. Numerical simulation engine for mechanistic models of biological and epidemiological systems. Supports ODE, PDE, and hybrid operator-splitting solvers with pluggable backends."
+        highlights:
+          - "[github.com/ACCIDDA/op_engine](https://github.com/ACCIDDA/op_engine)"
+
+      - name: vbpca-py
+        start_date: 2024
+        end_date: present
+        summary: "Variational Bayesian PCA for incomplete data with native missing-data handling, uncertainty quantification, and C++-accelerated kernels; compatible with scikit-learn."
+        highlights:
+          - "[pypi.org/project/vbpca-py/](https://pypi.org/project/vbpca-py/)"
+
+    "Research Software -- Collaborative Infrastructure":
+      - name: "FlepiMoP2 (Flexible Epidemic Modeling Pipeline 2)"
+        start_date: 2025
+        end_date: present
+        summary: "ACCIDDA. Core contributor to the redesign of a modular epidemic modeling and simulation pipeline for forecasting and scenario analysis."
+
+      - name: TabularEpi
+        start_date: 2025
+        end_date: present
+        summary: "UNC / ACCIDDA. Rule-based tabular epidemic simulator. Conducted systematic performance benchmarking that identified critical architectural bottlenecks, motivating an ongoing refactor to a vectorized backend."
+
+      - name: "FlepiMoP (Flexible Epidemic Modeling Pipeline)"
+        start_date: 2024
+        end_date: 2025
+        summary: "Hopkins IDD / ACCIDDA. Developed modular ODE solver interfaces; implemented PyMC-based Bayesian inference module for operational influenza modeling; benchmarking identified vectorization-driven performance gains of 5--20x, informing FlepiMoP2 architecture."
+
+    Invited Talks and Seminars:
+      - name: "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems"
+        date: 2026
+        summary: "Biological Oceanography Seminar, Woods Hole Oceanographic Institution, Woods Hole, Massachusetts"
+
+      - name: Decision-Support Modeling for One Health Pathogens
+        date: 2026
+        summary: "Differential Equations Seminar, University of Maryland Baltimore County, Baltimore, Maryland"
+
+      - name: Modeling long-term viral infections
+        date: 2025
+        summary: "Mathematics Seminar, Shippensburg University, Shippensburg, Pennsylvania"
+
+      - name: Scenario and forecast modeling for respiratory viruses
+        date: 2025
+        summary: "Navajo Nation Epidemiology Center Data Summit, Window Rock, Arizona"
+
+      - name: Impacts of host behavior and viral life history on infectious disease transmission
+        date: 2024
+        summary: "Department of Mathematics, Virginia Tech; Infectious Disease Dynamics Group, Johns Hopkins University"
+
+      - name: "Within-host viral life histories predict FMDV transmission dynamics for African buffalo"
+        date: 2024
+        summary: "Hawlena Lab, Ben-Gurion University, Midreshet Ben Gurion, Israel"
+
+      - name: Modeling process-based effects of harmful algal blooms
+        start_date: 2023
+        end_date: 2024
+        summary: "University of Essex (2024); Tel Aviv University (2023); Israel Oceanographic and Limnological Research, Haifa (2023); Inter-University Institute for Marine Sciences, Eilat (2023)"
+
+      - name: Patterns of cultural variation in the Austronesian expansion
+        date: 2023
+        summary: "Fortunato Lab, University of Oxford (virtual)"
+
+      - name: Consilience in FMDV ecology
+        date: 2022
+        summary: "Gresham Lab, New York University; Obolski Lab, Tel Aviv University"
+
+    Selected Conference Presentations:
+      - name: "Decision-Support Modeling for One Health Pathogens: Using Mechanistic Models for Surveillance and Forecast Design"
+        date: 2026
+        summary: "Society for Mathematical Biology Annual Meeting, Graz, Austria; mini-symposium talk"
+
+      - name: "Recovering Ecological Geometry: A Trait- and Depth-Structured IPDE Model of Plankton Dynamics"
+        date: 2025
+        summary: "Society for Mathematical Biology Annual Meeting, Edmonton, Alberta, Canada; mini-symposium talk"
+
+      - name: Biologically Grounded Surrogate-Driven Parameter Inference for Sparsely Observed Dynamical Systems
+        date: 2025
+        summary: "Symposium on Biomathematics and Ecology Education and Research (BEER), Fairfax, Virginia; contributed talk"
+
+      - name: Forward hysteresis and Hopf bifurcation in an NPZD model with application to harmful algal blooms
+        date: 2023
+        summary: "Society for Mathematical Biology Annual Meeting, Columbus, Ohio; mini-symposium talk"
+
+      - name: "Within-host viral growth and immune response rates predict FMDV transmission dynamics for African buffalo"
+        start_date: 2022
+        end_date: 2023
+        summary: "SIAM TXLA, Lafayette, Louisiana (2023); SMB Epidemiology-Immunology Midyear Meeting (2022, virtual)"
+
+      - name: "Dengue immunodynamics: antibody-dependent enhancement, cross-reactive immunity, and model--data confrontation"
+        start_date: 2022
+        end_date: 2023
+        summary: "SIAM TXLA (2023); Mathematical Perspectives on Immuno-Biology, Bulgaria (2023); Center for Combatting Pandemics, Tel Aviv (2023); European Conference on Theoretical and Mathematical Biology, Heidelberg (2022)"
+
+      - name: Disease dynamics necessarily operate across scales
         date: 2021
-        awarder: Department of Mathematics, University of Louisiana at Lafayette
-        summary: Awarded to two graduate students annually.
+        summary: "SIAM TXLA, South Padre Island, Texas; mini-symposium talk"
 
-      - title: Outstanding Contributed Talk Award (Mathematical Epidemiology)
+      - name: "Modeling COVID-19 outbreaks in the United States with distinct testing, lockdown speed, and fatigue rates"
         date: 2021
-        awarder: Society for Mathematical Biology Annual Meeting
+        summary: "Society for Mathematical Biology Annual Meeting (virtual); contributed talk"
 
-      - title: Three Minute Thesis Competition, Finalist
-        date: 2019
-        awarder: Louisiana Sea Grant
+    Teaching:
+      - company: Johns Hopkins University
+        position: Teaching Assistant
+        start_date: 2025-06
+        end_date: 2025-08
+        location: Baltimore, Maryland, USA
+        summary: "Teaching assistant for *Topics in Infectious Disease Epidemiology* with Shaun Truelove and Sara Loo."
 
-    Skills:
-      - name: Modeling
-        icon: fa-solid fa-chart-line
-        keywords: "Dynamical systems (ODE/PDE/stochastic); compartmental and agent-based models; multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
+      - company: University of Louisiana at Lafayette
+        position: Teaching Assistant and Instructor of Record
+        start_date: 2017
+        end_date: 2020
+        location: Lafayette, Louisiana, USA
+        summary: "Instructor of record for elementary statistics (3 sections), survey of calculus (2 sections), precalculus (2 sections), and college algebra (2 sections). Teaching assistant for calculus, linear algebra, differential equations, and basic statistics."
 
-      - name: Inference
-        icon: fa-solid fa-magnifying-glass-chart
-        keywords: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"
+      - company: McDowell County Schools / Memorial University / UNC Asheville
+        position: Teaching and Tutoring
+        start_date: 2016
+        end_date: 2017
+        summary: "Instructor of record for North Carolina Math III / Algebra II (2017). Mathematics and statistics tutoring at Memorial University of Newfoundland (2016--2017) and University of North Carolina Asheville (2016)."
 
-      - name: Scientific Computing
-        icon: fa-solid fa-code
-        keywords: "Python, Julia, C++, Stan, R, MATLAB. High-performance numerical solvers; operator splitting; data pipelines; reproducible workflows (Git, CI/CD, containerization)"
+    Mentoring:
+      - name: Mentoring students and postdoctoral researchers
+        start_date: 2021
+        end_date: present
+        highlights:
+          - "Jolles and Beechler Labs, Oregon State University (2025--present)"
+          - "Society for Mathematical Biology (2022--present)"
+          - "Association for Women in Mathematics (2023--2025)"
+          - "Ram Lab, Tel Aviv University (2022--2024)"
+          - "MIDAS Network (2021--2022)"
+          - "Gulbudak Group, University of Louisiana at Lafayette (2021--2022)"
 
-    Service:
-      - title: "SMB Diversity, Equity, and Inclusion Committee"
-        summary: Member
+      - name: "Undergraduate Research Supervision: Shany Naim"
+        date: 2024
+        summary: "Tel Aviv University. Supervised undergraduate research project: initial translation of the VBPCApy variational Bayesian PCA codebase from MATLAB to Python."
+
+    Community Outreach:
+      - name: Science communication and research dissemination
+        start_date: 2021
+        end_date: 2022
+        highlights:
+          - "University of Louisiana R1 Showcase: selected to present COVID-19 modeling research at the university-wide showcase (2022)"
+          - "Ocean View United Methodist Church, Oak Island, NC: community discussion on vaccines and COVID-19, with on-site pharmacist for vaccination (2021)"
+
+    Professional Service:
+      - name: SMB Diversity, Equity, and Inclusion Committee
         start_date: 2023
         end_date: 2025
+        summary: Member
 
-      - title: "Journal Reviewing"
-        summary: "PLOS ONE, J. Biological Systems, J. Biological Dynamics, Frontiers in Public Health, Frontiers in Veterinary Science, Computational and Applied Mathematics, Mathematical Biosciences, Scientific Reports, PLOS Computational Biology, BMC Infectious Diseases"
-        start_date: 2022
-        end_date: present
-
-      - title: "Mini-symposium Co-organizer"
-        summary: "SIAM TXLA and SMB/ESTMB conferences (5 symposia, 2019--2023)"
-        start_date: 2019
-        end_date: 2023
-
-      - title: "Session Chair"
-        summary: "SMB Early Career Workshop (2023), SMB Epidemiology-Immunology Midyear (2022), SMB Annual Meeting (2021)"
+      - name: Session Chair / Leader
         start_date: 2021
         end_date: 2023
+        highlights:
+          - "SMB Early Career Workshop: Applying for postdoctoral funding (2023)"
+          - "SMB Epidemiology-Immunology Midyear Meeting: Contributed talks (2022)"
+          - "SMB Annual Meeting: CT04-MEPI contributed talks in mathematical epidemiology (2021)"
+
+      - name: Mini-symposium Co-organizer
+        start_date: 2019
+        end_date: 2023
+        highlights:
+          - "SIAM TXLA: Data-driven mathematical and statistical modeling approaches to population biology (2023)"
+          - "SMB Annual Meeting: Disease Dynamics Across Scales (2023)"
+          - "SMB/ESTMB Joint Meeting: Multi-scale and data-driven modeling approaches in ecology, immunology, and epidemiology (2022)"
+          - "SIAM TXLA: Reproducibility, reliability, and robustness: confronting models from across mathematical biology with data (2021)"
+          - "SIAM TXLA: Population Dynamics in Ecology and Epidemiology (2019)"
+
+      - name: Secretary, University of Louisiana AMS Graduate Student Chapter
+        start_date: 2021
+        end_date: 2022
+
+    Journal Reviewing:
+      - "**2022--present:** *PLOS ONE*, *Journal of Biological Systems*, *Journal of Biological Dynamics*, *Frontiers in Public Health*, *Frontiers in Veterinary Science*, *Computational and Applied Mathematics*, *Mathematical Biosciences*, *Scientific Reports*, *PLOS Computational Biology*, and *BMC Infectious Diseases*."
+
+    Honors and Awards:
+      - name: Travel Awards
+        start_date: 2019
+        end_date: 2022
+        summary: "SIAM, Society for Mathematical Biology, and University of Louisiana Graduate Research Association"
+
+      - name: Rhodes Outstanding Graduate Assistant Award
+        date: 2021
+        summary: "Department of Mathematics, University of Louisiana at Lafayette. Awarded to two graduate students annually (approximately 50 graduate students total)."
+
+      - name: Outstanding Contributed Talk Award (Mathematical Epidemiology)
+        date: 2021
+        summary: "Society for Mathematical Biology Annual Meeting"
+
+      - name: Three Minute Thesis Competition, Finalist
+        date: 2019
+        summary: Louisiana Sea Grant
+
+    Computational Expertise:
+      - label: Modeling
+        details: "Dynamical systems (ODE/PDE/stochastic); compartmental and agent-based models; multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
+
+      - label: Inference
+        details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"
+
+      - label: Computing
+        details: "Python, Julia, C++, Stan, R, MATLAB. Scientific computing; high-performance numerical solvers; operator splitting; data pipelines and exploratory analysis; reproducible workflows (Git, CI/CD, containerization)"
+
+    Professional Affiliations:
+      - "Society for Mathematical Biology; Society for Industrial and Applied Mathematics; International Society for Bayesian Analysis; United States Research Software Engineer Association; MIDAS Network; Association for Women in Mathematics; Institute of Industrial and Systems Engineers; Society for Health Systems (SHS/IISE); and Healthcare Information and Management Systems Society (HIMSS)."

@@ -129,7 +129,6 @@ disqus_shortname: al-folio # put your disqus shortname
 # you can display them in your blog by adding a link to the RSS feed.
 # Optional: Set default categories and tags for posts from each source.
 external_sources:
-    tags: [google]
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -291,8 +290,6 @@ scholar:
   details_link: Details
 
   query: "@*"
-  group_by: year
-  group_order: descending
 
 # Display different badges withs stats for your publications
 # Customize badge behavior in _layouts/bib.liquid
@@ -328,6 +325,7 @@ filtered_bibtex_keywords:
     preview,
     selected,
     slides,
+    status,
     supp,
     video,
     website,
