@@ -1,10 +1,15 @@
 github_users:
   - jc-macdonald
+  - yoavram-lab
+  - ACCIDDA
+  - jcm-sci
 
 repo_description_lines_max: 2
 
 github_repos:
   - yoavram-lab/VBPCApy
+  - jcm-sci/pp-eigentest
+  - jcm-sci/model-criticism
   - ACCIDDA/op_engine
   - ACCIDDA/op_system
   - ACCIDDA/flepimop2

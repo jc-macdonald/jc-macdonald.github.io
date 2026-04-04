@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist developing modeling, inference, and scientific software for global health research. My work spans human, animal, and environmental health systems, integrating mechanistic modeling, Bayesian and statistical inference, uncertainty quantification, and scientific computing to study partially observed processes under sparse, heterogeneous data. Current application areas include infectious disease dynamics, host--pathogen and comparative health systems, environmental hazards, and computational tools for forecasting and decision support."
+      - "Computational scientist developing methods, scientific AI/ML, and research software for partially observed systems across earth, environmental, and health sciences. My work integrates generative modeling (mechanistic, statistical, and hybrid), Bayesian inference, uncertainty quantification, and scientific computing to build defensible inference under structural incompleteness — where the full system state is never directly observed and prediction alone is not enough. Current application areas include infectious disease dynamics and forecasting, host--pathogen and comparative health systems, marine and terrestrial ecology, environmental hazards, and computational tools for decision support."
 
     Education:
       - institution: University of Louisiana at Lafayette
@@ -188,8 +188,9 @@ cv:
         summary: "Co-evolution of Cultural and Genetic Traits. Principal Investigator. Competitive postdoctoral fellowship; authored and defended research proposal."
 
       - name: "National One Health Mission India ($1M / 3 years)"
-        date: "Pending"
-        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Co-Investigator. Research role: mathematical model parameterization and data analysis; mechanistic modeling for HPAI and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
+        start_date: 2026
+        end_date: 2029
+        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Co-Investigator (pending). Research role: mathematical model parameterization and data analysis; mechanistic modeling for HPAI and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
 
     Operational Modeling:
       - name: Flu Scenario Modeling Hub
@@ -198,7 +199,8 @@ cv:
         summary: "ACCIDDA. Lead Model Developer. Operational modeling and forecasting pipeline development. Leading scientific overhaul of ACCIDDA flu model in advance of 2026/27 operational round."
 
       - name: COVID-19 Scenario Modeling Hub
-        date: 2025
+        start_date: 2025
+        end_date: 2025
         summary: "ACCIDDA. Support. Data cleaning and assimilation in support of ACCIDDA's health heterogeneities COVID-19 round."
 
       - name: Hib Vaccination Modeling (Navajo Nation)
@@ -218,6 +220,8 @@ cv:
         start_date: 2026
         end_date: present
         summary: "Posterior predictive eigenvalue testing framework for determining signal rank in covariance and Gram matrices. Supports ordered hypothesis testing, family-wise error-rate control, and false discovery rate control."
+        highlights:
+          - "[github.com/jcm-sci/pp-eigentest](https://github.com/jcm-sci/pp-eigentest)"
 
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
@@ -418,7 +422,7 @@ cv:
 
     Computational Expertise:
       - label: Modeling
-        details: "Dynamical systems (ODE/PDE/stochastic); compartmental and agent-based models; multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
+        details: "Generative models (ODE/PDE/stochastic/hybrid); compartmental and agent-based models; scientific AI/ML (physics-embedded surrogates, lawful learning); multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
 
       - label: Inference
         details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"

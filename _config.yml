@@ -9,11 +9,11 @@ last_name: Macdonald
 contact_note: >
   Best reached by email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Computational scientist developing methods and research software for partially observed systems in infectious disease, ecology, and global health.
+  Computational scientist developing methods, scientific AI/ML, and research software for partially observed systems across earth, environmental, and health sciences.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: computational science, infectious disease modeling, Bayesian inference, scientific computing, variational methods, forecasting # add your own keywords or leave empty
+keywords: computational science, scientific AI/ML, infectious disease modeling, Bayesian inference, generative modeling, scientific computing, uncertainty quantification, forecasting, partially observed systems # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 

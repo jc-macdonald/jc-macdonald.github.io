@@ -28,7 +28,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I build methods and research software for partially observed systems in infectious disease, ecology, and global health. My work integrates mechanistic modeling, Bayesian inference, and scientific computing to develop production-grade tools — numerical solvers, inference algorithms, and forecasting pipelines — that turn sparse, heterogeneous data into actionable decision support.
+I build methods, scientific AI/ML, and research software for partially observed systems across earth, environmental, and health sciences. My work integrates generative modeling — mechanistic, statistical, and hybrid — with Bayesian inference and scientific computing to develop production-grade tools: numerical solvers, inference algorithms, and forecasting pipelines that make defensible inference operational under structural incompleteness, because prediction alone is not enough.
 
 Currently I am a postdoctoral scholar at the [International Vaccine Access Center](https://www.jhsph.edu/ivac/) at Johns Hopkins, where I work with [Shaun Truelove](https://www.jhsph.edu/faculty/directory/profile/3866/shaun-truelove) on operational infectious disease forecasting and decision support systems, supported by the CDC Center for Forecasting and Outbreak Analytics. Previously I was a [Zuckerman STEM Leadership Fellow](https://zuckerman-scholars.org/) at Tel Aviv University, working with [Yoav Ram](https://www.yoavram.com/) on Bayesian dimensionality reduction and cultural transmission dynamics.
 
@@ -40,7 +40,7 @@ I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a 
 
 #### Methods & Expertise
 
-**Modeling.** Dynamical systems (ODE/PDE/stochastic); compartmental and agent-based models; multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems.
+**Modeling.** Generative models (ODE/PDE/stochastic/hybrid); compartmental and agent-based models; scientific AI/ML (physics-embedded surrogates, lawful learning); multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems.
 
 **Inference.** Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation.
 
