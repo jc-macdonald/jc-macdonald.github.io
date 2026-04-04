@@ -255,12 +255,12 @@ cv:
 
     Invited Talks and Seminars:
       - name: "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems"
-        date: 2026
+        date: 2026-03-30
         summary: "Biological Oceanography Seminar, Woods Hole Oceanographic Institution, Woods Hole, Massachusetts"
 
       - name: Decision-Support Modeling for One Health Pathogens
-        date: 2026
-        summary: "Differential Equations Seminar, University of Maryland Baltimore County, Baltimore, Maryland"
+        date: 2026-03-23
+        summary: "[Differential Equations Seminar](https://mathstat.umbc.edu/events/event/150842/), University of Maryland Baltimore County, Baltimore, Maryland"
 
       - name: Modeling long-term viral infections
         date: 2025
