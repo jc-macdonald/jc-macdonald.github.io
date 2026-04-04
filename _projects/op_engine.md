@@ -4,7 +4,7 @@ title: OP Engine
 description: Numerical simulation engine for mechanistic models of biological and epidemiological systems. Supports ODE, PDE, and hybrid operator-splitting solvers with pluggable backends.
 img:
 importance: 2
-category: software
+category: lead developer
 github: https://github.com/ACCIDDA/op_engine
 ---
 

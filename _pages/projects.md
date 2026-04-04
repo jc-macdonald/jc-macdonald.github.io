@@ -5,7 +5,7 @@ permalink: /software/
 description: Research software for scientific computing, Bayesian inference, and operational modeling infrastructure.
 nav: true
 nav_order: 3
-display_categories: [software]
+display_categories: [lead developer, collaborative infrastructure]
 horizontal: false
 ---
 
@@ -62,4 +62,14 @@ horizontal: false
   </div>
   {% endif %}
 {% endif %}
+</div>
+
+---
+
+## repositories
+
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+{% for repo in site.data.repositories.github_repos %}
+  {% include repository/repo.liquid repository=repo %}
+{% endfor %}
 </div>

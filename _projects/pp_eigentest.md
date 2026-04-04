@@ -4,7 +4,7 @@ title: pp-eigentest
 description: Posterior predictive eigenvalue testing for determining signal rank in covariance and Gram matrices. Supports ordered hypothesis testing with FWER and FDR control.
 img:
 importance: 4
-category: software
+category: lead developer
 ---
 
 **pp-eigentest** provides a posterior predictive framework for determining the number of significant eigenvalues (signal rank) in covariance and Gram matrices. The method generates posterior predictive null distributions for each ordered eigenvalue and tests whether observed eigenvalues exceed noise expectations.

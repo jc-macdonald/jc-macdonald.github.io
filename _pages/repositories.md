@@ -3,7 +3,7 @@ layout: page
 permalink: /repositories/
 title: repositories
 description: GitHub repositories for research software and collaborative infrastructure.
-nav: true
+nav: false
 nav_order: 5
 ---
 

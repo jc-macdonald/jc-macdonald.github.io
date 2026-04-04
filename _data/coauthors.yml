@@ -1,34 +1,58 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"gulbudak":
+  - firstname: ["Hayriye", "H."]
+    url: https://usm.edu/directory/gulbudak-hayriye
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"ram":
+  - firstname: ["Yoav", "Y."]
+    url: https://www.yoavram.com/
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"jolles":
+  - firstname: ["Anna", "A.", "A.E."]
+    url: https://scholar.google.com/citations?user=6-3YOasAAAAJ
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"beechler":
+  - firstname: ["Brianna", "B.", "B.R."]
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"browne":
+  - firstname: ["Cameron", "C.", "C.J."]
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"feldman":
+  - firstname: ["Marcus", "M.", "M.W.", "Marcus W."]
+    url: https://feldmanlab.stanford.edu/
 
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+"blanco-portillo":
+  - firstname: ["Javier", "J."]
 
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
+"gorsich":
+  - firstname: ["Erin", "E."]
 
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"gubbins":
+  - firstname: ["Simon", "S."]
+
+"perez":
+  - firstname: ["Ericka", "E."]
+
+"truelove":
+  - firstname: ["Shaun", "S."]
+    url: https://www.jhsph.edu/faculty/directory/profile/3866/shaun-truelove
+
+"roosa":
+  - firstname: ["Kimberlyn", "K."]
+
+"white":
+  - firstname: ["Lauren", "L.", "L.A."]
+
+"leon":
+  - firstname: ["Tomas", "T.", "T.M."]
+
+"srivastava":
+  - firstname: ["Akhil", "A."]
+
+"atkins":
+  - firstname: ["Sarah", "S."]
+
+"welker":
+  - firstname: ["Sydney", "S."]
+
+"smith":
+  - firstname: ["Hannah", "H."]

@@ -4,7 +4,7 @@ title: vbpca-py
 description: Variational Bayesian PCA for incomplete data with native missing-data handling, uncertainty quantification, and C++-accelerated kernels. scikit-learn compatible.
 img:
 importance: 1
-category: software
+category: lead developer
 github: https://github.com/yoavram-lab/VBPCApy
 related_publications: true
 ---
