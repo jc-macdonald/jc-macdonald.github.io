@@ -35,3 +35,13 @@ Currently I am a postdoctoral scholar at the [International Vaccine Access Cente
 My research is methods-first but deeply embedded in applications: within-host to between-host disease dynamics in wildlife (foot-and-mouth disease in African buffalo), real-time epidemic forecasting pipelines, variational Bayesian PCA for incomplete data, and structured population dynamics in plankton ecology. The common thread is building rigorous computational machinery that informs real decisions under uncertainty.
 
 I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a BA in Archaeology from UNC Greensboro — a combination that continues to shape how I think about inference from incomplete records.
+
+---
+
+#### Methods & Expertise
+
+**Modeling.** Dynamical systems (ODE/PDE/stochastic); compartmental and agent-based models; multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems.
+
+**Inference.** Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation.
+
+**Scientific computing.** Python, Julia, C++, Stan, R, MATLAB. High-performance numerical solvers; operator splitting; reproducible workflows (Git, CI/CD, containerization); data pipelines and exploratory analysis.
