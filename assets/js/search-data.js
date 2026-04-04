@@ -16,12 +16,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-software",
-          title: "software",
+        },{id: "nav-projects",
+          title: "projects",
           description: "Research software for scientific computing, Bayesian inference, and operational modeling infrastructure.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/software/";
+            window.location.href = "/projects/";
           },
         },{id: "nav-operational-modeling",
           title: "operational modeling",
