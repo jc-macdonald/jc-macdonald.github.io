@@ -5,7 +5,7 @@ permalink: /software/
 description: Research software for scientific computing, Bayesian inference, and operational modeling infrastructure.
 nav: true
 nav_order: 3
-display_categories: [lead developer, collaborative infrastructure]
+display_categories: [lead developer, in development, collaborative infrastructure]
 horizontal: false
 ---
 
