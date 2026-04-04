@@ -70,6 +70,11 @@ ninja.data = [{
           description: "Modular epidemic modeling and simulation pipeline for forecasting and scenario analysis. Core contributor to the redesign of ACCIDDA&#39;s operational infrastructure.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/flepimop2/";
+            },},{id: "projects-model-criticism",
+          title: 'model-criticism',
+          description: "Observable-based model evaluation with Pareto optimization, proper scoring rules, and Bayesian stacking for simulation studies.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/model_criticism/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
           description: "Numerical simulation engine for mechanistic models of biological and epidemiological systems. Supports ODE, PDE, and hybrid operator-splitting solvers with pluggable backends.",
