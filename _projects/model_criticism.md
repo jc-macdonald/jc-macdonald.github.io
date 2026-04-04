@@ -3,8 +3,8 @@ layout: page
 title: model-criticism
 description: Observable-based model evaluation with Pareto optimization, proper scoring rules, and Bayesian stacking for simulation studies.
 img:
-importance: 1
-category: in development
+importance: 2
+category: "lead developer · in development"
 github: https://github.com/jcm-sci/model-criticism
 ---
 
