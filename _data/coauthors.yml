@@ -1,6 +1,5 @@
 "gulbudak":
   - firstname: ["Hayriye", "H."]
-    url: https://usm.edu/directory/gulbudak-hayriye
 
 "ram":
   - firstname: ["Yoav", "Y."]
@@ -18,7 +17,6 @@
 
 "feldman":
   - firstname: ["Marcus", "M.", "M.W.", "Marcus W."]
-    url: https://feldmanlab.stanford.edu/
 
 "blanco-portillo":
   - firstname: ["Javier", "J."]

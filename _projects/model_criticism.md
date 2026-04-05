@@ -19,3 +19,5 @@ Core capabilities:
 - Adaptive multi-objective optimization via optuna
 
 In development; pre-release. Source at [jcm-sci/model-criticism](https://github.com/jcm-sci/model-criticism).
+
+{% include figure.liquid loading="eager" path="assets/img/research/optimal_design.png" class="img-fluid rounded z-depth-1" zoomable=true %}
