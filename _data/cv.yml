@@ -221,7 +221,7 @@ cv:
         end_date: present
         summary: "Posterior predictive eigenvalue testing framework for determining signal rank in covariance and Gram matrices. Supports ordered hypothesis testing, family-wise error-rate control, and false discovery rate control."
         highlights:
-          - "[github.com/jcm-sci/pp-eigentest](https://github.com/jcm-sci/pp-eigentest)"
+          - "[github.com/yoavram-lab/pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
 
       - name: "Model Criticism (Python + Julia)"
         start_date: 2026
