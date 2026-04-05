@@ -162,10 +162,10 @@ cv:
         date: 2026
 
     Research Support:
-      - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
-        start_date: 2023
-        end_date: present
-        summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Postdoctoral Scholar (60% FTE). Insight Net center for infectious disease forecasting and outbreak analytics. Research role: operational modeling, forecasting pipeline development, and computational infrastructure."
+      - name: "National One Health Mission India ($1M / 3 years)"
+        start_date: 2026
+        end_date: 2029
+        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Co-Investigator (pending). Research role: mathematical model parameterization and data analysis; mechanistic modeling for HPAI and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
 
       - name: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
         start_date: 2025
@@ -177,6 +177,11 @@ cv:
         end_date: present
         summary: "Investigating the Epidemiology of CCHFV in an Endemic Setting: Uganda. PIs: Bree Beechler and Anna Jolles (Oregon State University). Collaborator. Research role: mathematical modeling of cross-species CCHFV transmission dynamics, surveillance design optimization, and advising on mathematical and statistical methods for decision support."
 
+      - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
+        start_date: 2023
+        end_date: present
+        summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Postdoctoral Scholar (60% FTE). Insight Net center for infectious disease forecasting and outbreak analytics. Research role: operational modeling, forecasting pipeline development, and computational infrastructure."
+
       - name: "NSF EEID / UKRI UK--US Collaboration Grant ($4.05M / 5 years)"
         start_date: 2022
         end_date: 2027
@@ -187,26 +192,21 @@ cv:
         end_date: 2024
         summary: "Co-evolution of Cultural and Genetic Traits. Principal Investigator. Competitive postdoctoral fellowship; authored and defended research proposal."
 
-      - name: "National One Health Mission India ($1M / 3 years)"
-        start_date: 2026
-        end_date: 2029
-        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Co-Investigator (pending). Research role: mathematical model parameterization and data analysis; mechanistic modeling for HPAI and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
-
     Operational Modeling:
-      - name: Flu Scenario Modeling Hub
-        start_date: 2024
+      - name: Hib Vaccination Modeling (Navajo Nation)
+        start_date: 2026
         end_date: present
-        summary: "ACCIDDA. Lead Model Developer. Operational modeling and forecasting pipeline development. Leading scientific overhaul of ACCIDDA flu model in advance of 2026/27 operational round."
+        summary: "ACCIDDA. Technical supervisor managing PhD students in implementation of an age- and immune-status-structured Hib model for the Navajo Nation to evaluate the impact of long-running vaccination programs."
 
       - name: COVID-19 Scenario Modeling Hub
         start_date: 2025
         end_date: 2025
         summary: "ACCIDDA. Support. Data cleaning and assimilation in support of ACCIDDA's health heterogeneities COVID-19 round."
 
-      - name: Hib Vaccination Modeling (Navajo Nation)
-        start_date: 2026
+      - name: Flu Scenario Modeling Hub
+        start_date: 2024
         end_date: present
-        summary: "ACCIDDA. Technical supervisor managing PhD students in implementation of an age- and immune-status-structured Hib model for the Navajo Nation to evaluate the impact of long-running vaccination programs."
+        summary: "ACCIDDA. Lead Model Developer across the 2024/25, 2025/26, and 2026/27 seasons. Set up the ACCIDDA flu model and operational pipeline (2024/25). Extensive work with external modeling packages drove contributions that led to FlepiMoP2 (2025/26). Supervising an undergraduate student in a scientific overhaul of the flu model for the 2026/27 round."
 
     "Research Software -- Lead Developer":
       - name: "OP System (Operator-Partitioned System)"
@@ -223,12 +223,13 @@ cv:
         highlights:
           - "[github.com/jcm-sci/pp-eigentest](https://github.com/jcm-sci/pp-eigentest)"
 
-      - name: model-criticism
+      - name: "Model Criticism (Python + Julia)"
         start_date: 2026
         end_date: present
-        summary: "Observable-based model calibration and criticism framework. Uses model worlds with known ground truth to tune inference pipelines—scoring rules, observable weights, and model settings—so that when applied to real data where latent structure is unobserved, the pipeline transfers reliably."
+        summary: "Observable-based model calibration and criticism framework. Uses model worlds with known ground truth to tune inference pipelines—scoring rules, observable weights, and model settings—so that when applied to real data where latent structure is unobserved, the pipeline transfers reliably. Python implementation wraps scoringrules, pymoo, arviz, SALib, and optuna. Julia implementation wraps Metaheuristics.jl, ParetoSmooth.jl, QuasiMonteCarlo.jl, and GlobalSensitivity.jl with native scoring rules."
         highlights:
-          - "[github.com/jcm-sci/model-criticism](https://github.com/jcm-sci/model-criticism)"
+          - "[github.com/jcm-sci/model-criticism](https://github.com/jcm-sci/model-criticism) (Python)"
+          - "[github.com/jcm-sci/ModelCriticism.jl](https://github.com/jcm-sci/ModelCriticism.jl) (Julia)"
 
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
