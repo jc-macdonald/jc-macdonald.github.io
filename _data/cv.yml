@@ -248,11 +248,11 @@ cv:
       - name: "FlepiMoP2 (Flexible Epidemic Modeling Pipeline 2)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Core contributor to the redesign of a modular epidemic modeling and simulation pipeline for forecasting and scenario analysis."
+        summary: "ACCIDDA. Contributor to the redesign of a modular epidemic modeling and simulation pipeline for forecasting and scenario analysis."
 
       - name: TabularEpi
         start_date: 2025
-        end_date: present
+        end_date: 2025
         summary: "UNC / ACCIDDA. Rule-based tabular epidemic simulator. Conducted systematic performance benchmarking that identified critical architectural bottlenecks, motivating an ongoing refactor to a vectorized backend."
 
       - name: "FlepiMoP (Flexible Epidemic Modeling Pipeline)"
