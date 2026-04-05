@@ -165,9 +165,15 @@ check-rendercv:
 		exit 0
 	fi
 	[[ -f _data/cv.yml ]] || { echo "SKIP: _data/cv.yml not found"; exit 0; }
-	rendercv render _data/cv.yml --dont-generate-png --dont-generate-markdown --dont-generate-html >/dev/null 2>&1 \
-		&& echo "✓ RenderCV build OK" \
-		|| { echo "FAIL: rendercv render failed"; rendercv render _data/cv.yml 2>&1; exit 1; }
+	if rendercv render _data/cv.yml --dont-generate-png --dont-generate-markdown --dont-generate-html >/dev/null 2>&1; then
+		echo "✓ RenderCV build OK"
+	else
+		echo "FAIL: rendercv render failed"
+		rendercv render _data/cv.yml 2>&1
+		exit 1
+	fi
+	# Clean up render artifacts — CI is the source of truth for committed output
+	rm -rf _data/rendercv_output
 
 # ── Local build (requires Ruby + bundle) ─────────────────────────────
 
