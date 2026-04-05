@@ -79,12 +79,12 @@ ninja.data = [{
               window.location.href = "/projects/flepimop2/";
             },},{id: "projects-model-criticism",
           title: 'model-criticism',
-          description: "Observable-based model evaluation with Pareto optimization, proper scoring rules, and Bayesian stacking for simulation studies.",
+          description: "Observable-based model evaluation, Pareto optimization, proper scoring rules, and Bayesian stacking for scientific model criticism.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/model_criticism/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
-          description: "Numerical simulation engine for mechanistic models of biological and epidemiological systems. Supports ODE, PDE, and hybrid operator-splitting solvers with pluggable backends.",
+          description: "Lightweight multiphysics solver core for time-dependent systems. Supports explicit ODE solvers and IMEX/operator-splitting schemes for PDE-like models with pluggable backends.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_engine/";
             },},{id: "projects-op-system",
