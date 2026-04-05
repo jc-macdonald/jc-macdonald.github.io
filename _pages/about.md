@@ -52,13 +52,13 @@ Each of these projects required the same core capabilities: a flexible generativ
 
 #### Where this is going
 
-The research program moves along three axes. First, *generalize*: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes. Second, *harden the inference*: build reusable tools for Bayesian rank selection ([pp-eigentest](https://github.com/jcm-sci/pp-eigentest)), model criticism and evaluation ([model-criticism](https://github.com/jcm-sci/model-criticism)), and missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)) that work across application areas. Third, *enable decisions*: package these methods into open-source software with clear APIs so that collaborators and decision-makers can act on model output they have reason to trust.
+The research program moves along three axes. First, _generalize_: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes. Second, _harden the inference_: build reusable tools for Bayesian rank selection ([pp-eigentest](https://github.com/jcm-sci/pp-eigentest)), model criticism and evaluation ([model-criticism](https://github.com/jcm-sci/model-criticism)), and missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)) that work across application areas. Third, _enable decisions_: package these methods into open-source software with clear APIs so that collaborators and decision-makers can act on model output they have reason to trust.
 
 <div style="margin: 2.5rem 0;">
 {% include figure.liquid loading="eager" path="assets/img/research/future_directions_general.png" class="img-fluid rounded z-depth-1" %}
 </div>
 
-The question that ties it all together: *what should we do, given what we can't observe?*
+The question that ties it all together: _what should we do, given what we can't observe?_
 
 ---
 

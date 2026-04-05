@@ -9,7 +9,7 @@ help:
 # ── Validation (no Ruby needed) ──────────────────────────────────────
 
 # Run all pre-push checks that don't require Ruby
-check: check-yaml check-includes check-assets check-bib check-config check-cv
+check: check-yaml check-includes check-assets check-bib check-config check-cv check-rendercv check-fmt
 
 # Validate YAML frontmatter in all pages and projects
 check-yaml:
@@ -145,6 +145,29 @@ check-cv:
 		err=1
 	fi
 	if [[ $err -eq 0 ]]; then echo "✓ CV schema validation OK"; else exit 1; fi
+
+# Run Prettier check (matches CI prettier.yml workflow)
+check-fmt:
+	#!/usr/bin/env bash
+	set -euo pipefail
+	if ! command -v npx &>/dev/null; then
+		echo "SKIP: npx not found — install Node.js to run Prettier checks"
+		exit 0
+	fi
+	npx prettier . --check && echo "✓ Prettier formatting OK"
+
+# Verify rendercv can render the CV without errors (matches CI render-cv.yml)
+check-rendercv:
+	#!/usr/bin/env bash
+	set -euo pipefail
+	if ! command -v rendercv &>/dev/null; then
+		echo "SKIP: rendercv not found — pip install 'rendercv[full]'"
+		exit 0
+	fi
+	[[ -f _data/cv.yml ]] || { echo "SKIP: _data/cv.yml not found"; exit 0; }
+	rendercv render _data/cv.yml --dont-generate-png --dont-generate-markdown --dont-generate-html >/dev/null 2>&1 \
+		&& echo "✓ RenderCV build OK" \
+		|| { echo "FAIL: rendercv render failed"; rendercv render _data/cv.yml 2>&1; exit 1; }
 
 # ── Local build (requires Ruby + bundle) ─────────────────────────────
 

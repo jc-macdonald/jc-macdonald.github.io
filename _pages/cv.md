@@ -6,7 +6,7 @@ nav: true
 nav_order: 6
 cv_pdf: /assets/pdf/cv.pdf
 cv_format: rendercv
-description: 
+description:
 toc:
   sidebar: left
 ---

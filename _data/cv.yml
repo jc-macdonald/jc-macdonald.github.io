@@ -226,7 +226,7 @@ cv:
       - name: model-criticism
         start_date: 2026
         end_date: present
-        summary: "Observable-based model evaluation framework with proper scoring rules, Pareto optimization, and Bayesian stacking for simulation studies. Connects model worlds, structured observables, and scoring rules into reproducible criticism pipelines that determine whether a model deserves the decisions built on it."
+        summary: "Observable-based model calibration and criticism framework. Uses model worlds with known ground truth to tune inference pipelines—scoring rules, observable weights, and model settings—so that when applied to real data where latent structure is unobserved, the pipeline transfers reliably."
         highlights:
           - "[github.com/jcm-sci/model-criticism](https://github.com/jcm-sci/model-criticism)"
 

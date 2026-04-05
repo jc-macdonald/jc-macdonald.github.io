@@ -36,7 +36,7 @@ Data assimilation and modeling support for ACCIDDA's COVID-19 projections.
 
 ### Hib Vaccination Modeling (Navajo Nation)
 
-Technical supervisor for an age- and immune-status-structured *Haemophilus influenzae* type b (Hib) model evaluating the impact of long-running vaccination programs in the Navajo Nation. Managing PhD students through model implementation, calibration, and policy analysis.
+Technical supervisor for an age- and immune-status-structured _Haemophilus influenzae_ type b (Hib) model evaluating the impact of long-running vaccination programs in the Navajo Nation. Managing PhD students through model implementation, calibration, and policy analysis.
 
 ---
 

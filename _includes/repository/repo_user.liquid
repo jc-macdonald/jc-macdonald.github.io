@@ -1,8 +1,15 @@
 {% comment %} Static GitHub user card — no external service dependency {% endcomment %}
 <div class="repo p-2 text-center">
   <a href="https://github.com/{{ include.username }}" style="text-decoration: none;">
-    <div class="card hoverable" style="border: 1px solid var(--global-divider-color); border-radius: 6px; padding: 16px; display: flex; align-items: center; gap: 12px;">
-      <img src="https://github.com/{{ include.username }}.png?size=48" alt="{{ include.username }}" style="width: 48px; height: 48px; border-radius: 50%;">
+    <div
+      class="card hoverable"
+      style="border: 1px solid var(--global-divider-color); border-radius: 6px; padding: 16px; display: flex; align-items: center; gap: 12px;"
+    >
+      <img
+        src="https://github.com/{{ include.username }}.png?size=48"
+        alt="{{ include.username }}"
+        style="width: 48px; height: 48px; border-radius: 50%;"
+      >
       <span style="font-weight: 600; color: var(--global-theme-color); font-size: 1rem;">{{ include.username }}</span>
     </div>
   </a>

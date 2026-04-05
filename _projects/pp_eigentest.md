@@ -11,6 +11,7 @@ github: https://github.com/jcm-sci/pp-eigentest
 **pp-eigentest** provides a posterior predictive framework for determining the number of significant eigenvalues (signal rank) in covariance and Gram matrices. The method generates posterior predictive null distributions for each ordered eigenvalue and tests whether observed eigenvalues exceed noise expectations.
 
 Supports:
+
 - Ordered hypothesis testing (sequential rejection)
 - Family-wise error rate (FWER) control
 - False discovery rate (FDR) control
