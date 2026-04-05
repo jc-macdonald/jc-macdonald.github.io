@@ -28,7 +28,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Decision-makers across health, environmental, and earth sciences routinely act on models that assume away what they can't observe. My work makes that gap explicit: I build the computational infrastructure — generative models, inference algorithms, forecasting pipelines, and model evaluation tools — that turns partially observed systems into defensible decision support. Prediction alone is not enough; the structural assumptions buried in every model must be exposed, tested, and defended before anyone acts on the output.
+My work determines what actions to take, what experiments to run, and what measurements are worth collecting in systems where interventions are costly and uncertainty is unavoidable. I build the computational machinery — generative models, inference algorithms, forecasting pipelines, and model evaluation tools — that makes this possible for partially observed systems across health, environmental, and earth sciences. Prediction alone is not enough; the structural assumptions buried in every model must be exposed, tested, and defended before anyone acts on the output.
 
 Currently I am a postdoctoral scholar at the [International Vaccine Access Center](https://www.jhsph.edu/ivac/) at Johns Hopkins, where I develop operational infectious disease forecasting and decision support systems for [ACCIDDA](https://accidda.org/), a CDC Center for Forecasting and Outbreak Analytics collaboration. This work delivers real-time scenario projections that inform public health resource allocation and intervention timing. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) at Oregon State University on cross-scale modeling of Crimean–Congo hemorrhagic fever (CCHF) in wildlife and livestock systems, designing surveillance strategies that balance information gain against field cost. Previously I was a [Zuckerman STEM Leadership Fellow](https://zuckerman-scholars.org/) at Tel Aviv University, working with [Yoav Ram](https://www.yoavram.com/) on Bayesian dimensionality reduction for incomplete cultural and genetic datasets.
 
@@ -52,7 +52,7 @@ Each of these projects required the same core capabilities: a flexible generativ
 
 #### Where this is going
 
-The research program moves along three axes. First, _generalize_: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes. Second, _harden the inference_: build reusable tools for Bayesian rank selection ([pp-eigentest](https://github.com/jcm-sci/pp-eigentest)), model criticism and evaluation ([model-criticism](https://github.com/jcm-sci/model-criticism)), and missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)) that work across application areas. Third, _enable decisions_: package these methods into open-source software with clear APIs so that collaborators and decision-makers can act on model output they have reason to trust.
+The research program moves along three axes. First, _enable decisions_: determine what intervention to deploy, what experiment to run, and what to measure next — then package these recommendations into open-source software with clear APIs so that collaborators and decision-makers can act on model output they have reason to trust. Second, _harden the inference_: build reusable tools for Bayesian rank selection ([pp-eigentest](https://github.com/jcm-sci/pp-eigentest)), model criticism and evaluation ([model-criticism](https://github.com/jcm-sci/model-criticism)), and missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)) that work across application areas. Third, _generalize_: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes.
 
 <div style="margin: 2.5rem 0;">
 {% include figure.liquid loading="eager" path="assets/img/research/future_directions_general.png" class="img-fluid rounded z-depth-1" %}
@@ -63,6 +63,8 @@ The question that ties it all together: _what should we do, given what we can't 
 ---
 
 #### Methods & Expertise
+
+These capabilities are deployed to design interventions, optimize surveillance strategies, and determine what experiments and measurements are worth their cost.
 
 **Modeling.** Generative models (ODE/PDE/stochastic/hybrid); compartmental and agent-based models; scientific AI/ML (physics-embedded surrogates, lawful learning); multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems.
 

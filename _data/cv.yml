@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist developing methods, scientific AI/ML, and research software for partially observed systems across earth, environmental, and health sciences. My work integrates generative modeling (mechanistic, statistical, and hybrid), Bayesian inference, uncertainty quantification, and scientific computing to build defensible inference under structural incompleteness — where the full system state is never directly observed and prediction alone is not enough. Current application areas include infectious disease dynamics and forecasting, host--pathogen and comparative health systems, marine and terrestrial ecology, environmental hazards, and computational tools for decision support."
+      - "Computational scientist whose work determines what actions to take, what experiments to run, and what measurements are worth collecting in systems where interventions are costly and uncertainty is unavoidable. I develop methods, scientific AI/ML, and research software for partially observed systems across earth, environmental, and health sciences — integrating generative modeling (mechanistic, statistical, and hybrid), Bayesian inference, uncertainty quantification, and scientific computing to build defensible decision support. Current application areas include infectious disease forecasting and intervention timing, surveillance design, marine and terrestrial ecology, and cultural transmission dynamics."
 
     Education:
       - institution: University of Louisiana at Lafayette
@@ -170,7 +170,7 @@ cv:
       - name: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
         start_date: 2025
         end_date: 2028
-        summary: "Quiescence to emergence: nairovirus diversity loss and disease transmission. Collaborator (40% FTE). Research role: mathematical model parameterization, data analysis, and advising on mathematical and statistical methods."
+        summary: "Quiescence to emergence: nairovirus diversity loss and disease transmission. US PIs: Brianna Beechler, Anna Jolles, Cameron Browne, and Hayriye Gulbudak. Collaborator (40% FTE). Research role: mathematical model parameterization, data analysis, and advising on mathematical and statistical methods."
 
       - name: "USDA-ARS Cooperative Agreement (3022-32000-021-018-S)"
         start_date: 2025
@@ -234,7 +234,7 @@ cv:
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Numerical simulation engine for mechanistic models of biological and epidemiological systems. Supports ODE, PDE, and hybrid operator-splitting solvers with pluggable backends."
+        summary: "ACCIDDA. Lightweight multiphysics solver core for time-dependent systems. Supports explicit ODE solvers and IMEX/operator-splitting schemes for PDE-like models with pluggable backends. Framework-agnostic; separates state management from stepping logic."
         highlights:
           - "[github.com/ACCIDDA/op_engine](https://github.com/ACCIDDA/op_engine)"
 

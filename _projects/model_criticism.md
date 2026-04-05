@@ -1,14 +1,14 @@
 ---
 layout: page
 title: model-criticism
-description: Observable-based model evaluation with Pareto optimization, proper scoring rules, and Bayesian stacking for simulation studies.
+description: Observable-based model evaluation, Pareto optimization, proper scoring rules, and Bayesian stacking for scientific model criticism.
 img: assets/img/research/structural_fidelity_comparison.png
 importance: 2
 category: "lead developer · in development"
 github: https://github.com/jcm-sci/model-criticism
 ---
 
-**model-criticism** is a Python framework for structured model evaluation in simulation studies. It connects model worlds, observables, and scoring rules into reproducible criticism pipelines with multi-objective optimization and Bayesian model combination.
+**model-criticism** is a Python framework for structured model evaluation in scientific simulation studies. It uses model worlds with known ground truth to tune inference pipelines—scoring rules, observable weights, and model settings—so that when applied to real data where latent structure is unobserved, the pipeline transfers reliably. Evaluation is organized into hierarchical phases (discovery → refinement → benchmark).
 
 Core capabilities:
 
