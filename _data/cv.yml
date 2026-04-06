@@ -87,6 +87,8 @@ cv:
         journal: Evolutionary Human Sciences
         doi: 10.1017/ehs.2024.45
         date: 2024
+        highlights:
+          - "Software: [VBPCApy](https://github.com/yoavram-lab/VBPCApy), [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
 
       - title: "Forward hysteresis and Hopf bifurcation in an NPZD model with application to harmful algal blooms"
         authors:
@@ -136,6 +138,8 @@ cv:
           - Y. Ram
         doi: 10.48550/arXiv.2409.12129
         date: 2024
+        highlights:
+          - "Software: [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest), [VBPCApy](https://github.com/yoavram-lab/VBPCApy)"
 
     Manuscripts in Preparation:
       - title: "Convergence characterization of coordinate-ascent variational inference for Bayesian PCA"
@@ -144,6 +148,8 @@ cv:
           - Y. Ram
         journal: "In preparation"
         date: 2026
+        highlights:
+          - "Software: [VBPCApy](https://github.com/yoavram-lab/VBPCApy)"
 
       - title: "Posterior predictive eigenvalue testing for spectral dimensionality selection"
         authors:
@@ -152,6 +158,8 @@ cv:
           - Y. Ram
         journal: "In preparation for Bioinformatics or PLOS Computational Biology"
         date: 2026
+        highlights:
+          - "Software: [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
 
       - title: "Lawful learning: a scientific machine learning approach to dynamical systems inference"
         authors:
