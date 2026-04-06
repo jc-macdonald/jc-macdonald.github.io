@@ -69,14 +69,14 @@ The question that ties it all together: _what should we do, given what we can't 
 
 #### Software
 
-| Tool | Domain | Status |
-|------|--------|--------|
-| [vbpca-py](https://github.com/yoavram-lab/VBPCApy) | Cultural evolution, genomics, surveys | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation |
-| [op_engine](https://github.com/ACCIDDA/op_engine) | Infectious disease, ecology | In production for CDC flu forecasting · [docs](https://accidda.github.io/op_engine/) |
-| [op_system](https://github.com/ACCIDDA/op_system) | Infectious disease, ecology | Active development · [docs](https://accidda.github.io/op_system/) |
-| [flepimop2](https://github.com/ACCIDDA/flepimop2) | Infectious disease | Active development · CDC scenario modeling |
-| [model-criticism](https://github.com/jcm-sci/model-criticism) | Cross-domain | Active development (Python + [Julia](https://github.com/jcm-sci/ModelCriticism.jl)) |
-| [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest) | Cross-domain | Pre-release · companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129) |
+| Tool                                                          | Domain                                | Status                                                                                  |
+| ------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------- |
+| [vbpca-py](https://github.com/yoavram-lab/VBPCApy)            | Cultural evolution, genomics, surveys | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation |
+| [op_engine](https://github.com/ACCIDDA/op_engine)             | Infectious disease, ecology           | In production for CDC flu forecasting · [docs](https://accidda.github.io/op_engine/)    |
+| [op_system](https://github.com/ACCIDDA/op_system)             | Infectious disease, ecology           | Active development · [docs](https://accidda.github.io/op_system/)                       |
+| [flepimop2](https://github.com/ACCIDDA/flepimop2)             | Infectious disease                    | Active development · CDC scenario modeling                                              |
+| [model-criticism](https://github.com/jcm-sci/model-criticism) | Cross-domain                          | Active development (Python + [Julia](https://github.com/jcm-sci/ModelCriticism.jl))     |
+| [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)   | Cross-domain                          | Pre-release · companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)         |
 
 ---
 
