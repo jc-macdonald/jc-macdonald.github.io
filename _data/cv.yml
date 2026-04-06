@@ -138,6 +138,21 @@ cv:
         date: 2024
 
     Manuscripts in Preparation:
+      - title: "Convergence characterization of coordinate-ascent variational inference for Bayesian PCA"
+        authors:
+          - "***J.C. Macdonald***"
+          - Y. Ram
+        journal: "In preparation"
+        date: 2026
+
+      - title: "Posterior predictive eigenvalue testing for spectral dimensionality selection"
+        authors:
+          - "***J.C. Macdonald***"
+          - S. Naim
+          - Y. Ram
+        journal: "In preparation for Bioinformatics or PLOS Computational Biology"
+        date: 2026
+
       - title: "Lawful learning: a scientific machine learning approach to dynamical systems inference"
         authors:
           - "***J.C. Macdonald***"
@@ -430,7 +445,7 @@ cv:
 
     Computational Expertise:
       - label: Modeling
-        details: "Generative models (ODE/PDE/stochastic/hybrid); compartmental and agent-based models; scientific AI/ML (physics-embedded surrogates, lawful learning); multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
+        details: "Generative models (ODE/PDE/stochastic/hybrid); compartmental and agent-based models; scientific AI/ML (physics-embedded surrogates); multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
 
       - label: Inference
         details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"
