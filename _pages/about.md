@@ -28,9 +28,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-My work determines what actions to take, what experiments to run, and what measurements are worth collecting in systems where interventions are costly and uncertainty is unavoidable. I build the computational machinery — generative models, inference algorithms, forecasting pipelines, and model evaluation tools — that makes this possible for partially observed systems across health, environmental, and earth sciences; concretely, these tools have informed CDC influenza vaccination policy, wildlife disease surveillance in sub-Saharan Africa, and real-time public health resource allocation. Prediction alone is not enough; the structural assumptions buried in every model must be exposed, tested, and defended before anyone acts on the output.
+My work determines what actions to take, what experiments to run, and what measurements are worth collecting in systems where interventions are costly and uncertainty is unavoidable. I build the computational machinery — generative models, inference algorithms, forecasting pipelines, and model evaluation tools — that makes this possible for partially observed systems across health, environmental, and earth sciences; concretely, the infectious disease tools are developed for CDC-funded scenario modeling that contributes to the process used to set influenza vaccination policy, while other tools support wildlife disease surveillance design in sub-Saharan Africa and public health resource allocation. Prediction alone is not enough; the structural assumptions buried in every model must be exposed, tested, and defended before anyone acts on the output.
 
-Currently I am a postdoctoral scholar at the [International Vaccine Access Center](https://www.jhsph.edu/ivac/) at Johns Hopkins, where I develop operational infectious disease forecasting and decision support systems for [ACCIDDA](https://accidda.org/), a CDC Center for Forecasting and Outbreak Analytics collaboration. This work delivers real-time scenario projections that inform public health resource allocation and intervention timing. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) at Oregon State University on cross-scale modeling of Crimean–Congo hemorrhagic fever (CCHF) in wildlife and livestock systems, designing surveillance strategies that balance information gain against field cost. Previously I was a [Zuckerman STEM Leadership Fellow](https://zuckerman-scholars.org/) at Tel Aviv University, working with [Yoav Ram](https://www.yoavram.com/) on Bayesian dimensionality reduction for incomplete cultural and genetic datasets.
+Currently I am a postdoctoral scholar at the [International Vaccine Access Center](https://www.jhsph.edu/ivac/) at Johns Hopkins, where I develop operational infectious disease forecasting and decision support systems for [ACCIDDA](https://accidda.org/), a CDC Center for Forecasting and Outbreak Analytics collaboration. This work contributes scenario projections to the CDC Flu Scenario Modeling Hub, which supports public health resource allocation and intervention timing. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) at Oregon State University on cross-scale modeling of Crimean–Congo hemorrhagic fever (CCHF) in wildlife and livestock systems, designing surveillance strategies that balance information gain against field cost. Previously I was a [Zuckerman STEM Leadership Fellow](https://zuckerman-scholars.org/) at Tel Aviv University, working with [Yoav Ram](https://www.yoavram.com/) on Bayesian dimensionality reduction for incomplete cultural and genetic datasets.
 
 I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a BA in Archaeology from UNC Greensboro — a combination that continues to shape how I think about inference from incomplete records.
 
@@ -48,7 +48,7 @@ This is not just a conceptual analogy. The mathematical structure is shared: eac
 
 The operational tools I build reflect this shared structure:
 
-- **Epidemiology.** The [flepimop2](https://github.com/ACCIDDA/flepimop2) pipeline connects mechanistic transmission models to CDC scenario modeling hubs, where scenario projections directly inform resource allocation and intervention timing.
+- **Epidemiology.** The [flepimop2](https://github.com/ACCIDDA/flepimop2) pipeline connects mechanistic transmission models to CDC scenario modeling hubs, contributing scenario projections that feed into the process used to set vaccination policy.
 - **Wildlife disease ecology.** The same modeling framework supports surveillance design for CCHF — optimizing where and when to sample animals so that each observation maximally reduces uncertainty about cross-species transmission.
 - **Marine ecology.** Structured population models recover ecological geometry from sparse trawl surveys and satellite data.
 - **Cultural evolution.** Variational Bayesian PCA recovers latent population structure from incomplete ethnographic and genomic datasets.
@@ -69,14 +69,14 @@ The question that ties it all together: _what should we do, given what we can't 
 
 #### Software
 
-| Tool                                                          | Domain                                | Status                                                                                  |
-| ------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------- |
-| [vbpca-py](https://github.com/yoavram-lab/VBPCApy)            | Cultural evolution, genomics, surveys | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation |
-| [op_engine](https://github.com/ACCIDDA/op_engine)             | Infectious disease, ecology           | In production for CDC flu forecasting · [docs](https://accidda.github.io/op_engine/)    |
-| [op_system](https://github.com/ACCIDDA/op_system)             | Infectious disease, ecology           | Active development · [docs](https://accidda.github.io/op_system/)                       |
-| [flepimop2](https://github.com/ACCIDDA/flepimop2)             | Infectious disease                    | Active development · CDC scenario modeling                                              |
-| [model-criticism](https://github.com/jcm-sci/model-criticism) | Cross-domain                          | Active development (Python + [Julia](https://github.com/jcm-sci/ModelCriticism.jl))     |
-| [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)   | Cross-domain                          | Pre-release · companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)         |
+| Tool                                                          | Domain                                | Status                                                                                        |
+| ------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [vbpca-py](https://github.com/yoavram-lab/VBPCApy)            | Cultural evolution, genomics, surveys | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation       |
+| [op_engine](https://github.com/ACCIDDA/op_engine)             | Infectious disease, ecology           | Developed for CDC-funded flu scenario modeling · [docs](https://accidda.github.io/op_engine/) |
+| [op_system](https://github.com/ACCIDDA/op_system)             | Infectious disease, ecology           | Active development · [docs](https://accidda.github.io/op_system/)                             |
+| [flepimop2](https://github.com/ACCIDDA/flepimop2)             | Infectious disease                    | Active development · CDC scenario modeling                                                    |
+| [model-criticism](https://github.com/jcm-sci/model-criticism) | Cross-domain                          | Active development (Python + [Julia](https://github.com/jcm-sci/ModelCriticism.jl))           |
+| [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)   | Cross-domain                          | Pre-release · companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)               |
 
 ---
 
