@@ -46,7 +46,12 @@ Every system I work on shares the same architecture: a latent process we care ab
 
 This is not just a conceptual analogy. The mathematical structure is shared: each domain requires a generative model that encodes how hidden states produce observables, an inference engine that inverts the observation process under uncertainty, and a decision layer that translates posterior beliefs into actionable recommendations. Building this infrastructure so that it transfers across domains — rather than rebuilding it from scratch for each application — is the central goal of my research program.
 
-The operational tools I build reflect this shared structure. In epidemiology, the [flepimop2](https://github.com/ACCIDDA/flepimop2) pipeline connects mechanistic transmission models to CDC scenario modeling hubs, where scenario projections directly inform resource allocation and intervention timing. In wildlife disease ecology, the same modeling framework supports surveillance design for CCHF — optimizing where and when to sample animals so that each observation maximally reduces uncertainty about cross-species transmission. In marine ecology, structured population models recover ecological geometry from sparse trawl surveys and satellite data. And in cultural evolution, variational Bayesian PCA recovers latent population structure from incomplete ethnographic and genomic datasets.
+The operational tools I build reflect this shared structure:
+
+- **Epidemiology.** The [flepimop2](https://github.com/ACCIDDA/flepimop2) pipeline connects mechanistic transmission models to CDC scenario modeling hubs, where scenario projections directly inform resource allocation and intervention timing.
+- **Wildlife disease ecology.** The same modeling framework supports surveillance design for CCHF — optimizing where and when to sample animals so that each observation maximally reduces uncertainty about cross-species transmission.
+- **Marine ecology.** Structured population models recover ecological geometry from sparse trawl surveys and satellite data.
+- **Cultural evolution.** Variational Bayesian PCA recovers latent population structure from incomplete ethnographic and genomic datasets.
 
 Each of these projects required the same core capabilities: a flexible generative model, a principled inference backend, and a way to evaluate whether the model's structural assumptions actually hold. That last piece — model criticism — is what closes the loop. A forecast is only as trustworthy as the assumptions it rests on, and those assumptions need formal testing before anyone acts on the output.
 
