@@ -42,4 +42,4 @@ Technical supervisor for an age- and immune-status-structured _Haemophilus influ
 
 ## Infrastructure
 
-This operational work runs on [FlepiMoP2](/projects/flepimop2/) and the [OP Engine](/projects/op_engine/) / [OP System](/projects/op_system/) stack, with model specifications compiled from YAML into callable numerics and campaign orchestration handling batch scenario runs across locations and parameter sets.
+This operational work directly informs the development of [FlepiMoP2](/projects/flepimop2/), [OP Engine](/projects/op_engine/), and [OP System](/projects/op_system/), which will serve as the modeling stack for the 2026/27 flu round, the COVID-19 round, and the RSV round. Model specifications are compiled from YAML into callable numerics, and campaign orchestration handles batch scenario runs across locations and parameter sets.
