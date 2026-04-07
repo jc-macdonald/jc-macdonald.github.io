@@ -161,13 +161,13 @@ cv:
         highlights:
           - "Software: [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
 
-      - title: "Lawful learning: a scientific machine learning approach to dynamical systems inference"
+      - title: "Lawful Learning: Embedding Physical Laws into Surrogate Representations for Robust Extrapolation"
         authors:
           - "***J.C. Macdonald***"
         journal: "In preparation for Proceedings of the Royal Society A"
         date: 2026
 
-      - title: "Structured observables: a physics-based approach to dynamical systems inference"
+      - title: "Structured Observables for Generator-Level Comparison of Dynamical Systems Models"
         authors:
           - "***J.C. Macdonald***"
         journal: "In preparation for SIAM Journal on Applied Dynamical Systems"
