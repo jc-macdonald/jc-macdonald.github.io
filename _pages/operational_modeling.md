@@ -42,4 +42,4 @@ Technical supervisor for an age- and immune-status-structured _Haemophilus influ
 
 ## Infrastructure
 
-This operational work runs on [FlepiMoP2](/software/flepimop2/) and the [OP Engine](/software/op_engine/) / [OP System](/software/op_system/) stack, with model specifications compiled from YAML into callable numerics and campaign orchestration handling batch scenario runs across locations and parameter sets.
+This operational work runs on [FlepiMoP2](/projects/flepimop2/) and the [OP Engine](/projects/op_engine/) / [OP System](/projects/op_system/) stack, with model specifications compiled from YAML into callable numerics and campaign orchestration handling batch scenario runs across locations and parameter sets.
