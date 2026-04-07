@@ -20,6 +20,6 @@ repo_descriptions:
   jcm-sci/pp-eigentest: "Posterior predictive eigenvalue testing for signal rank determination."
   jcm-sci/model-criticism: "Observable-based model evaluation with proper scoring rules and Pareto optimization."
   jcm-sci/ModelCriticism.jl: "Julia model evaluation harness wrapping Metaheuristics.jl, ParetoSmooth.jl, QuasiMonteCarlo.jl, GlobalSensitivity.jl."
-  ACCIDDA/op_engine: "Operator-partitioned numerical simulation engine for multi-physics dynamical systems."
+  ACCIDDA/op_engine: "Operator-partitioned solver composing heterogeneous subsystem solvers (ODE, PDE, stochastic, hybrid) into a single time-stepping pipeline."
   ACCIDDA/op_system: "Declarative YAML-to-numerics compiler for structured dynamical systems."
   ACCIDDA/flepimop2: "Modular simulation campaign orchestrator for infectious disease modeling."

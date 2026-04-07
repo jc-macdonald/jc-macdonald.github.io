@@ -257,7 +257,7 @@ cv:
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Lightweight multiphysics solver core for time-dependent systems. Supports explicit ODE solvers and IMEX/operator-splitting schemes for PDE-like models with pluggable backends. Framework-agnostic; separates state management from stepping logic."
+        summary: "ACCIDDA. Operator-partitioned solver for composing heterogeneous subsystem solvers (ODE, PDE, stochastic, hybrid) into a single time-stepping pipeline. Framework-agnostic; separates state management from stepping logic via pluggable backends."
         highlights:
           - "[github.com/ACCIDDA/op_engine](https://github.com/ACCIDDA/op_engine)"
 
