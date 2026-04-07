@@ -84,7 +84,7 @@ ninja.data = [{
               window.location.href = "/projects/model_criticism/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
-          description: "Lightweight multiphysics solver core for time-dependent systems. Supports explicit ODE solvers and IMEX/operator-splitting schemes for PDE-like models with pluggable backends.",
+          description: "Operator-partitioned solver for composing heterogeneous subsystem solvers (ODE, PDE, stochastic, hybrid) into a single time-stepping pipeline with pluggable backends.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_engine/";
             },},{id: "projects-op-system",
