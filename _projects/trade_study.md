@@ -1,7 +1,7 @@
 ---
 layout: page
 title: trade-study
-description: Multi-objective trade-study orchestration with Pareto optimization, proper scoring rules, and Bayesian stacking for scientific model criticism.
+description: Multi-objective trade-study orchestration with Pareto optimization, proper scoring rules, and Bayesian stacking for systematic model evaluation and design-space exploration.
 img: assets/img/research/structural_fidelity_comparison.png
 importance: 2
 category: "lead developer · in development"

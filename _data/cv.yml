@@ -253,7 +253,7 @@ cv:
       - name: "Trade Study (Python + Julia)"
         start_date: 2026
         end_date: present
-        summary: "Observable-based model calibration and criticism framework. Uses model worlds with known ground truth to tune inference pipelines—scoring rules, observable weights, and model settings—so that when applied to real data where latent structure is unobserved, the pipeline transfers reliably. Python implementation wraps scoringrules, pymoo, arviz, SALib, and optuna. Julia implementation wraps Metaheuristics.jl, ParetoSmooth.jl, QuasiMonteCarlo.jl, and GlobalSensitivity.jl with native scoring rules."
+        summary: "Multi-objective trade-study framework for systematic model evaluation and design-space exploration. Uses model worlds with known ground truth to score, rank, and select among competing model configurations—tuning inference pipelines, observable weights, and design parameters—so that when applied to real data where latent structure is unobserved, the pipeline transfers reliably. Python implementation wraps scoringrules, pymoo, arviz, SALib, and optuna. Julia implementation wraps Metaheuristics.jl, ParetoSmooth.jl, QuasiMonteCarlo.jl, and GlobalSensitivity.jl with native scoring rules."
         highlights:
           - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study) (Python)"
           - "[github.com/jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl) (Julia)"
