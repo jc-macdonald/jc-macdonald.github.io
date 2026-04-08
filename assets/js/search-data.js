@@ -94,7 +94,7 @@ ninja.data = [{
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",
           title: 'trade-study',
-          description: "Multi-objective trade-study orchestration with Pareto optimization, proper scoring rules, and Bayesian stacking for scientific model criticism.",
+          description: "Multi-objective trade-study orchestration with Pareto optimization, proper scoring rules, and Bayesian stacking for systematic model evaluation and design-space exploration.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/trade_study/";
             },},{id: "projects-vbpca-py",
