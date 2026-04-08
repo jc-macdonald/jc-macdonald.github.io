@@ -77,11 +77,6 @@ ninja.data = [{
           description: "Modular epidemic modeling and simulation pipeline for forecasting and scenario analysis. Core contributor to the redesign of ACCIDDA&#39;s operational infrastructure.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/flepimop2/";
-            },},{id: "projects-model-criticism",
-          title: 'model-criticism',
-          description: "Observable-based model evaluation, Pareto optimization, proper scoring rules, and Bayesian stacking for scientific model criticism.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/model_criticism/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
           description: "Operator-partitioned solver for composing heterogeneous subsystem solvers (ODE, PDE, stochastic, hybrid) into a single time-stepping pipeline with pluggable backends.",
@@ -97,6 +92,11 @@ ninja.data = [{
           description: "Posterior predictive eigenvalue testing for determining signal rank in covariance and Gram matrices. Supports ordered hypothesis testing with FWER and FDR control.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pp_eigentest/";
+            },},{id: "projects-trade-study",
+          title: 'trade-study',
+          description: "Multi-objective trade-study orchestration with Pareto optimization, proper scoring rules, and Bayesian stacking for scientific model criticism.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/trade_study/";
             },},{id: "projects-vbpca-py",
           title: 'vbpca-py',
           description: "Variational Bayesian PCA for incomplete data with native missing-data handling, uncertainty quantification, and C++-accelerated kernels. scikit-learn compatible.",
