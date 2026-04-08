@@ -193,7 +193,7 @@ cv:
       - name: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
         start_date: 2025
         end_date: 2028
-        summary: "Quiescence to emergence: nairovirus diversity loss and disease transmission. US PIs: Brianna Beechler, Anna Jolles, Cameron Browne, and Hayriye Gulbudak. Collaborator (40% FTE). Research role: mathematical model parameterization, data analysis, and advising on mathematical and statistical methods."
+        summary: "Quiescence to emergence: Does nairovirus diversity loss increase disease transmission, severity and the risk of emergence? US PIs: Brianna Beechler, Anna Jolles, Cameron Browne, and Hayriye Gulbudak; linked UKRI award BB/Z516934/1 with Emma Thomson, Teresa Lambe, Roman Biek, and Georgina Limon-Vega. Collaborator (40% FTE). Research role: mathematical model parameterization, data analysis, and advising on mathematical and statistical methods."
 
       - name: "USDA-ARS Cooperative Agreement (3022-32000-021-018-S)"
         start_date: 2025
@@ -203,12 +203,12 @@ cv:
       - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
         start_date: 2023
         end_date: present
-        summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Postdoctoral Scholar (60% FTE). Insight Net center for infectious disease forecasting and outbreak analytics. Research role: operational modeling, forecasting pipeline development, and computational infrastructure."
+        summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Directors: Justin Lessler, Kimberly Powers, and Shaun Truelove. Postdoctoral Scholar (60% FTE). Insight Net center for infectious disease forecasting and outbreak analytics. Research role: operational modeling, forecasting pipeline development, and computational infrastructure."
 
       - name: "NSF EEID / UKRI UK--US Collaboration Grant ($4.05M / 5 years)"
         start_date: 2022
         end_date: 2027
-        summary: "Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. Senior Personnel (from 2024). Research role: mathematical model development and parameterization of within-host viral and immune dynamics."
+        summary: "Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. PIs: Brianna Beechler, Roman Biek, Hayriye Gulbudak, Erin Gorsich, Simon Gubbins, Anna Jolles, and Jan Medlock. Senior Personnel (from 2024). Research role: mathematical model development and parameterization of within-host viral and immune dynamics."
 
       - name: "Zuckerman Postdoctoral Scholarship ($120K total)"
         start_date: 2022
@@ -225,11 +225,15 @@ cv:
         start_date: 2025
         end_date: 2025
         summary: "ACCIDDA. Support. Data cleaning and assimilation in support of ACCIDDA's health heterogeneities COVID-19 round."
+        highlights:
+          - "[github.com/midas-network/covid19-scenario-modeling-hub](https://github.com/midas-network/covid19-scenario-modeling-hub)"
 
       - name: Flu Scenario Modeling Hub
         start_date: 2024
         end_date: present
         summary: "ACCIDDA. Lead Model Developer across the 2024/25, 2025/26, and 2026/27 seasons. Set up the ACCIDDA flu model and operational pipeline (2024/25). Extensive work with external modeling packages drove contributions that led to FlepiMoP2 (2025/26). Supervising an undergraduate student in a scientific overhaul of the flu model for the 2026/27 round."
+        highlights:
+          - "[github.com/midas-network/flu-scenario-modeling-hub](https://github.com/midas-network/flu-scenario-modeling-hub)"
 
     "Research Software -- Lead Developer":
       - name: "OP System (Operator-Partitioned System)"
@@ -246,13 +250,13 @@ cv:
         highlights:
           - "[github.com/yoavram-lab/pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
 
-      - name: "Model Criticism (Python + Julia)"
+      - name: "Trade Study (Python + Julia)"
         start_date: 2026
         end_date: present
         summary: "Observable-based model calibration and criticism framework. Uses model worlds with known ground truth to tune inference pipelines—scoring rules, observable weights, and model settings—so that when applied to real data where latent structure is unobserved, the pipeline transfers reliably. Python implementation wraps scoringrules, pymoo, arviz, SALib, and optuna. Julia implementation wraps Metaheuristics.jl, ParetoSmooth.jl, QuasiMonteCarlo.jl, and GlobalSensitivity.jl with native scoring rules."
         highlights:
-          - "[github.com/jcm-sci/model-criticism](https://github.com/jcm-sci/model-criticism) (Python)"
-          - "[github.com/jcm-sci/ModelCriticism.jl](https://github.com/jcm-sci/ModelCriticism.jl) (Julia)"
+          - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study) (Python)"
+          - "[github.com/jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl) (Julia)"
 
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
@@ -267,12 +271,15 @@ cv:
         summary: "Variational Bayesian PCA for incomplete data with native missing-data handling, uncertainty quantification, and C++-accelerated kernels; compatible with scikit-learn."
         highlights:
           - "[pypi.org/project/vbpca-py/](https://pypi.org/project/vbpca-py/)"
+          - "[doi:10.5281/zenodo.19389250](https://doi.org/10.5281/zenodo.19389250)"
 
     "Research Software -- Collaborative Infrastructure":
       - name: "FlepiMoP2 (Flexible Epidemic Modeling Pipeline 2)"
         start_date: 2025
         end_date: present
         summary: "ACCIDDA. Contributor to the redesign of a modular epidemic modeling and simulation pipeline for forecasting and scenario analysis."
+        highlights:
+          - "[Documentation](https://accidda.github.io/flepimop2/latest/)"
 
       - name: TabularEpi
         start_date: 2025

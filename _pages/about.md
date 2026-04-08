@@ -57,7 +57,7 @@ Each of these projects required the same core capabilities: a flexible generativ
 
 #### Where this is going
 
-The research program moves along three axes. First, _enable decisions_: determine what intervention to deploy, what experiment to run, and what to measure next — then package these recommendations into open-source software with clear APIs so that collaborators and decision-makers can act on model output they have reason to trust. Second, _harden the inference_: build reusable tools for Bayesian rank selection ([pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)), model criticism and evaluation ([model-criticism](https://github.com/jcm-sci/model-criticism)), and missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)) that work across application areas. Third, _generalize_: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes.
+The research program moves along three axes. First, _enable decisions_: determine what intervention to deploy, what experiment to run, and what to measure next — then package these recommendations into open-source software with clear APIs so that collaborators and decision-makers can act on model output they have reason to trust. Second, _harden the inference_: build reusable tools for Bayesian rank selection ([pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)), model criticism and evaluation ([trade-study](https://github.com/jcm-sci/trade-study)), and missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)) that work across application areas. Third, _generalize_: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes.
 
 <div style="margin: 2.5rem 0;">
 {% include figure.liquid loading="eager" path="assets/img/research/future_directions_general.png" class="img-fluid rounded z-depth-1" %}
@@ -69,14 +69,14 @@ The question that ties it all together: _what should we do, given what we can't 
 
 #### Software
 
-| Tool                                                          | Domain                                | Status                                                                                        |
-| ------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [vbpca-py](https://github.com/yoavram-lab/VBPCApy)            | Cultural evolution, genomics, surveys | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation       |
-| [op_engine](https://github.com/ACCIDDA/op_engine)             | Infectious disease, ecology           | Developed for CDC-funded flu scenario modeling · [docs](https://accidda.github.io/op_engine/) |
-| [op_system](https://github.com/ACCIDDA/op_system)             | Infectious disease, ecology           | Active development · [docs](https://accidda.github.io/op_system/)                             |
-| [flepimop2](https://github.com/ACCIDDA/flepimop2)             | Infectious disease                    | Active development · CDC scenario modeling                                                    |
-| [model-criticism](https://github.com/jcm-sci/model-criticism) | Cross-domain                          | Active development (Python + [Julia](https://github.com/jcm-sci/ModelCriticism.jl))           |
-| [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)   | Cross-domain                          | Pre-release · companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)               |
+| Tool                                                        | Domain                                | Status                                                                                        |
+| ----------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [vbpca-py](https://github.com/yoavram-lab/VBPCApy)          | Cultural evolution, genomics, surveys | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation       |
+| [op_engine](https://github.com/ACCIDDA/op_engine)           | Infectious disease, ecology           | Developed for CDC-funded flu scenario modeling · [docs](https://accidda.github.io/op_engine/) |
+| [op_system](https://github.com/ACCIDDA/op_system)           | Infectious disease, ecology           | Active development · [docs](https://accidda.github.io/op_system/)                             |
+| [flepimop2](https://github.com/ACCIDDA/flepimop2)           | Infectious disease                    | Active development · CDC scenario modeling                                                    |
+| [trade-study](https://github.com/jcm-sci/trade-study)       | Cross-domain                          | Active development (Python + [Julia](https://github.com/jcm-sci/TradeStudy.jl))               |
+| [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest) | Cross-domain                          | Pre-release · companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)               |
 
 ---
 

@@ -9,8 +9,8 @@ repo_description_lines_max: 2
 github_repos:
   - yoavram-lab/VBPCApy
   - jcm-sci/pp-eigentest
-  - jcm-sci/model-criticism
-  - jcm-sci/ModelCriticism.jl
+  - jcm-sci/trade-study
+  - jcm-sci/TradeStudy.jl
   - ACCIDDA/op_engine
   - ACCIDDA/op_system
   - ACCIDDA/flepimop2
@@ -18,8 +18,8 @@ github_repos:
 repo_descriptions:
   yoavram-lab/VBPCApy: "Variational Bayesian PCA with native missing-data handling and C++-accelerated kernels."
   jcm-sci/pp-eigentest: "Posterior predictive eigenvalue testing for signal rank determination."
-  jcm-sci/model-criticism: "Observable-based model evaluation with proper scoring rules and Pareto optimization."
-  jcm-sci/ModelCriticism.jl: "Julia model evaluation harness wrapping Metaheuristics.jl, ParetoSmooth.jl, QuasiMonteCarlo.jl, GlobalSensitivity.jl."
+  jcm-sci/trade-study: "Multi-objective trade-study orchestration with proper scoring rules and Pareto optimization."
+  jcm-sci/TradeStudy.jl: "Julia trade-study harness wrapping Metaheuristics.jl, ParetoSmooth.jl, QuasiMonteCarlo.jl, GlobalSensitivity.jl."
   ACCIDDA/op_engine: "Operator-partitioned solver composing heterogeneous subsystem solvers (ODE, PDE, stochastic, hybrid) into a single time-stepping pipeline."
   ACCIDDA/op_system: "Declarative YAML-to-numerics compiler for structured dynamical systems."
   ACCIDDA/flepimop2: "Modular simulation campaign orchestrator for infectious disease modeling."
