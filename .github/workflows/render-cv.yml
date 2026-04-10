@@ -44,6 +44,16 @@ jobs:
           fi
           rendercv render $cv_file --settings $settings
           rm assets/rendercv/rendercv_output/*.typ
+      - name: Copy PDF to download path
+        run: |
+          rendered_pdf=$(find assets/rendercv/rendercv_output -maxdepth 1 -name "*.pdf" ! -name "Albert_Einstein*" | head -1)
+          if [ -n "$rendered_pdf" ]; then
+            cp "$rendered_pdf" assets/pdf/cv.pdf
+            echo "Copied $rendered_pdf → assets/pdf/cv.pdf"
+          else
+            echo "No rendered PDF found to copy"
+            exit 1
+          fi
       - name: Upload rendercv_output as an artifact
         uses: actions/upload-artifact@v4
         with:

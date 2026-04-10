@@ -13,3 +13,5 @@ _scripts/*
 _data/citations.yml
 # Upstream al-folio layout with Liquid-generated HTML that confuses Prettier's parser
 _layouts/cv.liquid
+# CUSTOMIZE.md TOC is managed by the update-tocs workflow; Prettier conflicts with it
+CUSTOMIZE.md
