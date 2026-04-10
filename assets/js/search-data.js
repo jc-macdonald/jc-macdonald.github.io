@@ -100,7 +100,7 @@ ninja.data = [{
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",
           title: 'trade-study',
-          description: "Model evaluation and decision-support framework. Protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.",
+          description: "Design and evaluation framework for scientific simulation studies. Score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against known ground truth via protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/trade_study/";
             },},{id: "projects-vbpca-py",
