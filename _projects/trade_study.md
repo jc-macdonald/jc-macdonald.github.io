@@ -1,14 +1,14 @@
 ---
 layout: page
 title: trade-study
-description: Model evaluation and decision-support framework. Protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.
+description: Design and evaluation framework for scientific simulation studies. Score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against known ground truth via protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.
 img: assets/img/research/structural_fidelity_comparison.png
 importance: 2
 category: "lead developer · in development"
 github: https://github.com/jcm-sci/trade-study
 ---
 
-**trade-study** is a model evaluation and decision-support framework for scientific simulation studies. Users define **simulators** — protocol-conformant objects that generate `(truth, observations)` pairs from a configuration — then evaluate competing models, configurations, and inference pipelines against known ground truth, so that pipelines validated on synthetic benchmarks transfer reliably to real observational data.
+**trade-study** is a design and evaluation framework for scientific simulation studies. Users define **simulators** — protocol-conformant objects that generate `(truth, observations)` pairs from a configuration — then score competing configurations (model formulations, solver choices, measurement strategies, or any design decision) against known ground truth, so that decisions validated on synthetic benchmarks transfer reliably to real observational data.
 
 Evaluation proceeds through **hierarchical phases** — from broad experimental design (full factorial, Latin hypercube, or Bayesian-adaptive search) to focused refinement — scored with proper scoring rules (CRPS, WIS, Brier, coverage).
 

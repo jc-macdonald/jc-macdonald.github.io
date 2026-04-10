@@ -18,8 +18,8 @@ github_repos:
 repo_descriptions:
   yoavram-lab/VBPCApy: "Variational Bayesian PCA for incomplete data with full posterior uncertainty, automatic component pruning, and C++-accelerated kernels."
   jcm-sci/pp-eigentest: "Posterior predictive eigenvalue testing for signal rank determination. Three-layer consensus architecture with FWER/FDR control."
-  jcm-sci/trade-study: "Model evaluation and decision-support framework. Protocol-driven simulators, proper scoring rules, Pareto optimization, and Bayesian model stacking."
-  jcm-sci/TradeStudy.jl: "Julia implementation of the trade-study framework. Pareto optimization, proper scoring rules, global sensitivity analysis."
+  jcm-sci/trade-study: "Design and evaluation framework. Score competing configurations against known ground truth via simulators, scoring rules, Pareto optimization, and Bayesian stacking."
+  jcm-sci/TradeStudy.jl: "Julia implementation of the trade-study design and evaluation framework. Pareto optimization, proper scoring rules, global sensitivity analysis."
   ACCIDDA/op_engine: "Operator-partitioned ODE/PDE solver core. Nine integration methods (explicit, IMEX, fully implicit) with adaptive step-size control."
   ACCIDDA/op_system: "Declarative specification language and compiler for structured dynamical systems with multi-axis stratification."
   ACCIDDA/flepimop2: "Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis."

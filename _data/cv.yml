@@ -252,7 +252,7 @@ cv:
       - name: "Trade Study (Python + Julia)"
         start_date: 2026
         end_date: present
-        summary: "Model evaluation and decision-support framework. Defines simulators with known ground truth, scores competing models and inference pipelines using proper scoring rules, and produces calibrated ensembles via Bayesian or score-based model stacking. Hierarchical phases, multi-objective Pareto optimization with tiered observables, and global sensitivity analysis. Available in Python and Julia."
+        summary: "Design and evaluation framework for scientific simulation studies. Simulators with known latent state provide controlled environments to score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against ground truth using proper scoring rules and multi-objective Pareto optimization. Hierarchical phases, Bayesian model stacking, and global sensitivity analysis. Available in Python and Julia."
         highlights:
           - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study) (Python)"
           - "[github.com/jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl) (Julia)"
@@ -283,14 +283,18 @@ cv:
       - name: TabularEpi
         start_date: 2025
         end_date: 2025
-        summary: "UNC / ACCIDDA. Rule-based tabular epidemic simulator. Conducted systematic performance benchmarking that identified critical architectural bottlenecks, motivating an ongoing refactor to a vectorized backend."
+        summary: "UNC / ACCIDDA. Tabular epidemic simulator supporting mixed deterministic-stochastic models. Conducted systematic performance benchmarking that identified bottlenecks, informing the design of the next-generation pipeline."
 
       - name: "FlepiMoP (Flexible Epidemic Modeling Pipeline)"
         start_date: 2024
         end_date: 2025
-        summary: "Hopkins IDD / ACCIDDA. Developed modular ODE solver interfaces; implemented PyMC-based Bayesian inference module for operational influenza modeling; benchmarking identified vectorization-driven performance gains of 5--20x, informing FlepiMoP2 architecture."
+        summary: "Hopkins IDD / ACCIDDA. Developed simulation and statistical inference components for operational influenza modeling; conducted benchmarking that identified 5--20x performance improvements, informing the next-generation pipeline architecture."
 
     Invited Talks and Seminars:
+      - name: "FlepiMoP2 and the Operator-Partitioned Simulation Stack"
+        date: 2026-04
+        summary: "Tools Workshop, Insight Net Third Annual Meeting, Friday Center, Chapel Hill, North Carolina"
+
       - name: "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems"
         date: 2026-03-30
         summary: "Biological Oceanography Seminar, Woods Hole Oceanographic Institution, Woods Hole, Massachusetts"
@@ -484,7 +488,7 @@ cv:
 
     Computational Expertise:
       - label: Modeling
-        details: "Generative models (ODE/PDE/stochastic/hybrid); compartmental and agent-based models; scientific AI/ML (physics-embedded surrogates); multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
+        details: "Generative models (ODE/PDE/stochastic/hybrid); compartmental and agent-based models; scientific AI/ML (physics-embedded surrogates, lawful learning); multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
 
       - label: Inference
         details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"
