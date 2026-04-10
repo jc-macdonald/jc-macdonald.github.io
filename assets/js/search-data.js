@@ -18,14 +18,14 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "Research software for scientific computing, Bayesian inference, and operational modeling infrastructure.",
+          description: "Research software for scientific computing, Bayesian inference, and operational deployment infrastructure.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-operational-modeling",
-          title: "operational modeling",
-          description: "Operational infectious disease forecasting and scenario modeling for CDC-CFA and the Scenario Modeling Hubs.",
+        },{id: "nav-operational-deployments",
+          title: "operational deployments",
+          description: "Operational infectious disease forecasting and scenario modeling deployed through ACCIDDA&#39;s computational infrastructure.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/operational-modeling/";
