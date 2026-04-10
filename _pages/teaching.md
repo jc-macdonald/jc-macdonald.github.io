@@ -2,10 +2,19 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Teaching and instructional experience.
+description: Teaching, workshop facilitation, and instructional experience.
 nav: true
 nav_order: 7
 ---
+
+## Workshop Facilitation
+
+| Date         | Role               | Event                                     | Location                                            |
+| :----------- | :----------------- | :---------------------------------------- | :-------------------------------------------------- |
+| April 2026   | Workshop Presenter | Insight Net Third Annual Meeting          | Friday Center, Chapel Hill, NC                      |
+| January 2026 | Technical Support  | Insight Net Second Tech Transfer Workshop | UNC Chapel Hill, NC                                 |
+| October 2025 | Facilitator        | Applied Modeling in Public Health (AMPH)  | Johns Hopkins Bloomberg School of Public Health, MD |
+| August 2024  | Facilitator        | Applied Modeling in Public Health (AMPH)  | Johns Hopkins Bloomberg School of Public Health, MD |
 
 ## Johns Hopkins Bloomberg School of Public Health
 

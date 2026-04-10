@@ -46,18 +46,17 @@ Every system I work on shares the same architecture: a latent process we care ab
 
 This is not just a conceptual analogy. The mathematical structure is shared: each domain requires a generative model that encodes how hidden states produce observables, an inference engine that inverts the observation process under uncertainty, and a decision layer that translates posterior beliefs into actionable recommendations. Building this infrastructure so that it transfers across domains — rather than rebuilding it from scratch for each application — is the central goal of my research program.
 
-The operational tools I build reflect this shared structure:
+The operational tools I build reflect this shared structure and compose into a stack — from model specification to numerical integration to orchestration to evaluation:
 
-- **Epidemiology.** The [flepimop2](https://github.com/ACCIDDA/flepimop2) pipeline connects mechanistic transmission models to CDC scenario modeling hubs, contributing scenario projections that feed into the process used to set vaccination policy.
-- **Wildlife disease ecology.** The same modeling framework supports surveillance design for CCHF — optimizing where and when to sample animals so that each observation maximally reduces uncertainty about cross-species transmission.
-- **Marine ecology.** Structured population models recover ecological geometry from sparse trawl surveys and satellite data.
-- **Cultural evolution.** Variational Bayesian PCA recovers latent population structure from incomplete ethnographic and genomic datasets.
-
-Each of these projects required the same core capabilities: a flexible generative model, a principled inference backend, and a systematic way to evaluate whether the model's structural assumptions actually hold — a trade study that scores, ranks, and selects among competing designs before anyone acts on the output.
+- **Model specification.** [OP System](https://github.com/ACCIDDA/op_system) provides a declarative language for specifying structured dynamical systems with multi-axis stratification; the compiler produces validated model objects consumed by downstream solvers.
+- **Numerical integration.** [OP Engine](https://github.com/ACCIDDA/op_engine) is an operator-partitioned ODE/PDE solver core with nine methods (explicit, IMEX, fully implicit), adaptive stepping, and zero per-step allocation.
+- **Orchestration.** [FlepiMoP2](https://github.com/ACCIDDA/flepimop2) drives configuration-driven batch campaigns over locations and scenarios, connecting the specification and solver stack to CDC scenario modeling hubs and contributing projections used in influenza vaccination policy.
+- **Model evaluation.** [trade-study](https://github.com/jcm-sci/trade-study) defines simulators with known ground truth and scores competing models using proper scoring rules and Pareto optimization, so that pipelines validated on benchmarks transfer to real data.
+- **Dimensionality reduction.** [vbpca-py](https://github.com/yoavram-lab/VBPCApy) and [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest) recover latent population structure from incomplete datasets with full posterior uncertainty and principled rank determination.
 
 #### Where this is going
 
-The research program moves along three axes. First, _enable decisions_: determine what intervention to deploy, what experiment to run, and what to measure next — then package these recommendations into open-source software with clear APIs so that collaborators and decision-makers can act on model output they have reason to trust. Second, _harden the inference_: build reusable tools for Bayesian rank selection ([pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)), multi-objective trade-study evaluation ([trade-study](https://github.com/jcm-sci/trade-study)), and missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)) that work across application areas. Third, _generalize_: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes.
+The research program moves along three axes. First, _enable decisions_: determine what intervention to deploy, what experiment to run, and what to measure next — then package these recommendations into tested, documented, open-source software with CI pipelines so that collaborators and decision-makers can act on model output they have reason to trust. Second, _harden the inference_: build reusable tools for Bayesian rank selection ([pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)), multi-objective trade-study evaluation ([trade-study](https://github.com/jcm-sci/trade-study)), and missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)) that work across application areas. Third, _generalize_: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes.
 
 <div style="margin: 2.5rem 0;">
 {% include figure.liquid loading="eager" path="assets/img/research/future_directions_general.png" class="img-fluid rounded z-depth-1" %}
@@ -69,14 +68,14 @@ The question that ties it all together: _what should we do, given what we can't 
 
 #### Software
 
-| Tool                                                        | Domain                                | Status                                                                                        |
-| ----------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [vbpca-py](https://github.com/yoavram-lab/VBPCApy)          | Cultural evolution, genomics, surveys | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation       |
-| [op_engine](https://github.com/ACCIDDA/op_engine)           | Infectious disease, ecology           | Developed for CDC-funded flu scenario modeling · [docs](https://accidda.github.io/op_engine/) |
-| [op_system](https://github.com/ACCIDDA/op_system)           | Infectious disease, ecology           | Active development · [docs](https://accidda.github.io/op_system/)                             |
-| [flepimop2](https://github.com/ACCIDDA/flepimop2)           | Infectious disease                    | Active development · CDC scenario modeling                                                    |
-| [trade-study](https://github.com/jcm-sci/trade-study)       | Cross-domain                          | Active development (Python + [Julia](https://github.com/jcm-sci/TradeStudy.jl))               |
-| [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest) | Cross-domain                          | Pre-release · companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)               |
+| Tool                                                        | What it does                                                                                       | Status                                                                                        |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [op_system](https://github.com/ACCIDDA/op_system)           | Declarative language & compiler for structured dynamical systems                                   | Active development · [docs](https://accidda.github.io/op_system/)                             |
+| [op_engine](https://github.com/ACCIDDA/op_engine)           | Operator-partitioned ODE/PDE solver (9 methods, adaptive, zero-alloc)                              | Developed for CDC-funded flu scenario modeling · [docs](https://accidda.github.io/op_engine/) |
+| [flepimop2](https://github.com/ACCIDDA/flepimop2)           | Configuration-driven orchestration for forecasting & scenario analysis                             | Active development · CDC scenario modeling                                                    |
+| [trade-study](https://github.com/jcm-sci/trade-study)       | Model evaluation: simulators with known ground truth, scoring rules, Pareto optimization, stacking | Active development (Python + [Julia](https://github.com/jcm-sci/TradeStudy.jl))               |
+| [vbpca-py](https://github.com/yoavram-lab/VBPCApy)          | Variational Bayesian PCA for incomplete data with full posterior uncertainty                       | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation       |
+| [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest) | Posterior predictive eigenvalue testing for signal rank determination                              | Pre-release · companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)               |
 
 ---
 

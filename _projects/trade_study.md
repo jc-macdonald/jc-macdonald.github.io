@@ -1,24 +1,22 @@
 ---
 layout: page
 title: trade-study
-description: Multi-objective trade-study orchestration with Pareto optimization, proper scoring rules, and Bayesian stacking for systematic model evaluation and design-space exploration.
+description: Model evaluation and decision-support framework. Protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.
 img: assets/img/research/structural_fidelity_comparison.png
 importance: 2
 category: "lead developer · in development"
 github: https://github.com/jcm-sci/trade-study
 ---
 
-**trade-study** is a Python framework for structured model evaluation in scientific simulation studies. It uses model worlds with known ground truth to tune inference pipelines—scoring rules, observable weights, and model settings—so that when applied to real data where latent structure is unobserved, the pipeline transfers reliably. Evaluation is organized into hierarchical phases (discovery → refinement → benchmark).
+**trade-study** is a model evaluation and decision-support framework for scientific simulation studies. Users define **simulators** — protocol-conformant objects that generate `(truth, observations)` pairs from a configuration — then evaluate competing models, configurations, and inference pipelines against known ground truth, so that pipelines validated on synthetic benchmarks transfer reliably to real observational data.
 
-Core capabilities:
+Evaluation proceeds through **hierarchical phases** — from broad experimental design (full factorial, Latin hypercube, or Bayesian-adaptive search) to focused refinement — scored with proper scoring rules (CRPS, WIS, Brier, coverage).
 
-- Protocol-driven architecture (ModelWorld, Scorer, Observable)
-- Proper scoring rules (CRPS, energy, WIS, Brier) via scoringrules
-- Experimental design (full factorial, Latin hypercube, Morris screening)
-- Pareto front extraction and hypervolume indicators
-- Bayesian stacking of predictive distributions
-- Adaptive multi-objective optimization via optuna
+A **four-tier observable hierarchy** (embedded constraints, penalized objectives, diagnostic metrics, cost axes) structures multi-objective **Pareto optimization** with hypervolume and IGD+ front-quality metrics. Calibrated ensemble predictions are produced via **Bayesian or score-based model stacking**. Global **sensitivity analysis** (Morris screening) identifies which factors matter most.
 
-In development; pre-release. Source at [jcm-sci/trade-study](https://github.com/jcm-sci/trade-study).
+Available in Python and Julia. In development; pre-release.
+
+- Python: [jcm-sci/trade-study](https://github.com/jcm-sci/trade-study)
+- Julia: [jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl)
 
 {% include figure.liquid loading="eager" path="assets/img/research/optimal_design.png" class="img-fluid rounded z-depth-1" zoomable=true %}

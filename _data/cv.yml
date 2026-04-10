@@ -185,10 +185,9 @@ cv:
         date: 2026
 
     Research Support:
-      - name: "National One Health Mission India ($1M / 3 years)"
-        start_date: 2026
-        end_date: 2029
-        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Co-Investigator (pending). Research role: mathematical model parameterization and data analysis; mechanistic modeling for HPAI and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
+      - name: "National One Health Mission India ($1M / 3 years) — Pending"
+        date: In review
+        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Co-Investigator. Research role: mathematical model parameterization and data analysis; mechanistic modeling for HPAI and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
 
       - name: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
         start_date: 2025
@@ -239,21 +238,21 @@ cv:
       - name: "OP System (Operator-Partitioned System)"
         start_date: 2026
         end_date: present
-        summary: "ACCIDDA. Declarative governing equation specification compiler for structured dynamical systems. Transforms YAML model definitions into callable numerics consumed by OP Engine or other solvers."
+        summary: "ACCIDDA. Declarative specification language and compiler for structured dynamical systems. Researchers define models via explicit equations or transition diagrams with multi-axis stratification; specifications compile to validated, safe bytecode closures with structured metadata passed to downstream solvers. Specification layer of the operator-partitioned simulation stack."
         highlights:
           - "[github.com/ACCIDDA/op_system](https://github.com/ACCIDDA/op_system)"
 
       - name: pp-eigentest
         start_date: 2026
         end_date: present
-        summary: "Posterior predictive eigenvalue testing framework for determining signal rank in covariance and Gram matrices. Supports ordered hypothesis testing, family-wise error-rate control, and false discovery rate control."
+        summary: "Posterior predictive eigenvalue testing for determining signal rank in high-dimensional datasets. Three-layer consensus architecture combining dimensionality heuristics, adaptive thresholding, and multiple testing correction (FWER, FDR). NumPy and JAX backends; designed to consume VBPCApy posterior outputs."
         highlights:
           - "[github.com/yoavram-lab/pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
 
       - name: "Trade Study (Python + Julia)"
         start_date: 2026
         end_date: present
-        summary: "Multi-objective trade-study framework for systematic model evaluation and design-space exploration. Uses model worlds with known ground truth to score, rank, and select among competing model configurations—tuning inference pipelines, observable weights, and design parameters—so that when applied to real data where latent structure is unobserved, the pipeline transfers reliably. Python implementation wraps scoringrules, pymoo, arviz, SALib, and optuna. Julia implementation wraps Metaheuristics.jl, ParetoSmooth.jl, QuasiMonteCarlo.jl, and GlobalSensitivity.jl with native scoring rules."
+        summary: "Model evaluation and decision-support framework. Defines simulators with known ground truth, scores competing models and inference pipelines using proper scoring rules, and produces calibrated ensembles via Bayesian or score-based model stacking. Hierarchical phases, multi-objective Pareto optimization with tiered observables, and global sensitivity analysis. Available in Python and Julia."
         highlights:
           - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study) (Python)"
           - "[github.com/jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl) (Julia)"
@@ -261,14 +260,14 @@ cv:
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Operator-partitioned solver for composing heterogeneous subsystem solvers (ODE, PDE, stochastic, hybrid) into a single time-stepping pipeline. Framework-agnostic; separates state management from stepping logic via pluggable backends."
+        summary: "ACCIDDA. Operator-partitioned ODE/PDE solver core. Splits the right-hand side into explicit and implicit parts, advancing them jointly via nine methods (explicit, IMEX, fully implicit) with adaptive step-size control. Cached implicit solves with dense/sparse autodispatch; zero per-step allocation. Consumes OP System specifications."
         highlights:
           - "[github.com/ACCIDDA/op_engine](https://github.com/ACCIDDA/op_engine)"
 
       - name: vbpca-py
         start_date: 2024
         end_date: present
-        summary: "Variational Bayesian PCA for incomplete data with native missing-data handling, uncertainty quantification, and C++-accelerated kernels; compatible with scikit-learn."
+        summary: "Variational Bayesian PCA for incomplete data with native per-entry missingness handling, full posterior uncertainty quantification, automatic component pruning, and built-in model selection. Missing-aware preprocessing pipeline and C++-accelerated kernels; scikit-learn-compatible API. Applied to genetic, cultural, and ecological datasets."
         highlights:
           - "[pypi.org/project/vbpca-py/](https://pypi.org/project/vbpca-py/)"
           - "[doi:10.5281/zenodo.19389250](https://doi.org/10.5281/zenodo.19389250)"
@@ -277,7 +276,7 @@ cv:
       - name: "FlepiMoP2 (Flexible Epidemic Modeling Pipeline 2)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Contributor to the redesign of a modular epidemic modeling and simulation pipeline for forecasting and scenario analysis."
+        summary: "ACCIDDA. Contributor to the configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decouples model specification, numerical integration, and output persistence."
         highlights:
           - "[Documentation](https://accidda.github.io/flepimop2/latest/)"
 
@@ -363,6 +362,31 @@ cv:
       - name: "Modeling COVID-19 outbreaks in the United States with distinct testing, lockdown speed, and fatigue rates"
         date: 2021
         summary: "Society for Mathematical Biology Annual Meeting (virtual); contributed talk"
+
+    Workshop Facilitation:
+      - company: Insight Net Third Annual Meeting
+        position: Tools Workshop Presenter
+        date: 2026-04
+        location: Chapel Hill, North Carolina, USA
+        summary: "Presenting FlepiMoP2 and the op_system/op_engine simulation stack at the Insight Net Third Annual Meeting tools workshop, Friday Center, University of North Carolina at Chapel Hill."
+
+      - company: Insight Net Second Tech Transfer Workshop
+        position: Technical Support
+        date: 2026-01
+        location: Chapel Hill, North Carolina, USA
+        summary: "ACCIDDA. Technical support for the Insight Net Second Tech Transfer Workshop at UNC Chapel Hill. Assisted participants with Python package installation and environment setup for Epydemics tools."
+
+      - company: ACCIDDA
+        position: Workshop Facilitator
+        date: 2025-10
+        location: Baltimore, Maryland, USA
+        summary: "Facilitator for the Applied Modeling in Public Health (AMPH) Workshop, October 15--17, 2025, Johns Hopkins Bloomberg School of Public Health."
+
+      - company: ACCIDDA
+        position: Workshop Facilitator
+        date: 2024-08
+        location: Baltimore, Maryland, USA
+        summary: "Facilitator for the Applied Modeling in Public Health (AMPH) Workshop, August 12--15, 2024, Johns Hopkins Bloomberg School of Public Health."
 
     Teaching:
       - company: Johns Hopkins University

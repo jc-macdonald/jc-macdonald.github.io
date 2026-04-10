@@ -1,13 +1,13 @@
 ---
 layout: page
 title: FlepiMoP2
-description: Modular epidemic modeling and simulation pipeline for forecasting and scenario analysis. Core contributor to the redesign of ACCIDDA's operational infrastructure.
+description: Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decoupling model specification, integration, and persistence.
 img: assets/img/research/flepimop2_slide.png
 importance: 1
 category: collaborative infrastructure
 github: https://accidda.github.io/flepimop2/latest/
 ---
 
-**FlepiMoP2** (Flexible Epidemic Modeling Pipeline 2) is a modular simulation campaign orchestrator for infectious disease forecasting and scenario analysis. The pipeline manages config-driven batch runs over locations and scenarios with pluggable system and engine backends, parameter management, and output collection.
+**FlepiMoP2** (Flexible Epidemic Modeling Pipeline 2) is a configuration-driven orchestration engine for infectious disease forecasting and scenario analysis, supporting CDC-CFA operations. The pipeline decouples model specification (System), numerical integration (Engine), and output persistence (Backend) via a **plugin architecture** with abstract base classes, Pydantic-validated configuration, and dynamic module loading.
 
-Core contributions include modular ODE solver interfaces, pluggable system/engine dispatch architecture, and performance benchmarking that identified vectorization-driven gains of 5--20x informing the redesign from FlepiMoP v1.
+Core contributions include the modular System/Engine/Backend dispatch architecture, ODE solver interfaces consumed by [OP Engine](/projects/op_engine/), and performance benchmarking across FlepiMoP v1 that identified 5–20× gains and motivated the v2 redesign.

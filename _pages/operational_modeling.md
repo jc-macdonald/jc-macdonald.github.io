@@ -17,6 +17,7 @@ I develop and maintain ACCIDDA's operational models for the Flu and COVID-19 Sce
 
 Lead model developer for ACCIDDA's influenza scenario projections.
 
+- **2026/27 operational round** — supervising an undergraduate student in a scientific overhaul of the ACCIDDA flu model
 - **2025/26 operational round** — leading scientific overhaul of the ACCIDDA flu model
 - **2024/25 operational round** — initial model development and pipeline integration
 
@@ -42,4 +43,4 @@ Technical supervisor for an age- and immune-status-structured _Haemophilus influ
 
 ## Infrastructure
 
-This operational work directly informs the development of [FlepiMoP2](/projects/flepimop2/), [OP Engine](/projects/op_engine/), and [OP System](/projects/op_system/), which will serve as the modeling stack for the 2026/27 flu round, the COVID-19 round, and the RSV round. Model specifications are compiled from YAML into callable numerics, and campaign orchestration handles batch scenario runs across locations and parameter sets.
+This operational work directly informs the development of [FlepiMoP2](/projects/flepimop2/), [OP Engine](/projects/op_engine/), and [OP System](/projects/op_system/), which compose into a declarative modeling stack: researchers specify models via [OP System](/projects/op_system/)'s specification language, the compiler produces validated model objects consumed by [OP Engine](/projects/op_engine/)'s operator-partitioned solver, and [FlepiMoP2](/projects/flepimop2/) orchestrates batch scenario campaigns. This stack will serve as the modeling infrastructure for the 2026/27 flu round, the COVID-19 round, and the RSV round.
