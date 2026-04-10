@@ -64,6 +64,16 @@ cv:
         location: Tel Aviv, Israel
         summary: "School of Zoology. Mentor: Yoav Ram. Research drew directly on archaeological training in the study of material culture diversity and cultural transmission, applying Bayesian dimensionality reduction and multivariate data analysis to cultural datasets."
 
+    Computational Expertise:
+      - label: Modeling
+        details: "Generative models (ODE/PDE/stochastic/hybrid); compartmental and agent-based models; scientific AI/ML (physics-embedded surrogates, lawful learning); multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
+
+      - label: Inference
+        details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"
+
+      - label: Computing
+        details: "Python, Julia, C++, Stan, R, MATLAB. Scientific computing; high-performance numerical solvers; operator splitting; data pipelines and exploratory analysis; reproducible workflows (Git, CI/CD, containerization)"
+
     Published Papers:
       - title: "Within-host viral growth and immune response rates predict FMDV transmission dynamics for African buffalo"
         authors:
@@ -204,36 +214,6 @@ cv:
         end_date: present
         summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Directors: Justin Lessler, Kimberly Powers, and Shaun Truelove. Postdoctoral Scholar (60% FTE). Insight Net center for infectious disease forecasting and outbreak analytics. Research role: operational modeling, forecasting pipeline development, and computational infrastructure."
 
-      - name: "NSF EEID / UKRI UK--US Collaboration Grant ($4.05M / 5 years)"
-        start_date: 2022
-        end_date: 2027
-        summary: "Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. PIs: Brianna Beechler, Roman Biek, Hayriye Gulbudak, Erin Gorsich, Simon Gubbins, Anna Jolles, and Jan Medlock. Senior Personnel (from 2024). Research role: mathematical model development and parameterization of within-host viral and immune dynamics."
-
-      - name: "Zuckerman Postdoctoral Scholarship ($120K total)"
-        start_date: 2022
-        end_date: 2024
-        summary: "Co-evolution of Cultural and Genetic Traits. Principal Investigator. Competitive postdoctoral fellowship; authored and defended research proposal."
-
-    Operational Modeling:
-      - name: Hib Vaccination Modeling (Navajo Nation)
-        start_date: 2026
-        end_date: present
-        summary: "ACCIDDA. Technical supervisor managing PhD students in implementation of an age- and immune-status-structured Hib model for the Navajo Nation to evaluate the impact of long-running vaccination programs."
-
-      - name: COVID-19 Scenario Modeling Hub
-        start_date: 2025
-        end_date: 2025
-        summary: "ACCIDDA. Support. Data cleaning and assimilation in support of ACCIDDA's health heterogeneities COVID-19 round."
-        highlights:
-          - "[github.com/midas-network/covid19-scenario-modeling-hub](https://github.com/midas-network/covid19-scenario-modeling-hub)"
-
-      - name: Flu Scenario Modeling Hub
-        start_date: 2024
-        end_date: present
-        summary: "ACCIDDA. Lead Model Developer across the 2024/25, 2025/26, and 2026/27 seasons. Set up the ACCIDDA flu model and operational pipeline (2024/25). Extensive work with external modeling packages drove contributions that led to FlepiMoP2 (2025/26). Supervising an undergraduate student in a scientific overhaul of the flu model for the 2026/27 round."
-        highlights:
-          - "[github.com/midas-network/flu-scenario-modeling-hub](https://github.com/midas-network/flu-scenario-modeling-hub)"
-
     "Research Software -- Lead Developer":
       - name: "OP System (Operator-Partitioned System)"
         start_date: 2026
@@ -289,6 +269,26 @@ cv:
         start_date: 2024
         end_date: 2025
         summary: "Hopkins IDD / ACCIDDA. Developed simulation and statistical inference components for operational influenza modeling; conducted benchmarking that identified 5--20x performance improvements, informing the next-generation pipeline architecture."
+
+    "Research Software -- Operational Deployments":
+      - name: Hib Vaccination Modeling (Navajo Nation)
+        start_date: 2026
+        end_date: present
+        summary: "ACCIDDA. Technical supervisor managing PhD students in implementation of an age- and immune-status-structured Hib model for the Navajo Nation to evaluate the impact of long-running vaccination programs."
+
+      - name: Flu Scenario Modeling Hub
+        start_date: 2024
+        end_date: present
+        summary: "ACCIDDA. Lead Model Developer across the 2024/25, 2025/26, and 2026/27 seasons. Set up the ACCIDDA flu model and operational pipeline (2024/25). Extensive work with external modeling packages drove contributions that led to FlepiMoP2 (2025/26). Supervising an undergraduate student in a scientific overhaul of the flu model for the 2026/27 round."
+        highlights:
+          - "[github.com/midas-network/flu-scenario-modeling-hub](https://github.com/midas-network/flu-scenario-modeling-hub)"
+
+      - name: COVID-19 Scenario Modeling Hub
+        start_date: 2025
+        end_date: 2025
+        summary: "ACCIDDA. Support. Data cleaning and assimilation in support of ACCIDDA's health heterogeneities COVID-19 round."
+        highlights:
+          - "[github.com/midas-network/covid19-scenario-modeling-hub](https://github.com/midas-network/covid19-scenario-modeling-hub)"
 
     Invited Talks and Seminars:
       - name: "FlepiMoP2 and the Operator-Partitioned Simulation Stack"
@@ -476,25 +476,5 @@ cv:
 
       - name: Rhodes Outstanding Graduate Assistant Award
         date: 2021
-        summary: "Department of Mathematics, University of Louisiana at Lafayette. Awarded to two graduate students annually (approximately 50 graduate students total)."
-
-      - name: Outstanding Contributed Talk Award (Mathematical Epidemiology)
-        date: 2021
-        summary: "Society for Mathematical Biology Annual Meeting"
-
-      - name: Three Minute Thesis Competition, Finalist
-        date: 2019
-        summary: Louisiana Sea Grant
-
-    Computational Expertise:
-      - label: Modeling
-        details: "Generative models (ODE/PDE/stochastic/hybrid); compartmental and agent-based models; scientific AI/ML (physics-embedded surrogates, lawful learning); multivariate data analysis and dimensionality reduction; stability, bifurcation, and sensitivity analysis; parameter identifiability and inverse problems"
-
-      - label: Inference
-        details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"
-
-      - label: Computing
-        details: "Python, Julia, C++, Stan, R, MATLAB. Scientific computing; high-performance numerical solvers; operator splitting; data pipelines and exploratory analysis; reproducible workflows (Git, CI/CD, containerization)"
-
     Professional Affiliations:
       - "Society for Mathematical Biology; Society for Industrial and Applied Mathematics; International Society for Bayesian Analysis; United States Research Software Engineer Association; MIDAS Network; Association for Women in Mathematics; Institute of Industrial and Systems Engineers; Society for Health Systems (SHS/IISE); and Healthcare Information and Management Systems Society (HIMSS)."

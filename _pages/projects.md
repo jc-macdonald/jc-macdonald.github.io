@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Research software for scientific computing, Bayesian inference, and operational modeling infrastructure.
+description: Research software for scientific computing, Bayesian inference, and operational deployment infrastructure.
 nav: true
 nav_order: 3
 display_categories: ["lead developer · released", "lead developer · in development", collaborative infrastructure]

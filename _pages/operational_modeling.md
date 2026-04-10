@@ -1,8 +1,8 @@
 ---
 layout: page
-title: operational modeling
+title: operational deployments
 permalink: /operational-modeling/
-description: Operational infectious disease forecasting and scenario modeling for CDC-CFA and the Scenario Modeling Hubs.
+description: Operational infectious disease forecasting and scenario modeling deployed through ACCIDDA's computational infrastructure.
 nav: true
 nav_order: 4
 ---
