@@ -34,6 +34,10 @@ Currently I am a postdoctoral scholar at the [International Vaccine Access Cente
 
 I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a BA in Archaeology from UNC Greensboro — a combination that continues to shape how I think about inference from incomplete records.
 
+<div style="margin: 2.5rem 0;">
+{% include figure.liquid loading="eager" path="assets/img/research/beyond_onehealth.png" class="img-fluid rounded z-depth-1" %}
+</div>
+
 ---
 
 #### The common structure
