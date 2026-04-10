@@ -46,7 +46,7 @@ ninja.data = [{
           },
         },{id: "nav-teaching",
           title: "teaching",
-          description: "Teaching and instructional experience.",
+          description: "Teaching, workshop facilitation, and instructional experience.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
@@ -72,34 +72,40 @@ ninja.data = [{
           section: "News",},{id: "news-invited-seminar-at-woods-hole-oceanographic-institution-cross-scale-feedback-motifs-structure-preserving-models-and-computational-tools-for-complex-systems",
           title: 'Invited seminar at Woods Hole Oceanographic Institution — “Cross-Scale Feedback Motifs: Structure-Preserving Models...',
           description: "",
+          section: "News",},{id: "news-presenting-flepimop2-and-the-operator-partitioned-simulation-stack-at-the-insight-net-third-annual-meeting-tools-workshop-friday-center-chapel-hill-nc",
+          title: 'Presenting FlepiMoP2 and the Operator-Partitioned Simulation Stack at the Insight Net Third Annual...',
+          description: "",
+          section: "News",},{id: "news-mini-symposium-talk-at-smb-2026-in-graz-austria-decision-support-modeling-for-one-health-pathogens-using-mechanistic-models-for-surveillance-and-forecast-design",
+          title: 'Mini-symposium talk at SMB 2026 in Graz, Austria — “Decision-Support Modeling for One...',
+          description: "",
           section: "News",},{id: "projects-flepimop2",
           title: 'FlepiMoP2',
-          description: "Modular epidemic modeling and simulation pipeline for forecasting and scenario analysis. Core contributor to the redesign of ACCIDDA&#39;s operational infrastructure.",
+          description: "Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decoupling model specification, integration, and persistence.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/flepimop2/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
-          description: "Operator-partitioned solver for composing heterogeneous subsystem solvers (ODE, PDE, stochastic, hybrid) into a single time-stepping pipeline with pluggable backends.",
+          description: "Operator-partitioned ODE/PDE solver core with nine integration methods (explicit, IMEX, fully implicit), adaptive step-size control, and zero per-step allocation.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_engine/";
             },},{id: "projects-op-system",
           title: 'OP System',
-          description: "Declarative governing equation specification compiler for structured dynamical systems. Transforms YAML model definitions into callable numerics.",
+          description: "Declarative specification language and compiler for structured dynamical systems. Two specification pathways, multi-axis stratification, and compilation to validated bytecode closures.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",
           title: 'pp-eigentest',
-          description: "Posterior predictive eigenvalue testing for determining signal rank in covariance and Gram matrices. Supports ordered hypothesis testing with FWER and FDR control.",
+          description: "Posterior predictive eigenvalue testing for signal rank determination. Three-layer consensus architecture with FWER and FDR control; NumPy and JAX backends.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",
           title: 'trade-study',
-          description: "Multi-objective trade-study orchestration with Pareto optimization, proper scoring rules, and Bayesian stacking for systematic model evaluation and design-space exploration.",
+          description: "Model evaluation and decision-support framework. Protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/trade_study/";
             },},{id: "projects-vbpca-py",
           title: 'vbpca-py',
-          description: "Variational Bayesian PCA for incomplete data with native missing-data handling, uncertainty quantification, and C++-accelerated kernels. scikit-learn compatible.",
+          description: "Variational Bayesian PCA for incomplete data with full posterior uncertainty, automatic component pruning, native missingness handling, and C++-accelerated kernels.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vbpca_py/";
             },},{id: "teachings-data-science-fundamentals",
