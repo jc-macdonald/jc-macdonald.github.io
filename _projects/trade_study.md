@@ -4,7 +4,7 @@ title: trade-study
 description: Design and evaluation framework for scientific simulation studies. Score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against known ground truth via protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.
 img: assets/img/research/structural_fidelity_comparison.png
 importance: 2
-category: "lead developer · in development"
+category: "lead developer · released on PyPI"
 github: https://github.com/jcm-sci/trade-study
 ---
 
@@ -14,7 +14,7 @@ Evaluation proceeds through **hierarchical phases** — from broad experimental 
 
 A **four-tier observable hierarchy** (embedded constraints, penalized objectives, diagnostic metrics, cost axes) structures multi-objective **Pareto optimization** with hypervolume and IGD+ front-quality metrics. Calibrated ensemble predictions are produced via **Bayesian or score-based model stacking**. Global **sensitivity analysis** (Morris screening) identifies which factors matter most.
 
-Available in Python and Julia. In development; pre-release.
+Available in Python and Julia. Released on [PyPI](https://pypi.org/project/trade-study/). Documentation at [jcm-sci.github.io/trade-study](https://jcm-sci.github.io/trade-study/).
 
 - Python: [jcm-sci/trade-study](https://github.com/jcm-sci/trade-study)
 - Julia: [jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl)
