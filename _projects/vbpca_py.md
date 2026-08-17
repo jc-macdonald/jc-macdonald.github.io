@@ -1,7 +1,7 @@
 ---
 layout: page
 title: vbpca-py
-description: Variational Bayesian PCA for incomplete data with full posterior uncertainty, automatic component pruning, native missingness handling, and C++-accelerated kernels.
+description: Variational Bayesian PCA for incomplete data with full posterior uncertainty, calibrated predictive variance, automatic component pruning, native missingness handling, and C++-accelerated kernels.
 img: assets/img/research/vbpca_py_schematic.png
 importance: 1
 category: "lead developer · released"
@@ -15,9 +15,11 @@ Key features:
 
 - **Native per-entry missingness** handling via shared observation patterns that reuse matrix factorizations — no imputation required
 - **Automatic Relevance Determination** prunes uninformative components; built-in model selection sweep identifies optimal rank
+- **Calibrated predictive variance** (`predictive_variance_`) that folds in observation noise, restoring nominal prediction-interval coverage on noisy held-out entries
+- **Regime-aware default hyperparameters** (`recommend_config`) distilled from a surrogate-based trade study, tuned to maximize correct rank recovery
 - **Missing-aware preprocessing pipeline**: one-hot encoding, scaling, power transforms, winsorization
 - **C++-accelerated kernels** via pybind11 with runtime autotuning for performance-critical updates
-- Full **scikit-learn estimator API** (`fit`, `transform`, `score`)
+- Full **scikit-learn-compatible estimator API** (`fit`, `transform`, `get_params`/`set_params`, cloning) — scikit-learn is an optional dependency
 
 Applied to genetic, cultural, and ecological datasets. Available on [PyPI](https://pypi.org/project/vbpca-py/) and archived at [Zenodo](https://doi.org/10.5281/zenodo.19389250).
 

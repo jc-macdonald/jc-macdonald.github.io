@@ -12,9 +12,11 @@ github: https://github.com/jcm-sci/trade-study
 
 Evaluation proceeds through **hierarchical phases** — from broad experimental design (full factorial, Latin hypercube, or Bayesian-adaptive search) to focused refinement — scored with proper scoring rules (CRPS, WIS, Brier, coverage).
 
-A **four-tier observable hierarchy** (embedded constraints, penalized objectives, diagnostic metrics, cost axes) structures multi-objective **Pareto optimization** with hypervolume and IGD+ front-quality metrics. Calibrated ensemble predictions are produced via **Bayesian or score-based model stacking**. Global **sensitivity analysis** (Morris screening) identifies which factors matter most.
+A **four-tier observable hierarchy** (embedded constraints, penalized objectives, diagnostic metrics, cost axes) structures multi-objective **Pareto optimization** with hypervolume and IGD+ front-quality metrics. Calibrated ensemble predictions are produced via **Bayesian or score-based model stacking**. Global **sensitivity analysis** (Morris and Sobol screening) identifies which factors matter most.
 
-Available in Python and Julia. Released on [PyPI](https://pypi.org/project/trade-study/). Documentation at [jcm-sci.github.io/trade-study](https://jcm-sci.github.io/trade-study/).
+For expensive studies, **successive-halving and Hyperband** runners screen the design space at low fidelity before committing full budget to survivors, and **GP/RF surrogate models** — including a **regime-conditional surrogate** that interpolates recommendations across continuous descriptors like sample size or noise level — approximate scores without re-running the simulator.
+
+Available in Python and Julia. Released on [PyPI](https://pypi.org/project/trade-study/) and archived at [Zenodo](https://doi.org/10.5281/zenodo.19599838). Documentation at [jcm-sci.github.io/trade-study](https://jcm-sci.github.io/trade-study/).
 
 - Python: [jcm-sci/trade-study](https://github.com/jcm-sci/trade-study)
 - Julia: [jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl)

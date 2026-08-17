@@ -236,6 +236,8 @@ cv:
         highlights:
           - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study) (Python)"
           - "[github.com/jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl) (Julia)"
+          - "[pypi.org/project/trade-study/](https://pypi.org/project/trade-study/)"
+          - "[doi:10.5281/zenodo.19599838](https://doi.org/10.5281/zenodo.19599838)"
 
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
