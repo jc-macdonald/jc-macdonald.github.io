@@ -100,7 +100,7 @@ ninja.data = [{
               window.location.href = "/projects/trade_study/";
             },},{id: "projects-vbpca-py",
           title: 'vbpca-py',
-          description: "Variational Bayesian PCA for incomplete data with full posterior uncertainty, automatic component pruning, native missingness handling, and C++-accelerated kernels.",
+          description: "Variational Bayesian PCA for incomplete data with full posterior uncertainty, calibrated predictive variance, automatic component pruning, native missingness handling, and C++-accelerated kernels.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vbpca_py/";
             },},{
