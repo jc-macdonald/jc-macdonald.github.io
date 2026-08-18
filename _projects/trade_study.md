@@ -4,7 +4,7 @@ title: trade-study
 description: Design and evaluation framework for scientific simulation studies. Score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against known ground truth via protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.
 img: assets/img/research/structural_fidelity_comparison.png
 importance: 2
-category: "lead developer · released on PyPI"
+category: "lead developer · released"
 github: https://github.com/jcm-sci/trade-study
 ---
 

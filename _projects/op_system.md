@@ -17,6 +17,6 @@ Researchers define models through two declarative pathways:
 
 Both pathways support **multi-axis stratification** over categorical and continuous dimensions. The compiler performs automatic template expansion over axis products, chain synthesis for staged compartments (e.g., Erlang-distributed dwell times), and provides helper functions for aggregation and numerical quadrature.
 
-Specifications are AST-validated and compiled to safe bytecode closures with restricted builtins. Structured metadata — axes, kernels, operators, and constraints — passes through to downstream solvers, enabling OP Engine to dispatch appropriate integration methods automatically.
+Specifications are AST-validated and compiled to safe bytecode closures with restricted builtins. Structured metadata — axes, kernels, operators, and constraints — passes through to downstream solvers, enabling OP Engine to dispatch appropriate integration methods automatically. Compiled specifications are array-API polymorphic at call time — the same artifact runs unmodified under NumPy or under JAX's `jit`/`vmap`/`grad`, making it directly usable inside differentiable-ODE (`diffrax`) and gradient-based Bayesian inference (`blackjax` NUTS) workflows without a separate compilation path.
 
 The design eliminates the bookkeeping errors that arise when manually implementing large structured models (e.g., age×risk×vaccination-stratified epidemic models, trait-structured ecological models, or reaction-diffusion systems) and reduces the barrier to simulation of complex multi-physics systems.

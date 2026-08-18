@@ -51,11 +51,18 @@ cv:
 
     Appointments:
       - company: Johns Hopkins Bloomberg School of Public Health
-        position: Postdoctoral Scholar
-        start_date: 2024
+        position: Assistant Scientist
+        start_date: 2026
         end_date: present
         location: Baltimore, Maryland, USA
-        summary: "International Vaccine Access Center, Department of International Health. Mentor: Shaun Truelove. Research focus: infectious disease modeling and inference, scientific computing, decision support systems, and research software engineering."
+        summary: "International Vaccine Access Center, Department of International Health (Global Disease Epidemiology and Control). Mentor: Shaun Truelove. Research focus: infectious disease modeling and inference, scientific computing, decision support systems, and research software engineering."
+
+      - company: Johns Hopkins Bloomberg School of Public Health
+        position: Postdoctoral Scholar
+        start_date: 2024
+        end_date: 2026
+        location: Baltimore, Maryland, USA
+        summary: "International Vaccine Access Center, Department of International Health (Global Disease Epidemiology and Control). Mentor: Shaun Truelove. Research focus: infectious disease modeling and inference, scientific computing, decision support systems, and research software engineering."
 
       - company: Tel Aviv University
         position: Zuckerman STEM Leadership Postdoctoral Fellow
@@ -126,7 +133,6 @@ cv:
         doi: 10.1098/rsos.210227
         date: 2021
 
-    Papers Under Review:
       - title: "An immuno-epidemiological model of foot-and-mouth disease in African buffalo with carrier transmission"
         authors:
           - S. Atkins
@@ -136,7 +142,20 @@ cv:
           - "***J.C. Macdonald***"
           - B.R. Beechler
           - A.E. Jolles
-        journal: "Under review, Bulletin of Mathematical Biology"
+        journal: "Bulletin of Mathematical Biology"
+        date: 2026
+        highlights:
+          - "To appear"
+
+    Papers Under Review:
+      - title: "Multi-Model Insights into Racial and Ethnic Heterogeneities in Early COVID-19 Transmission and Severity in the U.S."
+        authors:
+          - S.J. Bents
+          - S.L. Larsen
+          - S. Jung
+          - E. Howerton
+          - "et al., including ***J.C. Macdonald***"
+        journal: "In revision, American Journal of Epidemiology"
         date: 2026
 
     Preprints:
@@ -152,15 +171,6 @@ cv:
           - "Software: [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest), [VBPCApy](https://github.com/yoavram-lab/VBPCApy)"
 
     Manuscripts in Preparation:
-      - title: "Convergence characterization of coordinate-ascent variational inference for Bayesian PCA"
-        authors:
-          - "***J.C. Macdonald***"
-          - Y. Ram
-        journal: "In preparation"
-        date: 2026
-        highlights:
-          - "Software: [VBPCApy](https://github.com/yoavram-lab/VBPCApy)"
-
       - title: "Posterior predictive eigenvalue testing for spectral dimensionality selection"
         authors:
           - "***J.C. Macdonald***"
@@ -171,16 +181,21 @@ cv:
         highlights:
           - "Software: [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
 
-      - title: "Lawful Learning: Embedding Physical Laws into Surrogate Representations for Robust Extrapolation"
+      - title: "What Should Structural Evaluation Mean?: Label-Free Structural Evaluation Scores for Scientific Prediction"
         authors:
           - "***J.C. Macdonald***"
-        journal: "In preparation for Proceedings of the Royal Society A"
+          - M. Marshall
+          - S. Truelove
+        journal: "In preparation for Statistical Science"
         date: 2026
 
-      - title: "Structured observables: recovering dynamical structure from parameter-indexed generators"
+      - title: "Decision Support Modeling for One Health Pathogens: Crimean-Congo Hemorrhagic Fever Surveillance and Control Design"
         authors:
           - "***J.C. Macdonald***"
-        journal: "In preparation for SIAM Journal on Applied Dynamical Systems"
+          - M. Kugler
+          - B. Beechler
+          - A. Jolles
+        journal: "In preparation for Royal Society Interface"
         date: 2026
 
       - title: "Shapelet analysis of infectious disease forecasts reveals heterogeneity across epidemic phases"
@@ -212,7 +227,17 @@ cv:
       - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
         start_date: 2023
         end_date: present
-        summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Directors: Justin Lessler, Kimberly Powers, and Shaun Truelove. Postdoctoral Scholar (60% FTE). Insight Net center for infectious disease forecasting and outbreak analytics. Research role: operational modeling, forecasting pipeline development, and computational infrastructure."
+        summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Directors: Justin Lessler, Kimberly Powers, and Shaun Truelove. 60% FTE. Insight Net center for infectious disease forecasting and outbreak analytics. Research role: operational modeling, forecasting pipeline development, and computational infrastructure."
+
+      - name: "NSF EEID / UKRI UK--US Collaboration Grant ($4.05M / 5 years)"
+        start_date: 2022
+        end_date: 2027
+        summary: "Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. PIs: Brianna Beechler, Roman Biek, Hayriye Gulbudak, Erin Gorsich, Simon Gubbins, Anna Jolles, and Jan Medlock. Senior Personnel (from 2024). Research role: mathematical model development and parameterization of within-host viral and immune dynamics."
+
+      - name: "Zuckerman Postdoctoral Scholarship ($120K total)"
+        start_date: 2022
+        end_date: 2024
+        summary: "Co-evolution of Cultural and Genetic Traits. Principal Investigator. Competitive postdoctoral fellowship; authored and defended research proposal."
 
     "Research Software -- Lead Developer":
       - name: "OP System (Operator-Partitioned System)"
@@ -225,7 +250,7 @@ cv:
       - name: pp-eigentest
         start_date: 2026
         end_date: present
-        summary: "Posterior predictive eigenvalue testing for determining signal rank in high-dimensional datasets. Three-layer consensus architecture combining dimensionality heuristics, adaptive thresholding, and multiple testing correction (FWER, FDR). NumPy and JAX backends; designed to consume VBPCApy posterior outputs."
+        summary: "Posterior predictive eigenvalue testing for determining signal rank in high-dimensional datasets. Three-layer consensus architecture combining dimensionality heuristics, adaptive thresholding, and multiple testing correction (FWER, FDR). NumPy, C++, JAX (GPU), and sparse backends; model-agnostic, consuming posterior summaries from any generative engine (VBPCApy, PPCA, empirical-Bayes Gaussian)."
         highlights:
           - "[github.com/yoavram-lab/pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
 
@@ -293,10 +318,6 @@ cv:
           - "[github.com/midas-network/covid19-scenario-modeling-hub](https://github.com/midas-network/covid19-scenario-modeling-hub)"
 
     Invited Talks and Seminars:
-      - name: "FlepiMoP2 and the Operator-Partitioned Simulation Stack"
-        date: 2026-04
-        summary: "Tools Workshop, Insight Net Third Annual Meeting, Friday Center, Chapel Hill, North Carolina"
-
       - name: "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems"
         date: 2026-03-30
         summary: "Biological Oceanography Seminar, Woods Hole Oceanographic Institution, Woods Hole, Massachusetts"
@@ -397,10 +418,10 @@ cv:
     Teaching:
       - company: Johns Hopkins University
         position: Teaching Assistant
-        start_date: 2025-06
-        end_date: 2025-08
+        start_date: 2025
+        end_date: 2026
         location: Baltimore, Maryland, USA
-        summary: "Teaching assistant for *Topics in Infectious Disease Epidemiology* with Shaun Truelove and Sara Loo."
+        summary: "Teaching assistant for *Topics in Infectious Disease Epidemiology* with Shaun Truelove and Sara Loo, Summer 2025 and Summer 2026."
 
       - company: University of Louisiana at Lafayette
         position: Teaching Assistant and Instructor of Record
@@ -478,5 +499,15 @@ cv:
 
       - name: Rhodes Outstanding Graduate Assistant Award
         date: 2021
+        summary: "Department of Mathematics, University of Louisiana at Lafayette. Awarded to two graduate students annually (approximately 50 graduate students total)."
+
+      - name: Outstanding Contributed Talk Award (Mathematical Epidemiology)
+        date: 2021
+        summary: "Society for Mathematical Biology Annual Meeting"
+
+      - name: Three Minute Thesis Competition, Finalist
+        date: 2019
+        summary: "Louisiana Sea Grant"
+
     Professional Affiliations:
       - "Society for Mathematical Biology; Society for Industrial and Applied Mathematics; International Society for Bayesian Analysis; United States Research Software Engineer Association; MIDAS Network; Association for Women in Mathematics; Institute of Industrial and Systems Engineers; Society for Health Systems (SHS/IISE); and Healthcare Information and Management Systems Society (HIMSS)."
