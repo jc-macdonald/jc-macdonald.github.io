@@ -90,7 +90,7 @@ ninja.data = [{
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",
           title: 'pp-eigentest',
-          description: "Posterior predictive eigenvalue testing for signal rank determination. Three-layer consensus architecture with FWER and FDR control; NumPy and JAX backends.",
+          description: "Posterior predictive eigenvalue testing for signal rank determination. Three-layer consensus architecture with FWER and FDR control; NumPy, C++, JAX, and sparse backends.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",
