@@ -101,12 +101,13 @@ def box(
         (x, y),
         w,
         h,
-        boxstyle="round,pad=0.012,rounding_size=0.018",
+        boxstyle="round,pad=0.010,rounding_size=0.018",
         facecolor=face,
         edgecolor=edge,
         linewidth=linewidth,
         linestyle=linestyle,
         transform=ax.transAxes,
+        zorder=2,
     )
     ax.add_patch(patch)
     color = title_color or edge
@@ -121,6 +122,7 @@ def box(
             fontweight="bold",
             color=color,
             transform=ax.transAxes,
+            zorder=3,
         )
         ax.text(
             x + w / 2,
@@ -132,6 +134,7 @@ def box(
             color=body_color,
             linespacing=1.35,
             transform=ax.transAxes,
+            zorder=3,
         )
     else:
         ax.text(
@@ -145,6 +148,7 @@ def box(
             color=color,
             linespacing=1.25,
             transform=ax.transAxes,
+            zorder=3,
         )
 
 
@@ -161,10 +165,11 @@ def arrow(
             start,
             end,
             arrowstyle="-|>",
-            mutation_scale=16,
+            mutation_scale=14,
             linewidth=width,
             color=color,
             transform=ax.transAxes,
+            zorder=1,
         )
     )
 
@@ -180,6 +185,7 @@ def badge(
         facecolor=color,
         edgecolor="none",
         transform=ax.transAxes,
+        zorder=2,
     )
     ax.add_patch(patch)
     ax.text(
@@ -191,6 +197,7 @@ def badge(
         fontsize=9.5,
         color=WHITE,
         fontweight="bold",
+        zorder=3,
     )
 
 
@@ -224,36 +231,36 @@ def beyond_onehealth() -> None:
         ("Execution", "OP Engine", TEAL_PRIMARY, PALE_TEAL),
         ("Orchestration", "FlepiMoP2", TEAL_ENVIRON, PALE_GREEN),
         (
-            "Design & evaluation",
-            "trade-study · structural scores",
+            "Design &\nevaluation",
+            "trade-study\nstructural scores",
             GOLD_ACCENT,
             PALE_GOLD,
         ),
-        ("Inference", "VBPCApy · pp-eigentest", GREEN_EARTH, PALE_GREEN),
+        ("Inference", "VBPCApy\npp-eigentest", GREEN_EARTH, PALE_GREEN),
     ]
-    xs = np.linspace(0.035, 0.805, len(layers))
+    xs = np.linspace(0.035, 0.825, len(layers))
     for x, (label, tool, color, pale) in zip(xs, layers):
         box(
             ax,
             x,
             0.64,
-            0.16,
+            0.14,
             0.16,
             label,
             tool,
             face=pale,
             edge=color,
-            title_size=12.5,
-            body_size=10,
+            title_size=11.8,
+            body_size=9.5,
         )
     for x0, x1 in pairwise(xs):
-        arrow(ax, (x0 + 0.162, 0.72), (x1 - 0.006, 0.72), width=1.8)
+        arrow(ax, (x0 + 0.155, 0.72), (x1 - 0.015, 0.72), width=1.8)
 
     # A shared bus makes clear that the complete stack—not one component alone—
     # supports each domain application.
     ax.plot([0.12, 0.88], [0.575, 0.575], color=SLATE, linewidth=1.7)
     for x in xs:
-        arrow(ax, (x + 0.08, 0.635), (x + 0.08, 0.582), width=1.3)
+        arrow(ax, (x + 0.07, 0.625), (x + 0.07, 0.586), width=1.3)
     domains = [
         (
             0.05,
@@ -312,8 +319,8 @@ def beyond_onehealth() -> None:
         )
         arrow(
             ax,
-            (x + 0.0975, 0.57),
-            (x + 0.0975, 0.495),
+            (x + 0.0975, 0.56),
+            (x + 0.0975, 0.502),
             color=color,
             width=1.4,
         )
@@ -332,15 +339,15 @@ def flepimop2() -> None:
     )
     steps = [
         (
-            0.035,
-            "Configuration target",
+            0.03,
+            "Configuration\ntarget",
             "validated YAML\nlocations · scenarios\nparameter grids",
             BLUE_HEALTH,
             PALE_BLUE,
         ),
         (
             0.235,
-            "Plugin resolution",
+            "Plugin\nresolution",
             "System · Engine\nParameters · Backend\noptional Process / Job",
             TEAL_PRIMARY,
             PALE_TEAL,
@@ -354,7 +361,7 @@ def flepimop2() -> None:
         ),
         (
             0.635,
-            "Campaign execution",
+            "Campaign\nexecution",
             "scenario × location\nreplicates · batches\nlocal or scheduled jobs",
             GOLD_ACCENT,
             PALE_GOLD,
@@ -372,7 +379,7 @@ def flepimop2() -> None:
             ax,
             x,
             0.49,
-            0.15,
+            0.145,
             0.25,
             title,
             body,
@@ -382,7 +389,7 @@ def flepimop2() -> None:
             body_size=10,
         )
     for left, right in pairwise(steps):
-        arrow(ax, (left[0] + 0.152, 0.615), (right[0] - 0.006, 0.615))
+        arrow(ax, (left[0] + 0.163, 0.615), (right[0] - 0.018, 0.615))
 
     ax.text(
         0.5,
@@ -398,16 +405,16 @@ def flepimop2() -> None:
     badge(ax, 0.565, 0.325, "custom plugins", TEAL_ENVIRON, width=0.15)
     box(
         ax,
-        0.23,
-        0.14,
-        0.54,
-        0.105,
+        0.20,
+        0.13,
+        0.60,
+        0.12,
         "Current command surface",
-        "flepimop2 pattern  ·  flepimop2 simulate CONFIG  ·  flepimop2 job …",
+        "flepimop2 pattern  ·  flepimop2 simulate CONFIG\nflepimop2 job …",
         face=PALE_GRAY,
         edge=SLATE,
-        title_size=11.5,
-        body_size=10.5,
+        title_size=11,
+        body_size=9.5,
     )
     footer(
         ax,
@@ -424,7 +431,7 @@ def future_directions() -> None:
     )
     columns = [
         (
-            0.045,
+            0.025,
             "GENERALIZE",
             "New systems",
             "Multi-host zoonoses\nMarine ecosystems\nEarth & spatial processes\nCultural evolution",
@@ -432,17 +439,17 @@ def future_directions() -> None:
             PALE_BLUE,
         ),
         (
-            0.355,
+            0.365,
             "HARDEN",
-            "Inference and evaluation",
+            "Inference &\nevaluation",
             "VBPCApy\npp-eigentest: fit–check–select\ntrade-study\nStructural scores · calibration",
             TEAL_PRIMARY,
             PALE_TEAL,
         ),
         (
-            0.665,
+            0.705,
             "OPERATIONALIZE",
-            "Policy and surveillance",
+            "Policy &\nsurveillance",
             "Vaccination strategy\nScenario-modeling campaigns\nCCHF surveillance design\nReproducible decision support",
             GOLD_ACCENT,
             PALE_GOLD,
@@ -450,7 +457,7 @@ def future_directions() -> None:
     ]
     for x, heading, title, body, color, pale in columns:
         ax.text(
-            x + 0.14,
+            x + 0.135,
             0.805,
             heading,
             ha="center",
@@ -463,21 +470,21 @@ def future_directions() -> None:
             ax,
             x,
             0.28,
-            0.28,
+            0.27,
             0.46,
             title,
             body,
             face=pale,
             edge=color,
-            title_size=16,
+            title_size=15,
             body_size=12,
         )
-    arrow(ax, (0.327, 0.51), (0.347, 0.51), width=2)
-    arrow(ax, (0.637, 0.51), (0.657, 0.51), width=2)
-    arrow(ax, (0.805, 0.255), (0.20, 0.255), color=TEAL_PRIMARY, width=2.4)
+    arrow(ax, (0.313, 0.51), (0.347, 0.51), width=2)
+    arrow(ax, (0.653, 0.51), (0.687, 0.51), width=2)
+    arrow(ax, (0.825, 0.245), (0.175, 0.245), color=TEAL_PRIMARY, width=2.4)
     ax.text(
         0.5,
-        0.19,
+        0.175,
         "observations, diagnostics, and policy feedback close the loop",
         ha="center",
         fontsize=11.5,
@@ -498,13 +505,13 @@ def obs_model() -> None:
         size=(14, 8.5),
     )
     headers = [
-        (0.08, "Latent process"),
-        (0.38, "Observation model  p(y | x, θobs)"),
-        (0.70, "Observed data"),
+        (0.2625, "Latent process"),
+        (0.5425, "Observation model  p(y | x, θobs)"),
+        (0.8225, "Observed data"),
     ]
     for x, text in headers:
         ax.text(
-            x + 0.11,
+            x,
             0.82,
             text,
             ha="center",
@@ -523,7 +530,7 @@ def obs_model() -> None:
         ),
         (
             0.48,
-            "Marine / environment",
+            "Marine /\nenvironment",
             "Ecosystem state\nNutrient cycling",
             "Sampling effort\nSpatial aliasing",
             "Surveys · eDNA\nRemote sensing",
@@ -531,7 +538,7 @@ def obs_model() -> None:
         ),
         (
             0.31,
-            "Terrestrial / earth",
+            "Terrestrial /\nearth",
             "Soil · fire\nVegetation",
             "Sensor placement\nCloud / canopy",
             "Indices · fluxes\nField transects",
@@ -539,7 +546,7 @@ def obs_model() -> None:
         ),
         (
             0.14,
-            "Cultural / human",
+            "Cultural /\nhuman",
             "Traits · networks\nPopulation structure",
             "Recovery bias\nCoding / sampling",
             "Assemblages\nLanguage · genomics",
@@ -559,9 +566,9 @@ def obs_model() -> None:
         )
         box(
             ax,
-            0.08,
+            0.16,
             y,
-            0.22,
+            0.205,
             0.13,
             latent,
             face=color,
@@ -571,9 +578,9 @@ def obs_model() -> None:
         )
         box(
             ax,
-            0.38,
+            0.44,
             y,
-            0.22,
+            0.205,
             0.13,
             observation,
             face=PALE_TEAL,
@@ -582,17 +589,17 @@ def obs_model() -> None:
         )
         box(
             ax,
-            0.70,
+            0.72,
             y,
-            0.22,
+            0.205,
             0.13,
             data,
             face=PALE_GRAY,
             edge=SLATE,
             title_size=11.5,
         )
-        arrow(ax, (0.305, y + 0.065), (0.373, y + 0.065), color=color, width=1.7)
-        arrow(ax, (0.605, y + 0.065), (0.693, y + 0.065), color=color, width=1.7)
+        arrow(ax, (0.383, y + 0.065), (0.422, y + 0.065), color=color, width=1.7)
+        arrow(ax, (0.663, y + 0.065), (0.702, y + 0.065), color=color, width=1.7)
     footer(
         ax,
         "Shared mathematics does not erase domain-specific observation assumptions or validation requirements.",
@@ -615,28 +622,28 @@ def op_engine() -> None:
             PALE_BLUE,
         ),
         (
-            0.255,
+            0.27,
             "Kernel families",
             "explicit & adaptive\nIMEX / implicit\nstochastic SSA / tau-leap",
             TEAL_PRIMARY,
             PALE_TEAL,
         ),
         (
-            0.505,
-            "Execution provider",
+            0.51,
+            "Execution\nprovider",
             "native control flow\ncompilation · checkpointing\nschedule validation",
             TEAL_ENVIRON,
             PALE_GREEN,
         ),
         (
-            0.755,
-            "Results & diagnostics",
+            0.75,
+            "Results &\ndiagnostics",
             "backend-native arrays\nstep / accuracy metadata\nreplay checks",
             GOLD_ACCENT,
             PALE_GOLD,
         ),
     ]
-    widths = [0.18, 0.20, 0.20, 0.20]
+    widths = [0.17, 0.17, 0.17, 0.20]
     for item_index, ((x, title, body, color, pale), item_width) in enumerate(
         zip(items, widths)
     ):
@@ -650,14 +657,14 @@ def op_engine() -> None:
             body,
             face=pale,
             edge=color,
-            title_size=12.8 if item_index == 3 else 14,
-            body_size=10.5,
+            title_size=12.5 if item_index == 3 else 13,
+            body_size=10,
         )
     for (left, left_width), right in zip(zip(items[:-1], widths[:-1]), items[1:]):
         arrow(
             ax,
-            (left[0] + left_width + 0.004, 0.615),
-            (right[0] - 0.008, 0.615),
+            (left[0] + left_width + 0.018, 0.615),
+            (right[0] - 0.018, 0.615),
         )
 
     ax.text(
@@ -684,10 +691,10 @@ def op_engine() -> None:
     )
     box(
         ax,
-        0.18,
-        0.15,
-        0.64,
-        0.10,
+        0.17,
+        0.14,
+        0.66,
+        0.12,
         "Method choice is capability-aware",
         "operator structure · stiffness · accuracy · stochasticity · backend support",
         face=PALE_GRAY,
@@ -714,7 +721,7 @@ def op_system() -> None:
         0.54,
         0.20,
         0.22,
-        "Governing equations",
+        "Governing\nequations",
         "states · parameters\naxes · expressions\noperators",
         face=PALE_BLUE,
         edge=BLUE_HEALTH,
@@ -726,14 +733,14 @@ def op_system() -> None:
         0.25,
         0.20,
         0.22,
-        "Transition diagrams",
+        "Transition\ndiagrams",
         "compartments · rates\nstratified flows\nstaged chains",
         face=PALE_GREEN,
         edge=GREEN_EARTH,
         title_size=14,
     )
-    arrow(ax, (0.24, 0.65), (0.31, 0.57), color=BLUE_HEALTH)
-    arrow(ax, (0.24, 0.36), (0.31, 0.48), color=GREEN_EARTH)
+    arrow(ax, (0.252, 0.65), (0.302, 0.57), color=BLUE_HEALTH)
+    arrow(ax, (0.252, 0.36), (0.302, 0.48), color=GREEN_EARTH)
     box(
         ax,
         0.32,
@@ -746,7 +753,7 @@ def op_system() -> None:
         edge=SLATE,
         title_size=14,
     )
-    arrow(ax, (0.515, 0.525), (0.565, 0.525))
+    arrow(ax, (0.528, 0.525), (0.557, 0.525))
     box(
         ax,
         0.575,
@@ -759,18 +766,18 @@ def op_system() -> None:
         edge=TEAL_PRIMARY,
         title_size=15,
     )
-    arrow(ax, (0.74, 0.525), (0.79, 0.525))
+    arrow(ax, (0.753, 0.525), (0.782, 0.525))
     box(
         ax,
         0.80,
         0.39,
         0.16,
         0.27,
-        "Vectorized codegen",
+        "Vectorized\ncodegen",
         "restricted bytecode\nArray-API operations\npicklable artifacts",
         face=PALE_GOLD,
         edge=GOLD_ACCENT,
-        title_size=12.3,
+        title_size=13,
     )
 
     ax.text(
@@ -831,7 +838,7 @@ def optimal_design() -> None:
             title_size=13,
             body_size=10,
         )
-    arrow(ax, (0.24, 0.52), (0.30, 0.52))
+    arrow(ax, (0.252, 0.52), (0.292, 0.52))
     box(
         ax,
         0.31,
@@ -845,7 +852,7 @@ def optimal_design() -> None:
         title_size=15,
         body_size=11,
     )
-    arrow(ax, (0.52, 0.52), (0.58, 0.52))
+    arrow(ax, (0.532, 0.52), (0.595, 0.52))
 
     plot_ax = fig.add_axes([0.62, 0.22, 0.31, 0.48])
     costs = np.array([1.0, 2.1, 3.0, 3.7, 5.4])
@@ -900,15 +907,15 @@ def pp_eigentest() -> None:
     )
     steps = [
         (
-            0.045,
+            0.035,
             "1  FIT",
-            "Observed matrix + mask",
+            "Observed matrix\n+ mask",
             "Fit PPCA / VBPCA to\nobserved entries; choose capacity\nand refit the selected model",
             BLUE_HEALTH,
             PALE_BLUE,
         ),
         (
-            0.365,
+            0.375,
             "2  CHECK",
             "Predictive reliability",
             "Held-out RMSE / log score / CRPS\ncoverage · convergence\ncapacity and stopping diagnostics",
@@ -916,9 +923,9 @@ def pp_eigentest() -> None:
             PALE_TEAL,
         ),
         (
-            0.685,
+            0.715,
             "3  SELECT",
-            "Model-implied spectra",
+            "Model-implied\nspectra",
             "Posterior-predictive PA\nor ordered sequential testing\n→ rank + diagnostics",
             GOLD_ACCENT,
             PALE_GOLD,
@@ -926,7 +933,7 @@ def pp_eigentest() -> None:
     ]
     for x, heading, title, body, color, pale in steps:
         ax.text(
-            x + 0.135,
+            x + 0.125,
             0.79,
             heading,
             ha="center",
@@ -938,7 +945,7 @@ def pp_eigentest() -> None:
             ax,
             x,
             0.32,
-            0.27,
+            0.25,
             0.39,
             title,
             body,
@@ -947,14 +954,14 @@ def pp_eigentest() -> None:
             title_size=16,
             body_size=11,
         )
-    arrow(ax, (0.318, 0.515), (0.355, 0.515), width=2.4)
-    arrow(ax, (0.638, 0.515), (0.675, 0.515), width=2.4)
+    arrow(ax, (0.302, 0.515), (0.358, 0.515), width=2.2)
+    arrow(ax, (0.642, 0.515), (0.698, 0.515), width=2.2)
     box(
         ax,
         0.22,
-        0.145,
+        0.12,
         0.56,
-        0.095,
+        0.12,
         "Not the primary method",
         "Earlier integer-rank consensus is retained only as a supplementary negative result.",
         face=PALE_RED,
@@ -977,7 +984,7 @@ def structural_fidelity() -> None:
         title_size=19.5,
         subtitle_y=0.89,
     )
-    plot_ax = fig.add_axes([0.08, 0.23, 0.54, 0.53])
+    plot_ax = fig.add_axes([0.08, 0.27, 0.54, 0.49])
     time = np.linspace(0, 12, 120)
     lawful = 0.18 + 0.72 / (1 + np.exp(-(time - 5.2) / 1.55))
     violating = 0.16 + 0.96 / (1 + np.exp(-(time - 6.2) / 1.45))
@@ -1081,16 +1088,16 @@ def vbpca() -> None:
             PALE_TEAL,
         ),
         (
-            0.515,
+            0.525,
             "Check & select",
-            "convergence diagnostics\ncross-validated components\nregime-aware configuration",
+            "convergence diagnostics\nCV component selection\nregime-aware configuration",
             GOLD_ACCENT,
             PALE_GOLD,
         ),
         (
-            0.755,
+            0.775,
             "Posterior output",
-            "covariances for latent factors\ncalibrated predictive variance\nreconstruction / transform",
+            "factor covariances\ncalibrated predictive\nvariance\nreconstruction / transform",
             GREEN_EARTH,
             PALE_GREEN,
         ),
@@ -1100,17 +1107,17 @@ def vbpca() -> None:
             ax,
             x,
             0.35,
-            0.19,
+            0.18,
             0.36,
             title,
             body,
             face=pale,
             edge=color,
-            title_size=15,
-            body_size=10.5,
+            title_size=14,
+            body_size=10,
         )
     for left, right in pairwise(steps):
-        arrow(ax, (left[0] + 0.192, 0.53), (right[0] - 0.007, 0.53))
+        arrow(ax, (left[0] + 0.198, 0.53), (right[0] - 0.018, 0.53))
     badge(ax, 0.25, 0.21, "missing-aware", BLUE_HEALTH, width=0.15)
     badge(ax, 0.425, 0.21, "scikit-learn API", TEAL_PRIMARY, width=0.16)
     badge(ax, 0.61, 0.21, "C++ autotuning", TEAL_ENVIRON, width=0.15)
@@ -1129,29 +1136,29 @@ def trade_study() -> None:
     )
     steps = [
         (
-            0.04,
+            0.025,
             "Design space",
             "factors · constraints\nfull / adaptive search\nhierarchical phases",
             BLUE_HEALTH,
             PALE_BLUE,
         ),
         (
-            0.28,
-            "Simulator protocol",
+            0.275,
+            "Simulator\nprotocol",
             "configuration →\ntruth + observations\nreproducible replicates",
             TEAL_PRIMARY,
             PALE_TEAL,
         ),
         (
-            0.52,
+            0.525,
             "Scoring",
             "proper scores\nstructural diagnostics\ncost and feasibility",
             TEAL_ENVIRON,
             PALE_GREEN,
         ),
         (
-            0.76,
-            "Decision support",
+            0.775,
+            "Decision\nsupport",
             "Pareto fronts\nstacking · sensitivity\nsurrogate recommendations",
             GOLD_ACCENT,
             PALE_GOLD,
@@ -1162,17 +1169,17 @@ def trade_study() -> None:
             ax,
             x,
             0.47,
-            0.19,
+            0.18,
             0.29,
             title,
             body,
             face=pale,
             edge=color,
-            title_size=15,
-            body_size=10.5,
+            title_size=14,
+            body_size=10,
         )
     for left, right in pairwise(steps):
-        arrow(ax, (left[0] + 0.192, 0.615), (right[0] - 0.007, 0.615))
+        arrow(ax, (left[0] + 0.198, 0.615), (right[0] - 0.018, 0.615))
     ax.text(
         0.5,
         0.395,
@@ -1188,10 +1195,10 @@ def trade_study() -> None:
     badge(ax, 0.705, 0.305, "model stacking", GOLD_ACCENT, width=0.15)
     box(
         ax,
-        0.20,
-        0.14,
-        0.60,
-        0.09,
+        0.18,
+        0.12,
+        0.64,
+        0.12,
         "General-purpose",
         "model formulations · solver choices · measurement strategies · operational configurations",
         face=PALE_GRAY,
