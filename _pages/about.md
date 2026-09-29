@@ -35,17 +35,17 @@ Currently I am an Assistant Scientist at the [International Vaccine Access Cente
 I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a BA in Archaeology from UNC Greensboro — a combination that continues to shape how I think about inference from incomplete records.
 
 <div style="margin: 2.5rem 0;">
-{% include figure.liquid loading="eager" path="assets/img/research/beyond_onehealth.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/research/beyond_onehealth.png" class="img-fluid rounded z-depth-1" alt="Shared research stack connecting model specification, numerical execution, orchestration, design, evaluation, and inference to operational and emerging scientific domains." caption="Reusable computational layers support domain-specific models and decisions; labels distinguish operational, active-research, and planned work." %}
 </div>
 
 ---
 
 #### The common structure
 
-Every system I work on shares the same architecture: a latent process we care about, an observation process that distorts it, and the data we actually get. Whether the latent state is disease prevalence in a wildlife herd, nutrient cycling in a marine ecosystem, or cultural trait frequencies in a human population, the challenge is identical — the thing we need to make decisions about is never directly observed. The figure below maps this architecture across four domains.
+The systems I work on share a recurring architecture: a latent process we care about, an observation process that maps and distorts it, and the data we actually get. Whether the latent state is disease prevalence in a wildlife herd, nutrient cycling in a marine ecosystem, or cultural trait frequencies in a human population, the decision-relevant state is rarely fully observed. The observation assumptions and validation requirements remain domain-specific. The figure below maps this architecture across four domains.
 
 <div style="margin: 2.5rem 0;">
-{% include figure.liquid loading="eager" path="assets/img/research/obs_model_general.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/research/obs_model_general.png" class="img-fluid rounded z-depth-1" alt="Four examples of latent scientific processes passing through domain-specific observation models to produce epidemiological, environmental, earth-system, and human data." caption="Across domains, a partially observed latent process is connected to data through an explicit observation model." %}
 </div>
 
 This is not just a conceptual analogy. The mathematical structure is shared: each domain requires a generative model that encodes how hidden states produce observables, an inference engine that inverts the observation process under uncertainty, and a decision layer that translates posterior beliefs into actionable recommendations. Building this infrastructure so that it transfers across domains — rather than rebuilding it from scratch for each application — is the central goal of my research program.
@@ -62,12 +62,12 @@ The stack currently runs forward — specify a model, integrate it, orchestrate 
 
 #### Where this is going
 
-The research program moves along three axes. First, _enable decisions_: determine what intervention to deploy, what experiment to run, and what to measure next — then package these recommendations into tested, documented, open-source software with CI pipelines so that collaborators and decision-makers can act on model output they have reason to trust. Second, _harden the inference_: build reusable tools for Bayesian rank selection ([pp-eigentest](/projects/pp_eigentest/)), multi-objective design and evaluation ([trade-study](https://github.com/jcm-sci/trade-study)), missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)), and — the next piece — parameter calibration against real observational data, so the same operator-partitioned models used for forward simulation can be fit to it directly. Third, _generalize_: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes.
+The research program moves along three axes. First, _operationalize decisions_: determine what intervention to deploy, what experiment to run, and what to measure next — then package these recommendations into tested, documented, open-source software with CI pipelines so that collaborators and decision-makers can act on model output they have reason to trust. Second, _harden the inference_: build reusable tools for Bayesian rank selection ([pp-eigentest](/projects/pp_eigentest/)), multi-objective design and evaluation ([trade-study](https://github.com/jcm-sci/trade-study)), missing-data-native dimensionality reduction ([vbpca-py](https://github.com/yoavram-lab/VBPCApy)), and — the next piece — parameter calibration against real observational data, so the same operator-partitioned models used for forward simulation can be fit to it directly. Third, _generalize_: extend the partially observed decision framework to new domains and new classes of systems — multi-host zoonoses, marine ecosystems, cultural evolution, spatial processes.
 
 Current analyses include dengue antibody-dependent enhancement, outcome-independent structural scores for scientific predictions, COVID-19 observation-noise sensitivity, diphtheria outbreak vaccination, and CCHF surveillance and control design. Their working repositories remain private while the analyses and manuscripts mature.
 
 <div style="margin: 2.5rem 0;">
-{% include figure.liquid loading="eager" path="assets/img/research/future_directions_general.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/research/future_directions_general.png" class="img-fluid rounded z-depth-1" alt="Research program organized around generalizing to new scientific systems, hardening inference and evaluation, and operationalizing policy and surveillance decisions." caption="The program links generalization, methodological hardening, and operational decision support through observations and policy feedback." %}
 </div>
 
 The question that ties it all together: _what should we do, given what we can't observe?_

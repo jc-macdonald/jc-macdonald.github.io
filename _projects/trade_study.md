@@ -2,7 +2,8 @@
 layout: page
 title: trade-study
 description: Design and evaluation framework for scientific simulation studies. Score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against known ground truth via protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.
-img: assets/img/research/structural_fidelity_comparison.png
+img: assets/img/research/trade_study_slide.png
+img_alt: trade-study workflow from a constrained design space through simulator protocols and scoring to Pareto and surrogate decision support.
 importance: 2
 category: "lead developer · released"
 github: https://github.com/jcm-sci/trade-study
@@ -20,4 +21,4 @@ Available in Python. Released on [PyPI](https://pypi.org/project/trade-study/) a
 
 - Python: [jcm-sci/trade-study](https://github.com/jcm-sci/trade-study)
 
-{% include figure.liquid loading="eager" path="assets/img/research/optimal_design.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/research/optimal_design.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Observation-design example comparing candidate sampling strategies on a Pareto frontier of total cost and expected information, with one design selected under a stated budget." caption="Illustrative observation-design application: Pareto efficiency narrows the choices, but selecting a design still requires an explicit budget or utility." %}
