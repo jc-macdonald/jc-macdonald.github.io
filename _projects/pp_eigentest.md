@@ -3,6 +3,7 @@ layout: page
 title: pp-eigentest
 description: Private pre-release work on posterior-predictive signal-rank selection, centered on a sequential fitted-model selector with explicit calibration and stopping diagnostics.
 img: assets/img/research/pp_eigentest_schematic.png
+img_alt: pp-eigentest fit-check-select workflow using masked model fitting, predictive diagnostics, and posterior-predictive spectral rank selection.
 importance: 3
 category: "lead developer · in development"
 ---

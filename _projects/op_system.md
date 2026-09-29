@@ -3,6 +3,7 @@ layout: page
 title: OP System
 description: Restricted expression language and compiler for structured dynamical systems, lowering model specifications through typed IR to vectorized, Array-API-polymorphic code.
 img: assets/img/research/op_system_slide.png
+img_alt: OP System compiler workflow from equations or transition diagrams through validation, typed intermediate representation, and portable evaluators.
 importance: 3
 category: "lead developer · in development"
 github: https://github.com/ACCIDDA/op_system

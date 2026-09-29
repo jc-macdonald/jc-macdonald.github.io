@@ -3,6 +3,7 @@ layout: page
 title: Current Model-Analysis Portfolio
 description: Active mechanistic modeling, inference, and evaluation studies spanning dengue, COVID-19 observation noise, diphtheria vaccination, CCHF surveillance, and structural scores.
 img: assets/img/research/structural_fidelity_comparison.png
+img_alt: Predictive accuracy and structural admissibility shown as complementary evaluation criteria for scientific forecasts.
 importance: 1
 category: "lead developer · in development"
 ---

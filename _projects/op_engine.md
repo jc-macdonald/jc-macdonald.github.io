@@ -3,6 +3,7 @@ layout: page
 title: OP Engine
 description: Array-API-polymorphic ODE/PDE solver with portable numerical kernels and backend-native execution providers for explicit, IMEX, implicit, and stochastic integration.
 img: assets/img/research/op_engine_slide.png
+img_alt: OP Engine workflow connecting prepared models, numerical kernel families, backend-native providers, and execution diagnostics.
 importance: 2
 category: "lead developer · in development"
 github: https://github.com/ACCIDDA/op_engine

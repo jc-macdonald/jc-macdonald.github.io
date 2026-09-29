@@ -3,6 +3,7 @@ layout: page
 title: vbpca-py
 description: Variational Bayesian PCA for incomplete data with full posterior uncertainty, calibrated predictive variance, automatic component pruning, native missingness handling, and C++-accelerated kernels.
 img: assets/img/research/vbpca_py_schematic.png
+img_alt: VBPCApy workflow from an incomplete matrix and explicit observation mask through variational fitting, diagnostics, component selection, and predictive uncertainty.
 importance: 1
 category: "lead developer · released"
 github: https://github.com/yoavram-lab/VBPCApy

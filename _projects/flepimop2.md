@@ -3,6 +3,7 @@ layout: page
 title: FlepiMoP2
 description: Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decoupling model specification, integration, and persistence.
 img: assets/img/research/flepimop2_slide.png
+img_alt: FlepiMoP2 workflow from validated configuration and plugin resolution through campaign execution and persisted outputs.
 importance: 1
 category: collaborative infrastructure
 github: https://github.com/ACCIDDA/flepimop2
