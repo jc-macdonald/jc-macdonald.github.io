@@ -58,39 +58,44 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/extracurricular/";
           },
-        },{id: "news-presenting-at-smb-2025-in-edmonton-recovering-ecological-geometry-a-trait-and-depth-structured-ipde-model-of-plankton-dynamics",
-          title: 'Presenting at SMB 2025 in Edmonton — “Recovering Ecological Geometry: A Trait- and...',
+        },{id: "news-presented-at-smb-2025-in-edmonton-recovering-ecological-geometry-a-trait-and-depth-structured-ipde-model-of-plankton-dynamics",
+          title: 'Presented at SMB 2025 in Edmonton — “Recovering Ecological Geometry: A Trait- and...',
           description: "",
-          section: "News",},{id: "news-invited-seminar-at-umbc-decision-support-modeling-for-one-health-pathogens",
-          title: 'Invited seminar at UMBC — “Decision-Support Modeling for One Health Pathogens.”',
+          section: "News",},{id: "news-invited-seminar-at-umbc-decision-support-modeling-for-one-health-pathogens-using-mechanistic-models-for-surveillance-and-forecast-design",
+          title: 'Invited seminar at UMBC — “Decision-Support Modeling for One Health Pathogens: Using Mechanistic...',
           description: "",
           section: "News",},{id: "news-invited-seminar-at-woods-hole-oceanographic-institution-cross-scale-feedback-motifs-structure-preserving-models-and-computational-tools-for-complex-systems",
           title: 'Invited seminar at Woods Hole Oceanographic Institution — “Cross-Scale Feedback Motifs: Structure-Preserving Models...',
           description: "",
-          section: "News",},{id: "news-presenting-flepimop2-and-the-operator-partitioned-simulation-stack-at-the-insight-net-third-annual-meeting-tools-workshop-friday-center-chapel-hill-nc",
-          title: 'Presenting FlepiMoP2 and the Operator-Partitioned Simulation Stack at the Insight Net Third Annual...',
+          section: "News",},{id: "news-presented-flepimop2-and-the-operator-partitioned-simulation-stack-at-the-insight-net-third-annual-meeting-tools-workshop-friday-center-chapel-hill-nc",
+          title: 'Presented FlepiMoP2 and the Operator-Partitioned Simulation Stack at the Insight Net Third Annual...',
           description: "",
           section: "News",},{id: "news-mini-symposium-talk-at-smb-2026-in-graz-austria-decision-support-modeling-for-one-health-pathogens-using-mechanistic-models-for-surveillance-and-forecast-design",
           title: 'Mini-symposium talk at SMB 2026 in Graz, Austria — “Decision-Support Modeling for One...',
           description: "",
-          section: "News",},{id: "projects-flepimop2",
+          section: "News",},{id: "projects-current-model-analysis-portfolio",
+          title: 'Current Model-Analysis Portfolio',
+          description: "Active mechanistic modeling, inference, and evaluation studies spanning dengue, COVID-19 observation noise, diphtheria vaccination, CCHF surveillance, and structural scores.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/current_analyses/";
+            },},{id: "projects-flepimop2",
           title: 'FlepiMoP2',
           description: "Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decoupling model specification, integration, and persistence.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/flepimop2/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
-          description: "Operator-partitioned ODE/PDE solver core with nine integration methods (explicit, IMEX, fully implicit), adaptive step-size control, and zero per-step allocation.",
+          description: "Array-API-polymorphic ODE/PDE solver with portable numerical kernels and backend-native execution providers for explicit, IMEX, implicit, and stochastic integration.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_engine/";
             },},{id: "projects-op-system",
           title: 'OP System',
-          description: "Declarative specification language and compiler for structured dynamical systems. Two specification pathways, multi-axis stratification, and compilation to validated bytecode closures.",
+          description: "Restricted expression language and compiler for structured dynamical systems, lowering model specifications through typed IR to vectorized, Array-API-polymorphic code.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",
           title: 'pp-eigentest',
-          description: "Posterior predictive eigenvalue testing for signal rank determination. Three-layer consensus architecture with FWER and FDR control; NumPy, C++, JAX, and sparse backends.",
+          description: "Private pre-release work on posterior-predictive signal-rank selection, centered on a sequential fitted-model selector with explicit calibration and stopping diagnostics.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",
