@@ -23,4 +23,4 @@ Key features:
 
 Applied to genetic, cultural, and ecological datasets. Available on [PyPI](https://pypi.org/project/vbpca-py/) and archived at [Zenodo](https://doi.org/10.5281/zenodo.19389250).
 
-The 2024 preprint {% cite macdonald2024vbpca %} introduced an earlier, single-statistic version of the posterior predictive rank-testing methodology built on this codebase; a fuller three-layer treatment is in preparation as the standalone [pp-eigentest](/projects/pp_eigentest/) paper.
+The 2024 preprint {% cite macdonald2024vbpca %} introduced an earlier, single-statistic version of the posterior predictive rank-testing methodology built on this codebase. The follow-up [pp-eigentest](/projects/pp_eigentest/) work now centers a sequential fitted-model selector; earlier consensus methods are retained as supplementary analyses.

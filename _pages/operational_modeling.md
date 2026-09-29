@@ -9,7 +9,7 @@ nav_order: 4
 
 ## Scenario Modeling Hubs
 
-Multi-model scenario projections produced by the Scenario Modeling Hubs are used by the [CDC Center for Forecasting and Outbreak Analytics (CFA)](https://www.cdc.gov/forecast-outbreak-analytics/) and the [Advisory Committee on Immunization Practices (ACIP)](https://www.cdc.gov/acip/) to inform vaccine policy and pandemic preparedness decisions.
+Multi-model scenario projections produced by the Scenario Modeling Hubs contribute evidence used by the [CDC Center for Forecasting and Outbreak Analytics (CFA)](https://www.cdc.gov/forecast-outbreak-analytics/) and public-health partners for planning, preparedness, and evaluation.
 
 I develop and maintain ACCIDDA's operational models for the Flu and COVID-19 Scenario Modeling Hubs and contribute to the computational infrastructure that supports multi-round scenario projections.
 
@@ -39,8 +39,12 @@ Data assimilation and modeling support for ACCIDDA's COVID-19 projections.
 
 Technical supervisor for an age- and immune-status-structured _Haemophilus influenzae_ type b (Hib) model evaluating the impact of long-running vaccination programs in the Navajo Nation. Managing PhD students through model implementation, calibration, and policy analysis.
 
+### Diphtheria Outbreak Vaccination
+
+Developing an operational modeling analysis of outbreak-response vaccination strategies, including the interaction between surveillance, immunity, and campaign timing. The working repository remains private while the analysis matures.
+
 ---
 
 ## Infrastructure
 
-This operational work directly informs the development of [FlepiMoP2](/projects/flepimop2/), [OP Engine](/projects/op_engine/), and [OP System](/projects/op_system/), which compose into a declarative modeling stack: researchers specify models via [OP System](/projects/op_system/)'s specification language, the compiler produces validated model objects consumed by [OP Engine](/projects/op_engine/)'s operator-partitioned solver, and [FlepiMoP2](/projects/flepimop2/) orchestrates batch scenario campaigns. This stack will serve as the modeling infrastructure for the 2026/27 flu round, the COVID-19 round, and the RSV round.
+This operational work directly informs the development of [FlepiMoP2](/projects/flepimop2/), [OP Engine](/projects/op_engine/), and [OP System](/projects/op_system/), which compose into a declarative modeling stack: OP System compiles validated, Array-API-polymorphic model functions; OP Engine provides portable numerical kernels and backend-native execution; and FlepiMoP2 orchestrates configuration-defined campaigns and provider integrations. The stack is being developed against operational infectious-disease modeling requirements rather than as an isolated numerical demonstration.

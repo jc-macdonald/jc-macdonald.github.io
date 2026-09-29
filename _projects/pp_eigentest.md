@@ -1,19 +1,16 @@
 ---
 layout: page
 title: pp-eigentest
-description: Posterior predictive eigenvalue testing for signal rank determination. Three-layer consensus architecture with FWER and FDR control; NumPy, C++, JAX, and sparse backends.
+description: Private pre-release work on posterior-predictive signal-rank selection, centered on a sequential fitted-model selector with explicit calibration and stopping diagnostics.
 img: assets/img/research/pp_eigentest_schematic.png
 importance: 3
 category: "lead developer · in development"
-github: https://github.com/yoavram-lab/pp-eigentest
 ---
 
-**pp-eigentest** is a posterior predictive eigenvalue testing framework for determining signal rank in high-dimensional datasets. It uses an INID bootstrap over Gram spectra as the null model and tests eigenvalue ratios via a **three-layer consensus architecture**:
+**pp-eigentest** is a posterior predictive eigenvalue testing framework for determining signal rank in high-dimensional datasets. The current manuscript and analysis plan centers a **sequential fitted-model rank selector** with explicit calibration and stopping diagnostics.
 
-1. **Dimensionality heuristics** — parallel analysis variants, adjacent ratio/gap statistics, calibrated thresholds
-2. **Adaptive thresholding** — data-driven cutoffs that adjust to spectral structure
-3. **Multiple testing correction** — fixed-sequence FWER, Holm step-down, Benjamini–Hochberg FDR
+Earlier ensemble/consensus approaches are retained as supplementary negative results rather than presented as the primary method. The strongest external comparator is still being finalized, so the manuscript is not yet ready for submission.
 
-Supports **NumPy, C++, JAX** (GPU-accelerated), and **sparse** backends. The rank-selection logic is model-agnostic: it consumes posterior mean/variance summaries from any generative engine — [vbpca-py](/projects/vbpca_py/), probabilistic PCA, or an empirical-Bayes Gaussian model — rather than depending on one specific upstream model.
+NumPy is the reference implementation. JAX is opt-in, and the C++ path is selected only when runtime measurement shows a benefit. Sparse inputs are accepted behind memory guards but are materialized for dense spectral computation; they are not a separate sparse computational backend.
 
-In development; pre-release. Source at [yoavram-lab/pp-eigentest](https://github.com/yoavram-lab/pp-eigentest).
+In development as a private pre-release companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129). A public source release is planned with the methods paper.
