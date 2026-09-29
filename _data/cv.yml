@@ -105,7 +105,7 @@ cv:
         doi: 10.1017/ehs.2024.45
         date: 2024
         highlights:
-          - "Software: [VBPCApy](https://github.com/yoavram-lab/VBPCApy), [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
+          - "Software: [VBPCApy](https://github.com/yoavram-lab/VBPCApy); [pp-eigentest project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
 
       - title: "Forward hysteresis and Hopf bifurcation in an NPZD model with application to harmful algal blooms"
         authors:
@@ -168,7 +168,7 @@ cv:
         doi: 10.48550/arXiv.2409.12129
         date: 2024
         highlights:
-          - "Software: [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest), [VBPCApy](https://github.com/yoavram-lab/VBPCApy)"
+          - "Software: [pp-eigentest project summary](https://jcmacdonald.dev/projects/pp_eigentest/); [VBPCApy](https://github.com/yoavram-lab/VBPCApy)"
 
     Manuscripts in Preparation:
       - title: "Posterior predictive eigenvalue testing for spectral dimensionality selection"
@@ -176,17 +176,17 @@ cv:
           - "***J.C. Macdonald***"
           - S. Naim
           - Y. Ram
-        journal: "In preparation for Bioinformatics or PLOS Computational Biology"
+        journal: "In preparation for Statistics and Computing"
         date: 2026
         highlights:
-          - "Software: [pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
+          - "Software: pp-eigentest (private pre-release; public release planned with the manuscript)"
 
-      - title: "What Should Structural Evaluation Mean?: Label-Free Structural Evaluation Scores for Scientific Prediction"
+      - title: "Structural Scores: An Outcome-Independent Reporting Protocol for Scientific Predictions"
         authors:
           - "***J.C. Macdonald***"
           - M. Marshall
           - S. Truelove
-        journal: "In preparation for Statistical Science"
+        journal: "In preparation for Statistics and Computing"
         date: 2026
 
       - title: "Decision Support Modeling for One Health Pathogens: Crimean-Congo Hemorrhagic Fever Surveillance and Control Design"
@@ -243,31 +243,30 @@ cv:
       - name: "OP System (Operator-Partitioned System)"
         start_date: 2026
         end_date: present
-        summary: "ACCIDDA. Declarative specification language and compiler for structured dynamical systems. Researchers define models via explicit equations or transition diagrams with multi-axis stratification; specifications compile to validated, safe bytecode closures with structured metadata passed to downstream solvers. Specification layer of the operator-partitioned simulation stack."
+        summary: "ACCIDDA. Restricted expression language and compiler for structured dynamical systems. Explicit equations or transition diagrams lower through a typed intermediate representation to vectorized AST/code objects. The same compiled right-hand side supports NumPy, JAX transformations, and PyTorch autograd with flat, block, or PyTree state layouts."
         highlights:
           - "[github.com/ACCIDDA/op_system](https://github.com/ACCIDDA/op_system)"
 
       - name: pp-eigentest
         start_date: 2026
         end_date: present
-        summary: "Posterior predictive eigenvalue testing for determining signal rank in high-dimensional datasets. Three-layer consensus architecture combining dimensionality heuristics, adaptive thresholding, and multiple testing correction (FWER, FDR). NumPy, C++, JAX (GPU), and sparse backends; model-agnostic, consuming posterior summaries from any generative engine (VBPCApy, PPCA, empirical-Bayes Gaussian)."
+        summary: "Private pre-release work on posterior-predictive signal-rank selection. The current analysis centers a sequential fitted-model selector; earlier consensus methods are supplementary negative results. NumPy is the reference path, JAX is opt-in, C++ is used only when measured faster, and sparse inputs are guarded before dense spectral computation."
         highlights:
-          - "[github.com/yoavram-lab/pp-eigentest](https://github.com/yoavram-lab/pp-eigentest)"
+          - "[Project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
 
-      - name: "Trade Study (Python + Julia)"
+      - name: "Trade Study (Python)"
         start_date: 2026
         end_date: present
-        summary: "Design and evaluation framework for scientific simulation studies. Simulators with known latent state provide controlled environments to score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against ground truth using proper scoring rules and multi-objective Pareto optimization. Hierarchical phases, Bayesian model stacking, and global sensitivity analysis. Available in Python and Julia."
+        summary: "Design and evaluation framework for scientific simulation studies. Simulators with known latent state provide controlled environments to score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against ground truth using proper scoring rules and multi-objective Pareto optimization. Hierarchical phases, Bayesian model stacking, and global sensitivity analysis."
         highlights:
-          - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study) (Python)"
-          - "[github.com/jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl) (Julia)"
+          - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study)"
           - "[pypi.org/project/trade-study/](https://pypi.org/project/trade-study/)"
           - "[doi:10.5281/zenodo.19599838](https://doi.org/10.5281/zenodo.19599838)"
 
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Operator-partitioned ODE/PDE solver core. Splits the right-hand side into explicit and implicit parts, advancing them jointly via nine methods (explicit, IMEX, fully implicit) with adaptive step-size control. Cached implicit solves with dense/sparse autodispatch; zero per-step allocation. Consumes OP System specifications."
+        summary: "ACCIDDA. Array-API-polymorphic operator-partitioned ODE/PDE solver. Portable explicit, IMEX, implicit, and stochastic kernels are paired with backend-native execution providers: NumPy mutable fast paths, JAX compiled/adaptive execution and frozen-schedule replay, PyTorch eager autograd, and compatible CuPy dense/sparse paths."
         highlights:
           - "[github.com/ACCIDDA/op_engine](https://github.com/ACCIDDA/op_engine)"
 
@@ -316,6 +315,11 @@ cv:
         summary: "ACCIDDA. Support. Data cleaning and assimilation in support of ACCIDDA's health heterogeneities COVID-19 round."
         highlights:
           - "[github.com/midas-network/covid19-scenario-modeling-hub](https://github.com/midas-network/covid19-scenario-modeling-hub)"
+
+      - name: Diphtheria Outbreak Vaccination
+        start_date: 2026
+        end_date: present
+        summary: "Operational modeling of outbreak-response vaccination strategies, including the interaction between surveillance, immunity, and campaign timing. Working repository is private while the analysis matures."
 
     Invited Talks and Seminars:
       - name: "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems"
@@ -393,25 +397,25 @@ cv:
     Workshop Facilitation:
       - company: Insight Net Third Annual Meeting
         position: Tools Workshop Presenter
-        date: 2026-04
+        start_date: 2026-04
         location: Chapel Hill, North Carolina, USA
-        summary: "Presenting FlepiMoP2 and the op_system/op_engine simulation stack at the Insight Net Third Annual Meeting tools workshop, Friday Center, University of North Carolina at Chapel Hill."
+        summary: "Presented FlepiMoP2 and the op_system/op_engine simulation stack at the Insight Net Third Annual Meeting tools workshop, Friday Center, University of North Carolina at Chapel Hill."
 
       - company: Insight Net Second Tech Transfer Workshop
         position: Technical Support
-        date: 2026-01
+        start_date: 2026-01
         location: Chapel Hill, North Carolina, USA
         summary: "ACCIDDA. Technical support for the Insight Net Second Tech Transfer Workshop at UNC Chapel Hill. Assisted participants with Python package installation and environment setup for Epydemics tools."
 
       - company: ACCIDDA
         position: Workshop Facilitator
-        date: 2025-10
+        start_date: 2025-10
         location: Baltimore, Maryland, USA
         summary: "Facilitator for the Applied Modeling in Public Health (AMPH) Workshop, October 15--17, 2025, Johns Hopkins Bloomberg School of Public Health."
 
       - company: ACCIDDA
         position: Workshop Facilitator
-        date: 2024-08
+        start_date: 2024-08
         location: Baltimore, Maryland, USA
         summary: "Facilitator for the Applied Modeling in Public Health (AMPH) Workshop, August 12--15, 2024, Johns Hopkins Bloomberg School of Public Health."
 

@@ -16,9 +16,8 @@ A **four-tier observable hierarchy** (embedded constraints, penalized objectives
 
 For expensive studies, **successive-halving and Hyperband** runners screen the design space at low fidelity before committing full budget to survivors, and **GP/RF surrogate models** — including a **regime-conditional surrogate** that interpolates recommendations across continuous descriptors like sample size or noise level — approximate scores without re-running the simulator.
 
-Available in Python and Julia. Released on [PyPI](https://pypi.org/project/trade-study/) and archived at [Zenodo](https://doi.org/10.5281/zenodo.19599838). Documentation at [jcm-sci.github.io/trade-study](https://jcm-sci.github.io/trade-study/).
+Available in Python. Released on [PyPI](https://pypi.org/project/trade-study/) and archived at [Zenodo](https://doi.org/10.5281/zenodo.19599838). Documentation at [jcm-sci.github.io/trade-study](https://jcm-sci.github.io/trade-study/).
 
 - Python: [jcm-sci/trade-study](https://github.com/jcm-sci/trade-study)
-- Julia: [jcm-sci/TradeStudy.jl](https://github.com/jcm-sci/TradeStudy.jl)
 
 {% include figure.liquid loading="eager" path="assets/img/research/optimal_design.png" class="img-fluid rounded z-depth-1" zoomable=true %}
