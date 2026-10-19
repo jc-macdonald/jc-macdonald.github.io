@@ -1,20 +1,20 @@
 ---
 layout: page
 title: pp-eigentest
-description: Research on how much signal incomplete datasets can support. Methods and private pre-release software in development.
+description: Research on how many underlying patterns an incomplete dataset can support. Private alpha research software.
 img: assets/img/research/pp_eigentest_schematic.svg
 img_alt: Ongoing signal-rank research connects incomplete data, Bayesian latent-variable modeling, and assessment of signal and uncertainty. The methods and software remain in development.
 importance: 3
 category: "lead developer · in development"
 ---
 
-**pp-eigentest** investigates posterior predictive eigenvalue testing to assess
-how many dimensions reflect signal when entries are missing. It uses Bayesian latent-variable
-models and examines how rank decisions depend on data quality, uncertainty
-and model assessment.
+**pp-eigentest** investigates how many underlying patterns an incomplete dataset
+can support. It uses Bayesian models and repeated simulated datasets to assess
+which patterns can be distinguished from noise. The technical method is posterior
+predictive eigenvalue testing.
 
-This is ongoing methods research with private pre-release software. A methods
-paper is in preparation. The work extends the approach described in the
+This is ongoing methods research with private alpha software. The current work
+revises and extends the approach described in the
 [2024 preprint](https://arxiv.org/abs/2409.12129), which is the public reference
 for the earlier methodology. It is distinct from the released
 [VBPCApy](/projects/vbpca_py/) package.

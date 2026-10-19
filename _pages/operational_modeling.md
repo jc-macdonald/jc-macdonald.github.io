@@ -25,8 +25,9 @@ Lead model developer for ACCIDDA's influenza scenario projections.
 
 ### COVID-19 Scenario Modeling Hub
 
-Data assimilation and modeling support for ACCIDDA's COVID-19 projections.
+Model development, fitting and scenario production for ACCIDDA's COVID-19 projections.
 
+- **2026/27 Round 20.** Led the submission, including model development and calibration, migration to OP System and FlepiMoP2, scenario production and quality checks.
 - **2025 health heterogeneities round.** Data cleaning, assimilation, and scenario analysis.
 
 [Hub repository](https://github.com/midas-network/covid19-scenario-modeling-hub)

@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Research software for scientific computing, Bayesian inference, and operational deployment infrastructure.
+description: Models and software for studying changing systems, learning from incomplete data, and comparing interventions and research designs.
 nav: true
 nav_order: 3
 display_categories: ["lead developer · released", "lead developer · in development", collaborative infrastructure]

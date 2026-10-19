@@ -1,7 +1,7 @@
 ---
 layout: page
 title: op_infer
-description: Bayesian fitting, simulation-based calibration and study design. Private, pre-alpha and unreleased.
+description: Estimate model quantities from incomplete data and assess fitting methods. Private pre-alpha research software.
 img: assets/img/research/op_infer_slide.svg
 img_alt: op_infer capabilities include fitting through established libraries, calibration checks on simulated data, and replicated study comparisons. Private, pre-alpha and unreleased.
 importance: 2

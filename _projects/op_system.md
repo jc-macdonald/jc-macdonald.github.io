@@ -1,7 +1,7 @@
 ---
 layout: page
 title: OP System
-description: Compile PDE, nonlocal and reaction model specifications into evaluators and numerical metadata.
+description: Describe models of changing systems, including spatial interactions and random events.
 img: assets/img/research/op_system_slide.svg
 img_alt: A model specification feeds a compiler, which exports evaluators, operator/reaction metadata, and observation/forcing interfaces. Model classes include PDEs, nonlocal dynamics, compartments and reactions. Numerical consumers choose discretization and integration; cross-axis constraints remain metadata.
 importance: 3
@@ -9,9 +9,9 @@ category: "lead developer · released"
 github: https://github.com/ACCIDDA/op_system
 ---
 
-**OP System** is the specification and compilation layer for structured dynamical systems, including spatial/trait-structured PDEs, nonlocal integral/mixing dynamics, compartmental flows, ODEs and stochastic reaction networks. Researchers define explicit governing equations or compartmental transitions; restricted expressions pass through a typed intermediate representation to vectorized evaluators for NumPy, JAX and PyTorch.
+**OP System** turns readable descriptions of changing systems into calculations that simulation tools can use. It is the specification and compilation layer for structured dynamical systems, including spatial/trait-structured PDEs, nonlocal integral/mixing dynamics, compartmental flows, ODEs and stochastic reaction networks. Researchers define explicit governing equations or compartmental transitions; restricted expressions pass through a typed intermediate representation to vectorized evaluators for NumPy, JAX and PyTorch.
 
-[Released on PyPI](https://pypi.org/project/op-system/) and actively developed. See the [capability guide and executable examples](https://accidda.github.io/op_system/latest/guides/capabilities/).
+[Public alpha release on PyPI](https://pypi.org/project/op-system/) and actively developed. See the [capability guide and executable examples](https://accidda.github.io/op_system/latest/guides/capabilities/).
 
 Categorical and continuous axes, aliases, staged chains, routing, kernels and operator metadata describe structured models. The compiler carries field and operator semantics; numerical consumers choose spatial discretization and time/event integration. Flat, PyTree and independent-block layouts let a numerical consumer choose its state representation. Named latent observables keep measured quantities and physical reductions separate from the dynamics.
 
