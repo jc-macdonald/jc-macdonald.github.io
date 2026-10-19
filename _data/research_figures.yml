@@ -41,8 +41,8 @@ diagrams:
     title: Simulation, inference and decisions
     description: Relationships among methods and scientific applications.
   - name: obs_model_general
-    title: Partial observation
-    description: Underlying systems and their measurement processes.
+    title: Models and measurements
+    description: Scientific processes, measurement assumptions and recorded data.
   - name: future_directions_general
     title: Current research directions
     description: Methodological questions and application areas.

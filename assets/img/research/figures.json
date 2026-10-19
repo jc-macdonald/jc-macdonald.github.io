@@ -8,8 +8,8 @@
   {
     "name": "obs_model_general",
     "source": "tikz/obs_model_general.tex",
-    "title": "Partial observability across scientific domains",
-    "description": "A latent process x(t) produces data y through an observation model p(y given x and observation parameters). Health, marine, earth and human systems have different observation assumptions and validation requirements."
+    "title": "Models and measurements across scientific domains",
+    "description": "An underlying process x(t) is linked to recorded data y through an observation model p(y given x and measurement parameters). Examples show disease reporting, ecological sampling, remote sensing and cultural data, each with its own measurement assumptions."
   },
   {
     "name": "future_directions_general",

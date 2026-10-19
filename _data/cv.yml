@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist developing models and software for health, environmental, and earth sciences. I study how incomplete observations and scientific assumptions affect conclusions about a system, and use simulations to compare interventions and data-collection strategies. Current applications include diphtheria outbreak-response vaccination, respiratory-virus scenarios, wildlife disease, ecology, and cultural transmission."
+      - "Computational scientist developing models and software for health, environmental, and earth sciences. I study how models represent scientific processes and how measurements and assumptions affect the conclusions we draw. I use simulations to compare interventions and data-collection strategies. Current applications include diphtheria outbreak-response vaccination, respiratory-virus scenarios, wildlife disease, ecology, and cultural transmission."
 
     Education:
       - institution: University of Louisiana at Lafayette

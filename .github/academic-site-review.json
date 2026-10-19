@@ -149,5 +149,38 @@
       "existing_exact_exclusions": 7,
       "external_errors": 0
     }
+  },
+  "research_framing": {
+    "reviewed_on": "2026-10-19",
+    "decision": "Lead with scientific questions, mathematical modeling, statistical methods and applications. Discuss observation limits where they affect a particular inference or study-design problem.",
+    "terminology": {
+      "partially_observed": "A technical description relative to a model state and measurement process; not a claim that incomplete observation distinguishes an entire research programme.",
+      "structured": "Name the relevant organization, such as age, space, traits or groups.",
+      "complex": "Use for interactions and collective behavior when those are the subject, rather than as a default substitute for partially observed."
+    },
+    "sources": [
+      {
+        "url": "https://www.jstatsoft.org/article/view/v069i12",
+        "supports": "Established partially observed Markov process, hidden Markov and state-space modeling terminology."
+      },
+      {
+        "url": "https://web-prod.santafe.edu/about/faq",
+        "supports": "Complexity research concerns interacting components and emerging system-wide behavior."
+      },
+      {
+        "url": "https://assets.cambridge.org/97813165/19103/excerpt/9781316519103_excerpt.pdf",
+        "supports": "Structured population models explicitly represent age, size, traits, spatial position or related heterogeneity."
+      }
+    ],
+    "scope": "Homepage, site/search metadata, project overview, research introduction, CV profile and observation-model diagram. Retain specific incomplete-data and scientific-constraint research descriptions and original publication/talk titles.",
+    "validation": {
+      "production_build": true,
+      "responsive_theme_layouts": 40,
+      "pages": 5,
+      "fresh_cv_source_and_pdf_verified": true,
+      "diagram_sources_and_exports_verified": true,
+      "homepage_and_search_metadata_verified": true,
+      "publication_order_and_computed_artifacts_verified": true
+    }
   }
 }

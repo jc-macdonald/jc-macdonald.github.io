@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I study how models can inform interventions, surveillance and data collection when we can observe only part of a system. I develop methods for simulation, learning from data and evaluating models in health, environmental and earth sciences.
+I develop mathematical models, statistical methods and software for health, environmental and earth sciences. I study how systems change over time, how well models describe their behavior, and how models can inform interventions and data collection.
 
 I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With [ACCIDDA](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on wildlife and livestock disease surveillance.
 
