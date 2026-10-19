@@ -31,6 +31,38 @@ site build and formatting checks; merging publishes the generated site to
 `gh-pages`. Edit source content, rather than generated pages. CV source changes
 also trigger the existing PDF-rendering workflow.
 
+The **Check source and external links** workflow runs on pull requests and source
+pushes. It builds Jekyll to resolve Liquid, then checks HTTP(S) anchors on the
+maintained pages listed in [the scope manifest](.github/source-link-pages.txt),
+including every project page and linked source READMEs. Filename patterns in
+the inherited `.lycheeignore` are removed because Lychee interprets them as URL
+patterns and silently skipped real README links. Missing manifest outputs and unresolved anchor
+Liquid fail the check. Retained theme posts/books/examples, image/script/CDN
+resources and email addresses are outside this external-anchor check. The
+separate **Check for broken links on site** workflow checks generated internal
+paths offline; neither check claims to validate external fragments.
+
+External checks use [pinned Lychee settings](.github/lychee.toml), bounded retries
+and timeouts. Exhausted transient failures fail CI and should be retried after
+investigation. Authentication or robot-blocked exceptions must name a narrow
+URL pattern and explain why it cannot be checked; do not accept all 403/429
+responses or exclude software hosts. Two exact publisher-blocked DOIs are checked
+against Crossref registration instead of their landing pages; individual
+ResearchGate, Scholar and LinkedIn profiles and one bot-blocked CDC landing
+page require manual review.
+The test suite demonstrates failure on a
+controlled 404 followed by success on the corrected target.
+
+To reproduce after installing the site's Ruby/Python dependencies and Lychee
+0.24.2:
+
+```bash
+JEKYLL_ENV=production bundle exec jekyll build
+python .github/scripts/check_source_links.py _site /tmp/source-links.txt
+lychee --config .github/lychee.toml --no-progress /tmp/source-links.txt
+python -m unittest discover -s .github/tests -p 'test_source_links.py' -v
+```
+
 The retained al-folio reference below documents the theme and its upstream
 community. Theme attribution and licensing are preserved in [LICENSE](LICENSE).
 
