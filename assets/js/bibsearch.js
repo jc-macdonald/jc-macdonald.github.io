@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const updateInputField = () => {
+    clearTimeout(timeoutId);
     const searchTerm = publicationSearchTerm(window.location.hash, (id) => document.getElementById(id) !== null);
     document.getElementById("bibsearch").value = searchTerm;
     filterItems(searchTerm);

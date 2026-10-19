@@ -691,7 +691,7 @@ separate; target journals are not presented as publication venues.
 After a production build, run:
 
 ```shell
-node --test .github/tests/publication-fragments.test.mjs
+node .github/tests/publication-fragments.test.mjs
 python -m unittest discover -s .github/tests -p 'test_publications.py' -v
 python .github/scripts/verify_publications.py _site
 python .github/scripts/verify_computed_artifacts.py _site

@@ -113,12 +113,13 @@
     "keyboard_skip_focus_and_heading_offset": true,
     "publication_section_paper_and_skip_anchors": true,
     "legacy_fragment_and_typed_search_with_and_without_highlight_api": true,
-    "fragment_unit_tests": 3,
+    "fragment_unit_tests": 4,
     "external_anchors": 71,
     "external_ok": 64,
     "existing_exact_exclusions": 7,
     "external_errors": 0,
     "citation_metadata_and_order": true,
-    "computed_artifact_and_preview_hashes": true
+    "computed_artifact_and_preview_hashes": true,
+    "pending_filter_cancelled_on_anchor_navigation": true
   }
 }
