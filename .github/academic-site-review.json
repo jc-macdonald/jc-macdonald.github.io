@@ -1,0 +1,125 @@
+{
+  "reviewed_on": "2026-10-19",
+  "scope": "Research scientists and early-career research faculty in quantitative public health, statistics and environmental modeling. This is a small purposive comparison, not a ranking or evidence of hiring/citation outcomes.",
+  "peers": [
+    {
+      "name": "Lacey Etzkorn",
+      "role_as_listed": "Assistant Scientist, Biostatistics, Johns Hopkins",
+      "url": "https://publichealth.jhu.edu/faculty/4768/lacey-etzkorn",
+      "page_type": "Institutional faculty profile",
+      "observation": "Names the research problem and audience, makes contact and scholarly identifiers easy to find, and separates publications from the short introduction.",
+      "transfer": "Keep appointment and contact explicit; retain a short introduction for readers outside the specialty.",
+      "inspection": "Primary page text and desktop/intermediate/mobile browser views."
+    },
+    {
+      "name": "Gursharn Kaur",
+      "role_as_listed": "Research Assistant Professor, UVA Biocomplexity Institute",
+      "url": "https://sites.google.com/view/gursharn/home",
+      "appointment_source": "https://biocomplexity.virginia.edu/our-team/gursharn-kaur",
+      "page_type": "Personal academic site",
+      "observation": "Short methods-and-applications introduction, recognizable research/teaching/CV/contact destinations, and visible email.",
+      "transfer": "Use a small set of reader-oriented navigation labels.",
+      "inspection": "Primary pages plus desktop/intermediate/mobile browser views."
+    },
+    {
+      "name": "Julia Guimond",
+      "role_as_listed": "Assistant Scientist, Woods Hole Oceanographic Institution",
+      "url": "https://juliaguimond.com/",
+      "research_url": "https://juliaguimond.com/research/",
+      "page_type": "Personal academic site",
+      "observation": "Leads with a scientific question, connects observations and modeling, and gives research a dedicated destination. Personal interests follow the professional introduction.",
+      "transfer": "Explain research questions before package internals; retain personality without giving every secondary page a primary menu slot.",
+      "inspection": "Primary pages plus desktop/intermediate/mobile browser views."
+    },
+    {
+      "name": "Aniruddha Adiga",
+      "role_as_listed": "Research Assistant Professor, UVA Biocomplexity Institute",
+      "url": "https://biocomplexity.virginia.edu/our-team/aniruddha-adiga",
+      "page_type": "Institutional faculty profile",
+      "observation": "Compact description connects computational methods with infectious disease forecasting and provides direct CV/Scholar links.",
+      "transfer": "Describe what a method is used to understand; do not require readers to interpret technical tool names.",
+      "inspection": "Primary page text. Browser returned 403, so no layout judgment."
+    },
+    {
+      "name": "Sam Abbott",
+      "role_as_listed": "Assistant Professor in real-time modeling of infectious disease, LSHTM; as stated on personal homepage",
+      "url": "https://samabbott.co.uk/",
+      "research_url": "https://samabbott.co.uk/research",
+      "page_type": "Personal academic site; adjacent software/methods comparison",
+      "observation": "Connects current methodological questions, applications and open-source tools, with distinct Research/Code/Papers destinations. The page also illustrates why peer layouts should be checked rather than copied: its current intermediate-width view overflowed.",
+      "transfer": "Connect questions and public artifacts; preserve explicit work-in-progress labels.",
+      "inspection": "Primary pages plus desktop/intermediate/mobile browser views."
+    }
+  ],
+  "guidance": [
+    {
+      "url": "https://townsendcenter.berkeley.edu/blog/personal-academic-webpages-how-tos-and-tips-better-site",
+      "use": "Audience-first organization, shallow navigation, recognizable labels, short biography and easy CV/contact access. The suggested menu count is design advice, not an accessibility requirement."
+    },
+    {
+      "url": "https://www.w3.org/WAI/tips/writing/",
+      "use": "Informative titles, meaningful links, headings, clear language and text alternatives."
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/page-structure/",
+      "use": "Named navigation regions, logical headings and direct access to main content."
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/images/complex/",
+      "use": "Explain scientific plots in surrounding text and make essential information available beyond the image; retain accessible tables and downloads."
+    }
+  ],
+  "edits_in_this_pr": [
+    "Six primary destinations: About, Publications, Research & software, CV, Teaching, Talks. Keep existing URLs.",
+    "Move modeling applications, computed examples, figure downloads, repositories and outside-work photos into labelled footer navigation; keep contextual links on the homepage and project pages.",
+    "Collapse the primary menu below the large Bootstrap breakpoint to avoid the crowded intermediate-width layout observed in the existing site.",
+    "Use the current Assistant Scientist appointment in the subtitle and visible email/ORCID links from existing shared data.",
+    "Remove repeated institution text below the portrait; retain the location and full affiliation in the introduction.",
+    "Add short descriptions beside three selected public papers, grounded in their titles/abstracts; retain verified full citation metadata.",
+    "Add a keyboard skip link and an identifiable focusable main landmark.",
+    "Keep real publication section/paper/skip anchors distinct from legacy text-search fragments; fix filter debounce and cover the fragment contract in CI."
+  ],
+  "further_recommendations": [
+    {
+      "priority": 1,
+      "recommendation": "Develop a short Research overview organized around scientific questions, with links from each topic to public papers, computational examples and relevant software. If this grows beyond the present combined page, split Research and Software into distinct destinations.",
+      "reason": "The project catalogue currently leads with packages; readers from public health or another discipline may need a clearer account of the research programme.",
+      "constraint": "Keep structural-score and other private work at the level of questions and evaluation goals; avoid unpublished mechanisms, results, acceptance claims or unsupported priority claims.",
+      "tracking_issue": "https://github.com/jc-macdonald/jc-macdonald.github.io/issues/27"
+    },
+    {
+      "priority": 2,
+      "recommendation": "Check reading order, link annotations and text alternatives in the generated CV PDF using an assistive-technology workflow, and check captions/transcripts for teaching and talk videos.",
+      "reason": "The current CV is tagged and HTML alternatives exist, but those facts alone do not establish accessible reading order or document conformance.",
+      "constraint": "Do not claim WCAG/PDF-UA conformance from these browser checks."
+    },
+    {
+      "priority": 2,
+      "recommendation": "When a public research result is available, add a concise question/result/artifact narrative rather than expanding the number of diagrams or raw repository cards.",
+      "reason": "The computed figures already show concrete scientific work. More visuals should explain a result or comparison, with captions and accessible data."
+    },
+    {
+      "priority": 3,
+      "recommendation": "Review appointment, manuscript status, grant roles and package availability after material changes, with periodic editorial review. Keep the existing automated artifact/link/publication checks.",
+      "reason": "Accurate status is more useful than an unmaintained news feed.",
+      "constraint": "Do not add lab/group/recruiting language unless it reflects the actual role and current opportunities."
+    }
+  ],
+  "validation_limits": "Browser layout and keyboard checks are scoped checks, not a complete accessibility audit. No analytics or user-study evidence was used. Recommendations are editorial judgments informed by the cited primary pages and guidance.",
+  "validation": {
+    "production_build": true,
+    "browser_layout_theme_checks": 64,
+    "viewports": [390, 768, 1024, 1440],
+    "keyboard_skip_focus_and_heading_offset": true,
+    "publication_section_paper_and_skip_anchors": true,
+    "legacy_fragment_and_typed_search_with_and_without_highlight_api": true,
+    "fragment_unit_tests": 4,
+    "external_anchors": 71,
+    "external_ok": 64,
+    "existing_exact_exclusions": 7,
+    "external_errors": 0,
+    "citation_metadata_and_order": true,
+    "computed_artifact_and_preview_hashes": true,
+    "pending_filter_cancelled_on_anchor_navigation": true
+  }
+}

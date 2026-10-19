@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
+title: Publications
 description: Journal articles, preprints and manuscripts in preparation, with citation details and source links.
 nav: true
 nav_order: 2

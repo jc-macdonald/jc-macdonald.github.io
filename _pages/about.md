@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Computational Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
+subtitle: Assistant Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
 
 profile:
   align: right
@@ -10,10 +10,7 @@ profile:
   image_alt: Profile photograph
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>International Vaccine Access Center</p>
-    <p>Department of International Health</p>
-    <p>Johns Hopkins Bloomberg School of Public Health</p>
-    <p>Baltimore, MD</p>
+    <p>Baltimore, Maryland</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -33,6 +30,8 @@ I study how models can inform interventions, surveillance and data collection wh
 
 I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With [ACCIDDA](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on wildlife and livestock disease surveillance.
 
+<p>Email: <a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a> · <a href="https://orcid.org/{{ site.data.socials.orcid_id }}">ORCID</a></p>
+
 Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, working with [Yoav Ram](https://www.yoavram.com/) on incomplete cultural and genetic data. I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a BA in Archaeology from UNC Greensboro.
 
 <nav class="page-links" aria-label="Explore my work">
@@ -50,7 +49,7 @@ My current methodological work asks how measurement assumptions and scientific c
 - **[Inference and calibration](/projects/inference_calibration/).** Estimating unknown model quantities and assessing fitting procedures with simulated data. The op_infer research software is private, pre-alpha and unreleased.
 - **[Incomplete data and latent structure](/projects/pp_eigentest/).** Investigating how many patterns a dataset can support, building on [VBPCApy](/projects/vbpca_py/) and a [2024 preprint](https://arxiv.org/abs/2409.12129).
 
-[Current application studies](/projects/current_analyses/#application-studies) address dengue within-host dynamics, observation noise, outbreak vaccination and CCHF surveillance. These summaries describe ongoing questions; public papers and artifacts are linked as they become available.
+[Current application studies](/projects/current_analyses/#application-studies) address dengue within-host dynamics, observation noise, outbreak vaccination and Crimean-Congo hemorrhagic fever surveillance. These summaries describe ongoing questions; public papers and artifacts are linked as they become available.
 
 ## Computations and software
 

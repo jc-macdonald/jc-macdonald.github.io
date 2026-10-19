@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
+title: Teaching
 description: Teaching, workshop facilitation, and instructional experience.
 nav: true
-nav_order: 7
+nav_order: 5
 ---
 
 ## Workshop Facilitation

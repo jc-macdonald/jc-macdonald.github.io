@@ -673,6 +673,12 @@ use each project's `importance` for order within its group. The figures page
 reads `_data/research_figures.yml`, with compact previews generated from the
 retained synthetic data by `assets/img/research/previews/card_previews.py`.
 
+The primary menu uses six destinations; `nav_title` can shorten a page title
+without changing its URL. Secondary destinations live in the labelled footer.
+The source-attributed academic-site comparison and remaining recommendations
+are recorded in `.github/academic-site-review.json`. Selected public papers have
+brief descriptions in `_data/publication_summaries.yml`, with their source DOIs.
+
 The publications page sorts by year and month, newest first, then author name.
 The bibliography source stays alphabetical by key. `eid` stores an article
 identifier; `pages` stores a page range. Public articles and preprints also emit
@@ -685,6 +691,7 @@ separate; target journals are not presented as publication venues.
 After a production build, run:
 
 ```shell
+node .github/tests/publication-fragments.test.mjs
 python -m unittest discover -s .github/tests -p 'test_publications.py' -v
 python .github/scripts/verify_publications.py _site
 python .github/scripts/verify_computed_artifacts.py _site
@@ -694,3 +701,8 @@ Deployment runs these checks before publishing. The design table progressively
 adds ordering and a nondominated-only filter; its complete static table remains
 available without JavaScript. CSV downloads retain all designs regardless of the
 current table view.
+
+Publication fragments that identify real page elements navigate to those
+elements and leave the full bibliography visible. Other fragments retain the
+existing URL-decoded, case-insensitive text filter. This keeps section links,
+paper links and keyboard skip navigation separate from search.

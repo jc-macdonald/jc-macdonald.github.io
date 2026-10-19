@@ -198,6 +198,11 @@
       {{ entry.note | strip }}
     </div>
 
+    {% assign plain_summary = site.data.publication_summaries[entry.key] %}
+    {% if plain_summary %}
+      <p class="publication-summary">{{ plain_summary.text | escape }}</p>
+    {% endif %}
+
     <!-- Links/Buttons -->
     <div class="links">
       {% if entry.award %}

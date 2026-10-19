@@ -1,9 +1,9 @@
 ---
 layout: page
 permalink: /extracurricular/
-title: extracurricular
+title: Outside work
 description: I love to travel, get outside, and move.
-nav: true
+nav: false
 nav_order: 8
 ---
 

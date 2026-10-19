@@ -1,9 +1,9 @@
 ---
 layout: page
-title: operational deployments
+title: Modeling in practice
 permalink: /operational-modeling/
 description: Operational infectious disease forecasting and scenario modeling deployed through ACCIDDA's computational infrastructure.
-nav: true
+nav: false
 nav_order: 4
 ---
 

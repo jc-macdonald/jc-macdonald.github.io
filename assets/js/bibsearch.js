@@ -1,4 +1,5 @@
 import { highlightSearchTerm } from "./highlight-search-term.js";
+import { publicationSearchTerm } from "./publication-fragment.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
   // actual bibsearch logic
@@ -51,9 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const updateInputField = () => {
-    const hashValue = decodeURIComponent(window.location.hash.substring(1)); // Remove the '#' character
-    document.getElementById("bibsearch").value = hashValue;
-    filterItems(hashValue);
+    clearTimeout(timeoutId);
+    const searchTerm = publicationSearchTerm(window.location.hash, (id) => document.getElementById(id) !== null);
+    document.getElementById("bibsearch").value = searchTerm;
+    filterItems(searchTerm);
   };
 
   // Sensitive search. Only start searching if there's been no input for 300 ms
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("bibsearch").addEventListener("input", function () {
     clearTimeout(timeoutId); // Clear the previous timeout
     const searchTerm = this.value.toLowerCase();
-    timeoutId = setTimeout(filterItems(searchTerm), 300);
+    timeoutId = setTimeout(() => filterItems(searchTerm), 300);
   });
 
   window.addEventListener("hashchange", updateInputField); // Update the filter when the hash changes
