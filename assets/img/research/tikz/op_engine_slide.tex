@@ -1,12 +1,29 @@
 \input{figure-style.tex}
+\usetikzlibrary{fit}
 \begin{document}
 \begin{tikzpicture}
-\heading{OP Engine}{Deterministic and stochastic methods for structured models.}
-\panel{a}{0}{0}{Blue}{1. Prepare}{Fields, states and rates\\Transport and reactions\\Methods and output times}
-\panel{b}{6.7}{0}{Teal}{2. Solve}{PDE and nonlocal operators\\Explicit / IMEX / implicit\\Exact SSA and tau-leaping\\NumPy replicate clocks}
-\panel{c}{6.7}{-3.8}{Green}{3. Observe and record}{Named latent observations\\Window summaries and counts\\Trajectories and provenance}
-\panel{d}{0}{-3.8}{Gold}{4. Check and replay}{Accuracy and invariant checks\\Adaptive schedule discovery\\Differentiable frozen replay}
-\fourflow
-\bottomnote{PDE and nonlocal fields use specified discretizations. Tested NumPy, JAX and CPU Torch paths vary by method. Replay gradients are conditional on the recorded mesh. GPU paths need separate qualification.}
+\heading{OP Engine}{Numerical methods and their applicable models, outputs and conditions.}
+\node[anchor=north west,text=Blue,font=\bfseries,text width=2.6cm] at (.25,0) {Method family};
+\node[anchor=north west,text=Blue,font=\bfseries,text width=4.2cm] at (3.2,0) {Models and methods};
+\node[anchor=north west,text=Blue,font=\bfseries,text width=4.35cm] at (7.7,0) {Outputs and conditions};
+\node[anchor=north west,text width=2.6cm,text=Blue,font=\bfseries] (det) at (.25,-1) {Deterministic\\solvers};
+\node[anchor=north west,text width=4.2cm] (detmodels) at (3.2,-1) {PDE / field, nonlocal, ODE\\[5pt]Explicit, IMEX and implicit};
+\node[anchor=north west,text width=4.35cm] (detoutputs) at (7.7,-1) {Declared discretizations\\[5pt]Observations, trajectories\\Accuracy and invariant checks};
+\begin{pgfonlayer}{background}
+  \node[fit=(det)(detmodels)(detoutputs),fill=PaleBlue,rounded corners=4pt,inner xsep=.25cm,inner ysep=.3cm] (detband) {};
+\end{pgfonlayer}
+\node[anchor=north west,text width=2.6cm,text=Teal,font=\bfseries] (stoch) at ($(detband.south -| det.west)+(0,-.5)$) {Stochastic\\solvers};
+\node[anchor=north west,text width=4.2cm] (stochmodels) at (detmodels.north west |- stoch.north west) {Reaction networks\\[5pt]Direct SSA, thinning\\Fixed / adaptive tau-leaping};
+\node[anchor=north west,text width=4.35cm] (stochoutputs) at (detoutputs.north west |- stoch.north west) {Optional firing counts\\[5pt]Independent NumPy SSA clocks};
+\begin{pgfonlayer}{background}
+  \node[fit=(stoch)(stochmodels)(stochoutputs),fill=PaleTeal,rounded corners=4pt,inner xsep=.25cm,inner ysep=.3cm] (stochband) {};
+\end{pgfonlayer}
+\node[anchor=north west,text width=2.6cm,text=Gold,font=\bfseries] (replay) at ($(stochband.south -| det.west)+(0,-.5)$) {Schedule\\replay};
+\node[anchor=north west,text width=4.2cm] (replaymethods) at (detmodels.north west |- replay.north west) {Adaptive mesh discovery\\[5pt]Frozen-schedule reevaluation};
+\node[anchor=north west,text width=4.35cm] (replayoutputs) at (detoutputs.north west |- replay.north west) {Selected deterministic paths\\[5pt]Derivatives conditional on\\the recorded mesh};
+\begin{pgfonlayer}{background}
+  \node[fit=(replay)(replaymethods)(replayoutputs),fill=PaleGold,rounded corners=4pt,inner xsep=.25cm,inner ysep=.3cm] (replayband) {};
+\end{pgfonlayer}
+\node[note] at ($(replayband.south west)+(0,-.6)$) {Tested NumPy, JAX and CPU Torch paths vary by method. Spatial and temporal accuracy need their own checks. GPU paths need separate hardware qualification.};
 \end{tikzpicture}
 \end{document}
