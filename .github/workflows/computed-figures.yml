@@ -1,0 +1,31 @@
+name: Computed figures
+
+on:
+  pull_request:
+    paths:
+      - "assets/img/research/computed/**"
+      - "_data/computed_designs.csv"
+      - ".github/workflows/computed-figures.yml"
+  push:
+    branches: [main]
+    paths:
+      - "assets/img/research/computed/**"
+      - "_data/computed_designs.csv"
+      - ".github/workflows/computed-figures.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7.2.0
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - name: Check retained artifacts and recompute numerical references
+        run: uv run --python 3.12 assets/img/research/computed/computed_examples.py --check

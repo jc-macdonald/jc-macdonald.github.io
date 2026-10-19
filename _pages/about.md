@@ -35,17 +35,17 @@ Currently I am an Assistant Scientist at the [International Vaccine Access Cente
 I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a BA in Archaeology from UNC Greensboro. Both inform my work on inference from incomplete records.
 
 <div style="margin: 2.5rem 0;">
-{% include figure.liquid loading="eager" path="assets/img/research/beyond_onehealth.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="Public tools cover field/equation/reaction specification with OP System, PDE/nonlocal/reaction simulation with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds parameter inference, calibration and study-design checks; it is private, pre-alpha and unreleased." caption="Public simulation and evaluation tools connect to op_infer, a private pre-alpha statistical layer. Availability and scientific validation are separate questions." %}
+{% include figure.liquid loading="eager" path="assets/img/research/computed/spatial_diffusion.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="A 64-cell periodic diffusion field and profiles at four times, computed from an OP System specification with RK4 integration in OP Engine. Spatial discretization is supplied explicitly; all inputs are synthetic." caption="A synthetic spatial diffusion example, compiled with OP System and simulated with OP Engine. Computed figures and their inputs are available in the software examples." %}
 </div>
 
 ---
 
 #### The common structure
 
-Many of these projects distinguish an underlying process from how it is measured. Disease prevalence, nutrient cycling, and cultural trait frequencies are inferred from observations that may be incomplete or noisy. The figure below shows this distinction across four domains. Each application has its own observation assumptions and validation requirements.
+Many of these projects distinguish an underlying process from how it is measured. Disease prevalence, nutrient cycling, and cultural trait frequencies are inferred from observations that may be incomplete or noisy. The incomplete-data example below illustrates one way to learn from partial observations. Each scientific application has its own measurement assumptions and validation requirements.
 
 <div style="margin: 2.5rem 0;">
-{% include figure.liquid loading="eager" path="assets/img/research/obs_model_general.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="A latent process x(t) produces data y through an observation model p(y given x and observation parameters). Health, marine, earth and human systems have different observation assumptions and validation requirements." caption="Across domains, a partially observed latent process is connected to data through an explicit observation model." %}
+{% include figure.liquid loading="eager" path="assets/img/research/computed/incomplete_reconstruction.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="A synthetic two-pattern signal, noisy observed entries with unobserved cells in gray, and a VBPCA reconstruction. Held-out observations are excluded from fitting. This illustration does not establish rank selection or uncertainty calibration." caption="VBPCA fits the observed entries of this synthetic dataset. Gray cells were withheld; their values can be used to assess the reconstruction." %}
 </div>
 
 I develop reusable tools for specifying models, simulating observations, fitting parameters, and comparing study designs. Reusing software can reduce implementation work, while scientific assumptions and validation remain specific to each application.
@@ -79,7 +79,7 @@ Current methodological work examines scientific constraints on predictions, para
 {% include figure.liquid loading="eager" path="assets/img/research/future_directions_general.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="The research agenda connects scientific systems, ongoing work on parameter inference, calibration, structural evaluation and rank selection, and decisions about interventions and surveillance. Observations and diagnostics inform new study choices." caption="Research directions connect methodological work to scientific applications and decision support." %}
 </div>
 
-[Vector downloads and editable figure sources](/figures/) are available for reuse.
+[Computed software examples](/software-examples/) include the numerical inputs, checks, figures and a design-comparison table. [Vector downloads and editable diagram sources](/figures/) are also available.
 
 ---
 

@@ -2,9 +2,11 @@
 layout: page
 title: Research figures
 permalink: /figures/
-description: Vector downloads and editable sources for research schematics and illustrative plots.
+description: Computed software examples, vector downloads and editable sources for research figures.
 nav: false
 ---
+
+[Computed software examples](/software-examples/) use the released packages for spatial fields, stochastic ensembles, replicated design comparisons and incomplete-data reconstruction. They include retained data and a generated comparison table.
 
 Architecture and method diagrams are built from TikZ. Numerical illustrations
 retain their Python plotting sources. SVGs scale on screen; PDFs are available
@@ -33,3 +35,14 @@ The cost/utility and structural-admissibility plots use explicitly constructed
 examples. They are illustrations, with no empirical study results or predictive
 score comparison asserted. Package capability and qualification details remain
 in the corresponding software documentation.
+
+### Computed package demonstrations
+
+| Example                         | Screen                                                             | Print                                                              |
+| ------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| Periodic spatial diffusion      | [SVG](/assets/img/research/computed/spatial_diffusion.svg)         | [PDF](/assets/img/research/computed/spatial_diffusion.pdf)         |
+| Independent stochastic ensemble | [SVG](/assets/img/research/computed/stochastic_ensemble.svg)       | [PDF](/assets/img/research/computed/stochastic_ensemble.pdf)       |
+| Replicated design comparison    | [SVG](/assets/img/research/computed/replicated_tradeoff.svg)       | [PDF](/assets/img/research/computed/replicated_tradeoff.pdf)       |
+| Incomplete-data reconstruction  | [SVG](/assets/img/research/computed/incomplete_reconstruction.svg) | [PDF](/assets/img/research/computed/incomplete_reconstruction.pdf) |
+
+[Python source and pinned dependencies](/assets/img/research/computed/computed_examples.py) · [Numerical data](/assets/img/research/computed/computed_data.json) · [CSV table](/assets/img/research/computed/design_comparison.csv) · [Assumptions and checks](/software-examples/)

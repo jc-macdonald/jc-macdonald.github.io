@@ -15,3 +15,8 @@ _data/citations.yml
 _layouts/cv.liquid
 # CUSTOMIZE.md TOC is managed by the update-tocs workflow; Prettier conflicts with it
 CUSTOMIZE.md
+
+# Generated computed examples retain byte-level provenance; regenerate with Python.
+assets/img/research/computed/*.svg
+assets/img/research/computed/computed_data.json
+assets/img/research/computed/provenance.json

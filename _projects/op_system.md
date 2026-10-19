@@ -2,8 +2,8 @@
 layout: page
 title: OP System
 description: Describe models of changing systems, including spatial interactions and random events.
-img: assets/img/research/op_system_slide.svg
-img_alt: A model specification feeds a compiler, which exports evaluators, operator/reaction metadata, and observation/forcing interfaces. Model classes include PDEs, nonlocal dynamics, compartments and reactions. Numerical consumers choose discretization and integration; cross-axis constraints remain metadata.
+img: assets/img/research/computed/spatial_diffusion.svg
+img_alt: A 64-cell periodic diffusion field and profiles at four times, computed from an OP System specification with RK4 integration in OP Engine. Spatial discretization is supplied explicitly; all inputs are synthetic.
 importance: 3
 category: "lead developer · released"
 github: https://github.com/ACCIDDA/op_system
@@ -18,6 +18,10 @@ Categorical and continuous axes, aliases, staged chains, routing, kernels and op
 For stochastic consumers, named reactions expose channel structure, propensity shapes, reactants/dependencies and checked independence declarations. Time-indexed parameters support linear interpolation or right-continuous held forcing, with published schedules and resolved-parameter callbacks. [OP Engine](/projects/op_engine/) consumes these contracts for solving and independent replicate banks.
 
 Structural validation checks the specification and supported evaluator paths. Independent-equation fixtures and conditional reaction balances provide additional numerical evidence; none of these checks proves the scientific model correct. [Cross-axis constraints remain metadata](https://accidda.github.io/op_system/latest/guides/getting-started/#cross-axis-constraints-current-boundary), rather than an enforced filter on state cells or transitions.
+
+{% include figure.liquid path="assets/img/research/computed/spatial_diffusion.svg" class="img-fluid rounded" zoomable=true alt="A 64-cell periodic diffusion field and profiles at four times, computed from an OP System specification with RK4 integration in OP Engine. Spatial discretization is supplied explicitly; all inputs are synthetic." caption="Synthetic periodic diffusion compiled by OP System and integrated by OP Engine. The spatial stencil is supplied explicitly." %}
+
+[Computed example, inputs and checks](/software-examples/#spatial-diffusion)
 
 {% include figure.liquid path="assets/img/research/op_system_slide.svg" class="img-fluid rounded" zoomable=true alt="A model specification feeds a compiler, which exports evaluators, operator/reaction metadata, and observation/forcing interfaces. Model classes include PDEs, nonlocal dynamics, compartments and reactions. Numerical consumers choose discretization and integration; cross-axis constraints remain metadata." caption="OP System compilation and numerical interfaces." %}
 

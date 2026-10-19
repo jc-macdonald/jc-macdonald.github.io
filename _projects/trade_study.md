@@ -2,8 +2,8 @@
 layout: page
 title: trade-study
 description: Compare experiments and model choices, weighing uncertainty, information and cost.
-img: assets/img/research/trade_study_slide.svg
-img_alt: Candidate designs feed replicated simulator/scorer evaluations and trial results. Results branch into comparisons and optional analyses, with a dashed return for adaptive search or phase refinement. Calibration and transfer require separate application evidence.
+img: assets/img/research/computed/replicated_tradeoff.svg
+img_alt: Ten synthetic sample-mean designs compared across 512 paired replicates. Nondominated mean error and assumed cost are marked, and empirical errors are compared with analytic variances. Costs are declared assumptions, not measured field costs.
 importance: 2
 category: "lead developer · released"
 github: https://github.com/jcm-sci/trade-study
@@ -24,6 +24,10 @@ Current capabilities include:
 The core depends on NumPy; optional integrations wrap established libraries for scoring, optimization, sensitivity, model weighting and plots. Bayesian stacking uses log-likelihood information supplied by predictive models. Score-based weights optimize the supplied mean model scores, not the loss of an averaged prediction. Neither approach certifies calibration.
 
 A Pareto front narrows the alternatives; selecting a design still needs explicit preferences or constraints. Replicate intervals describe uncertainty under their stated assumptions. Fixed Wilson precision is not gate power, and synthetic benchmark results need independent validation before transfer to observed data.
+
+{% include figure.liquid path="assets/img/research/computed/replicated_tradeoff.svg" class="img-fluid rounded" zoomable=true alt="Ten synthetic sample-mean designs compared across 512 paired replicates. Nondominated mean error and assumed cost are marked, and empirical errors are compared with analytic variances. Costs are declared assumptions, not measured field costs." caption="Ten synthetic measurement designs, each evaluated on 512 paired replicates. Cost is an assumed input, not a measured field cost." %}
+
+[Computed example, inputs and checks](/software-examples/#replicated-designs)
 
 {% include figure.liquid loading="eager" path="assets/img/research/optimal_design.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="Synthetic candidate costs and utilities illustrate Pareto efficiency and selection under a declared budget. These values are illustrative inputs, not a fitted study or empirical information estimates." caption="Constructed costs and utilities. C is dominated. D maximizes utility under the declared cost limit of 4." %}
 

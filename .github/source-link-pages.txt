@@ -8,6 +8,7 @@ repositories/index.html
 publications/index.html
 operational-modeling/index.html
 figures/index.html
+software-examples/index.html
 teaching/index.html
 talks/index.html
 extracurricular/index.html
