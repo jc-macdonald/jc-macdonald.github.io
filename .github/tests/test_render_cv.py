@@ -3,13 +3,12 @@
 import importlib.util
 import json
 import os
+import re
 import shutil
 import subprocess
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
-
-import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 SPEC = importlib.util.spec_from_file_location(
@@ -32,9 +31,15 @@ class RenderTests(unittest.TestCase):
         with TemporaryDirectory() as directory:
             source, output = Path(directory) / "source", Path(directory) / "artifact"
             copy_inputs(source)
-            data = yaml.safe_load((source / "_data/cv.yml").read_text())
-            data["cv"]["name"] = "CV Publication Probe"
-            (source / "_data/cv.yml").write_text(yaml.safe_dump(data, sort_keys=False))
+            cv_source = source / "_data/cv.yml"
+            updated, replacements = re.subn(
+                r"(?m)^  name: [^\n]+$",
+                "  name: CV Publication Probe",
+                cv_source.read_text(),
+                count=1,
+            )
+            self.assertEqual(replacements, 1)
+            cv_source.write_text(updated)
             stale = source / "assets/rendercv/rendercv_output/Stale_CV.pdf"
             stale.parent.mkdir(parents=True, exist_ok=True)
             stale.write_bytes(b"%PDF-stale")
@@ -102,9 +107,15 @@ class RenderTests(unittest.TestCase):
                     "vendor",
                 ),
             )
-            data = yaml.safe_load((source / "_data/cv.yml").read_text())
-            data["cv"]["name"] = "CV Publication Probe"
-            (source / "_data/cv.yml").write_text(yaml.safe_dump(data, sort_keys=False))
+            cv_source = source / "_data/cv.yml"
+            updated, replacements = re.subn(
+                r"(?m)^  name: [^\n]+$",
+                "  name: CV Publication Probe",
+                cv_source.read_text(),
+                count=1,
+            )
+            self.assertEqual(replacements, 1)
+            cv_source.write_text(updated)
             output = Path(directory) / "artifact"
             CV.render(source, output, REVISION)
             shutil.copytree(output, source, dirs_exist_ok=True)
