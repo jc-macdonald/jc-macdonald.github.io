@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "source_sha256": "3e19980a5178b27cd1b4f1e3e757173677977438e8ab6e19a846733eaaaf6846",
+  "data_sha256": "fddff5853b11d75256505a1d4ff585ce672db47875d031f58c4210152a71cd02",
+  "files_sha256": {
+    "incomplete_reconstruction.svg": "3e88c501de1cd6fe0ac0534f00c2aae4b91558efe0fdf29836509020a6bda2e4",
+    "replicated_tradeoff.svg": "143155ad729b89968a83d3cf93dd5c9680c96212725f34be6f9ce5ba935786ac",
+    "spatial_diffusion.svg": "6ae1ec4759d210a6b349b8ba6612ea4cf0fb0fa6502002fd0051467887667387",
+    "stochastic_ensemble.svg": "c7c374ce3bfdff44a4722e57319ddea567b0d16582ccc7a8aa35b38de5f5a731"
+  }
+}
