@@ -85,12 +85,12 @@ ninja.data = [{
               window.location.href = "/projects/flepimop2/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
-          description: "Array-API-polymorphic ODE/PDE solver with portable numerical kernels and backend-native execution providers for explicit, IMEX, implicit, and stochastic integration.",
+          description: "Numerical core for deterministic and stochastic models, with independent SSA banks, named observations, replay and qualified NumPy, JAX and CPU PyTorch methods.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_engine/";
             },},{id: "projects-op-system",
           title: 'OP System',
-          description: "Restricted expression language and compiler for structured dynamical systems, lowering model specifications through typed IR to vectorized, Array-API-polymorphic code.",
+          description: "Compiler for structured model specifications, producing Array API right-hand sides, reaction metadata, named observables and forcing schedules.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",
@@ -100,7 +100,7 @@ ninja.data = [{
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",
           title: 'trade-study',
-          description: "Design and evaluation framework for scientific simulation studies. Score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against known ground truth via protocol-driven simulators, proper scoring rules, hierarchical phases, multi-objective Pareto optimization, and Bayesian model stacking.",
+          description: "Replicated simulation studies, paired comparisons, Pareto analysis and preference-based decisions, with explicit uncertainty and result provenance.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/trade_study/";
             },},{id: "projects-vbpca-py",
