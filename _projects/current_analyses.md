@@ -34,9 +34,9 @@ scientific validity. Methods and companion software are in development.
 ### Inference and calibration
 
 How can parameter inference remain informative when observations are incomplete
-or noisy? [Current inference and calibration work](/projects/inference_calibration/)
+or noisy? [op_infer](/projects/inference_calibration/)
 connects working fitting tools, simulation-based checks and replicated studies.
-The research software remains private and pre-release while its scientific
+The research software remains private, pre-alpha and unreleased while its scientific
 applications are assessed.
 
 ### Scientific machine learning and incomplete data

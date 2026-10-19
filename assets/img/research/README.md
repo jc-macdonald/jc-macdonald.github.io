@@ -47,8 +47,8 @@ claims aligned with the linked package capability guides and page text:
   providers. Backend qualification is method-specific and CPU/GPU evidence is
   stated explicitly. Cross-axis constraints are metadata in op_system.
 - `beyond_onehealth` distinguishes public simulation and evaluation tools from
-  working inference and calibration research software, which remains private
-  and pre-release. `future_directions_general` maps research aims, including
+  op_infer, working inference and calibration research software that remains
+  private, pre-alpha and unreleased. `future_directions_general` maps research aims, including
   structural evaluation; neither figure reports results from ongoing studies.
 - `pp_eigentest_schematic` describes the research question and scope of
   private pre-release work. `vbpca_py_schematic` describes fitting and predictive
