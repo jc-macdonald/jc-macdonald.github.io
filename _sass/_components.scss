@@ -283,6 +283,30 @@ ul.task-list input[type="checkbox"] {
 }
 
 // Research navigation, compact computed previews and data tables.
+#main-content {
+  scroll-margin-top: 80px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  padding: 0.75rem 1rem;
+  color: var(--global-text-color);
+  background: var(--global-bg-color);
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
+.publication-summary {
+  margin: 0.75rem 0;
+  line-height: 1.5;
+}
+
 .page-links {
   display: flex;
   flex-wrap: wrap;

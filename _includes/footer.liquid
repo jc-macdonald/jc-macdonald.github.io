@@ -1,4 +1,12 @@
 {% capture footer_contents %}
+  <nav class="footer-links" aria-label="More from this site">
+    <a href="{{ '/operational-modeling/' | relative_url }}">Modeling in practice</a>
+    <a href="{{ '/software-examples/' | relative_url }}">Computed examples</a>
+    <a href="{{ '/figures/' | relative_url }}">Figure downloads</a>
+    <a href="{{ '/repositories/' | relative_url }}">Source repositories</a>
+    <a href="{{ '/extracurricular/' | relative_url }}">Outside work</a>
+    <a href="mailto:{{ site.data.socials.email }}">Email</a>
+  </nav>
   &copy; Copyright {{ site.time | date: '%Y' }}
   {{ site.first_name }}
   {{ site.middle_name }}

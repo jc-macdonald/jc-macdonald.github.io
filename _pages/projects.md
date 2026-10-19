@@ -1,6 +1,7 @@
 ---
 layout: page
-title: projects
+title: Research and software
+nav_title: Research & software
 permalink: /projects/
 description: Models and software for studying changing systems, learning from incomplete data, and comparing interventions and research designs.
 nav: true
