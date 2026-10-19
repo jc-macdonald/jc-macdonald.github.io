@@ -1,1 +1,22 @@
-[{"name":"spatial_diffusion","title":"Periodic diffusion with OP System and OP Engine","description":"A 64-cell periodic diffusion field and profiles at four times, computed from an OP System specification with RK4 integration in OP Engine. Spatial discretization is supplied explicitly; all inputs are synthetic."},{"name":"stochastic_ensemble","title":"Independent stochastic simulation with OP Engine","description":"512 independent exact stochastic transfer simulations, their empirical mean and pointwise 5th\u201395th percentile range, and the final distribution alongside analytic mean and binomial references. Synthetic demonstration."},{"name":"replicated_tradeoff","title":"Replicated error and cost comparison with trade-study","description":"Ten synthetic sample-mean designs compared across 512 paired replicates. Nondominated mean error and assumed cost are marked, and empirical errors are compared with analytic variances. Costs are declared assumptions, not measured field costs."},{"name":"incomplete_reconstruction","title":"VBPCA reconstruction from incomplete synthetic data","description":"A synthetic two-pattern signal, noisy observed entries with unobserved cells in gray, and a VBPCA reconstruction. Held-out observations are excluded from fitting. This illustration does not establish rank selection or uncertainty calibration."}]
+[
+  {
+    "name": "spatial_diffusion",
+    "title": "Periodic diffusion with OP System and OP Engine",
+    "description": "A 64-cell periodic diffusion field and profiles at four times, computed from an OP System specification with RK4 integration in OP Engine. Spatial discretization is supplied explicitly; all inputs are synthetic."
+  },
+  {
+    "name": "stochastic_ensemble",
+    "title": "Independent stochastic simulation with OP Engine",
+    "description": "512 independent exact stochastic transfer simulations, their empirical mean and pointwise 5th\u201395th percentile range, and the final distribution alongside analytic mean and binomial references. Synthetic demonstration."
+  },
+  {
+    "name": "replicated_tradeoff",
+    "title": "Replicated error and cost comparison with trade-study",
+    "description": "Ten synthetic sample-mean designs compared across 512 paired replicates. Nondominated mean error and assumed cost are marked, and empirical errors are compared with analytic variances. Costs are declared assumptions, not measured field costs."
+  },
+  {
+    "name": "incomplete_reconstruction",
+    "title": "VBPCA reconstruction from incomplete synthetic data",
+    "description": "A synthetic two-pattern signal, noisy observed entries with unobserved cells in gray, and a VBPCA reconstruction. Held-out observations are excluded from fitting. This illustration does not establish rank selection or uncertainty calibration."
+  }
+]

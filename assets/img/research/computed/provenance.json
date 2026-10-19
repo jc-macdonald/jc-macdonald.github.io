@@ -1,1 +1,29 @@
-{"schema_version":1,"source_sha256":"6633223091c7d851483ddb64cf6d9b61d3656eb22d1bac05b944840df1172569","registry_sha256":"cdd3ddb2ba4285d140aae451905509038772590a14bfac3216139ce3197e5fc4","packages":{"op-system":"0.8.0","op-engine":"0.7.0","trade-study":"0.5.1","vbpca-py":"0.4.6","numpy":"2.5.4","matplotlib":"3.11.2"},"files_sha256":{"computed_data.json":"fddff5853b11d75256505a1d4ff585ce672db47875d031f58c4210152a71cd02","design_comparison.csv":"e1ddf802fd45b1fc5059ab952a98778af7b7fc8fd16e7cfdcba9993fc8b15317","spatial_diffusion.svg":"201fb81883e54d87b9923a5cb650514f0aeca48d706dfd72839592003c9cdc4e","spatial_diffusion.pdf":"9796970530911c0543b7ccab71c0690fd563d0b6a2d524016bbdadb8602bdf28","spatial_diffusion.png":"588b4e31158f17295d145a26682b1c761f4aa5ed16cc4e82c5fe20f62007885a","stochastic_ensemble.svg":"7e72ab10e7b6fb7439d2d375feefcdc6c4fb253ce93b8e06540ee3b6b0e6016f","stochastic_ensemble.pdf":"c46dee1d9f771ab5b05436d6c2dc79d3b9d390def186a10610d1d2ec2020aa0b","stochastic_ensemble.png":"edaf77deb432fe1ef68f17e83f5b0a534fcf8e149ae8a1b48d3937c40a61a60f","replicated_tradeoff.svg":"bf3b301e598a1bc867373f8b0de6eecf439c7e8c127c1bf709154a7d0a584040","replicated_tradeoff.pdf":"60d12a9184be52030fd6b1e0c40666c452d6d73f4edb9fb6f6a0524841bcefe5","replicated_tradeoff.png":"869b1b080e5b056d7d3355f93881a3c5b6e2daa8f4e38afd972f871c3f4e42eb","incomplete_reconstruction.svg":"c18c9635587416fb9b69541652e67a2ebf83a31f0c41b1c5d39f14784dbd5a93","incomplete_reconstruction.pdf":"dde81c223ea7079973a3f9314b6ca9a4e149dfa9da1a9d6bd3bd7ce7c1e9c413","incomplete_reconstruction.png":"a1f58b682528af7ece3858365350d2523bfe20f33ca045a4ef6a32d8e7792247"}}
+{
+  "schema_version": 1,
+  "source_sha256": "6633223091c7d851483ddb64cf6d9b61d3656eb22d1bac05b944840df1172569",
+  "registry_sha256": "cdd3ddb2ba4285d140aae451905509038772590a14bfac3216139ce3197e5fc4",
+  "packages": {
+    "op-system": "0.8.0",
+    "op-engine": "0.7.0",
+    "trade-study": "0.5.1",
+    "vbpca-py": "0.4.6",
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2"
+  },
+  "files_sha256": {
+    "computed_data.json": "fddff5853b11d75256505a1d4ff585ce672db47875d031f58c4210152a71cd02",
+    "design_comparison.csv": "e1ddf802fd45b1fc5059ab952a98778af7b7fc8fd16e7cfdcba9993fc8b15317",
+    "spatial_diffusion.svg": "201fb81883e54d87b9923a5cb650514f0aeca48d706dfd72839592003c9cdc4e",
+    "spatial_diffusion.pdf": "9796970530911c0543b7ccab71c0690fd563d0b6a2d524016bbdadb8602bdf28",
+    "spatial_diffusion.png": "588b4e31158f17295d145a26682b1c761f4aa5ed16cc4e82c5fe20f62007885a",
+    "stochastic_ensemble.svg": "7e72ab10e7b6fb7439d2d375feefcdc6c4fb253ce93b8e06540ee3b6b0e6016f",
+    "stochastic_ensemble.pdf": "c46dee1d9f771ab5b05436d6c2dc79d3b9d390def186a10610d1d2ec2020aa0b",
+    "stochastic_ensemble.png": "edaf77deb432fe1ef68f17e83f5b0a534fcf8e149ae8a1b48d3937c40a61a60f",
+    "replicated_tradeoff.svg": "bf3b301e598a1bc867373f8b0de6eecf439c7e8c127c1bf709154a7d0a584040",
+    "replicated_tradeoff.pdf": "60d12a9184be52030fd6b1e0c40666c452d6d73f4edb9fb6f6a0524841bcefe5",
+    "replicated_tradeoff.png": "869b1b080e5b056d7d3355f93881a3c5b6e2daa8f4e38afd972f871c3f4e42eb",
+    "incomplete_reconstruction.svg": "c18c9635587416fb9b69541652e67a2ebf83a31f0c41b1c5d39f14784dbd5a93",
+    "incomplete_reconstruction.pdf": "dde81c223ea7079973a3f9314b6ca9a4e149dfa9da1a9d6bd3bd7ce7c1e9c413",
+    "incomplete_reconstruction.png": "a1f58b682528af7ece3858365350d2523bfe20f33ca045a4ef6a32d8e7792247"
+  }
+}
