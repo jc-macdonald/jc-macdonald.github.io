@@ -2,11 +2,11 @@
 \begin{document}
 \begin{tikzpicture}
 \heading{OP System}{Structured specifications become portable numerical contracts.}
-\panel{a}{0}{0}{Blue}{1. Specify}{Governing equations\\or compartmental transitions\\Axes, parameters and routes}
+\panel{a}{0}{0}{Blue}{1. Specify}{PDEs and nonlocal dynamics\\Compartments and reactions\\Coordinates and parameters}
 \panel{b}{6.7}{0}{Teal}{2. Compile}{Restricted syntax and axes\\Template expansion\\Typed intermediate form}
-\panel{c}{6.7}{-3.8}{Green}{3. Publish contracts}{Reactions and observables\\Forcing schedules\\Checked independent blocks}
-\panel{d}{0}{-3.8}{Gold}{4. Evaluate}{\(\dot y=f(t,y,\theta)\)\\Flat, PyTree or block layouts\\NumPy / JAX / CPU Torch}
+\panel{c}{6.7}{-3.8}{Green}{3. Publish contracts}{Operators and reactions\\Observables and forcing\\Checked independent blocks}
+\panel{d}{0}{-3.8}{Gold}{4. Evaluate}{Shaped fields and state arrays\\Flat, PyTree or block layouts\\NumPy / JAX / CPU Torch}
 \fourflow
-\bottomnote{The numerical core runs directly or through a separate FlepiMoP2 provider. Cross-axis constraints remain metadata; independent equations and invariants supply numerical evidence.}
+\bottomnote{Spatial discretization and time/event integration belong to numerical consumers. The compiler publishes field, operator and reaction contracts; cross-axis constraints remain metadata.}
 \end{tikzpicture}
 \end{document}

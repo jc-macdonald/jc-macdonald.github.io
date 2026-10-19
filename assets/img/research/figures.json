@@ -3,7 +3,7 @@
     "name": "beyond_onehealth",
     "source": "tikz/beyond_onehealth.tex",
     "title": "Simulation, inference and decisions",
-    "description": "Public tools cover model specification with OP System, numerical execution with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds parameter inference, calibration and study-design checks; it is private, pre-alpha and unreleased."
+    "description": "Public tools cover field/equation/reaction specification with OP System, PDE/nonlocal/reaction simulation with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds parameter inference, calibration and study-design checks; it is private, pre-alpha and unreleased."
   },
   {
     "name": "obs_model_general",
@@ -21,13 +21,13 @@
     "name": "op_system_slide",
     "source": "tikz/op_system_slide.tex",
     "title": "OP System compilation and numerical contracts",
-    "description": "Equations or transitions are compiled through restricted syntax and typed IR into evaluators and metadata for reactions, named observables, forcing and independent blocks. Cross-axis constraints remain metadata."
+    "description": "PDEs, nonlocal field dynamics, compartmental models and reactions are specified with coordinates and parameters, compiled through restricted syntax and typed IR, and published as shaped evaluators plus operator, reaction, observable and forcing contracts. Numerical consumers own discretization and time/event integration; cross-axis constraints remain metadata."
   },
   {
     "name": "op_engine_slide",
     "source": "tikz/op_engine_slide.tex",
     "title": "OP Engine numerical workflow",
-    "description": "Prepare state and operators, solve deterministic or stochastic dynamics, record observations and optional counts, then check accuracy and replay. Independent SSA clocks use NumPy; backend qualification is method-specific and replay derivatives depend on the recorded mesh."
+    "description": "Prepare fields, states, rates and transport/mixing/reaction operators; solve discretized PDE and nonlocal models or stochastic reactions; record observations and counts; check accuracy and replay. Independent SSA clocks use NumPy. Backend qualification and replay derivatives are method-specific."
   },
   {
     "name": "op_infer_slide",
