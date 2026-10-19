@@ -21,9 +21,9 @@ Current capabilities include:
 - Adaptive optimization, successive halving/Hyperband and Gaussian-process or random-forest surrogates with validation diagnostics.
 - Evaluation caches, resumable grids and result bundles with guarded provenance.
 
-The core depends on NumPy; optional integrations wrap established libraries for scoring, optimization, sensitivity, model weighting and plots. Bayesian stacking uses log-likelihood information supplied by predictive models. Score-based weights optimize the supplied mean model scores, not the loss of an averaged prediction. Neither approach certifies calibration.
+The core depends on NumPy, with optional integrations for scoring, optimization, sensitivity, model weighting and plots. Bayesian stacking uses log-likelihood information supplied by predictive models. Score-based weighting optimizes a weighted combination of supplied mean model scores. Assessing the resulting combined predictions requires a separate evaluation, including checks of calibration where relevant.
 
-A Pareto front narrows the alternatives; selecting a design still needs explicit preferences or constraints. Replicate intervals describe uncertainty under their stated assumptions. Fixed Wilson precision is not gate power, and synthetic benchmark results need independent validation before transfer to observed data.
+A Pareto front contains alternatives for which none of the other candidates is at least as good on every stated objective and better on at least one. Choosing among them needs stated preferences or constraints. Uncertainty intervals depend on the replicate design and assumptions. A precision target for a pass-rate estimate does not establish the probability of detecting an inadequate method. Application studies must assess whether synthetic benchmark findings carry over to observed data.
 
 {% include figure.liquid path="assets/img/research/computed/replicated_tradeoff.svg" class="img-fluid rounded" zoomable=true alt="Ten synthetic sample-mean designs compared across 512 paired replicates. Nondominated mean error and assumed cost are marked, and empirical errors are compared with analytic variances. Costs are declared assumptions, not measured field costs." caption="Ten synthetic measurement designs, each evaluated on 512 paired replicates. Cost is an assumed input, not a measured field cost." %}
 

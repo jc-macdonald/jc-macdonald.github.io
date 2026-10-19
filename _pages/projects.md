@@ -10,8 +10,10 @@ display_categories: ["Released software", "Research in progress", "Collaborative
 horizontal: false
 ---
 
-The projects below include public software and ongoing research. Each package
-has its own role; projects can use them independently or in combination.
+My research asks what we can learn from incomplete observations, how to evaluate
+scientific predictions, and which measurements or interventions to compare.
+The projects below include released tools and ongoing methods research.
+The software packages can be used independently or in combination.
 
 <nav class="page-links" aria-label="Project sections">
   <a href="#released-software">Released software</a>

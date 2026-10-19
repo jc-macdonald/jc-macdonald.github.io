@@ -9,7 +9,7 @@ category: "Released software"
 github: https://github.com/ACCIDDA/op_engine
 ---
 
-**OP Engine** simulates how modeled systems change over time and space, including systems with random events. It is a numerical core for structured dynamical systems: spatial/trait-structured PDEs, nonlocal integral/mixing dynamics, compartmental models, ODEs and stochastic reaction networks. It supports explicit, IMEX, implicit and stochastic methods and can be used directly or through the separately packaged [FlepiMoP2](/projects/flepimop2/) provider.
+**OP Engine** simulates how modeled systems change over time and space, including systems with random events. It is a numerical core for structured dynamical systems: partial differential equations (PDEs) with spatial or trait structure, nonlocal interactions, compartmental models, ordinary differential equations (ODEs) and stochastic reaction networks. It supports explicit, implicit-explicit (IMEX), implicit and stochastic methods and can be used directly or through the separately packaged [FlepiMoP2](/projects/flepimop2/) provider.
 
 [Public alpha release on PyPI](https://pypi.org/project/op-engine/) and actively developed. The [capability guide](https://accidda.github.io/op_engine/latest/guides/capabilities/) maps public interfaces to runnable examples.
 
@@ -17,7 +17,7 @@ Current workflows include:
 
 - Spatial/trait PDE and nonlocal field dynamics through declared grids, measures, matrix/kernel operators and explicit/IMEX/implicit stepping. Spatial and temporal accuracy require separate checks.
 - ODE and compartmental integration, including nonlinear-stage diagnostics.
-- Exact direct SSA, bounded thinning for time-varying hazards, and approximate fixed/adaptive tau-leaping.
+- Exact simulation with the direct stochastic simulation algorithm (SSA), bounded thinning for time-varying event rates, and approximate fixed/adaptive tau-leaping.
 - Independent NumPy CPU SSA banks with one event clock per replicate, stable replicate IDs, forcing boundaries and optional reaction firing counts.
 - Named observations and window summaries, conditional conservation checks and steady-state analysis.
 - Adaptive schedule discovery and frozen-schedule replay, with explicit accuracy and provenance checks.

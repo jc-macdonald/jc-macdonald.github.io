@@ -28,7 +28,7 @@
   availability: Private pre-alpha, unreleased
 - slug: pp_eigentest
   name: pp-eigentest
-  purpose: Investigate how many patterns an incomplete dataset can support.
+  purpose: Study how many patterns can be distinguished from noise in incomplete data.
   availability: Private alpha, unreleased
 - slug: flepimop2
   name: FlepiMoP2

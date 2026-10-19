@@ -27,14 +27,14 @@ what is checked.
 ## Spatial diffusion
 
 OP System compiles a named-axis expression for a periodic diffusion stencil;
-OP Engine integrates the resulting field with RK4. The stencil is supplied
-explicitly on 64 equally spaced cells. Faster spatial variation fades sooner
+OP Engine integrates the resulting field with fourth-order Runge–Kutta (RK4).
+The stencil is supplied explicitly on 64 equally spaced cells. Faster spatial variation fades sooner
 than slower variation.
 
 {% include figure.liquid path="assets/img/research/computed/spatial_diffusion.svg" class="img-fluid rounded" zoomable=true alt="A 64-cell periodic diffusion field and profiles at four times, computed from an OP System specification with RK4 integration in OP Engine. Spatial discretization is supplied explicitly; all inputs are synthetic." caption="A periodic spatial field at 121 output times and four selected profiles. The spatial mean is conserved." %}
 
 The code checks the full trajectory against the exact Fourier-mode solution
-of the **discrete stencil**, with a maximum absolute difference below
+of the **discrete spatial stencil**, with a maximum absolute difference below
 `2e-10`. This measures temporal integration error for the chosen grid. It does
 not measure error against a continuum PDE or establish accuracy for other
 spatial discretizations.
@@ -43,8 +43,9 @@ spatial discretizations.
 
 ## Stochastic transfers
 
-OP Engine runs 512 independent exact SSA clocks for a two-state transfer
-process. Each starts with 40 units; each remaining unit transfers at rate 0.6.
+OP Engine runs 512 independent realizations of a two-state transfer process
+using the exact stochastic simulation algorithm (SSA), with one event clock
+per run. Each starts with 40 units; each remaining unit transfers at rate 0.6.
 The example retains the accepted firing counts and checks conservation and
 the correspondence between counts and transferred units.
 
@@ -63,8 +64,10 @@ no alternative improves both mean error and assumed cost.
 {% include figure.liquid path="assets/img/research/computed/replicated_tradeoff.svg" class="img-fluid rounded" zoomable=true alt="Ten synthetic sample-mean designs compared across 512 paired replicates. Nondominated mean error and assumed cost are marked, and empirical errors are compared with analytic variances. Costs are declared assumptions, not measured field costs." caption="Increasing the sample count reduces estimation error in this toy problem. The right panel compares the Monte Carlo estimates with the known variance of a sample mean." %}
 
 The table reads the same generated data as the figure. Error estimates depend
-on this finite replicate bank. Nondominance describes the declared objectives;
-it does not select a design for a scientific application.
+on these 512 simulated replicates. A design is nondominated when no other
+design is at least as good on both stated objectives and better on at least
+one. Choosing a design for an application also requires preferences or
+constraints relevant to that application.
 
 {% include design_comparison.liquid %}
 

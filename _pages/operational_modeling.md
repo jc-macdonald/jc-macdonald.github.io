@@ -2,7 +2,7 @@
 layout: page
 title: Modeling in practice
 permalink: /operational-modeling/
-description: Operational infectious disease forecasting and scenario modeling deployed through ACCIDDA's computational infrastructure.
+description: My contributions to infectious disease scenario projections, vaccination studies and the software used to run them.
 nav: false
 nav_order: 4
 ---
@@ -38,7 +38,7 @@ Model development, fitting and scenario production for ACCIDDA's COVID-19 projec
 
 ### Hib Vaccination Modeling (Navajo Nation)
 
-Technical supervisor for an age- and immune-status-structured _Haemophilus influenzae_ type b (Hib) model evaluating the impact of long-running vaccination programs in the Navajo Nation. Managing PhD students through model implementation, calibration, and policy analysis.
+I provide technical supervision for PhD students implementing an age- and immune-status-structured _Haemophilus influenzae_ type b (Hib) model. The study examines the impact of long-running vaccination programs in the Navajo Nation and includes model fitting and policy analysis.
 
 ### Diphtheria Outbreak Vaccination
 
