@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Invited seminar at **UMBC** — "Decision-Support Modeling for One Health Pathogens: Using Mechanistic Models for Surveillance and Forecast Design."
+Invited seminar at **UMBC**. "Decision-Support Modeling for One Health Pathogens: Using Mechanistic Models for Surveillance and Forecast Design."

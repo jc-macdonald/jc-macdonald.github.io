@@ -15,11 +15,10 @@ and software are linked where available.
 
 ### Structural scores and scientific prediction
 
-Can a prediction respect the evidence and still violate what we know about
-the system? A forecast of a proportion, for example, should respect its
-stated bounds. I am developing structural scores to assess predictions
+I am developing structural scores to assess predictions
 against declared scientific constraints, including checks that can be made
-before the outcome is observed.
+before the outcome is observed. A forecast of a proportion, for example,
+should respect its stated bounds.
 
 The work asks how to report structural compliance alongside predictive
 accuracy, and how to make the assumptions and limits of those checks clear.
@@ -33,9 +32,8 @@ scientific validity. Methods and companion software are in development.
 
 ### Inference and calibration
 
-How can parameter inference remain informative when observations are incomplete
-or noisy? [op_infer](/projects/inference_calibration/)
-connects working fitting tools, simulation-based checks and replicated studies.
+[op_infer](/projects/inference_calibration/) connects fitting tools,
+simulation-based checks and replicated studies for incomplete or noisy observations.
 The research software remains private, pre-alpha and unreleased while its scientific
 applications are assessed.
 
@@ -54,24 +52,21 @@ research on signal-rank selection, building on a
 
 ### Application studies
 
-**Dengue within-host dynamics.** How do viral and immune responses across
-successive infections inform our understanding of antibody-dependent
-enhancement? Current work develops inference and model assessment for this
-question, building on an [earlier preprint](https://doi.org/10.1101/2023.08.29.555313).
+**Dengue within-host dynamics.** Current work develops inference and model
+assessment for viral and immune responses across successive infections and
+their relationship to antibody-dependent enhancement. It builds on an
+[earlier preprint](https://doi.org/10.1101/2023.08.29.555313).
 
-**COVID-19 observation noise.** How do assumptions about surveillance error
-affect inferred dynamics and predictive uncertainty? Controlled simulation
-studies examine the sensitivity of inference and forecast assessment to
-the observation model.
+**COVID-19 observation noise.** Controlled simulation studies examine how
+assumptions about surveillance error affect inferred dynamics, predictive
+uncertainty, and forecast assessment.
 
-**Diphtheria outbreak vaccination.** How can models help compare the timing
-and value of outbreak-response vaccination? Ongoing modeling supports
-comparison of response strategies under uncertain transmission and immunity.
+**Diphtheria outbreak vaccination.** Ongoing modeling compares the timing and
+effects of response strategies under uncertain transmission and immunity.
 
-**CCHF surveillance and control.** Which wildlife and livestock measurements
-are most useful for understanding disease risk and informing control?
-Cross-scale modeling investigates surveillance choices alongside their field
-costs.
+**CCHF surveillance and control.** Cross-scale modeling investigates which
+wildlife and livestock measurements inform disease risk and control choices,
+alongside their field costs.
 
 Working repositories remain private while the analyses mature. Public artifacts
 will be added as they are released. See

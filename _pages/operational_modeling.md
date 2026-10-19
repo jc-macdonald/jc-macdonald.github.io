@@ -17,9 +17,9 @@ I develop and maintain ACCIDDA's operational models for the Flu and COVID-19 Sce
 
 Lead model developer for ACCIDDA's influenza scenario projections.
 
-- **2026/27 operational round** — supervising an undergraduate student in a scientific overhaul of the ACCIDDA flu model
-- **2025/26 operational round** — leading scientific overhaul of the ACCIDDA flu model
-- **2024/25 operational round** — initial model development and pipeline integration
+- **2026/27 operational round.** Supervising an undergraduate student on revisions to the ACCIDDA flu model.
+- **2025/26 operational round.** Leading revisions to the ACCIDDA flu model.
+- **2024/25 operational round.** Initial model development and pipeline integration.
 
 [Hub repository](https://github.com/midas-network/flu-scenario-modeling-hub) · [Round results and reports](https://scenariomodelinghub.org/)
 
@@ -27,7 +27,7 @@ Lead model developer for ACCIDDA's influenza scenario projections.
 
 Data assimilation and modeling support for ACCIDDA's COVID-19 projections.
 
-- **2025 health heterogeneities round** — data cleaning, assimilation, and scenario analysis
+- **2025 health heterogeneities round.** Data cleaning, assimilation, and scenario analysis.
 
 [Hub repository](https://github.com/midas-network/covid19-scenario-modeling-hub)
 
@@ -47,4 +47,4 @@ Developing an operational modeling analysis of outbreak-response vaccination str
 
 ## Infrastructure
 
-This operational work directly informs the development of [FlepiMoP2](/projects/flepimop2/), [OP Engine](/projects/op_engine/), and [OP System](/projects/op_system/), which compose into a declarative modeling stack: OP System compiles validated, Array-API-polymorphic model functions; OP Engine provides portable numerical kernels and backend-native execution; and FlepiMoP2 orchestrates configuration-defined campaigns and provider integrations. The stack is being developed against operational infectious-disease modeling requirements rather than as an isolated numerical demonstration.
+This work informs development of [OP System](/projects/op_system/) for model specification, [OP Engine](/projects/op_engine/) for numerical simulation, and [FlepiMoP2](/projects/flepimop2/) for campaign execution. Separate providers connect the packages. Their requirements draw on the infectious disease modeling workflows described above.

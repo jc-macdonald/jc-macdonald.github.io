@@ -44,7 +44,7 @@ both the RenderCV PDF and `assets/pdf/cv.pdf`. Artifacts expire after 14 days. P
 validate and upload previews without committing or publishing. The live
 [`assets/rendercv/provenance.json`](https://jcmacdonald.dev/assets/rendercv/provenance.json)
 records the deployed CV's revision, input hashes, renderer version and PDF hash.
-Tracked PDFs are reference snapshots; publication always overlays fresh verified
+Tracked PDFs are reference snapshots. Publication overlays fresh verified
 artifacts from that same workflow run.
 
 To reproduce the renderer locally in an activated Python 3.12 environment:
@@ -452,9 +452,9 @@ See [CONTRIBUTING.md § GitHub Copilot Agents](CONTRIBUTING.md#github-copilot-ag
 
 ## Documentation
 
-Comprehensive guides for all aspects of your al-folio website:
+Theme setup and maintenance guides:
 
-- **[Quick Start](QUICKSTART.md)** – Get running in 5 minutes
+- **[Quick Start](QUICKSTART.md)** – Local setup
 - **[Installation & Deployment](INSTALL.md)** – Set up your site on GitHub Pages or other platforms
 - **[Customization Guide](CUSTOMIZE.md)** – Personalize your website (CVs, publications, themes, etc.)
 - **[Troubleshooting](TROUBLESHOOTING.md)** – Fix common issues (deployment, build, styling, content)
@@ -602,7 +602,7 @@ We decided to keep `Axe` runs manual because fixing the issues are not straightf
 
 #### GDPR Cookie Consent Dialog
 
-**al-folio** includes a built-in, GDPR-compliant cookie consent dialog to ensure your website respects visitor privacy. The dialog is powered by [Vanilla Cookie Consent](https://cookieconsent.orestbida.com/) and integrates seamlessly with all supported analytics providers.
+**al-folio** includes a cookie consent dialog powered by [Vanilla Cookie Consent](https://cookieconsent.orestbida.com/). It can be configured with the supported analytics providers.
 
 When enabled, analytics scripts are blocked until the user explicitly consents, and user preferences are saved across visits. This is essential for websites serving visitors in the European Union and other regions with strict privacy regulations.
 

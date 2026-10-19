@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist whose work determines what actions to take, what experiments to run, and what measurements are worth collecting in systems where interventions are costly and uncertainty is unavoidable. I develop methods, scientific AI/ML, and research software for partially observed systems across earth, environmental, and health sciences — integrating generative modeling (mechanistic, statistical, and hybrid), Bayesian inference, uncertainty quantification, and scientific computing to build defensible decision support. Current application areas include WHO-facing diphtheria outbreak-response vaccination analyses, respiratory-virus scenario modeling, surveillance design, marine and terrestrial ecology, and cultural transmission dynamics."
+      - "Computational scientist working on simulation, Bayesian inference, and study design for partially observed systems in earth, environmental, and health sciences. I develop mechanistic, statistical, and hybrid models and research software to compare interventions and surveillance strategies. Current applications include diphtheria outbreak-response vaccination, respiratory-virus scenario modeling, wildlife disease, ecology, and cultural transmission."
 
     Education:
       - institution: University of Louisiana at Lafayette
@@ -219,7 +219,7 @@ cv:
       - name: Flu Scenario Modeling Hub
         start_date: 2024
         end_date: present
-        summary: "ACCIDDA. Lead Model Developer across the 2024/25, 2025/26, and 2026/27 seasons. Set up the ACCIDDA flu model and operational pipeline (2024/25). Extensive work with external modeling packages drove contributions that led to FlepiMoP2 (2025/26). Supervising an undergraduate student in a scientific overhaul of the flu model for the 2026/27 round."
+        summary: "ACCIDDA. Lead Model Developer across the 2024/25, 2025/26, and 2026/27 seasons. Set up the ACCIDDA flu model and operational pipeline (2024/25). Work with external modeling packages informed contributions to FlepiMoP2 (2025/26). Supervising an undergraduate student on revisions to the flu model for the 2026/27 round."
         highlights:
           - "[github.com/midas-network/flu-scenario-modeling-hub](https://github.com/midas-network/flu-scenario-modeling-hub)"
 
@@ -232,7 +232,7 @@ cv:
       - name: "OP System (Operator-Partitioned System)"
         start_date: 2026
         end_date: present
-        summary: "ACCIDDA. Released compiler for structured model specifications, producing Array API right-hand sides, reaction and observable metadata, forcing schedules and checked independent-block contracts. NumPy, JAX and CPU PyTorch qualification; independent-equation fixtures complement structural validation."
+        summary: "ACCIDDA. Released compiler for PDE, nonlocal and reaction model specifications, producing Array API evaluators, operator and observable metadata, forcing schedules and checked independent-block interfaces. Tests cover NumPy, JAX and CPU PyTorch. Independent-equation fixtures complement structural validation."
         highlights:
           - "[github.com/ACCIDDA/op_system](https://github.com/ACCIDDA/op_system)"
 
@@ -246,14 +246,14 @@ cv:
       - name: "op_infer (Inference and Calibration)"
         start_date: 2026
         end_date: present
-        summary: "Working statistical layer of the op stack, connecting Bayesian fitting through established inference libraries, simulation-based calibration and replicated study-design checks. Private, pre-alpha and unreleased; broader interfaces and application-specific validation remain in development."
+        summary: "Research software connecting Bayesian fitting through established inference libraries, simulation-based calibration and replicated study-design checks. Private, pre-alpha and unreleased. Broader interfaces and application studies remain in development."
         highlights:
           - "[Project summary](https://jcmacdonald.dev/projects/inference_calibration/)"
 
       - name: "Trade Study (Python)"
         start_date: 2026
         end_date: present
-        summary: "Released framework for replicated simulation studies, paired comparisons, Pareto analysis and preference-based decisions. Hierarchical phases, proper scores, fixed/adaptive replication, sensitivity and surrogate integrations, and provenance-checked result bundles. Statistical guarantees depend on declared assumptions and application-specific validation."
+        summary: "Released framework for replicated simulation studies, paired comparisons, Pareto analysis and preference-based decisions. Hierarchical phases, proper scores, fixed/adaptive replication, sensitivity and surrogate integrations, and provenance-checked result bundles. Interpretation depends on the stated assumptions and validation for the application."
         highlights:
           - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study)"
           - "[pypi.org/project/trade-study/](https://pypi.org/project/trade-study/)"
@@ -262,14 +262,14 @@ cv:
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Released numerical core with deterministic/stochastic solvers, independent NumPy SSA banks, named observations and adaptive-schedule replay. Method-specific NumPy, JAX and CPU PyTorch qualification; replay derivatives are conditional on the recorded mesh and GPU paths need separate hardware evidence."
+        summary: "ACCIDDA. Released numerical core for PDEs, nonlocal dynamics, compartmental models and stochastic reactions. Includes independent NumPy SSA banks, named observations and adaptive-schedule replay. Tests cover specific NumPy, JAX and CPU PyTorch methods. Replay derivatives are conditional on the recorded mesh. GPU paths need separate hardware qualification."
         highlights:
           - "[github.com/ACCIDDA/op_engine](https://github.com/ACCIDDA/op_engine)"
 
       - name: vbpca-py
         start_date: 2024
         end_date: present
-        summary: "Variational Bayesian PCA for incomplete data with native per-entry missingness handling, full posterior uncertainty quantification, automatic component pruning, and built-in model selection. Missing-aware preprocessing pipeline and C++-accelerated kernels; scikit-learn-compatible API. Applied to genetic, cultural, and ecological datasets."
+        summary: "Variational Bayesian PCA for incomplete data with fitting to observed entries, approximate posterior covariances, component pruning, and model-selection tools. Includes missing-aware preprocessing, C++ kernels, and a scikit-learn-compatible API. Applied to genetic, cultural, and ecological datasets."
         highlights:
           - "[pypi.org/project/vbpca-py/](https://pypi.org/project/vbpca-py/)"
           - "[doi:10.5281/zenodo.19389250](https://doi.org/10.5281/zenodo.19389250)"
@@ -290,7 +290,7 @@ cv:
       - name: "FlepiMoP (Flexible Epidemic Modeling Pipeline)"
         start_date: 2024
         end_date: 2025
-        summary: "Hopkins IDD / ACCIDDA. Developed simulation and statistical inference components for operational influenza modeling; conducted benchmarking that identified 5--20x performance improvements, informing the next-generation pipeline architecture."
+        summary: "Hopkins IDD / ACCIDDA. Developed simulation and statistical inference components for operational influenza modeling. Performance profiling and vectorized backend work informed subsequent pipeline development."
 
     Invited Talks and Seminars:
       - name: "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems"

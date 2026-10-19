@@ -14,20 +14,20 @@
   {
     "name": "future_directions_general",
     "source": "tikz/future_directions_general.tex",
-    "title": "Generalize, harden, operationalize",
+    "title": "Current research directions",
     "description": "The research agenda connects scientific systems, ongoing work on parameter inference, calibration, structural evaluation and rank selection, and decisions about interventions and surveillance. Observations and diagnostics inform new study choices."
   },
   {
     "name": "op_system_slide",
     "source": "tikz/op_system_slide.tex",
-    "title": "OP System compilation and numerical contracts",
-    "description": "PDEs, nonlocal field dynamics, compartmental models and reactions are specified with coordinates and parameters, compiled through restricted syntax and typed IR, and published as shaped evaluators plus operator, reaction, observable and forcing contracts. Numerical consumers own discretization and time/event integration; cross-axis constraints remain metadata."
+    "title": "OP System compilation and numerical interfaces",
+    "description": "OP System compiles PDEs, nonlocal field dynamics, compartmental models and reactions into shaped evaluators and numerical metadata. Numerical consumers choose discretization and time or event integration. Cross-axis constraints remain metadata."
   },
   {
     "name": "op_engine_slide",
     "source": "tikz/op_engine_slide.tex",
     "title": "OP Engine numerical workflow",
-    "description": "Prepare fields, states, rates and transport/mixing/reaction operators; solve discretized PDE and nonlocal models or stochastic reactions; record observations and counts; check accuracy and replay. Independent SSA clocks use NumPy. Backend qualification and replay derivatives are method-specific."
+    "description": "OP Engine prepares field and reaction models, solves discretized PDEs, nonlocal dynamics and stochastic reactions, and records observations and firing counts. Independent SSA clocks use NumPy. Tested operations depend on the method. Replay derivatives are conditional on the recorded mesh."
   },
   {
     "name": "op_infer_slide",
@@ -57,7 +57,7 @@
     "name": "vbpca_py_schematic",
     "source": "tikz/vbpca_py_schematic.tex",
     "title": "VBPCApy missing-data workflow",
-    "description": "Observed entries and a mask feed variational fitting of loadings, scores, bias, noise and ARD. Convergence, component selection and held-out assessment support posterior prediction and uncertainty for the intended data regime."
+    "description": "Observed entries and a mask feed variational fitting of loadings, scores, bias, noise and ARD. The workflow includes convergence checks, component selection, held-out assessment and approximate posterior covariances."
   },
   {
     "name": "optimal_design",
