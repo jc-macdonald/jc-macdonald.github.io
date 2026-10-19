@@ -83,9 +83,9 @@ ninja.data = [{
           description: "Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decoupling model specification, integration, and persistence.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/flepimop2/";
-            },},{id: "projects-inference-and-calibration",
-          title: 'Inference and calibration',
-          description: "Working research software connects Bayesian parameter inference, calibration checks and study design for partially observed systems.",
+            },},{id: "projects-op-infer",
+          title: 'op_infer',
+          description: "Private pre-alpha statistical layer connecting Bayesian parameter inference, calibration checks and study design for partially observed systems.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/inference_calibration/";
             },},{id: "projects-op-engine",
