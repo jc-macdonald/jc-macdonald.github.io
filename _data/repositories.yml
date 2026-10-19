@@ -7,10 +7,10 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
-  - yoavram-lab/VBPCApy
-  - jcm-sci/trade-study
-  - ACCIDDA/op_engine
   - ACCIDDA/op_system
+  - ACCIDDA/op_engine
+  - jcm-sci/trade-study
+  - yoavram-lab/VBPCApy
   - ACCIDDA/flepimop2
 
 repo_descriptions:

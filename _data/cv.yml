@@ -95,6 +95,18 @@ cv:
         doi: 10.1007/s11538-026-01760-x
         date: 2026
 
+      - title: "Cultural transmission, networks, and clusters among Austronesian-speaking peoples"
+        authors:
+          - "***J.C. Macdonald***"
+          - J. Blanco-Portillo
+          - M.W. Feldman
+          - Y. Ram
+        journal: "Evolutionary Human Sciences, 6, e51"
+        doi: 10.1017/ehs.2024.45
+        date: 2024
+        highlights:
+          - "Software: [VBPCApy](https://github.com/yoavram-lab/VBPCApy); [pp-eigentest project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
+
       - title: "Within-Host Viral Growth and Immune Response Rates Predict Foot-and-Mouth Disease Virus Transmission Dynamics for African Buffalo"
         authors:
           - "***J.C. Macdonald***"
@@ -107,18 +119,6 @@ cv:
         journal: "The American Naturalist, 204(2), 133–146"
         doi: 10.1086/730703
         date: 2024
-
-      - title: "Cultural transmission, networks, and clusters among Austronesian-speaking peoples"
-        authors:
-          - "***J.C. Macdonald***"
-          - J. Blanco-Portillo
-          - M.W. Feldman
-          - Y. Ram
-        journal: "Evolutionary Human Sciences, 6, e45"
-        doi: 10.1017/ehs.2024.45
-        date: 2024
-        highlights:
-          - "Software: [VBPCApy](https://github.com/yoavram-lab/VBPCApy); [pp-eigentest project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
 
       - title: "Forward hysteresis and Hopf bifurcation in an NPZD model with application to harmful algal blooms"
         authors:

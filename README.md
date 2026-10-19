@@ -662,3 +662,34 @@ Our most active contributors are welcome to join the maintainers team. If you ar
 The theme is available as open source under the terms of the [MIT License](https://github.com/alshedivat/al-folio/blob/main/LICENSE).
 
 Originally, **al-folio** was based on the [\*folio theme](https://github.com/bogoli/-folio) (published by [Lia Bogoev](https://liabogoev.com) and under the MIT license). Since then, it got a full re-write of the styles and many additional cool features.
+
+### Research pages and publication records
+
+The home page introduces current research before the computed examples and
+selected papers. Projects are grouped by release/research status. Edit
+`_data/software.yml` for the shared software guide and card availability labels;
+use each project's `importance` for order within its group. The figures page
+reads `_data/research_figures.yml`, with compact previews generated from the
+retained synthetic data by `assets/img/research/previews/card_previews.py`.
+
+The publications page sorts by year and month, newest first, then author name.
+The bibliography source stays alphabetical by key. `eid` stores an article
+identifier; `pages` stores a page range. Public articles and preprints also emit
+`ScholarlyArticle` metadata with the recorded author order. The offline reference
+in `.github/publication-reference.json` was checked against publisher/Crossref
+records and arXiv. Update it after verifying a changed public record, along with
+the bibliography and CV. Under-review and in-preparation manuscripts remain
+separate; target journals are not presented as publication venues.
+
+After a production build, run:
+
+```shell
+python -m unittest discover -s .github/tests -p 'test_publications.py' -v
+python .github/scripts/verify_publications.py _site
+python .github/scripts/verify_computed_artifacts.py _site
+```
+
+Deployment runs these checks before publishing. The design table progressively
+adds ordering and a nondominated-only filter; its complete static table remains
+available without JavaScript. CSV downloads retain all designs regardless of the
+current table view.

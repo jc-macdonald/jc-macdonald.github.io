@@ -1,0 +1,55 @@
+computed:
+  - name: spatial_diffusion
+    title: Spatial diffusion
+    description: A periodic field simulated with OP System and OP Engine, checked against its discrete Fourier-mode solution.
+    section: spatial-diffusion
+  - name: stochastic_ensemble
+    title: Stochastic transfers
+    description: Independent exact simulations with an analytic mean and final-distribution reference.
+    section: stochastic-transfers
+  - name: replicated_tradeoff
+    title: Replicated design comparison
+    description: Ten measurement designs compared on estimation error and assumed cost.
+    section: replicated-designs
+  - name: incomplete_reconstruction
+    title: Incomplete-data reconstruction
+    description: A synthetic matrix reconstructed with VBPCApy and assessed on held-out entries.
+    section: incomplete-data
+diagrams:
+  - name: op_system_slide
+    title: OP System
+    description: Model compilation and numerical interfaces.
+  - name: op_engine_slide
+    title: OP Engine
+    description: Deterministic, stochastic and replay method families.
+  - name: op_infer_slide
+    title: op_infer
+    description: Research capabilities for inference, calibration and design.
+  - name: trade_study_slide
+    title: trade-study
+    description: Replicated design comparisons and optional analyses.
+  - name: vbpca_py_schematic
+    title: VBPCApy
+    description: Observed-data model and approximate uncertainty.
+  - name: pp_eigentest_schematic
+    title: pp-eigentest
+    description: Signal-rank research for incomplete data.
+  - name: flepimop2_slide
+    title: FlepiMoP2
+    description: Provider interfaces and campaign relationships.
+  - name: beyond_onehealth
+    title: Simulation, inference and decisions
+    description: Relationships among methods and scientific applications.
+  - name: obs_model_general
+    title: Partial observation
+    description: Underlying systems and their measurement processes.
+  - name: future_directions_general
+    title: Current research directions
+    description: Methodological questions and application areas.
+illustrations:
+  - name: optimal_design
+    title: Observation-design tradeoffs
+    description: Constructed cost and utility values illustrate dominance and a stated budget.
+  - name: structural_fidelity_comparison
+    title: Structural admissibility
+    description: Constructed trajectories illustrate a declared bound; no predictive scores are computed.

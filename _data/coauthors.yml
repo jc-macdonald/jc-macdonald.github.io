@@ -6,8 +6,8 @@
     url: https://www.yoavram.com/
 
 "jolles":
-  - firstname: ["Anna", "A.", "A.E."]
-    url: https://scholar.google.com/citations?user=6-3YOasAAAAJ
+  - firstname: ["Anna", "Anna E.", "A.", "A.E."]
+    url: https://sites.google.com/view/jolles-lab/home
 
 "beechler":
   - firstname: ["Brianna", "B.", "B.R."]
@@ -27,8 +27,8 @@
 "gubbins":
   - firstname: ["Simon", "S."]
 
-"perez":
-  - firstname: ["Ericka", "E."]
+"perez-martin":
+  - firstname: ["Eva", "E."]
 
 "truelove":
   - firstname: ["Shaun", "S."]
@@ -44,13 +44,13 @@
   - firstname: ["Tomas", "T.", "T.M."]
 
 "srivastava":
-  - firstname: ["Akhil", "A."]
+  - firstname: ["Ajitesh", "A."]
 
 "atkins":
-  - firstname: ["Sarah", "S."]
+  - firstname: ["Summer", "S."]
 
 "welker":
-  - firstname: ["Sydney", "S."]
+  - firstname: ["J. Shane", "J.S."]
 
 "smith":
-  - firstname: ["Hannah", "H."]
+  - firstname: ["Houston", "H."]

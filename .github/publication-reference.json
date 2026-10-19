@@ -1,0 +1,88 @@
+{
+  "checked_on": "2026-10-19",
+  "notes": "Compared with publisher pages, their Crossref deposits and the arXiv record. Dates retain available precision. Article numbers are distinct from page ranges. This offline fixture changes when a verified public record changes.",
+  "published_order": [
+    "atkins2026fmdcarrier",
+    "macdonald2024austronesian",
+    "macdonald2024fmdv",
+    "macdonald2023npzd",
+    "browne2022covid",
+    "macdonald2021covid"
+  ],
+  "records": {
+    "10.1007/s11538-026-01760-x": {
+      "authors": [
+        "Summer Atkins",
+        "Hayriye Gulbudak",
+        "J. Shane Welker",
+        "Houston Smith",
+        "Joshua C. Macdonald",
+        "Brianna R. Beechler",
+        "Anna Jolles"
+      ],
+      "datePublished": "2026-10-01",
+      "source": "https://doi.org/10.1007/s11538-026-01760-x",
+      "volumeNumber": "88",
+      "issueNumber": "10",
+      "pagination": "194",
+      "headline": "An Immuno-Epidemiological Model of Foot-and-Mouth Disease (FMD) in the African Buffalo Population with Carrier Transmission"
+    },
+    "10.1016/j.jtbi.2021.110919": {
+      "authors": ["Cameron J. Browne", "Hayriye Gulbudak", "Joshua C. Macdonald"],
+      "datePublished": "2022",
+      "source": "https://doi.org/10.1016/j.jtbi.2021.110919",
+      "volumeNumber": "532",
+      "pagination": "110919",
+      "headline": "Differential impacts of contact tracing and lockdowns on outbreak size in COVID-19 model applied to China"
+    },
+    "10.1098/rsos.210227": {
+      "authors": ["Joshua C. Macdonald", "Cameron J. Browne", "Hayriye Gulbudak"],
+      "datePublished": "2021-08-04",
+      "source": "https://doi.org/10.1098/rsos.210227",
+      "volumeNumber": "8",
+      "issueNumber": "8",
+      "pagination": "210227",
+      "headline": "Modelling COVID-19 outbreaks in USA with distinct testing, lockdown speed and fatigue rates"
+    },
+    "10.1007/s00285-023-01969-7": {
+      "authors": ["Joshua C. Macdonald", "Hayriye Gulbudak"],
+      "datePublished": "2023-08-17",
+      "source": "https://doi.org/10.1007/s00285-023-01969-7",
+      "volumeNumber": "87",
+      "issueNumber": "3",
+      "pagination": "45",
+      "headline": "Forward hysteresis and Hopf bifurcation in an NPZD model with application to harmful algal blooms"
+    },
+    "10.1017/ehs.2024.45": {
+      "authors": ["Joshua C. Macdonald", "Javier Blanco-Portillo", "Marcus W. Feldman", "Yoav Ram"],
+      "datePublished": "2024-12-06",
+      "source": "https://doi.org/10.1017/ehs.2024.45",
+      "volumeNumber": "6",
+      "pagination": "e51",
+      "headline": "Cultural transmission, networks, and clusters among Austronesian-speaking peoples"
+    },
+    "10.1086/730703": {
+      "authors": [
+        "Joshua C. Macdonald",
+        "Hayriye Gulbudak",
+        "Brianna Beechler",
+        "Erin E. Gorsich",
+        "Simon Gubbins",
+        "Eva Pérez-Martin",
+        "Anna E. Jolles"
+      ],
+      "datePublished": "2024-08-01",
+      "source": "https://doi.org/10.1086/730703",
+      "volumeNumber": "204",
+      "issueNumber": "2",
+      "pagination": "133–146",
+      "headline": "Within-Host Viral Growth and Immune Response Rates Predict Foot-and-Mouth Disease Virus Transmission Dynamics for African Buffalo"
+    },
+    "10.48550/arXiv.2409.12129": {
+      "authors": ["Joshua C. Macdonald", "Javier Blanco-Portillo", "Marcus W. Feldman", "Yoav Ram"],
+      "datePublished": "2024-09-18",
+      "source": "https://doi.org/10.48550/arXiv.2409.12129",
+      "headline": "Bayesian estimation of the number of significant principal components for cultural data"
+    }
+  }
+}

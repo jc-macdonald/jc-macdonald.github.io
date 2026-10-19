@@ -5,7 +5,7 @@ description: Coordinate simulation runs across locations and scenarios, with reu
 img: assets/img/research/flepimop2_slide.svg
 img_alt: Validated configuration selects campaign targets connected to System/Parameter, Engine, Backend, Process and Job providers. Connections indicate interface relationships, not execution order. Cores can also run independently.
 importance: 1
-category: collaborative infrastructure
+category: "Collaborative infrastructure"
 github: https://github.com/ACCIDDA/flepimop2
 ---
 

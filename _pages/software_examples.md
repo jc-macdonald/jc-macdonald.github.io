@@ -4,6 +4,7 @@ title: Computed software examples
 permalink: /software-examples/
 description: Spatial fields, stochastic simulations, replicated comparisons and incomplete-data reconstruction using released packages.
 nav: false
+design_comparison: true
 ---
 
 These examples use released versions of OP System, OP Engine, trade-study and
@@ -16,7 +17,14 @@ what is checked.
 [Versions and artifact hashes](/assets/img/research/computed/provenance.json) ·
 [Build notes](/assets/img/research/computed/README.md)
 
-### Spatial diffusion
+<nav class="page-links" aria-label="Computed examples">
+  <a href="#spatial-diffusion">Spatial diffusion</a>
+  <a href="#stochastic-transfers">Stochastic transfers</a>
+  <a href="#replicated-designs">Design comparison</a>
+  <a href="#incomplete-data">Incomplete data</a>
+</nav>
+
+## Spatial diffusion
 
 OP System compiles a named-axis expression for a periodic diffusion stencil;
 OP Engine integrates the resulting field with RK4. The stencil is supplied
@@ -33,7 +41,7 @@ spatial discretizations.
 
 [SVG](/assets/img/research/computed/spatial_diffusion.svg) · [PDF](/assets/img/research/computed/spatial_diffusion.pdf)
 
-### Stochastic transfers
+## Stochastic transfers
 
 OP Engine runs 512 independent exact SSA clocks for a two-state transfer
 process. Each starts with 40 units; each remaining unit transfers at rate 0.6.
@@ -44,7 +52,7 @@ the correspondence between counts and transferred units.
 
 [SVG](/assets/img/research/computed/stochastic_ensemble.svg) · [PDF](/assets/img/research/computed/stochastic_ensemble.pdf)
 
-### Replicated designs
+## Replicated designs
 
 trade-study evaluates ten sample-mean designs using 512 paired replicates.
 The measurement standard deviation is either 1 or 1.5. The noisier measurement
@@ -58,20 +66,11 @@ The table reads the same generated data as the figure. Error estimates depend
 on this finite replicate bank. Nondominance describes the declared objectives;
 it does not select a design for a scientific application.
 
-<div class="table-responsive" markdown="1">
-
-| Samples | Measurement SD | Mean squared error | Assumed cost | Nondominated |
-| ------: | -------------: | -----------------: | -----------: | :----------- |
-
-{% for design in site.data.computed_designs -%}
-| {{ design.samples }} | {{ design.noise }} | {{ design.mean_squared_error | round: 3 }} | {{ design.assumed_cost | round: 1 }} | {% if design.pareto == '1' %}Yes{% else %}No{% endif %} |
-{% endfor %}
-
-</div>
+{% include design_comparison.liquid %}
 
 [CSV table](/assets/img/research/computed/design_comparison.csv) · [SVG](/assets/img/research/computed/replicated_tradeoff.svg) · [PDF](/assets/img/research/computed/replicated_tradeoff.pdf)
 
-### Incomplete data
+## Incomplete data
 
 VBPCApy fits a two-component model to observed entries of a noisy synthetic
 matrix. Roughly 35% of entries are withheld, shown in gray. The generating

@@ -281,3 +281,135 @@ ul.task-list input[type="checkbox"] {
 .d2h-diff-table {
   position: relative;
 }
+
+// Research navigation, compact computed previews and data tables.
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding: 1rem 0;
+  margin: 0.5rem 0 1.5rem;
+  border-block: 1px solid var(--global-divider-color);
+}
+
+.research-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+
+  figure {
+    margin: 0;
+    min-width: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 8 / 5;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.3rem;
+  }
+
+  figcaption {
+    padding-block: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--global-text-color);
+
+    h3 {
+      font-size: 1.1rem;
+      margin-block: 0.25rem 0.5rem;
+    }
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.project-status {
+  color: var(--global-text-color-light);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects h2.category {
+  text-align: left;
+}
+
+.software-table {
+  th:first-child {
+    min-width: 7rem;
+  }
+
+  td:last-child {
+    min-width: 9rem;
+  }
+}
+
+.design-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-block: 1rem;
+
+  &[hidden] {
+    display: none;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  select {
+    color: var(--global-text-color);
+    background: var(--global-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.2rem;
+    padding: 0.25rem;
+  }
+}
+
+.design-table {
+  font-variant-numeric: tabular-nums;
+
+  tr[hidden] {
+    display: none;
+  }
+
+  td:nth-child(3),
+  td:nth-child(4) {
+    min-width: 8rem;
+    vertical-align: top;
+  }
+
+  .metric-value {
+    display: block;
+    text-align: right;
+  }
+
+  .metric-bar {
+    display: block;
+    height: 0.3rem;
+    margin-top: 0.35rem;
+    background: var(--global-theme-color);
+    border-radius: 0.1rem;
+  }
+
+  .cost-bar {
+    opacity: 0.65;
+  }
+}
+
+.table-scroll-hint {
+  display: none;
+  @media (max-width: 575px) {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+  }
+}

@@ -2,10 +2,10 @@
 layout: page
 title: vbpca-py
 description: Find shared patterns in incomplete datasets and assess uncertainty in those summaries.
-img: assets/img/research/computed/incomplete_reconstruction.svg
-img_alt: A synthetic two-pattern signal, noisy observed entries with unobserved cells in gray, and a VBPCA reconstruction. Held-out observations are excluded from fitting. This illustration does not establish rank selection or uncertainty calibration.
-importance: 1
-category: "lead developer · released"
+img: assets/img/research/previews/incomplete_reconstruction.svg
+img_alt: A sample-by-feature heatmap of the reconstruction from an incomplete synthetic dataset. The VBPCA model uses a supplied count of two components.
+importance: 4
+category: "Released software"
 github: https://github.com/yoavram-lab/VBPCApy
 related_publications: true
 ---
