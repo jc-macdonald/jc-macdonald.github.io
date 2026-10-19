@@ -1,3 +1,37 @@
+# Joshua C. Macdonald — research website
+
+Source for [jcmacdonald.dev](https://jcmacdonald.dev/), my research portfolio,
+software descriptions, publications and CV. The site uses Jekyll and the
+[al-folio theme](https://github.com/alshedivat/al-folio), with automatic GitHub
+Pages deployment from this repository.
+
+The public software stack connects structured model specification
+([op_system](https://github.com/ACCIDDA/op_system)), numerical execution
+([op_engine](https://github.com/ACCIDDA/op_engine)), campaign orchestration
+([FlepiMoP2](https://github.com/ACCIDDA/flepimop2)) and replicated design/evaluation
+([trade-study](https://github.com/jcm-sci/trade-study)). Package APIs, releases and
+scientific qualification live in their own repositories; this site describes
+their roles, current scope and research applications.
+
+| Content                           | Source                             |
+| --------------------------------- | ---------------------------------- |
+| Homepage and software overview    | `_pages/about.md`                  |
+| Project descriptions and metadata | `_projects/`                       |
+| Repository-card descriptions      | `_data/repositories.yml`           |
+| CV page and rendered PDF source   | `_data/cv.yml`, `assets/rendercv/` |
+| Publications                      | `_bibliography/papers.bib`         |
+
+For editing and preview instructions, see [AGENTS.md](AGENTS.md),
+[INSTALL.md](INSTALL.md) and [CUSTOMIZE.md](CUSTOMIZE.md). Pull requests run the
+site build and formatting checks; merging publishes the generated site to
+`gh-pages`. Edit source content, rather than generated pages. CV source changes
+also trigger the existing PDF-rendering workflow.
+
+The retained al-folio reference below documents the theme and its upstream
+community. Theme attribution and licensing are preserved in [LICENSE](LICENSE).
+
+---
+
 # al-folio
 
 <div align="center">

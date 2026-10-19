@@ -1,23 +1,20 @@
 ---
 layout: page
 title: OP System
-description: Restricted expression language and compiler for structured dynamical systems, lowering model specifications through typed IR to vectorized, Array-API-polymorphic code.
+description: Compiler for structured model specifications, producing Array API right-hand sides, reaction metadata, named observables and forcing schedules.
 img: assets/img/research/op_system_slide.png
 img_alt: OP System compiler workflow from equations or transition diagrams through validation, typed intermediate representation, and portable evaluators.
 importance: 3
-category: "lead developer · in development"
+category: "lead developer · released"
 github: https://github.com/ACCIDDA/op_system
 ---
 
-**OP System** (Operator-Partitioned System) is a declarative specification language and compiler for structured dynamical systems. It serves as the specification layer of the operator-partitioned simulation stack, producing validated model objects consumed by [OP Engine](/projects/op_engine/) or other solvers.
+**OP System** is the specification and compilation layer for structured dynamical systems. Researchers define explicit governing equations or compartmental transitions; restricted expressions pass through a typed intermediate representation to vectorized evaluators for NumPy, JAX and PyTorch.
 
-Researchers define models through two declarative pathways:
+**Status:** [Released on PyPI](https://pypi.org/project/op-system/) and actively developed. See the [capability guide and executable examples](https://accidda.github.io/op_system/latest/guides/capabilities/).
 
-- **Explicit governing equations** — state variables, parameters, and right-hand-side expressions written directly
-- **Transition diagrams** — compartmental flows and rates that the compiler expands into governing equations
+Categorical and continuous axes, aliases, staged chains, routing and operator metadata describe structured models. Flat, PyTree and independent-block layouts let a numerical consumer choose its state representation. Named latent observables keep measured quantities and physical reductions separate from the dynamics.
 
-Both pathways support **multi-axis stratification** over categorical and continuous dimensions. The compiler performs automatic template expansion over axis products, chain synthesis for staged compartments (e.g., Erlang-distributed dwell times), and provides helper functions for aggregation and numerical quadrature.
+For stochastic consumers, named reactions expose channel structure, propensity shapes, reactants/dependencies and checked independence declarations. Time-indexed parameters support linear interpolation or right-continuous held forcing, with published schedules and resolved-parameter callbacks. [OP Engine](/projects/op_engine/) consumes these contracts for solving and independent replicate banks.
 
-Specifications pass through a restricted expression parser, typed intermediate representation, and vectorized AST/code-object compiler with restricted builtins. Structured metadata — axes, state layouts, kernels, operators, reactions, routing, and constraints — passes through to downstream solvers. The same compiled right-hand side runs with NumPy or JAX arrays and supports PyTorch autograd without a separate model-compilation path. Flat, block, and PyTree state layouts allow the representation to match the execution provider.
-
-The design eliminates the bookkeeping errors that arise when manually implementing large structured models (e.g., age×risk×vaccination-stratified epidemic models, trait-structured ecological models, or reaction-diffusion systems) and reduces the barrier to simulation of complex multi-physics systems.
+Structural validation checks the specification and supported evaluator paths. Independent-equation fixtures and conditional reaction balances provide additional numerical evidence; none of these checks proves the scientific model correct. [Cross-axis constraints remain metadata](https://accidda.github.io/op_system/latest/guides/getting-started/#cross-axis-constraints-current-boundary), rather than an enforced filter on state cells or transitions.

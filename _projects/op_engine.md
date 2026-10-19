@@ -1,27 +1,28 @@
 ---
 layout: page
 title: OP Engine
-description: Array-API-polymorphic ODE/PDE solver with portable numerical kernels and backend-native execution providers for explicit, IMEX, implicit, and stochastic integration.
+description: Numerical core for deterministic and stochastic models, with independent SSA banks, named observations, replay and qualified NumPy, JAX and CPU PyTorch methods.
 img: assets/img/research/op_engine_slide.png
 img_alt: OP Engine workflow connecting prepared models, numerical kernel families, backend-native providers, and execution diagnostics.
 importance: 2
-category: "lead developer · in development"
+category: "lead developer · released"
 github: https://github.com/ACCIDDA/op_engine
 ---
 
-**OP Engine** (Operator-Partitioned Engine) is an operator-partitioned ODE/PDE solver core. It splits the right-hand side into an explicit nonlinear part and an optional stiff linear operator, then advances them with explicit, IMEX, fully implicit, or stochastic methods.
+**OP Engine** is a numerical core for compartmental and spatial dynamical systems. It supports explicit, IMEX, implicit and stochastic methods and can be used directly or through the separately packaged [FlepiMoP2](/projects/flepimop2/) provider.
 
-The central design separates **portable model and numerical semantics** from **backend-native execution strategy**. A model is prepared once; NumPy, JAX, PyTorch, or compatible CuPy arrays select the numerical namespace at call time. Provider integrations add native control flow, compilation, checkpointing, schedule validation, and sparse-solver adaptation where the backend supports them.
+**Status:** [Released on PyPI](https://pypi.org/project/op-engine/) and actively developed. The [capability guide](https://accidda.github.io/op_engine/latest/guides/capabilities/) maps public interfaces to runnable examples.
 
-Key design features:
+Current workflows include:
 
-- **NumPy:** broad eager support plus mutable, preallocated fast paths for selected methods
-- **JAX:** `jit`/autodiff support, device-resident adaptive discovery for explicit methods, and frozen `lax.scan` replay
-- **PyTorch:** eager fixed-step integration with autograd-preserving array operations
-- **CuPy:** dense Array-API execution plus a tested sparse adapter; not every method/backend combination has parity
-- **Prepared execution and structured state:** reusable plans, PyTrees, and block layouts reduce repeated setup work
-- **Adaptive-schedule diagnostics:** local-error freshness checks detect when a recorded mesh should be rebuilt
+- ODE/PDE integration with explicit, split and implicit methods, spatial operators and nonlinear-stage diagnostics.
+- Exact direct SSA, bounded thinning for time-varying hazards, and approximate fixed/adaptive tau-leaping.
+- Independent NumPy CPU SSA banks with one event clock per replicate, stable replicate IDs, forcing boundaries and optional reaction firing counts.
+- Named observations and window summaries, conditional conservation checks and steady-state analysis.
+- Adaptive schedule discovery and frozen-schedule replay, with explicit accuracy and provenance checks.
 
-For differentiable adaptive workflows, mesh discovery and numerical replay are deliberately separated. Gradients through a frozen replay are conditional on that recorded mesh, not on discrete step-size decisions. The schedule should therefore be refreshed after a failed accuracy diagnostic or a material parameter change.
+The [backend qualification matrix](https://accidda.github.io/op_engine/latest/guides/backend-qualification/) specifies the tested NumPy, JAX and CPU PyTorch methods, precisions and derivatives. These guarantees vary by method and transform. GPU and CuPy paths require separate hardware qualification.
 
-OP Engine consumes model specifications and structured metadata from [OP System](/projects/op_system/) and serves as a forward-simulation backend for campaign orchestrators such as FlepiMoP2.
+A frozen replay differentiates the recorded numerical map, conditional on its mesh; it does not differentiate step-size decisions. Accuracy checks and changes in parameters can require a fresh discovery solve.
+
+[OP System](/projects/op_system/) supplies compiled equations, reactions and observation metadata. [trade-study](/projects/trade_study/) can compare solver configurations and simulation designs.

@@ -232,7 +232,7 @@ cv:
       - name: "OP System (Operator-Partitioned System)"
         start_date: 2026
         end_date: present
-        summary: "ACCIDDA. Restricted expression language and compiler for structured dynamical systems. Explicit equations or transition diagrams lower through a typed intermediate representation to vectorized AST/code objects. The same compiled right-hand side supports NumPy, JAX transformations, and PyTorch autograd with flat, block, or PyTree state layouts."
+        summary: "ACCIDDA. Released compiler for structured model specifications, producing Array API right-hand sides, reaction and observable metadata, forcing schedules and checked independent-block contracts. NumPy, JAX and CPU PyTorch qualification; independent-equation fixtures complement structural validation."
         highlights:
           - "[github.com/ACCIDDA/op_system](https://github.com/ACCIDDA/op_system)"
 
@@ -246,7 +246,7 @@ cv:
       - name: "Trade Study (Python)"
         start_date: 2026
         end_date: present
-        summary: "Design and evaluation framework for scientific simulation studies. Simulators with known latent state provide controlled environments to score competing configurations — model formulations, solver choices, measurement strategies, or any design decision — against ground truth using proper scoring rules and multi-objective Pareto optimization. Hierarchical phases, Bayesian model stacking, and global sensitivity analysis."
+        summary: "Released framework for replicated simulation studies, paired comparisons, Pareto analysis and preference-based decisions. Hierarchical phases, proper scores, fixed/adaptive replication, sensitivity and surrogate integrations, and provenance-checked result bundles. Statistical guarantees depend on declared assumptions and application-specific validation."
         highlights:
           - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study)"
           - "[pypi.org/project/trade-study/](https://pypi.org/project/trade-study/)"
@@ -255,7 +255,7 @@ cv:
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Array-API-polymorphic operator-partitioned ODE/PDE solver. Portable explicit, IMEX, implicit, and stochastic kernels are paired with backend-native execution providers: NumPy mutable fast paths, JAX compiled/adaptive execution and frozen-schedule replay, PyTorch eager autograd, and compatible CuPy dense/sparse paths."
+        summary: "ACCIDDA. Released numerical core with deterministic/stochastic solvers, independent NumPy SSA banks, named observations and adaptive-schedule replay. Method-specific NumPy, JAX and CPU PyTorch qualification; replay derivatives are conditional on the recorded mesh and GPU paths need separate hardware evidence."
         highlights:
           - "[github.com/ACCIDDA/op_engine](https://github.com/ACCIDDA/op_engine)"
 
@@ -268,7 +268,7 @@ cv:
           - "[doi:10.5281/zenodo.19389250](https://doi.org/10.5281/zenodo.19389250)"
 
     "Research Software -- Collaborative Infrastructure":
-      - name: "FlepiMoP2 (Flexible Epidemic Modeling Pipeline 2)"
+      - name: "FlepiMoP2 (Flexible Pipeline for Interchangeable Model Processing)"
         start_date: 2025
         end_date: present
         summary: "ACCIDDA. Core contributor to the configuration-driven orchestration engine for infectious disease forecasting and scenario analysis. Plugin architecture decouples model specification, numerical integration, and output persistence; led migration of ACCIDDA's COVID-19 model for the Round 20 Scenario Modeling Hub submission."
