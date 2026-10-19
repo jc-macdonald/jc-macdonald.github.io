@@ -243,10 +243,10 @@ cv:
         highlights:
           - "[Project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
 
-      - name: "Inference and Calibration Tools"
+      - name: "op_infer (Inference and Calibration)"
         start_date: 2026
         end_date: present
-        summary: "Working research software connects Bayesian fitting through established inference libraries, simulation-based calibration and replicated study-design checks. Private and pre-release; broader interfaces and application-specific validation remain in development."
+        summary: "Working statistical layer of the op stack, connecting Bayesian fitting through established inference libraries, simulation-based calibration and replicated study-design checks. Private, pre-alpha and unreleased; broader interfaces and application-specific validation remain in development."
         highlights:
           - "[Project summary](https://jcmacdonald.dev/projects/inference_calibration/)"
 
