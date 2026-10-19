@@ -24,7 +24,7 @@ Key features:
 
 Applied to genetic, cultural, and ecological datasets. Available on [PyPI](https://pypi.org/project/vbpca-py/) and archived at [Zenodo](https://doi.org/10.5281/zenodo.19389250).
 
-The 2024 preprint {% cite macdonald2024vbpca %} introduced an earlier, single-statistic version of the posterior predictive rank-testing methodology built on this codebase. The follow-up [pp-eigentest](/projects/pp_eigentest/) work now centers a sequential fitted-model selector; earlier consensus methods are retained as supplementary analyses.
+The 2024 preprint {% cite macdonald2024vbpca %} introduced an earlier version of the posterior predictive rank-testing methodology built on this codebase. Follow-up [pp-eigentest](/projects/pp_eigentest/) research investigates signal-rank selection and its calibration for incomplete data; its methods and software remain in development.
 
 {% include figure.liquid path="assets/img/research/vbpca_py_schematic.svg" class="img-fluid rounded" zoomable=true alt="Observed entries and a mask feed variational fitting of loadings, scores, bias, noise and ARD. Convergence, component selection and held-out assessment support posterior prediction and uncertainty for the intended data regime." caption="VBPCApy missing-data workflow." %}
 

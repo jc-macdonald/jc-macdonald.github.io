@@ -2,8 +2,8 @@
   {
     "name": "beyond_onehealth",
     "source": "tikz/beyond_onehealth.tex",
-    "title": "A shared scientific toolkit",
-    "description": "OP System compiles specifications, OP Engine executes numerical models, FlepiMoP2 orchestrates campaigns through providers, and trade-study compares replicated studies. Infectious-disease operations, active marine and wildlife research, and planned domain extensions have distinct maturity levels."
+    "title": "Simulation, inference and decisions",
+    "description": "Public tools cover model specification with OP System, numerical execution with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. Working research software adds parameter inference, calibration and study-design checks; it is not publicly released."
   },
   {
     "name": "obs_model_general",
@@ -15,7 +15,7 @@
     "name": "future_directions_general",
     "source": "tikz/future_directions_general.tex",
     "title": "Generalize, harden, operationalize",
-    "description": "The research agenda connects new scientific systems, stronger inference and evaluation, and operational decisions. Observations, diagnostics and policy feedback inform the next model and study choices."
+    "description": "The research agenda connects scientific systems, ongoing work on parameter inference, calibration, structural evaluation and rank selection, and decisions about interventions and surveillance. Observations and diagnostics inform new study choices."
   },
   {
     "name": "op_system_slide",
@@ -44,8 +44,8 @@
   {
     "name": "pp_eigentest_schematic",
     "source": "tikz/pp_eigentest_schematic.tex",
-    "title": "pp-eigentest fit-check-select workflow",
-    "description": "Private pre-release work fits observed entries with an explicit mask, checks predictive reliability and diagnostics, and selects rank using fitted-model spectra. NumPy is the reference path and earlier consensus methods are supplementary analyses."
+    "title": "Signal rank with incomplete data",
+    "description": "Ongoing signal-rank research connects incomplete data, Bayesian latent-variable modeling, and assessment of signal and uncertainty. The methods and software remain in development."
   },
   {
     "name": "vbpca_py_schematic",
