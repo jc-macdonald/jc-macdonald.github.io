@@ -18,6 +18,9 @@ full input/output arrays in `computed_data.json`, `design_comparison.csv`,
 its copy in `_data/computed_designs.csv`, and `provenance.json` with source,
 registry and artifact hashes. Jekyll reads the CSV copy for the example table.
 Normal site builds serve the exports without importing the scientific packages.
+Production builds preserve the files in this directory without minification.
+The deployment workflow checks their bytes against the committed provenance
+after Jekyll finishes, so even a whitespace-only JSON rewrite fails publication.
 Heatmap pixels are embedded in SVG/PDF at export resolution, while curves and
 labels remain vector elements. This keeps the homepage field plot compact.
 
