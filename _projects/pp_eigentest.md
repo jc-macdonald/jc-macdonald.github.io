@@ -1,7 +1,7 @@
 ---
 layout: page
 title: pp-eigentest
-description: Ongoing research on posterior-predictive signal-rank selection for incomplete datasets, building on a 2024 preprint.
+description: Research on how much signal incomplete datasets can support. Methods and private pre-release software in development.
 img: assets/img/research/pp_eigentest_schematic.svg
 img_alt: Ongoing signal-rank research connects incomplete data, Bayesian latent-variable modeling, and assessment of signal and uncertainty. The methods and software remain in development.
 importance: 3

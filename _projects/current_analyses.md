@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Research in progress
-description: Ongoing research on structural evaluation, inference and scientific machine learning, with applications in disease dynamics and surveillance.
+description: Ongoing work on structural scores, scientific machine learning and disease-modeling applications.
 img: assets/img/research/structural_fidelity_comparison.svg
 img_alt: Constructed trajectories illustrate adherence to a declared prevalence bound. No predictive scores are computed; predictive scoring and structural checks answer separate evaluation questions.
 importance: 1

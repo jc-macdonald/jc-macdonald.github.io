@@ -1,7 +1,7 @@
 ---
 layout: page
 title: trade-study
-description: Replicated simulation studies, paired comparisons, Pareto analysis and preference-based decisions, with explicit uncertainty and result provenance.
+description: Compare replicated studies, competing objectives and decision preferences, with uncertainty and provenance.
 img: assets/img/research/trade_study_slide.svg
 img_alt: Declare factors, objectives and constraints; run replicated or paired simulations; compare Pareto fronts and preferences; retain provenance-checked results. Calibration and transfer require separate application evidence.
 importance: 2

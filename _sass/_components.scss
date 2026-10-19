@@ -127,17 +127,39 @@ ul.task-list input[type="checkbox"] {
 .projects {
   a {
     text-decoration: none;
-
-    &:hover {
-      .card-title {
-        color: var(--global-theme-color);
-      }
-    }
   }
 
   .card {
+    position: relative;
+
+    &:hover .card-title {
+      color: var(--global-theme-color);
+    }
+
     img {
       width: 100%;
+    }
+
+    .card-img-top {
+      aspect-ratio: 8 / 5;
+      object-fit: contain;
+      background-color: #ffffff;
+    }
+
+    .card-title a {
+      color: inherit;
+
+      &::after {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        content: "";
+      }
+    }
+
+    .github-icon {
+      position: relative;
+      z-index: 2;
     }
   }
 
@@ -152,7 +174,7 @@ ul.task-list input[type="checkbox"] {
   }
 
   h2.category {
-    color: var(--global-divider-color);
+    color: var(--global-text-color);
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;

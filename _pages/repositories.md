@@ -7,6 +7,10 @@ nav: false
 nav_order: 5
 ---
 
+The source repositories below are public. [Projects](/projects/) also covers
+research software in development, including [op_infer](/projects/inference_calibration/),
+which is private, pre-alpha and unreleased.
+
 {% if site.data.repositories.github_users %}
 
 ## GitHub users
