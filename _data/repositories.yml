@@ -15,7 +15,7 @@ github_repos:
 
 repo_descriptions:
   yoavram-lab/VBPCApy: "Variational Bayesian PCA for incomplete data with full posterior uncertainty, calibrated predictive variance, automatic component pruning, and C++-accelerated kernels."
-  jcm-sci/trade-study: "Design and evaluation framework. Score competing configurations against known ground truth via simulators, scoring rules, Pareto optimization, and Bayesian stacking."
-  ACCIDDA/op_engine: "Array-API-polymorphic operator-partitioned solver with portable kernels and backend-native execution providers."
-  ACCIDDA/op_system: "Restricted model parser and typed-IR compiler for vectorized, Array-API-polymorphic dynamical systems."
-  ACCIDDA/flepimop2: "Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis."
+  jcm-sci/trade-study: "Replicated simulation studies, paired comparisons, Pareto analysis and preference-based decisions with explicit uncertainty and result provenance."
+  ACCIDDA/op_engine: "Framework-independent deterministic and stochastic solvers, independent NumPy SSA banks, observations and replay with qualified CPU backends."
+  ACCIDDA/op_system: "Structured model compiler with Array API evaluators, reaction and observable metadata, forcing schedules and independent-block contracts."
+  ACCIDDA/flepimop2: "Configuration-driven simulation campaigns connecting systems, engines, parameters, processes, jobs and persistence providers."
