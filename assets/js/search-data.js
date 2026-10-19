@@ -75,42 +75,42 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-research-in-progress",
           title: 'Research in progress',
-          description: "Ongoing research on structural evaluation, inference and scientific machine learning, with applications in disease dynamics and surveillance.",
+          description: "Ongoing work on structural scores, scientific machine learning and disease-modeling applications.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/current_analyses/";
             },},{id: "projects-flepimop2",
           title: 'FlepiMoP2',
-          description: "Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decoupling model specification, integration, and persistence.",
+          description: "Run configuration-defined simulation campaigns with replaceable modeling, numerical and persistence providers.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/flepimop2/";
             },},{id: "projects-op-infer",
           title: 'op_infer',
-          description: "Private pre-alpha statistical layer connecting Bayesian parameter inference, calibration checks and study design for partially observed systems.",
+          description: "Bayesian fitting, simulation-based calibration and study design. Private, pre-alpha and unreleased.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/inference_calibration/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
-          description: "Numerical core for deterministic and stochastic models, with independent SSA banks, named observations, replay and qualified NumPy, JAX and CPU PyTorch methods.",
+          description: "Simulate deterministic and stochastic dynamics, with numerical checks, named observations and replay.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_engine/";
             },},{id: "projects-op-system",
           title: 'OP System',
-          description: "Compiler for structured model specifications, producing Array API right-hand sides, reaction metadata, named observables and forcing schedules.",
+          description: "Specify dynamical models with equations and transitions; compile numerical evaluators, reactions and observables.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",
           title: 'pp-eigentest',
-          description: "Ongoing research on posterior-predictive signal-rank selection for incomplete datasets, building on a 2024 preprint.",
+          description: "Research on how much signal incomplete datasets can support. Methods and private pre-release software in development.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",
           title: 'trade-study',
-          description: "Replicated simulation studies, paired comparisons, Pareto analysis and preference-based decisions, with explicit uncertainty and result provenance.",
+          description: "Compare replicated studies, competing objectives and decision preferences, with uncertainty and provenance.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/trade_study/";
             },},{id: "projects-vbpca-py",
           title: 'vbpca-py',
-          description: "Variational Bayesian PCA for incomplete data with full posterior uncertainty, calibrated predictive variance, automatic component pruning, native missingness handling, and C++-accelerated kernels.",
+          description: "Bayesian dimensionality reduction for incomplete data, with posterior uncertainty and model-assessment tools.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vbpca_py/";
             },},{
