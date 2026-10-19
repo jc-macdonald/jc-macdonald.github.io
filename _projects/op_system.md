@@ -3,7 +3,7 @@ layout: page
 title: OP System
 description: Compile PDE, nonlocal and reaction model specifications into evaluators and numerical metadata.
 img: assets/img/research/op_system_slide.svg
-img_alt: OP System compiles PDEs, nonlocal field dynamics, compartmental models and reactions into shaped evaluators and numerical metadata. Numerical consumers choose discretization and time or event integration. Cross-axis constraints remain metadata.
+img_alt: A model specification feeds a compiler, which exports evaluators, operator/reaction metadata, and observation/forcing interfaces. Model classes include PDEs, nonlocal dynamics, compartments and reactions. Numerical consumers choose discretization and integration; cross-axis constraints remain metadata.
 importance: 3
 category: "lead developer · released"
 github: https://github.com/ACCIDDA/op_system
@@ -19,6 +19,6 @@ For stochastic consumers, named reactions expose channel structure, propensity s
 
 Structural validation checks the specification and supported evaluator paths. Independent-equation fixtures and conditional reaction balances provide additional numerical evidence; none of these checks proves the scientific model correct. [Cross-axis constraints remain metadata](https://accidda.github.io/op_system/latest/guides/getting-started/#cross-axis-constraints-current-boundary), rather than an enforced filter on state cells or transitions.
 
-{% include figure.liquid path="assets/img/research/op_system_slide.svg" class="img-fluid rounded" zoomable=true alt="OP System compiles PDEs, nonlocal field dynamics, compartmental models and reactions into shaped evaluators and numerical metadata. Numerical consumers choose discretization and time or event integration. Cross-axis constraints remain metadata." caption="OP System compilation and numerical interfaces." %}
+{% include figure.liquid path="assets/img/research/op_system_slide.svg" class="img-fluid rounded" zoomable=true alt="A model specification feeds a compiler, which exports evaluators, operator/reaction metadata, and observation/forcing interfaces. Model classes include PDEs, nonlocal dynamics, compartments and reactions. Numerical consumers choose discretization and integration; cross-axis constraints remain metadata." caption="OP System compilation and numerical interfaces." %}
 
 [Vector PDF](/assets/img/research/op_system_slide.pdf) · [All figure sources and downloads](/figures/)

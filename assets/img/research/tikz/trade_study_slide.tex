@@ -1,12 +1,25 @@
 \input{figure-style.tex}
 \begin{document}
 \begin{tikzpicture}
-\heading{trade-study}{Compare designs with replicated simulations and specified preferences.}
-\panel{a}{0}{0}{Blue}{1. Declare}{Factors and constraints\\Objectives and preferences\\Fixed or adaptive designs}
-\panel{b}{6.7}{0}{Teal}{2. Replicate}{User simulator and scorer\\Shared-random-number pairs\\Counts and failure policy}
-\panel{c}{6.7}{-3.8}{Green}{3. Compare}{Pareto fronts and preferences\\Regret / practical equivalence\\Uncertainty assumptions}
-\panel{d}{0}{-3.8}{Gold}{4. Save results}{Resumable evaluation caches\\Provenance-checked bundles\\Sensitivity and surrogates}
-\fourflow
-\bottomnote{Optional integrations provide proper scores, adaptive search, surrogates and model weighting. Calibration, gate power and transfer to observed data need separate application evidence.}
+\heading{trade-study}{Replicated evaluations can feed comparisons, analysis or further study.}
+\node[panel=Blue,minimum width=5.2cm,text width=4.45cm,minimum height=2.8cm] (designs) at (0,0)
+  {{\color{Blue}\bfseries\large Candidate designs}\\[5pt]Factors and constraints\\Sampling or grids};
+\node[panel=Teal,minimum width=5.6cm,text width=4.85cm,minimum height=2.8cm] (evaluation) at (6.8,0)
+  {{\color{Teal}\bfseries\large Replicated evaluation}\\[5pt]User simulator and scorer\\Replicates / paired runs\\Counts and failures};
+\node[panel=Green,minimum width=5.6cm,text width=4.85cm,minimum height=2.3cm] (results) at ($(evaluation.south -| designs.west)+(3.4,-1.15)$)
+  {{\color{Green}\bfseries\large Trial results}\\[5pt]Scores / uncertainty\\Caches and provenance};
+\node[panel=Gold,minimum width=5.7cm,text width=4.95cm,minimum height=2.6cm] (comparison) at ($(results.south -| designs.west)+(0,-1.1)$)
+  {{\color{Gold}\bfseries\large Comparisons}\\[5pt]Pareto fronts and preferences\\Paired differences and regret};
+\node[panel=Gold,minimum width=5.7cm,text width=4.95cm,minimum height=2.6cm] (analysis) at ($(comparison.north west)+(6.7,0)$)
+  {{\color{Gold}\bfseries\large Optional analysis}\\[5pt]Sensitivity and surrogates\\Model weighting};
+\draw[flow] (designs.east) -- (evaluation.west);
+\draw[flow] (evaluation.south) -- ++(0,-.55) -| (results.north);
+\coordinate (branches) at ($(results.south)+(0,-.55)$);
+\draw[draw=Muted,line width=1pt] (results.south) -- (branches);
+\draw[flow] (branches) -| (comparison.north);
+\draw[flow] (branches) -| (analysis.north);
+\draw[flow,dashed,draw=Teal] (results.west) -- ++(-.8,0) |- ($(designs.south)+(0,-.5)$) -- (designs.south);
+\node[note,text width=2.2cm,font=\sffamily\fontsize{9}{12}\selectfont] at ($(results.north -| designs.west)+(.05,-.15)$) {Optional adaptive search or phase refinement};
+\node[note] at ($(comparison.south west)+(0,-.6)$) {The study determines which analyses and phases to use. Calibration, gate power and transfer to observed data require separate application evidence.};
 \end{tikzpicture}
 \end{document}

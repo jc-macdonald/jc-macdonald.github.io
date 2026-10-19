@@ -1,12 +1,24 @@
 \input{figure-style.tex}
 \begin{document}
 \begin{tikzpicture}
-\heading{FlepiMoP2}{Flexible Pipeline for Interchangeable Model Processing}
-\panel{a}{0}{0}{Blue}{1. Configure}{Validated YAML target\\Locations and scenarios\\Parameter grids}
-\panel{b}{6.7}{0}{Teal}{2. Resolve providers}{System and Engine\\Parameters and Backend\\Process and Job interfaces}
-\panel{c}{6.7}{-3.8}{Green}{3. Execute campaigns}{Scenario and location runs\\Local or scheduled execution\\Configured processing steps}
-\panel{d}{0}{-3.8}{Gold}{4. Persist results}{Results and metadata\\Persistence providers\\Post-processing and reporting}
-\fourflow
-\bottomnote{Provider packages connect reusable mathematical and numerical cores to the campaign framework. Provider availability and numerical qualification are separate contracts.}
+\heading{FlepiMoP2}{Configuration connects campaign targets to replaceable providers.}
+\node[panel=Blue,minimum width=12.4cm,text width=11.65cm,minimum height=1.4cm] (config) at (0,0)
+  {{\color{Blue}\bfseries\large Validated configuration}\\[5pt]Targets, locations, scenarios and provider selection};
+\node[panel=Teal,minimum width=4.1cm,text width=3.35cm,minimum height=3.3cm,inner sep=7pt] (inputs) at ($(config.south west)+(0,-.8)$)
+  {{\color{Teal}\bfseries System / Parameters}\\[6pt]Model specification\\Parameter values\\Axes / state shapes};
+\node[panel=Green,minimum width=4.1cm,text width=3.35cm,minimum height=3.3cm,inner sep=7pt] (engine) at ($(inputs.north west)+(8.3,0)$)
+  {{\color{Green}\bfseries Engine}\\[6pt]Numerical execution\\Time / event methods};
+\node[panel=Gold,minimum width=4.1cm,text width=3.35cm,minimum height=2.8cm,inner sep=7pt] (process) at ($(inputs.south west)+(0,-.65)$)
+  {{\color{Gold}\bfseries Process / Job}\\[6pt]Auxiliary commands\\Execution environments};
+\node[panel=Green,minimum width=4.1cm,text width=3.35cm,minimum height=2.8cm,inner sep=7pt] (backend) at ($(process.north west)+(8.3,0)$)
+  {{\color{Green}\bfseries Backend}\\[6pt]Result persistence\\Metadata / storage};
+\node[panel=Blue,minimum width=3.2cm,text width=2.55cm,minimum height=2.8cm,align=center,anchor=center,inner sep=7pt] (targets) at ($(inputs.south east)!.5!(process.north east)+(2.1,0)$)
+  {{\color{Blue}\bfseries Campaign targets}\\[7pt]Simulation\\Processing\\Job commands};
+\draw[flow] (config.south) -- (targets.north);
+\draw[draw=Muted,line width=.9pt] (inputs.east) -- (targets.west);
+\draw[draw=Muted,line width=.9pt] (engine.west) -- (targets.east);
+\draw[draw=Muted,line width=.9pt] (process.east) -- (targets.west);
+\draw[draw=Muted,line width=.9pt] (backend.west) -- (targets.east);
+\node[note] at ($(process.south west)+(0,-.65)$) {Lines show provider relationships, not a required execution order. Each target uses its configured interfaces. Mathematical cores can run independently of the framework; numerical qualification is separate.};
 \end{tikzpicture}
 \end{document}

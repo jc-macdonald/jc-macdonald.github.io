@@ -36,12 +36,6 @@
   \node[panel=#4] (#1) at (#2,#3)
     {{\color{#4}\bfseries\fontsize{13}{16}\selectfont #5}\\[5pt]#6};
 }
-\newcommand{\fourflow}{
-  \draw[flow] (a.east) -- (b.west);
-  \draw[flow] (b.south) -- (c.north);
-  \draw[flow] (c.west) -- (d.east);
-}
-\newcommand{\bottomnote}[1]{\node[note] at (0,-7.75) {#1};}
 % Suppress volatile PDF metadata; SOURCE_DATE_EPOCH is also set by the builder.
 \ifdefined\pdfinfoomitdate\pdfinfoomitdate=1\fi
 \ifdefined\pdftrailerid\pdftrailerid{}\fi

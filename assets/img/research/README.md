@@ -38,6 +38,13 @@ keep typography independent of browser fonts. SVG titles/descriptions and page
 alt text provide the textual alternative; the source and PDF retain editable
 or extractable text.
 
+Choose the layout from the relationships being explained. Compilation can
+branch into several outputs, solver capabilities can be compared in a table,
+provider interfaces can surround their consumer, and adaptive studies can have
+feedback paths. Use numbered steps when the figure describes an actual ordered
+procedure. Share typography and colors without imposing a fixed number of stages
+or the same diagram structure on different packages.
+
 ## Scientific scope
 
 `figures.json` records each figure's title, description and source. Keep its
@@ -48,7 +55,7 @@ claims aligned with the linked package capability guides and page text:
   and RHS callbacks are numerical representations; the compiler publishes
   contracts and numerical consumers own discretization and integration.
   Individual ODE or reaction examples illustrate a particular path.
-- The four public software diagrams separate mathematical cores from campaign
+- The package architecture diagrams separate mathematical cores from campaign
   providers. Backend qualification is method-specific and CPU/GPU evidence is
   stated explicitly. Cross-axis constraints are metadata in op_system.
 - `beyond_onehealth` distinguishes public simulation and evaluation tools from

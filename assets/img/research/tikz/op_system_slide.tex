@@ -1,12 +1,23 @@
 \input{figure-style.tex}
 \begin{document}
 \begin{tikzpicture}
-\heading{OP System}{Compile structured models for numerical consumers.}
-\panel{a}{0}{0}{Blue}{1. Specify}{PDEs and nonlocal dynamics\\Compartments and reactions\\Coordinates and parameters}
-\panel{b}{6.7}{0}{Teal}{2. Compile}{Restricted syntax and axes\\Template expansion\\Typed intermediate form}
-\panel{c}{6.7}{-3.8}{Green}{3. Export interfaces}{Operators and reactions\\Observables and forcing\\Checked independent blocks}
-\panel{d}{0}{-3.8}{Gold}{4. Evaluate}{Shaped fields and state arrays\\Flat, PyTree or block layouts\\NumPy / JAX / CPU Torch}
-\fourflow
-\bottomnote{Spatial discretization and time/event integration belong to numerical consumers. The compiler publishes field, operator and reaction contracts; cross-axis constraints remain metadata.}
+\heading{OP System}{Model specifications compile to several numerical interfaces.}
+\node[panel=Blue,minimum width=12.4cm,text width=11.65cm,minimum height=1.65cm] (spec) at (0,0)
+  {{\color{Blue}\bfseries\large Model specification}\\[5pt]PDEs, nonlocal dynamics, compartments and reactions\\Coordinates, parameters and model expressions};
+\node[panel=Teal,minimum width=8cm,text width=7.25cm,minimum height=1.7cm,below=.75cm of spec] (compiler)
+  {{\color{Teal}\bfseries\large Compiler}\\[5pt]Syntax and axis checks, template expansion\\Typed intermediate representation};
+\node[panel=Green,minimum width=3.8cm,text width=3.05cm,minimum height=3.35cm] (arrays) at ($(compiler.south -| spec.west)+(0,-1.1)$)
+  {{\color{Green}\bfseries Evaluators}\\[6pt]Shaped arrays\\Flat or PyTree\\Block layouts\\Array API};
+\node[panel=Green,minimum width=3.8cm,text width=3.05cm,minimum height=3.35cm] (operators) at ($(arrays.north west)+(4.3,0)$)
+  {{\color{Green}\bfseries Numerical metadata}\\[6pt]Field operators\\Reaction channels\\Independent blocks};
+\node[panel=Green,minimum width=3.8cm,text width=3.05cm,minimum height=3.35cm] (observations) at ($(arrays.north west)+(8.6,0)$)
+  {{\color{Green}\bfseries Observations / forcing}\\[6pt]Named observables\\Time tables\\Forcing boundaries};
+\draw[flow] (spec.south) -- (compiler.north);
+\coordinate (outputs) at ($(compiler.south)+(0,-.55)$);
+\draw[draw=Muted,line width=1pt] (compiler.south) -- (outputs);
+\draw[flow] (outputs) -| (arrays.north);
+\draw[flow] (outputs) -- (operators.north);
+\draw[flow] (outputs) -| (observations.north);
+\node[note] at ($(arrays.south west)+(0,-.6)$) {Outputs depend on the specification. Numerical consumers choose spatial discretization and time/event integration. NumPy, JAX and CPU Torch paths are tested. Cross-axis constraints remain metadata.};
 \end{tikzpicture}
 \end{document}
