@@ -43,6 +43,11 @@ or extractable text.
 `figures.json` records each figure's title, description and source. Keep its
 claims aligned with the linked package capability guides and page text:
 
+- The OP System/Engine schematics explicitly cover PDE/structured-field,
+  nonlocal/integral, compartmental and stochastic reaction models. Shaped arrays
+  and RHS callbacks are numerical representations; the compiler publishes
+  contracts and numerical consumers own discretization and integration.
+  Individual ODE or reaction examples illustrate a particular path.
 - The four public software diagrams separate mathematical cores from campaign
   providers. Backend qualification is method-specific and CPU/GPU evidence is
   stated explicitly. Cross-axis constraints are metadata in op_system.
