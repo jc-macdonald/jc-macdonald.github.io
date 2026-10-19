@@ -1,16 +1,16 @@
 \input{figure-style.tex}
 \begin{document}
 \begin{tikzpicture}
-\heading{Generalize, harden, operationalize}{A research agenda with observations and decisions in the same loop.}
+\heading{Current research directions}{Scientific applications, methods in development and study design.}
 \node[panel=Blue,minimum width=12.4cm,text width=11.65cm,minimum height=2.1cm] (a) at (0,0)
-  {{\color{Blue}\bfseries\large 1. Generalize the scientific systems}\\[5pt]Multi-host disease, marine ecosystems, spatial processes\\and cultural evolution.};
+  {{\color{Blue}\bfseries\large 1. Scientific applications}\\[5pt]Multi-host disease, marine ecosystems, spatial processes\\and cultural evolution.};
 \node[panel=Teal,minimum width=12.4cm,text width=11.65cm,minimum height=2.1cm] (b) at (0,-3)
-  {{\color{Teal}\bfseries\large 2. Strengthen inference and evaluation}\\[5pt]Parameter inference and calibration, structural evaluation,\\rank selection and replicated studies: ongoing methods work.};
+  {{\color{Teal}\bfseries\large 2. Methods in development}\\[5pt]Parameter inference and calibration, structural evaluation,\\rank selection and replicated studies.};
 \node[panel=Gold,minimum width=12.4cm,text width=11.65cm,minimum height=2.1cm] (c) at (0,-6)
-  {{\color{Gold}\bfseries\large 3. Operationalize decisions}\\[5pt]Vaccination strategy, scenario campaigns and surveillance design,\\with reproducible evidence for each application.};
+  {{\color{Gold}\bfseries\large 3. Surveillance and intervention studies}\\[5pt]Vaccination strategies, scenario campaigns and surveillance design.\\Compare model results under stated assumptions.};
 \draw[flow] (a.south) -- (b.north);
 \draw[flow] (b.south) -- (c.north);
 \draw[flow,draw=Teal] (c.west) -- ++(-.4,0) |- (a.west);
-\node[note] at (0,-9) {Observations, diagnostics and policy feedback motivate new model and study choices. This agenda includes operational, active-research and planned work; it is not a deployment map.};
+\node[note] at (0,-9) {Observations and study results inform revisions to models and study designs. This agenda includes operational work, methods under development and planned applications.};
 \end{tikzpicture}
 \end{document}

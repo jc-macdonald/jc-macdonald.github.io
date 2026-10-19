@@ -59,19 +59,19 @@ ninja.data = [{
             window.location.href = "/extracurricular/";
           },
         },{id: "news-presented-at-smb-2025-in-edmonton-recovering-ecological-geometry-a-trait-and-depth-structured-ipde-model-of-plankton-dynamics",
-          title: 'Presented at SMB 2025 in Edmonton — “Recovering Ecological Geometry: A Trait- and...',
+          title: 'Presented at SMB 2025 in Edmonton. “Recovering Ecological Geometry: A Trait- and Depth-Structured...',
           description: "",
           section: "News",},{id: "news-invited-seminar-at-umbc-decision-support-modeling-for-one-health-pathogens-using-mechanistic-models-for-surveillance-and-forecast-design",
-          title: 'Invited seminar at UMBC — “Decision-Support Modeling for One Health Pathogens: Using Mechanistic...',
+          title: 'Invited seminar at UMBC. “Decision-Support Modeling for One Health Pathogens: Using Mechanistic Models...',
           description: "",
           section: "News",},{id: "news-invited-seminar-at-woods-hole-oceanographic-institution-cross-scale-feedback-motifs-structure-preserving-models-and-computational-tools-for-complex-systems",
-          title: 'Invited seminar at Woods Hole Oceanographic Institution — “Cross-Scale Feedback Motifs: Structure-Preserving Models...',
+          title: 'Invited seminar at Woods Hole Oceanographic Institution. “Cross-Scale Feedback Motifs: Structure-Preserving Models and...',
           description: "",
           section: "News",},{id: "news-presented-flepimop2-and-the-operator-partitioned-simulation-stack-at-the-insight-net-third-annual-meeting-tools-workshop-friday-center-chapel-hill-nc",
           title: 'Presented FlepiMoP2 and the Operator-Partitioned Simulation Stack at the Insight Net Third Annual...',
           description: "",
           section: "News",},{id: "news-mini-symposium-talk-at-smb-2026-in-graz-austria-decision-support-modeling-for-one-health-pathogens-using-mechanistic-models-for-surveillance-and-forecast-design",
-          title: 'Mini-symposium talk at SMB 2026 in Graz, Austria — “Decision-Support Modeling for One...',
+          title: 'Mini-symposium talk at SMB 2026 in Graz, Austria. “Decision-Support Modeling for One Health...',
           description: "",
           section: "News",},{id: "projects-research-in-progress",
           title: 'Research in progress',
@@ -95,7 +95,7 @@ ninja.data = [{
               window.location.href = "/projects/op_engine/";
             },},{id: "projects-op-system",
           title: 'OP System',
-          description: "Specify PDE/field, nonlocal and reaction models; compile evaluators, operators and observables.",
+          description: "Compile PDE, nonlocal and reaction model specifications into evaluators and numerical metadata.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",

@@ -1,10 +1,10 @@
 \input{figure-style.tex}
 \begin{document}
 \begin{tikzpicture}
-\heading{OP System}{Structured specifications become portable numerical contracts.}
+\heading{OP System}{Compile structured models for numerical consumers.}
 \panel{a}{0}{0}{Blue}{1. Specify}{PDEs and nonlocal dynamics\\Compartments and reactions\\Coordinates and parameters}
 \panel{b}{6.7}{0}{Teal}{2. Compile}{Restricted syntax and axes\\Template expansion\\Typed intermediate form}
-\panel{c}{6.7}{-3.8}{Green}{3. Publish contracts}{Operators and reactions\\Observables and forcing\\Checked independent blocks}
+\panel{c}{6.7}{-3.8}{Green}{3. Export interfaces}{Operators and reactions\\Observables and forcing\\Checked independent blocks}
 \panel{d}{0}{-3.8}{Gold}{4. Evaluate}{Shaped fields and state arrays\\Flat, PyTree or block layouts\\NumPy / JAX / CPU Torch}
 \fourflow
 \bottomnote{Spatial discretization and time/event integration belong to numerical consumers. The compiler publishes field, operator and reaction contracts; cross-axis constraints remain metadata.}
