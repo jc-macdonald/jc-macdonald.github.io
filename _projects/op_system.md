@@ -9,7 +9,7 @@ category: "Released software"
 github: https://github.com/ACCIDDA/op_system
 ---
 
-**OP System** turns readable descriptions of changing systems into calculations that simulation tools can use. It is the specification and compilation layer for structured dynamical systems, including spatial/trait-structured PDEs, nonlocal integral/mixing dynamics, compartmental flows, ODEs and stochastic reaction networks. Researchers define explicit governing equations or compartmental transitions; restricted expressions pass through a typed intermediate representation to vectorized evaluators for NumPy, JAX and PyTorch.
+**OP System** turns readable descriptions of changing systems into calculations that simulation tools can use. It is the specification and compilation layer for structured dynamical systems, including partial differential equations (PDEs) with spatial or trait structure, nonlocal interactions, compartmental flows, ordinary differential equations (ODEs) and stochastic reaction networks. Researchers define explicit governing equations or compartmental transitions; the compiler translates supported expressions into numerical evaluators for NumPy, JAX and PyTorch.
 
 [Public alpha release on PyPI](https://pypi.org/project/op-system/) and actively developed. See the [capability guide and executable examples](https://accidda.github.io/op_system/latest/guides/capabilities/).
 
@@ -17,7 +17,7 @@ Categorical and continuous axes, aliases, staged chains, routing, kernels and op
 
 For stochastic consumers, named reactions expose channel structure, propensity shapes, reactants/dependencies and checked independence declarations. Time-indexed parameters support linear interpolation or right-continuous held forcing, with published schedules and resolved-parameter callbacks. [OP Engine](/projects/op_engine/) consumes these contracts for solving and independent replicate banks.
 
-Structural validation checks the specification and supported evaluator paths. Independent-equation fixtures and conditional reaction balances provide additional numerical evidence; none of these checks proves the scientific model correct. [Cross-axis constraints remain metadata](https://accidda.github.io/op_system/latest/guides/getting-started/#cross-axis-constraints-current-boundary), rather than an enforced filter on state cells or transitions.
+Specification validation checks supported expressions, shapes and numerical interfaces. Tests against independently written equations and reaction-balance checks provide numerical evidence under stated assumptions. Scientific adequacy requires assessment against the intended application. [Cross-axis constraints remain metadata](https://accidda.github.io/op_system/latest/guides/getting-started/#cross-axis-constraints-current-boundary), rather than an enforced filter on state cells or transitions.
 
 {% include figure.liquid path="assets/img/research/computed/spatial_diffusion.svg" class="img-fluid rounded" zoomable=true alt="A 64-cell periodic diffusion field and profiles at four times, computed from an OP System specification with RK4 integration in OP Engine. Spatial discretization is supplied explicitly; all inputs are synthetic." caption="Synthetic periodic diffusion compiled by OP System and integrated by OP Engine. The spatial stencil is supplied explicitly." %}
 

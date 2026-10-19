@@ -199,7 +199,7 @@ cv:
     "Research Support -- Pending":
       - name: "National One Health Mission India (proposed $1M / 3 years)"
         date: Full proposal stage
-        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Advanced past initial review; full proposal being submitted. Co-Investigator on the proposal. Proposed research role: mathematical model parameterization and data analysis; mechanistic modeling for HPAI and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
+        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Advanced past initial review; full proposal being submitted. Co-Investigator on the proposal. Proposed research role: mathematical model parameterization and data analysis; mechanistic modeling for highly pathogenic avian influenza and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
 
     Operational Modeling and Policy Support:
       - name: Diphtheria Outbreak-Response Vaccination Modeling
@@ -225,7 +225,7 @@ cv:
       - name: Hib Vaccination Modeling (Navajo Nation)
         start_date: 2026
         end_date: present
-        summary: "ACCIDDA. Technical supervisor managing PhD students in implementation of an age- and immune-status-structured Hib model for the Navajo Nation to evaluate the impact of long-running vaccination programs."
+        summary: "ACCIDDA. Technical supervisor managing PhD students in implementation of an age- and immune-status-structured Haemophilus influenzae type b (Hib) model for the Navajo Nation to evaluate the impact of long-running vaccination programs."
 
     "Research Software -- Lead Developer":
       - name: "OP System (Operator-Partitioned System)"
@@ -238,14 +238,14 @@ cv:
       - name: pp-eigentest
         start_date: 2026
         end_date: present
-        summary: "Research on how many underlying patterns an incomplete dataset can support. Revises a 2024 preprint with methods for assessing uncertainty in that choice. Private alpha software; evaluation studies and manuscript revision are in progress."
+        summary: "Research on distinguishing underlying patterns from noise in incomplete data. Revises a 2024 preprint and studies how missing observations and modeling assumptions affect that choice. Private alpha software; evaluation studies and manuscript revision are in progress."
         highlights:
           - "[Project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
 
       - name: "op_infer (Inference and Calibration)"
         start_date: 2026
         end_date: present
-        summary: "Connects scientific models with data to estimate unknown quantities and compare data-collection plans. Includes simulation-based checks of the fitting procedure. Private pre-alpha research software; broader interfaces and application studies remain in development."
+        summary: "Connects scientific models with data to estimate unknown quantities and compare data-collection plans. Tests fitting procedures on simulated data under stated modeling assumptions. Private pre-alpha research software; broader interfaces and application studies remain in development."
         highlights:
           - "[Project summary](https://jcmacdonald.dev/projects/inference_calibration/)"
 

@@ -68,7 +68,7 @@
   {
     "name": "structural_fidelity_comparison",
     "source": "gen_research_figures.py",
-    "title": "Predictive evaluation and structural admissibility",
-    "description": "Constructed trajectories illustrate adherence to a declared prevalence bound. No predictive scores are computed; predictive scoring and structural checks answer separate evaluation questions."
+    "title": "Illustrative constraint checks for predictions",
+    "description": "Two constructed prevalence curves compared with an upper bound of one over the displayed horizon. One stays below the bound and the other crosses it; predictive accuracy is not evaluated."
   }
 ]

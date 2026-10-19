@@ -17,12 +17,12 @@ simulation-based calibration, and replicated studies that test recovery on
 simulated data. Broader interfaces and application-specific validation remain
 in development.
 
-The aim is to make it easier to distinguish uncertainty in the scientific
-system from limitations of its measurements and inference procedure.
-Simulation-based calibration checks an inference procedure against data
-generated under stated assumptions; adequacy for observed scientific data
-requires separate assessment. A reliable workflow also needs to ask whether
-the available observations can identify the quantities that matter for a decision.
+The research asks how measurement assumptions and fitting procedures affect
+what can be learned about a scientific system. Simulation-based calibration
+assesses posterior inference using repeated data generated from the assumed
+model and prior. It does not establish that those assumptions describe observed
+data. Identifying a quantity from data also depends on the model, measurement
+process and available observations.
 
 op_infer builds on [OP System](/projects/op_system/) for model specification,
 [OP Engine](/projects/op_engine/) for numerical simulation, and

@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I study how models can inform interventions, surveillance and data collection when the underlying system is only partly observed. I develop simulation, statistical inference and model-evaluation methods for health, environmental and earth sciences.
+I study how models can inform interventions, surveillance and data collection when we can observe only part of a system. I develop methods for simulation, learning from data and evaluating models in health, environmental and earth sciences.
 
 I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With [ACCIDDA](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on wildlife and livestock disease surveillance.
 
@@ -43,11 +43,11 @@ Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, wor
 
 ## Research in progress
 
-My current methodological work asks how measurement assumptions and scientific constraints affect what we can learn from a model.
+My current methods research asks how measurements and scientific assumptions affect what we can learn about a system.
 
-- **[Structural scores](/projects/current_analyses/#structural-scores-and-scientific-prediction).** Assessing predictions against stated scientific constraints, including checks before outcomes are observed.
+- **[Structural scores](/projects/current_analyses/#structural-scores-and-scientific-prediction).** Reporting whether predictions satisfy stated scientific constraints, including checks made before the predicted outcome is observed.
 - **[Inference and calibration](/projects/inference_calibration/).** Estimating unknown model quantities and assessing fitting procedures with simulated data. The op_infer research software is private, pre-alpha and unreleased.
-- **[Incomplete data and latent structure](/projects/pp_eigentest/).** Investigating how many patterns a dataset can support, building on [VBPCApy](/projects/vbpca_py/) and a [2024 preprint](https://arxiv.org/abs/2409.12129).
+- **[Incomplete data and latent structure](/projects/pp_eigentest/).** Investigating how many patterns can be distinguished from noise in incomplete data, building on [VBPCApy](/projects/vbpca_py/) and a [2024 preprint](https://arxiv.org/abs/2409.12129).
 
 [Current application studies](/projects/current_analyses/#application-studies) address dengue within-host dynamics, observation noise, outbreak vaccination and Crimean-Congo hemorrhagic fever surveillance. These summaries describe ongoing questions; public papers and artifacts are linked as they become available.
 

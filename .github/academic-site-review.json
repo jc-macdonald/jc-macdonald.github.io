@@ -121,5 +121,33 @@
     "citation_metadata_and_order": true,
     "computed_artifact_and_preview_hashes": true,
     "pending_filter_cancelled_on_anchor_navigation": true
+  },
+  "phrasing_alignment": {
+    "reviewed_on": "2026-10-19",
+    "scope": "Homepage, project summaries, package descriptions, CV research-software summaries, computed examples and the constructed constraint-check illustration.",
+    "decisions": [
+      "Lead research summaries with questions that readers outside the specialty can understand; expand standalone-page acronyms.",
+      "Describe outcome-independent checks without implying exclusion of observations available when a prediction is issued.",
+      "Distinguish observed constraint compliance, satisfaction by construction, predictive accuracy and application adequacy.",
+      "Keep identification and calibration claims conditional on the model, observations and assessed property.",
+      "Use public summaries of ongoing work without disclosing private methods, results or submission plans.",
+      "Retain spatial, nonlocal, compartmental and stochastic scope for OP System and OP Engine.",
+      "Use descriptive second-level headings on the research-in-progress page and preserve existing fragment URLs.",
+      "Keep the constructed illustration scoped to the displayed horizon and publish matching captions, text alternatives, sources and exports."
+    ],
+    "maintenance_guidance": ".github/instructions/academic-content.instructions.md",
+    "validation": {
+      "production_build": true,
+      "responsive_theme_layouts": 96,
+      "viewports": [390, 768, 1024, 1440],
+      "pages": 12,
+      "constructed_figure_source_and_exports": true,
+      "cv_source_and_both_pdf_copies": true,
+      "publication_metadata_and_order": true,
+      "external_anchors": 71,
+      "external_ok": 64,
+      "existing_exact_exclusions": 7,
+      "external_errors": 0
+    }
   }
 }

@@ -3,54 +3,58 @@ layout: page
 title: Research in progress
 description: Ongoing work on structural scores, scientific machine learning and disease-modeling applications.
 img: assets/img/research/structural_fidelity_comparison.svg
-img_alt: Constructed trajectories illustrate adherence to a declared prevalence bound. No predictive scores are computed; predictive scoring and structural checks answer separate evaluation questions.
+img_alt: Two constructed prevalence curves compared with an upper bound of one over the displayed horizon. One stays below the bound and the other crosses it; predictive accuracy is not evaluated.
 importance: 1
 category: "Research in progress"
 ---
 
-My current research connects mechanistic modeling, Bayesian inference and
-evaluation for decisions under partial observation. The projects below are
-ongoing. These summaries describe their questions and aims; public papers
-and software are linked where available.
+My current research asks what incomplete observations reveal about a changing
+system, how scientific assumptions affect predictions, and which measurements
+would help answer a research or policy question. I use models of the underlying
+processes, Bayesian inference and simulation studies. The projects below are
+ongoing; public papers and software are linked where available.
 
-### Structural scores and scientific prediction
+## Structural scores and scientific prediction
 
-I am developing structural scores to assess predictions
-against declared scientific constraints, including checks that can be made
-before the outcome is observed. A forecast of a proportion, for example,
-should respect its stated bounds.
+I am developing structural scores to report whether a scientific prediction
+satisfies stated constraints without using the outcome it is intended to
+predict. Observations already available when the prediction is made may still
+inform a check. A forecast of a proportion,
+for example, should lie between zero and one.
 
-The work asks how to report structural compliance alongside predictive
-accuracy, and how to make the assumptions and limits of those checks clear.
-Predictive scoring and structural evaluation address different questions:
-passing a constraint check alone does not establish predictive skill or
-scientific validity. Methods and companion software are in development.
+The work examines how to report constraint compliance alongside predictive
+accuracy, with explicit assumptions and limits. It distinguishes constraints
+satisfied by construction from those observed to hold for a particular
+prediction. Compliance alone does not establish predictive accuracy. The
+methods and companion software remain in development.
 
-{% include figure.liquid path="assets/img/research/structural_fidelity_comparison.svg" class="img-fluid rounded" zoomable=true alt="Constructed trajectories illustrate adherence to a declared prevalence bound. No predictive scores are computed; predictive scoring and structural checks answer separate evaluation questions." caption="Illustrative constructed trajectories; no predictive scores are computed." %}
+{% include figure.liquid path="assets/img/research/structural_fidelity_comparison.svg" class="img-fluid rounded" zoomable=true alt="Two constructed prevalence curves compared with an upper bound of one over the displayed horizon. One stays below the bound and the other crosses it; predictive accuracy is not evaluated." caption="Illustrative constructed trajectories; no predictive scores are computed." %}
 
 [Vector PDF](/assets/img/research/structural_fidelity_comparison.pdf) · [All figure sources and downloads](/figures/)
 
-### Inference and calibration
+## Inference and calibration
 
 [op_infer](/projects/inference_calibration/) connects fitting tools,
 simulation-based checks and replicated studies for incomplete or noisy observations.
 The research software remains private, pre-alpha and unreleased while its scientific
 applications are assessed.
 
-### Scientific machine learning and incomplete data
+## Scientific machine learning and incomplete data
 
-I am exploring how scientific constraints can guide learning from sparse
-observations of dynamical systems, with attention to the relationship between
-reconstruction, uncertainty and scientific interpretation. This methodological
-work is ongoing.
+I am studying representations of dynamical systems that satisfy selected
+scientific constraints by construction. The work asks what sparse measurements
+can reveal about a trajectory and which assumptions are needed to recover
+scientific quantities from incomplete observations. Questions about
+reconstruction accuracy, stability and uncertainty remain part of this ongoing
+work.
 
-A related thread asks how many latent dimensions an incomplete dataset can
-support. The released [VBPCApy](/projects/vbpca_py/) software provides Bayesian
-dimensionality reduction; [pp-eigentest](/projects/pp_eigentest/) is ongoing
+A related thread asks how many underlying patterns can be distinguished from
+noise in an incomplete dataset. The released [VBPCApy](/projects/vbpca_py/)
+software provides Bayesian dimensionality reduction; [pp-eigentest](/projects/pp_eigentest/) is ongoing
 research on signal-rank selection, building on a
 [2024 preprint](https://arxiv.org/abs/2409.12129).
 
-### Application studies
+## Application studies
 
 **Dengue within-host dynamics.** Current work develops inference and model
 assessment for viral and immune responses across successive infections and
@@ -64,9 +68,9 @@ uncertainty, and forecast assessment.
 **Diphtheria outbreak vaccination.** Ongoing modeling compares the timing and
 effects of response strategies under uncertain transmission and immunity.
 
-**CCHF surveillance and control.** Cross-scale modeling investigates which
-wildlife and livestock measurements inform disease risk and control choices,
-alongside their field costs.
+**Crimean-Congo hemorrhagic fever surveillance and control.** Modeling across
+hosts and scales investigates which wildlife and livestock measurements inform
+disease risk and control choices, alongside their field costs.
 
 Working repositories remain private while the analyses mature. Public artifacts
 will be added as they are released. See
