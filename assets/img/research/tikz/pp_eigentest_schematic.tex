@@ -1,0 +1,15 @@
+\input{figure-style.tex}
+\begin{document}
+\begin{tikzpicture}
+\heading{pp-eigentest: fit, check, select}{Sequential fitted-model rank selection; private pre-release work.}
+\node[panel=Blue,minimum width=12.4cm,text width=11.65cm,minimum height=2.1cm] (a) at (0,0)
+  {{\color{Blue}\bfseries\large 1. Fit the observed entries}\\[5pt]Incomplete matrix and explicit mask\\Fit and refit the selected latent-variable model.};
+\node[panel=Teal,minimum width=12.4cm,text width=11.65cm,minimum height=2.1cm] (b) at (0,-3)
+  {{\color{Teal}\bfseries\large 2. Check predictive reliability}\\[5pt]Held-out predictive scores, coverage and convergence\\Record capacity, calibration and stopping diagnostics.};
+\node[panel=Gold,minimum width=12.4cm,text width=11.65cm,minimum height=2.1cm] (c) at (0,-6)
+  {{\color{Gold}\bfseries\large 3. Select with fitted-model spectra}\\[5pt]Posterior-predictive spectral comparisons\\Return a rank decision together with its diagnostics.};
+\draw[flow] (a.south) -- (b.north);
+\draw[flow] (b.south) -- (c.north);
+\node[note] at (0,-9) {NumPy is the reference path. Earlier consensus methods are supplementary analyses. Mask-aware fitting alone does not identify the missingness mechanism.};
+\end{tikzpicture}
+\end{document}

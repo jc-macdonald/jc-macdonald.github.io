@@ -21,6 +21,10 @@ their roles, current scope and research applications.
 | CV page and rendered PDF source   | `_data/cv.yml`, `assets/rendercv/` |
 | Publications                      | `_bibliography/papers.bib`         |
 
+Research figures have [editable TikZ/plotting sources and build instructions](assets/img/research/README.md),
+with SVGs for the site and PDFs for reuse. The [figure gallery](https://jcmacdonald.dev/figures/)
+links the individual sources and exports.
+
 For editing and preview instructions, see [AGENTS.md](AGENTS.md),
 [INSTALL.md](INSTALL.md) and [CUSTOMIZE.md](CUSTOMIZE.md). Pull requests run the
 site build and formatting checks; merging publishes the generated site to

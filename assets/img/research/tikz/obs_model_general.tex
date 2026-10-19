@@ -1,0 +1,16 @@
+\input{figure-style.tex}
+\begin{document}
+\begin{tikzpicture}
+\heading{Partial observability}{A hidden process becomes data through an explicit observation model.}
+\node[panel=Blue,minimum width=3.4cm,text width=2.7cm,minimum height=1.65cm] (latent) at (0,0) {\textbf{Latent process}\\\(x(t)\)};
+\node[panel=Teal,minimum width=4cm,text width=3.3cm,minimum height=1.65cm] (obs) at (4.1,0) {\textbf{Observation model}\\\(p(y\mid x,\theta_{\mathrm{obs}})\)};
+\node[panel=Gold,minimum width=3.4cm,text width=2.7cm,minimum height=1.65cm] (data) at (8.8,0) {\textbf{Observed data}\\\(y\)};
+\draw[flow] (latent.east) -- (obs.west);
+\draw[flow] (obs.east) -- (data.west);
+\panel{a}{0}{-2.65}{Blue}{Health systems}{Disease states\\Detection / reporting delay\\Cases / admissions / serology}
+\panel{b}{6.7}{-2.65}{Teal}{Marine environments}{Ecosystem state\\Sampling / spatial aliasing\\Surveys / eDNA / sensors}
+\panel{c}{6.7}{-6.4}{Green}{Earth systems}{Soil, fire, vegetation\\Sensor placement / cloud\\Indices / fluxes / transects}
+\panel{d}{0}{-6.4}{Gold}{Human systems}{Traits / population structure\\Recovery / coding / sampling\\Assemblages / language / genetics}
+\node[note] at (0,-10.4) {A shared mathematical form still requires domain-specific observation assumptions and independent validation. This is a conceptual map of research domains.};
+\end{tikzpicture}
+\end{document}

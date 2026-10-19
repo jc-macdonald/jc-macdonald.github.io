@@ -1,0 +1,12 @@
+\input{figure-style.tex}
+\begin{document}
+\begin{tikzpicture}
+\heading{OP Engine}{Numerical methods with explicit accuracy and execution contracts.}
+\panel{a}{0}{0}{Blue}{1. Prepare}{State, right-hand side\\Spatial and reaction operators\\Method and output times}
+\panel{b}{6.7}{0}{Teal}{2. Solve}{Explicit, IMEX and implicit\\Exact SSA and tau-leaping\\Independent NumPy SSA clocks}
+\panel{c}{6.7}{-3.8}{Green}{3. Observe and record}{Named latent observations\\Window summaries and counts\\Trajectories and provenance}
+\panel{d}{0}{-3.8}{Gold}{4. Check and replay}{Accuracy and invariant checks\\Adaptive schedule discovery\\Differentiable frozen replay}
+\fourflow
+\bottomnote{Qualification is method-specific for NumPy, JAX and CPU Torch. Replay derivatives are conditional on the recorded mesh. GPU paths require separate hardware evidence.}
+\end{tikzpicture}
+\end{document}

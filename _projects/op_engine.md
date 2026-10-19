@@ -2,8 +2,8 @@
 layout: page
 title: OP Engine
 description: Numerical core for deterministic and stochastic models, with independent SSA banks, named observations, replay and qualified NumPy, JAX and CPU PyTorch methods.
-img: assets/img/research/op_engine_slide.png
-img_alt: OP Engine workflow connecting prepared models, numerical kernel families, backend-native providers, and execution diagnostics.
+img: assets/img/research/op_engine_slide.svg
+img_alt: Prepare state and operators, solve deterministic or stochastic dynamics, record observations and optional counts, then check accuracy and replay. Independent SSA clocks use NumPy; backend qualification is method-specific and replay derivatives depend on the recorded mesh.
 importance: 2
 category: "lead developer · released"
 github: https://github.com/ACCIDDA/op_engine
@@ -26,3 +26,7 @@ The [backend qualification matrix](https://accidda.github.io/op_engine/latest/gu
 A frozen replay differentiates the recorded numerical map, conditional on its mesh; it does not differentiate step-size decisions. Accuracy checks and changes in parameters can require a fresh discovery solve.
 
 [OP System](/projects/op_system/) supplies compiled equations, reactions and observation metadata. [trade-study](/projects/trade_study/) can compare solver configurations and simulation designs.
+
+{% include figure.liquid path="assets/img/research/op_engine_slide.svg" class="img-fluid rounded" zoomable=true alt="Prepare state and operators, solve deterministic or stochastic dynamics, record observations and optional counts, then check accuracy and replay. Independent SSA clocks use NumPy; backend qualification is method-specific and replay derivatives depend on the recorded mesh." caption="OP Engine numerical workflow." %}
+
+[Vector PDF](/assets/img/research/op_engine_slide.pdf) · [All figure sources and downloads](/figures/)

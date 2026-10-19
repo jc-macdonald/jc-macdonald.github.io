@@ -2,8 +2,8 @@
 layout: page
 title: vbpca-py
 description: Variational Bayesian PCA for incomplete data with full posterior uncertainty, calibrated predictive variance, automatic component pruning, native missingness handling, and C++-accelerated kernels.
-img: assets/img/research/vbpca_py_schematic.png
-img_alt: VBPCApy workflow from an incomplete matrix and explicit observation mask through variational fitting, diagnostics, component selection, and predictive uncertainty.
+img: assets/img/research/vbpca_py_schematic.svg
+img_alt: Observed entries and a mask feed variational fitting of loadings, scores, bias, noise and ARD. Convergence, component selection and held-out assessment support posterior prediction and uncertainty for the intended data regime.
 importance: 1
 category: "lead developer · released"
 github: https://github.com/yoavram-lab/VBPCApy
@@ -25,3 +25,7 @@ Key features:
 Applied to genetic, cultural, and ecological datasets. Available on [PyPI](https://pypi.org/project/vbpca-py/) and archived at [Zenodo](https://doi.org/10.5281/zenodo.19389250).
 
 The 2024 preprint {% cite macdonald2024vbpca %} introduced an earlier, single-statistic version of the posterior predictive rank-testing methodology built on this codebase. The follow-up [pp-eigentest](/projects/pp_eigentest/) work now centers a sequential fitted-model selector; earlier consensus methods are retained as supplementary analyses.
+
+{% include figure.liquid path="assets/img/research/vbpca_py_schematic.svg" class="img-fluid rounded" zoomable=true alt="Observed entries and a mask feed variational fitting of loadings, scores, bias, noise and ARD. Convergence, component selection and held-out assessment support posterior prediction and uncertainty for the intended data regime." caption="VBPCApy missing-data workflow." %}
+
+[Vector PDF](/assets/img/research/vbpca_py_schematic.pdf) · [All figure sources and downloads](/figures/)

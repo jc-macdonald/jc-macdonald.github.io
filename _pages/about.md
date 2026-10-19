@@ -35,7 +35,7 @@ Currently I am an Assistant Scientist at the [International Vaccine Access Cente
 I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a BA in Archaeology from UNC Greensboro — a combination that continues to shape how I think about inference from incomplete records.
 
 <div style="margin: 2.5rem 0;">
-{% include figure.liquid loading="eager" path="assets/img/research/beyond_onehealth.png" class="img-fluid rounded z-depth-1" alt="Shared research stack connecting model specification, numerical execution, orchestration, design, evaluation, and inference to operational and emerging scientific domains." caption="Conceptual research roadmap across operational, active-research and planned work; current public software and qualification are summarized below." %}
+{% include figure.liquid loading="eager" path="assets/img/research/beyond_onehealth.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="OP System compiles specifications, OP Engine executes numerical models, FlepiMoP2 orchestrates campaigns through providers, and trade-study compares replicated studies. Infectious-disease operations, active marine and wildlife research, and planned domain extensions have distinct maturity levels." caption="Conceptual research roadmap across operational, active-research and planned work; current public software and qualification are summarized below." %}
 </div>
 
 ---
@@ -45,7 +45,7 @@ I hold a PhD in Mathematics from the University of Louisiana at Lafayette and a 
 The systems I work on share a recurring architecture: a latent process we care about, an observation process that maps and distorts it, and the data we actually get. Whether the latent state is disease prevalence in a wildlife herd, nutrient cycling in a marine ecosystem, or cultural trait frequencies in a human population, the decision-relevant state is rarely fully observed. The observation assumptions and validation requirements remain domain-specific. The figure below maps this architecture across four domains.
 
 <div style="margin: 2.5rem 0;">
-{% include figure.liquid loading="eager" path="assets/img/research/obs_model_general.png" class="img-fluid rounded z-depth-1" alt="Four examples of latent scientific processes passing through domain-specific observation models to produce epidemiological, environmental, earth-system, and human data." caption="Across domains, a partially observed latent process is connected to data through an explicit observation model." %}
+{% include figure.liquid loading="eager" path="assets/img/research/obs_model_general.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="A latent process x(t) produces data y through an observation model p(y given x and observation parameters). Health, marine, earth and human systems have different observation assumptions and validation requirements." caption="Across domains, a partially observed latent process is connected to data through an explicit observation model." %}
 </div>
 
 This is not just a conceptual analogy. The mathematical structure is shared: each domain requires a generative model that encodes how hidden states produce observables, an inference engine that inverts the observation process under uncertainty, and a decision layer that translates posterior beliefs into actionable recommendations. Building this infrastructure so that it transfers across domains — rather than rebuilding it from scratch for each application — is the central goal of my research program.
@@ -67,8 +67,10 @@ The research program moves along three axes. First, _operationalize decisions_: 
 Current analyses include dengue antibody-dependent enhancement, outcome-independent structural scores for scientific predictions, COVID-19 observation-noise sensitivity, diphtheria outbreak vaccination, and CCHF surveillance and control design. Their working repositories remain private while the analyses and manuscripts mature.
 
 <div style="margin: 2.5rem 0;">
-{% include figure.liquid loading="eager" path="assets/img/research/future_directions_general.png" class="img-fluid rounded z-depth-1" alt="Research program organized around generalizing to new scientific systems, hardening inference and evaluation, and operationalizing policy and surveillance decisions." caption="The program links generalization, methodological hardening, and operational decision support through observations and policy feedback." %}
+{% include figure.liquid loading="eager" path="assets/img/research/future_directions_general.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="The research agenda connects new scientific systems, stronger inference and evaluation, and operational decisions. Observations, diagnostics and policy feedback inform the next model and study choices." caption="The program links generalization, methodological hardening, and operational decision support through observations and policy feedback." %}
 </div>
+
+[Vector downloads and editable figure sources](/figures/) are available for reuse.
 
 The question that ties it all together: _what should we do, given what we can't observe?_
 
