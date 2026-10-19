@@ -52,14 +52,16 @@ I develop reusable tools for specifying models, simulating observations, fitting
 
 The packages have distinct roles in this workflow.
 
-- **Model specification.** [OP System](https://github.com/ACCIDDA/op_system) specifies PDE/field, nonlocal and reaction models and compiles NumPy, JAX or PyTorch evaluators, publishing reaction metadata, named observables, forcing schedules and checked independent-block contracts.
-- **Numerical integration.** [OP Engine](https://github.com/ACCIDDA/op_engine) advances PDEs, nonlocal dynamics, compartmental models and stochastic reactions. It provides independent NumPy SSA banks, observations and replay. The tested NumPy, JAX and CPU PyTorch operations depend on the method.
-- **Inference and calibration.** [op_infer](/projects/inference_calibration/) connects Bayesian parameter fitting, simulation-based calibration and study-design checks. Working implementations build on established inference libraries and the simulation and evaluation tools; the software remains private, pre-alpha and unreleased while application studies develop.
-- **Orchestration.** [FlepiMoP2](https://github.com/ACCIDDA/flepimop2) drives configuration-defined campaigns over locations and scenarios, connecting systems, engines, parameters, processes, jobs, and persistence providers to operational modeling workflows.
-- **Design and evaluation.** [trade-study](https://github.com/jcm-sci/trade-study) coordinates replicated simulation studies, paired comparisons, proper scoring rules, Pareto analysis and preference-based decisions, retaining uncertainty and result provenance. Benchmark evidence and validation on observed data remain separate requirements.
-- **Dimensionality reduction.** The released [vbpca-py](https://github.com/yoavram-lab/VBPCApy) models latent structure in incomplete datasets with posterior uncertainty. Ongoing [pp-eigentest](/projects/pp_eigentest/) research investigates signal-rank selection and its calibration.
+- **Describing models.** [OP System](https://github.com/ACCIDDA/op_system) turns readable model definitions into calculations. It supports spatial structure, interactions between groups and random events, including PDE, nonlocal and reaction models.
+- **Running simulations.** [OP Engine](https://github.com/ACCIDDA/op_engine) computes how modeled systems change over time and space. It supports deterministic dynamics, random events, repeated simulations and quantities such as population counts.
+- **Learning from data.** [op_infer](/projects/inference_calibration/) estimates unknown model quantities and checks fitting procedures using simulated data. It builds on established statistical libraries and remains private, pre-alpha and unreleased.
+- **Coordinating campaigns.** [FlepiMoP2](https://github.com/ACCIDDA/flepimop2) organizes simulation runs across places and scenarios, connecting reusable models, simulation tools and data storage.
+- **Comparing choices.** [trade-study](https://github.com/jcm-sci/trade-study) compares model settings, experiments and data-collection plans through repeated simulations. It helps assess uncertainty and weigh competing goals such as accuracy, information and cost.
+- **Finding patterns.** [vbpca-py](https://github.com/yoavram-lab/VBPCApy) summarizes incomplete datasets with a smaller set of patterns, using a Bayesian approximation to estimate uncertainty. [pp-eigentest](/projects/pp_eigentest/) investigates how many patterns the data can support.
 
-The simulation and evaluation packages are publicly released. The inference layer already has working implementations; its broader interfaces and scientific assessment remain in development. Each application needs explicit priors, observation models, estimator choices and evidence that its numerical and statistical checks are adequate for the intended use.
+OP System, OP Engine, trade-study and FlepiMoP2 have public alpha releases.
+VBPCApy is beta. These development labels describe software maturity; numerical
+checks and scientific assessment remain specific to the method and application.
 
 #### Research aims
 
@@ -85,15 +87,15 @@ Current methodological work examines scientific constraints on predictions, para
 
 <div class="table-responsive" markdown="1">
 
-| Tool                                                  | What it does                                                                               | Status                                                                                                                                  |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [op_system](https://github.com/ACCIDDA/op_system)     | PDE/field, nonlocal and reaction specifications; operators, observables and forcing        | [PyPI](https://pypi.org/project/op-system/) · [capabilities](https://accidda.github.io/op_system/latest/guides/capabilities/)           |
-| [op_engine](https://github.com/ACCIDDA/op_engine)     | PDE/nonlocal operators, deterministic and stochastic solvers, observations and replay      | [PyPI](https://pypi.org/project/op-engine/) · [qualification](https://accidda.github.io/op_engine/latest/guides/backend-qualification/) |
-| [op_infer](/projects/inference_calibration/)          | Parameter fitting, simulation-based calibration and study-design checks                    | Working research software · private pre-alpha · unreleased                                                                              |
-| [flepimop2](https://github.com/ACCIDDA/flepimop2)     | Configuration-driven campaigns and provider interfaces                                     | [PyPI](https://pypi.org/project/flepimop2/) · [docs](https://accidda.github.io/flepimop2/latest/)                                       |
-| [trade-study](https://github.com/jcm-sci/trade-study) | Replicated studies, paired comparisons, Pareto analysis, preferences and result provenance | [PyPI](https://pypi.org/project/trade-study/) · [examples](https://jcm-sci.github.io/trade-study/guide/capabilities/)                   |
-| [vbpca-py](https://github.com/yoavram-lab/VBPCApy)    | Variational Bayesian PCA for incomplete data with approximate posterior uncertainty        | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation                                                 |
-| [pp-eigentest](/projects/pp_eigentest/)               | Posterior predictive eigenvalue testing for signal rank determination                      | Private pre-release · methods paper in preparation, extending [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)                      |
+| Tool                                                  | Purpose                                                                     | Availability and development stage                                                                                                                          |
+| ----------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [op_system](https://github.com/ACCIDDA/op_system)     | Describe spatial, interacting-group and random-event models for simulation  | Public alpha · [PyPI](https://pypi.org/project/op-system/) · [capabilities](https://accidda.github.io/op_system/latest/guides/capabilities/)                |
+| [op_engine](https://github.com/ACCIDDA/op_engine)     | Simulate changing systems and record quantities of scientific interest      | Public alpha · [PyPI](https://pypi.org/project/op-engine/) · [methods and checks](https://accidda.github.io/op_engine/latest/guides/backend-qualification/) |
+| [op_infer](/projects/inference_calibration/)          | Estimate unknown quantities from data and assess fitting procedures         | Private pre-alpha · unreleased                                                                                                                              |
+| [flepimop2](https://github.com/ACCIDDA/flepimop2)     | Coordinate simulation campaigns and connect models, computation and storage | Public alpha · [PyPI](https://pypi.org/project/flepimop2/) · [docs](https://accidda.github.io/flepimop2/latest/)                                            |
+| [trade-study](https://github.com/jcm-sci/trade-study) | Compare research designs, uncertainty and competing objectives              | Public alpha · [PyPI](https://pypi.org/project/trade-study/) · [examples](https://jcm-sci.github.io/trade-study/guide/capabilities/)                        |
+| [vbpca-py](https://github.com/yoavram-lab/VBPCApy)    | Find shared patterns in incomplete datasets and assess uncertainty          | Public beta · [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation                                                                   |
+| [pp-eigentest](/projects/pp_eigentest/)               | Investigate how many underlying patterns an incomplete dataset can support  | Private alpha · manuscript revision in progress, extending [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)                                             |
 
 </div>
 

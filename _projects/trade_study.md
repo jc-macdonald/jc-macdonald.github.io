@@ -1,7 +1,7 @@
 ---
 layout: page
 title: trade-study
-description: Compare replicated studies, competing objectives and decision preferences, with uncertainty and provenance.
+description: Compare experiments and model choices, weighing uncertainty, information and cost.
 img: assets/img/research/trade_study_slide.svg
 img_alt: Candidate designs feed replicated simulator/scorer evaluations and trial results. Results branch into comparisons and optional analyses, with a dashed return for adaptive search or phase refinement. Calibration and transfer require separate application evidence.
 importance: 2
@@ -9,9 +9,9 @@ category: "lead developer · released"
 github: https://github.com/jcm-sci/trade-study
 ---
 
-**trade-study** coordinates design and evaluation studies across scientific domains. Users supply a simulator and scorer, define factors and objectives, and compare configurations such as model formulations, solver controls or measurement strategies.
+**trade-study** helps researchers compare experiments, model settings and data-collection plans using repeated simulations. It coordinates design and evaluation studies across scientific domains. Users supply a simulator and scorer, define factors and objectives, and compare configurations such as model formulations, solver controls or measurement strategies.
 
-[Released on PyPI](https://pypi.org/project/trade-study/), with [documentation and executable examples](https://jcm-sci.github.io/trade-study/guide/capabilities/) and a [Zenodo archive](https://doi.org/10.5281/zenodo.19599838).
+[Public alpha release on PyPI](https://pypi.org/project/trade-study/), with [documentation and executable examples](https://jcm-sci.github.io/trade-study/guide/capabilities/) and a [Zenodo archive](https://doi.org/10.5281/zenodo.19599838).
 
 Current capabilities include:
 
