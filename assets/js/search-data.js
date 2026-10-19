@@ -73,9 +73,9 @@ ninja.data = [{
           section: "News",},{id: "news-mini-symposium-talk-at-smb-2026-in-graz-austria-decision-support-modeling-for-one-health-pathogens-using-mechanistic-models-for-surveillance-and-forecast-design",
           title: 'Mini-symposium talk at SMB 2026 in Graz, Austria — “Decision-Support Modeling for One...',
           description: "",
-          section: "News",},{id: "projects-current-model-analysis-portfolio",
-          title: 'Current Model-Analysis Portfolio',
-          description: "Active mechanistic modeling, inference, and evaluation studies spanning dengue, COVID-19 observation noise, diphtheria vaccination, CCHF surveillance, and structural scores.",
+          section: "News",},{id: "projects-research-in-progress",
+          title: 'Research in progress',
+          description: "Ongoing research on structural evaluation, inference and scientific machine learning, with applications in disease dynamics and surveillance.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/current_analyses/";
             },},{id: "projects-flepimop2",
@@ -83,6 +83,11 @@ ninja.data = [{
           description: "Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decoupling model specification, integration, and persistence.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/flepimop2/";
+            },},{id: "projects-inference-and-calibration",
+          title: 'Inference and calibration',
+          description: "Working research software connects Bayesian parameter inference, calibration checks and study design for partially observed systems.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/inference_calibration/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
           description: "Numerical core for deterministic and stochastic models, with independent SSA banks, named observations, replay and qualified NumPy, JAX and CPU PyTorch methods.",
@@ -95,7 +100,7 @@ ninja.data = [{
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",
           title: 'pp-eigentest',
-          description: "Private pre-release work on posterior-predictive signal-rank selection, centered on a sequential fitted-model selector with explicit calibration and stopping diagnostics.",
+          description: "Ongoing research on posterior-predictive signal-rank selection for incomplete datasets, building on a 2024 preprint.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",

@@ -46,9 +46,11 @@ claims aligned with the linked package capability guides and page text:
 - The four public software diagrams separate mathematical cores from campaign
   providers. Backend qualification is method-specific and CPU/GPU evidence is
   stated explicitly. Cross-axis constraints are metadata in op_system.
-- `beyond_onehealth` and `future_directions_general` are research maps, with
-  operational work, active research and planned extensions distinguished.
-- `pp_eigentest_schematic` reflects the public fit/check/select description of
+- `beyond_onehealth` distinguishes public simulation and evaluation tools from
+  working inference and calibration research software, which remains private
+  and pre-release. `future_directions_general` maps research aims, including
+  structural evaluation; neither figure reports results from ongoing studies.
+- `pp_eigentest_schematic` describes the research question and scope of
   private pre-release work. `vbpca_py_schematic` describes fitting and predictive
   assessment, without implying universal calibration.
 - `optimal_design` uses synthetic candidate costs `[1, 2.1, 3, 3.7, 5.4]` and
