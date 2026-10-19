@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "Research software for scientific computing, Bayesian inference, and operational deployment infrastructure.",
+          description: "Models and software for studying changing systems, learning from incomplete data, and comparing interventions and research designs.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -80,37 +80,37 @@ ninja.data = [{
               window.location.href = "/projects/current_analyses/";
             },},{id: "projects-flepimop2",
           title: 'FlepiMoP2',
-          description: "Run configuration-defined simulation campaigns with replaceable modeling, numerical and persistence providers.",
+          description: "Coordinate simulation runs across locations and scenarios, with reusable models and data tools.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/flepimop2/";
             },},{id: "projects-op-infer",
           title: 'op_infer',
-          description: "Bayesian fitting, simulation-based calibration and study design. Private, pre-alpha and unreleased.",
+          description: "Estimate model quantities from incomplete data and assess fitting methods. Private pre-alpha research software.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/inference_calibration/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
-          description: "Simulate PDE/field, nonlocal and reaction dynamics, with observations, numerical checks and replay.",
+          description: "Simulate changing systems and random events, from spatial dynamics to population counts.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_engine/";
             },},{id: "projects-op-system",
           title: 'OP System',
-          description: "Compile PDE, nonlocal and reaction model specifications into evaluators and numerical metadata.",
+          description: "Describe models of changing systems, including spatial interactions and random events.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",
           title: 'pp-eigentest',
-          description: "Research on how much signal incomplete datasets can support. Methods and private pre-release software in development.",
+          description: "Research on how many underlying patterns an incomplete dataset can support. Private alpha research software.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",
           title: 'trade-study',
-          description: "Compare replicated studies, competing objectives and decision preferences, with uncertainty and provenance.",
+          description: "Compare experiments and model choices, weighing uncertainty, information and cost.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/trade_study/";
             },},{id: "projects-vbpca-py",
           title: 'vbpca-py',
-          description: "Bayesian dimensionality reduction for incomplete data, with posterior uncertainty and model-assessment tools.",
+          description: "Find shared patterns in incomplete datasets and assess uncertainty in those summaries.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/vbpca_py/";
             },},{
