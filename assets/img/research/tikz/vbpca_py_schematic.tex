@@ -1,0 +1,12 @@
+\input{figure-style.tex}
+\begin{document}
+\begin{tikzpicture}
+\heading{VBPCApy}{Latent structure and predictive uncertainty from incomplete matrices.}
+\panel{a}{0}{0}{Blue}{1. Observe and mask}{Input matrix \(X\) and mask \(\Omega\)\\Use observed entries directly\\Missing-aware preprocessing}
+\panel{b}{6.7}{0}{Teal}{2. Fit variationally}{Loadings, scores and bias\\Noise variance and ARD\\Reuse observation patterns}
+\panel{c}{6.7}{-3.8}{Green}{3. Check and select}{Convergence diagnostics\\Component-selection sweeps\\Held-out predictive assessment}
+\panel{d}{0}{-3.8}{Gold}{4. Predict uncertainty}{Factor covariances\\Predictive noise variance\\Reconstruction / transform}
+\fourflow
+\bottomnote{The package exposes a scikit-learn-compatible API and optional C++ acceleration. Coverage and rank recovery require checks for the intended data regime and observation assumptions.}
+\end{tikzpicture}
+\end{document}
