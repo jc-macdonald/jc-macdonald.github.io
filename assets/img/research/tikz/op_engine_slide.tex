@@ -7,6 +7,6 @@
 \panel{c}{6.7}{-3.8}{Green}{3. Observe and record}{Named latent observations\\Window summaries and counts\\Trajectories and provenance}
 \panel{d}{0}{-3.8}{Gold}{4. Check and replay}{Accuracy and invariant checks\\Adaptive schedule discovery\\Differentiable frozen replay}
 \fourflow
-\bottomnote{PDE/nonlocal fields use declared discretizations and operators. NumPy/JAX/CPU Torch qualification and replay derivatives are method-specific; GPU paths need separate evidence.}
+\bottomnote{PDE/nonlocal fields use declared discretizations. NumPy/JAX/CPU Torch qualification is method-specific. Replay gradients are conditional on the recorded mesh; GPU paths need separate evidence.}
 \end{tikzpicture}
 \end{document}

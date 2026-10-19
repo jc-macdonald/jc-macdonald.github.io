@@ -27,7 +27,7 @@
     "name": "op_engine_slide",
     "source": "tikz/op_engine_slide.tex",
     "title": "OP Engine numerical workflow",
-    "description": "Prepare fields, states, rates and transport/mixing/reaction operators; solve discretized PDE and nonlocal models or stochastic reactions; record observations and counts; check accuracy and replay. Independent SSA clocks use NumPy. Backend qualification and replay derivatives are method-specific."
+    "description": "Prepare fields, states, rates and transport/mixing/reaction operators; solve discretized PDE and nonlocal models or stochastic reactions; record observations and counts; check accuracy and replay. Independent SSA clocks use NumPy. Backend qualification is method-specific; replay derivatives are conditional on the recorded mesh."
   },
   {
     "name": "op_infer_slide",
