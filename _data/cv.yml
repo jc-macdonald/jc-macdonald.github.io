@@ -239,9 +239,16 @@ cv:
       - name: pp-eigentest
         start_date: 2026
         end_date: present
-        summary: "Private pre-release work on posterior-predictive signal-rank selection. The current analysis centers a sequential fitted-model selector; earlier consensus methods are supplementary negative results. NumPy is the reference path, JAX is opt-in, C++ is used only when measured faster, and sparse inputs are guarded before dense spectral computation."
+        summary: "Ongoing research on posterior-predictive signal-rank selection for incomplete datasets, building on a 2024 preprint. Calibration and evaluation studies are in progress; methods paper in preparation and companion software private and pre-release."
         highlights:
           - "[Project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
+
+      - name: "Inference and Calibration Tools"
+        start_date: 2026
+        end_date: present
+        summary: "Working research software connects Bayesian fitting through established inference libraries, simulation-based calibration and replicated study-design checks. Private and pre-release; broader interfaces and application-specific validation remain in development."
+        highlights:
+          - "[Project summary](https://jcmacdonald.dev/projects/inference_calibration/)"
 
       - name: "Trade Study (Python)"
         start_date: 2026

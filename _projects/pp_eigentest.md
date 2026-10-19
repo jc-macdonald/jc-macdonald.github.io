@@ -1,21 +1,30 @@
 ---
 layout: page
 title: pp-eigentest
-description: Private pre-release work on posterior-predictive signal-rank selection, centered on a sequential fitted-model selector with explicit calibration and stopping diagnostics.
+description: Ongoing research on posterior-predictive signal-rank selection for incomplete datasets, building on a 2024 preprint.
 img: assets/img/research/pp_eigentest_schematic.svg
-img_alt: Private pre-release work fits observed entries with an explicit mask, checks predictive reliability and diagnostics, and selects rank using fitted-model spectra. NumPy is the reference path and earlier consensus methods are supplementary analyses.
+img_alt: Ongoing signal-rank research connects incomplete data, Bayesian latent-variable modeling, and assessment of signal and uncertainty. The methods and software remain in development.
 importance: 3
 category: "lead developer · in development"
 ---
 
-**pp-eigentest** is a posterior predictive eigenvalue testing framework for determining signal rank in high-dimensional datasets. The current manuscript and analysis plan centers a **sequential fitted-model rank selector** with explicit calibration and stopping diagnostics.
+How many dimensions of a dataset reflect signal rather than noise, especially
+when entries are missing? **pp-eigentest** investigates posterior predictive
+eigenvalue testing for this question. It builds on Bayesian latent-variable
+models and examines how rank decisions depend on data quality, uncertainty
+and model assessment.
 
-Earlier ensemble/consensus approaches are retained as supplementary negative results rather than presented as the primary method. The strongest external comparator is still being finalized, so the manuscript is not yet ready for submission.
+**Status:** ongoing methods research and private pre-release software; a methods
+paper is in preparation. The work extends the approach described in the
+[2024 preprint](https://arxiv.org/abs/2409.12129), which is the public reference
+for the earlier methodology. It is distinct from the released
+[VBPCApy](/projects/vbpca_py/) package.
 
-NumPy is the reference implementation. JAX is opt-in, and the C++ path is selected only when runtime measurement shows a benefit. Sparse inputs are accepted behind memory guards but are materialized for dense spectral computation; they are not a separate sparse computational backend.
+The aim is to support interpretable rank decisions with an account of their
+uncertainty and assumptions. Current research includes calibration and
+evaluation across incomplete-data settings. Public artifacts will be linked as
+the work is released.
 
-In development as a private pre-release companion to [arXiv:2409.12129](https://arxiv.org/abs/2409.12129). A public source release is planned with the methods paper.
-
-{% include figure.liquid path="assets/img/research/pp_eigentest_schematic.svg" class="img-fluid rounded" zoomable=true alt="Private pre-release work fits observed entries with an explicit mask, checks predictive reliability and diagnostics, and selects rank using fitted-model spectra. NumPy is the reference path and earlier consensus methods are supplementary analyses." caption="pp-eigentest fit-check-select workflow." %}
+{% include figure.liquid path="assets/img/research/pp_eigentest_schematic.svg" class="img-fluid rounded" zoomable=true alt="Ongoing signal-rank research connects incomplete data, Bayesian latent-variable modeling, and assessment of signal and uncertainty. The methods and software remain in development." caption="Research scope: signal-rank assessment for incomplete data." %}
 
 [Vector PDF](/assets/img/research/pp_eigentest_schematic.pdf) · [All figure sources and downloads](/figures/)
