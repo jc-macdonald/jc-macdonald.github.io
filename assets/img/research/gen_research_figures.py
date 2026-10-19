@@ -137,7 +137,7 @@ def structural_fidelity():
     fig.text(
         0.02,
         0.02,
-        "Constructed trajectories; no predictive scores or intervals are computed.\nPredictive scoring and structural checks answer separate questions.",
+        "Constructed trajectories; no predictive scores or intervals are computed.\nConstraint checks describe the stated bound over the plotted horizon.",
         fontsize=10,
         color=SLATE,
         va="bottom",

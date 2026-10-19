@@ -75,8 +75,10 @@ claims aligned with the linked package capability guides and page text:
   utilities `[0.28, 0.45, 0.43, 0.72, 0.80]`. These are illustrative inputs.
   Design C is dominated; D maximizes utility under the declared cost limit of 4.
 - `structural_fidelity_comparison` constructs two sigmoid trajectories against
-  an upper prevalence bound. It computes no predictive scores or uncertainty
-  intervals. The figure labels only the properties actually shown.
+  an upper prevalence bound over the plotted horizon. A curve remaining below
+  the bound on this interval does not establish how it was constructed or how
+  it behaves elsewhere. The figure computes no predictive scores or
+  uncertainty intervals.
 
 ## Choice of tools across the software repositories
 

@@ -86,7 +86,7 @@ ninja.data = [{
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",
           title: 'pp-eigentest',
-          description: "Research on how many underlying patterns an incomplete dataset can support. Private alpha research software.",
+          description: "Research on distinguishing underlying patterns from noise in incomplete data. Private alpha research software.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pp_eigentest/";
             },},{id: "projects-trade-study",
