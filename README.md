@@ -82,8 +82,8 @@ investigation. Authentication or robot-blocked exceptions must name a narrow
 URL pattern and explain why it cannot be checked; do not accept all 403/429
 responses or exclude software hosts. Two exact publisher-blocked DOIs are checked
 against Crossref registration instead of their landing pages; individual
-ResearchGate, Scholar and LinkedIn profiles and one bot-blocked CDC landing
-page require manual review. The test suite demonstrates failure on a controlled
+ResearchGate, Scholar and LinkedIn profiles, three JHU landing pages and one
+CDC landing page require manual review because they block automated clients. The test suite demonstrates failure on a controlled
 README 404 followed by success on the corrected target.
 
 To reproduce after installing the site's Ruby/Python dependencies and Lychee
