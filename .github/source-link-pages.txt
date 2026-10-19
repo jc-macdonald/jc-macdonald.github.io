@@ -1,0 +1,13 @@
+# Maintained first-party pages, relative to the Jekyll output directory.
+# Add new maintained landing pages here. Every pattern must match.
+index.html
+cv/index.html
+projects/index.html
+projects/*/index.html
+repositories/index.html
+publications/index.html
+operational-modeling/index.html
+figures/index.html
+teaching/index.html
+talks/index.html
+extracurricular/index.html

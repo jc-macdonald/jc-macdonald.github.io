@@ -1,0 +1,28 @@
+# External anchors from maintained pages only; local paths have a separate check.
+max_concurrency = 4
+host_concurrency = 2
+host_request_interval = "500ms"
+max_retries = 2
+retry_wait_time = 2
+timeout = 20
+user_agent = "Mozilla/5.0 (compatible; research-site-link-checker)"
+# These publishers reject automated landing-page requests (403). Check each
+# exact DOI's registration instead; new/misspelled DOIs still fail normally.
+remap = [
+  '^https://doi\.org/(10\.1086/730703|10\.1098/rsos\.210227)$ https://api.crossref.org/works/$1',
+]
+# Exact profile/landing pages require authentication or block automated clients.
+# Review manually when changing these targets; never exempt entire hosts.
+exclude = [
+  # Verified JHU homepage, IVAC and faculty pages reject GitHub-hosted runners
+  # with 403 (2026-10-19); canonical links checked against JHU's own pages.
+  '^https://publichealth\.jhu\.edu/$',
+  '^https://publichealth\.jhu\.edu/ivac/?$',
+  '^https://publichealth\.jhu\.edu/faculty/3998/shaun-truelove/?$',
+  # CDC serves this verified canonical landing page but rejects Lychee (403).
+  # Manually checked against CDC's live page on 2026-10-19.
+  '^https://www\.cdc\.gov/forecast-outbreak-analytics/index\.html$',
+  '^https://www\.researchgate\.net/profile/Joshua_Macdonald4/?$',
+  '^https://scholar\.google\.com/citations\?user=VxTPRq8AAAAJ$',
+  '^https://www\.linkedin\.com/in/j-caleb-macdonald-674840a2/?$',
+]

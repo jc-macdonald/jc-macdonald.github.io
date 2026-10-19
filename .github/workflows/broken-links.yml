@@ -1,4 +1,4 @@
-name: Check for broken links
+name: Check source and external links
 
 on:
   push:
@@ -6,6 +6,11 @@ on:
       - master
       - main
     paths:
+      - ".github/scripts/**"
+      - ".github/tests/**"
+      - ".github/lychee.toml"
+      - ".github/source-link-pages.txt"
+      - "Gemfile*"
       - "assets/**"
       - "**.html"
       - "**.js"
@@ -24,6 +29,11 @@ on:
       - master
       - main
     paths:
+      - ".github/scripts/**"
+      - ".github/tests/**"
+      - ".github/lychee.toml"
+      - ".github/source-link-pages.txt"
+      - "Gemfile*"
       - "assets/**"
       - "**.html"
       - "**.js"
@@ -38,17 +48,39 @@ on:
       - "!.github/workflows/prettier.yml"
       - "!lighthouse_results/**"
 
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   link-checker:
     runs-on: ubuntu-latest
-    # only run on the main repo
-    if: github.repository == 'alshedivat/al-folio'
     steps:
       - uses: actions/checkout@v4
-
-      - name: Link Checker 🔗
-        uses: lycheeverse/lychee-action@v2.0.2
         with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Resolve source Markdown and Liquid
+        env:
+          JEKYLL_ENV: production
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip install nbconvert
+          bundle exec jekyll build
+          python .github/scripts/check_source_links.py _site "$RUNNER_TEMP/source-links.txt"
+      - name: Check maintained external anchors
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          lycheeVersion: v0.24.2
           fail: true
-          # removed md files that include liquid tags
-          args: --user-agent 'curl/7.54' --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --exclude-path _books/the_godfather.md  --exclude-path .github/instructions/bibtex-bibliography.instructions.md --exclude-path .github/instructions/yaml-configuration.instructions.md --exclude-path .github/instructions/markdown-content.instructions.md --exclude-path .github/instructions/liquid-templates.instructions.md --exclude-path AGENTS.md --exclude-path SEO.md --verbose --no-progress './**/*.md' './**/*.html'
+          failIfEmpty: true
+          args: --config .github/lychee.toml --no-progress '${{ runner.temp }}/source-links.txt'
+      - name: Test broken-link and corrected-link controls
+        run: python -m unittest discover -s .github/tests -p 'test_source_links.py' -v
