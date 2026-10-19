@@ -324,7 +324,7 @@ Your CV can be created using one of two formats. Choose the format that works be
 
 ### RenderCV Format (Recommended)
 
-[`_data/cv.yml`](_data/cv.yml) uses the [RenderCV](https://rendercv.com/) YAML format, which is human-readable and designed specifically for generating professional resumes. This format also enables optional automatic PDF generation via GitHub Actions.
+[`_data/cv.yml`](_data/cv.yml) uses the [RenderCV](https://rendercv.com/) YAML format, which is human-readable and designed specifically for generating professional resumes. This site validates and generates its PDF before every deployment and on pull requests.
 
 **If you choose this format:**
 
@@ -359,25 +359,30 @@ Change `rendercv` to `jsonresume` to display the JSONResume format instead.
 
 ### Automatic PDF Generation (RenderCV only)
 
-If you use the RenderCV format, a GitHub Actions workflow can automatically generate a PDF version of your CV whenever you push changes to [`_data/cv.yml`](_data/cv.yml). The PDF is saved to `assets/rendercv/rendercv_output/`.
+The deploy workflow calls [the read-only RenderCV workflow](.github/workflows/render-cv.yml)
+first. It renders `_data/cv.yml` using the checked-in design, locale and settings
+and `requirements-rendercv.txt`. The site build waits for a verified PDF artifact
+from that same source revision. Invalid source, rendering failures and stale or
+mismatched artifacts block publication. No generated-source commit is needed.
 
-**To link the auto-generated PDF to your CV page:**
+Pull requests run the same rendering command and upload a `cv-<source SHA>`
+artifact containing both PDF copies and provenance for review. They do not publish
+or commit generated files. See [README.md](README.md) for local commands and the
+source-only-change integration check.
 
-Set the `cv_pdf` variable in the frontmatter of [`_pages/cv.md`](_pages/cv.md) to point to the generated PDF:
+The CV page's download button uses the stable path:
 
 ```yaml
----
-layout: cv
-cv_pdf: /assets/rendercv/rendercv_output/CV.pdf
-cv_format: rendercv
----
+cv_pdf: /assets/pdf/cv.pdf
 ```
 
-This will add a download button on your CV page that links to the PDF. (The exact filename depends on your RenderCV settings—check the output directory after the first workflow run to see the generated PDF name.)
-
-**To disable automatic PDF generation:**
-
-Delete or comment out the [`.github/workflows/render-cv.yml`](.github/workflows/render-cv.yml) workflow file.
+`assets/pdf/cv.pdf` and the freshly rendered PDF under
+`assets/rendercv/rendercv_output/` contain identical bytes. Deployed
+`assets/rendercv/provenance.json` records the source revision, input hashes,
+renderer version and PDF hash. Tracked PDFs are reference snapshots; production
+always overlays the current run's freshly verified artifacts before building.
+Changing PDF-generation policy requires updating the deploy dependency and
+verification together; deleting the reusable workflow alone breaks deployment.
 
 ## Modifying the user and repository information
 

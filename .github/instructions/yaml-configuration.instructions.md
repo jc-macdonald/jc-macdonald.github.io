@@ -104,7 +104,14 @@ CV content in **RenderCV format** (recommended approach for generating professio
 
 **Usage:** Rendered by `cv.liquid` layout on CV page; displayed in `about.liquid` on home page.
 
-**Automatic PDF Generation:** When using RenderCV format, a GitHub Actions workflow (`render-cv.yml`) automatically generates a PDF version whenever you push changes to `_data/cv.yml`. The generated PDF is saved to `assets/rendercv/rendercv_output/` and can be linked via `cv_pdf` setting in `_config.yml`.
+**Automatic PDF Generation:** `deploy.yml` calls the read-only `render-cv.yml`
+workflow before building the site. Both PRs and production use the pinned renderer
+and the checked-in settings. The caller downloads that run's `cv-<source SHA>`
+artifact, verifies source/input/PDF hashes, and overlays the fresh PDFs before
+Jekyll builds. Rendering failures block deployment. No generated-source commit is
+made. Review PDF previews in the PR workflow artifacts; see [README.md](../../README.md)
+for the local command and publication checks. The site's RenderCV output and
+`assets/pdf/cv.pdf` contain identical bytes.
 
 **Alternative Format (JSONResume):** For an alternative format, see `assets/json/resume.json` which uses the [JSONResume](https://jsonresume.org/) standard. Switch between formats using the `cv_format` frontmatter variable in `_pages/cv.md` (options: `rendercv` or `jsonresume`).
 
