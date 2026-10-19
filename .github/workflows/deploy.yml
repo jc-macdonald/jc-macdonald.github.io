@@ -17,6 +17,9 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "requirements*.txt"
+      - ".github/scripts/**"
+      - ".github/tests/**"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -46,6 +49,9 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "requirements*.txt"
+      - ".github/scripts/**"
+      - ".github/tests/**"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -61,16 +67,27 @@ on:
       - "!README.md"
   workflow_dispatch:
 
+concurrency:
+  group: site-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
-  contents: write
+  contents: read
 
 jobs:
+  render-cv:
+    uses: ./.github/workflows/render-cv.yml
   deploy:
+    needs: render-cv
+    permissions:
+      contents: write
     # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
@@ -81,6 +98,16 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
+      - name: Download matching CV artifact from this workflow run
+        uses: actions/download-artifact@v4
+        with:
+          name: cv-${{ github.sha }}
+          path: ${{ runner.temp }}/cv-artifact
+      - name: Verify CV source and PDF identity before packaging
+        run: |
+          python .github/scripts/render_cv.py verify --output-dir "$RUNNER_TEMP/cv-artifact"
+          cp -a "$RUNNER_TEMP/cv-artifact/assets/." assets/
+          python .github/scripts/render_cv.py verify --output-dir .
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:

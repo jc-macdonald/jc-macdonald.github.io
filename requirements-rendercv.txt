@@ -1,0 +1,2 @@
+# Keep production and pull-request previews on the same renderer.
+rendercv[full]==2.8

@@ -28,8 +28,40 @@ links the individual sources and exports.
 For editing and preview instructions, see [AGENTS.md](AGENTS.md),
 [INSTALL.md](INSTALL.md) and [CUSTOMIZE.md](CUSTOMIZE.md). Pull requests run the
 site build and formatting checks; merging publishes the generated site to
-`gh-pages`. Edit source content, rather than generated pages. CV source changes
-also trigger the existing PDF-rendering workflow.
+`gh-pages`. Edit source content, rather than generated pages. The deploy workflow first calls the read-only RenderCV workflow, which validates
+and renders `_data/cv.yml` with the checked-in design, locale and settings and the
+version pinned in `requirements-rendercv.txt`. The site build waits for those PDFs
+and verifies their source revision, input hashes and identical content before
+packaging. A render or provenance failure blocks publication; branch concurrency
+cancels superseded builds. No generated-source commit or second push is needed.
+
+PRs use this same production path and command, including changes to CV source,
+design/locale/settings, renderer requirements or helper scripts. Download the
+`cv-<source SHA>` artifact from **Deploy site → Validate and preview CV** to review
+both the RenderCV PDF and `assets/pdf/cv.pdf`. Artifacts expire after 14 days. PRs
+validate and upload previews without committing or publishing. The live
+[`assets/rendercv/provenance.json`](https://jcmacdonald.dev/assets/rendercv/provenance.json)
+records the deployed CV's revision, input hashes, renderer version and PDF hash.
+Tracked PDFs are reference snapshots; publication always overlays fresh verified
+artifacts from that same workflow run.
+
+To reproduce the renderer locally in an activated Python 3.12 environment:
+
+```bash
+pip install -r requirements-rendercv.txt
+python .github/scripts/render_cv.py render --output-dir /tmp/cv-preview
+python .github/scripts/render_cv.py verify --output-dir /tmp/cv-preview
+# Install poppler-utils for pdftotext, used by the regression checks.
+python -m unittest discover -s .github/tests -p 'test_render_cv.py' -v
+# With the site's Ruby/Jekyll dependencies available, also test a source-only
+# name change reaching both generated HTML and the downloadable PDF:
+CV_SITE_INTEGRATION=1 python -m unittest discover -s .github/tests -p 'test_render_cv.py' -v
+```
+
+Use a new or empty output directory for each render. Rendering leaves tracked
+source snapshots unchanged. The tests include a recognizable synthetic name in
+a temporary copy, invalid schema rejection and mismatched revision/input/PDF
+rejection; synthetic content is never written to the source checkout.
 
 The retained al-folio reference below documents the theme and its upstream
 community. Theme attribution and licensing are preserved in [LICENSE](LICENSE).
