@@ -1,5 +1,7 @@
 # Research figures
 
+[Computed package demonstrations](computed/README.md) add spatial fields, stochastic ensembles, replicated comparisons and incomplete-data reconstruction, with full numerical inputs and a generated table. They have a separate pinned builder and numerical verification workflow.
+
 The website uses SVG exports. Ten architecture/method schematics have editable
 TikZ sources in [`tikz/`](tikz/); two numerical illustrations use
 [`gen_research_figures.py`](gen_research_figures.py). Every figure also has a
