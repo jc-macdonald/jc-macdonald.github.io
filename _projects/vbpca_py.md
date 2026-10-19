@@ -3,7 +3,7 @@ layout: page
 title: vbpca-py
 description: Bayesian dimensionality reduction for incomplete data, with posterior uncertainty and model-assessment tools.
 img: assets/img/research/vbpca_py_schematic.svg
-img_alt: Observed entries and a mask feed variational fitting of loadings, scores, bias, noise and ARD. The workflow includes convergence checks, component selection, held-out assessment and approximate posterior covariances.
+img_alt: An illustrative masked data matrix feeds a variational low-rank model for latent scores, loadings, bias, noise and ARD priors. Model outputs branch to reconstruction/prediction and assessment. Covariances are approximate; coverage and rank recovery need checks for the intended data.
 importance: 1
 category: "lead developer · released"
 github: https://github.com/yoavram-lab/VBPCApy
@@ -26,6 +26,6 @@ Applied to genetic, cultural, and ecological datasets. Available on [PyPI](https
 
 The 2024 preprint {% cite macdonald2024vbpca %} introduced an earlier version of the posterior predictive rank-testing methodology built on this codebase. Follow-up [pp-eigentest](/projects/pp_eigentest/) research investigates signal-rank selection and its calibration for incomplete data; its methods and software remain in development.
 
-{% include figure.liquid path="assets/img/research/vbpca_py_schematic.svg" class="img-fluid rounded" zoomable=true alt="Observed entries and a mask feed variational fitting of loadings, scores, bias, noise and ARD. The workflow includes convergence checks, component selection, held-out assessment and approximate posterior covariances." caption="VBPCApy missing-data workflow." %}
+{% include figure.liquid path="assets/img/research/vbpca_py_schematic.svg" class="img-fluid rounded" zoomable=true alt="An illustrative masked data matrix feeds a variational low-rank model for latent scores, loadings, bias, noise and ARD priors. Model outputs branch to reconstruction/prediction and assessment. Covariances are approximate; coverage and rank recovery need checks for the intended data." caption="VBPCApy observed-data model." %}
 
 [Vector PDF](/assets/img/research/vbpca_py_schematic.pdf) · [All figure sources and downloads](/figures/)

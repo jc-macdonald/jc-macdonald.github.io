@@ -21,13 +21,13 @@
     "name": "op_system_slide",
     "source": "tikz/op_system_slide.tex",
     "title": "OP System compilation and numerical interfaces",
-    "description": "OP System compiles PDEs, nonlocal field dynamics, compartmental models and reactions into shaped evaluators and numerical metadata. Numerical consumers choose discretization and time or event integration. Cross-axis constraints remain metadata."
+    "description": "A model specification feeds a compiler, which exports evaluators, operator/reaction metadata, and observation/forcing interfaces. Model classes include PDEs, nonlocal dynamics, compartments and reactions. Numerical consumers choose discretization and integration; cross-axis constraints remain metadata."
   },
   {
     "name": "op_engine_slide",
     "source": "tikz/op_engine_slide.tex",
-    "title": "OP Engine numerical workflow",
-    "description": "OP Engine prepares field and reaction models, solves discretized PDEs, nonlocal dynamics and stochastic reactions, and records observations and firing counts. Independent SSA clocks use NumPy. Tested operations depend on the method. Replay derivatives are conditional on the recorded mesh."
+    "title": "OP Engine method families",
+    "description": "A capability table groups deterministic solvers, stochastic solvers and schedule replay. It lists PDE/field, nonlocal, ODE and reaction models, observations and optional firing counts. Independent SSA clocks use NumPy. Replay derivatives are conditional on the recorded mesh; tested backends vary by method."
   },
   {
     "name": "op_infer_slide",
@@ -38,14 +38,14 @@
   {
     "name": "flepimop2_slide",
     "source": "tikz/flepimop2_slide.tex",
-    "title": "FlepiMoP2 campaign orchestration",
-    "description": "Validated configuration selects System, Engine, parameter, persistence, process and job providers. Campaign execution produces persisted results and metadata through replaceable providers."
+    "title": "FlepiMoP2 provider relationships",
+    "description": "Validated configuration selects campaign targets connected to System/Parameter, Engine, Backend, Process and Job providers. Connections indicate interface relationships, not execution order. Cores can also run independently."
   },
   {
     "name": "trade_study_slide",
     "source": "tikz/trade_study_slide.tex",
     "title": "Replicated design and evaluation with trade-study",
-    "description": "Declare factors, objectives and constraints; run replicated or paired simulations; compare Pareto fronts and preferences; retain provenance-checked results. Calibration and transfer require separate application evidence."
+    "description": "Candidate designs feed replicated simulator/scorer evaluations and trial results. Results branch into comparisons and optional analyses, with a dashed return for adaptive search or phase refinement. Calibration and transfer require separate application evidence."
   },
   {
     "name": "pp_eigentest_schematic",
@@ -56,8 +56,8 @@
   {
     "name": "vbpca_py_schematic",
     "source": "tikz/vbpca_py_schematic.tex",
-    "title": "VBPCApy missing-data workflow",
-    "description": "Observed entries and a mask feed variational fitting of loadings, scores, bias, noise and ARD. The workflow includes convergence checks, component selection, held-out assessment and approximate posterior covariances."
+    "title": "VBPCApy observed-data model",
+    "description": "An illustrative masked data matrix feeds a variational low-rank model for latent scores, loadings, bias, noise and ARD priors. Model outputs branch to reconstruction/prediction and assessment. Covariances are approximate; coverage and rank recovery need checks for the intended data."
   },
   {
     "name": "optimal_design",

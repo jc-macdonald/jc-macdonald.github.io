@@ -3,7 +3,7 @@ layout: page
 title: OP Engine
 description: Simulate PDE/field, nonlocal and reaction dynamics, with observations, numerical checks and replay.
 img: assets/img/research/op_engine_slide.svg
-img_alt: OP Engine prepares field and reaction models, solves discretized PDEs, nonlocal dynamics and stochastic reactions, and records observations and firing counts. Independent SSA clocks use NumPy. Tested operations depend on the method. Replay derivatives are conditional on the recorded mesh.
+img_alt: A capability table groups deterministic solvers, stochastic solvers and schedule replay. It lists PDE/field, nonlocal, ODE and reaction models, observations and optional firing counts. Independent SSA clocks use NumPy. Replay derivatives are conditional on the recorded mesh; tested backends vary by method.
 importance: 2
 category: "lead developer · released"
 github: https://github.com/ACCIDDA/op_engine
@@ -28,6 +28,6 @@ Replay derivatives are conditional on the recorded mesh. Step-size decisions are
 
 [OP System](/projects/op_system/) supplies compiled equations, reactions and observation metadata. [trade-study](/projects/trade_study/) can compare solver configurations and simulation designs.
 
-{% include figure.liquid path="assets/img/research/op_engine_slide.svg" class="img-fluid rounded" zoomable=true alt="OP Engine prepares field and reaction models, solves discretized PDEs, nonlocal dynamics and stochastic reactions, and records observations and firing counts. Independent SSA clocks use NumPy. Tested operations depend on the method. Replay derivatives are conditional on the recorded mesh." caption="OP Engine numerical workflow." %}
+{% include figure.liquid path="assets/img/research/op_engine_slide.svg" class="img-fluid rounded" zoomable=true alt="A capability table groups deterministic solvers, stochastic solvers and schedule replay. It lists PDE/field, nonlocal, ODE and reaction models, observations and optional firing counts. Independent SSA clocks use NumPy. Replay derivatives are conditional on the recorded mesh; tested backends vary by method." caption="OP Engine method families." %}
 
 [Vector PDF](/assets/img/research/op_engine_slide.pdf) · [All figure sources and downloads](/figures/)

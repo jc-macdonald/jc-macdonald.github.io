@@ -1,12 +1,30 @@
 \input{figure-style.tex}
 \begin{document}
 \begin{tikzpicture}
-\heading{VBPCApy}{Variational Bayesian PCA for incomplete data.}
-\panel{a}{0}{0}{Blue}{1. Observe and mask}{Input matrix \(X\) and mask \(\Omega\)\\Use observed entries directly\\Missing-aware preprocessing}
-\panel{b}{6.7}{0}{Teal}{2. Fit variationally}{Loadings, scores and bias\\Noise variance and ARD\\Reuse observation patterns}
-\panel{c}{6.7}{-3.8}{Green}{3. Check and select}{Convergence diagnostics\\Component-selection sweeps\\Held-out predictive assessment}
-\panel{d}{0}{-3.8}{Gold}{4. Predict}{Variational covariances\\Predictive noise variance\\Reconstruction / transform}
-\fourflow
-\bottomnote{The package exposes a scikit-learn-compatible API and optional C++ acceleration. Coverage and rank recovery require checks for the intended data regime and observation assumptions.}
+\heading{VBPCApy}{Observed entries inform a variational low-rank model.}
+\node[anchor=north west,text=Blue,font=\bfseries] at (0,0) {Incomplete data};
+\foreach \row in {0,...,3} {
+  \foreach \col in {0,...,4} {
+    \pgfmathtruncatemacro{\missing}{mod(\row*3+\col,4)}
+    \ifnum\missing=0
+      \filldraw[fill=white,draw=Muted!55,dashed] (.1+\col*.5,-.65-\row*.5) rectangle ++(.4,-.4);
+    \else
+      \filldraw[fill=Blue!35,draw=Blue!65] (.1+\col*.5,-.65-\row*.5) rectangle ++(.4,-.4);
+    \fi
+  }
+}
+\node[note,text width=3.4cm] at (0,-2.9) {Filled = observed\\Dashed = missing};
+\node[panel=Teal,minimum width=8cm,text width=7.25cm,minimum height=2.6cm] (model) at (4.4,-.35)
+  {{\color{Teal}\bfseries\large Variational low-rank model}\\[7pt]Latent scores and loadings\\Bias, observation noise and ARD priors\\Approximate posterior covariances};
+\draw[flow] (2.8,-1.6) -- (model.west);
+\node[panel=Green,minimum width=5.7cm,text width=4.95cm,minimum height=2.6cm] (prediction) at (0,-4.5)
+  {{\color{Green}\bfseries\large Predictions}\\[6pt]Reconstruction / transform\\Predictive means and variances};
+\node[panel=Gold,minimum width=5.7cm,text width=4.95cm,minimum height=2.6cm] (assessment) at (6.7,-4.5)
+  {{\color{Gold}\bfseries\large Model assessment}\\[6pt]Convergence diagnostics\\Rank / held-out checks};
+\coordinate (outputs) at ($(model.south)+(0,-.65)$);
+\draw[draw=Muted,line width=1pt] (model.south) -- (outputs);
+\draw[flow] (outputs) -| (prediction.north);
+\draw[flow] (outputs) -| (assessment.north);
+\node[note] at ($(prediction.south west)+(0,-.6)$) {Fitting uses observed entries. Uncertainty is a variational approximation. Coverage and rank recovery need checks for the intended data and observation assumptions.};
 \end{tikzpicture}
 \end{document}

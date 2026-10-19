@@ -3,7 +3,7 @@ layout: page
 title: FlepiMoP2
 description: Run configuration-defined simulation campaigns with replaceable modeling, numerical and persistence providers.
 img: assets/img/research/flepimop2_slide.svg
-img_alt: Validated configuration selects System, Engine, parameter, persistence, process and job providers. Campaign execution produces persisted results and metadata through replaceable providers.
+img_alt: Validated configuration selects campaign targets connected to System/Parameter, Engine, Backend, Process and Job providers. Connections indicate interface relationships, not execution order. Cores can also run independently.
 importance: 1
 category: collaborative infrastructure
 github: https://github.com/ACCIDDA/flepimop2
@@ -19,6 +19,6 @@ configuration and provider interfaces. The mathematical and numerical cores
 remain usable independently; provider availability and backend qualification
 are separate from the orchestration API.
 
-{% include figure.liquid path="assets/img/research/flepimop2_slide.svg" class="img-fluid rounded" zoomable=true alt="Validated configuration selects System, Engine, parameter, persistence, process and job providers. Campaign execution produces persisted results and metadata through replaceable providers." caption="FlepiMoP2 campaign orchestration." %}
+{% include figure.liquid path="assets/img/research/flepimop2_slide.svg" class="img-fluid rounded" zoomable=true alt="Validated configuration selects campaign targets connected to System/Parameter, Engine, Backend, Process and Job providers. Connections indicate interface relationships, not execution order. Cores can also run independently." caption="FlepiMoP2 provider relationships." %}
 
 [Vector PDF](/assets/img/research/flepimop2_slide.pdf) · [All figure sources and downloads](/figures/)
