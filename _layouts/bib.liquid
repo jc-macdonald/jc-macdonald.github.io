@@ -46,7 +46,11 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div
+    id="{{ entry.key }}"
+    data-publication-status="{{ entry.status }}"
+    class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}"
+  >
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->
@@ -84,7 +88,9 @@
           {%- endif %}
           {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
         {% endif %}
-        {%- if author_is_self -%}
+        {%- if author.last == 'others' -%}
+          et al.
+        {%- elsif author_is_self -%}
           <em>
             {{- author.first }}
             {{ author_last_html -}}
@@ -181,7 +187,12 @@
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
     <div class="periodical">
-      {{ periodical | strip }}
+      {{ periodical | strip -}}
+      {%- if entry.volume -%}
+        , <strong>{{ entry.volume }}</strong>
+        {%- if entry.number %}({{ entry.number }}){% endif -%}
+      {%- endif -%}
+      {%- if entry.eid %}, article {{ entry.eid }}{% elsif entry.pages %}, {{ entry.pages | replace: '--', '–' }}{% endif %}
     </div>
     <div class="periodical">
       {{ entry.note | strip }}
@@ -393,3 +404,5 @@
     {% endif %}
   </div>
 </div>
+
+{% include publication_metadata.liquid %}

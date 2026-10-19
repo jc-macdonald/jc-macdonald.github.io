@@ -2,10 +2,10 @@
 layout: page
 title: OP Engine
 description: Simulate changing systems and random events, from spatial dynamics to population counts.
-img: assets/img/research/computed/stochastic_ensemble.svg
-img_alt: 512 independent exact stochastic transfer simulations, their empirical mean and pointwise 5th–95th percentile range, and the final distribution alongside analytic mean and binomial references. Synthetic demonstration.
+img: assets/img/research/previews/stochastic_ensemble.svg
+img_alt: Independent stochastic transfer paths with a pointwise 5th–95th percentile band and the analytic mean. All inputs are synthetic.
 importance: 2
-category: "lead developer · released"
+category: "Released software"
 github: https://github.com/ACCIDDA/op_engine
 ---
 

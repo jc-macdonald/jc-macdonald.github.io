@@ -1,0 +1,38 @@
+- slug: op_system
+  name: OP System
+  purpose: Describe spatial, nonlocal, compartmental and reaction models for simulation.
+  availability: Public alpha
+  docs: https://accidda.github.io/op_system/latest/guides/capabilities/
+  source: https://github.com/ACCIDDA/op_system
+- slug: op_engine
+  name: OP Engine
+  purpose: Simulate deterministic dynamics and random events, with numerical checks and observation summaries.
+  availability: Public alpha
+  docs: https://accidda.github.io/op_engine/latest/guides/capabilities/
+  source: https://github.com/ACCIDDA/op_engine
+- slug: trade_study
+  name: trade-study
+  purpose: Compare experiments and model choices through repeated simulations and stated objectives.
+  availability: Public alpha
+  docs: https://jcm-sci.github.io/trade-study/guide/capabilities/
+  source: https://github.com/jcm-sci/trade-study
+- slug: vbpca_py
+  name: vbpca-py
+  purpose: Find shared patterns in incomplete data using a Bayesian approximation.
+  availability: Public beta
+  docs: https://yoavram-lab.github.io/VBPCApy/
+  source: https://github.com/yoavram-lab/VBPCApy
+- slug: inference_calibration
+  name: op_infer
+  purpose: Estimate unknown model quantities and assess fitting procedures with simulated data.
+  availability: Private pre-alpha, unreleased
+- slug: pp_eigentest
+  name: pp-eigentest
+  purpose: Investigate how many patterns an incomplete dataset can support.
+  availability: Private alpha, unreleased
+- slug: flepimop2
+  name: FlepiMoP2
+  purpose: Coordinate simulation campaigns and connect models, computation and storage.
+  availability: Public alpha
+  docs: https://accidda.github.io/flepimop2/latest/
+  source: https://github.com/ACCIDDA/flepimop2

@@ -1,0 +1,36 @@
+<div class="table-responsive" tabindex="0" role="region" aria-label="Software purposes and availability">
+  <table class="table software-table">
+    <caption>
+      Package roles, development stages and links
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Software</th>
+        <th scope="col">Purpose</th>
+        <th scope="col">Availability</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tool in site.data.software %}
+        <tr>
+          <th scope="row">
+            <a href="{{ '/projects/' | append: tool.slug | append: '/' | relative_url }}">{{ tool.name }}</a>
+          </th>
+          <td>
+            {{ tool.purpose -}}
+            {%- if tool.docs %}
+              <a href="{{ tool.docs }}">Documentation</a>.
+            {%- endif %}
+          </td>
+          <td>
+            {{ tool.availability -}}
+            {%- if tool.source -%}
+              <br>
+              <a href="{{ tool.source }}">Source</a>
+            {%- endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

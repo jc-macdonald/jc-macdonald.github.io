@@ -1,0 +1,69 @@
+{% assign max_error = 0.0 %}
+{% assign max_cost = 0.0 %}
+{% for design in site.data.computed_designs %}
+  {% assign error = design.mean_squared_error | plus: 0.0 %}
+  {% assign cost = design.assumed_cost | plus: 0.0 %}
+  {% if error > max_error %}{% assign max_error = error %}{% endif %}
+  {% if cost > max_cost %}{% assign max_cost = cost %}{% endif %}
+{% endfor %}
+<div class="design-comparison" data-design-comparison>
+  <div class="design-controls" hidden>
+    <label><input type="checkbox" data-front-only> Show only nondominated designs</label>
+    <label for="design-order">Order by</label>
+    <select id="design-order" data-design-order>
+      <option value="samples">Sample count</option>
+      <option value="cost">Assumed cost</option>
+      <option value="error">Mean squared error</option>
+    </select>
+    <span data-design-count aria-live="polite"></span>
+  </div>
+  <p class="table-scroll-hint">On smaller screens, scroll the table to see cost and nondominance.</p>
+  <div class="table-responsive" tabindex="0" role="region" aria-label="Replicated design comparison">
+    <table class="table design-table">
+      <caption>
+        Ten synthetic designs, 512 paired replicates each. Lower error and cost are preferred. Bars use a separate linear scale in each column.
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Samples</th>
+          <th scope="col">Measurement SD</th>
+          <th scope="col">Mean squared error</th>
+          <th scope="col">Assumed cost</th>
+          <th scope="col">Nondominated</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for design in site.data.computed_designs %}
+          <tr
+            data-samples="{{ design.samples }}"
+            data-error="{{ design.mean_squared_error }}"
+            data-cost="{{ design.assumed_cost }}"
+            data-front="{{ design.pareto }}"
+          >
+            <th scope="row">{{ design.samples }}</th>
+            <td>{{ design.noise }}</td>
+            <td>
+              <span class="metric-value">{{ design.mean_squared_error | round: 3 }}</span
+              ><span
+                class="metric-bar"
+                style="width: {{ design.mean_squared_error | times: 100.0 | divided_by: max_error }}%"
+                aria-hidden="true"
+              ></span>
+            </td>
+            <td>
+              <span class="metric-value">{{ design.assumed_cost | round: 1 }}</span
+              ><span
+                class="metric-bar cost-bar"
+                style="width: {{ design.assumed_cost | times: 100.0 | divided_by: max_cost }}%"
+                aria-hidden="true"
+              ></span>
+            </td>
+            <td>
+              {% if design.pareto == '1' %}Yes{% else %}No{% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

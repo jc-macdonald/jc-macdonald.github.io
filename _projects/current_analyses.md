@@ -5,7 +5,7 @@ description: Ongoing work on structural scores, scientific machine learning and 
 img: assets/img/research/structural_fidelity_comparison.svg
 img_alt: Constructed trajectories illustrate adherence to a declared prevalence bound. No predictive scores are computed; predictive scoring and structural checks answer separate evaluation questions.
 importance: 1
-category: "lead developer · in development"
+category: "Research in progress"
 ---
 
 My current research connects mechanistic modeling, Bayesian inference and

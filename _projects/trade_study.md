@@ -2,10 +2,10 @@
 layout: page
 title: trade-study
 description: Compare experiments and model choices, weighing uncertainty, information and cost.
-img: assets/img/research/computed/replicated_tradeoff.svg
-img_alt: Ten synthetic sample-mean designs compared across 512 paired replicates. Nondominated mean error and assumed cost are marked, and empirical errors are compared with analytic variances. Costs are declared assumptions, not measured field costs.
-importance: 2
-category: "lead developer · released"
+img: assets/img/research/previews/replicated_tradeoff.svg
+img_alt: Ten synthetic designs compared on mean squared error and assumed measurement cost. Nondominated designs are outlined.
+importance: 3
+category: "Released software"
 github: https://github.com/jcm-sci/trade-study
 ---
 

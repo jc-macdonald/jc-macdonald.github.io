@@ -1,0 +1,28 @@
+<div class="research-preview-grid figure-gallery">
+  {% for figure in include.figures %}
+    {% assign figure_path = include.base | append: figure.name %}
+    <figure>
+      {% if include.computed %}
+        {% assign preview_path = 'assets/img/research/previews/' | append: figure.name | append: '.svg' %}
+        {% assign example_url = '/software-examples/#' | append: figure.section %}
+      {% else %}
+        {% assign preview_path = figure_path | append: '.svg' %}
+        {% assign example_url = figure_path | append: '.svg' | relative_url %}
+      {% endif %}
+      <a href="{{ example_url }}"
+        ><img src="{{ preview_path | relative_url }}" alt="{{ figure.description | escape }}" loading="lazy" width="720" height="450"
+      ></a>
+      <figcaption>
+        <h3>
+          <a href="{{ example_url }}">{{ figure.title }}</a>
+        </h3>
+        <p>{{ figure.description }}</p>
+        <a href="{{ figure_path | append: '.svg' | relative_url }}">SVG</a> ·
+        <a href="{{ figure_path | append: '.pdf' | relative_url }}">PDF</a>
+        {% if include.tikz %}
+          · <a href="{{ 'assets/img/research/tikz/' | append: figure.name | append: '.tex' | relative_url }}">TikZ source</a>
+        {% endif %}
+      </figcaption>
+    </figure>
+  {% endfor %}
+</div>

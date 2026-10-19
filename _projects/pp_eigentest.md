@@ -5,7 +5,7 @@ description: Research on how many underlying patterns an incomplete dataset can 
 img: assets/img/research/pp_eigentest_schematic.svg
 img_alt: Ongoing signal-rank research connects incomplete data, Bayesian latent-variable modeling, and assessment of signal and uncertainty. The methods and software remain in development.
 importance: 3
-category: "lead developer · in development"
+category: "Research in progress"
 ---
 
 **pp-eigentest** investigates how many underlying patterns an incomplete dataset

@@ -2,10 +2,10 @@
 layout: page
 title: OP System
 description: Describe models of changing systems, including spatial interactions and random events.
-img: assets/img/research/computed/spatial_diffusion.svg
-img_alt: A 64-cell periodic diffusion field and profiles at four times, computed from an OP System specification with RK4 integration in OP Engine. Spatial discretization is supplied explicitly; all inputs are synthetic.
-importance: 3
-category: "lead developer · released"
+img: assets/img/research/previews/spatial_diffusion.svg
+img_alt: Synthetic periodic diffusion on 64 cells, computed with OP System and OP Engine. The heatmap shows field values over position and time.
+importance: 1
+category: "Released software"
 github: https://github.com/ACCIDDA/op_system
 ---
 

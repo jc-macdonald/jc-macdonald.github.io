@@ -5,7 +5,7 @@ description: Estimate model quantities from incomplete data and assess fitting m
 img: assets/img/research/op_infer_slide.svg
 img_alt: op_infer capabilities include fitting through established libraries, calibration checks on simulated data, and replicated study comparisons. Private, pre-alpha and unreleased.
 importance: 2
-category: "lead developer · in development"
+category: "Research in progress"
 ---
 
 I am developing **op_infer** to connect scientific models to parameter

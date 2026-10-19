@@ -5,20 +5,29 @@ permalink: /projects/
 description: Models and software for studying changing systems, learning from incomplete data, and comparing interventions and research designs.
 nav: true
 nav_order: 3
-display_categories: ["lead developer · released", "lead developer · in development", collaborative infrastructure]
+display_categories: ["Released software", "Research in progress", "Collaborative infrastructure"]
 horizontal: false
 ---
 
-<!-- pages/projects.md -->
+The projects below include public software and ongoing research. Each package
+has its own role; projects can use them independently or in combination.
+
+<nav class="page-links" aria-label="Project sections">
+  <a href="#released-software">Released software</a>
+  <a href="#research-in-progress">Research in progress</a>
+  <a href="#collaborative-infrastructure">Collaborative infrastructure</a>
+  <a href="#software-guide">Software guide</a>
+</nav>
+
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
+  <h2 id="{{ category | slugify }}" class="category">{{ category }}</h2>
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
+  {% assign project_columns = 2 %}
+  {% if sorted_projects.size == 3 %}{% assign project_columns = 3 %}{% endif %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
   <div class="container">
@@ -29,7 +38,7 @@ horizontal: false
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  <div class="row row-cols-1 row-cols-md-{{ project_columns }}">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
@@ -55,7 +64,7 @@ horizontal: false
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
@@ -63,3 +72,12 @@ horizontal: false
   {% endif %}
 {% endif %}
 </div>
+
+## Software guide
+
+The labels below describe software development stage and availability. They do
+not establish numerical accuracy or scientific validity for a particular use.
+
+{% include software_table.liquid %}
+
+[Computed examples and comparison table](/software-examples/) · [Public source repositories](/repositories/)
