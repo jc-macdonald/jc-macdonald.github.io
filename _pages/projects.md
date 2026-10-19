@@ -10,8 +10,8 @@ display_categories: ["Released software", "Research in progress", "Collaborative
 horizontal: false
 ---
 
-My research asks what we can learn from incomplete observations, how to evaluate
-scientific predictions, and which measurements or interventions to compare.
+My research asks how models and data can explain scientific processes, how to
+evaluate predictions, and which measurements or interventions to compare.
 The projects below include released tools and ongoing methods research.
 The software packages can be used independently or in combination.
 

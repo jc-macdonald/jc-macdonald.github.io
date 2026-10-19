@@ -8,9 +8,9 @@ importance: 1
 category: "Research in progress"
 ---
 
-My current research asks what incomplete observations reveal about a changing
-system, how scientific assumptions affect predictions, and which measurements
-would help answer a research or policy question. I use models of the underlying
+My current research asks what measurements reveal about a changing system,
+how scientific assumptions affect predictions, and which data would help
+answer a research or policy question. I use models of the underlying
 processes, Bayesian inference and simulation studies. The projects below are
 ongoing; public papers and software are linked where available.
 

@@ -16,6 +16,14 @@ availability and development stage accurately. Link public papers and artifacts;
 keep private methods, results, data and submission plans out of public content.
 A target venue is not evidence of acceptance.
 
+Use the introduction to describe the research questions, methods and scientific
+applications. Reserve "partially observed" for a specific latent-state or
+measurement model and explain what is observed. Use "structured" with the
+relevant organization, such as age, space or traits. Use "complex systems" when
+interactions and collective behavior are the subject. These terms describe
+different features; avoid substituting them for one another or using them as
+generic research labels.
+
 Use terminology that matches the evidence:
 
 - Describe constraint satisfaction or compliance directly. Reserve "metric" for

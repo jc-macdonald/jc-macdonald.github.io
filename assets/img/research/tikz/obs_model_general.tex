@@ -1,8 +1,8 @@
 \input{figure-style.tex}
 \begin{document}
 \begin{tikzpicture}
-\heading{Partial observability}{A hidden process becomes data through an explicit observation model.}
-\node[panel=Blue,minimum width=3.4cm,text width=2.7cm,minimum height=1.65cm] (latent) at (0,0) {\textbf{Latent process}\\\(x(t)\)};
+\heading{Models and measurements}{An observation model describes how a scientific process is measured.}
+\node[panel=Blue,minimum width=3.4cm,text width=2.7cm,minimum height=1.65cm] (latent) at (0,0) {\textbf{Underlying process}\\\(x(t)\)};
 \node[panel=Teal,minimum width=4cm,text width=3.3cm,minimum height=1.65cm] (obs) at (4.1,0) {\textbf{Observation model}\\\(p(y\mid x,\theta_{\mathrm{obs}})\)};
 \node[panel=Gold,minimum width=3.4cm,text width=2.7cm,minimum height=1.65cm] (data) at (8.8,0) {\textbf{Observed data}\\\(y\)};
 \draw[flow] (latent.east) -- (obs.west);
