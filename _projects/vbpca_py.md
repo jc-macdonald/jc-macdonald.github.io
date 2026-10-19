@@ -2,8 +2,8 @@
 layout: page
 title: vbpca-py
 description: Find shared patterns in incomplete datasets and assess uncertainty in those summaries.
-img: assets/img/research/vbpca_py_schematic.svg
-img_alt: An illustrative masked data matrix feeds a variational low-rank model for latent scores, loadings, bias, noise and ARD priors. Model outputs branch to reconstruction/prediction and assessment. Covariances are approximate; coverage and rank recovery need checks for the intended data.
+img: assets/img/research/computed/incomplete_reconstruction.svg
+img_alt: A synthetic two-pattern signal, noisy observed entries with unobserved cells in gray, and a VBPCA reconstruction. Held-out observations are excluded from fitting. This illustration does not establish rank selection or uncertainty calibration.
 importance: 1
 category: "lead developer · released"
 github: https://github.com/yoavram-lab/VBPCApy
@@ -25,6 +25,10 @@ The package provides:
 Applied to genetic, cultural, and ecological datasets. Available as a beta release on [PyPI](https://pypi.org/project/vbpca-py/) and archived at [Zenodo](https://doi.org/10.5281/zenodo.19389250).
 
 The 2024 preprint {% cite macdonald2024vbpca %} introduced an earlier version of the posterior predictive rank-testing methodology built on this codebase. Follow-up [pp-eigentest](/projects/pp_eigentest/) research investigates signal-rank selection and its calibration for incomplete data; its methods and software remain in development.
+
+{% include figure.liquid path="assets/img/research/computed/incomplete_reconstruction.svg" class="img-fluid rounded" zoomable=true alt="A synthetic two-pattern signal, noisy observed entries with unobserved cells in gray, and a VBPCA reconstruction. Held-out observations are excluded from fitting. This illustration does not establish rank selection or uncertainty calibration." caption="A synthetic signal, noisy observed entries and reconstruction. Gray cells were excluded from fitting; the model uses two components." %}
+
+[Computed example, inputs and checks](/software-examples/#incomplete-data)
 
 {% include figure.liquid path="assets/img/research/vbpca_py_schematic.svg" class="img-fluid rounded" zoomable=true alt="An illustrative masked data matrix feeds a variational low-rank model for latent scores, loadings, bias, noise and ARD priors. Model outputs branch to reconstruction/prediction and assessment. Covariances are approximate; coverage and rank recovery need checks for the intended data." caption="VBPCApy observed-data model." %}
 

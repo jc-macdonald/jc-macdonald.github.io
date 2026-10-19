@@ -2,8 +2,8 @@
 layout: page
 title: OP Engine
 description: Simulate changing systems and random events, from spatial dynamics to population counts.
-img: assets/img/research/op_engine_slide.svg
-img_alt: A capability table groups deterministic solvers, stochastic solvers and schedule replay. It lists PDE/field, nonlocal, ODE and reaction models, observations and optional firing counts. Independent SSA clocks use NumPy. Replay derivatives are conditional on the recorded mesh; tested backends vary by method.
+img: assets/img/research/computed/stochastic_ensemble.svg
+img_alt: 512 independent exact stochastic transfer simulations, their empirical mean and pointwise 5th–95th percentile range, and the final distribution alongside analytic mean and binomial references. Synthetic demonstration.
 importance: 2
 category: "lead developer · released"
 github: https://github.com/ACCIDDA/op_engine
@@ -27,6 +27,10 @@ The [backend qualification matrix](https://accidda.github.io/op_engine/latest/gu
 Replay derivatives are conditional on the recorded mesh. Step-size decisions are held fixed. Accuracy checks and changes in parameters can require a fresh discovery solve.
 
 [OP System](/projects/op_system/) supplies compiled equations, reactions and observation metadata. [trade-study](/projects/trade_study/) can compare solver configurations and simulation designs.
+
+{% include figure.liquid path="assets/img/research/computed/stochastic_ensemble.svg" class="img-fluid rounded" zoomable=true alt="512 independent exact stochastic transfer simulations, their empirical mean and pointwise 5th–95th percentile range, and the final distribution alongside analytic mean and binomial references. Synthetic demonstration." caption="512 independent stochastic transfer runs, with analytic mean and final-distribution references. The shaded range describes variation across runs." %}
+
+[Computed example, inputs and checks](/software-examples/#stochastic-transfers)
 
 {% include figure.liquid path="assets/img/research/op_engine_slide.svg" class="img-fluid rounded" zoomable=true alt="A capability table groups deterministic solvers, stochastic solvers and schedule replay. It lists PDE/field, nonlocal, ODE and reaction models, observations and optional firing counts. Independent SSA clocks use NumPy. Replay derivatives are conditional on the recorded mesh; tested backends vary by method." caption="OP Engine method families." %}
 
