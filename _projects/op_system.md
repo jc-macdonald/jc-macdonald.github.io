@@ -2,8 +2,8 @@
 layout: page
 title: OP System
 description: Compiler for structured model specifications, producing Array API right-hand sides, reaction metadata, named observables and forcing schedules.
-img: assets/img/research/op_system_slide.png
-img_alt: OP System compiler workflow from equations or transition diagrams through validation, typed intermediate representation, and portable evaluators.
+img: assets/img/research/op_system_slide.svg
+img_alt: Equations or transitions are compiled through restricted syntax and typed IR into evaluators and metadata for reactions, named observables, forcing and independent blocks. Cross-axis constraints remain metadata.
 importance: 3
 category: "lead developer · released"
 github: https://github.com/ACCIDDA/op_system
@@ -18,3 +18,7 @@ Categorical and continuous axes, aliases, staged chains, routing and operator me
 For stochastic consumers, named reactions expose channel structure, propensity shapes, reactants/dependencies and checked independence declarations. Time-indexed parameters support linear interpolation or right-continuous held forcing, with published schedules and resolved-parameter callbacks. [OP Engine](/projects/op_engine/) consumes these contracts for solving and independent replicate banks.
 
 Structural validation checks the specification and supported evaluator paths. Independent-equation fixtures and conditional reaction balances provide additional numerical evidence; none of these checks proves the scientific model correct. [Cross-axis constraints remain metadata](https://accidda.github.io/op_system/latest/guides/getting-started/#cross-axis-constraints-current-boundary), rather than an enforced filter on state cells or transitions.
+
+{% include figure.liquid path="assets/img/research/op_system_slide.svg" class="img-fluid rounded" zoomable=true alt="Equations or transitions are compiled through restricted syntax and typed IR into evaluators and metadata for reactions, named observables, forcing and independent blocks. Cross-axis constraints remain metadata." caption="OP System compilation and numerical contracts." %}
+
+[Vector PDF](/assets/img/research/op_system_slide.pdf) · [All figure sources and downloads](/figures/)

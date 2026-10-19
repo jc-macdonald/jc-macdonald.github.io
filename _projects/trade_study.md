@@ -2,8 +2,8 @@
 layout: page
 title: trade-study
 description: Replicated simulation studies, paired comparisons, Pareto analysis and preference-based decisions, with explicit uncertainty and result provenance.
-img: assets/img/research/trade_study_slide.png
-img_alt: trade-study workflow from a constrained design space through simulator protocols and scoring to Pareto and surrogate decision support.
+img: assets/img/research/trade_study_slide.svg
+img_alt: Declare factors, objectives and constraints; run replicated or paired simulations; compare Pareto fronts and preferences; retain provenance-checked results. Calibration and transfer require separate application evidence.
 importance: 2
 category: "lead developer · released"
 github: https://github.com/jcm-sci/trade-study
@@ -25,4 +25,8 @@ The core depends on NumPy; optional integrations wrap established libraries for 
 
 A Pareto front narrows the alternatives; selecting a design still needs explicit preferences or constraints. Replicate intervals describe uncertainty under their stated assumptions. Fixed Wilson precision is not gate power, and synthetic benchmark results need independent validation before transfer to observed data.
 
-{% include figure.liquid loading="eager" path="assets/img/research/optimal_design.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Observation-design example comparing candidate sampling strategies on a Pareto frontier of total cost and expected information, with one design selected under a stated budget." caption="Illustrative observation-design application: Pareto efficiency narrows the choices, but selecting a design still requires an explicit budget or utility." %}
+{% include figure.liquid loading="eager" path="assets/img/research/optimal_design.svg" class="img-fluid rounded z-depth-1" zoomable=true alt="Synthetic candidate costs and utilities illustrate Pareto efficiency and selection under a declared budget. These values are illustrative inputs, not a fitted study or empirical information estimates." caption="Constructed costs and utilities: C is dominated; D maximizes utility under the declared cost limit of 4." %}
+
+{% include figure.liquid path="assets/img/research/trade_study_slide.svg" class="img-fluid rounded" zoomable=true alt="Declare factors, objectives and constraints; run replicated or paired simulations; compare Pareto fronts and preferences; retain provenance-checked results. Calibration and transfer require separate application evidence." caption="Replicated design and evaluation with trade-study." %}
+
+[Vector PDF](/assets/img/research/trade_study_slide.pdf) · [All figure sources and downloads](/figures/)

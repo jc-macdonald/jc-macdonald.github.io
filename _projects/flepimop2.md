@@ -2,8 +2,8 @@
 layout: page
 title: FlepiMoP2
 description: Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decoupling model specification, integration, and persistence.
-img: assets/img/research/flepimop2_slide.png
-img_alt: FlepiMoP2 workflow from validated configuration and plugin resolution through campaign execution and persisted outputs.
+img: assets/img/research/flepimop2_slide.svg
+img_alt: Validated configuration selects System, Engine, parameter, persistence, process and job providers. Campaign execution produces persisted results and metadata through replaceable providers.
 importance: 1
 category: collaborative infrastructure
 github: https://github.com/ACCIDDA/flepimop2
@@ -18,3 +18,7 @@ The pipeline is [published on PyPI](https://pypi.org/project/flepimop2/). See th
 configuration and provider interfaces. The mathematical and numerical cores
 remain usable independently; provider availability and backend qualification
 are separate from the orchestration API.
+
+{% include figure.liquid path="assets/img/research/flepimop2_slide.svg" class="img-fluid rounded" zoomable=true alt="Validated configuration selects System, Engine, parameter, persistence, process and job providers. Campaign execution produces persisted results and metadata through replaceable providers." caption="FlepiMoP2 campaign orchestration." %}
+
+[Vector PDF](/assets/img/research/flepimop2_slide.pdf) · [All figure sources and downloads](/figures/)
