@@ -1,4 +1,4 @@
 nbconvert
 pyyaml
-rendercv[full]
+-r requirements-rendercv.txt
 scholarly
