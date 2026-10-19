@@ -90,12 +90,12 @@ ninja.data = [{
               window.location.href = "/projects/inference_calibration/";
             },},{id: "projects-op-engine",
           title: 'OP Engine',
-          description: "Simulate deterministic and stochastic dynamics, with numerical checks, named observations and replay.",
+          description: "Simulate PDE/field, nonlocal and reaction dynamics, with observations, numerical checks and replay.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_engine/";
             },},{id: "projects-op-system",
           title: 'OP System',
-          description: "Specify dynamical models with equations and transitions; compile numerical evaluators, reactions and observables.",
+          description: "Specify PDE/field, nonlocal and reaction models; compile evaluators, operators and observables.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/op_system/";
             },},{id: "projects-pp-eigentest",
