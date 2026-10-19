@@ -14,7 +14,7 @@ github_repos:
   - ACCIDDA/flepimop2
 
 repo_descriptions:
-  yoavram-lab/VBPCApy: "Variational Bayesian PCA for incomplete data with full posterior uncertainty, calibrated predictive variance, automatic component pruning, and C++-accelerated kernels."
+  yoavram-lab/VBPCApy: "Variational Bayesian PCA for incomplete data, with approximate posterior covariances, component pruning, and optional C++ kernels."
   jcm-sci/trade-study: "Replicated simulation studies, paired comparisons, Pareto analysis and preference-based decisions with explicit uncertainty and result provenance."
   ACCIDDA/op_engine: "PDE/structured-field and nonlocal operators, deterministic and stochastic reaction solvers, observations and replay with method-specific backend qualification."
   ACCIDDA/op_system: "Specification/compiler for PDE/field, nonlocal and reaction models, with shaped Array API evaluators, operator/observable metadata and forcing contracts."

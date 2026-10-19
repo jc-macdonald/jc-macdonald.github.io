@@ -1,12 +1,12 @@
 \input{figure-style.tex}
 \begin{document}
 \begin{tikzpicture}
-\heading{OP Engine}{Numerical methods with explicit accuracy and execution contracts.}
+\heading{OP Engine}{Deterministic and stochastic methods for structured models.}
 \panel{a}{0}{0}{Blue}{1. Prepare}{Fields, states and rates\\Transport and reactions\\Methods and output times}
 \panel{b}{6.7}{0}{Teal}{2. Solve}{PDE and nonlocal operators\\Explicit / IMEX / implicit\\Exact SSA and tau-leaping\\NumPy replicate clocks}
 \panel{c}{6.7}{-3.8}{Green}{3. Observe and record}{Named latent observations\\Window summaries and counts\\Trajectories and provenance}
 \panel{d}{0}{-3.8}{Gold}{4. Check and replay}{Accuracy and invariant checks\\Adaptive schedule discovery\\Differentiable frozen replay}
 \fourflow
-\bottomnote{PDE/nonlocal fields use declared discretizations. NumPy/JAX/CPU Torch qualification is method-specific. Replay gradients are conditional on the recorded mesh; GPU paths need separate evidence.}
+\bottomnote{PDE and nonlocal fields use specified discretizations. Tested NumPy, JAX and CPU Torch paths vary by method. Replay gradients are conditional on the recorded mesh. GPU paths need separate qualification.}
 \end{tikzpicture}
 \end{document}

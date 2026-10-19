@@ -8,12 +8,10 @@ importance: 2
 category: "lead developer · in development"
 ---
 
-What can sparse, noisy measurements tell us about a dynamical system, and how
-can we check whether the inference procedure is reliable for that question?
-I am developing **op_infer**, the statistical layer of the op stack, to connect scientific models to parameter
+I am developing **op_infer** to connect scientific models to parameter
 inference, calibration checks and study design.
 
-**Status:** working research software, private, pre-alpha and unreleased. The implementation
+The software is private, pre-alpha and unreleased. The implementation
 includes Bayesian fitting through established inference libraries,
 simulation-based calibration, and replicated studies that test recovery on
 simulated data. Broader interfaces and application-specific validation remain

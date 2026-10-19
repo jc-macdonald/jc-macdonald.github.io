@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Invited seminar at **Woods Hole Oceanographic Institution** — "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems."
+Invited seminar at **Woods Hole Oceanographic Institution**. "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems."
