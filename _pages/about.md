@@ -76,6 +76,8 @@ The question that ties it all together: _what should we do, given what we can't 
 
 #### Software
 
+<div class="table-responsive" markdown="1">
+
 | Tool                                                  | What it does                                                                               | Status                                                                                                                                  |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
 | [op_system](https://github.com/ACCIDDA/op_system)     | Structured model compilation, reaction/observable metadata and forcing schedules           | [PyPI](https://pypi.org/project/op-system/) · [capabilities](https://accidda.github.io/op_system/latest/guides/capabilities/)           |
@@ -84,6 +86,8 @@ The question that ties it all together: _what should we do, given what we can't 
 | [trade-study](https://github.com/jcm-sci/trade-study) | Replicated studies, paired comparisons, Pareto analysis, preferences and result provenance | [PyPI](https://pypi.org/project/trade-study/) · [examples](https://jcm-sci.github.io/trade-study/guide/capabilities/)                   |
 | [vbpca-py](https://github.com/yoavram-lab/VBPCApy)    | Variational Bayesian PCA for incomplete data with full posterior uncertainty               | Released on [PyPI](https://pypi.org/project/vbpca-py/) · JOSS submission in preparation                                                 |
 | [pp-eigentest](/projects/pp_eigentest/)               | Posterior predictive eigenvalue testing for signal rank determination                      | Private pre-release · methods paper in preparation, extending [arXiv:2409.12129](https://arxiv.org/abs/2409.12129)                      |
+
+</div>
 
 ---
 
