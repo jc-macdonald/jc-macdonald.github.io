@@ -10,32 +10,18 @@ ninja.data = [{
       window.location.href = "/";
     },
   },{id: "nav-publications",
-          title: "publications",
+          title: "Publications",
           description: "Journal articles, preprints and manuscripts in preparation, with citation details and source links.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
+        },{id: "nav-research-and-software",
+          title: "Research and software",
           description: "Models and software for studying changing systems, learning from incomplete data, and comparing interventions and research designs.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
-          },
-        },{id: "nav-operational-deployments",
-          title: "operational deployments",
-          description: "Operational infectious disease forecasting and scenario modeling deployed through ACCIDDA&#39;s computational infrastructure.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/operational-modeling/";
-          },
-        },{id: "nav-talks",
-          title: "talks",
-          description: "Invited seminars, conference presentations, and symposia.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/talks/";
           },
         },{id: "nav-cv",
           title: "CV",
@@ -45,18 +31,18 @@ ninja.data = [{
             window.location.href = "/cv/";
           },
         },{id: "nav-teaching",
-          title: "teaching",
+          title: "Teaching",
           description: "Teaching, workshop facilitation, and instructional experience.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "nav-extracurricular",
-          title: "extracurricular",
-          description: "I love to travel, get outside, and move.",
+        },{id: "nav-talks",
+          title: "Talks",
+          description: "Invited seminars, conference presentations, and symposia.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/extracurricular/";
+            window.location.href = "/talks/";
           },
         },{id: "news-presented-at-smb-2025-in-edmonton-recovering-ecological-geometry-a-trait-and-depth-structured-ipde-model-of-plankton-dynamics",
           title: 'Presented at SMB 2025 in Edmonton. “Recovering Ecological Geometry: A Trait- and Depth-Structured...',
