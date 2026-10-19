@@ -1,7 +1,7 @@
 ---
 layout: page
 title: FlepiMoP2
-description: Configuration-driven orchestration engine for CDC-supported infectious disease forecasting and scenario analysis. Plugin architecture decoupling model specification, integration, and persistence.
+description: Run configuration-defined simulation campaigns with replaceable modeling, numerical and persistence providers.
 img: assets/img/research/flepimop2_slide.svg
 img_alt: Validated configuration selects System, Engine, parameter, persistence, process and job providers. Campaign execution produces persisted results and metadata through replaceable providers.
 importance: 1

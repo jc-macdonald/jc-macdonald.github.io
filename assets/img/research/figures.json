@@ -30,6 +30,12 @@
     "description": "Prepare state and operators, solve deterministic or stochastic dynamics, record observations and optional counts, then check accuracy and replay. Independent SSA clocks use NumPy; backend qualification is method-specific and replay derivatives depend on the recorded mesh."
   },
   {
+    "name": "op_infer_slide",
+    "source": "tikz/op_infer_slide.tex",
+    "title": "op_infer research capabilities",
+    "description": "op_infer capabilities include fitting through established libraries, calibration checks on simulated data, and replicated study comparisons. Private, pre-alpha and unreleased."
+  },
+  {
     "name": "flepimop2_slide",
     "source": "tikz/flepimop2_slide.tex",
     "title": "FlepiMoP2 campaign orchestration",

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: OP Engine
-description: Numerical core for deterministic and stochastic models, with independent SSA banks, named observations, replay and qualified NumPy, JAX and CPU PyTorch methods.
+description: Simulate deterministic and stochastic dynamics, with numerical checks, named observations and replay.
 img: assets/img/research/op_engine_slide.svg
 img_alt: Prepare state and operators, solve deterministic or stochastic dynamics, record observations and optional counts, then check accuracy and replay. Independent SSA clocks use NumPy; backend qualification is method-specific and replay derivatives depend on the recorded mesh.
 importance: 2

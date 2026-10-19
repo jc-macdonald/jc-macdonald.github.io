@@ -1,7 +1,7 @@
 ---
 layout: page
 title: vbpca-py
-description: Variational Bayesian PCA for incomplete data with full posterior uncertainty, calibrated predictive variance, automatic component pruning, native missingness handling, and C++-accelerated kernels.
+description: Bayesian dimensionality reduction for incomplete data, with posterior uncertainty and model-assessment tools.
 img: assets/img/research/vbpca_py_schematic.svg
 img_alt: Observed entries and a mask feed variational fitting of loadings, scores, bias, noise and ARD. Convergence, component selection and held-out assessment support posterior prediction and uncertainty for the intended data regime.
 importance: 1

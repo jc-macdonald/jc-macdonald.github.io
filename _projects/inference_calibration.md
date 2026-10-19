@@ -1,9 +1,9 @@
 ---
 layout: page
 title: op_infer
-description: Private pre-alpha statistical layer connecting Bayesian parameter inference, calibration checks and study design for partially observed systems.
-img: assets/img/research/beyond_onehealth.svg
-img_alt: Public simulation and evaluation tools connect to op_infer, a working statistical layer that remains private, pre-alpha and unreleased.
+description: Bayesian fitting, simulation-based calibration and study design. Private, pre-alpha and unreleased.
+img: assets/img/research/op_infer_slide.svg
+img_alt: op_infer capabilities include fitting through established libraries, calibration checks on simulated data, and replicated study comparisons. Private, pre-alpha and unreleased.
 importance: 2
 category: "lead developer · in development"
 ---
@@ -31,6 +31,6 @@ op_infer builds on [OP System](/projects/op_system/) for model specification,
 [trade-study](/projects/trade_study/) for replicated evaluation. Their public
 documentation and releases provide the foundations for this work.
 
-{% include figure.liquid path="assets/img/research/beyond_onehealth.svg" class="img-fluid rounded" zoomable=true alt="Public tools cover specification, simulation, campaign execution and replicated evaluation. op_infer connects inference and calibration to these capabilities and remains private, pre-alpha and unreleased." caption="op_infer builds on public modeling, simulation and evaluation tools." %}
+{% include figure.liquid path="assets/img/research/op_infer_slide.svg" class="img-fluid rounded" zoomable=true alt="op_infer capabilities include fitting through established libraries, calibration checks on simulated data, and replicated study comparisons. Private, pre-alpha and unreleased." caption="Working research capabilities; broader interfaces and application-specific validation remain in development." %}
 
-[Vector PDF](/assets/img/research/beyond_onehealth.pdf) · [Research in progress](/projects/current_analyses/) · [Figure sources and downloads](/figures/)
+[Vector PDF](/assets/img/research/op_infer_slide.pdf) · [Research in progress](/projects/current_analyses/) · [Figure sources and downloads](/figures/)

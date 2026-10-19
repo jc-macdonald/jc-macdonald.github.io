@@ -1,7 +1,7 @@
 ---
 layout: page
 title: OP System
-description: Compiler for structured model specifications, producing Array API right-hand sides, reaction metadata, named observables and forcing schedules.
+description: Specify dynamical models with equations and transitions; compile numerical evaluators, reactions and observables.
 img: assets/img/research/op_system_slide.svg
 img_alt: Equations or transitions are compiled through restricted syntax and typed IR into evaluators and metadata for reactions, named observables, forcing and independent blocks. Cross-axis constraints remain metadata.
 importance: 3

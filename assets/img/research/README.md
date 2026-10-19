@@ -1,6 +1,6 @@
 # Research figures
 
-The website uses SVG exports. Nine architecture/method schematics have editable
+The website uses SVG exports. Ten architecture/method schematics have editable
 TikZ sources in [`tikz/`](tikz/); two numerical illustrations use
 [`gen_research_figures.py`](gen_research_figures.py). Every figure also has a
 vector PDF for papers/slides and a PNG at its original URL for compatibility.
@@ -53,6 +53,10 @@ claims aligned with the linked package capability guides and page text:
 - `pp_eigentest_schematic` describes the research question and scope of
   private pre-release work. `vbpca_py_schematic` describes fitting and predictive
   assessment, without implying universal calibration.
+- `op_infer_slide` summarizes working fitting, calibration and study-comparison
+  capabilities in a compact graphic for the project card and detail page.
+  Its status remains private, pre-alpha and unreleased; the three capability
+  panels do not specify an inference algorithm or report study results.
 - `optimal_design` uses synthetic candidate costs `[1, 2.1, 3, 3.7, 5.4]` and
   utilities `[0.28, 0.45, 0.43, 0.72, 0.80]`. These are illustrative inputs.
   Design C is dominated; D maximizes utility under the declared cost limit of 4.
