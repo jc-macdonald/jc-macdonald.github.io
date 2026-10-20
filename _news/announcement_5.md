@@ -1,4 +1,5 @@
 ---
+title: One Health modeling at SMB 2026
 layout: post
 date: 2026-07-01
 inline: true

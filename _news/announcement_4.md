@@ -1,4 +1,5 @@
 ---
+title: FlepiMoP2 tools workshop at Insight Net
 layout: post
 date: 2026-04-09
 inline: true

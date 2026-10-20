@@ -1,4 +1,5 @@
 ---
+title: Decision-Support Modeling seminar at UMBC
 layout: post
 date: 2026-03-23
 inline: true

@@ -1,4 +1,5 @@
 ---
+title: Cross-Scale Feedback Motifs at Woods Hole
 layout: post
 date: 2026-03-30
 inline: true

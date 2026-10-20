@@ -1,4 +1,5 @@
 ---
+search: true
 layout: page
 title: Research figures
 permalink: /figures/

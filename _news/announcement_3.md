@@ -1,4 +1,5 @@
 ---
+title: Plankton dynamics at SMB 2025
 layout: post
 date: 2025-07-13
 inline: true
