@@ -1,6 +1,6 @@
 cv:
   name: Joshua C. Macdonald
-  headline: Computational Scientist
+  headline: Assistant Scientist · Johns Hopkins Bloomberg School of Public Health
   email: jmacdo16@jh.edu
   location: Baltimore, Maryland, USA
   website: https://jcmacdonald.dev
@@ -9,13 +9,35 @@ cv:
     - network: GitHub
       username: jc-macdonald
     - network: LinkedIn
-      username: joshuacmacdonald
+      username: j-caleb-macdonald-674840a2
     - network: ORCID
       username: "0000-0002-3643-6266"
 
   sections:
     Research Profile:
       - "Computational scientist developing models and software for health, environmental, and earth sciences. I study how models represent scientific processes and how measurements and assumptions affect the conclusions we draw. I use simulations to compare interventions and data-collection strategies. Current applications include diphtheria outbreak-response vaccination, respiratory-virus scenarios, wildlife disease, ecology, and cultural transmission."
+
+    Appointments:
+      - company: Johns Hopkins Bloomberg School of Public Health
+        position: Assistant Scientist
+        start_date: 2026
+        end_date: present
+        location: Baltimore, Maryland, USA
+        summary: "International Vaccine Access Center, Department of International Health, Global Disease Epidemiology and Control. Infectious disease modeling, inference, and research software development."
+
+      - company: Johns Hopkins Bloomberg School of Public Health
+        position: Postdoctoral Scholar
+        start_date: 2024
+        end_date: 2026
+        location: Baltimore, Maryland, USA
+        summary: "International Vaccine Access Center, Department of International Health. Mentor: Shaun Truelove. Infectious disease modeling and inference for public-health applications."
+
+      - company: Tel Aviv University
+        position: Zuckerman STEM Leadership Postdoctoral Fellow
+        start_date: 2022
+        end_date: 2024
+        location: Tel Aviv, Israel
+        summary: "School of Zoology. Mentor: Yoav Ram. Studied material culture and cultural transmission using Bayesian dimensionality reduction and multivariate analysis, drawing on archaeological training."
 
     Education:
       - institution: University of Louisiana at Lafayette
@@ -49,38 +71,6 @@ cv:
         end_date: 2013
         location: Greensboro, North Carolina, USA
 
-    Appointments:
-      - company: Johns Hopkins Bloomberg School of Public Health
-        position: Assistant Scientist
-        start_date: 2026
-        end_date: present
-        location: Baltimore, Maryland, USA
-        summary: "International Vaccine Access Center, Department of International Health (Global Disease Epidemiology and Control). Mentor: Shaun Truelove. Research focus: infectious disease modeling and inference, scientific computing, decision support systems, and research software engineering."
-
-      - company: Johns Hopkins Bloomberg School of Public Health
-        position: Postdoctoral Scholar
-        start_date: 2024
-        end_date: 2026
-        location: Baltimore, Maryland, USA
-        summary: "International Vaccine Access Center, Department of International Health (Global Disease Epidemiology and Control). Mentor: Shaun Truelove. Research focus: infectious disease modeling and inference, scientific computing, decision support systems, and research software engineering."
-
-      - company: Tel Aviv University
-        position: Zuckerman STEM Leadership Postdoctoral Fellow
-        start_date: 2022
-        end_date: 2024
-        location: Tel Aviv, Israel
-        summary: "School of Zoology. Mentor: Yoav Ram. Research drew directly on archaeological training in the study of material culture diversity and cultural transmission, applying Bayesian dimensionality reduction and multivariate data analysis to cultural datasets."
-
-    Computational Expertise:
-      - label: Modeling
-        details: "Mathematical and computational models of changing systems, including spatial, stochastic, compartmental and agent-based models; machine learning with scientific constraints; multivariate data analysis and dimensionality reduction; stability, bifurcation and sensitivity analysis; parameter identifiability and inverse problems"
-
-      - label: Inference
-        details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"
-
-      - label: Computing
-        details: "Python, Julia, C++, Stan, R, MATLAB. Scientific computing; high-performance numerical solvers; operator splitting; data pipelines and exploratory analysis; reproducible workflows (Git, CI/CD, containerization)"
-
     Published Papers:
       - title: "An Immuno-Epidemiological Model of Foot-and-Mouth Disease (FMD) in the African Buffalo Population with Carrier Transmission"
         authors:
@@ -105,7 +95,7 @@ cv:
         doi: 10.1017/ehs.2024.45
         date: 2024
         highlights:
-          - "Software: [VBPCApy](https://github.com/yoavram-lab/VBPCApy); [pp-eigentest project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
+          - "Software: [VBPCApy](https://github.com/yoavram-lab/VBPCApy) · [pp-eigentest project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
 
       - title: "Within-Host Viral Growth and Immune Response Rates Predict Foot-and-Mouth Disease Virus Transmission Dynamics for African Buffalo"
         authors:
@@ -167,39 +157,7 @@ cv:
         doi: 10.48550/arXiv.2409.12129
         date: 2024
         highlights:
-          - "Software: [pp-eigentest project summary](https://jcmacdonald.dev/projects/pp_eigentest/); [VBPCApy](https://github.com/yoavram-lab/VBPCApy)"
-
-    "Research Support -- Active":
-      - name: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
-        start_date: 2025
-        end_date: 2028
-        summary: "Quiescence to emergence: Does nairovirus diversity loss increase disease transmission, severity and the risk of emergence? US PIs: Brianna Beechler, Anna Jolles, Cameron Browne, and Hayriye Gulbudak; linked UKRI award BB/Z516934/1 with Emma Thomson, Teresa Lambe, Roman Biek, and Georgina Limon-Vega. Collaborator. Research role: mathematical model parameterization, data analysis, and advising on mathematical and statistical methods."
-
-      - name: "USDA-ARS Cooperative Agreement (3022-32000-021-018-S)"
-        start_date: 2025
-        end_date: present
-        summary: "Investigating the Epidemiology of CCHFV in an Endemic Setting: Uganda. PIs: Bree Beechler and Anna Jolles (Oregon State University). Collaborator. Research role: mathematical modeling of cross-species CCHFV transmission dynamics, surveillance design optimization, and advising on mathematical and statistical methods for decision support."
-
-      - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
-        start_date: 2023
-        end_date: present
-        summary: "Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA). Directors: Justin Lessler, Kimberly Powers, and Shaun Truelove. Insight Net center for infectious disease forecasting and outbreak analytics. Research role: operational modeling, forecasting pipeline development, and computational infrastructure."
-
-      - name: "NSF EEID / UKRI UK--US Collaboration Grant ($4.05M / 5 years)"
-        start_date: 2022
-        end_date: 2027
-        summary: "Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. PIs: Brianna Beechler, Roman Biek, Hayriye Gulbudak, Erin Gorsich, Simon Gubbins, Anna Jolles, and Jan Medlock. Senior Personnel (from 2024). Research role: mathematical model development and parameterization of within-host viral and immune dynamics."
-
-    "Research Support -- Completed":
-      - name: "Zuckerman Postdoctoral Scholarship ($120K total)"
-        start_date: 2022
-        end_date: 2024
-        summary: "Co-evolution of Cultural and Genetic Traits. Principal Investigator. Competitive postdoctoral fellowship; authored and defended research proposal."
-
-    "Research Support -- Pending":
-      - name: "National One Health Mission India (proposed $1M / 3 years)"
-        date: Full proposal stage
-        summary: "Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Advanced past initial review; full proposal being submitted. Co-Investigator on the proposal. Proposed research role: mathematical model parameterization and data analysis; mechanistic modeling for highly pathogenic avian influenza and anthrax in India; stakeholder training in modeling; and supervision of postdoctoral and doctoral trainees."
+          - "Software: [pp-eigentest project summary](https://jcmacdonald.dev/projects/pp_eigentest/) · [VBPCApy](https://github.com/yoavram-lab/VBPCApy)"
 
     Operational Modeling and Policy Support:
       - name: Diphtheria Outbreak-Response Vaccination Modeling
@@ -213,14 +171,14 @@ cv:
         summary: "ACCIDDA. Led the Round 20 (2026–27) submission, including rebuilding and migrating the legacy model to op_system and FlepiMoP2, model development and calibration, scenario production, quality assurance, and hub submission. Previously contributed data wrangling and data assimilation to the Hub's health-heterogeneities scientific round."
         highlights:
           - "[COVID-19 Scenario Modeling Hub](https://covid19scenariomodelinghub.org/)"
-          - "[github.com/midas-network/covid19-scenario-modeling-hub](https://github.com/midas-network/covid19-scenario-modeling-hub)"
+          - "[Submission repository](https://github.com/midas-network/covid19-scenario-modeling-hub)"
 
       - name: Flu Scenario Modeling Hub
         start_date: 2024
         end_date: present
         summary: "ACCIDDA. Lead Model Developer across the 2024/25, 2025/26, and 2026/27 seasons. Set up the ACCIDDA flu model and operational pipeline (2024/25). Work with external modeling packages informed contributions to FlepiMoP2 (2025/26). Supervising an undergraduate student on revisions to the flu model for the 2026/27 round."
         highlights:
-          - "[github.com/midas-network/flu-scenario-modeling-hub](https://github.com/midas-network/flu-scenario-modeling-hub)"
+          - "[Submission repository](https://github.com/midas-network/flu-scenario-modeling-hub)"
 
       - name: Hib Vaccination Modeling (Navajo Nation)
         start_date: 2026
@@ -231,9 +189,9 @@ cv:
       - name: "OP System (Operator-Partitioned System)"
         start_date: 2026
         end_date: present
-        summary: "ACCIDDA. Turns readable model descriptions into calculations for simulation and data analysis. Handles spatial structure, interactions between groups and random events in disease, ecological and other dynamical models. Public alpha release."
+        summary: "Turns readable model descriptions into calculations for simulation and data analysis. Handles spatial structure, interactions between groups and random events in disease, ecological and other dynamical models. Public alpha release."
         highlights:
-          - "[github.com/ACCIDDA/op_system](https://github.com/ACCIDDA/op_system)"
+          - "[Source](https://github.com/ACCIDDA/op_system)"
 
       - name: pp-eigentest
         start_date: 2026
@@ -254,24 +212,21 @@ cv:
         end_date: present
         summary: "Compares model settings, experiments and surveillance plans using repeated simulations. Helps researchers assess uncertainty and weigh competing goals such as accuracy, information and cost. Public alpha release."
         highlights:
-          - "[github.com/jcm-sci/trade-study](https://github.com/jcm-sci/trade-study)"
-          - "[pypi.org/project/trade-study/](https://pypi.org/project/trade-study/)"
-          - "[doi:10.5281/zenodo.19599838](https://doi.org/10.5281/zenodo.19599838)"
+          - "[Source](https://github.com/jcm-sci/trade-study) · [PyPI](https://pypi.org/project/trade-study/) · [Archived release](https://doi.org/10.5281/zenodo.19599838)"
 
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Simulates models that change over time and space, including systems with random events. Supports repeated simulations and summaries of quantities such as population counts. Public alpha release; capabilities and numerical checks depend on the selected method."
+        summary: "Simulates models that change over time and space, including systems with random events. Supports repeated simulations and summaries of quantities such as population counts. Public alpha release; capabilities and numerical checks depend on the selected method."
         highlights:
-          - "[github.com/ACCIDDA/op_engine](https://github.com/ACCIDDA/op_engine)"
+          - "[Source](https://github.com/ACCIDDA/op_engine)"
 
       - name: vbpca-py
         start_date: 2024
         end_date: present
         summary: "Finds patterns in incomplete datasets without first filling in every missing observation. Produces low-dimensional summaries and estimates uncertainty using a Bayesian approximation. Public beta release, with tools for checking fit and choosing the number of summary dimensions."
         highlights:
-          - "[pypi.org/project/vbpca-py/](https://pypi.org/project/vbpca-py/)"
-          - "[doi:10.5281/zenodo.19389250](https://doi.org/10.5281/zenodo.19389250)"
+          - "[PyPI](https://pypi.org/project/vbpca-py/) · [Archived release](https://doi.org/10.5281/zenodo.19389250)"
 
     "Research Software -- Collaborative Infrastructure":
       - name: "FlepiMoP2 (Flexible Pipeline for Interchangeable Model Processing)"
@@ -282,14 +237,54 @@ cv:
           - "[Documentation](https://accidda.github.io/flepimop2/latest/)"
 
       - name: TabularEpi
-        start_date: 2025
-        end_date: 2025
+        date: 2025
         summary: "UNC / ACCIDDA. Tabular epidemic simulator supporting mixed deterministic-stochastic models. Conducted systematic performance benchmarking that identified bottlenecks, informing the design of the next-generation pipeline."
 
       - name: "FlepiMoP (Flexible Epidemic Modeling Pipeline)"
         start_date: 2024
         end_date: 2025
         summary: "Hopkins IDD / ACCIDDA. Developed simulation and statistical inference components for operational influenza modeling. Performance profiling and vectorized backend work informed subsequent pipeline development."
+
+    "Research Support -- Active":
+      - name: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
+        start_date: 2025
+        end_date: 2028
+        summary: "**Collaborator.** Model parameterization, data analysis, and advice on mathematical and statistical methods. Quiescence to emergence: Does nairovirus diversity loss increase disease transmission, severity and the risk of emergence? US PIs: Brianna Beechler, Anna Jolles, Cameron Browne, and Hayriye Gulbudak; linked UKRI award BB/Z516934/1 with Emma Thomson, Teresa Lambe, Roman Biek, and Georgina Limon-Vega."
+
+      - name: "USDA-ARS Cooperative Agreement (3022-32000-021-018-S)"
+        start_date: 2025
+        end_date: present
+        summary: "**Collaborator.** Models of transmission between species, surveillance design, and statistical advice. Investigating the Epidemiology of Crimean-Congo Hemorrhagic Fever Virus (CCHFV) in an Endemic Setting: Uganda. PIs: Bree Beechler and Anna Jolles (Oregon State University)."
+
+      - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
+        start_date: 2023
+        end_date: present
+        summary: "**Operational modeling, forecasting pipelines, and computational infrastructure.** Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA), an Insight Net center. Directors: Justin Lessler, Kimberly Powers, and Shaun Truelove."
+
+      - name: "NSF EEID / UKRI UK--US Collaboration Grant"
+        start_date: 2022
+        end_date: 2027
+        summary: "**Senior Personnel (from 2024).** Model development and parameterization of within-host viral and immune dynamics. Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. Total project budget: $4.05M over five years. PIs: Brianna Beechler, Roman Biek, Hayriye Gulbudak, Erin Gorsich, Simon Gubbins, Anna Jolles, and Jan Medlock."
+
+    "Research Support -- Completed":
+      - name: "Zuckerman Postdoctoral Scholarship"
+        start_date: 2022
+        end_date: 2024
+        summary: "**Principal Investigator.** Co-evolution of Cultural and Genetic Traits. Competitive postdoctoral fellowship; authored and defended the proposal. Total fellowship award: $120K."
+
+    "Research Support -- Pending":
+      - name: "National One Health Mission India"
+        summary: "**Proposed Co-Investigator.** Full proposal stage after initial review; full proposal being submitted. Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Proposed role: model parameterization and data analysis for highly pathogenic avian influenza and anthrax in India; stakeholder training; and supervision of postdoctoral and doctoral trainees. Proposed total project budget: $1M over three years."
+
+    Computational Expertise:
+      - label: Modeling
+        details: "Mathematical and computational models of changing systems, including spatial, stochastic, compartmental and agent-based models; machine learning with scientific constraints; multivariate data analysis and dimensionality reduction; stability, bifurcation and sensitivity analysis; parameter identifiability and inverse problems"
+
+      - label: Inference
+        details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"
+
+      - label: Computing
+        details: "Python, Julia, C++, Stan, R, MATLAB. Scientific computing; high-performance numerical solvers; operator splitting; data pipelines and exploratory analysis; reproducible workflows (Git, CI/CD, containerization)"
 
     Invited Talks and Seminars:
       - name: "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems"

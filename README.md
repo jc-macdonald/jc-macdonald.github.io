@@ -32,7 +32,12 @@ site build and formatting checks; merging publishes the generated site to
 
 The deploy workflow first calls the read-only RenderCV workflow, which validates
 and renders `_data/cv.yml` with the checked-in design, locale and settings and the
-version pinned in `requirements-rendercv.txt`. The site build waits for those PDFs
+version pinned in `requirements-rendercv.txt`. The helper passes the design and
+locale files explicitly; references inside an external settings file are not
+loaded by RenderCV 2.8. Two small overrides in `_data/classic/` add running
+continuation headings while inheriting the pinned renderer templates. These
+files are copied into the fresh render tree and included in the provenance
+hashes. The site build waits for those PDFs
 and verifies their source revision, input hashes and identical content before
 packaging. A render or provenance failure blocks publication; branch concurrency
 cancels superseded builds. No generated-source commit or second push is needed.
@@ -62,7 +67,8 @@ CV_SITE_INTEGRATION=1 python -m unittest discover -s .github/tests -p 'test_rend
 
 Use a new or empty output directory for each render. Rendering leaves tracked
 source snapshots unchanged. The tests include a recognizable synthetic name in
-a temporary copy, invalid schema rejection and mismatched revision/input/PDF
+a temporary copy, applied design and locale settings, continuation headings,
+invalid schema rejection and mismatched revision/input/PDF
 rejection; synthetic content is never written to the source checkout.
 
 The **Check source and external links** workflow runs on pull requests and source
