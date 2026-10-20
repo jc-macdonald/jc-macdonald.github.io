@@ -74,6 +74,54 @@ class RenderTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "empty"):
                 CV.render(source, output, REVISION)
 
+    def test_design_locale_and_continuation_templates_reach_pdf(self):
+        with TemporaryDirectory() as directory:
+            source, output = Path(directory) / "source", Path(directory) / "artifact"
+            copy_inputs(source)
+            records = [
+                {
+                    "name": f"Record {index}",
+                    "start_date": 2024,
+                    "end_date": "present",
+                    "summary": "A description of the research and contribution. " * 8,
+                }
+                for index in range(12)
+            ]
+            (source / "_data/cv.yml").write_text(json.dumps({
+                "cv": {"name": "Design Probe", "sections": {"Probe Records": records}}
+            }))
+            # Deliberately differ from both renderer defaults and the site's design.
+            (source / "assets/rendercv/design.yaml").write_text(
+                "design:\n  theme: classic\n  page:\n    size: a5\n"
+                "    show_footer: true\n    show_top_note: false\n"
+                "  templates:\n    footer: Configuration Applied PAGE_NUMBER / TOTAL_PAGES\n"
+            )
+            (source / "assets/rendercv/locale.yaml").write_text(
+                "locale:\n  language: english\n  present: ongoing-probe\n"
+            )
+            CV.render(source, output, REVISION)
+            pdf = output / CV.DOWNLOAD
+            info = subprocess.check_output(["pdfinfo", str(pdf)], text=True)
+            dimensions = re.search(r"Page size:\s+([\d.]+) x ([\d.]+)", info)
+            self.assertIsNotNone(dimensions)
+            self.assertAlmostEqual(float(dimensions[1]), 419.528, delta=1)
+            self.assertAlmostEqual(float(dimensions[2]), 595.276, delta=1)
+            text = subprocess.check_output(["pdftotext", str(pdf), "-"], text=True)
+            pages = [page for page in text.split("\f") if page.strip()]
+            self.assertGreater(len(pages), 1)
+            self.assertNotIn("(continued)", pages[0])
+            self.assertTrue(pages[1].startswith("Probe Records (continued)"))
+            for page in pages:
+                self.assertIn("Configuration Applied", page)
+                self.assertNotIn("Last updated", page)
+            self.assertIn("ongoing-probe", text)
+            self.assertIn("Record 11", text)
+            # A template-only change invalidates an artifact just like a data change.
+            template = source / "_data/classic/Preamble.j2.typ"
+            template.write_text(template.read_text() + "\n// changed\n")
+            with self.assertRaisesRegex(ValueError, "inputs"):
+                CV.verify(source, output, REVISION)
+
     def test_invalid_schema_cannot_reuse_stale_pdf(self):
         with TemporaryDirectory() as directory:
             source, output = Path(directory) / "source", Path(directory) / "artifact"

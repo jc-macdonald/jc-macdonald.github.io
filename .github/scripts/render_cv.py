@@ -10,14 +10,15 @@ from importlib.metadata import version
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-INPUTS = (
+RENDER_INPUTS = (
     "_data/cv.yml",
     "assets/rendercv/design.yaml",
     "assets/rendercv/locale.yaml",
     "assets/rendercv/settings.yaml",
-    "requirements-rendercv.txt",
-    ".github/scripts/render_cv.py",
+    "_data/classic/Preamble.j2.typ",
+    "_data/classic/SectionEnding.j2.typ",
 )
+INPUTS = (*RENDER_INPUTS, "requirements-rendercv.txt", ".github/scripts/render_cv.py")
 DOWNLOAD = "assets/pdf/cv.pdf"
 MANIFEST = "assets/rendercv/provenance.json"
 
@@ -51,7 +52,7 @@ def render(root, output, revision):
         raise ValueError("CV artifact output must be empty; refusing to reuse old PDFs")
     with TemporaryDirectory(prefix="rendercv-") as temporary:
         fresh = Path(temporary)
-        for name in INPUTS[:4]:
+        for name in RENDER_INPUTS:
             destination = fresh / name
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(root / name, destination)
@@ -62,6 +63,10 @@ def render(root, output, revision):
                 "rendercv",
                 "render",
                 "_data/cv.yml",
+                "--design",
+                "assets/rendercv/design.yaml",
+                "--locale-catalog",
+                "assets/rendercv/locale.yaml",
                 "--settings",
                 "assets/rendercv/settings.yaml",
             ],

@@ -1,0 +1,64 @@
+{% comment %}RenderCV entry fields shared with the PDF source; dates include ranges and status text.{% endcomment %}
+<li class="cv-entry">
+  {% if entry.title or entry.name or entry.company or entry.institution %}
+    <div class="cv-entry-heading">
+      <h3>
+        {% capture entry_title %}
+          {% if entry.institution %}
+            {{ entry.degree | default: entry.studyType }}{% if entry.area %}, {{ entry.area }}{% endif %}
+          {% elsif entry.company %}
+            {{ entry.position | default: entry.company }}
+          {% else %}
+            {{ entry.title | default: entry.name }}
+          {% endif %}
+        {% endcapture %}
+        {% if entry.doi %}
+          <a href="https://doi.org/{{ entry.doi }}">{{ entry_title | strip }}</a>
+        {% elsif entry.url %}
+          <a href="{{ entry.url }}">{{ entry_title | strip }}</a>
+        {% else %}
+          {{ entry_title | strip }}
+        {% endif %}
+      </h3>
+      {% if entry.date %}
+        <p class="cv-date">{{ entry.date }}</p>
+      {% elsif entry.start_date %}
+        <p class="cv-date">
+          {{ entry.start_date -}}
+          {%- if entry.end_date and entry.end_date != entry.start_date %}–{{ entry.end_date }}{% endif %}
+        </p>
+      {% endif %}
+    </div>
+    {% if entry.institution %}
+      <p>{{ entry.institution }}</p>
+    {% endif %}
+    {% if entry.company and entry.position %}
+      <p>{{ entry.company }}</p>
+    {% endif %}
+    {% if entry.location %}
+      <p class="cv-location">{{ entry.location }}</p>
+    {% endif %}
+    {% if entry.authors %}{{ entry.authors | join: ', ' | markdownify }}{% endif %}
+    {% if entry.journal %}
+      <p>
+        <em>{{ entry.journal }}</em>
+      </p>
+    {% endif %}
+    {% if entry.summary %}{{ entry.summary | markdownify }}{% endif %}
+    {% if entry.highlights %}
+      <ul class="cv-highlights">
+        {% for highlight in entry.highlights %}
+          <li>{{ highlight | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% elsif entry.label %}
+    <p>
+      <strong>{{ entry.label }}</strong> {{ entry.details }}
+    </p>
+  {% elsif entry.bullet %}
+    {{ entry.bullet | markdownify }}
+  {% else %}
+    {{ entry | markdownify }}
+  {% endif %}
+</li>

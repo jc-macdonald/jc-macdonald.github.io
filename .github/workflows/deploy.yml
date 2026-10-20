@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_data/classic/**"
       - "_sass/**"
       - "_scripts/**"
       - "**.bib"
@@ -39,6 +40,7 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_data/classic/**"
       - "_sass/**"
       - "_scripts/**"
       - "**.bib"
@@ -121,6 +123,10 @@ jobs:
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
+      - name: Verify CV reading order and accessible navigation
+        run: |
+          python -m unittest discover -s .github/tests -p 'test_cv_html.py' -v
+          python .github/scripts/verify_cv_html.py _site
       - name: Verify publication ordering and citation metadata
         run: |
           node .github/tests/publication-fragments.test.mjs
