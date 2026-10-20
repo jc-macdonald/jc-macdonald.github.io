@@ -1,7 +1,57 @@
-# for more options, see https://docs.rendercv.com/user_guide/yaml_input_structure/design/
 design:
   theme: classic
   page:
-    size: a4
-    show_footer: false
+    size: us-letter
+    top_margin: 0.7in
+    bottom_margin: 0.7in
+    left_margin: 0.7in
+    right_margin: 0.7in
+    show_footer: true
     show_top_note: false
+  colors:
+    footer: "#555555"
+  typography:
+    alignment: left
+    font_size:
+      body: 11pt
+      name: 24pt
+      headline: 10pt
+      connections: 10pt
+      section_titles: 12pt
+    line_spacing: 0.4em
+  header:
+    alignment: left
+    space_below_name: 0.2cm
+    space_below_headline: 0.25cm
+    space_below_connections: 0.35cm
+  entries:
+    date_and_location_width: 2.9cm
+    space_between_columns: 0.3cm
+    short_second_row: false
+    allow_page_break: false
+  templates:
+    publication_entry:
+      main_column: "**TITLE**\nSUMMARY\nAUTHORS\nURL (JOURNAL)\nHIGHLIGHTS"
+      date_and_location_column: DATE
+    footer: "NAME · PAGE_NUMBER / TOTAL_PAGES"
+    education_entry:
+      main_column: |-
+        **INSTITUTION**, AREA
+        LOCATION
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column: DATE
+    experience_entry:
+      main_column: |-
+        **COMPANY**, POSITION
+        LOCATION
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column: DATE
+    normal_entry:
+      main_column: |-
+        **NAME**
+        LOCATION
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column: DATE
