@@ -1,4 +1,5 @@
 ---
+search: true
 layout: page
 permalink: /extracurricular/
 title: Outside work

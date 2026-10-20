@@ -1,4 +1,5 @@
 ---
+search: true
 layout: page
 title: Computed software examples
 permalink: /software-examples/

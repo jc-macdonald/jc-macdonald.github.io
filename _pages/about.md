@@ -26,9 +26,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I develop mathematical models, statistical methods and software for health, environmental and earth sciences. I study how systems change over time, how well models describe their behavior, and how models can inform interventions and data collection.
+I develop mathematical models, statistical methods and software to understand scientific processes and inform decisions under uncertainty. I study how systems change over time, how well models describe their behavior, and what measurements can tell us about them.
 
-I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With [ACCIDDA](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on wildlife and livestock disease surveillance.
+I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With the [Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA)](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on wildlife and livestock disease surveillance.
 
 <p>Email: <a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a> · <a href="https://orcid.org/{{ site.data.socials.orcid_id }}">ORCID</a></p>
 
@@ -40,6 +40,12 @@ Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, wor
   <a href="/operational-modeling/">Operational modeling</a>
   <a href="/cv/">CV</a>
 </nav>
+
+## Selected publications
+
+{% include selected_papers.liquid %}
+
+[All publications, preprints and manuscripts in preparation](/publications/)
 
 ## Research in progress
 
@@ -67,9 +73,3 @@ I build reusable tools for model specification, simulation, inference and study 
 </div>
 
 [Software and project descriptions](/projects/) cover the packages and their development stages. [Computed examples](/software-examples/) include stochastic ensembles, a replicated design comparison, numerical inputs and checks. [Figure downloads](/figures/) provide vector graphics and editable sources.
-
-## Selected publications
-
-{% include selected_papers.liquid %}
-
-[All publications, preprints and manuscripts in preparation](/publications/)

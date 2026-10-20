@@ -323,3 +323,15 @@ ul.timeline li::before {
     columns: 1;
   }
 }
+
+// Shared academic entries also serve the Teaching and Talks pages.
+.academic-entries {
+  .cv-entry {
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  .cv-entry-heading h3 {
+    min-width: 0;
+  }
+}

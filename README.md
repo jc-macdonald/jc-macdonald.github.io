@@ -672,15 +672,23 @@ Originally, **al-folio** was based on the [\*folio theme](https://github.com/bog
 
 ### Research pages and publication records
 
-The home page introduces current research before the computed examples and
-selected papers. Projects are grouped by release/research status. Edit
+The home page presents selected publications after the introduction, followed
+by current research and computed examples. Projects are grouped by release/research status. Edit
 `_data/software.yml` for the shared software guide and card availability labels;
 use each project's `importance` for order within its group. The figures page
 reads `_data/research_figures.yml`, with compact previews generated from the
 retained synthetic data by `assets/img/research/previews/card_previews.py`.
 
+Teaching and Talks reuse the corresponding records in `_data/cv.yml`; historical
+course materials live in `_data/teaching_materials.yml`. Keep each factual record
+in its shared source rather than copying it into the page.
+
 The primary menu uses six destinations; `nav_title` can shorten a page title
 without changing its URL. Secondary destinations live in the labelled footer.
+Set `search: true` in a maintained secondary page to include it in site search.
+News records need a short front-matter title for their search results and pages.
+Empty template pages are excluded in `_config.yml`.
+
 The source-attributed academic-site comparison and remaining recommendations
 are recorded in `.github/academic-site-review.json`. Selected public papers have
 brief descriptions in `_data/publication_summaries.yml`, with their source DOIs.
@@ -698,6 +706,7 @@ After a production build, run:
 
 ```shell
 node .github/tests/publication-fragments.test.mjs
+node .github/tests/site-contracts.test.mjs
 python -m unittest discover -s .github/tests -p 'test_publications.py' -v
 python .github/scripts/verify_publications.py _site
 python .github/scripts/verify_computed_artifacts.py _site

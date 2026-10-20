@@ -130,6 +130,7 @@ jobs:
       - name: Verify publication ordering and citation metadata
         run: |
           node .github/tests/publication-fragments.test.mjs
+          node .github/tests/site-contracts.test.mjs
           python -m unittest discover -s .github/tests -p 'test_publications.py' -v
           python .github/scripts/verify_publications.py _site
       - name: Verify computed artifact bytes after production build

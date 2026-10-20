@@ -11,7 +11,7 @@ ninja.data = [
   {%- endfor -%}
   {
     id: "nav-{{ about_title | slugify }}",
-    title: "{{ about_title | truncatewords: 13 }}",
+    title: "About",
     section: "Navigation",
     handler: () => {
       window.location.href = "{{ '/' | relative_url }}";
@@ -19,7 +19,9 @@ ninja.data = [
   },
   {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
   {%- for p in sorted_pages -%}
-    {%- if p.nav and p.autogen == null -%}
+    {%- assign searchable = false -%}
+    {%- if p.nav or p.search -%}{%- assign searchable = true -%}{%- endif -%}
+    {%- if searchable and p.autogen == null -%}
       {%- if p.dropdown -%}
         {%- for child in p.children -%}
           {%- unless child.title == 'divider' -%}
@@ -87,15 +89,13 @@ ninja.data = [
           {%- else -%}
             {%- assign title = item.title | newline_to_br | replace: "<br />", " " | replace: "<br/>", " " | strip_html | strip_newlines | escape | strip -%}
           {%- endif -%}
-          id: "{{ collection.label }}-{{ title | slugify }}",
-          title: '{{ title | escape | emojify | truncatewords: 13 }}',
+          id: "{{ collection.label }}-{{ item.slug | default: item.title | slugify }}",
+          title: {{ item.title | default: title | strip_html | truncatewords: 20 | jsonify }},
           description: "{{ item.description | strip_html | strip_newlines | escape | strip }}",
           section: "{{ collection.label | capitalize }}",
-          {%- unless item.inline -%}
             handler: () => {
               window.location.href = "{{ item.url | relative_url }}";
             },
-          {%- endunless -%}
         },
       {%- endfor -%}
     {%- endif -%}
@@ -121,7 +121,7 @@ ninja.data = [
           {%- capture social_url %}"{{ social[1] }}"{% endcapture -%}
         {%- when "cv_pdf" -%}
           {%- assign social_id = "social-cv" -%}
-          {%- assign social_title = "CV" -%}
+          {%- assign social_title = "Download CV (PDF)" -%}
           {%- capture social_url %}"{{ social[1] | relative_url }}"{% endcapture -%}
         {%- when "dblp_url" -%}
           {%- assign social_id = "social-dblp" -%}
@@ -274,6 +274,10 @@ ninja.data = [
           {%- assign social_id = "social-wikidata" -%}
           {%- assign social_title = "Wikidata" -%}
           {%- capture social_url %}"https://www.wikidata.org/wiki/{{ social[1] }}"{% endcapture -%}
+        {%- when "wos_id" -%}
+          {%- assign social_id = "social-wos" -%}
+          {%- assign social_title = "Web of Science" -%}
+          {%- capture social_url %}"{{ social[1].url }}"{% endcapture -%}
         {%- when "wikipedia_id" -%}
           {%- assign social_id = "social-wikipedia" -%}
           {%- assign social_title = "Wikipedia" -%}

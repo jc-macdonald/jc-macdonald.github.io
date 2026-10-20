@@ -2,6 +2,7 @@
 layout: page
 title: OP Engine
 description: Simulate changing systems and random events, from spatial dynamics to population counts.
+og_image: /assets/img/research/computed/stochastic_ensemble.png
 img: assets/img/research/previews/stochastic_ensemble.svg
 img_alt: Independent stochastic transfer paths with a pointwise 5th–95th percentile band and the analytic mean. All inputs are synthetic.
 importance: 2
@@ -9,29 +10,18 @@ category: "Released software"
 github: https://github.com/ACCIDDA/op_engine
 ---
 
-**OP Engine** simulates how modeled systems change over time and space, including systems with random events. It is a numerical core for structured dynamical systems: partial differential equations (PDEs) with spatial or trait structure, nonlocal interactions, compartmental models, ordinary differential equations (ODEs) and stochastic reaction networks. It supports explicit, implicit-explicit (IMEX), implicit and stochastic methods and can be used directly or through the separately packaged [FlepiMoP2](/projects/flepimop2/) provider.
+**OP Engine** simulates how models change over time and space, including systems with random events. It supports partial differential equations (PDEs) with spatial or trait structure, nonlocal interactions, compartmental models, ordinary differential equations (ODEs) and stochastic reaction networks.
 
-[Public alpha release on PyPI](https://pypi.org/project/op-engine/) and actively developed. The [capability guide](https://accidda.github.io/op_engine/latest/guides/capabilities/) maps public interfaces to runnable examples.
+[Public alpha release on PyPI](https://pypi.org/project/op-engine/) · [Documentation and executable examples](https://accidda.github.io/op_engine/latest/guides/capabilities/)
 
-Current workflows include:
+Its methods include explicit, implicit-explicit (IMEX) and implicit integration, exact stochastic simulation, and approximate tau-leaping. Independent stochastic runs use separate event clocks. Named observations, time-window summaries and optional reaction firing counts support analysis of the simulated outputs.
 
-- Spatial/trait PDE and nonlocal field dynamics through declared grids, measures, matrix/kernel operators and explicit/IMEX/implicit stepping. Spatial and temporal accuracy require separate checks.
-- ODE and compartmental integration, including nonlinear-stage diagnostics.
-- Exact simulation with the direct stochastic simulation algorithm (SSA), bounded thinning for time-varying event rates, and approximate fixed/adaptive tau-leaping.
-- Independent NumPy CPU SSA banks with one event clock per replicate, stable replicate IDs, forcing boundaries and optional reaction firing counts.
-- Named observations and window summaries, conditional conservation checks and steady-state analysis.
-- Adaptive schedule discovery and frozen-schedule replay, with explicit accuracy and provenance checks.
+[OP System](/projects/op_system/) supplies model equations and metadata. OP Engine can also be used directly or through its separately packaged [FlepiMoP2](/projects/flepimop2/) provider.
 
-The [backend qualification matrix](https://accidda.github.io/op_engine/latest/guides/backend-qualification/) lists tested NumPy, JAX and CPU PyTorch methods, precisions and derivatives. Coverage depends on the method and transform. GPU and CuPy paths require separate hardware qualification.
-
-Replay derivatives are conditional on the recorded mesh. Step-size decisions are held fixed. Accuracy checks and changes in parameters can require a fresh discovery solve.
-
-[OP System](/projects/op_system/) supplies compiled equations, reactions and observation metadata. [trade-study](/projects/trade_study/) can compare solver configurations and simulation designs.
+Supported backends and derivatives depend on the method and precision; see the [qualification matrix](https://accidda.github.io/op_engine/latest/guides/backend-qualification/). Spatial and temporal accuracy require separate checks. Derivatives through frozen-schedule replay hold step-size decisions fixed and are conditional on the recorded mesh.
 
 {% include figure.liquid path="assets/img/research/computed/stochastic_ensemble.svg" class="img-fluid rounded" zoomable=true alt="512 independent exact stochastic transfer simulations, their empirical mean and pointwise 5th–95th percentile range, and the final distribution alongside analytic mean and binomial references. Synthetic demonstration." caption="512 independent stochastic transfer runs, with analytic mean and final-distribution references. The shaded range describes variation across runs." %}
 
 [Computed example, inputs and checks](/software-examples/#stochastic-transfers)
 
-{% include figure.liquid path="assets/img/research/op_engine_slide.svg" class="img-fluid rounded" zoomable=true alt="A capability table groups deterministic solvers, stochastic solvers and schedule replay. It lists PDE/field, nonlocal, ODE and reaction models, observations and optional firing counts. Independent SSA clocks use NumPy. Replay derivatives are conditional on the recorded mesh; tested backends vary by method." caption="OP Engine method families." %}
-
-[Vector PDF](/assets/img/research/op_engine_slide.pdf) · [All figure sources and downloads](/figures/)
+[Method diagram (SVG)](/assets/img/research/op_engine_slide.svg) · [Vector PDF](/assets/img/research/op_engine_slide.pdf) · [All figure sources and downloads](/figures/)

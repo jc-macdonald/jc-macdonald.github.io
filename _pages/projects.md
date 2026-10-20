@@ -10,9 +10,14 @@ display_categories: ["Released software", "Research in progress", "Collaborative
 horizontal: false
 ---
 
-My research asks how models and data can explain scientific processes, how to
-evaluate predictions, and which measurements or interventions to compare.
-The projects below include released tools and ongoing methods research.
+My work combines scientific models, statistical inference and study design.
+The projects below provide software for these questions and describe ongoing
+methods research.
+
+- **How do processes across scales affect populations?** My [buffalo disease studies](/publications/#macdonald2024fmdv) connect infection within animals to transmission between them. [Modeling in practice](/operational-modeling/) describes vaccination and respiratory-virus scenario work.
+- **What can we learn from incomplete data?** My [cultural transmission research](/publications/#macdonald2024austronesian) uses statistical summaries of cultural traits. [VBPCApy](/projects/vbpca_py/) and [signal-rank research](/projects/pp_eigentest/) develop tools for incomplete datasets.
+- **How should we assess models and compare studies?** [Current methods research](/projects/current_analyses/) examines scientific constraints and inference. The [replicated design example](/software-examples/#replicated-designs) shows a synthetic comparison of estimation error and assumed cost.
+
 The software packages can be used independently or in combination.
 
 <nav class="page-links" aria-label="Project sections">

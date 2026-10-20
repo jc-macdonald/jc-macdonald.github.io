@@ -1,4 +1,5 @@
 ---
+search: true
 layout: page
 title: Modeling in practice
 permalink: /operational-modeling/
@@ -11,14 +12,14 @@ nav_order: 4
 
 Multi-model scenario projections produced by the Scenario Modeling Hubs contribute evidence used by the [CDC Center for Forecasting and Outbreak Analytics (CFA)](https://www.cdc.gov/forecast-outbreak-analytics/index.html) and public-health partners for planning, preparedness, and evaluation.
 
-I develop and maintain ACCIDDA's operational models for the Flu and COVID-19 Scenario Modeling Hubs and contribute to the computational infrastructure that supports multi-round scenario projections.
+At the Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA), I develop and maintain operational models for the Flu and COVID-19 Scenario Modeling Hubs and contribute to the computational infrastructure that supports multi-round scenario projections.
 
 ### Flu Scenario Modeling Hub
 
 Lead model developer for ACCIDDA's influenza scenario projections.
 
 - **2026/27 operational round.** Supervising an undergraduate student on revisions to the ACCIDDA flu model.
-- **2025/26 operational round.** Leading revisions to the ACCIDDA flu model.
+- **2025/26 operational round.** Led revisions to the ACCIDDA flu model.
 - **2024/25 operational round.** Initial model development and pipeline integration.
 
 [Hub repository](https://github.com/midas-network/flu-scenario-modeling-hub) · [Round results and reports](https://scenariomodelinghub.org/)

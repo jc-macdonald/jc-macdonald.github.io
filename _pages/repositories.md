@@ -1,4 +1,5 @@
 ---
+search: true
 layout: page
 permalink: /repositories/
 title: repositories
