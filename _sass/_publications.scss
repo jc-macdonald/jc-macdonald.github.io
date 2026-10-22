@@ -99,7 +99,8 @@
       }
 
       .links {
-        a.btn {
+        a.btn,
+        button.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
           padding-left: 1rem;
@@ -113,7 +114,8 @@
             border-color: var(--global-theme-color);
           }
         }
-        a.award.btn {
+        a.award.btn,
+        button.award.btn {
           border-color: var(--global-highlight-color);
         }
       }
@@ -167,6 +169,11 @@
 
       div.abstract.hidden {
         border: dashed 1px var(--global-bg-color);
+      }
+
+      div.abstract.hidden:not(.open),
+      div.bibtex.hidden:not(.open) {
+        visibility: hidden;
       }
 
       div.abstract.hidden.open {
