@@ -97,16 +97,16 @@ jobs:
           chrome-version: ${{ env.CHROMIUM_MAJOR }}
       - name: Audit representative routes with axe
         run: |
-          npm install -g @axe-core/cli@4.10.2 http-server@14.1.1 chromedriver@"$CHROMIUM_MAJOR"
-          http-server _site -p 8080 --silent &
+          npm install --no-save --no-package-lock @axe-core/cli@4.10.2 http-server@14.1.1 chromedriver@"$CHROMIUM_MAJOR"
+          ./node_modules/.bin/http-server _site -p 8080 --silent &
           for attempt in {1..20}; do
             curl --fail --silent http://127.0.0.1:8080/ >/dev/null && break
             sleep 1
           done
           curl --fail --silent http://127.0.0.1:8080/ >/dev/null
           for route in / /reviewer-profile/ /cv/ /publications/ /projects/ /operational-modeling/ /software-examples/ /figures/; do
-            axe "http://127.0.0.1:8080$route" \
-              --chromedriver-path "$(npm root -g)/chromedriver/bin/chromedriver" \
+            ./node_modules/.bin/axe "http://127.0.0.1:8080$route" \
+              --chromedriver-path "$(pwd)/node_modules/.bin/chromedriver" \
               --load-delay=1500 \
               --exit
           done

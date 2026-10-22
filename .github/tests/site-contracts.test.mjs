@@ -80,19 +80,20 @@ test("page structured metadata identifies the profile and ordinary pages", () =>
   for (const page of ["", "cv", "publications", "projects"]) {
     const scripts = [...html(page).matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
     assert.ok(scripts.length);
-    for (const [, script] of scripts) {
-      const record = JSON.parse(script);
-      if (page === "") {
-        assert.equal(record["@type"], "ProfilePage");
-        assert.equal(record.headline, "Joshua C. Macdonald");
-        assert.equal(record.mainEntity["@type"], "Person");
-        assert.equal(record.mainEntity["@id"], "https://jcmacdonald.dev/#person");
-        assert.ok(record.mainEntity.sameAs.every((url) => typeof url === "string" && url.startsWith("https://")));
-      } else if (record["@type"] !== "ScholarlyArticle") {
-        assert.equal(record["@type"], "WebPage");
-        assert.equal(record.author["@id"], "https://jcmacdonald.dev/#person");
-        assert.ok(record.author.sameAs.every((url) => typeof url === "string" && url.startsWith("https://")));
-      }
+    const records = scripts.map(([, script]) => JSON.parse(script));
+    const pageRecords = records.filter((record) => record["@type"] !== "ScholarlyArticle");
+    assert.equal(pageRecords.length, 1, `Expected one page-level record for /${page}`);
+    const [record] = pageRecords;
+    if (page === "") {
+      assert.equal(record["@type"], "ProfilePage");
+      assert.equal(record.headline, "Joshua C. Macdonald");
+      assert.equal(record.mainEntity["@type"], "Person");
+      assert.equal(record.mainEntity["@id"], "https://jcmacdonald.dev/#person");
+      assert.ok(record.mainEntity.sameAs.every((url) => typeof url === "string" && url.startsWith("https://")));
+    } else {
+      assert.equal(record["@type"], "WebPage");
+      assert.equal(record.author["@id"], "https://jcmacdonald.dev/#person");
+      assert.ok(record.author.sameAs.every((url) => typeof url === "string" && url.startsWith("https://")));
     }
   }
 });

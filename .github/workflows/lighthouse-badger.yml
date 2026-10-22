@@ -93,14 +93,14 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - name: Audit representative routes
         run: |
-          npm install -g @lhci/cli@0.14.0 http-server@14.1.1
-          http-server _site -p 8080 --silent &
+          npm install --no-save --no-package-lock @lhci/cli@0.14.0 http-server@14.1.1
+          ./node_modules/.bin/http-server _site -p 8080 --silent &
           for attempt in {1..20}; do
             curl --fail --silent http://127.0.0.1:8080/ >/dev/null && break
             sleep 1
           done
           curl --fail --silent http://127.0.0.1:8080/ >/dev/null
-          lhci autorun --config=.lighthouserc.json
+          ./node_modules/.bin/lhci autorun --config=.lighthouserc.json
       - name: Upload Lighthouse reports
         if: always()
         uses: actions/upload-artifact@v4
