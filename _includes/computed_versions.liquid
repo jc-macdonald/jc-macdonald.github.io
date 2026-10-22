@@ -1,0 +1,14 @@
+{% assign computed_packages = site.data.computed_provenance.packages %}
+{% if computed_packages %}
+  <p class="small text-muted" data-computed-versions>
+    <strong>Artifact versions:</strong>
+    {% for package in computed_packages -%}
+      <code data-package="{{ package[0] }}" data-version="{{ package[1] }}">
+        {{- package[0] }}
+        {{ package[1] -}}
+      </code>
+      {%- unless forloop.last %}, {% endunless %}
+    {%- endfor -%}
+    . These are the versions used to generate the displayed artifacts; current releases may be newer.
+  </p>
+{% endif %}

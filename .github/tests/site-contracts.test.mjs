@@ -66,15 +66,34 @@ test("academic pages retain current teaching and separate workshop presentations
   assert.doesNotMatch(publications.replace(/<[^>]+>/g, " "), /and\s+et al\./);
 });
 
+test("computed-example package versions come from the provenance manifest", () => {
+  const manifest = JSON.parse(fs.readFileSync("assets/img/research/computed/provenance.json", "utf8"));
+  const examples = html("software-examples");
+  assert.match(examples, /data-computed-versions/);
+  for (const [name, version] of Object.entries(manifest.packages)) {
+    assert.ok(examples.includes(`data-package="${name}" data-version="${version}"`), `Missing computed version: ${name} ${version}`);
+  }
+});
+
 // Folded YAML descriptions and quoted titles must remain valid structured data.
-test("page structured metadata is valid JSON with concrete profile links", () => {
+test("page structured metadata identifies the profile and ordinary pages", () => {
   for (const page of ["", "cv", "publications", "projects"]) {
     const scripts = [...html(page).matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
     assert.ok(scripts.length);
-    for (const [, script] of scripts) {
-      const record = JSON.parse(script);
-      if (record.sameAs) assert.ok(record.sameAs.every((url) => typeof url === "string" && url.startsWith("https://")));
-      if (page === "" && record["@type"] === "WebSite") assert.equal(record.headline, "Joshua C. Macdonald");
+    const records = scripts.map(([, script]) => JSON.parse(script));
+    const pageRecords = records.filter((record) => record["@type"] !== "ScholarlyArticle");
+    assert.equal(pageRecords.length, 1, `Expected one page-level record for /${page}`);
+    const [record] = pageRecords;
+    if (page === "") {
+      assert.equal(record["@type"], "ProfilePage");
+      assert.equal(record.headline, "Joshua C. Macdonald");
+      assert.equal(record.mainEntity["@type"], "Person");
+      assert.equal(record.mainEntity["@id"], "https://jcmacdonald.dev/#person");
+      assert.ok(record.mainEntity.sameAs.every((url) => typeof url === "string" && url.startsWith("https://")));
+    } else {
+      assert.equal(record["@type"], "WebPage");
+      assert.equal(record.author["@id"], "https://jcmacdonald.dev/#person");
+      assert.ok(record.author.sameAs.every((url) => typeof url === "string" && url.startsWith("https://")));
     }
   }
 });

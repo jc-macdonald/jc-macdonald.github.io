@@ -7,10 +7,10 @@
 \node[panel=Gold,minimum width=3.4cm,text width=2.7cm,minimum height=1.65cm] (data) at (8.8,0) {\textbf{Observed data}\\\(y\)};
 \draw[flow] (latent.east) -- (obs.west);
 \draw[flow] (obs.east) -- (data.west);
-\panel{a}{0}{-2.65}{Blue}{Health systems}{Disease states\\Detection / reporting delay\\Cases / admissions / serology}
-\panel{b}{6.7}{-2.65}{Teal}{Marine environments}{Ecosystem state\\Sampling / spatial aliasing\\Surveys / eDNA / sensors}
-\panel{c}{6.7}{-6.4}{Green}{Earth systems}{Soil, fire, vegetation\\Sensor placement / cloud\\Indices / fluxes / transects}
-\panel{d}{0}{-6.4}{Gold}{Human systems}{Traits / population structure\\Recovery / coding / sampling\\Assemblages / language / genetics}
-\node[note] at (0,-10.4) {A shared mathematical form still requires domain-specific observation assumptions and independent validation. This is a conceptual map of research domains.};
+\panel{a}{0}{-2.65}{Blue}{Established: health}{Disease states\\Detection / reporting delay\\Cases / admissions / serology}
+\panel{b}{6.7}{-2.65}{Teal}{Established: ecology}{Wildlife infection / plankton dynamics\\Sampling / spatial aliasing\\Assays / counts / surveys}
+\panel{c}{6.7}{-6.4}{Green}{Developing: monitoring design}{Sampling schedule / modality\\Instrument settings / reference data\\Cost / decision utility}
+\panel{d}{0}{-6.4}{Gold}{Established: incomplete data}{Traits / latent structure\\Missingness / coding / sampling\\Assemblages / language / genetics}
+\node[note] at (0,-11.1) {Established denotes existing published or operational evidence; developing denotes an active methods direction. Every application still needs domain-specific assumptions and independent validation.};
 \end{tikzpicture}
 \end{document}

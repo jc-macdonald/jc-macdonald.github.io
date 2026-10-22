@@ -6,6 +6,7 @@ img: assets/img/research/structural_fidelity_comparison.svg
 img_alt: Two constructed prevalence curves compared with an upper bound of one over the displayed horizon. One stays below the bound and the other crosses it; predictive accuracy is not evaluated.
 importance: 1
 category: "Research in progress"
+last_modified_at: 2026-10-22
 ---
 
 My current research asks what measurements reveal about a changing system,
@@ -36,8 +37,8 @@ methods and companion software remain in development.
 
 [op_infer](/projects/inference_calibration/) connects fitting tools,
 simulation-based checks and replicated studies for incomplete or noisy observations.
-The research software remains private, pre-alpha and unreleased while its scientific
-applications are assessed.
+The codebase is public, pre-alpha and unreleased on PyPI while its scientific
+applications are assessed. Application data and partner materials remain private.
 
 ## Scientific machine learning and incomplete data
 

@@ -3,8 +3,8 @@ layout: page
 permalink: /talks/
 title: Talks
 description: Invited seminars, conference presentations, and symposia.
-nav: true
-nav_order: 6
+nav: false
+nav_order: 8
 ---
 
 ## Invited talks and seminars

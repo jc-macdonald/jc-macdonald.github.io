@@ -61,16 +61,21 @@ claims aligned with the linked package capability guides and page text:
   providers. Backend qualification is method-specific and CPU/GPU evidence is
   stated explicitly. Cross-axis constraints are metadata in op_system.
 - `beyond_onehealth` distinguishes public simulation and evaluation tools from
-  op_infer, working inference and calibration research software that remains
-  private, pre-alpha and unreleased. `future_directions_general` maps research aims, including
-  structural evaluation; neither figure reports results from ongoing studies.
+  op_infer, working inference and calibration software whose source is public
+  pre-alpha with no PyPI release; operational application material remains
+  private. `future_directions_general` presents
+  established applications, methods and developing design questions as
+  interacting areas rather than an ordered pipeline. `obs_model_general`
+  distinguishes domains with published or operational evidence from a
+  developing monitoring-design direction. None of these figures reports
+  results from ongoing studies.
 - `pp_eigentest_schematic` describes the research question and scope of
   private pre-release work. `vbpca_py_schematic` describes fitting and predictive
   assessment, without implying universal calibration.
 - `op_infer_slide` summarizes working fitting, calibration and study-comparison
   capabilities in a compact graphic for the project card and detail page.
-  Its status remains private, pre-alpha and unreleased; the three capability
-  panels do not specify an inference algorithm or report study results.
+  Its source is public pre-alpha with no PyPI release; the three capability
+  panels do not imply unlisted adapters or report study results.
 - `optimal_design` uses synthetic candidate costs `[1, 2.1, 3, 3.7, 5.4]` and
   utilities `[0.28, 0.45, 0.43, 0.72, 0.80]`. These are illustrative inputs.
   Design C is dominated; D maximizes utility under the declared cost limit of 4.

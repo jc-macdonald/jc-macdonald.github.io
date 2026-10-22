@@ -1,4 +1,4 @@
-<div class="table-responsive" tabindex="0" role="region" aria-label="Software purposes and availability">
+<div class="table-responsive" tabindex="0" role="region" aria-label="Software purposes, status, roles and evidence">
   <table class="table software-table">
     <caption>
       Package roles, development stages and links
@@ -7,7 +7,8 @@
       <tr>
         <th scope="col">Software</th>
         <th scope="col">Purpose</th>
-        <th scope="col">Availability</th>
+        <th scope="col">Status</th>
+        <th scope="col">Role and evidence</th>
       </tr>
     </thead>
     <tbody>
@@ -19,14 +20,46 @@
           <td>
             {{ tool.purpose -}}
             {%- if tool.docs %}
-              <a href="{{ tool.docs }}">Documentation</a>.
+              <br>
+              <a href="{{ tool.docs }}" aria-label="{{ tool.name }} documentation">Documentation</a>
             {%- endif %}
           </td>
           <td>
             {{ tool.availability -}}
-            {%- if tool.source -%}
+            {%- if tool.version -%}
               <br>
-              <a href="{{ tool.source }}">Source</a>
+              Version: {{ tool.version }}
+            {%- endif %}
+          </td>
+          <td>
+            {{ tool.role }}
+            {%- if tool.license -%}
+              <br>
+              License: {{ tool.license }}
+            {%- endif -%}
+            {%- if tool.source or tool.citation -%}
+              <br>
+            {%- endif -%}
+            {%- if tool.source -%}
+              <a href="{{ tool.source }}" aria-label="{{ tool.name }} source code">Source</a>
+            {%- endif -%}
+            {%- if tool.source and tool.release_archive or tool.source and tool.citation %} · {% endif -%}
+            {%- if tool.release_archive -%}
+              <a href="{{ tool.release_archive }}" aria-label="{{ tool.name }} current release archive">Release archive</a>
+            {%- endif -%}
+            {%- if tool.release_archive and tool.citation %} · {% endif -%}
+            {%- if tool.citation -%}
+              <a href="{{ tool.citation }}" aria-label="{{ tool.name }} citation metadata">
+                {%- if tool.release_archive -%}
+                  All versions
+                {%- else -%}
+                  Citation
+                {%- endif -%}
+              </a>
+            {%- endif -%}
+            {%- if tool.citation_note -%}
+              <br>
+              {{ tool.citation_note }}
             {%- endif %}
           </td>
         </tr>

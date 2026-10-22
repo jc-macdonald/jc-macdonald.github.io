@@ -1,19 +1,22 @@
 $(document).ready(function () {
-  // add toggle functionality to abstract, award and bibtex buttons
-  $("a.abstract").click(function () {
-    $(this).parent().parent().find(".abstract.hidden").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
-  });
-  $("a.award").click(function () {
-    $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
-  });
-  $("a.bibtex").click(function () {
-    $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden").toggleClass("open");
+  // Toggle publication details while keeping button and panel state available
+  // to assistive technology. Opening one panel closes the others in that entry.
+  $(".publication-toggle").click(function () {
+    const button = this;
+    const target = document.getElementById(button.getAttribute("aria-controls"));
+    if (!target) return;
+
+    const entry = button.closest("[data-publication-status]");
+    const shouldOpen = !target.classList.contains("open");
+
+    $(entry)
+      .find(".publication-details.hidden")
+      .each(function () {
+        const isOpen = this === target && shouldOpen;
+        $(this).toggleClass("open", isOpen).attr("aria-hidden", String(!isOpen)).prop("inert", !isOpen);
+      });
+    $(entry).find(".publication-toggle").attr("aria-expanded", "false");
+    if (shouldOpen) button.setAttribute("aria-expanded", "true");
   });
   $("a").removeClass("waves-effect waves-light");
 

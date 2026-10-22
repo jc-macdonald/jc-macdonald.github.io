@@ -29,6 +29,8 @@ jobs:
         run: python -m unittest discover -s .github/tests -p 'test_render_cv.py' -v
       - name: Render current source into a fresh artifact tree
         run: python .github/scripts/render_cv.py render --output-dir "$RUNNER_TEMP/cv-artifact"
+      - name: Check basic PDF semantics
+        run: python .github/scripts/verify_cv_pdf.py "$RUNNER_TEMP/cv-artifact/assets/pdf/cv.pdf"
       - name: Upload PDF previews and source provenance
         uses: actions/upload-artifact@v4
         with:

@@ -1,74 +1,109 @@
-name: Axe accessibility testing
+name: Accessibility audit
 
 on:
-  # if you want to run this on every push uncomment the following lines
-  # push:
-  #   branches:
-  #     - master
-  #     - main
-  # pull_request:
-  #   branches:
-  #     - master
-  #     - main
+  push:
+    branches: [main]
+    paths:
+      - "assets/**"
+      - "_data/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_pages/**"
+      - "_plugins/**"
+      - "_projects/**"
+      - "_sass/**"
+      - "_scripts/**"
+      - "_bibliography/**"
+      - ".github/scripts/**"
+      - ".github/tests/**"
+      - ".github/workflows/axe.yml"
+      - ".github/workflows/render-cv.yml"
+      - "_config.yml"
+      - "Gemfile*"
+      - "purgecss.config.js"
+      - "requirements-rendercv.txt"
+  pull_request:
+    branches: [main]
+    paths:
+      - "assets/**"
+      - "_data/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_pages/**"
+      - "_plugins/**"
+      - "_projects/**"
+      - "_sass/**"
+      - "_scripts/**"
+      - "_bibliography/**"
+      - ".github/scripts/**"
+      - ".github/tests/**"
+      - ".github/workflows/axe.yml"
+      - ".github/workflows/render-cv.yml"
+      - "_config.yml"
+      - "Gemfile*"
+      - "purgecss.config.js"
+      - "requirements-rendercv.txt"
   workflow_dispatch:
-    inputs:
-      url:
-        description: "URL to be checked (e.g.: blog/)"
-        required: false
 
-env:
-  URL: ""
+concurrency:
+  group: accessibility-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
-  check:
-    # available images: https://github.com/actions/runner-images#available-images
+  render-cv:
+    uses: ./.github/workflows/render-cv.yml
+
+  axe:
+    needs: render-cv
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v4
         with:
-          ruby-version: "3.2.2"
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
           bundler-cache: true
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
+      - uses: actions/setup-python@v5
         with:
-          commitChange: false
-          valueFile: "_config.yml"
-          changes: |
-            {
-              "giscus.repo": "${{ github.repository }}",
-              "baseurl": ""
-            }
-      - name: Install and Build 🔧
+          python-version: "3.13"
+      - name: Download the same-revision CV
+        uses: actions/download-artifact@v4
+        with:
+          name: cv-${{ github.sha }}
+          path: ${{ runner.temp }}/cv-artifact
+      - name: Build the production site
+        env:
+          JEKYLL_ENV: production
         run: |
+          python .github/scripts/render_cv.py verify --output-dir "$RUNNER_TEMP/cv-artifact"
+          cp -a "$RUNNER_TEMP/cv-artifact/assets/." assets/
           sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade jupyter
-          export JEKYLL_ENV=production
+          pip install nbconvert
           bundle exec jekyll build
-      - name: Purge unused CSS 🧹
-        run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
-      - name: Get Chromium version 🌐
-        # https://github.com/GoogleChromeLabs/chrome-for-testing?tab=readme-ov-file#other-api-endpoints
+      - name: Match the runner ChromeDriver to Chrome
         run: |
-          CHROMIUM_VERSION=$(wget -qO- https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_STABLE | cut -d. -f1)
-          echo "Chromium version: $CHROMIUM_VERSION"
-          echo "CHROMIUM_VERSION=$CHROMIUM_VERSION" >> $GITHUB_ENV
-      - name: Setup Chrome 🌐
-        id: setup-chrome
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: ${{ env.CHROMIUM_VERSION }}
-      - name: Install chromedriver 🚗
+          CHROMIUM_MAJOR=$(google-chrome --product-version | cut -d. -f1)
+          echo "CHROMIUM_MAJOR=$CHROMIUM_MAJOR" >> "$GITHUB_ENV"
+      - name: Audit representative routes with axe
         run: |
-          npm install -g chromedriver@$CHROMIUM_VERSION
-      - name: Run axe 🪓
-        # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
-        run: |
-          npm install -g @axe-core/cli
-          npm install -g http-server
-          http-server _site/ &
-          axe --chromedriver-path $(npm root -g)/chromedriver/bin/chromedriver http://localhost:8080/${{ github.event.inputs.url || env.URL }} --load-delay=1500 --exit
+          npm install --no-save --no-package-lock @axe-core/cli@4.10.2 http-server@14.1.1 chromedriver@"$CHROMIUM_MAJOR"
+          ./node_modules/.bin/http-server _site -p 8080 --silent &
+          for attempt in {1..20}; do
+            curl --fail --silent http://127.0.0.1:8080/ >/dev/null && break
+            sleep 1
+          done
+          curl --fail --silent http://127.0.0.1:8080/ >/dev/null
+          for route in / /reviewer-profile/ /cv/ /publications/ /projects/ /operational-modeling/ /software-examples/ /figures/; do
+            ./node_modules/.bin/axe "http://127.0.0.1:8080$route" \
+              --chromedriver-path "$(pwd)/node_modules/.bin/chromedriver" \
+              --load-delay=1500 \
+              --exit
+          done

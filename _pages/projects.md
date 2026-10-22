@@ -5,7 +5,8 @@ nav_title: Research & software
 permalink: /projects/
 description: Models and software for studying changing systems, learning from incomplete data, and comparing interventions and research designs.
 nav: true
-nav_order: 3
+nav_order: 4
+last_modified_at: 2026-10-22
 display_categories: ["Released software", "Research in progress", "Collaborative infrastructure"]
 horizontal: false
 ---
@@ -13,6 +14,13 @@ horizontal: false
 My work combines scientific models, statistical inference and study design.
 The projects below provide software for these questions and describe ongoing
 methods research.
+
+The pages keep three kinds of status separate. **Lifecycle** labels say whether
+software is released or still in development. **Evidence** comes from linked
+publications, operational work, executable software or explicitly identified
+work in progress. **Example type** says whether an illustration uses observed,
+synthetic or constructed inputs. None of these labels, by itself, establishes
+scientific validity for a new application.
 
 - **How do processes across scales affect populations?** My [buffalo disease studies](/publications/#macdonald2024fmdv) connect infection within animals to transmission between them. [Modeling in practice](/operational-modeling/) describes vaccination and respiratory-virus scenario work.
 - **What can we learn from incomplete data?** My [cultural transmission research](/publications/#macdonald2024austronesian) uses statistical summaries of cultural traits. [VBPCApy](/projects/vbpca_py/) and [signal-rank research](/projects/pp_eigentest/) develop tools for incomplete datasets.
@@ -85,6 +93,7 @@ The software packages can be used independently or in combination.
 
 The labels below describe software development stage and availability. They do
 not establish numerical accuracy or scientific validity for a particular use.
+Package availability and the linked evidence were last reviewed on 22 October 2026.
 
 {% include software_table.liquid %}
 

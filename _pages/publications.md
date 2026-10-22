@@ -2,20 +2,20 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Journal articles, preprints and manuscripts in preparation, with citation details and source links.
+description: Journal articles, preprints and publicly listed manuscripts under review, with citation details and source links.
 nav: true
 nav_order: 2
+last_modified_at: 2026-10-22
 ---
 
 Journal articles are listed by year, newest first, then by publication month.
-Preprints and work in preparation are listed separately. Manuscript titles and
-author lists may change before publication.
+Preprints and publicly listed manuscripts under review are separated from
+published work. Titles and author lists may change before publication.
 
 <nav class="page-links" aria-label="Publication sections">
   <a href="#published">Published</a>
   <a href="#under-review">Under review</a>
   <a href="#preprints">Preprints</a>
-  <a href="#in-preparation">In preparation</a>
 </nav>
 
 {% include bib_search.liquid %}
@@ -30,8 +30,5 @@ author lists may change before publication.
 
 <h2 id="preprints" class="bibliography-year">Preprints</h2>
 {% bibliography --query @*[status=preprint] %}
-
-<h2 id="in-preparation" class="bibliography-year">In preparation</h2>
-{% bibliography --query @*[status=in_preparation] %}
 
 </div>

@@ -3,8 +3,8 @@ layout: page
 permalink: /teaching/
 title: Teaching
 description: Teaching, workshop facilitation, and instructional experience.
-nav: true
-nav_order: 5
+nav: false
+nav_order: 7
 ---
 
 ## University teaching
