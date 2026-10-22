@@ -32,24 +32,10 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "Publications",
-          description: "Journal articles, preprints and manuscripts in preparation, with citation details and source links.",
+          description: "Journal articles, preprints and publicly listed manuscripts under review, with citation details and source links.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
-          },
-        },{id: "nav-research-and-software",
-          title: "Research and software",
-          description: "Models and software for studying changing systems, learning from incomplete data, and comparing interventions and research designs.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
-          },
-        },{id: "nav-cv",
-          title: "CV",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
           },
         },{id: "nav-modeling-in-practice",
           title: "Modeling in practice",
@@ -58,6 +44,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/operational-modeling/";
           },
+        },{id: "nav-research-and-software",
+          title: "Research and software",
+          description: "Models and software for studying changing systems, learning from incomplete data, and comparing interventions and research designs.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-repositories",
           title: "repositories",
           description: "GitHub repositories for research software and collaborative infrastructure.",
@@ -65,19 +58,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "nav-teaching",
-          title: "Teaching",
-          description: "Teaching, workshop facilitation, and instructional experience.",
+        },{id: "nav-reviewer-and-collaborator-profile",
+          title: "Reviewer and collaborator profile",
+          description: "Evidence-linked areas for grant review and scientific collaboration.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/teaching/";
+            window.location.href = "/reviewer-profile/";
           },
-        },{id: "nav-talks",
-          title: "Talks",
-          description: "Invited seminars, conference presentations, and symposia.",
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Academic curriculum vitae. Last substantively reviewed 22 October 2026.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/talks/";
+            window.location.href = "/cv/";
           },
         },{id: "nav-outside-work",
           title: "Outside work",
@@ -137,7 +130,7 @@ ninja.data = [{
             },
         },{id: "projects-inference-calibration",
           title: "op_infer",
-          description: "Estimate model quantities from incomplete data and assess fitting methods. Private pre-alpha research software.",
+          description: "Estimate model quantities from incomplete data and assess fitting methods. Public pre-alpha research software; unreleased on PyPI.",
           section: "Projects",
             handler: () => {
               window.location.href = "/projects/inference_calibration/";
