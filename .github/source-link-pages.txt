@@ -7,6 +7,7 @@ projects/*/index.html
 repositories/index.html
 publications/index.html
 operational-modeling/index.html
+reviewer-profile/index.html
 figures/index.html
 software-examples/index.html
 teaching/index.html

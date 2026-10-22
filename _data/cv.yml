@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist developing mathematical models, statistical methods and software to understand scientific processes and inform decisions under uncertainty. My work examines how measurements and modeling assumptions affect scientific conclusions and compares interventions and data-collection strategies. Applications include diphtheria outbreak-response vaccination, respiratory-virus scenarios, wildlife disease, ecology, and cultural transmission."
+      - "Computational scientist developing mechanistic models and research software for decisions under uncertainty, using Bayesian and simulation-based inference. Established work spans infectious-disease modeling, operational scenario projections, model and forecast evaluation, wildlife disease, ecology, and incomplete data. Developing work examines scientific machine learning for dynamical systems and collaborative monitoring, surveillance, and study design."
 
     Appointments:
       - company: Johns Hopkins Bloomberg School of Public Health
@@ -163,7 +163,7 @@ cv:
       - name: Diphtheria Outbreak-Response Vaccination Modeling
         start_date: 2026
         end_date: present
-        summary: "Johns Hopkins IVAC, in collaboration with WHO. Lead modeler for multi-country, district-level transmission analyses comparing outbreak-response vaccination strategies across diverse diphtheria risk settings. Developed to inform evidence review and SAGE deliberations on diphtheria outbreak-response vaccination policy. Implemented with op_system, FlepiMoP2, JAX, and Diffrax."
+        summary: "Johns Hopkins IVAC. Lead modeler for multi-country, district-level transmission analyses comparing outbreak-response vaccination strategies across diverse diphtheria risk settings. Partner-specific policy processes and working materials remain private. Implemented with op_system, FlepiMoP2, JAX, and Diffrax."
 
       - name: COVID-19 Scenario Modeling Hub
         start_date: 2025
@@ -180,10 +180,10 @@ cv:
         highlights:
           - "[Submission repository](https://github.com/midas-network/flu-scenario-modeling-hub)"
 
-      - name: Hib Vaccination Modeling (Navajo Nation)
+      - name: Hib Vaccination Modeling
         start_date: 2026
         end_date: present
-        summary: "ACCIDDA. Technical supervisor managing PhD students in implementation of an age- and immune-status-structured Haemophilus influenzae type b (Hib) model for the Navajo Nation to evaluate the impact of long-running vaccination programs."
+        summary: "ACCIDDA. Technical supervisor for PhD students implementing an age- and immune-status-structured Haemophilus influenzae type b (Hib) model to evaluate long-running vaccination programs in a partner-defined population. Public descriptions remain general pending approval from participating organizations."
 
     "Research Software -- Lead Developer":
       - name: "OP System (Operator-Partitioned System)"
@@ -203,16 +203,16 @@ cv:
       - name: "op_infer (Inference and Calibration)"
         start_date: 2026
         end_date: present
-        summary: "Connects scientific models with data to estimate unknown quantities and compare data-collection plans. Tests fitting procedures on simulated data under stated modeling assumptions. Private pre-alpha research software; broader interfaces and application studies remain in development."
+        summary: "Connects scientific models with data to estimate unknown quantities and compare data-collection plans. Tests fitting procedures on simulated data under stated modeling assumptions. Public pre-alpha source; unreleased on PyPI. Broader interfaces and application studies remain in development, and application materials remain private."
         highlights:
-          - "[Project summary](https://jcmacdonald.dev/projects/inference_calibration/)"
+          - "[Source](https://github.com/ACCIDDA/op_infer) · [Project summary](https://jcmacdonald.dev/projects/inference_calibration/)"
 
       - name: "Trade Study (Python)"
         start_date: 2026
         end_date: present
         summary: "Compares model settings, experiments and surveillance plans using repeated simulations. Helps researchers assess uncertainty and weigh competing goals such as accuracy, information and cost. Public alpha release."
         highlights:
-          - "[Source](https://github.com/jcm-sci/trade-study) · [PyPI](https://pypi.org/project/trade-study/) · [Archived release](https://doi.org/10.5281/zenodo.19599838)"
+          - "[Source](https://github.com/jcm-sci/trade-study) · [PyPI](https://pypi.org/project/trade-study/) · [Release archive](https://doi.org/10.5281/zenodo.23497881) · [All versions](https://doi.org/10.5281/zenodo.19599838)"
 
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
@@ -226,7 +226,7 @@ cv:
         end_date: present
         summary: "Finds patterns in incomplete datasets without first filling in every missing observation. Produces low-dimensional summaries and estimates uncertainty using a Bayesian approximation. Public beta release, with tools for checking fit and choosing the number of summary dimensions."
         highlights:
-          - "[PyPI](https://pypi.org/project/vbpca-py/) · [Archived release](https://doi.org/10.5281/zenodo.19389250)"
+          - "[PyPI](https://pypi.org/project/vbpca-py/) · [Release archive](https://doi.org/10.5281/zenodo.23566480) · [All versions](https://doi.org/10.5281/zenodo.19389250)"
 
     "Research Software -- Collaborative Infrastructure":
       - name: "FlepiMoP2 (Flexible Pipeline for Interchangeable Model Processing)"
@@ -255,6 +255,8 @@ cv:
         start_date: 2025
         end_date: present
         summary: "**Collaborator.** Models of transmission between species, surveillance design, and statistical advice. Investigating the Epidemiology of Crimean-Congo Hemorrhagic Fever Virus (CCHFV) in an Endemic Setting: Uganda. PIs: Bree Beechler and Anna Jolles (Oregon State University)."
+        highlights:
+          - "[USDA-ARS project record](https://www.ars.usda.gov/research/project?accnNo=447701)"
 
       - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
         start_date: 2023
@@ -264,7 +266,7 @@ cv:
       - name: "NSF EEID / UKRI UK--US Collaboration Grant"
         start_date: 2022
         end_date: 2027
-        summary: "**Senior Personnel (from 2024).** Model development and parameterization of within-host viral and immune dynamics. Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. Total project budget: $4.05M over five years. PIs: Brianna Beechler, Roman Biek, Hayriye Gulbudak, Erin Gorsich, Simon Gubbins, Anna Jolles, and Jan Medlock."
+        summary: "**Senior Personnel (from 2024).** Model development and parameterization of within-host viral and immune dynamics. Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. Consortium-wide project budget: $4.05M over five years; this is not an amount directly controlled by me. PIs: Brianna Beechler, Roman Biek, Hayriye Gulbudak, Erin Gorsich, Simon Gubbins, Anna Jolles, and Jan Medlock."
 
     "Research Support -- Completed":
       - name: "Zuckerman Postdoctoral Scholarship"
@@ -272,16 +274,12 @@ cv:
         end_date: 2024
         summary: "**Principal Investigator.** Co-evolution of Cultural and Genetic Traits. Competitive postdoctoral fellowship; authored and defended the proposal. Total fellowship award: $120K."
 
-    "Research Support -- Pending":
-      - name: "National One Health Mission India"
-        summary: "**Proposed Co-Investigator.** Full proposal stage after initial review; full proposal being submitted. Development of an Integrated One Health Disease Modelling and Digital Health Program in Human, Livestock, and Wildlife. Proposed role: model parameterization and data analysis for highly pathogenic avian influenza and anthrax in India; stakeholder training; and supervision of postdoctoral and doctoral trainees. Proposed total project budget: $1M over three years."
-
     Computational Expertise:
       - label: Modeling
-        details: "Mathematical and computational models of changing systems, including spatial, stochastic, compartmental and agent-based models; machine learning with scientific constraints; multivariate data analysis and dimensionality reduction; stability, bifurcation and sensitivity analysis; parameter identifiability and inverse problems"
+        details: "Mathematical and computational models of changing systems, including spatial, stochastic and compartmental models; machine learning with scientific constraints; multivariate data analysis and dimensionality reduction; stability, bifurcation and sensitivity analysis; parameter identifiability and inverse problems"
 
       - label: Inference
-        details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; model calibration and validation; proper scoring rules and forecast evaluation"
+        details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; simulation-based calibration, numerical qualification, and model and forecast assessment; proper scoring rules"
 
       - label: Computing
         details: "Python, Julia, C++, Stan, R, MATLAB. Scientific computing; high-performance numerical solvers; operator splitting; data pipelines and exploratory analysis; reproducible workflows (Git, CI/CD, containerization)"

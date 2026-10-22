@@ -3,11 +3,12 @@ layout: about
 title: about
 permalink: /
 subtitle: Assistant Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
+last_modified_at: 2026-10-22
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_alt: Profile photograph
+  image_alt: Portrait of Joshua C. Macdonald
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Baltimore, Maryland</p>
@@ -26,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I develop mathematical models, statistical methods and software to understand scientific processes and inform decisions under uncertainty. I study how systems change over time, how well models describe their behavior, and what measurements can tell us about them.
+I am a computational scientist developing mechanistic models and research software for decisions under uncertainty, using Bayesian and simulation-based inference. My established work focuses on infectious-disease modeling, scenario projections, and model and forecast evaluation. Developing work examines scientific machine learning for dynamical systems and collaborative monitoring, surveillance and study design.
 
 I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With the [Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA)](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on wildlife and livestock disease surveillance.
 
@@ -36,8 +37,9 @@ Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, wor
 
 <nav class="page-links" aria-label="Explore my work">
   <a href="/publications/">Publications</a>
-  <a href="/projects/">Research and software</a>
   <a href="/operational-modeling/">Operational modeling</a>
+  <a href="/projects/">Research and software</a>
+  <a href="/reviewer-profile/">Reviewer and collaborator profile</a>
   <a href="/cv/">CV</a>
 </nav>
 
@@ -45,14 +47,14 @@ Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, wor
 
 {% include selected_papers.liquid %}
 
-[All publications, preprints and manuscripts in preparation](/publications/)
+[All publications, preprints and publicly listed manuscripts under review](/publications/)
 
 ## Research in progress
 
 My current methods research asks how measurements and scientific assumptions affect what we can learn about a system.
 
 - **[Structural scores](/projects/current_analyses/#structural-scores-and-scientific-prediction).** Reporting whether predictions satisfy stated scientific constraints, including checks made before the predicted outcome is observed.
-- **[Inference and calibration](/projects/inference_calibration/).** Estimating unknown model quantities and assessing fitting procedures with simulated data. The op_infer research software is private, pre-alpha and unreleased.
+- **[Inference and calibration](/projects/inference_calibration/).** Estimating unknown model quantities and assessing fitting procedures with simulated data. The op_infer codebase is public and pre-alpha, with no PyPI release; application materials remain private.
 - **[Incomplete data and latent structure](/projects/pp_eigentest/).** Investigating how many patterns can be distinguished from noise in incomplete data, building on [VBPCApy](/projects/vbpca_py/) and a [2024 preprint](https://arxiv.org/abs/2409.12129).
 
 [Current application studies](/projects/current_analyses/#application-studies) address dengue within-host dynamics, observation noise, outbreak vaccination and Crimean-Congo hemorrhagic fever surveillance. These summaries describe ongoing questions; public papers and artifacts are linked as they become available.

@@ -379,8 +379,8 @@ cv_pdf: /assets/pdf/cv.pdf
 `assets/pdf/cv.pdf` and the freshly rendered PDF under
 `assets/rendercv/rendercv_output/` contain identical bytes. Deployed
 `assets/rendercv/provenance.json` records the source revision, input hashes,
-renderer version and PDF hash. Tracked PDFs are reference snapshots; production
-always overlays the current run's freshly verified artifacts before building.
+renderer version and PDF hash. Generated PDFs and provenance are not tracked;
+production overlays the current run's freshly verified artifacts before building.
 Changing PDF-generation policy requires updating the deploy dependency and
 verification together; deleting the reusable workflow alone breaks deployment.
 

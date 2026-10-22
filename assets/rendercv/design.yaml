@@ -33,7 +33,7 @@ design:
     publication_entry:
       main_column: "**TITLE**\nSUMMARY\nAUTHORS\nURL (JOURNAL)\nHIGHLIGHTS"
       date_and_location_column: DATE
-    footer: "NAME · PAGE_NUMBER / TOTAL_PAGES"
+    footer: "NAME · CV reviewed October 2026 · PAGE_NUMBER / TOTAL_PAGES"
     education_entry:
       main_column: |-
         **INSTITUTION**, AREA

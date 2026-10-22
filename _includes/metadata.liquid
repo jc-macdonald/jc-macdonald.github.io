@@ -39,7 +39,10 @@
   {% endif %}
 </title>
 <meta name="author" content="{{ author_name }}">
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta
+  name="description"
+  content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
+>
 {% if page.keywords or site.keywords %}
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
 {% endif %}
@@ -59,8 +62,14 @@
     property="og:title"
     content="{% if page.url == '/' %}{{ title }}{% elsif page.title %}{{ page.title }} | {{ title }}{% else %}{{ title }}{% endif %}"
   >
-  <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta
+    property="og:url"
+    content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}"
+  >
+  <meta
+    property="og:description"
+    content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
+  >
   {% if page.og_image or site.og_image %}
     <meta
       property="og:image"
@@ -75,7 +84,10 @@
     name="twitter:title"
     content="{% if page.url == '/' %}{{ title }}{% elsif page.title %}{{ page.title }} | {{ title }}{% else %}{{ title }}{% endif %}"
   >
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta
+    name="twitter:description"
+    content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
+  >
   {% if page.og_image or site.og_image %}
     <meta
       name="twitter:image"
@@ -241,22 +253,47 @@
   {% assign schema_description = page.description | default: site.description | strip %}
   {% assign schema_title = page.title | default: title %}
   {% if page.url == '/' %}{% assign schema_title = title %}{% endif %}
+  {% assign schema_url = page.url | prepend: site.baseurl | prepend: site.url %}
+  {% assign schema_modified = page.last_modified_at | default: page.lastmod | default: page.reviewed_on %}
   <script type="application/ld+json">
+    {% if page.url == '/' %}
     {
-        "author":
-        {
-            "@type": "Person",
-            "name": {{ author_name | strip | jsonify }}
-        },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-        "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": {{ schema_description | jsonify }},
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": {{ schema_url | append: '#profile' | jsonify }},
+        "url": {{ schema_url | jsonify }},
+        "name": {{ schema_title | strip | jsonify }},
         "headline": {{ schema_title | strip | jsonify }},
-        {% if sameaslinks != blank %}
-        "sameAs": {{ sameaslinks | jsonify }},
-        {% endif %}
-        "name": {{ author_name | strip | jsonify }},
-        "@context": "https://schema.org"
+        "description": {{ schema_description | jsonify }},
+        {% if schema_modified %}"dateModified": {{ schema_modified | date_to_xmlschema | jsonify }},{% endif %}
+        "mainEntity": {
+          "@type": "Person",
+          "@id": {{ site.url | append: '/#person' | jsonify }},
+          "name": {{ author_name | strip | jsonify }},
+          "url": {{ site.url | append: '/' | jsonify }},
+          {% if page.og_image or site.og_image %}"image": {{ page.og_image | default: site.og_image | absolute_url | jsonify }},{% endif %}
+          "sameAs": {{ sameaslinks | jsonify }}
+        },
+        "author": {"@id": {{ site.url | append: '/#person' | jsonify }}}
     }
+    {% else %}
+    {
+        "@context": "https://schema.org",
+        "@type": "{% if is_blog_post %}BlogPosting{% else %}WebPage{% endif %}",
+        "@id": {{ schema_url | append: '#webpage' | jsonify }},
+        "url": {{ schema_url | jsonify }},
+        "name": {{ schema_title | strip | jsonify }},
+        "headline": {{ schema_title | strip | jsonify }},
+        "description": {{ schema_description | jsonify }},
+        {% if schema_modified %}"dateModified": {{ schema_modified | date_to_xmlschema | jsonify }},{% endif %}
+        "author": {
+          "@type": "Person",
+          "@id": {{ site.url | append: '/#person' | jsonify }},
+          "name": {{ author_name | strip | jsonify }},
+          "url": {{ site.url | append: '/' | jsonify }},
+          "sameAs": {{ sameaslinks | jsonify }}
+        }
+    }
+    {% endif %}
   </script>
 {% endif %}

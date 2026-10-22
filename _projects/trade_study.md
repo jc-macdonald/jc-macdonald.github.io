@@ -8,15 +8,23 @@ img_alt: Ten synthetic designs compared on mean squared error and assumed measur
 importance: 3
 category: "Released software"
 github: https://github.com/jcm-sci/trade-study
+last_modified_at: 2026-10-22
 ---
 
 **trade-study** helps researchers compare experiments, model settings and data-collection plans using repeated simulations. Users supply a simulator and scorer, define factors and objectives, and compare choices such as model formulations, numerical methods or measurement strategies.
 
-[Public alpha release on PyPI](https://pypi.org/project/trade-study/) · [Documentation and executable examples](https://jcm-sci.github.io/trade-study/guide/capabilities/) · [Archived release](https://doi.org/10.5281/zenodo.19599838)
+[Public alpha release on PyPI](https://pypi.org/project/trade-study/) · [Documentation and executable examples](https://jcm-sci.github.io/trade-study/guide/capabilities/) · [v0.6.0 archive](https://doi.org/10.5281/zenodo.23497881) · [All archived versions](https://doi.org/10.5281/zenodo.19599838)
 
 The package supports design grids, replicated and paired comparisons, adaptive searches, sensitivity analysis and model weighting. Saved results, caches and provenance support resuming and checking a study.
 
 A Pareto front identifies candidates for which no alternative improves one stated objective without worsening another. Choosing among them also requires preferences or constraints. Statistical comparisons depend on the replicate design; synthetic findings need separate assessment before being applied to observed data. The [computed example](/software-examples/#replicated-designs) states its measurement model, assumed costs and numerical checks.
+
+Two longer guides show how the same framework can organize applied design
+questions: a [synthetic monitoring-station study](https://jcm-sci.github.io/trade-study/guide/monitoring/)
+compares instrument settings and assumed station costs, and a
+[synthetic serosurvey study](https://jcm-sci.github.io/trade-study/guide/serosurvey/)
+compares sample size, allocation, accuracy and hypothetical cost. Both are
+executable demonstrations, not validated recommendations for a field program.
 
 {% include figure.liquid path="assets/img/research/computed/replicated_tradeoff.svg" class="img-fluid rounded" zoomable=true alt="Ten synthetic sample-mean designs compared across 512 paired replicates. Nondominated mean error and assumed cost are marked, and empirical errors are compared with analytic variances. Costs are declared assumptions, not measured field costs." caption="Ten synthetic measurement designs, each evaluated on 512 paired replicates. Cost is an assumed input, not a measured field cost." %}
 

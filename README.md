@@ -49,8 +49,9 @@ both the RenderCV PDF and `assets/pdf/cv.pdf`. Artifacts expire after 14 days. P
 validate and upload previews without committing or publishing. The live
 [`assets/rendercv/provenance.json`](https://jcmacdonald.dev/assets/rendercv/provenance.json)
 records the deployed CV's revision, input hashes, renderer version and PDF hash.
-Tracked PDFs are reference snapshots. Publication overlays fresh verified
-artifacts from that same workflow run.
+Generated PDFs and provenance are not tracked. Publication overlays fresh,
+verified artifacts from that same workflow run, so an old local export cannot
+be mistaken for the deployed CV.
 
 To reproduce the renderer locally in an activated Python 3.12 environment:
 
@@ -58,7 +59,8 @@ To reproduce the renderer locally in an activated Python 3.12 environment:
 pip install -r requirements-rendercv.txt
 python .github/scripts/render_cv.py render --output-dir /tmp/cv-preview
 python .github/scripts/render_cv.py verify --output-dir /tmp/cv-preview
-# Install poppler-utils for pdftotext, used by the regression checks.
+# Install poppler-utils for the extraction and basic PDF-semantic checks.
+python .github/scripts/verify_cv_pdf.py /tmp/cv-preview/assets/pdf/cv.pdf
 python -m unittest discover -s .github/tests -p 'test_render_cv.py' -v
 # With the site's Ruby/Jekyll dependencies available, also test a source-only
 # name change reaching both generated HTML and the downloadable PDF:
@@ -70,6 +72,9 @@ source snapshots unchanged. The tests include a recognizable synthetic name in
 a temporary copy, applied design and locale settings, continuation headings,
 invalid schema rejection and mismatched revision/input/PDF
 rejection; synthetic content is never written to the source checkout.
+The PDF check requires identifying metadata, tagged output, embedded and
+Unicode-mapped fonts, and extractable text on every page. It is a regression
+screen, not a claim of PDF/UA conformance or a substitute for manual review.
 
 The **Check source and external links** workflow runs on pull requests and source
 pushes. It builds Jekyll to resolve Liquid, then checks HTTP(S) anchors on the
@@ -101,6 +106,13 @@ python .github/scripts/check_source_links.py _site /tmp/source-links.txt
 lychee --config .github/lychee.toml --no-progress /tmp/source-links.txt
 python -m unittest discover -s .github/tests -p 'test_source_links.py' -v
 ```
+
+The **Accessibility audit** workflow builds the reviewed source revision with
+its matching generated CV and runs axe on eight representative routes. Axe
+violations fail the check. The separate **Lighthouse audit** records
+performance, accessibility, best-practice and search metadata scores for the
+same routes and uploads short-lived reports; it does not commit badges or
+reports. These automated screens do not establish WCAG conformance.
 
 The retained al-folio reference below documents the theme and its upstream
 community. Theme attribution and licensing are preserved in [LICENSE](LICENSE).
@@ -342,20 +354,6 @@ Workshop on Foundation and Generative Models in Biometrics (<a href="https://fou
 </tr>
 </table>
 
-## Lighthouse PageSpeed Insights
-
-### Desktop
-
-[![Google Lighthouse PageSpeed Insights](lighthouse_results/desktop/pagespeed.svg)](https://htmlpreview.github.io/?https://github.com/alshedivat/al-folio/blob/main/lighthouse_results/desktop/alshedivat_github_io_al_folio_.html)
-
-Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Falshedivat.github.io%2Fal-folio%2F&form_factor=desktop)
-
-### Mobile
-
-[![Google Lighthouse PageSpeed Insights](lighthouse_results/mobile/pagespeed.svg)](https://htmlpreview.github.io/?https://github.com/alshedivat/al-folio/blob/main/lighthouse_results/mobile/alshedivat_github_io_al_folio_.html)
-
-Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Falshedivat.github.io%2Fal-folio%2F&form_factor=mobile)
-
 ## Table Of Contents
 
 <!--ts-->
@@ -363,9 +361,6 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
 - [Joshua C. Macdonald — research website](#joshua-c-macdonald--research-website)
 - [al-folio](#al-folio)
   - [User community](#user-community)
-  - [Lighthouse PageSpeed Insights](#lighthouse-pagespeed-insights)
-    - [Desktop](#desktop)
-    - [Mobile](#mobile)
   - [Table Of Contents](#table-of-contents)
   - [Getting started](#getting-started)
   - [Installing and Deploying](#installing-and-deploying)
@@ -601,9 +596,12 @@ Currently, we run some checks to ensure that the code quality and generated site
 
 - [Prettier](https://prettier.io/) - check if the formatting of the code follows the style guide
 - [lychee](https://lychee.cli.rs/) - check for broken links
-- [Axe](https://github.com/dequelabs/axe-core) (need to run manually) - do some accessibility testing
+- [Axe](https://github.com/dequelabs/axe-core) - test representative routes for accessibility violations
+- [Lighthouse](https://github.com/GoogleChrome/lighthouse) - record performance, accessibility, best-practice, and SEO diagnostics
 
-We decided to keep `Axe` runs manual because fixing the issues are not straightforward and might be hard for people without web development knowledge.
+Pull requests and changes to `main` run Axe and Lighthouse against the built site.
+Axe violations fail the accessibility check; Lighthouse results are informational
+and are retained as short-lived workflow artifacts.
 
 ---
 

@@ -1,16 +1,18 @@
 \input{figure-style.tex}
 \begin{document}
 \begin{tikzpicture}
-\heading{Current research directions}{Scientific applications, methods in development and study design.}
-\node[panel=Blue,minimum width=12.4cm,text width=11.65cm,minimum height=2.1cm] (a) at (0,0)
-  {{\color{Blue}\bfseries\large 1. Scientific applications}\\[5pt]Multi-host disease, marine ecosystems, spatial processes\\and cultural evolution.};
-\node[panel=Teal,minimum width=12.4cm,text width=11.65cm,minimum height=2.1cm] (b) at (0,-3)
-  {{\color{Teal}\bfseries\large 2. Methods in development}\\[5pt]Parameter inference and calibration, structural evaluation,\\rank selection and replicated studies.};
-\node[panel=Gold,minimum width=12.4cm,text width=11.65cm,minimum height=2.1cm] (c) at (0,-6)
-  {{\color{Gold}\bfseries\large 3. Surveillance and intervention studies}\\[5pt]Vaccination strategies, scenario campaigns and surveillance design.\\Compare model results under stated assumptions.};
-\draw[flow] (a.south) -- (b.north);
-\draw[flow] (b.south) -- (c.north);
-\draw[flow,draw=Teal] (c.west) -- ++(-.4,0) |- (a.west);
-\node[note] at (0,-9) {Observations and study results inform revisions to models and study designs. This agenda includes operational work, methods under development and planned applications.};
+\heading{Current research directions}{Applications, methods and design questions inform one another rather than forming a fixed sequence.}
+\node[panel=Blue,minimum width=5.85cm,text width=5.1cm,minimum height=2.55cm] (a) at (0,0)
+  {{\color{Blue}\bfseries\large Established applications}\\[5pt]Infectious disease dynamics, ecology, cultural transmission, scenario and vaccination questions.};
+\node[panel=Teal,minimum width=5.85cm,text width=5.1cm,minimum height=2.55cm] (b) at (6.55,0)
+  {{\color{Teal}\bfseries\large Methods and software}\\[5pt]Mechanistic models, Bayesian and simulation-based inference, model and forecast evaluation.};
+\node[panel=Gold,minimum width=5.85cm,text width=5.1cm,minimum height=2.55cm] (c) at (3.275,-3.55)
+  {{\color{Gold}\bfseries\large Developing questions}\\[5pt]Scientific machine learning, monitoring, surveillance and study design with domain partners.};
+\begin{scope}[on background layer]
+  \draw[draw=Muted,line width=1pt] (a.east) -- (b.west);
+  \draw[draw=Muted,line width=1pt] (a.south) -- (c.north);
+  \draw[draw=Muted,line width=1pt] (b.south) -- (c.north);
+\end{scope}
+\node[note] at (0,-6.8) {The categories describe the current evidence base. Developing questions require application-specific assumptions, collaborators and validation.};
 \end{tikzpicture}
 \end{document}

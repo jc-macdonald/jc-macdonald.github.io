@@ -4,8 +4,9 @@ layout: page
 title: Modeling in practice
 permalink: /operational-modeling/
 description: My contributions to infectious disease scenario projections, vaccination studies and the software used to run them.
-nav: false
-nav_order: 4
+nav: true
+nav_order: 3
+last_modified_at: 2026-10-22
 ---
 
 ## Scenario Modeling Hubs
@@ -37,13 +38,13 @@ Model development, fitting and scenario production for ACCIDDA's COVID-19 projec
 
 ## Other Operational Work
 
-### Hib Vaccination Modeling (Navajo Nation)
+### Hib Vaccination Modeling
 
-I provide technical supervision for PhD students implementing an age- and immune-status-structured _Haemophilus influenzae_ type b (Hib) model. The study examines the impact of long-running vaccination programs in the Navajo Nation and includes model fitting and policy analysis.
+I provide technical supervision for PhD students implementing an age- and immune-status-structured _Haemophilus influenzae_ type b (Hib) model. The study examines the effects of long-running vaccination programs in a partner-defined population and includes model fitting and policy analysis. Public descriptions remain general until the participating organizations approve more specific attribution.
 
 ### Diphtheria Outbreak Vaccination
 
-Developing an operational modeling analysis of outbreak-response vaccination strategies, including the interaction between surveillance, immunity, and campaign timing. The working repository remains private while the analysis matures.
+I lead modeling analyses of outbreak-response vaccination strategies, including the interaction between surveillance, immunity and campaign timing. The working repository and partner-specific policy process remain private while the analysis matures.
 
 ---
 

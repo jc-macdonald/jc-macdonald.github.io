@@ -42,10 +42,10 @@ diagrams:
     description: Relationships among methods and scientific applications.
   - name: obs_model_general
     title: Models and measurements
-    description: Scientific processes, measurement assumptions and recorded data.
+    description: Established application evidence and a developing monitoring-design direction.
   - name: future_directions_general
     title: Current research directions
-    description: Methodological questions and application areas.
+    description: Interacting applications, methods and developing design questions.
 illustrations:
   - name: optimal_design
     title: Observation-design tradeoffs

@@ -3,19 +3,19 @@
     "name": "beyond_onehealth",
     "source": "tikz/beyond_onehealth.tex",
     "title": "Simulation, inference and decisions",
-    "description": "Public tools cover field/equation/reaction specification with OP System, PDE/nonlocal/reaction simulation with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds parameter inference, calibration and study-design checks; it is private, pre-alpha and unreleased."
+    "description": "Public tools cover field/equation/reaction specification with OP System, PDE/nonlocal/reaction simulation with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds selected inference adapters, calibration and study-design checks; its source is public pre-alpha with no PyPI release."
   },
   {
     "name": "obs_model_general",
     "source": "tikz/obs_model_general.tex",
     "title": "Models and measurements across scientific domains",
-    "description": "An underlying process x(t) is linked to recorded data y through an observation model p(y given x and measurement parameters). Examples show disease reporting, ecological sampling, remote sensing and cultural data, each with its own measurement assumptions."
+    "description": "An underlying process x(t) is linked to recorded data y through an observation model p(y given x and measurement parameters). Established examples cover health, ecology and incomplete multivariate data; monitoring design is marked as a developing direction that requires domain collaboration."
   },
   {
     "name": "future_directions_general",
     "source": "tikz/future_directions_general.tex",
     "title": "Current research directions",
-    "description": "The research agenda connects scientific systems, ongoing work on parameter inference, calibration, structural evaluation and rank selection, and decisions about interventions and surveillance. Observations and diagnostics inform new study choices."
+    "description": "Three connected, nonsequential areas distinguish established applications, methods and software, and developing questions in scientific machine learning, monitoring, surveillance and study design."
   },
   {
     "name": "op_system_slide",
@@ -33,7 +33,7 @@
     "name": "op_infer_slide",
     "source": "tikz/op_infer_slide.tex",
     "title": "op_infer research capabilities",
-    "description": "op_infer capabilities include fitting through established libraries, calibration checks on simulated data, and replicated study comparisons. Private, pre-alpha and unreleased."
+    "description": "op_infer capabilities include selected inference-library adapters, calibration checks on simulated data, and replicated study comparisons. Its source is public pre-alpha with no PyPI release."
   },
   {
     "name": "flepimop2_slide",
@@ -57,7 +57,7 @@
     "name": "vbpca_py_schematic",
     "source": "tikz/vbpca_py_schematic.tex",
     "title": "VBPCApy observed-data model",
-    "description": "An illustrative masked data matrix feeds a variational low-rank model for latent scores, loadings, bias, noise and ARD priors. Model outputs branch to reconstruction/prediction and assessment. Covariances are approximate; coverage and rank recovery need checks for the intended data."
+    "description": "An illustrative masked data matrix feeds a variational low-rank model for latent scores, loadings, bias, noise and ARD priors. Model outputs branch to fitted-data reconstruction, training scores and assessment. Covariances are approximate; coverage and rank recovery need checks for the intended data."
   },
   {
     "name": "optimal_design",

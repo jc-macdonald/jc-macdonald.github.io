@@ -5,6 +5,7 @@ title: Computed software examples
 permalink: /software-examples/
 description: Spatial fields, stochastic simulations, replicated comparisons and incomplete-data reconstruction using released packages.
 nav: false
+last_modified_at: 2026-10-22
 design_comparison: true
 ---
 
@@ -17,6 +18,8 @@ what is checked.
 [Numerical inputs and outputs](/assets/img/research/computed/computed_data.json) ·
 [Versions and artifact hashes](/assets/img/research/computed/provenance.json) ·
 [Build notes](/assets/img/research/computed/README.md)
+
+{% include computed_versions.liquid %}
 
 <nav class="page-links" aria-label="Computed examples">
   <a href="#spatial-diffusion">Spatial diffusion</a>
