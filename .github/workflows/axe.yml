@@ -88,13 +88,10 @@ jobs:
           bundle exec jekyll build
           npm install -g purgecss
           purgecss -c purgecss.config.js
-      - name: Select stable Chrome
+      - name: Match the runner ChromeDriver to Chrome
         run: |
-          CHROMIUM_MAJOR=$(wget -qO- https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_STABLE | cut -d. -f1)
+          CHROMIUM_MAJOR=$(google-chrome --product-version | cut -d. -f1)
           echo "CHROMIUM_MAJOR=$CHROMIUM_MAJOR" >> "$GITHUB_ENV"
-      - uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: ${{ env.CHROMIUM_MAJOR }}
       - name: Audit representative routes with axe
         run: |
           npm install --no-save --no-package-lock @axe-core/cli@4.10.2 http-server@14.1.1 chromedriver@"$CHROMIUM_MAJOR"
