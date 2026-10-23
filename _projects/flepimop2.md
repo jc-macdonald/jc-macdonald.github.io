@@ -7,14 +7,17 @@ img_alt: Validated configuration selects campaign targets connected to System/Pa
 importance: 1
 category: "Collaborative infrastructure"
 github: https://github.com/ACCIDDA/flepimop2
+last_modified_at: 2026-10-23
 ---
 
 **FlepiMoP2** (Flexible Pipeline for Interchangeable Model Processing) runs configuration-defined infectious disease forecasting and scenario campaigns used in CDC-CFA work. Separate providers handle model specification (System), numerical integration (Engine), and result storage (Backend). Other interfaces cover parameters, processing steps, scenarios, and batch jobs. Configuration is validated with Pydantic, and modules are loaded through plugins.
 
 My contributions include the System, Engine, and Backend interfaces, numerical interfaces used by [OP Engine](/projects/op_engine/), and performance profiling of FlepiMoP v1 that informed the redesign.
 
-The pipeline has a [public alpha release on PyPI](https://pypi.org/project/flepimop2/). See the
-[current documentation](https://accidda.github.io/flepimop2/latest/) for its
+{% assign release = site.data.software_releases.packages.flepimop2 %}
+{% include software_release_status.liquid slug="flepimop2" %} · [{{ release.docs_label }}]({{ release.docs_url }})
+
+The release documentation describes FlepiMoP2's
 configuration and provider interfaces. The mathematical and numerical cores
 remain usable independently; provider availability and backend qualification
 are separate from the orchestration API.

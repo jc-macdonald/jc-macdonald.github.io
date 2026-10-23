@@ -3,7 +3,7 @@
     "name": "beyond_onehealth",
     "source": "tikz/beyond_onehealth.tex",
     "title": "Simulation, inference and decisions",
-    "description": "Public tools cover field/equation/reaction specification with OP System, PDE/nonlocal/reaction simulation with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds selected inference adapters, calibration and study-design checks; its source is public pre-alpha with no PyPI release."
+    "description": "Public tools cover field/equation/reaction specification with OP System, PDE/nonlocal/reaction simulation with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds selected inference adapters, calibration and study-design checks as research software in development."
   },
   {
     "name": "obs_model_general",
@@ -33,7 +33,7 @@
     "name": "op_infer_slide",
     "source": "tikz/op_infer_slide.tex",
     "title": "op_infer research capabilities",
-    "description": "op_infer capabilities include selected inference-library adapters, calibration checks on simulated data, and replicated study comparisons. Its source is public pre-alpha with no PyPI release."
+    "description": "op_infer capabilities include selected inference-library adapters, calibration checks on simulated data, and replicated study comparisons. The source is public research software in development."
   },
   {
     "name": "flepimop2_slide",

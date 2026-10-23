@@ -1,11 +1,12 @@
 ---
 layout: page
 title: pp-eigentest
-description: Research on distinguishing underlying patterns from noise in incomplete data. Private alpha research software.
+description: Private research on distinguishing underlying patterns from noise in incomplete data.
 img: assets/img/research/pp_eigentest_schematic.svg
 img_alt: Ongoing signal-rank research connects incomplete data, Bayesian latent-variable modeling, and assessment of signal and uncertainty. The methods and software remain in development.
 importance: 3
 category: "Research in progress"
+last_modified_at: 2026-10-23
 ---
 
 **pp-eigentest** investigates how many underlying patterns can be distinguished
@@ -13,8 +14,9 @@ from noise in an incomplete dataset. This count is the signal rank. The work
 uses Bayesian models and repeated simulated datasets to study posterior
 predictive eigenvalue testing.
 
-This is ongoing methods research with private alpha software. The current work
-revises and extends the approach described in the
+{% include software_release_status.liquid slug="pp_eigentest" %}
+
+The current work revises and extends the approach described in the
 [2024 preprint](https://arxiv.org/abs/2409.12129), which is the public reference
 for the earlier methodology. It is distinct from the released
 [VBPCApy](/projects/vbpca_py/) package.

@@ -1,2 +1,6 @@
 # Force LF line endings, needed for Docker to work on Windows
 *.sh text eol=lf
+
+# Preserve the byte-identical, manifest-bound upstream op_infer SVG export.
+assets/img/research/computed/op_infer_normal_sbc.svg -whitespace
+assets/img/research/computed/op_infer_normal_sbc/*.svg -whitespace

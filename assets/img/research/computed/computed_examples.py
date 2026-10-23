@@ -1,8 +1,8 @@
 # /// script
 # requires-python = ">=3.12,<3.14"
 # dependencies = [
-#   "matplotlib==3.11.2", "numpy==2.5.4", "op-system==0.8.0",
-#   "op-engine==0.7.0", "trade-study[pareto]==0.5.1", "vbpca-py==0.4.6",
+#   "matplotlib==3.11.2", "numpy==2.5.4", "op-system==0.10.0",
+#   "op-engine==0.9.0", "trade-study[pareto]==0.6.0", "vbpca-py==0.5.0",
 # ]
 # ///
 """Compute synthetic package demonstrations and retain their numerical inputs.
@@ -16,21 +16,22 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
-from importlib.metadata import version
 import json
+import xml.etree.ElementTree as ET
+from importlib.metadata import version
 from pathlib import Path
 from tempfile import TemporaryDirectory
-import xml.etree.ElementTree as ET
 
 import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+import trade_study as ts
+from matplotlib.patches import Patch
 from op_engine import BatchedDirectSSASolver, CoreSolver, FiringRecorder, ModelCore
 from op_engine.core_solver import RunConfig
 from op_system import compile_spec
-import trade_study as ts
 from vbpca_py import VBPCA
 
 HERE = Path(__file__).resolve().parent
@@ -133,8 +134,23 @@ def diffusion():
         title="Periodic diffusion, 64 spatial cells",
     )
     fig.colorbar(image, ax=axes[0], label="Field value", shrink=0.8)
-    for i, color in zip([0, 10, 40, 120], [BLUE, TEAL, GOLD, GREY]):
-        axes[1].plot(x, history[i], color=color, label=f"t = {times[i]:g}")
+    profiles = [
+        (0, BLUE, "-", "o"),
+        (10, TEAL, "--", "s"),
+        (40, GOLD, "-.", "^"),
+        (120, GREY, ":", "D"),
+    ]
+    for i, color, line_style, marker in profiles:
+        axes[1].plot(
+            x,
+            history[i],
+            color=color,
+            ls=line_style,
+            marker=marker,
+            markevery=8,
+            ms=3.5,
+            label=f"t = {times[i]:g}",
+        )
     axes[1].set(
         xlabel="Position", ylabel="Field value", title="Field profiles", ylim=(0.1, 1.9)
     )
@@ -181,14 +197,16 @@ def ssa():
     axes[0].fill_between(
         times, lo, hi, color=TEAL, alpha=0.18, label="5th–95th percentile of runs"
     )
-    for i in range(8):
-        axes[0].step(times, history[:, i], where="post", color=TEAL, alpha=0.25, lw=0.6)
+    axes[0].plot(times, lo, color=TEAL, ls=":", lw=1.1)
+    axes[0].plot(times, hi, color=TEAL, ls=":", lw=1.1)
+    for i in range(4):
+        axes[0].step(times, history[:, i], where="post", color=TEAL, alpha=0.7, lw=0.7)
     axes[0].plot(times, mean, color=TEAL, label="Mean of 512 independent runs")
     axes[0].plot(times, exact, color=GOLD, ls="--", label="Analytic mean")
     axes[0].set(
         xlabel="Time",
         ylabel="Transferred units",
-        title="Independent stochastic transfers",
+        title="Stochastic transfer paths",
     )
     axes[0].legend(loc="lower right")
     values = np.arange(population + 1)
@@ -213,7 +231,7 @@ def ssa():
     axes[1].set(
         xlabel="Transferred units at t = 5",
         ylabel="Probability",
-        title="Distribution across runs",
+        title="Final distribution",
         xlim=(30, 40.5),
     )
     axes[1].legend()
@@ -284,17 +302,32 @@ def tradeoff():
     ]
     assert set(map(int, front)) == set(expected)
     fig, axes = plt.subplots(1, 2, figsize=(8, 3.5), layout="constrained")
-    for noise, color, label in [
-        (1.0, TEAL, "Standard noise"),
-        (1.5, GOLD, "Cheaper, noisier measurements"),
+    for noise, color, marker, line_style, reference_style, label in [
+        (1.0, TEAL, "o", "-", ":", "Standard noise"),
+        (1.5, GOLD, "s", "--", "-.", "Cheaper, noisier measurements"),
     ]:
         indices = [i for i, c in enumerate(means.configs) if c["noise"] == noise]
         indices.sort(key=lambda i: means.configs[i]["samples"])
         values = means.scores[indices]
-        axes[0].plot(values[:, 1], values[:, 0], "o-", ms=4, color=color, label=label)
+        axes[0].plot(
+            values[:, 1],
+            values[:, 0],
+            marker=marker,
+            ls=line_style,
+            ms=4,
+            color=color,
+            label=label,
+        )
         n = np.asarray([means.configs[i]["samples"] for i in indices])
-        axes[1].plot(n, values[:, 0], "o-", color=color, label=label)
-        axes[1].plot(n, noise**2 / n, ":", color=color)
+        axes[1].plot(
+            n,
+            values[:, 0],
+            marker=marker,
+            ls=line_style,
+            color=color,
+            label=label,
+        )
+        axes[1].plot(n, noise**2 / n, ls=reference_style, color=color)
     axes[0].scatter(
         means.scores[front, 1],
         means.scores[front, 0],
@@ -320,7 +353,7 @@ def tradeoff():
     axes[1].text(
         0.05,
         0.06,
-        "Dotted curves: analytic variance σ² / n",
+        "Dotted/dash-dot curves: analytic variance σ² / n",
         transform=axes[1].transAxes,
         color=GREY,
         fontsize=8,
@@ -367,7 +400,8 @@ def reconstruction():
     assert np.isfinite(reconstructed).all() and rmse < 0.5
     fig, axes = plt.subplots(1, 3, figsize=(9, 3.4), layout="constrained")
     cmap = plt.get_cmap("RdBu_r").copy()
-    cmap.set_bad("#e6e9ea")
+    missing_color = "#5f6368"
+    cmap.set_bad(missing_color)
     scale = 3
     for ax, matrix, title in zip(
         axes,
@@ -388,6 +422,15 @@ def reconstruction():
         )
         ax.set(xlabel="Sample", ylabel="Feature", title=title)
     fig.colorbar(image, ax=axes, label="Value", shrink=0.75, extend="both")
+    axes[1].legend(
+        handles=[
+            Patch(facecolor=missing_color, label="Not observed (excluded from fit)")
+        ],
+        loc="upper center",
+        bbox_to_anchor=(0.5, -0.18),
+        frameon=False,
+        fontsize=8,
+    )
     export(fig, "incomplete_reconstruction")
     return {
         "seed": SEED,
@@ -448,6 +491,9 @@ def generate(output):
             element.text = value
             root.insert(index, element)
         ET.ElementTree(root).write(path, encoding="utf-8", xml_declaration=True)
+        path.write_text(
+            "\n".join(line.rstrip() for line in path.read_text().splitlines()) + "\n"
+        )
     names = ["computed_data.json", "design_comparison.csv"] + [
         entry["name"] + suffix
         for entry in entries

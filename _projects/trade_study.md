@@ -8,12 +8,13 @@ img_alt: Ten synthetic designs compared on mean squared error and assumed measur
 importance: 3
 category: "Released software"
 github: https://github.com/jcm-sci/trade-study
-last_modified_at: 2026-10-22
+last_modified_at: 2026-10-23
 ---
 
-**trade-study** helps researchers compare experiments, model settings and data-collection plans using repeated simulations. Users supply a simulator and scorer, define factors and objectives, and compare choices such as model formulations, numerical methods or measurement strategies.
+**trade-study** is a domain-independent framework for comparing experiments, model settings and data-collection plans using repeated simulations. Users supply a simulator and scorer, define factors and objectives, and compare choices such as model formulations, numerical methods or measurement strategies. Public-health, ecological and other examples illustrate the interface without limiting where it can be used.
 
-[Public alpha release on PyPI](https://pypi.org/project/trade-study/) · [Documentation and executable examples](https://jcm-sci.github.io/trade-study/guide/capabilities/) · [v0.6.0 archive](https://doi.org/10.5281/zenodo.23497881) · [All archived versions](https://doi.org/10.5281/zenodo.19599838)
+{% assign release = site.data.software_releases.packages.trade_study %}
+{% include software_release_status.liquid slug="trade_study" %} · [{{ release.docs_label }} and executable examples]({{ release.docs_url }})
 
 The package supports design grids, replicated and paired comparisons, adaptive searches, sensitivity analysis and model weighting. Saved results, caches and provenance support resuming and checking a study.
 

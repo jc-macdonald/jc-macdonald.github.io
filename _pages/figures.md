@@ -3,13 +3,16 @@ search: true
 layout: page
 title: Research figures
 permalink: /figures/
+last_modified_at: 2026-10-23
 description: Computed examples, method diagrams and editable sources for research figures.
 nav: false
 ---
 
-The computed figures below use public synthetic data and released software.
-Each links to its assumptions, numerical checks and full multi-panel version.
-The method diagrams and constructed illustrations follow in separate sections.
+The computed figures below use public synthetic data. Four use released
+software; the op_infer fixture is imported from a pinned public pre-alpha
+commit and does not imply a release. Each links to its assumptions, checks and
+full multi-panel version. The method diagrams and constructed illustrations
+follow in separate sections.
 
 <nav class="page-links" aria-label="Figure sections">
   <a href="#computed-examples">Computed examples</a>

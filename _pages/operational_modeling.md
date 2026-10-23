@@ -6,7 +6,7 @@ permalink: /operational-modeling/
 description: My contributions to infectious disease scenario projections, vaccination studies and the software used to run them.
 nav: true
 nav_order: 3
-last_modified_at: 2026-10-22
+last_modified_at: 2026-10-23
 ---
 
 ## Scenario Modeling Hubs
@@ -50,4 +50,4 @@ I lead modeling analyses of outbreak-response vaccination strategies, including 
 
 ## Infrastructure
 
-This work informs development of [OP System](/projects/op_system/) for model specification, [OP Engine](/projects/op_engine/) for numerical simulation, and [FlepiMoP2](/projects/flepimop2/) for campaign execution. Separate providers connect the packages. Their requirements draw on the infectious disease modeling workflows described above.
+This work informs development of [OP System](/projects/op_system/) for model specification, [OP Engine](/projects/op_engine/) for numerical simulation, and [FlepiMoP2](/projects/flepimop2/) for campaign execution. Separate providers connect the packages. Their requirements draw on the infectious disease modeling workflows described above. These operational programs are an important application context; OP System and OP Engine are cross-domain numerical cores.

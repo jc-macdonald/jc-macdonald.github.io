@@ -13,22 +13,23 @@
     </thead>
     <tbody>
       {% for tool in site.data.software %}
+        {% assign release = site.data.software_releases.packages[tool.slug] %}
         <tr>
           <th scope="row">
             <a href="{{ '/projects/' | append: tool.slug | append: '/' | relative_url }}">{{ tool.name }}</a>
           </th>
           <td>
             {{ tool.purpose -}}
-            {%- if tool.docs %}
+            {%- if release.docs_url %}
               <br>
-              <a href="{{ tool.docs }}" aria-label="{{ tool.name }} documentation">Documentation</a>
+              <a href="{{ release.docs_url }}" aria-label="{{ tool.name }} documentation">{{ release.docs_label }}</a>
             {%- endif %}
           </td>
           <td>
-            {{ tool.availability -}}
-            {%- if tool.version -%}
+            {{ release.display_status -}}
+            {%- if release.display_version -%}
               <br>
-              Version: {{ tool.version }}
+              Version: {{ release.display_version }}
             {%- endif %}
           </td>
           <td>
@@ -37,25 +38,29 @@
               <br>
               License: {{ tool.license }}
             {%- endif -%}
-            {%- if tool.source or tool.citation -%}
+            {%- if tool.source or release.citation_url -%}
               <br>
             {%- endif -%}
             {%- if tool.source -%}
               <a href="{{ tool.source }}" aria-label="{{ tool.name }} source code">Source</a>
             {%- endif -%}
-            {%- if tool.source and tool.release_archive or tool.source and tool.citation %} · {% endif -%}
-            {%- if tool.release_archive -%}
-              <a href="{{ tool.release_archive }}" aria-label="{{ tool.name }} current release archive">Release archive</a>
+            {%- if tool.source and release.release_archive_url or tool.source and release.citation_url %} · {% endif -%}
+            {%- if release.release_archive_url -%}
+              <a href="{{ release.release_archive_url }}" aria-label="{{ tool.name }} current release archive">Release archive</a>
             {%- endif -%}
-            {%- if tool.release_archive and tool.citation %} · {% endif -%}
-            {%- if tool.citation -%}
-              <a href="{{ tool.citation }}" aria-label="{{ tool.name }} citation metadata">
-                {%- if tool.release_archive -%}
+            {%- if release.release_archive_url and release.citation_url %} · {% endif -%}
+            {%- if release.citation_url -%}
+              <a href="{{ release.citation_url }}" aria-label="{{ tool.name }} citation metadata">
+                {%- if release.concept_doi -%}
                   All versions
                 {%- else -%}
                   Citation
                 {%- endif -%}
               </a>
+            {%- endif -%}
+            {%- if release.archive_pending -%}
+              <br>
+              Current-version archive pending verification
             {%- endif -%}
             {%- if tool.citation_note -%}
               <br>

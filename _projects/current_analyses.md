@@ -1,12 +1,12 @@
 ---
 layout: page
 title: Research in progress
-description: Ongoing work on structural scores, scientific machine learning and disease-modeling applications.
+description: Ongoing work on decision-focused observation and study design, calibration and validation, scientific machine learning, and applications in public and global health and ecology.
 img: assets/img/research/structural_fidelity_comparison.svg
 img_alt: Two constructed prevalence curves compared with an upper bound of one over the displayed horizon. One stays below the bound and the other crosses it; predictive accuracy is not evaluated.
 importance: 1
 category: "Research in progress"
-last_modified_at: 2026-10-22
+last_modified_at: 2026-10-23
 ---
 
 My current research asks what measurements reveal about a changing system,
@@ -37,8 +37,9 @@ methods and companion software remain in development.
 
 [op_infer](/projects/inference_calibration/) connects fitting tools,
 simulation-based checks and replicated studies for incomplete or noisy observations.
-The codebase is public, pre-alpha and unreleased on PyPI while its scientific
-applications are assessed. Application data and partner materials remain private.
+Its status is {% include software_release_status.liquid slug="inference_calibration" %}
+while its scientific applications are assessed. Application data and partner
+materials remain private.
 
 ## Scientific machine learning and incomplete data
 

@@ -1,11 +1,15 @@
 {
-  "schema_version": 1,
-  "source_sha256": "3e19980a5178b27cd1b4f1e3e757173677977438e8ab6e19a846733eaaaf6846",
-  "data_sha256": "fddff5853b11d75256505a1d4ff585ce672db47875d031f58c4210152a71cd02",
+  "schema_version": 2,
+  "source_sha256": "7dde72743f23591fa9c87ee465209a4dc7d6c6b2c0bfb7f06ce229a727e93929",
+  "input_sha256": {
+    "computed_data.json": "2b71094c1606db7a699a707d3fc56152067471ede52961c07476e618e91dcc66",
+    "op_infer_normal_sbc/data.json": "f8bd94277cc292fad3654891048fa3f62f09fd50ea9da778b371e3d2b2a4db6a"
+  },
   "files_sha256": {
-    "incomplete_reconstruction.svg": "3e88c501de1cd6fe0ac0534f00c2aae4b91558efe0fdf29836509020a6bda2e4",
+    "incomplete_reconstruction.svg": "ef556a26ca9ea86bec5103c159c0cae3e2881e984eb64f15838acdbdd74d6915",
+    "op_infer_normal_sbc.svg": "c718b3d5d3fc682b34f2d79cd0dd7a8576ff2125161468838098b542efc082ca",
     "replicated_tradeoff.svg": "143155ad729b89968a83d3cf93dd5c9680c96212725f34be6f9ce5ba935786ac",
     "spatial_diffusion.svg": "6ae1ec4759d210a6b349b8ba6612ea4cf0fb0fa6502002fd0051467887667387",
-    "stochastic_ensemble.svg": "c7c374ce3bfdff44a4722e57319ddea567b0d16582ccc7a8aa35b38de5f5a731"
+    "stochastic_ensemble.svg": "9bc5786ababfff9ead0cc6034ca39f882e2a492c3c7e2d9ad82fd7f5966a4ef2"
   }
 }

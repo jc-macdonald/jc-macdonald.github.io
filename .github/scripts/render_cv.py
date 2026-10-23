@@ -18,7 +18,14 @@ RENDER_INPUTS = (
     "_data/classic/Preamble.j2.typ",
     "_data/classic/SectionEnding.j2.typ",
 )
-INPUTS = (*RENDER_INPUTS, "requirements-rendercv.txt", ".github/scripts/render_cv.py")
+INPUTS = (
+    *RENDER_INPUTS,
+    "_data/software_release_sources.json",
+    "_data/software_releases.json",
+    "requirements-rendercv.txt",
+    ".github/scripts/render_cv.py",
+    ".github/scripts/refresh_software_releases.py",
+)
 DOWNLOAD = "assets/pdf/cv.pdf"
 MANIFEST = "assets/rendercv/provenance.json"
 

@@ -24,6 +24,8 @@ hr {
 }
 
 table {
+  color: var(--global-text-color);
+
   td,
   th {
     font-size: 1rem;
@@ -33,6 +35,12 @@ table {
   th {
     font-weight: bold;
   }
+}
+
+caption,
+.figure-caption,
+.text-muted {
+  color: var(--global-text-color-light) !important;
 }
 
 a,
@@ -47,6 +55,22 @@ table.table a {
   &:hover:after :not(.nav-item.dropdown) {
     width: 100%;
   }
+}
+
+// Inline content links retain a non-color affordance in both themes. Navigation,
+// cards, buttons and publication-author links define their own interaction styles.
+main article :where(p, li, dd, dt, figcaption, td, th) a:not(.btn):not(.badge),
+main .post-description a,
+main .publication-summary a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+
+main :where(nav, .projects, .card, .page-links, #table-of-contents) a,
+main a.btn,
+main a.badge {
+  text-decoration: none;
 }
 
 .table-dark {

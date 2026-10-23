@@ -1,0 +1,97 @@
+name: Review software release updates
+
+on:
+  schedule:
+    - cron: "20 13 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: software-release-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-rendercv.txt
+      - uses: actions/setup-node@v4
+        with:
+          cache: npm
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+      - name: Refresh public package releases and CV markers
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python .github/scripts/refresh_software_releases.py --refresh
+          python .github/scripts/refresh_software_releases.py
+          python -m unittest discover -s .github/tests -p 'test_software_releases.py' -v
+      - name: Check repository formatting
+        run: |
+          npm ci
+          npx prettier . --check
+      - name: Render and verify the synchronized CV
+        run: |
+          pip install -r requirements-rendercv.txt
+          sudo apt-get update
+          sudo apt-get install -y imagemagick poppler-utils
+          python -m unittest discover -s .github/tests -p 'test_render_cv.py' -v
+          python .github/scripts/render_cv.py render --output-dir "$RUNNER_TEMP/cv-artifact"
+          python .github/scripts/verify_cv_pdf.py "$RUNNER_TEMP/cv-artifact/assets/pdf/cv.pdf"
+          cp -a "$RUNNER_TEMP/cv-artifact/assets/." assets/
+          python .github/scripts/render_cv.py verify --output-dir .
+      - name: Build and test the changed site
+        env:
+          JEKYLL_ENV: production
+        run: |
+          pip install --upgrade nbconvert
+          bundle exec jekyll build
+          node .github/tests/publication-fragments.test.mjs
+          node .github/tests/site-contracts.test.mjs
+          python -m unittest discover -s .github/tests -p 'test_cv_html.py' -v
+          python -m unittest discover -s .github/tests -p 'test_publications.py' -v
+          CHECK_COMPUTED_SITE=1 python -m unittest discover -s .github/tests -p 'test_computed_artifacts.py' -v
+          python .github/scripts/verify_cv_html.py _site
+          python .github/scripts/verify_publications.py _site
+          python .github/scripts/verify_computed_artifacts.py _site
+          python .github/scripts/check_source_links.py _site "$RUNNER_TEMP/source-links.txt"
+      - name: Check maintained external anchors
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          lycheeVersion: v0.24.2
+          fail: true
+          failIfEmpty: true
+          args: --config .github/lychee.toml --no-progress '${{ runner.temp }}/source-links.txt'
+      - name: Open a review pull request when upstream metadata changes
+        uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
+        with:
+          branch: automation/software-release-manifest
+          delete-branch: true
+          commit-message: "chore: refresh software release metadata"
+          title: "chore: refresh software release metadata"
+          body: |
+            Automated weekly refresh from public PyPI metadata and the public
+            op_infer development metadata. Maturity comes from each package's
+            Development Status classifier; release phase is recorded and
+            displayed separately. Formatting, CV rendering and the production
+            site build passed before this pull request was opened.
+
+            Exact Zenodo archives are resolved from reviewed concept DOIs and
+            validated against the release version and GitHub tag. Please review
+            any `archive_pending` entry as a possible propagation delay or
+            missing archive before merge.
+          add-paths: |
+            _data/software_releases.json
+            _data/cv.yml

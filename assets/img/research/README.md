@@ -1,6 +1,9 @@
 # Research figures
 
-[Computed package demonstrations](computed/README.md) add spatial fields, stochastic ensembles, replicated comparisons and incomplete-data reconstruction, with full numerical inputs and a generated table. They have a separate pinned builder and numerical verification workflow.
+[Computed package demonstrations](computed/README.md) add spatial fields,
+stochastic ensembles, replicated comparisons, incomplete-data reconstruction
+and a commit-pinned public op_infer calibration fixture. They retain numerical
+inputs, source identity and verification records.
 
 The website uses SVG exports. Ten architecture/method schematics have editable
 TikZ sources in [`tikz/`](tikz/); two numerical illustrations use
@@ -61,9 +64,8 @@ claims aligned with the linked package capability guides and page text:
   providers. Backend qualification is method-specific and CPU/GPU evidence is
   stated explicitly. Cross-axis constraints are metadata in op_system.
 - `beyond_onehealth` distinguishes public simulation and evaluation tools from
-  op_infer, working inference and calibration software whose source is public
-  pre-alpha with no PyPI release; operational application material remains
-  private. `future_directions_general` presents
+  op_infer, working inference and calibration research software; operational
+  application material remains private. `future_directions_general` presents
   established applications, methods and developing design questions as
   interacting areas rather than an ordered pipeline. `obs_model_general`
   distinguishes domains with published or operational evidence from a
@@ -73,9 +75,13 @@ claims aligned with the linked package capability guides and page text:
   private pre-release work. `vbpca_py_schematic` describes fitting and predictive
   assessment, without implying universal calibration.
 - `op_infer_slide` summarizes working fitting, calibration and study-comparison
-  capabilities in a compact graphic for the project card and detail page.
-  Its source is public pre-alpha with no PyPI release; the three capability
-  panels do not imply unlisted adapters or report study results.
+  capabilities in a compact graphic for the project card and detail page. The
+  three capability panels do not imply unlisted adapters or report study
+  results. Release status is maintained as structured site data rather than
+  embedded in the graphic.
+- `op_infer_normal_sbc` is a public synthetic software fixture imported from an
+  exact op_infer commit. Its 64-replicate SBC bank is explicitly underpowered;
+  the plot is not evidence of calibration or an application result.
 - `optimal_design` uses synthetic candidate costs `[1, 2.1, 3, 3.7, 5.4]` and
   utilities `[0.28, 0.45, 0.43, 0.72, 0.80]`. These are illustrative inputs.
   Design C is dominated; D maximizes utility under the declared cost limit of 4.
