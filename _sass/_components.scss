@@ -50,6 +50,11 @@ ul.task-list input[type="checkbox"] {
 
   .card-body {
     padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+
+    // Override MDB's fixed grey so ordinary card copy follows both themes.
+    .card-text {
+      color: var(--global-text-color);
+    }
   }
 }
 

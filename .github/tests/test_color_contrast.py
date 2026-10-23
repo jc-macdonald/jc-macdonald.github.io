@@ -39,6 +39,7 @@ class ColorContrastTests(unittest.TestCase):
             ("#ffffff", "#0d6b6e", 4.5, "light filled control"),
             ("#767676", "#ffffff", 3.0, "light control boundary"),
             ("#e8e8e8", "#1c1c1d", 4.5, "dark body"),
+            ("#e8e8e8", "#212529", 4.5, "dark card body"),
             ("#a3a3a3", "#1c1c1d", 4.5, "dark muted text"),
             ("#4da8ab", "#1c1c1d", 4.5, "dark link"),
             ("#1c1c1d", "#4da8ab", 4.5, "dark filled control"),
@@ -89,6 +90,14 @@ class ColorContrastTests(unittest.TestCase):
         self.assertIsNotNone(table_rule)
         self.assertIn(
             "border-color: var(--global-divider-color);", table_rule.group("body")
+        )
+
+    def test_mdb_card_text_follows_theme_tokens(self):
+        components = (ROOT / "_sass/_components.scss").read_text()
+        self.assertRegex(
+            components,
+            r"(?s)\.card-body\s*\{.*?\.card-text\s*\{\s*"
+            r"color:\s*var\(--global-text-color\);",
         )
 
     def test_syntax_palettes(self):
