@@ -47,9 +47,7 @@ def zenodo_record(
 
 class SoftwareReleaseTests(unittest.TestCase):
     def test_release_workflow_separates_validation_from_write_permissions(self):
-        workflow = (
-            ROOT / ".github/workflows/update-software-releases.yml"
-        ).read_text()
+        workflow = (ROOT / ".github/workflows/update-software-releases.yml").read_text()
 
         validation, writer = workflow.split("  open-review-pull-request:\n", 1)
         self.assertEqual(workflow.count("contents: write"), 1)
@@ -58,6 +56,17 @@ class SoftwareReleaseTests(unittest.TestCase):
         self.assertIn("needs: refresh-and-validate", writer)
         self.assertNotIn("run:", writer)
         self.assertEqual(workflow.count("persist-credentials: false"), 2)
+        self.assertIn(
+            "path: |\n            _data/software_releases.json\n"
+            "            _data/cv.yml",
+            validation,
+        )
+        self.assertIn("path: _data", writer)
+        self.assertIn(
+            "add-paths: |\n            _data/software_releases.json\n"
+            "            _data/cv.yml",
+            writer,
+        )
 
         action_references = re.findall(r"uses: [^\s]+@([^\s#]+)", workflow)
         self.assertTrue(action_references)
