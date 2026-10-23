@@ -23,11 +23,16 @@ hr {
   border-top: 1px solid var(--global-divider-color);
 }
 
-table {
+// Include Bootstrap's class selector so theme tokens apply during an initial
+// dark load, before the theme script can add `.table-dark`.
+table,
+.table {
   color: var(--global-text-color);
+  border-color: var(--global-divider-color);
 
   td,
   th {
+    border-color: var(--global-divider-color);
     font-size: 1rem;
     padding: 1px 1rem 1px 0;
   }

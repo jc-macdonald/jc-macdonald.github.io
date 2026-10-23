@@ -75,6 +75,22 @@ class ColorContrastTests(unittest.TestCase):
             with self.subTest(label=label):
                 self.assert_contrast(foreground, background, 4.5, label)
 
+    def test_bootstrap_tables_follow_theme_tokens_before_javascript(self):
+        typography = (ROOT / "_sass/_typography.scss").read_text()
+        self.assertRegex(
+            typography,
+            r"table,\s*\.table\s*\{\s*color:\s*var\(--global-text-color\);",
+        )
+        table_rule = re.search(
+            r"table,\s*\.table\s*\{(?P<body>.*?)\n\}",
+            typography,
+            flags=re.DOTALL,
+        )
+        self.assertIsNotNone(table_rule)
+        self.assertIn(
+            "border-color: var(--global-divider-color);", table_rule.group("body")
+        )
+
     def test_syntax_palettes(self):
         palettes = [
             (
