@@ -129,7 +129,7 @@ def render():
         interpolation="nearest",
         rasterized=True,
     )
-    ax.set(xlabel="Feature", ylabel="Sample")
+    ax.set(xlabel="Sample", ylabel="Feature")
     figure.colorbar(image, ax=ax, label="Reconstructed value", shrink=0.85)
     export(figure, "incomplete_reconstruction")
 

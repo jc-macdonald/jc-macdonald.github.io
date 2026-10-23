@@ -18,7 +18,7 @@ last_modified_at: 2026-10-23
 
 Its methods include explicit, implicit-explicit (IMEX) and implicit integration, exact stochastic simulation, and approximate tau-leaping. Independent stochastic runs use separate event clocks. Named observations, time-window summaries and optional reaction firing counts support analysis of the simulated outputs.
 
-[OP System](/projects/op_system/) supplies model equations and metadata. OP Engine can also be used directly. The separately released `flepimop2-op_engine` provider connects compatible versions to [FlepiMoP2](/projects/flepimop2/); the provider and core have independent release lifecycles, and a published provider may lag the core.
+[OP System](/projects/op_system/) supplies model equations and metadata. OP Engine can also be used directly. The separately released `flepimop2-op_engine` provider connects compatible versions to [FlepiMoP2](/projects/flepimop2/); the provider and core have independent release lifecycles. No provider release currently accompanies OP Engine 0.9.1, so the core can be used directly pending a documented compatible provider release.
 
 Supported backends and derivatives depend on the method and precision; {% assign qualification_docs = release.docs_url | replace: 'capabilities/', 'backend-qualification/' %}see the [qualification matrix]({{ qualification_docs }}). Spatial and temporal accuracy require separate checks. Derivatives through frozen-schedule replay hold step-size decisions fixed and are conditional on the recorded mesh.
 

@@ -3,6 +3,7 @@
 import copy
 import importlib.util
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -45,6 +46,25 @@ def zenodo_record(
 
 
 class SoftwareReleaseTests(unittest.TestCase):
+    def test_release_workflow_separates_validation_from_write_permissions(self):
+        workflow = (
+            ROOT / ".github/workflows/update-software-releases.yml"
+        ).read_text()
+
+        validation, writer = workflow.split("  open-review-pull-request:\n", 1)
+        self.assertEqual(workflow.count("contents: write"), 1)
+        self.assertNotIn("contents: write", validation)
+        self.assertNotIn("GITHUB_TOKEN", workflow)
+        self.assertIn("needs: refresh-and-validate", writer)
+        self.assertNotIn("run:", writer)
+        self.assertEqual(workflow.count("persist-credentials: false"), 2)
+
+        action_references = re.findall(r"uses: [^\s]+@([^\s#]+)", workflow)
+        self.assertTrue(action_references)
+        for reference in action_references:
+            with self.subTest(reference=reference):
+                self.assertRegex(reference, r"^[0-9a-f]{40}$")
+
     def test_committed_manifest_and_cv_are_consistent(self):
         sources = json.loads(RELEASES.SOURCES.read_text())
         manifest = json.loads(RELEASES.MANIFEST.read_text())
@@ -79,7 +99,9 @@ class SoftwareReleaseTests(unittest.TestCase):
                 record = manifest["packages"][slug]
                 self.assertFalse(record["archive_pending"])
                 self.assertEqual(record["release_archive_doi"], doi)
-                self.assertEqual(record["release_archive_source"], "Zenodo concept lookup")
+                self.assertEqual(
+                    record["release_archive_source"], "Zenodo concept lookup"
+                )
 
     def test_flepimop_release_archive_is_exact(self):
         manifest = json.loads(RELEASES.MANIFEST.read_text())
@@ -182,6 +204,31 @@ class SoftwareReleaseTests(unittest.TestCase):
         self.assertIn("trade-study/0.7.0/", record["cv_status"])
         self.assertNotIn("zenodo.23497881", record["cv_status"])
 
+    def test_registry_archive_must_match_zenodo(self):
+        config = {
+            "package": "example-package",
+            "repository": "example/project",
+            "concept_doi": "10.5281/zenodo.1000",
+            "release_archives": {"1.2.3": "10.5281/zenodo.1001"},
+        }
+        payload = {
+            "info": {
+                "version": "1.2.3",
+                "classifiers": ["Development Status :: 3 - Alpha"],
+            },
+            "releases": {"1.2.3": [{"upload_time_iso_8601": "2026-10-23T00:00:00Z"}]},
+        }
+        with (
+            mock.patch.object(RELEASES, "read_json_url", return_value=payload),
+            mock.patch.object(
+                RELEASES,
+                "zenodo_release_doi",
+                return_value="10.5281/zenodo.9999",
+            ),
+            self.assertRaisesRegex(ValueError, "does not match the exact Zenodo"),
+        ):
+            RELEASES.pypi_project(config)
+
     def test_versioned_docs_follow_the_current_release(self):
         sources = json.loads(RELEASES.SOURCES.read_text())
         config = sources["packages"]["op_system"]
@@ -254,9 +301,7 @@ class SoftwareReleaseTests(unittest.TestCase):
             with self.subTest(message=message):
                 response = {"hits": {"hits": [record], "total": 1}}
                 with (
-                    mock.patch.object(
-                        RELEASES, "read_json_url", return_value=response
-                    ),
+                    mock.patch.object(RELEASES, "read_json_url", return_value=response),
                     self.assertRaisesRegex(ValueError, message),
                 ):
                     RELEASES.zenodo_release_doi(config, "0.10.0")
@@ -274,7 +319,9 @@ class SoftwareReleaseTests(unittest.TestCase):
             {"hits": {"hits": older, "total": 26}},
             {"hits": {"hits": [zenodo_record()], "total": 26}},
         ]
-        with mock.patch.object(RELEASES, "read_json_url", side_effect=responses) as read:
+        with mock.patch.object(
+            RELEASES, "read_json_url", side_effect=responses
+        ) as read:
             self.assertEqual(
                 RELEASES.zenodo_release_doi(config, "0.10.0"),
                 "10.5281/zenodo.23604813",
@@ -287,9 +334,7 @@ class SoftwareReleaseTests(unittest.TestCase):
             "concept_doi": "10.5281/zenodo.23604812",
         }
         duplicate = zenodo_record(doi="10.5281/zenodo.23604814")
-        response = {
-            "hits": {"hits": [zenodo_record(), duplicate], "total": 2}
-        }
+        response = {"hits": {"hits": [zenodo_record(), duplicate], "total": 2}}
         with (
             mock.patch.object(RELEASES, "read_json_url", return_value=response),
             self.assertRaisesRegex(ValueError, "multiple exact archives"),

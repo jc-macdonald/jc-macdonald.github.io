@@ -187,9 +187,13 @@ def zenodo_release_doi(config: dict[str, object], version: str) -> str | None:
         )
         doi = str(hit.get("doi", ""))
         if not source_matches:
-            raise ValueError("Zenodo exact-version record has the wrong source relation")
+            raise ValueError(
+                "Zenodo exact-version record has the wrong source relation"
+            )
         if not DOI_PATTERN.fullmatch(doi) or metadata.get("doi") != doi:
-            raise ValueError("Zenodo exact-version record has inconsistent DOI metadata")
+            raise ValueError(
+                "Zenodo exact-version record has inconsistent DOI metadata"
+            )
         matches.append(doi)
     if len(matches) > 1:
         raise ValueError(
@@ -249,9 +253,12 @@ def pypi_project(config: dict[str, object]) -> dict[str, object]:
         if isinstance(configured_archives, dict)
         else None
     )
-    resolved_archive = None
-    if configured_archive is None:
-        resolved_archive = zenodo_release_doi(config, version)
+    resolved_archive = zenodo_release_doi(config, version)
+    if configured_archive is not None and configured_archive != resolved_archive:
+        raise ValueError(
+            f"Reviewed archive {configured_archive} does not match the exact "
+            f"Zenodo record {resolved_archive} for {package} {version}"
+        )
     archive_doi = configured_archive or resolved_archive
     return {
         "version": version,
@@ -260,7 +267,7 @@ def pypi_project(config: dict[str, object]) -> dict[str, object]:
         "published_at": published_at,
         "release_archive_doi": archive_doi,
         "release_archive_source": (
-            "reviewed registry"
+            "reviewed registry + Zenodo concept lookup"
             if configured_archive
             else ("Zenodo concept lookup" if resolved_archive else None)
         ),
