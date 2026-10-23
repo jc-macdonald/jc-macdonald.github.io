@@ -25,6 +25,8 @@ jobs:
         run: |
           pip install -r requirements-rendercv.txt
           sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Verify shared software release data and CV markers
+        run: python .github/scripts/refresh_software_releases.py
       - name: Test valid, invalid and stale publication inputs
         run: python -m unittest discover -s .github/tests -p 'test_render_cv.py' -v
       - name: Render current source into a fresh artifact tree

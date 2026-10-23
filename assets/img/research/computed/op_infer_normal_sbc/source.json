@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "repository": "ACCIDDA/op_infer",
+  "revision": "6a066d918e2d8460a32a6cabd6be964deb7654bb",
+  "asset_path": "docs/assets/normal-sbc",
+  "generator_paths": [
+    "examples/illustrate_normal_sbc.py",
+    "examples/normal_sbc.py",
+    "examples/illustration_artifacts.py"
+  ],
+  "upstream_manifest_sha256": "d8c0e50829fdb86cd96c1bc9d8b3edff2e042d5cb6d8154b9376262796072e52"
+}

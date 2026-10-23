@@ -4,7 +4,6 @@
       {% assign project_img_alt = project.img_alt | default: project.title %}
       {%
         include figure.liquid
-        loading="eager"
         path=project.img
         sizes = "250px"
         alt=project_img_alt
@@ -18,7 +17,8 @@
       {% assign project_slug = project.path | split: '/' | last | remove: '.md' %}
       {% assign tool = site.data.software | where: 'slug', project_slug | first %}
       {% if tool %}
-        <p class="project-status">{{ tool.availability }}</p>
+        {% assign release = site.data.software_releases.packages[project_slug] %}
+        <p class="project-status">{{ release.display_status }}</p>
       {% endif %}
       <p class="card-text">{{ project.description }}</p>
       <div class="row ml-1 mr-1 p-0">

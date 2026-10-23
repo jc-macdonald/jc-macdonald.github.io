@@ -111,9 +111,27 @@ def structural_fidelity():
     fig, ax = plt.subplots(figsize=(7.0, 5.5))
     fig.subplots_adjust(bottom=0.23, top=0.85)
     ax.plot(
-        time, bounded, color=TEAL_PRIMARY, lw=2.5, label="A: remains within the bound"
+        time,
+        bounded,
+        color=TEAL_PRIMARY,
+        lw=2.5,
+        ls="-",
+        marker="o",
+        markevery=14,
+        ms=4,
+        label="A: remains within the bound",
     )
-    ax.plot(time, crossing, color=BLUE_HEALTH, lw=2.5, label="B: crosses the bound")
+    ax.plot(
+        time,
+        crossing,
+        color=BLUE_HEALTH,
+        lw=2.5,
+        ls="--",
+        marker="s",
+        markevery=14,
+        ms=4,
+        label="B: crosses the bound",
+    )
     ax.axhline(1.0, color=RED, ls="--", lw=1.5, label="Declared prevalence bound")
     ax.fill_between(time, 1.0, 1.18, color=RED, alpha=0.07)
     ax.set(

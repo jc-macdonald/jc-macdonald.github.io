@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist developing mechanistic models and research software for decisions under uncertainty, using Bayesian and simulation-based inference. Established work spans infectious-disease modeling, operational scenario projections, model and forecast evaluation, wildlife disease, ecology, and incomplete data. Developing work examines scientific machine learning for dynamical systems and collaborative monitoring, surveillance, and study design."
+      - "Computational scientist developing decision-focused mechanistic models and research software that connect observation and experimental design, simulation, Bayesian and simulation-based inference, calibration and validation, and resource-aware comparison. Established applications span infectious disease and public and global health, ecology, cultural transmission, and incomplete data; developing collaborations extend these methods to monitoring and scientific machine learning."
 
     Appointments:
       - company: Johns Hopkins Bloomberg School of Public Health
@@ -189,51 +189,58 @@ cv:
       - name: "OP System (Operator-Partitioned System)"
         start_date: 2026
         end_date: present
-        summary: "Turns readable model descriptions into calculations for simulation and data analysis. Handles spatial structure, interactions between groups and random events in disease, ecological and other dynamical models. Public alpha release."
+        summary: "Turns readable model descriptions into calculations for simulation and data analysis. Handles spatial structure, interactions between groups and random events in disease, ecological and other dynamical models."
         highlights:
+          - "Release status: Public; package maturity: alpha; latest released version: v0.10.0 (final). [PyPI](https://pypi.org/project/op-system/0.10.0/) · [Release archive](https://doi.org/10.5281/zenodo.23604813) · [All versions](https://doi.org/10.5281/zenodo.23604812)" # software-release: op_system
           - "[Source](https://github.com/ACCIDDA/op_system)"
 
       - name: pp-eigentest
         start_date: 2026
         end_date: present
-        summary: "Research on distinguishing underlying patterns from noise in incomplete data. Revises a 2024 preprint and studies how missing observations and modeling assumptions affect that choice. Private alpha software; evaluation studies and manuscript revision are in progress."
+        summary: "Research on distinguishing underlying patterns from noise in incomplete data. Revises a 2024 preprint and studies how missing observations and modeling assumptions affect that choice. Evaluation studies and manuscript revision are in progress."
         highlights:
+          - "Release status: Private; package maturity: alpha; unreleased." # software-release: pp_eigentest
           - "[Project summary](https://jcmacdonald.dev/projects/pp_eigentest/)"
 
       - name: "op_infer (Inference and Calibration)"
         start_date: 2026
         end_date: present
-        summary: "Connects scientific models with data to estimate unknown quantities and compare data-collection plans. Tests fitting procedures on simulated data under stated modeling assumptions. Public pre-alpha source; unreleased on PyPI. Broader interfaces and application studies remain in development, and application materials remain private."
+        summary: "Connects scientific models with data to estimate unknown quantities and compare data-collection plans. Tests fitting procedures on simulated data under stated modeling assumptions. Broader interfaces and application studies remain in development, and application materials remain private."
         highlights:
+          - "Release status: Public; package maturity: pre-alpha; unreleased on PyPI (development version 0.0.1). [Citation metadata](https://github.com/ACCIDDA/op_infer/blob/55b19b905932ab743e2b689f3afd07e625712b3b/CITATION.cff)" # software-release: inference_calibration
           - "[Source](https://github.com/ACCIDDA/op_infer) · [Project summary](https://jcmacdonald.dev/projects/inference_calibration/)"
 
       - name: "Trade Study (Python)"
         start_date: 2026
         end_date: present
-        summary: "Compares model settings, experiments and surveillance plans using repeated simulations. Helps researchers assess uncertainty and weigh competing goals such as accuracy, information and cost. Public alpha release."
+        summary: "Compares model settings, experiments and surveillance plans using repeated simulations. Helps researchers assess uncertainty and weigh competing goals such as accuracy, information and cost."
         highlights:
-          - "[Source](https://github.com/jcm-sci/trade-study) · [PyPI](https://pypi.org/project/trade-study/) · [Release archive](https://doi.org/10.5281/zenodo.23497881) · [All versions](https://doi.org/10.5281/zenodo.19599838)"
+          - "Release status: Public; package maturity: alpha; latest released version: v0.6.0 (final). [PyPI](https://pypi.org/project/trade-study/0.6.0/) · [Release archive](https://doi.org/10.5281/zenodo.23497881) · [All versions](https://doi.org/10.5281/zenodo.19599838)" # software-release: trade_study
+          - "[Source](https://github.com/jcm-sci/trade-study)"
 
       - name: "OP Engine (Operator-Partitioned Engine)"
         start_date: 2025
         end_date: present
-        summary: "Simulates models that change over time and space, including systems with random events. Supports repeated simulations and summaries of quantities such as population counts. Public alpha release; capabilities and numerical checks depend on the selected method."
+        summary: "Simulates models that change over time and space, including systems with random events. Supports repeated simulations and summaries of quantities such as population counts. Capabilities and numerical checks depend on the selected method."
         highlights:
+          - "Release status: Public; package maturity: alpha; latest released version: v0.9.1 (final). [PyPI](https://pypi.org/project/op-engine/0.9.1/) · [Release archive](https://doi.org/10.5281/zenodo.23606247) · [All versions](https://doi.org/10.5281/zenodo.23604858)" # software-release: op_engine
           - "[Source](https://github.com/ACCIDDA/op_engine)"
 
       - name: vbpca-py
         start_date: 2024
         end_date: present
-        summary: "Finds patterns in incomplete datasets without first filling in every missing observation. Produces low-dimensional summaries and estimates uncertainty using a Bayesian approximation. Public beta release, with tools for checking fit and choosing the number of summary dimensions."
+        summary: "Finds patterns in incomplete datasets without first filling in every missing observation. Produces low-dimensional summaries and variational covariance estimates, with tools for checking fit and choosing the number of summary dimensions."
         highlights:
-          - "[PyPI](https://pypi.org/project/vbpca-py/) · [Release archive](https://doi.org/10.5281/zenodo.23566480) · [All versions](https://doi.org/10.5281/zenodo.19389250)"
+          - "Release status: Public; package maturity: beta; latest released version: v0.5.0 (final). [PyPI](https://pypi.org/project/vbpca-py/0.5.0/) · [Release archive](https://doi.org/10.5281/zenodo.23602828) · [All versions](https://doi.org/10.5281/zenodo.19389250)" # software-release: vbpca_py
+          - "[Source](https://github.com/yoavram-lab/VBPCApy)"
 
     "Research Software -- Collaborative Infrastructure":
       - name: "FlepiMoP2 (Flexible Pipeline for Interchangeable Model Processing)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Coordinates simulation campaigns across locations and scenarios. Core contributor to its model, simulation and data-storage interfaces; led migration of ACCIDDA's COVID-19 model for the Round 20 Scenario Modeling Hub submission. Public alpha release."
+        summary: "ACCIDDA. Coordinates simulation campaigns across locations and scenarios. Core contributor to its model, simulation and data-storage interfaces; led migration of ACCIDDA's COVID-19 model for the Round 20 Scenario Modeling Hub submission."
         highlights:
+          - "Release status: Public; package maturity: alpha; latest released version: v0.3.0 (final). [PyPI](https://pypi.org/project/flepimop2/0.3.0/) · [Release archive](https://doi.org/10.5281/zenodo.20649548) · [All versions](https://doi.org/10.5281/zenodo.19672076)" # software-release: flepimop2
           - "[Documentation](https://accidda.github.io/flepimop2/latest/)"
 
       - name: TabularEpi

@@ -4,15 +4,15 @@ layout: page
 permalink: /repositories/
 title: repositories
 description: GitHub repositories for research software and collaborative infrastructure.
-last_modified_at: 2026-10-22
+last_modified_at: 2026-10-23
 nav: false
 nav_order: 5
 ---
 
 The source repositories below are public. [Projects](/projects/) also covers
 research software in development, including [op_infer](/projects/inference_calibration/),
-which is public, pre-alpha and unreleased on PyPI, and
-[pp-eigentest](/projects/pp_eigentest/), which remains private alpha software.
+whose source is public, and private [pp-eigentest](/projects/pp_eigentest/)
+research software. Current release stages are maintained on their project pages.
 
 ## Public source repositories
 

@@ -72,6 +72,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+      - name: Check semantic and figure color contrast
+        run: python .github/tests/test_color_contrast.py -v
       - name: Download the same-revision CV
         uses: actions/download-artifact@v4
         with:
@@ -93,17 +95,17 @@ jobs:
           CHROMIUM_MAJOR=$(google-chrome --product-version | cut -d. -f1)
           echo "CHROMIUM_MAJOR=$CHROMIUM_MAJOR" >> "$GITHUB_ENV"
       - name: Audit representative routes with axe
+        env:
+          CHROMEDRIVER_PATH: ${{ github.workspace }}/node_modules/.bin/chromedriver
         run: |
-          npm install --no-save --no-package-lock @axe-core/cli@4.10.2 http-server@14.1.1 chromedriver@"$CHROMIUM_MAJOR"
+          npm install --no-save --no-package-lock axe-core@4.10.2 selenium-webdriver@4.31.0 http-server@14.1.1 chromedriver@"$CHROMIUM_MAJOR"
           ./node_modules/.bin/http-server _site -p 8080 --silent &
           for attempt in {1..20}; do
             curl --fail --silent http://127.0.0.1:8080/ >/dev/null && break
             sleep 1
           done
           curl --fail --silent http://127.0.0.1:8080/ >/dev/null
-          for route in / /reviewer-profile/ /cv/ /publications/ /projects/ /operational-modeling/ /software-examples/ /figures/; do
-            ./node_modules/.bin/axe "http://127.0.0.1:8080$route" \
-              --chromedriver-path "$(pwd)/node_modules/.bin/chromedriver" \
-              --load-delay=1500 \
-              --exit
-          done
+          node .github/scripts/audit_accessibility.mjs \
+            http://127.0.0.1:8080 \
+            / /reviewer-profile/ /cv/ /publications/ /projects/ \
+            /operational-modeling/ /software-examples/ /figures/

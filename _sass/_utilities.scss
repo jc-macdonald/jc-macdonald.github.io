@@ -158,7 +158,7 @@ html.transition *:after {
   }
 
   .btn-secondary.dropdown-toggle {
-    border: 1px solid var(--global-divider-color);
+    border: 1px solid var(--global-control-border-color);
 
     .page-size {
       color: inherit;
@@ -291,7 +291,6 @@ nav[data-toggle="toc"] {
   color: var(--global-newsletter-text-color);
   background: var(--global-newsletter-bg-color);
   border: 1px solid var(--global-newsletter-text-color);
-  outline: none;
   margin: 0px 10px 0px 0px;
   width: 100%;
   max-width: 350px;
@@ -308,7 +307,7 @@ nav[data-toggle="toc"] {
 
 .newsletter-form-button {
   background: var(--global-theme-color);
-  color: var(--global-bg-color);
+  color: var(--global-theme-on-color);
   display: flex;
   width: min-content;
   max-width: 200px;
@@ -329,7 +328,7 @@ nav[data-toggle="toc"] {
 
 .newsletter-loading-button {
   background: var(--global-theme-color);
-  color: var(--global-bg-color);
+  color: var(--global-theme-on-color);
   display: none;
   width: min-content;
   max-width: 300px;
@@ -431,7 +430,14 @@ nav[data-toggle="toc"] {
 
 ::highlight(search) {
   background-color: var(--global-theme-color);
-  color: var(--global-text-color);
+  color: var(--global-theme-on-color);
+}
+
+// A two-color indicator remains visible against both the page and control fills.
+:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #000000 !important;
 }
 
 // Other utilities

@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: Assistant Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
-last_modified_at: 2026-10-22
+last_modified_at: 2026-10-23
 
 profile:
   align: right
@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a computational scientist developing mechanistic models and research software for decisions under uncertainty, using Bayesian and simulation-based inference. My established work focuses on infectious-disease modeling, scenario projections, and model and forecast evaluation. Developing work examines scientific machine learning for dynamical systems and collaborative monitoring, surveillance and study design.
+I am a computational scientist developing cross-domain methods and research software for decisions under uncertainty. My work connects observation and experimental design, mechanistic models, simulation, Bayesian and simulation-based inference, calibration and validation, and comparison under scientific and resource constraints. Established applications span public and global health, ecology and incomplete multivariate data. Developing work includes scientific machine learning and collaborative environmental monitoring and study design.
 
 I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With the [Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA)](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on wildlife and livestock disease surveillance.
 
@@ -54,14 +54,14 @@ Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, wor
 My current methods research asks how measurements and scientific assumptions affect what we can learn about a system.
 
 - **[Structural scores](/projects/current_analyses/#structural-scores-and-scientific-prediction).** Reporting whether predictions satisfy stated scientific constraints, including checks made before the predicted outcome is observed.
-- **[Inference and calibration](/projects/inference_calibration/).** Estimating unknown model quantities and assessing fitting procedures with simulated data. The op_infer codebase is public and pre-alpha, with no PyPI release; application materials remain private.
+- **[Inference and calibration](/projects/inference_calibration/).** Estimating unknown model quantities and assessing fitting procedures with simulated data. The op_infer source is public; application materials remain private. Its current development and release status is maintained on the project page.
 - **[Incomplete data and latent structure](/projects/pp_eigentest/).** Investigating how many patterns can be distinguished from noise in incomplete data, building on [VBPCApy](/projects/vbpca_py/) and a [2024 preprint](https://arxiv.org/abs/2409.12129).
 
-[Current application studies](/projects/current_analyses/#application-studies) address dengue within-host dynamics, observation noise, outbreak vaccination and Crimean-Congo hemorrhagic fever surveillance. These summaries describe ongoing questions; public papers and artifacts are linked as they become available.
+Current [public- and global-health application studies](/projects/current_analyses/#application-studies) address dengue within-host dynamics, observation noise, outbreak vaccination and Crimean-Congo hemorrhagic fever surveillance. These are applications of the broader methods above, not their scope boundary. The summaries describe ongoing questions; public papers and artifacts are linked as they become available.
 
 ## Computations and software
 
-I build reusable tools for model specification, simulation, inference and study comparison. Projects use the pieces they need. OP System and OP Engine support spatial fields, nonlocal interactions, compartmental dynamics and stochastic reactions.
+I build reusable, cross-domain tools spanning model specification, simulation, inference, calibration and validation, observation and experimental design, and comparison of decisions under scientific and resource constraints. Projects use the pieces they need. OP System and OP Engine support spatial fields, nonlocal interactions, compartmental dynamics and stochastic reactions.
 
 <div class="research-preview-grid">
   <figure>

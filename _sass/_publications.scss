@@ -24,7 +24,7 @@
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
+    color: var(--global-text-color-light);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
@@ -50,10 +50,10 @@
           display: inline-block;
           background-color: var(--global-theme-color);
           margin-bottom: 0.5rem;
-          color: var(--global-card-bg-color) !important;
+          color: var(--global-theme-on-color) !important;
 
           a {
-            color: white;
+            color: var(--global-theme-on-color);
 
             &:hover {
               text-decoration: none;
@@ -73,6 +73,7 @@
 
       .author {
         a {
+          text-decoration: none;
           border-bottom: 1px dashed var(--global-theme-color);
 
           &:hover {

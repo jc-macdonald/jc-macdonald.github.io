@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "packages": {
+    "op_system": {
+      "source": "pypi",
+      "package": "op-system",
+      "repository": "ACCIDDA/op_system",
+      "visibility": "Public",
+      "docs_url_template": "https://accidda.github.io/op_system/{version}/guides/capabilities/",
+      "concept_doi": "10.5281/zenodo.23604812"
+    },
+    "op_engine": {
+      "source": "pypi",
+      "package": "op-engine",
+      "repository": "ACCIDDA/op_engine",
+      "visibility": "Public",
+      "docs_url_template": "https://accidda.github.io/op_engine/{version}/guides/capabilities/",
+      "concept_doi": "10.5281/zenodo.23604858"
+    },
+    "trade_study": {
+      "source": "pypi",
+      "package": "trade-study",
+      "repository": "jcm-sci/trade-study",
+      "visibility": "Public",
+      "docs_url": "https://jcm-sci.github.io/trade-study/guide/capabilities/",
+      "concept_doi": "10.5281/zenodo.19599838",
+      "release_archives": {
+        "0.6.0": "10.5281/zenodo.23497881"
+      }
+    },
+    "vbpca_py": {
+      "source": "pypi",
+      "package": "vbpca-py",
+      "repository": "yoavram-lab/VBPCApy",
+      "visibility": "Public",
+      "docs_url": "https://yoavram-lab.github.io/VBPCApy/",
+      "concept_doi": "10.5281/zenodo.19389250",
+      "release_archives": {
+        "0.4.12": "10.5281/zenodo.23566480"
+      }
+    },
+    "inference_calibration": {
+      "source": "github-main",
+      "repository": "ACCIDDA/op_infer",
+      "ref": "main",
+      "pyproject_path": "pyproject.toml",
+      "visibility": "Public",
+      "docs_url": "https://accidda.github.io/op_infer/capabilities/",
+      "unreleased_label": "unreleased on PyPI"
+    },
+    "pp_eigentest": {
+      "source": "manual",
+      "visibility": "Private",
+      "unreleased_label": "unreleased",
+      "maturity": "alpha",
+      "reviewed_at": "2026-10-23"
+    },
+    "flepimop2": {
+      "source": "pypi",
+      "package": "flepimop2",
+      "repository": "ACCIDDA/flepimop2",
+      "visibility": "Public",
+      "docs_url": "https://accidda.github.io/flepimop2/latest/",
+      "docs_label": "Release documentation",
+      "concept_doi": "10.5281/zenodo.19672076",
+      "release_archives": {
+        "0.3.0": "10.5281/zenodo.20649548"
+      }
+    }
+  }
+}

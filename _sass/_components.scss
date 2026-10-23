@@ -50,6 +50,11 @@ ul.task-list input[type="checkbox"] {
 
   .card-body {
     padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+
+    // Override MDB's fixed grey so ordinary card copy follows both themes.
+    .card-text {
+      color: var(--global-text-color);
+    }
   }
 }
 
@@ -104,7 +109,7 @@ ul.task-list input[type="checkbox"] {
       border-color: var(--global-divider-color);
 
       .badge {
-        color: var(--global-card-bg-color) !important;
+        color: var(--global-theme-on-color) !important;
         background-color: var(--global-theme-color) !important;
       }
     }
@@ -392,7 +397,7 @@ ul.task-list input[type="checkbox"] {
   select {
     color: var(--global-text-color);
     background: var(--global-bg-color);
-    border: 1px solid var(--global-divider-color);
+    border: 1px solid var(--global-control-border-color);
     border-radius: 0.2rem;
     padding: 0.25rem;
   }

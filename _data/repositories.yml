@@ -14,8 +14,8 @@ github_repos:
   - ACCIDDA/flepimop2
 
 repo_descriptions:
-  yoavram-lab/VBPCApy: "Find patterns in incomplete datasets and estimate uncertainty using a Bayesian approximation. Public beta release."
-  jcm-sci/trade-study: "Compare model settings, experiments and data-collection plans using repeated simulations. Public alpha release."
-  ACCIDDA/op_engine: "Simulate changing systems over time and space, including random events. Public alpha release."
-  ACCIDDA/op_system: "Turn model descriptions into calculations for simulation, including spatial interactions and random events. Public alpha release."
-  ACCIDDA/flepimop2: "Coordinate simulation campaigns across locations and scenarios using reusable models and data tools. Public alpha release."
+  yoavram-lab/VBPCApy: "Find patterns in incomplete datasets and report variational covariance summaries."
+  jcm-sci/trade-study: "Compare model settings, experiments and data-collection plans using repeated simulations."
+  ACCIDDA/op_engine: "Simulate changing systems over time and space, including random events."
+  ACCIDDA/op_system: "Turn model descriptions into calculations for simulation, including spatial interactions and random events."
+  ACCIDDA/flepimop2: "Coordinate simulation campaigns across locations and scenarios using reusable models and data tools."

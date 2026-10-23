@@ -75,6 +75,29 @@ test("computed-example package versions come from the provenance manifest", () =
   }
 });
 
+test("project pages use the reviewed software release lockfile", () => {
+  const manifest = JSON.parse(fs.readFileSync("_data/software_releases.json", "utf8"));
+  for (const [slug, release] of Object.entries(manifest.packages)) {
+    const project = html(path.join("projects", slug));
+    assert.ok(project.includes(release.display_status), `Missing release status for ${slug}`);
+    assert.doesNotMatch(project, /&lt;\/a|<\/a<\/a>|<a[^>]*>\s*<\/a>/, `Malformed release-status link for ${slug}`);
+    const status = project.match(/<span class="software-release-status">[\s\S]*?<\/span>/);
+    assert.ok(status, `Missing release-status wrapper for ${slug}`);
+    const statusStart = status.index;
+    const statusEnd = statusStart + status[0].length;
+    const paragraphStart = project.lastIndexOf("<p>", statusStart);
+    const paragraphEnd = project.indexOf("</p>", statusEnd);
+    assert.ok(paragraphStart >= 0 && paragraphEnd >= statusEnd, `Release status must remain within one paragraph for ${slug}`);
+    const paragraph = project.slice(paragraphStart, paragraphEnd + 4);
+    for (const url of [release.pypi_url, release.release_archive_url].filter(Boolean)) {
+      assert.ok(paragraph.includes(url), `Release link escaped the status paragraph for ${slug}: ${url}`);
+    }
+    if (release.version) {
+      assert.ok(project.includes(release.version), `Missing release version for ${slug}`);
+    }
+  }
+});
+
 // Folded YAML descriptions and quoted titles must remain valid structured data.
 test("page structured metadata identifies the profile and ordinary pages", () => {
   for (const page of ["", "cv", "publications", "projects"]) {

@@ -24,6 +24,10 @@ $indigo-color: #3949ab !default;
 $light-indigo-color: #7986cb !default;
 $violet-color: #0d6b6e;
 $light-violet-color: #4da8ab;
+$muted-color-light: #5f6368;
+$muted-color-dark: #a3a3a3;
+$control-border-color-light: #767676;
+$control-border-color-dark: #a3a3a3;
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
@@ -38,8 +42,8 @@ $black-color: #000000 !default;
 
 // Theme colors
 
-$code-bg-color-light: rgba($violet-color, 0.05);
-$code-bg-color-dark: #2c3237 !default;
+$code-bg-color-light: #f6f8fa;
+$code-bg-color-dark: #1f2328;
 
 // Font awesome location
 $fa-font-path: "../webfonts";

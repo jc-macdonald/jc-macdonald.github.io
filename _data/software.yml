@@ -1,70 +1,42 @@
 - slug: op_system
   name: OP System
   purpose: Describe spatial, nonlocal, compartmental and reaction models for simulation.
-  availability: Public alpha
-  version: 0.9.0
   role: Lead developer
   license: MIT core; GPL-3.0-or-later flepimop2 provider
-  docs: https://accidda.github.io/op_system/0.9/guides/capabilities/
   source: https://github.com/ACCIDDA/op_system
-  citation: https://github.com/ACCIDDA/op_system/blob/v0.9.0/CITATION.cff
 - slug: op_engine
   name: OP Engine
   purpose: Simulate deterministic dynamics and random events, with numerical checks and observation summaries.
-  availability: Public alpha
-  version: 0.8.0
   role: Lead developer
   license: MIT core; GPL-3.0-or-later flepimop2 provider
-  docs: https://accidda.github.io/op_engine/0.8/guides/capabilities/
   source: https://github.com/ACCIDDA/op_engine
-  citation: https://github.com/ACCIDDA/op_engine/blob/v0.8.0/CITATION.cff
 - slug: trade_study
   name: trade-study
   purpose: Compare experiments and model choices through repeated simulations and stated objectives.
-  availability: Public alpha
-  version: 0.6.0
   role: Lead developer
   license: MIT
-  docs: https://jcm-sci.github.io/trade-study/guide/capabilities/
   source: https://github.com/jcm-sci/trade-study
-  release_archive: https://doi.org/10.5281/zenodo.23497881
-  citation: https://doi.org/10.5281/zenodo.19599838
 - slug: vbpca_py
   name: vbpca-py
   purpose: Find shared patterns in incomplete data using a Bayesian approximation.
-  availability: Public beta
-  version: 0.4.12 stable; documentation follows development
   role: Lead developer
   license: MIT
-  docs: https://yoavram-lab.github.io/VBPCApy/
   source: https://github.com/yoavram-lab/VBPCApy
-  release_archive: https://doi.org/10.5281/zenodo.23566480
-  citation: https://doi.org/10.5281/zenodo.19389250
 - slug: inference_calibration
   name: op_infer
   purpose: Estimate unknown model quantities and assess fitting procedures with simulated data.
-  availability: Public pre-alpha, unreleased on PyPI
-  version: 0.0.1 development
   role: Lead developer
   license: MIT core; GPL-3.0-or-later flepimop2 provider
-  docs: https://github.com/ACCIDDA/op_infer/blob/main/docs/capabilities.md
   source: https://github.com/ACCIDDA/op_infer
-  citation: https://github.com/ACCIDDA/op_infer/blob/main/CITATION.cff
   citation_note: Citation metadata is under review; cite a commit until a release exists.
 - slug: pp_eigentest
   name: pp-eigentest
   purpose: Study how many patterns can be distinguished from noise in incomplete data.
-  availability: Private alpha, unreleased
-  version: 0.0.1 development
   role: Lead developer
   license: MIT
 - slug: flepimop2
   name: FlepiMoP2
   purpose: Coordinate simulation campaigns and connect models, computation and storage.
-  availability: Public alpha
-  version: 0.3.0 stable; main is 0.4.0dev
   role: Core contributor
   license: GPL-3.0-or-later
-  docs: https://accidda.github.io/flepimop2/latest/
   source: https://github.com/ACCIDDA/flepimop2
-  citation: https://doi.org/10.5281/zenodo.19672076

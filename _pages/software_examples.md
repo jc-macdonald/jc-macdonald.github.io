@@ -3,16 +3,17 @@ search: true
 layout: page
 title: Computed software examples
 permalink: /software-examples/
-description: Spatial fields, stochastic simulations, replicated comparisons and incomplete-data reconstruction using released packages.
+description: Checked synthetic demonstrations from released packages and public pre-alpha op_infer.
 nav: false
-last_modified_at: 2026-10-22
+last_modified_at: 2026-10-23
 design_comparison: true
 ---
 
-These examples use released versions of OP System, OP Engine, trade-study and
-VBPCApy. All data are synthetic. The plots show computations rather than
-findings from an application study; their captions state the assumptions and
-what is checked.
+The first four examples use released versions of OP System, OP Engine,
+trade-study and VBPCApy. The final example is an imported, commit-pinned
+artifact from public pre-alpha op_infer; it does not imply a package release.
+All data are synthetic. The plots show computations rather than findings from
+an application study; their captions state the assumptions and what is checked.
 
 [Python source](/assets/img/research/computed/computed_examples.py) ·
 [Numerical inputs and outputs](/assets/img/research/computed/computed_data.json) ·
@@ -26,6 +27,7 @@ what is checked.
   <a href="#stochastic-transfers">Stochastic transfers</a>
   <a href="#replicated-designs">Design comparison</a>
   <a href="#incomplete-data">Incomplete data</a>
+  <a href="#inference-calibration">Inference calibration</a>
 </nav>
 
 ## Spatial diffusion
@@ -91,5 +93,28 @@ about 0.22 for this seeded example; the generating noise standard deviation is
 the rank and assessing uncertainty calibration require separate studies.
 
 [SVG](/assets/img/research/computed/incomplete_reconstruction.svg) · [PDF](/assets/img/research/computed/incomplete_reconstruction.pdf)
+
+## Inference calibration
+
+op_infer evaluates one Normal-model fixture for which the posterior density is
+available analytically. The left panel compares 1,024 seeded draws from that
+fixture with the exact posterior density. The right panel summarizes randomized-rank
+probability-integral-transform values from 64 simulation-based calibration (SBC)
+replicates.
+
+{% include figure.liquid path="assets/img/research/computed/op_infer_normal_sbc.svg" class="img-fluid rounded" zoomable=true alt="An exact Normal posterior density overlaid on 1,024 analytic-fixture draws, beside a histogram of randomized-rank PIT values from 64 SBC replicates." caption="A checked analytic fixture and an intentionally small SBC bank. Sixty-four replicates are underpowered and are not evidence that inference is calibrated." %}
+
+The fixture completed all 64 requested replicates without a failed attempt. Its
+recorded gate label is `underpowered pass`: the implementation and accounting
+checks passed, but the replicate count is below the prespecified power floor.
+The histogram is therefore a software demonstration, not a calibration
+certificate or application result.
+
+[Retained data](/assets/img/research/computed/op_infer_normal_sbc/data.json) ·
+[Summary](/assets/img/research/computed/op_infer_normal_sbc/summary.txt) ·
+[Upstream manifest](/assets/img/research/computed/op_infer_normal_sbc/manifest.json) ·
+[Pinned source identity](/assets/img/research/computed/op_infer_normal_sbc/source.json) ·
+[SVG](/assets/img/research/computed/op_infer_normal_sbc.svg) ·
+[PDF](/assets/img/research/computed/op_infer_normal_sbc.pdf)
 
 [Architecture diagrams and other figure downloads](/figures/)

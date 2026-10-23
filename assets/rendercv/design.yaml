@@ -9,7 +9,14 @@ design:
     show_footer: true
     show_top_note: false
   colors:
+    body: "#000000"
+    name: "#0D6B6E"
+    headline: "#0D6B6E"
+    connections: "#0D6B6E"
+    section_titles: "#0D6B6E"
+    links: "#0D6B6E"
     footer: "#555555"
+    top_note: "#555555"
   typography:
     alignment: left
     font_size:
@@ -19,6 +26,9 @@ design:
       connections: 10pt
       section_titles: 12pt
     line_spacing: 0.4em
+  links:
+    underline: true
+    show_external_link_icon: false
   header:
     alignment: left
     space_below_name: 0.2cm

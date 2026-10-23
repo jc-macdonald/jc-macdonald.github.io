@@ -20,5 +20,6 @@ CUSTOMIZE.md
 assets/img/research/computed/*.svg
 assets/img/research/computed/computed_data.json
 assets/img/research/computed/provenance.json
+assets/img/research/computed/op_infer_normal_sbc/**
 assets/img/research/previews/*.svg
 assets/img/research/previews/provenance.json

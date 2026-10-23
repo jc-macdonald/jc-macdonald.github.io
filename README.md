@@ -671,11 +671,36 @@ Originally, **al-folio** was based on the [\*folio theme](https://github.com/bog
 ### Research pages and publication records
 
 The home page presents selected publications after the introduction, followed
-by current research and computed examples. Projects are grouped by release/research status. Edit
-`_data/software.yml` for the shared software guide and card availability labels;
-use each project's `importance` for order within its group. The figures page
-reads `_data/research_figures.yml`, with compact previews generated from the
-retained synthetic data by `assets/img/research/previews/card_previews.py`.
+by current research and computed examples. Projects are grouped by
+release/research status. Edit `_data/software.yml` for editorial software
+descriptions and roles; use each project's `importance` for order within its
+group. The figures page reads `_data/research_figures.yml`, with compact
+previews generated from the retained synthetic data by
+`assets/img/research/previews/card_previews.py`.
+
+Public package versions and Development Status classifiers are locked in
+`_data/software_releases.json`. The human-reviewed source registry is
+`_data/software_release_sources.json`. A weekly workflow refreshes public PyPI
+metadata and the public op_infer development metadata, synchronizes
+marker-delimited CV status and release links, and opens a review pull request.
+The workflow resolves op_infer's moving branch to a commit SHA, then runs
+formatting, CV rendering and the production site build before opening the pull
+request. It never deploys a metadata change directly. Run the metadata checks
+locally with:
+
+```shell
+python .github/scripts/refresh_software_releases.py --refresh
+python .github/scripts/refresh_software_releases.py
+python -m unittest discover -s .github/tests -p 'test_software_releases.py' -v
+```
+
+Package maturity (alpha/beta) comes from the package classifier and remains
+separate from whether a particular version is final or pre-release. Private
+software retains a dated manual review without publishing repository or version
+metadata. If a PyPI version lacks a reviewed version-specific Zenodo DOI, the
+lockfile sets `archive_pending` instead of reusing an older release DOI. Stable
+versioned documentation links are derived from the released version; links to
+documentation built from a moving development branch are labeled accordingly.
 
 Teaching and Talks reuse the corresponding records in `_data/cv.yml`; historical
 course materials live in `_data/teaching_materials.yml`. Keep each factual record

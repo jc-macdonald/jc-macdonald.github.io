@@ -1,0 +1,19 @@
+{% assign release = site.data.software_releases.packages[include.slug] -%}
+<span class="software-release-status">
+  {%- if release.published -%}
+    <a href="{{ release.pypi_url }}">
+      {{- release.display_status }}; latest released version: v{{ release.version }} ({{ release.release_phase }}) on PyPI</a
+    >
+  {%- else -%}
+    <strong>{{ release.display_status }}</strong>
+    {%- if release.display_version %} ({{ release.display_version }}){% endif -%}
+  {%- endif -%}
+  {%- if release.release_archive_url %}
+    · <a href="{{ release.release_archive_url }}">v{{ release.version }} archive</a>
+  {%- elsif release.archive_pending %}
+    · current-version archive pending verification
+  {%- endif -%}
+  {%- if release.concept_doi %}
+    · <a href="https://doi.org/{{ release.concept_doi }}">all archived versions</a>
+  {%- endif -%}
+</span>
