@@ -1,5 +1,7 @@
 The transfer simulation and replicated sample-mean examples adapt the MIT-licensed
-op_engine and trade-study examples, respectively. Their permission notices follow.
+op_engine and trade-study examples, respectively. The imported Normal-model SBC
+artifact comes from the MIT-licensed op_infer repository. Their permission notices
+follow.
 
 Copyright (c) 2026 Joshua Macdonald, Carl Pearson, and Timothy Willard
 Copyright (c) 2026 Joshua C. Macdonald

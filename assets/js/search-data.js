@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-computed-software-examples",
           title: "Computed software examples",
-          description: "Spatial fields, stochastic simulations, replicated comparisons and incomplete-data reconstruction using released packages.",
+          description: "Checked synthetic demonstrations from released packages and public pre-alpha op_infer.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/software-examples/";
@@ -116,7 +116,7 @@ ninja.data = [{
             },
         },{id: "projects-current-analyses",
           title: "Research in progress",
-          description: "Ongoing work on structural scores, scientific machine learning and disease-modeling applications.",
+          description: "Ongoing work on decision-focused observation and study design, calibration and validation, scientific machine learning, and applications in public and global health and ecology.",
           section: "Projects",
             handler: () => {
               window.location.href = "/projects/current_analyses/";
@@ -130,7 +130,7 @@ ninja.data = [{
             },
         },{id: "projects-inference-calibration",
           title: "op_infer",
-          description: "Estimate model quantities from incomplete data and assess fitting methods. Public pre-alpha research software; unreleased on PyPI.",
+          description: "Estimate model quantities from incomplete data and assess fitting methods with public research software.",
           section: "Projects",
             handler: () => {
               window.location.href = "/projects/inference_calibration/";
@@ -151,7 +151,7 @@ ninja.data = [{
             },
         },{id: "projects-pp-eigentest",
           title: "pp-eigentest",
-          description: "Research on distinguishing underlying patterns from noise in incomplete data. Private alpha research software.",
+          description: "Private research on distinguishing underlying patterns from noise in incomplete data.",
           section: "Projects",
             handler: () => {
               window.location.href = "/projects/pp_eigentest/";

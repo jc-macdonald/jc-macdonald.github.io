@@ -15,7 +15,7 @@ TEAL_LIGHT = "#4DA8AB"  # Light mode variant (dark-mode links, lighter accents)
 BLUE_HEALTH = "#2471A3"  # Health systems domain — clinical, institutional
 TEAL_ENVIRON = "#148F77"  # Environmental domain — marine, ocean, living systems
 GREEN_EARTH = "#1E8449"  # Earth/terrestrial domain — agriculture, land, fire
-GOLD_ACCENT = "#D4AC0D"  # Decision support / outputs / enabling — punchline color
+GOLD_ACCENT = "#87641A"  # Decision support / outputs / enabling — punchline color
 
 CHARCOAL = "#2C3E50"  # Theory, infrastructure, dark text
 SLATE = "#5D6D7E"  # Secondary text, labels
