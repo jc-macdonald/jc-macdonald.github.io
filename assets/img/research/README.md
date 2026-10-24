@@ -63,7 +63,11 @@ claims aligned with the linked package capability guides and page text:
 - The package architecture diagrams separate mathematical cores from campaign
   providers. Backend qualification is method-specific and CPU/GPU evidence is
   stated explicitly. Cross-axis constraints are metadata in op_system.
-- `beyond_onehealth` distinguishes public simulation and evaluation tools from
+- `cross_scale_systems` places study systems by scale. Solid outlines mark
+  systems with a published paper at that scale; dashed outlines mark
+  collaborative or in-progress work without one. The figure makes no
+  empirical claim.
+- `software_stack` distinguishes public simulation and evaluation tools from
   op_infer, working inference and calibration research software; operational
   application material remains private. `future_directions_general` presents
   established applications, methods and developing design questions as

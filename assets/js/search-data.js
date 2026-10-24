@@ -46,7 +46,7 @@ ninja.data = [{
           },
         },{id: "nav-research-and-software",
           title: "Research and software",
-          description: "Models and software for studying changing systems, learning from incomplete data, and comparing interventions and research designs.",
+          description: "The questions and study systems I work on, and the models and software I build to study them.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
