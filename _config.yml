@@ -9,11 +9,11 @@ last_name: Macdonald
 contact_note: >
   Best reached by email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Cross-domain observation and experimental design, mechanistic modeling, simulation, inference, calibration and validation, and decision analysis under scientific and resource constraints.
+  Landscape and metapopulation eco-evolutionary dynamics of hosts, pathogens and cultural traits, studied with mechanistic models, inference and open research software.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: computational science, observation design, experimental design, mechanistic modeling, Bayesian inference, simulation-based inference, calibration and validation, decision analysis, resource allocation, scientific machine learning for dynamical systems, scientific computing, uncertainty quantification, model and forecast evaluation, monitoring and surveillance design, research software, infectious disease modeling, public health, global health, ecological modeling, environmental monitoring, cultural evolution
+keywords: disease ecology, landscape ecology, metapopulation dynamics, eco-evolutionary dynamics, one health, zoonoses, viral and immunological modeling, cultural evolution, mechanistic modeling, Bayesian inference, simulation-based inference, calibration and validation, observation design, experimental design, decision analysis, scientific machine learning for dynamical systems, scientific computing, uncertainty quantification, model and forecast evaluation, research software, infectious disease modeling, public health, global health
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 

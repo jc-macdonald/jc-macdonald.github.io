@@ -41,7 +41,10 @@ diagrams:
   - name: flepimop2_slide
     title: FlepiMoP2
     description: Provider interfaces and campaign relationships.
-  - name: beyond_onehealth
+  - name: cross_scale_systems
+    title: Systems across scales
+    description: Study systems arranged by scale within individuals, between individuals and across populations, with the landscape-change chain.
+  - name: software_stack
     title: Simulation, inference and decisions
     description: Relationships among methods and scientific applications.
   - name: obs_model_general

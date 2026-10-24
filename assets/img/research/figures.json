@@ -1,7 +1,13 @@
 [
   {
-    "name": "beyond_onehealth",
-    "source": "tikz/beyond_onehealth.tex",
+    "name": "cross_scale_systems",
+    "source": "tikz/cross_scale_systems.tex",
+    "title": "Systems across scales",
+    "description": "A grid of four study systems against three scales: within individuals, between individuals and across populations. Solid outlines mark a published paper at that scale; dashed outlines mark collaborative or unpublished work. Foot-and-mouth disease virus in African buffalo has published work on virus growth and immune response and on transmission between buffalo including carrier infection, and a collaborative cells-to-landscapes project in which the author develops within-host models. Crimean-Congo hemorrhagic fever virus in livestock and wildlife has collaborative work on antibody response in livestock and on transmission between livestock and wildlife hosts. Human cultural transmission has published work on networks and clusters of cultural traits and on cultural variation across geography and language. Bighorn sheep immune ecology has collaborative work on immune phenotypes of individual sheep and immune variation among metapopulations. A chain below states that ecological and landscape change influences movement and contact, which shapes connectivity among populations and so persistence, divergence and evolution."
+  },
+  {
+    "name": "software_stack",
+    "source": "tikz/software_stack.tex",
     "title": "Simulation, inference and decisions",
     "description": "Public tools cover field/equation/reaction specification with OP System, PDE/nonlocal/reaction simulation with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds selected inference adapters, calibration and study-design checks as research software in development."
   },

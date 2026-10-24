@@ -15,7 +15,27 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist developing decision-focused mechanistic models and research software that connect observation and experimental design, simulation, Bayesian and simulation-based inference, calibration and validation, and resource-aware comparison. Established applications span infectious disease and public and global health, ecology, cultural transmission, and incomplete data; developing collaborations extend these methods to monitoring and scientific machine learning."
+      - "Computational scientist whose overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. Established work addresses within- and between-host dynamics, including viral and immunological models from within-host to population scale, and cultural transmission; landscape-scale questions are a developing direction. Builds mechanistic models, inference methods and research software, with applications in infectious disease and public and global health, ecology and incomplete data, and developing work in scientific machine learning and collaborative monitoring and study design."
+
+    Research Themes:
+      - label: Within individuals
+        details: "Viral growth, immune response and antibody kinetics and their consequences for transmission (foot-and-mouth disease, dengue; Crimean-Congo hemorrhagic fever in progress)."
+
+      - label: Across populations
+        details: "Published work on cultural variation across geography and language. Developing: how landscape change, movement and contact shape spread, persistence and divergence."
+
+      - label: Decisions
+        details: "Surveillance and control decisions for livestock and wildlife disease, vaccination and scenario modeling under uncertainty, and study-design comparison."
+
+    Study Systems:
+      - label: Foot-and-mouth disease virus in African buffalo
+        details: "Within-host model (first author) and carrier-transmission model (co-author); senior personnel on a multi-institution project."
+
+      - label: Crimean-Congo hemorrhagic fever virus in livestock and wildlife
+        details: "Collaborative transmission models and surveillance design."
+
+      - label: Human cultural transmission
+        details: "Networks and clusters of cultural traits across Austronesian-speaking societies; methods for incomplete cultural data."
 
     Appointments:
       - company: Johns Hopkins Bloomberg School of Public Health
@@ -148,6 +168,14 @@ cv:
         date: 2026
 
     Preprints:
+      - title: "Robust parameterization of a viral-immune kinetics model for sequential Dengue virus (DENV) infections with Antibody-Dependent Enhancement (ADE)"
+        authors:
+          - "***J.C. Macdonald***"
+          - H. Gulbudak
+        journal: "bioRxiv"
+        doi: 10.1101/2023.08.29.555313
+        date: 2023
+
       - title: "Bayesian estimation of the number of significant principal components for cultural data"
         authors:
           - "***J.C. Macdonald***"
@@ -283,7 +311,7 @@ cv:
 
     Computational Expertise:
       - label: Modeling
-        details: "Mathematical and computational models of changing systems, including spatial, stochastic and compartmental models; machine learning with scientific constraints; multivariate data analysis and dimensionality reduction; stability, bifurcation and sensitivity analysis; parameter identifiability and inverse problems"
+        details: "Mathematical and computational models of changing systems, including viral-immune, spatial, stochastic and compartmental models; machine learning with scientific constraints; multivariate data analysis and dimensionality reduction; stability, bifurcation and sensitivity analysis; parameter identifiability and inverse problems"
 
       - label: Inference
         details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; simulation-based calibration, numerical qualification, and model and forecast assessment; proper scoring rules"

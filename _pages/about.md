@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: Assistant Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
-last_modified_at: 2026-10-23
+last_modified_at: 2026-10-24
 
 profile:
   align: right
@@ -27,9 +27,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a computational scientist developing cross-domain methods and research software for decisions under uncertainty. My work connects observation and experimental design, mechanistic models, simulation, Bayesian and simulation-based inference, calibration and validation, and comparison under scientific and resource constraints. Established applications span public and global health, ecology and incomplete multivariate data. Developing work includes scientific machine learning and collaborative environmental monitoring and study design.
+My overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. My established work addresses within- and between-host dynamics and cultural transmission, and landscape-scale questions are a developing direction. I build mechanistic models, inference methods and open research software for these questions and for decisions under uncertainty, with applications in infectious disease and public and global health, ecology and incomplete multivariate data. Developing work also includes scientific machine learning and collaborative monitoring and study design.
 
-I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With the [Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA)](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on wildlife and livestock disease surveillance.
+I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With the [Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA)](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on foot-and-mouth disease in African buffalo and Crimean-Congo hemorrhagic fever in livestock and wildlife, including transmission between species and surveillance design.
 
 <p>Email: <a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a> · <a href="https://orcid.org/{{ site.data.socials.orcid_id }}">ORCID</a></p>
 
@@ -38,10 +38,18 @@ Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, wor
 <nav class="page-links" aria-label="Explore my work">
   <a href="/publications/">Publications</a>
   <a href="/operational-modeling/">Operational modeling</a>
-  <a href="/projects/">Research and software</a>
+  <a href="/projects/">Research</a>
   <a href="/reviewer-profile/">Reviewer and collaborator profile</a>
   <a href="/cv/">CV</a>
 </nav>
+
+## Research questions
+
+My research asks three questions, studied in systems that include foot-and-mouth disease in African buffalo, Crimean-Congo hemorrhagic fever in livestock and wildlife, and human cultural transmission. [The research page](/projects/) describes each system.
+
+- **How do processes within hosts shape transmission and persistence?** My buffalo studies link virus growth and immune response to transmission between animals.
+- **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction, because the published work so far concerns cultural variation across geography and language and the rest is collaborative work in progress.
+- **How should we measure, vaccinate and decide under uncertainty?** I address this through surveillance, vaccination and scenario modeling.
 
 ## Selected publications
 
