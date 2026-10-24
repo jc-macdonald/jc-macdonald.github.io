@@ -78,6 +78,12 @@
       "pagination": "133–146",
       "headline": "Within-Host Viral Growth and Immune Response Rates Predict Foot-and-Mouth Disease Virus Transmission Dynamics for African Buffalo"
     },
+    "10.1101/2023.08.29.555313": {
+      "authors": ["Joshua C. Macdonald", "Hayriye Gulbudak"],
+      "datePublished": "2023-08-31",
+      "source": "https://doi.org/10.1101/2023.08.29.555313",
+      "headline": "Robust parameterization of a viral-immune kinetics model for sequential Dengue virus (DENV) infections with Antibody-Dependent Enhancement (ADE)"
+    },
     "10.48550/arXiv.2409.12129": {
       "authors": ["Joshua C. Macdonald", "Javier Blanco-Portillo", "Marcus W. Feldman", "Yoav Ram"],
       "datePublished": "2024-09-18",

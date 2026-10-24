@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="376.269pt" height="444.324pt" viewBox="0 0 376.269 444.324" version="1.2" role="img" aria-labelledby="title description">
-<title id="title">Simulation, inference and decisions</title><desc id="description">Public tools cover field/equation/reaction specification with OP System, PDE/nonlocal/reaction simulation with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds selected inference adapters, calibration and study-design checks as research software in development.</desc><metadata>{"source": "tikz/beyond_onehealth.tex", "source_sha256": "4e817cc21f6fc0aa2daede4545915d5a82615359175987c5af9e487cdd652ac1"}</metadata><rect x="0" y="0" width="376.269" height="444.324" fill="#ffffff" /><defs>
+<title id="title">Simulation, inference and decisions</title><desc id="description">Public tools cover field/equation/reaction specification with OP System, PDE/nonlocal/reaction simulation with OP Engine, campaigns with FlepiMoP2, and replicated evaluation with trade-study. op_infer adds selected inference adapters, calibration and study-design checks as research software in development.</desc><metadata>{"source": "tikz/software_stack.tex", "source_sha256": "da3f8b78371bbb945b00582c234bb7a9b34f29f14d19a8ea5a4245291f18d295"}</metadata><rect x="0" y="0" width="376.269" height="444.324" fill="#ffffff" /><defs>
 <g>
 <symbol overflow="visible" id="glyph0-0">
 <path style="stroke:none;" d="" />
