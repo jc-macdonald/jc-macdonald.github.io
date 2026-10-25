@@ -28,14 +28,14 @@ systems.
 ## Research questions
 
 - **How do processes within hosts shape transmission and persistence?** My [buffalo studies](/publications/#macdonald2024fmdv) connect virus growth and immune response in individual animals to transmission between them, and a [carrier-transmission model](/publications/#atkins2026fmdcarrier), on which I am a co-author, extends this to persistent infection. As senior personnel on a multi-institution project linking cells to landscapes in African buffalo, I develop and parameterize the within-host models. The same within-host-to-population approach underlies my [dengue and Crimean-Congo hemorrhagic fever applications](/projects/current_analyses/#application-studies).
-- **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction. Published work relates [cultural variation to geography and language](/publications/#macdonald2024austronesian) among Austronesian-speaking societies, without modeling landscape change. Collaborative work in progress models Crimean-Congo hemorrhagic fever transmission between livestock and wildlife hosts, and spatial structure would be a possible extension if movement data allow. A bighorn sheep project asks how immune phenotypes vary among metapopulations.
+- **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction. Published work relates [cultural variation to geography and language](/publications/#macdonald2024austronesian) among Austronesian-speaking societies, without modeling landscape change. Collaborative work in progress models Crimean-Congo hemorrhagic fever transmission between livestock and wildlife hosts, and spatial structure is a possible extension if movement data allow. A bighorn sheep project asks how immune phenotypes vary among metapopulations.
 - **How should we measure, vaccinate and decide under uncertainty?** For Crimean-Congo hemorrhagic fever, I ask which wildlife and livestock measurements would change a surveillance or control decision, given their field costs. [Modeling in practice](/operational-modeling/) describes outbreak-response vaccination and respiratory-virus scenario work, and [trade-study](/projects/trade_study/) supports comparing study designs.
 
 Earlier theoretical work examined [hysteresis and Hopf bifurcation in a plankton model of harmful algal blooms](/publications/#macdonald2023npzd).
 
 ## Study systems
 
-- **Foot-and-mouth disease virus in African buffalo.** A within-host model as first author and a carrier-transmission model as co-author, with collaborators in the Jolles Lab and a multi-institution project.
+- **Foot-and-mouth disease virus in African buffalo.** A first-author within-host model and a co-authored carrier-transmission model, developed with collaborators in the Jolles Lab and a multi-institution project.
 - **Crimean-Congo hemorrhagic fever virus in livestock and wildlife.** Collaborative transmission models and surveillance design; modeling in progress.
 - **Human cultural transmission.** Published analysis of networks and clusters of cultural traits, with a methods [preprint](/publications/#preprints) on incomplete cultural data.
 - **Bighorn sheep immune ecology.** Collaborative analysis in progress.
@@ -50,9 +50,9 @@ environmental and social systems provide applications of the same underlying
 methods.
 
 The pages keep three kinds of status separate. **Lifecycle** labels say whether
-software is released or still in development. **Evidence** comes from linked
-publications, operational work, executable software or explicitly identified
-work in progress. **Example type** says whether an illustration uses observed,
+software is released or still in development. **Evidence** labels identify the
+support: linked publications, operational work, executable software or explicitly
+identified work in progress. **Example type** says whether an illustration uses observed,
 synthetic or constructed inputs. None of these labels, by itself, establishes
 scientific validity for a new application.
 
