@@ -6,7 +6,8 @@ and a commit-pinned public op_infer calibration fixture. They retain numerical
 inputs, source identity and verification records.
 
 The website uses SVG exports. Ten architecture/method schematics have editable
-TikZ sources in [`tikz/`](tikz/); two numerical illustrations use
+TikZ sources in [`tikz/`](tikz/); three numerical figures (two constructed
+illustrations and one computation from a published model) use
 [`gen_research_figures.py`](gen_research_figures.py). Every figure also has a
 vector PDF for papers/slides and a PNG at its original URL for compatibility.
 The [figure gallery](https://jcmacdonald.dev/figures/) links the exports and sources.

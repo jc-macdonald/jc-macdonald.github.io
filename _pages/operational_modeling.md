@@ -36,13 +36,13 @@ Model development, fitting and scenario production for ACCIDDA's COVID-19 projec
 
 ---
 
-## Other Operational Work
+## Other operational work
 
-### Hib Vaccination Modeling
+### Hib vaccination modeling
 
 I provide technical supervision for PhD students implementing an age- and immune-status-structured _Haemophilus influenzae_ type b (Hib) model. The study examines the effects of long-running vaccination programs in a partner-defined population and includes model fitting and policy analysis. Public descriptions remain general until the participating organizations approve more specific attribution.
 
-### Diphtheria Outbreak Vaccination
+### Diphtheria outbreak vaccination
 
 I lead modeling analyses of outbreak-response vaccination strategies, including the interaction between surveillance, immunity and campaign timing. The working repository and partner-specific policy process remain private while the analysis matures.
 
@@ -50,4 +50,4 @@ I lead modeling analyses of outbreak-response vaccination strategies, including 
 
 ## Infrastructure
 
-This work informs development of [OP System](/projects/op_system/) for model specification, [OP Engine](/projects/op_engine/) for numerical simulation, and [FlepiMoP2](/projects/flepimop2/) for campaign execution. Separate providers connect the packages. Their requirements draw on the infectious disease modeling workflows described above. These operational programs are an important application context; OP System and OP Engine are cross-domain numerical cores.
+This work informs development of [OP System](/projects/op_system/) for model specification, [OP Engine](/projects/op_engine/) for numerical simulation, and [FlepiMoP2](/projects/flepimop2/) for campaign execution. Separate provider packages, with release cycles independent of the cores, connect compatible versions of OP System and OP Engine to FlepiMoP2. Their requirements draw on the infectious disease modeling workflows described above. These operational programs are an important application context; OP System and OP Engine are cross-domain numerical cores.

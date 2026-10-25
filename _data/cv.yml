@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist whose overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. Established work addresses within- and between-host dynamics, including viral and immunological models from within-host to population scale, and cultural transmission; landscape-scale questions are a developing direction. Builds mechanistic models, inference methods and research software, with applications in infectious disease and public and global health, ecology and incomplete data, and developing work in scientific machine learning and collaborative monitoring and study design."
+      - "Computational scientist whose overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. Established work addresses within- and between-host dynamics, including viral and immunological models from within-host to population scale, and cultural transmission; landscape-scale questions are a developing direction. Builds mechanistic models, inference methods and research software. Applications include infectious disease, public and global health and ecology; methods work also addresses incomplete data. Developing work includes scientific machine learning and the design of monitoring programs and studies with field and domain partners."
 
     Research Themes:
       - label: Within individuals

@@ -28,14 +28,19 @@ systems.
 ## Research questions
 
 - **How do processes within hosts shape transmission and persistence?** My [buffalo studies](/publications/#macdonald2024fmdv) connect virus growth and immune response in individual animals to transmission between them, and a [carrier-transmission model](/publications/#atkins2026fmdcarrier), on which I am a co-author, extends this to persistent infection. As senior personnel on a multi-institution project linking cells to landscapes in African buffalo, I develop and parameterize the within-host models. The same within-host-to-population approach underlies my [dengue and Crimean-Congo hemorrhagic fever applications](/projects/current_analyses/#application-studies).
-- **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction. Published work relates [cultural variation to geography and language](/publications/#macdonald2024austronesian) among Austronesian-speaking societies, without modeling landscape change. Collaborative work in progress models Crimean-Congo hemorrhagic fever transmission between livestock and wildlife hosts, and spatial structure would be a possible extension if movement data allow. A bighorn sheep project asks how immune phenotypes vary among metapopulations.
+- **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction. Published work relates [cultural variation to geography and language](/publications/#macdonald2024austronesian) among Austronesian-speaking societies, without modeling landscape change. Collaborative work in progress models Crimean-Congo hemorrhagic fever transmission between livestock and wildlife hosts, and spatial structure is a possible extension if movement data allow. A bighorn sheep project asks how immune phenotypes vary among metapopulations.
 - **How should we measure, vaccinate and decide under uncertainty?** For Crimean-Congo hemorrhagic fever, I ask which wildlife and livestock measurements would change a surveillance or control decision, given their field costs. [Modeling in practice](/operational-modeling/) describes outbreak-response vaccination and respiratory-virus scenario work, and [trade-study](/projects/trade_study/) supports comparing study designs.
 
 Earlier theoretical work examined [hysteresis and Hopf bifurcation in a plankton model of harmful algal blooms](/publications/#macdonald2023npzd).
 
+<figure>
+  <img src="/assets/img/research/npzd_hysteresis.svg" alt="Two panels from a published nutrient-phytoplankton-zooplankton-detritus (NPZD) plankton model. Panel a plots equilibrium phytoplankton against the maximum harmful effect of phytoplankton on zooplankton. Above a threshold the zooplankton-free state is locally stable and no coexistence equilibrium exists; below it a coexistence branch folds into an S shape, giving two stable coexistence states over an intermediate range. Panel b shows two simulations at a marked value in that range that differ only in initial zooplankton: low initial zooplankton leads to the high-phytoplankton state (circle) and high initial zooplankton to the low-phytoplankton state (square), with matching markers in panel a." width="720" height="368" loading="lazy">
+  <figcaption>Forward hysteresis in the published nutrient-phytoplankton-zooplankton-detritus (NPZD) model (Macdonald and Gulbudak 2023). (a) Equilibria against the maximum harmful effect of phytoplankton on zooplankton. Coexistence equilibria exist only below the threshold at which the paper's zooplankton persistence number, labelled <i>P</i><sub>0</sub><sup>z</sup> in (a), equals one; above it, the zooplankton-free state is locally stable. At this threshold a coexistence branch bifurcates forward from the zooplankton-free state and folds twice, so two stable coexistence states exist over an intermediate range. Solid branches are locally stable; dashed and dotted branches are unstable. (b) Two simulations at the value marked in (a), differing only in initial zooplankton. With low initial zooplankton, phytoplankton settles at the high stable state (circle); with high initial zooplankton, it settles at the low stable state (square). The markers match those in (a), and faint dotted lines in (b) mark the two stable equilibria. Recomputed from the model equations with parameters from the paper; not copied from the paper. <a href="/figures/#published-model-computations">Figure downloads and source</a>.</figcaption>
+</figure>
+
 ## Study systems
 
-- **Foot-and-mouth disease virus in African buffalo.** A within-host model as first author and a carrier-transmission model as co-author, with collaborators in the Jolles Lab and a multi-institution project.
+- **Foot-and-mouth disease virus in African buffalo.** A first-author within-host model and a co-authored carrier-transmission model, developed with collaborators in the Jolles Lab and a multi-institution project.
 - **Crimean-Congo hemorrhagic fever virus in livestock and wildlife.** Collaborative transmission models and surveillance design; modeling in progress.
 - **Human cultural transmission.** Published analysis of networks and clusters of cultural traits, with a methods [preprint](/publications/#preprints) on incomplete cultural data.
 - **Bighorn sheep immune ecology.** Collaborative analysis in progress.
@@ -50,9 +55,9 @@ environmental and social systems provide applications of the same underlying
 methods.
 
 The pages keep three kinds of status separate. **Lifecycle** labels say whether
-software is released or still in development. **Evidence** comes from linked
-publications, operational work, executable software or explicitly identified
-work in progress. **Example type** says whether an illustration uses observed,
+software is released or still in development. **Evidence** labels identify the
+support: linked publications, operational work, executable software or explicitly
+identified work in progress. **Example type** says whether an illustration uses observed,
 synthetic or constructed inputs. None of these labels, by itself, establishes
 scientific validity for a new application.
 

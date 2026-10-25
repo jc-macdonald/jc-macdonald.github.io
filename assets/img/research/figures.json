@@ -76,5 +76,11 @@
     "source": "gen_research_figures.py",
     "title": "Illustrative constraint checks for predictions",
     "description": "Two constructed prevalence curves compared with an upper bound of one over the displayed horizon. One stays below the bound and the other crosses it; predictive accuracy is not evaluated."
+  },
+  {
+    "name": "npzd_hysteresis",
+    "source": "gen_research_figures.py",
+    "title": "Forward hysteresis in an NPZD model",
+    "description": "Two panels from the rescaled nutrient-phytoplankton-zooplankton-detritus (NPZD) model of Macdonald and Gulbudak (2023), recomputed from its equations with parameters from the paper. Panel a: equilibrium phytoplankton against the maximum harmful effect of phytoplankton on zooplankton. Above the threshold at which the paper's zooplankton persistence number equals one, the zooplankton-free equilibrium is locally stable and no coexistence equilibrium exists. Below it a coexistence branch bifurcates forward and folds twice, giving two stable coexistence states with an unstable state between them over an intermediate range. Stable branches are solid; unstable branches are dashed or dotted. Panel b: two simulations at a marked value in that range, differing only in initial zooplankton, settle on different stable states: low initial zooplankton on the high-phytoplankton state and high initial zooplankton on the low-phytoplankton state. Not copied from the paper."
   }
 ]
