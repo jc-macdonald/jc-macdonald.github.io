@@ -11,12 +11,13 @@ nav: false
 The computed figures below use public synthetic data. Four use released
 software; the op_infer fixture is imported from a pinned public pre-alpha
 commit and does not imply a release. Each links to its assumptions, checks and
-full multi-panel version. The method diagrams and constructed illustrations
-follow in separate sections.
+full multi-panel version. The method diagrams, a published-model computation and
+constructed illustrations follow in separate sections.
 
 <nav class="page-links" aria-label="Figure sections">
   <a href="#computed-examples">Computed examples</a>
   <a href="#method-and-software-diagrams">Method diagrams</a>
+  <a href="#published-model-computations">Published-model computations</a>
   <a href="#constructed-illustrations">Constructed illustrations</a>
 </nav>
 
@@ -33,6 +34,17 @@ between components; they do not prescribe one execution order. Capability and
 qualification details remain in the corresponding package documentation.
 
 {% include figure_gallery.liquid figures=site.data.research_figures.diagrams base='assets/img/research/' tikz=true %}
+
+## Published-model computations
+
+Figures in this section are recomputed from the equations of a published model,
+with parameters taken from the paper. They illustrate a published qualitative
+result; they are not copied from the paper, and their numerical values belong
+to the recomputation.
+
+{% include figure_gallery.liquid figures=site.data.research_figures.published_models base='assets/img/research/' %}
+
+[Python source for the published-model computation](/assets/img/research/gen_research_figures.py) · [Build and scope notes](/assets/img/research/README.md)
 
 ## Constructed illustrations
 

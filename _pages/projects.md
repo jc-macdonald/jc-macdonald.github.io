@@ -33,6 +33,11 @@ systems.
 
 Earlier theoretical work examined [hysteresis and Hopf bifurcation in a plankton model of harmful algal blooms](/publications/#macdonald2023npzd).
 
+<figure>
+  <img src="/assets/img/research/npzd_hysteresis.svg" alt="Equilibrium phytoplankton level of a published nutrient-phytoplankton-zooplankton-detritus (NPZD) plankton model plotted against the maximum harmful effect of phytoplankton on zooplankton. Above a threshold near 2.4 the zooplankton-free state is locally stable and no coexistence equilibrium exists. Below it a coexistence branch appears and folds into an S shape, so over an intermediate range two stable coexistence states exist with an unstable state between them." width="720" height="579" loading="lazy">
+  <figcaption>Forward hysteresis in the published nutrient-phytoplankton-zooplankton-detritus (NPZD) model (Macdonald and Gulbudak 2023). Coexistence equilibria exist only below the threshold at which the paper's zooplankton persistence number equals one; above it, the zooplankton-free state is locally stable. At this threshold a coexistence branch bifurcates forward from the zooplankton-free state and folds twice, so two stable coexistence states exist over an intermediate range of harmful effect. Solid branches are locally stable; dashed and dotted branches are unstable. Recomputed from the model equations with parameters from the paper's table and bifurcation-figure caption; the threshold and fold values belong to this recomputation. <a href="/figures/#published-model-computations">Figure downloads and source</a>.</figcaption>
+</figure>
+
 ## Study systems
 
 - **Foot-and-mouth disease virus in African buffalo.** A first-author within-host model and a co-authored carrier-transmission model, developed with collaborators in the Jolles Lab and a multi-institution project.

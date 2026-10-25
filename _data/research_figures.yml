@@ -53,6 +53,10 @@ diagrams:
   - name: future_directions_general
     title: Current research directions
     description: Interacting applications, methods and developing design questions.
+published_models:
+  - name: npzd_hysteresis
+    title: Forward hysteresis in an NPZD model
+    description: Equilibria of the rescaled nutrient-phytoplankton-zooplankton-detritus (NPZD) model of Macdonald and Gulbudak (2023), recomputed with parameters from the paper's table and bifurcation-figure caption. Above the threshold at which the paper's zooplankton persistence number equals one, only the zooplankton-free state is locally stable; below it the coexistence branch folds, giving two stable coexistence states over an intermediate range.
 illustrations:
   - name: optimal_design
     title: Observation-design tradeoffs
