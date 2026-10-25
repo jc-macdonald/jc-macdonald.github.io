@@ -145,13 +145,32 @@ def _runs(mask):
     return [(a, b) for a, b in zip(starts, stops, strict=True)]
 
 
+def _npzd_simulate(y0, alpha, q, t_end=160.0, dt=0.05):
+    """Fixed-step fourth-order Runge-Kutta trajectory of the NPZD model."""
+    steps = int(round(t_end / dt))
+    out = np.empty((steps + 1, 4))
+    out[0] = y0
+    y = np.array(y0, dtype=float)
+    for i in range(steps):
+        k1 = _npzd_rhs(y, alpha, q)
+        k2 = _npzd_rhs(y + dt / 2 * k1, alpha, q)
+        k3 = _npzd_rhs(y + dt / 2 * k2, alpha, q)
+        k4 = _npzd_rhs(y + dt * k3, alpha, q)
+        y = y + dt / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
+        out[i + 1] = y
+    return np.linspace(0.0, steps * dt, steps + 1), out
+
+
 def npzd_hysteresis():
-    """Equilibrium phytoplankton against the maximum harmful effect alpha."""
+    """Equilibria against the harmful effect, with simulations in the bistable range."""
+    from matplotlib.lines import Line2D
+
     q = NPZD
     p0 = q["theta"] / (q["k"] + q["theta"]) / q["eps"]
     p_hat = q["c"] * (1 - 1 / p0)
     alpha_star = _grazing(p_hat) * (q["xi"] + p_hat) / p_hat
     alpha_max = 3.0
+    alpha_sim = 1.85
 
     rows = []
     for p in np.linspace(1e-3, p_hat * (1 - 1e-9), 3000):
@@ -165,9 +184,34 @@ def npzd_hysteresis():
     turns = np.flatnonzero(np.diff(np.sign(np.diff(alpha_branch)))) + 1
     fold_alphas = np.sort(alpha_branch[turns])
 
-    fig, ax = plt.subplots(figsize=(7.0, 5.5))
-    fig.subplots_adjust(bottom=0.25, top=0.85)
-    ax.axvspan(
+    # Stable equilibria at alpha_sim, interpolated on the computed branch.
+    crossings = []
+    for i in np.flatnonzero(np.diff(np.sign(alpha_branch - alpha_sim))):
+        if stable[i] and stable[i + 1]:
+            w = (alpha_sim - alpha_branch[i]) / (alpha_branch[i + 1] - alpha_branch[i])
+            crossings.append(p_branch[i] + w * (p_branch[i + 1] - p_branch[i]))
+    p_low_eq, p_high_eq = sorted(crossings)
+
+    # Two runs that differ only in initial zooplankton.
+    runs = {
+        "low": _npzd_simulate([1.0, 0.5, 10.0, 5.0], alpha_sim, q),
+        "high": _npzd_simulate([1.0, 1.5, 10.0, 5.0], alpha_sim, q),
+    }
+    styles = {
+        "low": ("Low initial zooplankton", BLUE_HEALTH, "-", "o", p_high_eq),
+        "high": ("High initial zooplankton", RED, "--", "s", p_low_eq),
+    }
+
+    fig, (ax_eq, ax_sim) = plt.subplots(
+        1,
+        2,
+        figsize=(10.0, 4.6),
+        sharey=True,
+        gridspec_kw={"width_ratios": [1.2, 1.0]},
+    )
+    fig.subplots_adjust(bottom=0.3, top=0.84, wspace=0.14)
+
+    ax_eq.axvspan(
         fold_alphas[0],
         fold_alphas[-1],
         color=GOLD_ACCENT,
@@ -179,74 +223,105 @@ def npzd_hysteresis():
     for start, stop in _runs(stable):
         is_stable = stable[start]
         key = "Coexistence, stable" if is_stable else "Coexistence, unstable"
-        ax.plot(
-            alpha_branch[start : stop + (0 if stop == len(stable) else 1)],
-            p_branch[start : stop + (0 if stop == len(stable) else 1)],
+        end = stop + (0 if stop == len(stable) else 1)
+        ax_eq.plot(
+            alpha_branch[start:end],
+            p_branch[start:end],
             color=TEAL_ENVIRON if is_stable else SLATE,
             lw=2.6 if is_stable else 1.8,
             ls="-" if is_stable else "--",
             label=None if key in labelled else key,
         )
         labelled.add(key)
-    ax.plot(
+    ax_eq.plot(
         [alpha_star, alpha_max],
         [p_hat, p_hat],
         color=CHARCOAL,
         lw=2.6,
-        label="No zooplankton, stable",
+        label="Zooplankton-free, stable",
     )
-    ax.plot(
+    ax_eq.plot(
         [0, alpha_star],
         [p_hat, p_hat],
         color=CHARCOAL,
         lw=1.6,
         ls=":",
-        label="No zooplankton, unstable",
+        label="Zooplankton-free, unstable",
     )
-    ax.axvline(alpha_star, color=SLATE, lw=1.0, ls="-.")
-    ax.annotate(
-        "No zooplankton",
-        (alpha_max - 0.04, p_hat),
-        xytext=(0, 7),
+    ax_eq.annotate(
+        "Zooplankton-free state",
+        (0.05, p_hat),
+        xytext=(0, 6),
         textcoords="offset points",
-        ha="right",
-        fontsize=9.5,
+        fontsize=11,
         color=CHARCOAL,
     )
-    ax.annotate(
+    ax_eq.axvline(alpha_star, color=SLATE, lw=1.0, ls="-.")
+    ax_eq.annotate(
         r"$\mathcal{P}_0^z = 1$",
-        (alpha_star, 0.4),
+        (alpha_star, 0.35),
         xytext=(6, 0),
         textcoords="offset points",
         fontsize=12,
         color=SLATE,
     )
-    ax.set(
+    ax_eq.axvline(alpha_sim, color=GOLD_ACCENT, lw=1.8)
+    ax_eq.annotate(
+        "Simulated in (b)",
+        (alpha_sim, 0.35),
+        xytext=(-6, 0),
+        textcoords="offset points",
+        ha="right",
+        fontsize=11,
+        color=GOLD_ACCENT,
+    )
+    for _label, color, _ls, marker, p_eq in styles.values():
+        ax_eq.plot(alpha_sim, p_eq, marker, color=color, ms=8, zorder=4)
+    ax_eq.set(
         xlabel=r"Maximum harmful effect of phytoplankton, $\tilde{\alpha}$",
-        ylabel="Phytoplankton at equilibrium, $p$",
+        ylabel="Phytoplankton, $p$",
         xlim=(0, alpha_max),
         ylim=(0, 8.2),
     )
-    ax.set_title(
-        "Forward hysteresis in an NPZD model", loc="left", pad=20, fontsize=18
-    )
-    ax.grid(alpha=0.18)
-    ax.legend(
-        loc="upper left",
-        bbox_to_anchor=(0.0, 0.8),
+    ax_eq.set_title("(a) Equilibria", loc="left", fontsize=14)
+    ax_eq.grid(alpha=0.18)
+    eq_handles, eq_labels = ax_eq.get_legend_handles_labels()
+    order = [
+        "Coexistence, stable",
+        "Coexistence, unstable",
+        "Zooplankton-free, stable",
+        "Zooplankton-free, unstable",
+        "Two stable coexistence states",
+    ]
+    by_label = dict(zip(eq_labels, eq_handles, strict=True))
+    fig.legend(
+        [by_label[name] for name in order],
+        order,
+        loc="lower center",
+        bbox_to_anchor=(0.5, 0.0),
+        ncol=3,
         frameon=False,
-        fontsize=10,
+        fontsize=11,
     )
-    fig.text(
-        0.02,
-        0.02,
-        "Recomputed from the rescaled NPZD model of Macdonald and Gulbudak (2023),\n"
-        "with parameters from its table and bifurcation-figure caption\n"
-        r"($\xi = 10$, $a = 0.4$, $\theta = 12$, $\tilde{\gamma} = 0.29$, $\tilde{\epsilon} = 0.3$). "
-        "Solid: locally stable; dashed or dotted: unstable.",
-        fontsize=10,
-        color=SLATE,
-        va="bottom",
+
+    handles = []
+    for key, (label, color, ls, marker, p_eq) in styles.items():
+        time, states = runs[key]
+        ax_sim.axhline(p_eq, color=color, lw=0.8, ls=":", alpha=0.6)
+        ax_sim.plot(time, states[:, 0], color=color, lw=2.2, ls=ls)
+        ax_sim.plot(
+            time[-1], states[-1, 0], marker, color=color, ms=8, clip_on=False, zorder=4
+        )
+        handles.append(
+            Line2D([], [], color=color, lw=2.2, ls=ls, marker=marker, ms=8, label=label)
+        )
+    ax_sim.set(xlabel="Time (rescaled)", xlim=(0, runs["low"][0][-1]))
+    ax_sim.set_title("(b) Simulations", loc="left", fontsize=14)
+    ax_sim.grid(alpha=0.18)
+    ax_sim.legend(handles=handles, loc="center right", frameon=False, fontsize=11)
+
+    fig.suptitle(
+        "Forward hysteresis in an NPZD model", x=0.02, ha="left", fontsize=18
     )
     save(fig, "npzd_hysteresis", "Forward hysteresis in an NPZD model")
 
