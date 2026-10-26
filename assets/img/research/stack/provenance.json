@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_sha256": "39e3cf34ec20f3713b988bbdf18f844234d7f3382e1303466f0f5ebd96cb7b3d",
+  "source_sha256": "7151273d96fa95078287972dd29d4756e446c1f44db96406203cd664c5e93370",
   "packages": {
     "op-system": "0.10.0",
     "op-engine": "0.9.1",
@@ -29,6 +29,6 @@
     "stack_steady_states.svg": "324fe9a3494734f9b73cecfd53f00092043b5921ac7d537bce0e3066d5ac0eef",
     "stack_steady_states.pdf": "07590bb9b2790826502c8a347d9619727bac00bf0dcb63f1266571b9cbeadd86",
     "stack_steady_states.png": "735b945a92c815632c1af7825e5bc29b481a0b7f79e8db36b7b786946573b759",
-    "stack_data.json": "9146a35c37747b80716b29a8957472389bd5db977629158e053fb6420cb9f26e"
+    "stack_data.json": "d439776676a5e1c3b7efca2189fc250210dc4cbb20a436342f8799409f185aa5"
   }
 }

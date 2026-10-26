@@ -57,6 +57,19 @@ published_models:
   - name: npzd_hysteresis
     title: Forward hysteresis in an NPZD model
     description: Equilibria of the rescaled nutrient-phytoplankton-zooplankton-detritus (NPZD) model of Macdonald and Gulbudak (2023), recomputed with parameters from the paper, with two simulations in the bistable range that differ only in initial zooplankton and reach different stable states.
+published_recomputations:
+  - name: fmdv_within_host
+    title: Within-host FMDV dynamics by strain
+    alt: Four panels recomputed from the published within-host foot-and-mouth disease model, showing viral load and adaptive response by strain and the links to transmission rate and infectious period.
+    description: The within-host model of Macdonald et al. (2024) at each strain's median released parameters, with the strain transmission rate against replication rate and per-host infectious period against adaptive activation rate from the released host table.
+    width: 720
+    height: 605
+  - name: covid_lockdown_factor
+    title: Lockdown factor and outbreak size
+    alt: Two panels on log axes showing the closed-form scaling of final size and peak with the lockdown rate factor, with each jurisdiction's closed form and fatigue-adjusted model outcome.
+    description: The closed forms of Macdonald et al. (2021) for final size and peak outbreak size, the closed form at each of the 55 state and territorial jurisdictions' published parameters, and the model solved for 400 days with each jurisdiction's published initial infections and fatigue rate.
+    width: 720
+    height: 403
 illustrations:
   - name: optimal_design
     title: Observation-design tradeoffs

@@ -14,8 +14,8 @@
 """Compute the figures that show what distinguishes the OP stack, with checks.
 
 Run with ``uv run --python 3.12 stack_examples.py``; ``--check`` verifies the
-committed hashes, regenerates into a temporary directory and compares every
-retained deterministic array. Every figure uses a synthetic model with assumed
+committed hashes, regenerates into a temporary directory and compares the
+retained quantities listed in README.md. Every figure uses a synthetic model with assumed
 parameters and reports software behavior, not a finding about any system.
 
 Single-call wall-clock timings are recorded in ``stack_data.json`` with the CPU
@@ -334,10 +334,12 @@ def backend_parity(compiled, reference):
     """One compiled model under three array libraries and two precisions."""
     rhs_ref = np.asarray(compiled.eval_fn(0.0, Y0, **PARAMS))
     rows = {}
+    arrays = {}
     numpy_traj = None
     for name, (to_backend, to_numpy, dtype, params) in backends().items():
         rhs = to_numpy(compiled.eval_fn(0.0, to_backend(np.asarray(Y0, dtype)), **params))
         traj, elapsed = engine_run(compiled, to_backend, to_numpy, dtype, params)
+        arrays[name] = (np.asarray(rhs), np.asarray(traj))
         rows[name] = {
             "rhs_rel_err": float(np.max(np.abs(rhs - rhs_ref)) / np.max(np.abs(rhs_ref))),
             "final_err": float(np.max(np.abs(traj[-1] - reference[-1]))),
@@ -360,13 +362,14 @@ def backend_parity(compiled, reference):
     # Compilation under jax.jit may fuse and reorder operations, so the jit path
     # is compared with a tolerance at the rounding level instead.
     for precision in ("float64", "float32"):
-        base = rows[f"NumPy {precision}"]
+        base_rhs, base_traj = arrays[f"NumPy {precision}"]
         for name in (f"JAX {precision}", f"PyTorch {precision}"):
-            for field in ("rhs_rel_err", "final_err", "max_err"):
-                assert rows[name][field] == base[field], (name, field)
+            other_rhs, other_traj = arrays[name]
+            np.testing.assert_array_equal(other_rhs, base_rhs, err_msg=f"{name} right-hand side")
+            np.testing.assert_array_equal(other_traj, base_traj, err_msg=f"{name} trajectory")
     assert abs(rows["JAX float64 (jit)"]["final_err"] - rows["NumPy float64"]["final_err"]) < 1e-14
     assert abs(rows["JAX float32 (jit)"]["final_err"] - rows["NumPy float32"]["final_err"]) < 1e-6
-    rows["eager_bitwise_identical_across_namespaces"] = True
+    rows["eager_bitwise_identical_across_namespaces"] = True  # asserted above at array level
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 4.4), layout="constrained")
     states = [
@@ -559,7 +562,7 @@ def deterministic_and_stochastic():
     """One transition spec run as ODE and as an exact SSA bank with retained event counts.
 
     The spec declares a replicate axis and asks the compiler to factorize it;
-    the compiler certifies that every reaction stays within its own replicate,
+    the compiler verifies that every reaction stays within its own replicate,
     which is what lets the batched exact solver give each replicate its own
     event clock. The deterministic run uses the same spec with one replicate.
     """
@@ -738,8 +741,8 @@ def steady_state_branches():
     for a in a_grid:
         r = np.roots([-1.0, 0.0, 1.0, a])
         real.append(np.sort(r[np.abs(r.imag) < 1e-9].real))
-    # Converged points must coincide with a root of the cubic. A continuation that
-    # starts on a branch which does not exist at that a reports converged=False;
+    # Converged points must lie within 1e-6 of a root of the cubic. A solve that
+    # starts toward a branch which does not exist at that a reports converged=False;
     # that may only happen outside the bistable range.
     for a, h_val, l_val, h_c, l_c, r in zip(a_grid, hi, lo, hi_ok, lo_ok, real, strict=True):
         if h_c:

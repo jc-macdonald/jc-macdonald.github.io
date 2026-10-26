@@ -28,3 +28,8 @@ assets/img/research/previews/provenance.json
 assets/img/research/stack/*.svg
 assets/img/research/stack/stack_data.json
 assets/img/research/stack/provenance.json
+
+# Published-model recomputations retain byte-level provenance; regenerate with Python.
+assets/img/research/published/*.svg
+assets/img/research/published/published_data.json
+assets/img/research/published/provenance.json

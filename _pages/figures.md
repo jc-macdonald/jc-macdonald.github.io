@@ -11,7 +11,7 @@ nav: false
 The computed figures below use public synthetic data. Four use released
 software; the op_infer fixture is imported from a pinned public pre-alpha
 commit and does not imply a release. Each links to its assumptions, checks and
-full multi-panel version. The method diagrams, a published-model computation,
+full multi-panel version. The method diagrams, three published-model computations,
 three small model computations, six OP stack demonstrations and constructed
 illustrations follow in separate sections. Figures carry axis labels and legends only; the setting,
 assumptions and attribution for each are in the caption beside it.
@@ -42,13 +42,17 @@ qualification details remain in the corresponding package documentation.
 ## Published-model computations
 
 Figures in this section are recomputed from the equations of a published model,
-with parameters taken from the paper. They illustrate a published qualitative
-result; they are not copied from the paper, and their numerical values belong
-to the recomputation.
+with parameters taken from the papers or their released public code. They
+illustrate a published qualitative result; they are not copied from the paper,
+and their numerical values belong to the recomputation.
 
 {% include figure_gallery.liquid figures=site.data.research_figures.published_models base='assets/img/research/' %}
 
-[Python source for the published-model computation](/assets/img/research/gen_research_figures.py) · [Build and scope notes](/assets/img/research/README.md)
+[Python source for the NPZD computation](/assets/img/research/gen_research_figures.py) · [Build and scope notes](/assets/img/research/README.md)
+
+{% include figure_gallery.liquid figures=site.data.research_figures.published_recomputations base='assets/img/research/published/' %}
+
+[Python source for the FMDV and COVID-19 recomputations](/assets/img/research/published/published_models.py) · [Input tables, numerical outputs and provenance](/assets/img/research/published/README.md)
 
 ## Model computations
 
