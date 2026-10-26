@@ -4,12 +4,14 @@ on:
   pull_request:
     paths:
       - "assets/img/research/computed/**"
+      - "assets/img/research/stack/**"
       - "_data/computed_designs.csv"
       - ".github/workflows/computed-figures.yml"
   push:
     branches: [main]
     paths:
       - "assets/img/research/computed/**"
+      - "assets/img/research/stack/**"
       - "_data/computed_designs.csv"
       - ".github/workflows/computed-figures.yml"
   workflow_dispatch:
@@ -20,7 +22,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v7.2.0
@@ -29,3 +31,5 @@ jobs:
           enable-cache: true
       - name: Check retained artifacts and recompute numerical references
         run: uv run --python 3.12 assets/img/research/computed/computed_examples.py --check
+      - name: Check OP stack demonstrations and recompute their references
+        run: uv run --python 3.12 assets/img/research/stack/stack_examples.py --check

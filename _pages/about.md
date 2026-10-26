@@ -56,7 +56,7 @@ My research asks three questions, studied in systems that include foot-and-mouth
 As of October 2026:
 
 - Collaborative modeling of Crimean-Congo hemorrhagic fever transmission between livestock and wildlife, and of the measurements that would inform its surveillance.
-- Development and release of the [OP stack](/projects/#what-sets-the-op-stack-apart) for model specification, simulation and replicated study comparison.
+- Development and release of the [OP stack](/projects/#op-stack-design-and-verification-examples) for model specification, simulation and replicated study comparison.
 - Record-type and design theory for managed and monitored populations, in its developing form.
 - Scenario modeling for respiratory viruses with ACCIDDA ([modeling in practice](/operational-modeling/)).
 
@@ -80,7 +80,7 @@ Current [public- and global-health application studies](/projects/current_analys
 
 ## Software
 
-I build reusable, cross-domain tools spanning model specification, simulation, inference, calibration and validation, observation and experimental design, and comparison of decisions under scientific and resource constraints. Projects use the pieces they need. OP System and OP Engine support spatial fields, nonlocal interactions, compartmental dynamics and stochastic reactions. What distinguishes the stack is the separation of choices that most tools fix at design time: one compiled specification runs under NumPy, JAX or PyTorch with the array library chosen at call time, one solver surface covers deterministic, spatial and stochastic models, and qualification against independent equations and known solutions is part of the tooling ([more](/projects/#what-sets-the-op-stack-apart)).
+I build reusable, cross-domain tools spanning model specification, simulation, inference, calibration and validation, observation and experimental design, and comparison of decisions under scientific and resource constraints. Projects use the pieces they need. OP System and OP Engine support spatial fields, nonlocal interactions, compartmental dynamics and stochastic reactions. What distinguishes the stack is the separation of choices that most tools fix at design time: one compiled specification runs under NumPy, JAX or PyTorch with the array library chosen at call time, one solver surface covers deterministic, spatial and stochastic models, and qualification against independent equations and known solutions is part of the tooling ([more](/projects/#op-stack-design-and-verification-examples)).
 
 <div class="research-preview-grid">
   <figure>

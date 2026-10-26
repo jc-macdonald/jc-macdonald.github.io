@@ -12,8 +12,8 @@ The computed figures below use public synthetic data. Four use released
 software; the op_infer fixture is imported from a pinned public pre-alpha
 commit and does not imply a release. Each links to its assumptions, checks and
 full multi-panel version. The method diagrams, a published-model computation,
-three small model computations and constructed illustrations follow in
-separate sections. Figures carry axis labels and legends only; the setting,
+three small model computations, six OP stack demonstrations and constructed
+illustrations follow in separate sections. Figures carry axis labels and legends only; the setting,
 assumptions and attribution for each are in the caption beside it.
 
 <nav class="page-links" aria-label="Figure sections">
@@ -21,6 +21,7 @@ assumptions and attribution for each are in the caption beside it.
   <a href="#method-and-software-diagrams">Method diagrams</a>
   <a href="#published-model-computations">Published-model computations</a>
   <a href="#model-computations">Model computations</a>
+  <a href="#op-stack-demonstrations">OP stack demonstrations</a>
   <a href="#constructed-illustrations">Constructed illustrations</a>
 </nav>
 
@@ -61,6 +62,19 @@ study. The literature behind each is cited in its caption on the
 {% include figure_gallery.liquid figures=site.data.research_figures.model_computations base='assets/img/research/' %}
 
 [Python source](/assets/img/research/gen_research_figures.py) · [Build and scope notes](/assets/img/research/README.md)
+
+## OP stack demonstrations
+
+Each figure shows one design choice of the OP stack on a synthetic model with
+an independent check, using released OP System 0.10.0 and OP Engine 0.9.1 with
+JAX and CPU PyTorch. No timings are plotted; single-call wall-clock values are
+retained in the data file with the CPU model for the record. The
+[research page](/projects/#op-stack-design-and-verification-examples) states
+what each figure supports and its limits.
+
+{% include figure_gallery.liquid figures=site.data.research_figures.stack base='assets/img/research/stack/' %}
+
+[Python source and pinned dependencies](/assets/img/research/stack/stack_examples.py) · [Numerical inputs and outputs](/assets/img/research/stack/stack_data.json) · [Versions and artifact hashes](/assets/img/research/stack/provenance.json) · [Checks and limits](/assets/img/research/stack/README.md)
 
 ## Constructed illustrations
 

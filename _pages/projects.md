@@ -87,34 +87,90 @@ Two further questions concern methods.
 
 The software packages can be used independently or in combination.
 
-### What sets the OP stack apart
+### OP stack design and verification examples
 
-Many modelling tools fix one array library, one model class or one solver
-family when they are designed. The OP stack separates these choices and makes
-each of them explicit.
+The stack separates three choices that many modelling tools fix at design
+time: the array library, the model class and the solver family. The examples
+below show each separation on a synthetic model with an independent check.
+Every figure reports software behavior within the packages' documented scope,
+not a finding about a study system. Numerical inputs and outputs, package
+versions and artifact hashes are retained with the
+[stack examples](/assets/img/research/stack/README.md); the examples are
+recomputed and compared in continuous integration.
 
-- **One specification, compiled once, with the array library chosen at call time.** [OP System](/projects/op_system/) compiles a validated, declarative description (equations or hazard-style transitions, with named axes for groups, space and traits) into a single evaluator. The array library is selected from the inputs: the same compiled model runs under NumPy, under JAX with just-in-time compilation, vectorization and automatic differentiation, and, within the documented qualified scope, under PyTorch with autograd. A model written for one deterministic run can be batched over a parameter grid, differentiated for inference or moved to an accelerator without being rewritten.
-- **One solver surface for several model classes.** [OP Engine](/projects/op_engine/) takes the same compiled model into explicit and adaptive ordinary-differential-equation methods, operator-split and implicit schemes for partial differential equations, exact stochastic simulation with retained event counts, tau-leaping and steady-state continuation. Specification and numerics stay separate: the compiler publishes interface contracts, and the engine owns discretization and integration.
-- **Qualification is part of the tooling, not an afterthought.** Backend qualification tables state which methods are tested under which array libraries. Model authors can compare a compiled right-hand side against independently written equations. Benchmarks separate preprocessing, compilation and warm evaluation so that a timing can be read correctly. The figure below shows the simplest form of such a check.
-- **Each layer is a separate package with its own release and evidence.** [FlepiMoP2](/projects/flepimop2/) runs campaigns over the cores, [trade-study](/projects/trade_study/) compares replicated designs, and [op_infer](/projects/inference_calibration/) (in development) adds inference adapters and calibration checks. Projects use the layers they need.
-
-Layered designs of this kind exist elsewhere, for example in the symbolic
-modelling and differential-equation ecosystems of Julia. The OP stack makes the
-same separation in Python's Array API ecosystem, with the backend chosen at call
-time and qualification recorded per method and per backend. The stage labels in
-the [software guide](#software-guide) describe maturity, not validity.
+**The array library is chosen at call time.** [OP System](/projects/op_system/)
+compiles a validated, declarative description (equations or hazard-style
+transitions, with named axes for groups, space and traits) into one evaluator.
+The array library is selected from the inputs, so the same compiled model runs
+under NumPy, under JAX, and, within the documented qualified scope, under
+PyTorch. The numerical method does not change with the namespace.
 
 <figure>
-  <img src="/assets/img/research/rk4_known_solution.svg" alt="Two panels. Panel a shows logistic growth from 0.05 to 1 over twenty time units with eight fixed Runge-Kutta steps marked on the exact curve. Panel b plots absolute error at the final time against the number of steps on log axes for float64 and float32. Both fall along a slope of minus four, then float32 flattens near one part in ten million after about forty steps and rises with more steps, while float64 flattens near one part in ten to the fifteenth after a few thousand steps." width="720" height="343" loading="lazy">
-  <figcaption>Truncation and round-off against a known solution. A fixed-step fourth-order Runge-Kutta method applied to logistic growth, whose solution is known in closed form, in float64 and float32. (a) The problem and eight steps of the method. (b) Absolute error at the final time against the number of steps. The error falls as the fourth power of the step size (dotted reference, slope −4) until round-off takes over; the floor is near 10<sup>−7</sup> for float32 after about forty steps and near 10<sup>−16</sup> for float64, and beyond the floor the error grows with the number of steps. Comparing against an exact solution rather than against another solver separates integration error from floating-point error. The trade-off is textbook material (<a href="https://doi.org/10.1007/978-3-540-78862-1">Hairer, Nørsett and Wanner</a>; <a href="https://doi.org/10.1137/1.9780898718027">Higham 2002</a>), and checking a code against a known or manufactured solution is standard verification practice (<a href="https://doi.org/10.1115/1.1436090">Roache 2002</a>). The computation is plain NumPy; it shows the kind of check the stack's qualification tools are meant to make routine and is not a result about those tools. <a href="/figures/#model-computations">Figure downloads and source</a>.</figcaption>
+  <img src="/assets/img/research/stack/stack_backend_parity.svg" alt="Two-panel synthetic chemostat example comparing trajectories with an adaptive reference and showing final errors under NumPy, JAX and PyTorch at two precisions. Details follow." width="720" height="317" loading="lazy">
+  <figcaption>One compiled model under three array libraries. (a) A six-state nutrient, producer and grazer chemostat written as hazard-style transitions, compiled once and integrated with fixed-step fourth-order Runge-Kutta through OP Engine; open markers are an adaptive high-order reference (SciPy DOP853, relative tolerance 10<sup>−12</sup>). (b) Error at the final time against that reference. Because the same method performs the same arithmetic in each namespace, eager evaluation under NumPy, JAX and PyTorch is bit-identical at each precision in this run (1.26 × 10<sup>−8</sup> in float64, 4.63 × 10<sup>−6</sup> in float32), and the code asserts that equality. Traced once under <code>jax.jit</code>, which may fuse and reorder operations, the float64 error differs from the eager value only at the 10<sup>−15</sup> level. The dotted and dash-dot lines are machine epsilon for each precision, drawn as references; the error of a 400-step integration is well above epsilon, as expected. Synthetic model, assumed parameters. <a href="/figures/#op-stack-demonstrations">Figure downloads, data and source</a>.</figcaption>
 </figure>
+
+A model written for one run can then be evaluated over a parameter grid, or
+differentiated with respect to a parameter, without being rewritten.
+
+<figure>
+  <img src="/assets/img/research/stack/stack_batched_ensemble.svg" alt="Two-panel synthetic chemostat ensemble showing a two-parameter grid of final producer values and the median and percentile band over time. Details follow." width="720" height="317" loading="lazy">
+  <figcaption>A parameter ensemble by <code>jax.vmap</code> over the same compiled evaluator. (a) Producer concentration at the final time over a 45 × 45 grid of two parameters (producer growth rate and inflow nutrient), from one vectorized call; the marker is the nominal pair. (b) The 2025 members over time: median and 5th to 95th percentile band, with a separately computed eager NumPy run at the nominal parameters overlaid. A vectorized JAX evaluation at the nominal pair agrees with that NumPy run to within 10<sup>−9</sup> maximum absolute difference. No timing is shown; single-call wall-clock values are recorded in the data file with the CPU model for the record only, since single calls without repetitions are not a benchmark. Synthetic model, assumed parameters. <a href="/figures/#op-stack-demonstrations">Figure downloads, data and source</a>.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/img/research/stack/stack_gradient.svg" alt="Two-panel derivative check showing a model output with its local autodiff tangent, and finite-difference disagreement against step size. Details follow." width="720" height="317" loading="lazy">
+  <figcaption>Differentiating a model output through the fixed-step solver. (a) Producer concentration at the final time as a function of the producer growth-rate parameter, with the local tangent at the nominal value from <code>jax.grad</code> through 400 fixed Runge-Kutta steps over the compiled evaluator. (b) Central finite differences of the same discrete 400-step calculation approach the autodiff derivative with slope 2 as the step shrinks, reaching 1.3 × 10<sup>−10</sup> relative disagreement before round-off dominates. This checks the derivative of the discrete solver, not continuous-time sensitivity, and it covers the engine's fixed-step methods; the adaptive step controller is not a traced path, as the package documentation states. <a href="/figures/#op-stack-demonstrations">Figure downloads, data and source</a>.</figcaption>
+</figure>
+
+**One solver surface for several model classes.** [OP Engine](/projects/op_engine/)
+takes compiled models into explicit and adaptive ordinary-differential-equation
+methods, operator-split and implicit schemes for partial differential equations,
+exact stochastic simulation with retained event counts, tau-leaping and
+steady-state solves. Specification and numerics stay separate: the compiler
+publishes interface contracts, and the engine owns time integration; the user
+supplies any spatial discretization.
+
+<figure>
+  <img src="/assets/img/research/stack/stack_spec_to_ssa.svg" alt="Two-panel synthetic SIRS example comparing deterministic prevalence with 256 direct-SSA paths and showing mean cumulative event counts. Details follow." width="720" height="331" loading="lazy">
+  <figcaption>One transition specification, two solvers. A susceptible-infectious-recovered model with waning immunity (400 hosts) is written once with a declared replicate axis; the compiler verifies that no reaction crosses replicates, which lets the batched direct stochastic simulation algorithm give every replicate its own event clock. The direct SSA generates exact draws from the specified continuous-time Markov jump process; "exact" refers to that process, not to the ODE or to any disease. (a) 256 paths against the deterministic solution of the same specification. Finite-population extinction is visible: in this seeded sample 26.2% of paths have no infectious hosts at the final time, and the median sits below the deterministic second wave. (b) Mean cumulative events per path from the retained firing counts. Two identities hold exactly, by array equality, on every path: the total population is constant, and the state equals the initial state plus the stoichiometry matrix times the cumulative counts. Illustrative parameters. <a href="/figures/#op-stack-demonstrations">Figure downloads, data and source</a>.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/img/research/stack/stack_spatial_convergence.svg" alt="Two-panel heat-equation verification comparing a 16-interval finite-difference solution with the analytic solution and showing maximum error over five meshes. Details follow." width="720" height="317" loading="lazy">
+  <figcaption>Convergence of a supplied spatial operator to an analytic solution. The heat equation on [0, 1] with zero boundary values and a sine initial condition has the closed-form solution sin(πx) exp(−Dπ²t). A centred finite-difference operator is supplied explicitly and compiled as a named-axis contraction; OP Engine integrates it in time with a step small enough that spatial error dominates. (a) The exact and computed solutions at <em>t</em> = 0.5 on 16 mesh intervals (15 interior unknowns). (b) Maximum error against the exact solution over five meshes, with fitted order 2.00. Checking against a known solution, rather than against another solver, is the standard verification practice for numerical codes (<a href="https://doi.org/10.1115/1.1436090">Roache 2002</a>). <a href="/figures/#op-stack-demonstrations">Figure downloads, data and source</a>.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/img/research/stack/stack_steady_states.svg" alt="Cubic-model bifurcation diagram showing two stable branches from vectorized solves, the unstable branch from the polynomial roots, and the interval with two stable states. Details follow." width="720" height="442" loading="lazy">
+  <figcaption>Equilibria by vectorized steady-state solves. For the bistable model <em>x</em>′ = <em>a</em> + <em>x</em> − <em>x</em>³, the engine's pseudo-transient steady-state solver is mapped over 121 values of <em>a</em> with <code>jax.vmap</code> from two starting guesses; with early exit disabled, each solve is a fixed-length traced loop. These are independent solves at each parameter value, not continuation along a branch. Every state with a true convergence flag lies within 10<sup>−6</sup> of a root of the cubic; states with a false flag occur only where the branch being sought does not exist past a fold, and they are omitted from the plot. The unstable branch is drawn from the cubic's roots as a reference. A one-state toy chosen for its closed-form check; it is not the published plankton model shown earlier on this page. <a href="/figures/#op-stack-demonstrations">Figure downloads, data and source</a>.</figcaption>
+</figure>
+
+**Qualification is part of the tooling.** Backend qualification tables in the
+packages state which methods are tested under which array libraries. Model
+authors can compare a compiled right-hand side against independently written
+equations. The checks in the figures above (an adaptive reference, finite
+differences, exact conservation identities, an analytic solution, polynomial
+roots) are the kind of check the tooling is built to make routine; the simplest
+form, a fixed-step method against a closed-form solution in two precisions, is
+in the [figure gallery](/figures/#model-computations).
+
+**Each layer is a separate package with its own release and evidence.**
+[FlepiMoP2](/projects/flepimop2/) runs campaigns over the cores,
+[trade-study](/projects/trade_study/) compares replicated designs, and
+[op_infer](/projects/inference_calibration/) (in development) adds inference
+adapters and calibration checks. Projects use the layers they need. Layered
+designs exist elsewhere, for example in the symbolic modelling and
+differential-equation ecosystems of Julia; the OP stack makes the same
+separation in Python's Array API ecosystem. The stage labels in the
+[software guide](#software-guide) describe maturity, not validity.
 
 <nav class="page-links" aria-label="Project sections">
   <a href="#research-questions">Research questions</a>
   <a href="#which-records-would-tell">Which records would tell</a>
   <a href="#study-systems">Study systems</a>
   <a href="#methods-and-software">Methods and software</a>
-  <a href="#what-sets-the-op-stack-apart">The OP stack</a>
+  <a href="#op-stack-design-and-verification-examples">The OP stack</a>
   <a href="#released-software">Released software</a>
   <a href="#research-in-progress">Research in progress</a>
   <a href="#collaborative-infrastructure">Collaborative infrastructure</a>

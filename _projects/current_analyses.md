@@ -28,7 +28,7 @@ accuracy, with explicit assumptions and limits. It distinguishes constraints
 satisfied by construction from those observed to hold for a particular
 prediction. Compliance alone does not establish predictive accuracy. Rather
 than a standalone method, this is now being folded into the validation layer
-of the [software stack](/projects/#what-sets-the-op-stack-apart).
+of the [software stack](/projects/#op-stack-design-and-verification-examples).
 
 {% include figure.liquid path="assets/img/research/structural_fidelity_comparison.svg" class="img-fluid rounded" zoomable=true alt="Two constructed prevalence curves compared with an upper bound of one over the displayed horizon. One stays below the bound and the other crosses it; predictive accuracy is not evaluated." caption="Illustrative constructed trajectories; no predictive scores are computed." %}
 

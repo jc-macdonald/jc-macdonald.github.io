@@ -74,3 +74,40 @@ model_computations:
   - name: rk4_known_solution
     title: Truncation and round-off against a known solution
     description: Fixed-step Runge-Kutta error against a closed-form solution in float32 and float64, showing the truncation slope and the round-off floor.
+stack:
+  - name: stack_backend_parity
+    title: One compiled model, three array libraries
+    alt: Two-panel synthetic chemostat example comparing trajectories with an adaptive reference and showing final errors under NumPy, JAX and PyTorch at two precisions.
+    description: A chemostat specification compiled once and integrated under NumPy, JAX and PyTorch in float64 and float32; the error against an adaptive reference agrees to the displayed digits across namespaces at each precision in this recorded run.
+    width: 720
+    height: 317
+  - name: stack_batched_ensemble
+    title: A parameter ensemble by vmap
+    alt: Two-panel synthetic chemostat ensemble showing a two-parameter grid of final producer values and the median and percentile band over time.
+    description: A 45 by 45 grid over two parameters evaluated by one vectorized call to the same compiled evaluator, with the ensemble band over time and a separately computed NumPy run at the nominal parameters.
+    width: 720
+    height: 317
+  - name: stack_gradient
+    title: A derivative through the solver
+    alt: Two-panel derivative check showing a model output with its local autodiff tangent, and finite-difference disagreement against step size.
+    description: A model output differentiated with respect to a parameter by autodiff through 400 fixed Runge-Kutta steps; central finite differences of the same discrete calculation approach the autodiff value with slope 2 before round-off.
+    width: 720
+    height: 317
+  - name: stack_spec_to_ssa
+    title: One specification, deterministic and exact stochastic draws
+    alt: Two-panel synthetic SIRS example comparing deterministic prevalence with 256 direct-SSA paths and showing mean cumulative event counts.
+    description: A susceptible-infectious-recovered model with waning run as an ODE and as 256 direct-SSA paths from one specification with a replicate axis the compiler verifies; population and event-count identities hold exactly on every path.
+    width: 720
+    height: 331
+  - name: stack_spatial_convergence
+    title: Spatial convergence to an analytic solution
+    alt: Two-panel heat-equation verification comparing a 16-interval finite-difference solution with the analytic solution and showing maximum error over five meshes.
+    description: A supplied finite-difference heat operator compiled as a named-axis contraction converges to the closed-form solution with fitted order 2.00 over five meshes.
+    width: 720
+    height: 317
+  - name: stack_steady_states
+    title: Equilibria by vectorized steady-state solves
+    alt: Cubic-model bifurcation diagram showing two stable branches from vectorized solves, the unstable branch from the polynomial roots, and the interval with two stable states.
+    description: Pseudo-transient steady-state solves mapped over 121 parameter values recover both stable branches of a bistable cubic; converged states lie within one millionth of the polynomial roots.
+    width: 720
+    height: 442

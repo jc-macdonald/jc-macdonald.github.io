@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "source_sha256": "39e3cf34ec20f3713b988bbdf18f844234d7f3382e1303466f0f5ebd96cb7b3d",
+  "packages": {
+    "op-system": "0.10.0",
+    "op-engine": "0.9.1",
+    "jax": "0.12.0.1",
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "files_sha256": {
+    "stack_backend_parity.svg": "afc126a54fad1878c211de72ac675daef440a755c9cde8e4b23233972d426b90",
+    "stack_backend_parity.pdf": "15003dc78c644d5a6c2d47d3205e228aef68dedbb9f703ed5a18a9e726020e86",
+    "stack_backend_parity.png": "2802cd08486c68f78c72b2f6047886da6fb6d53475d929ad3d427cdc0950a17c",
+    "stack_batched_ensemble.svg": "09c7a62c00f16c21139bfa77914aff69d019cf63e91dddde48f41f9a692bbd87",
+    "stack_batched_ensemble.pdf": "c2a16a8f5387b92278b21bee03b1e67bc9e7129e6043a931726564ef727081fd",
+    "stack_batched_ensemble.png": "5b7bd2f394e79df2b13285972482b4289251388c9105f7cb80de6a0f079da305",
+    "stack_gradient.svg": "6e29ad8a3ed9dbfe2c95ced683b4e8ee1458d83a09b99025c20452ccdaf50a09",
+    "stack_gradient.pdf": "286d3e0f8e1d959556f53d2dc2596e367960ce812bbe510209859862c268dce0",
+    "stack_gradient.png": "55b34b282ba386e1bb78750345fa74a554e9a7c7b9e2b92445d93d2a764b8ea2",
+    "stack_spec_to_ssa.svg": "84b1629760b6e4c65a2552a301ab7c16591e3b12f89a0b6d6dd72af887590dd3",
+    "stack_spec_to_ssa.pdf": "ee200aeb6f81626ad1d9a5db3111ead3db75c1288bd3d627c190b1948356edaf",
+    "stack_spec_to_ssa.png": "15e2cf7e33ca8f323bacd8a2707e05528daa010bc5e73da52e7769bf1a2bf8b3",
+    "stack_spatial_convergence.svg": "d8625ec7822e26627b00780c6415dd03ab55c4434995a4fb533baaecb6e2d08b",
+    "stack_spatial_convergence.pdf": "8828584eb9cd826a13f9f9d1ad210db56caf33dda4afefd944c84b3a1d9aeaca",
+    "stack_spatial_convergence.png": "49841e214f66aa0864ad66fddc4c89e1327b6356150657ce359901c593d1c010",
+    "stack_steady_states.svg": "324fe9a3494734f9b73cecfd53f00092043b5921ac7d537bce0e3066d5ac0eef",
+    "stack_steady_states.pdf": "07590bb9b2790826502c8a347d9619727bac00bf0dcb63f1266571b9cbeadd86",
+    "stack_steady_states.png": "735b945a92c815632c1af7825e5bc29b481a0b7f79e8db36b7b786946573b759",
+    "stack_data.json": "9146a35c37747b80716b29a8957472389bd5db977629158e053fb6420cb9f26e"
+  }
+}
