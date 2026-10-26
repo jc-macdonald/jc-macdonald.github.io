@@ -82,5 +82,23 @@
     "source": "gen_research_figures.py",
     "title": "Forward hysteresis in an NPZD model",
     "description": "Two panels from the rescaled nutrient-phytoplankton-zooplankton-detritus (NPZD) model of Macdonald and Gulbudak (2023), recomputed from its equations with parameters from the paper. Panel a: equilibrium phytoplankton against the maximum harmful effect of phytoplankton on zooplankton. Above the threshold at which the paper's zooplankton persistence number equals one, the zooplankton-free equilibrium is locally stable and no coexistence equilibrium exists. Below it a coexistence branch bifurcates forward and folds twice, giving two stable coexistence states with an unstable state between them over an intermediate range. Stable branches are solid; unstable branches are dashed or dotted. Panel b: two simulations at a marked value in that range, differing only in initial zooplankton, settle on different stable states: low initial zooplankton on the high-phytoplankton state and high initial zooplankton on the low-phytoplankton state. Not copied from the paper."
+  },
+  {
+    "name": "rk4_known_solution",
+    "source": "gen_research_figures.py",
+    "title": "Truncation and round-off against a known solution",
+    "description": "Panel a: logistic growth with its closed-form solution, with eight fixed steps of fourth-order Runge-Kutta marked. Panel b: absolute error at the final time against the number of steps, in float64 and float32. Error falls as the fourth power of the step until round-off dominates; float32 reaches its floor near one part in ten million after about forty steps and the error then grows with the step count, while float64 reaches its floor near one part in ten to the fifteenth. One method on one problem with a known solution; errors of exactly zero are drawn at the axis floor."
+  },
+  {
+    "name": "siwr_reservoir_speed",
+    "source": "gen_research_figures.py",
+    "title": "One reproduction number, two transmission routes",
+    "description": "New infections per day per thousand hosts in a susceptible-infectious-reservoir model with basic reproduction number 2.5 and a five-day infectious period, for three splits of transmission between direct contact and a shared environmental reservoir. Panel a: a slowly decaying reservoir (decay 0.05 per day) gives three distinct curves, later and lower as the reservoir share rises. Panel b: a fast reservoir (decay 5 per day) gives curves that coincide, so case counts alone cannot separate the routes. Assumed parameters; no inference is performed."
+  },
+  {
+    "name": "record_type_precision",
+    "source": "gen_research_figures.py",
+    "title": "Growth-rate precision from two kinds of record",
+    "description": "Panel a: one simulated epidemic growing at 0.08 per day from fifty infections per day, recorded as an environmental signal sampled every two days with log-normal noise and as daily reported counts with one percent reporting. Panel b: standard error of the estimated growth rate against days of data, for the environmental signal in closed form (checked by 800 simulations) and for Poisson counts at ten, one and one tenth of a percent reporting. Which record is more precise depends on the reporting fraction and the length of the record. Assumed values; detection time is not compared."
   }
 ]

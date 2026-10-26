@@ -64,3 +64,13 @@ illustrations:
   - name: structural_fidelity_comparison
     title: Constraint checks for predictions
     description: Two constructed prevalence curves compared with a stated upper bound over the plotted horizon.
+model_computations:
+  - name: siwr_reservoir_speed
+    title: One reproduction number, two transmission routes
+    description: Epidemic curves at a fixed reproduction number for three route splits, under a slow and a fast environmental reservoir. Assumed parameters.
+  - name: record_type_precision
+    title: Growth-rate precision from two kinds of record
+    description: Standard error of the growth rate from an environmental signal and from reported counts as the record lengthens. Assumed values, checked by simulation.
+  - name: rk4_known_solution
+    title: Truncation and round-off against a known solution
+    description: Fixed-step Runge-Kutta error against a closed-form solution in float32 and float64, showing the truncation slope and the round-off floor.

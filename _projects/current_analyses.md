@@ -6,7 +6,7 @@ img: assets/img/research/structural_fidelity_comparison.svg
 img_alt: Two constructed prevalence curves compared with an upper bound of one over the displayed horizon. One stays below the bound and the other crosses it; predictive accuracy is not evaluated.
 importance: 1
 category: "Research in progress"
-last_modified_at: 2026-10-23
+last_modified_at: 2026-10-26
 ---
 
 My current research asks what measurements reveal about a changing system,
@@ -15,9 +15,9 @@ answer a research or policy question. I use models of the underlying
 processes, Bayesian inference and simulation studies. The projects below are
 ongoing; public papers and software are linked where available.
 
-## Structural scores and scientific prediction
+## Constraint checks for predictions
 
-I am developing structural scores to report whether a scientific prediction
+I have been developing checks that report whether a scientific prediction
 satisfies stated constraints without using the outcome it is intended to
 predict. Observations already available when the prediction is made may still
 inform a check. A forecast of a proportion,
@@ -26,8 +26,9 @@ for example, should lie between zero and one.
 The work examines how to report constraint compliance alongside predictive
 accuracy, with explicit assumptions and limits. It distinguishes constraints
 satisfied by construction from those observed to hold for a particular
-prediction. Compliance alone does not establish predictive accuracy. The
-methods and companion software remain in development.
+prediction. Compliance alone does not establish predictive accuracy. Rather
+than a standalone method, this is now being folded into the validation layer
+of the [software stack](/projects/#what-sets-the-op-stack-apart).
 
 {% include figure.liquid path="assets/img/research/structural_fidelity_comparison.svg" class="img-fluid rounded" zoomable=true alt="Two constructed prevalence curves compared with an upper bound of one over the displayed horizon. One stays below the bound and the other crosses it; predictive accuracy is not evaluated." caption="Illustrative constructed trajectories; no predictive scores are computed." %}
 
