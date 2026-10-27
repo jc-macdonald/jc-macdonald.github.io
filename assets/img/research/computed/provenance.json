@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_sha256": "da145d26f88e2d631fda83a0dfba9634042915adfc0c7b3947ab26ffd79e6212",
-  "registry_sha256": "cdd3ddb2ba4285d140aae451905509038772590a14bfac3216139ce3197e5fc4",
+  "source_sha256": "881a60b05039ef2b1d004b39a38a20152891f698495a2baefb7877eaf630499c",
+  "registry_sha256": "cd4aa08b7345327a3f58bad5c22b0555052c4b6360f8a64c658ad3baf8799246",
   "packages": {
     "op-system": "0.10.0",
     "op-engine": "0.9.0",
@@ -11,7 +11,7 @@
     "matplotlib": "3.11.2"
   },
   "files_sha256": {
-    "computed_data.json": "2b71094c1606db7a699a707d3fc56152067471ede52961c07476e618e91dcc66",
+    "computed_data.json": "9b58337a6a03b1d01c7c87b9d9d3fd4c8f4ebb2f8106ff70138a7dc314b3c7b5",
     "design_comparison.csv": "e1ddf802fd45b1fc5059ab952a98778af7b7fc8fd16e7cfdcba9993fc8b15317",
     "spatial_diffusion.svg": "ddf63f4fe5af20541ff61b03e1fcc77446fafc007c8efb319349396b55571031",
     "spatial_diffusion.pdf": "fa2483f84c4d2bbde06764f2cd17d041cc43da85872299d09d21b22c9d0b4e70",
@@ -24,6 +24,9 @@
     "replicated_tradeoff.png": "74687f8b596298423de06c9c6810df1c508e1a86dc9f76f8203b5ab5c265e55e",
     "incomplete_reconstruction.svg": "c0108d1729d9faf145e82c02557c6d774c4e4f71979569258341fc994bf234fb",
     "incomplete_reconstruction.pdf": "8ac4c8bfd448667f935603e210973074433abf26f3dca47406d559e9f0147bfe",
-    "incomplete_reconstruction.png": "3426bf8a93ab3998ab44a3dd6b28bed1e1300955099661f17c172c4faa43fe55"
+    "incomplete_reconstruction.png": "3426bf8a93ab3998ab44a3dd6b28bed1e1300955099661f17c172c4faa43fe55",
+    "archetype_recovery.svg": "8c869e93fde54af8e4014ae95dc8c34a2698b5cf27521bbe3b40847d90862611",
+    "archetype_recovery.pdf": "2f3e97771641cb0f6a0ddfbaf59cb38e05e78f5349519157906ce81cbf0e13c2",
+    "archetype_recovery.png": "cd90b2c8287a6040f583ed9c21fe1fad24ea11f14750baa5531d1f13e10a2513"
   }
 }

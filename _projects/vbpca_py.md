@@ -9,7 +9,7 @@ importance: 4
 category: "Released software"
 github: https://github.com/yoavram-lab/VBPCApy
 related_publications: true
-last_modified_at: 2026-10-23
+last_modified_at: 2026-10-27
 ---
 
 **vbpca-py** finds a smaller set of patterns that summarize an incomplete dataset. It fits variational Bayesian principal component analysis (PCA) to observed entries, estimating latent components, noise variance and approximate uncertainty in the fitted quantities.
@@ -24,5 +24,9 @@ The [2024 cultural-transmission paper](/publications/#macdonald2024austronesian)
 {% include figure.liquid path="assets/img/research/computed/incomplete_reconstruction.svg" class="img-fluid rounded" zoomable=true alt="A synthetic two-pattern signal, noisy observed entries with unobserved cells in gray, and a VBPCA reconstruction. Held-out observations are excluded from fitting. This illustration does not establish rank selection or uncertainty calibration." caption="A synthetic signal, noisy observed entries and reconstruction. Gray cells were excluded from fitting; the model uses two components." %}
 
 [Computed example, inputs and checks](/software-examples/#incomplete-data)
+
+{% include figure.liquid path="assets/img/research/computed/archetype_recovery.svg" class="img-fluid rounded" zoomable=true alt="Three panels: missing-aware one-hot encoding of synthetic categorical data, archetype memberships recovered from a VBPCA reconstruction in a triangle, and recovered against generating memberships." caption="Missing-aware one-hot encoding, VBPCA and archetypal analysis on synthetic categorical data generated from three archetypes, following the steps of the 2024 cultural-transmission paper." %}
+
+[Archetype example, inputs and checks](/software-examples/#archetypes-from-incomplete-categorical-data)
 
 [Method diagram (SVG)](/assets/img/research/vbpca_py_schematic.svg) · [Vector PDF](/assets/img/research/vbpca_py_schematic.pdf) · [All figure sources and downloads](/figures/)

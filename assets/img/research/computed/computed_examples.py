@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import itertools
 import json
 import xml.etree.ElementTree as ET
 from importlib.metadata import version
@@ -32,7 +33,7 @@ from matplotlib.patches import Patch
 from op_engine import BatchedDirectSSASolver, CoreSolver, FiringRecorder, ModelCore
 from op_engine.core_solver import RunConfig
 from op_system import compile_spec
-from vbpca_py import VBPCA
+from vbpca_py import VBPCA, MissingAwareOneHotEncoder
 
 HERE = Path(__file__).resolve().parent
 OUTPUT = HERE
@@ -445,6 +446,142 @@ def reconstruction():
     }
 
 
+def project_simplex(values):
+    """Euclidean projection of each column onto the probability simplex."""
+    ordered = -np.sort(-values, axis=0)
+    cumulative = np.cumsum(ordered, axis=0) - 1.0
+    index = np.arange(1, values.shape[0] + 1)[:, None]
+    positive = ordered - cumulative / index > 0
+    last = positive.shape[0] - 1 - np.argmax(positive[::-1], axis=0)
+    theta = cumulative[last, np.arange(values.shape[1])] / (last + 1)
+    return np.maximum(values - theta, 0.0)
+
+
+def archetypal_analysis(x, k, iterations=2000):
+    """Archetypes Z = X C and memberships S with simplex columns, X (p x n) ~ Z S.
+
+    Alternating projected-gradient steps on the objective of Morup and Hansen
+    (2012), started from a furthest-sum choice of samples. The EHS analysis used
+    py_pcha, whose last release (0.1.3) calls np.mat and does not run under
+    NumPy 2, so the objective is minimized here directly.
+    """
+    n = x.shape[1]
+    centre = x.mean(axis=1, keepdims=True)
+    chosen = [int(np.argmax(np.linalg.norm(x - centre, axis=0)))]
+    for _ in range(k - 1):
+        distance = np.min([np.linalg.norm(x - x[:, [c]], axis=0) for c in chosen], axis=0)
+        chosen.append(int(np.argmax(distance)))
+    c = np.zeros((n, k))
+    c[chosen, range(k)] = 1.0
+    s = project_simplex(np.random.default_rng(SEED).random((k, n)))
+    gram = x.T @ x
+    for _ in range(iterations):
+        z = x @ c
+        s = project_simplex(s - z.T @ (z @ s - x) / np.linalg.norm(z.T @ z, 2))
+        step = np.linalg.norm(gram, 2) * np.linalg.norm(s @ s.T, 2)
+        c = project_simplex(c - (gram @ c @ s - gram) @ s.T / step)
+    z = x @ c
+    relative_sse = float(np.linalg.norm(x - z @ s) ** 2 / np.linalg.norm(x - centre) ** 2)
+    return z, s, relative_sse
+
+
+def matched(memberships, truth):
+    """Order recovered archetypes to best match the generating ones."""
+    k = truth.shape[1]
+    order = max(
+        itertools.permutations(range(k)),
+        key=lambda perm: sum(np.corrcoef(memberships[perm[j]], truth[:, j])[0, 1] for j in range(k)),
+    )
+    return memberships[list(order)]
+
+
+def archetype_recovery():
+    """Missing-aware one-hot encoding, VBPCA and archetypes on synthetic categorical data."""
+    rng = np.random.default_rng(SEED)
+    k, samples, features, levels = 3, 150, 24, 3
+    truth = rng.dirichlet([0.6] * k, size=samples)
+    profiles = np.full((k, features, levels), 0.075)
+    for j in range(k):
+        for f in range(features):
+            profiles[j, f, (j + f) % levels] = 0.85
+    probs = np.einsum("nk,kpl->npl", truth, profiles)
+    data = np.array(
+        [[rng.choice(levels, p=probs[i, f]) for f in range(features)] for i in range(samples)],
+        dtype=float,
+    )
+    observed = rng.uniform(size=data.shape) > 0.3
+    encoder = MissingAwareOneHotEncoder(binary="both")
+    encoded = encoder.fit_transform(np.where(observed, data, np.nan), mask=observed)
+    encoded_mask = ~np.isnan(encoded)
+    model = VBPCA(n_components=2, maxiters=300, random_state=SEED, verbose=0)
+    model.fit_transform(np.nan_to_num(encoded.T), mask=encoded_mask.T)
+    reconstructed = np.asarray(model.reconstruction_)
+    _, memberships, relative_sse = archetypal_analysis(reconstructed, k)
+    memberships = matched(memberships, truth)
+    correlation = [float(np.corrcoef(memberships[j], truth[:, j])[0, 1]) for j in range(k)]
+    complete = MissingAwareOneHotEncoder(binary="both").fit_transform(
+        data, mask=np.ones_like(observed)
+    )
+    _, complete_memberships, _ = archetypal_analysis(complete.T, k)
+    complete_memberships = matched(complete_memberships, truth)
+    complete_correlation = [
+        float(np.corrcoef(complete_memberships[j], truth[:, j])[0, 1]) for j in range(k)
+    ]
+    assert min(correlation) > 0.85 and min(complete_correlation) > min(correlation)
+
+    colors = (TEAL, BLUE, GOLD)
+    fig, axes = plt.subplots(1, 3, figsize=(9, 3.4), layout="constrained")
+    cmap = plt.get_cmap("Greys").copy()
+    cmap.set_bad("#d9822b")
+    axes[0].imshow(encoded[:60], aspect="auto", cmap=cmap, vmin=0, vmax=1, interpolation="nearest")
+    axes[0].set(xlabel="Indicator column", ylabel="Sample (first 60)", title="Missing-aware one-hot encoding")
+    axes[0].legend(
+        handles=[
+            Patch(facecolor="black", label="Level present"),
+            Patch(facecolor="#d9822b", label="Variable not observed"),
+        ],
+        loc="upper center",
+        bbox_to_anchor=(0.5, -0.18),
+        ncol=2,
+        fontsize=8,
+    )
+    corners = np.array([[0.0, 0.0], [1.0, 0.0], [0.5, np.sqrt(3) / 2]])
+    axes[1].plot(*np.vstack([corners, corners[:1]]).T, color=GREY, lw=0.8)
+    points = memberships.T @ corners
+    dominant = truth.argmax(axis=1)
+    for j in range(k):
+        axes[1].scatter(*points[dominant == j].T, s=10, color=colors[j], alpha=0.8, label=f"Mostly archetype {j + 1}")
+        axes[1].text(*(corners[j] + [(-0.06, -0.07), (0.06, -0.07), (0, 0.04)][j]), f"A{j + 1}", ha="center", fontsize=9)
+    axes[1].set(aspect="equal", title="Recovered memberships")
+    axes[1].axis("off")
+    axes[1].legend(loc="upper center", bbox_to_anchor=(0.5, -0.02), ncol=1, fontsize=8)
+    for j in range(k):
+        axes[2].scatter(truth[:, j], memberships[j], s=8, color=colors[j], alpha=0.6, label=f"A{j + 1}")
+    axes[2].plot([0, 1], [0, 1], color=GREY, ls=":", lw=1)
+    axes[2].set(
+        xlim=(0, 1), ylim=(0, 1), aspect="equal", xlabel="Generating membership",
+        ylabel="Recovered membership", title="Recovered against generating",
+    )
+    axes[2].legend(loc="upper left", fontsize=8)
+    export(fig, "archetype_recovery")
+    return {
+        "seed": SEED,
+        "archetypes": k,
+        "samples": samples,
+        "features": features,
+        "levels": levels,
+        "observed_fraction": float(observed.mean()),
+        "encoded_columns": int(encoded.shape[1]),
+        "n_components": 2,
+        "truth": truth.tolist(),
+        "memberships": memberships.tolist(),
+        "correlation": correlation,
+        "mean_absolute_error": float(np.mean(np.abs(memberships.T - truth))),
+        "complete_data_correlation": complete_correlation,
+        "relative_sse": relative_sse,
+    }
+
+
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -472,6 +609,7 @@ def generate(output):
         "stochastic_ensemble": ssa(),
         "replicated_tradeoff": tradeoff(),
         "incomplete_reconstruction": reconstruction(),
+        "archetype_recovery": archetype_recovery(),
     }
     (OUTPUT / "computed_data.json").write_text(
         json.dumps(data, separators=(",", ":")) + "\n"
@@ -566,8 +704,14 @@ def check():
             rtol=1e-7,
             atol=1e-8,
         )
+        np.testing.assert_allclose(
+            fresh["archetype_recovery"]["memberships"],
+            committed["archetype_recovery"]["memberships"],
+            rtol=1e-6,
+            atol=1e-7,
+        )
     print(
-        "Verified four computed figures, retained data and independent numerical checks"
+        "Verified five computed figures, retained data and independent numerical checks"
     )
 
 

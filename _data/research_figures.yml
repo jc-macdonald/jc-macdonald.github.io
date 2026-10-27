@@ -15,6 +15,10 @@ computed:
     title: Incomplete-data reconstruction
     description: A synthetic matrix reconstructed with VBPCApy and assessed on held-out entries.
     section: incomplete-data
+  - name: archetype_recovery
+    title: Archetypes from incomplete categorical data
+    description: Missing-aware one-hot encoding, VBPCA and archetypal analysis on synthetic data generated from three archetypes, with recovered memberships checked against the generating ones.
+    section: archetypes-from-incomplete-categorical-data
   - name: op_infer_normal_sbc
     title: Analytic posterior and SBC fixture
     description: An exact Normal posterior check and a deliberately underpowered 64-replicate SBC demonstration from public pre-alpha op_infer.
