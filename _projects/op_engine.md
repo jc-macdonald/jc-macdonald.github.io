@@ -24,6 +24,6 @@ Supported backends and derivatives depend on the method and precision; {% assign
 
 {% include figure.liquid path="assets/img/research/stack/stack_spec_to_ssa.svg" class="img-fluid rounded" zoomable=true alt="Two panels: infectious hosts over time in a 400-host model with waning immunity, showing a percentile band across 256 exact stochastic paths, their median, and the deterministic solution of the same specification; and the mean cumulative infection, recovery and waning events per path from retained firing counts." caption="One transition specification run as an ODE and as 256 exact stochastic paths with retained event counts. Population is conserved and the state equals initial state plus stoichiometry times counts on every path. Illustrative parameters." %}
 
-[What this figure supports and its limits](/projects/#op-stack-design-and-verification-examples) · [Computed stochastic example, inputs and checks](/software-examples/#stochastic-transfers)
+[What this figure supports and its limits](/software-examples/#op-stack-design-and-verification) · [Computed stochastic example, inputs and checks](/software-examples/#stochastic-transfers)
 
 [Method diagram (SVG)](/assets/img/research/op_engine_slide.svg) · [Vector PDF](/assets/img/research/op_engine_slide.pdf) · [All figure sources and downloads](/figures/)

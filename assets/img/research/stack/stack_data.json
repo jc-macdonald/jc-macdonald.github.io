@@ -93,47 +93,47 @@
     "rhs_rel_err": 0.0,
     "final_err": 1.2570564311698007e-08,
     "max_err": 2.314301019712417e-07,
-    "eager_s": 0.31198395500541665
+    "eager_s": 0.060977468005148694
    },
    "JAX float64": {
     "rhs_rel_err": 0.0,
     "final_err": 1.2570564311698007e-08,
     "max_err": 2.314301019712417e-07,
-    "eager_s": 34.58844333900197
+    "eager_s": 33.488652653992176
    },
    "PyTorch float64": {
     "rhs_rel_err": 0.0,
     "final_err": 1.2570564311698007e-08,
     "max_err": 2.314301019712417e-07,
-    "eager_s": 0.18831439499626867
+    "eager_s": 0.1865597069991054
    },
    "NumPy float32": {
     "rhs_rel_err": 2.4013382090147477e-08,
     "final_err": 4.632420195882503e-06,
     "max_err": 4.841490802931503e-06,
-    "eager_s": 0.060082360010710545
+    "eager_s": 0.05884919600794092
    },
    "JAX float32": {
     "rhs_rel_err": 2.4013382090147477e-08,
     "final_err": 4.632420195882503e-06,
     "max_err": 4.841490802931503e-06,
-    "eager_s": 35.824695297007565
+    "eager_s": 34.393109962009476
    },
    "PyTorch float32": {
     "rhs_rel_err": 2.4013382090147477e-08,
     "final_err": 4.632420195882503e-06,
     "max_err": 4.841490802931503e-06,
-    "eager_s": 0.2064850509923417
+    "eager_s": 0.2280987520061899
    },
    "JAX float64 (jit)": {
     "final_err": 1.2570565532943334e-08,
-    "compile_s": 0.27123456000117585,
-    "warm_s": 0.0001475160097470507
+    "compile_s": 0.2306769380084006,
+    "warm_s": 0.00010976599878631532
    },
    "JAX float32 (jit)": {
     "final_err": 4.155583037679378e-06,
-    "compile_s": 0.3031428520043846,
-    "warm_s": 0.00013444898650050163
+    "compile_s": 0.24150756699964404,
+    "warm_s": 9.863599552772939e-05
    },
    "eager_bitwise_identical_across_namespaces": true
   },
@@ -3352,32 +3352,32 @@
   "timings_single_call": [
    {
     "n": 1,
-    "vmap_compile_s": 0.1758914849924622,
-    "vmap_warm_s": 0.00014086499868426472,
-    "numpy_loop_s": 0.10071899001195561
+    "vmap_compile_s": 0.1726787189982133,
+    "vmap_warm_s": 0.00010605600255075842,
+    "numpy_loop_s": 0.09780796901031863
    },
    {
     "n": 10,
-    "vmap_compile_s": 0.5168286859989166,
-    "vmap_warm_s": 0.0013305640022736043,
-    "numpy_loop_s": 0.6614051009964896
+    "vmap_compile_s": 0.39611705899005756,
+    "vmap_warm_s": 0.0011655639973469079,
+    "numpy_loop_s": 0.597728733002441
    },
    {
     "n": 100,
-    "vmap_compile_s": 0.44872599199879915,
-    "vmap_warm_s": 0.0032740620081312954,
-    "numpy_loop_s": 6.374699078995036
+    "vmap_compile_s": 0.3747275420028018,
+    "vmap_warm_s": 0.003000436001457274,
+    "numpy_loop_s": 6.097285313997418
    },
    {
     "n": 1000,
-    "vmap_compile_s": 0.432185526995454,
-    "vmap_warm_s": 0.06262886700278614,
+    "vmap_compile_s": 0.33714278500701766,
+    "vmap_warm_s": 0.021227378994808532,
     "numpy_loop_s": NaN
    },
    {
     "n": 10000,
-    "vmap_compile_s": 0.5969344830082264,
-    "vmap_warm_s": 0.18486773800395895,
+    "vmap_compile_s": 0.5539640900096856,
+    "vmap_warm_s": 0.18326920100662392,
     "numpy_loop_s": NaN
    }
   ],
@@ -11948,6 +11948,726 @@
    true,
    true
   ]
+ },
+ "qualification": {
+  "spec": {
+   "kind": "expr",
+   "axes": [
+    {
+     "name": "place",
+     "coords": [
+      "p1",
+      "p2",
+      "p3",
+      "p4"
+     ]
+    },
+    {
+     "name": "age",
+     "coords": [
+      "child",
+      "adult",
+      "older"
+     ]
+    }
+   ],
+   "state": [
+    "S[place,age]",
+    "I[place,age]",
+    "R[place,age]"
+   ],
+   "aliases": {
+    "N[place,age]": "S[place,age] + I[place,age] + R[place,age]",
+    "foi[place,age]": "beta * apply_along(C[age:s,age] * I[place,age:s] / N[place,age:s], age=s, kernel=sum)",
+    "out[place]": "apply_along(M[place,place:q], place=q, kernel=sum)"
+   },
+   "equations": {
+    "S[place,age]": "-foi[place,age] * S[place,age] + apply_along(M[place:q,place] * S[place:q,age], place=q, kernel=sum) - out[place] * S[place,age]",
+    "I[place,age]": "foi[place,age] * S[place,age] - gamma * I[place,age] + apply_along(M[place:q,place] * I[place:q,age], place=q, kernel=sum) - out[place] * I[place,age]",
+    "R[place,age]": "gamma * I[place,age] + apply_along(M[place:q,place] * R[place:q,age], place=q, kernel=sum) - out[place] * R[place,age]"
+   }
+  },
+  "transposed_contact": "C[age,age:s]",
+  "params": {
+   "beta": 0.05,
+   "gamma": 0.2
+  },
+  "C": [
+   [
+    6.0,
+    3.0,
+    0.8
+   ],
+   [
+    1.5,
+    4.0,
+    1.2
+   ],
+   [
+    0.6,
+    2.0,
+    2.5
+   ]
+  ],
+  "M": [
+   [
+    0.0,
+    0.0314779584688371,
+    0.045424617109311366,
+    0.02339831497635239
+   ],
+   [
+    0.0009957966206213698,
+    0.0,
+    0.03889175228519101,
+    0.0484290781820148
+   ],
+   [
+    0.038143538516388534,
+    0.01787542247894937,
+    0.0,
+    0.03446904639233788
+   ],
+   [
+    0.005017953846402634,
+    0.034105857864138237,
+    0.04970331308799842,
+    0.0
+   ]
+  ],
+  "states": {
+   "early": [
+    [
+     [
+      993.3168112781968,
+      993.1995541027934,
+      919.1009119833282
+     ],
+     [
+      928.7048437771624,
+      931.6694925897377,
+      877.6044543923049
+     ],
+     [
+      893.6867718285979,
+      931.5175747951605,
+      884.4867554472655
+     ],
+     [
+      909.188098277614,
+      836.6568252914412,
+      813.0515597779835
+     ]
+    ],
+    [
+     [
+      1.9644100800230402,
+      3.6707654086118477,
+      4.693488205004898
+     ],
+     [
+      2.2555805832818088,
+      2.0593884390954944,
+      1.3167580490566015
+     ],
+     [
+      4.265398484419324,
+      1.3653961516836899,
+      4.442867858022884
+     ],
+     [
+      2.9564852333692664,
+      3.7809280586923,
+      1.2533528017766464
+     ]
+    ],
+    [
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ]
+    ]
+   ],
+   "peak": [
+    [
+     [
+      384.3831686478778,
+      479.3156533652875,
+      377.54689729062113
+     ],
+     [
+      264.86431707665156,
+      438.61945786289596,
+      349.3089870588992
+     ],
+     [
+      466.5122993999632,
+      381.87203082302665,
+      589.5249077426672
+     ],
+     [
+      476.0765676621416,
+      371.6895221221042,
+      362.90439567471014
+     ]
+    ],
+    [
+     [
+      252.32505573383088,
+      156.28241417470448,
+      198.56542441248155
+     ],
+     [
+      162.43935396366226,
+      170.63137556433156,
+      296.6463196356396
+     ],
+     [
+      142.94148367897765,
+      152.12738386325998,
+      178.40205344809874
+     ],
+     [
+      203.28652283442614,
+      232.33968367606502,
+      252.38139710758364
+     ]
+    ],
+    [
+     [
+      417.378559190886,
+      402.0435265985259,
+      492.2407265477724
+     ],
+     [
+      470.9063872939061,
+      379.3584685888933,
+      454.2895883464513
+     ],
+     [
+      118.87626382544013,
+      243.17362845722704,
+      439.0551687263768
+     ],
+     [
+      327.5315198828009,
+      203.18932193989295,
+      254.00354034161015
+     ]
+    ]
+   ],
+   "late": [
+    [
+     [
+      50.43744802310548,
+      54.19145308759423,
+      126.97011154724667
+     ],
+     [
+      92.06477125386246,
+      81.42743251894576,
+      62.73549293868197
+     ],
+     [
+      52.43254437733208,
+      75.27404073134093,
+      82.62296672500783
+     ],
+     [
+      53.538938046404326,
+      63.05980310848498,
+      69.07218080489045
+     ]
+    ],
+    [
+     [
+      9.469671942783405,
+      1.8492111956771606,
+      4.0521641193821925
+     ],
+     [
+      0.6978286364103647,
+      7.411323072143807,
+      2.2548165897969508
+     ],
+     [
+      0.4034128422903338,
+      0.6448655481304633,
+      1.4022763200221022
+     ],
+     [
+      5.508528863063633,
+      4.131833940289361,
+      9.006149257742216
+     ]
+    ],
+    [
+     [
+      783.0481765853303,
+      824.5420246741046,
+      849.311408004839
+     ],
+     [
+      829.3713380650408,
+      741.9931150390864,
+      801.3065866626368
+     ],
+     [
+      863.9725199126199,
+      867.4288875173794,
+      898.5325775344893
+     ],
+     [
+      761.8923882694531,
+      750.34845513868,
+      859.2945129199051
+     ]
+    ]
+   ]
+  },
+  "tolerances": {
+   "float64": {
+    "rtol": 1e-07,
+    "atol": 1e-09,
+    "balance_atol": 1e-09
+   },
+   "float32": {
+    "rtol": 1e-05,
+    "atol": 0.0001,
+    "balance_atol": 0.001
+   }
+  },
+  "results": {
+   "NumPy float64": {
+    "ok": true,
+    "records": [
+     {
+      "fixture": "early",
+      "evaluator": "flat",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 1.9734424828244643e-15,
+      "balance_residual": 2.4868995751603507e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "early",
+      "evaluator": "structured",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 1.9734424828244643e-15,
+      "balance_residual": 2.4868995751603507e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "flat",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 2.191662936844947e-15,
+      "balance_residual": 2.1316282072803006e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "structured",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 2.191662936844947e-15,
+      "balance_residual": 2.1316282072803006e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "flat",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 9.948884069068668e-15,
+      "balance_residual": 3.197442310920451e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "structured",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 9.948884069068668e-15,
+      "balance_residual": 3.197442310920451e-14,
+      "balance_passed": true,
+      "ok": true
+     }
+    ]
+   },
+   "NumPy float32": {
+    "ok": true,
+    "records": [
+     {
+      "fixture": "early",
+      "evaluator": "flat",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 7.468352832496262e-07,
+      "balance_residual": 8.463859558105469e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "early",
+      "evaluator": "structured",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 7.468352832496262e-07,
+      "balance_residual": 8.463859558105469e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "flat",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 4.688195934814836e-06,
+      "balance_residual": 9.5367431640625e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "structured",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 4.688195934814836e-06,
+      "balance_residual": 9.5367431640625e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "flat",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 4.497549170963146e-06,
+      "balance_residual": 1.55717134475708e-05,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "structured",
+      "backend": "array_api_compat.numpy",
+      "max_relative_error": 4.497549170963146e-06,
+      "balance_residual": 1.55717134475708e-05,
+      "balance_passed": true,
+      "ok": true
+     }
+    ]
+   },
+   "JAX float64": {
+    "ok": true,
+    "records": [
+     {
+      "fixture": "early",
+      "evaluator": "flat",
+      "backend": "jax.numpy",
+      "max_relative_error": 1.9734424828244643e-15,
+      "balance_residual": 2.4868995751603507e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "early",
+      "evaluator": "structured",
+      "backend": "jax.numpy",
+      "max_relative_error": 1.9734424828244643e-15,
+      "balance_residual": 2.4868995751603507e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "flat",
+      "backend": "jax.numpy",
+      "max_relative_error": 2.191662936844947e-15,
+      "balance_residual": 2.1316282072803006e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "structured",
+      "backend": "jax.numpy",
+      "max_relative_error": 2.191662936844947e-15,
+      "balance_residual": 2.1316282072803006e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "flat",
+      "backend": "jax.numpy",
+      "max_relative_error": 9.948884069068668e-15,
+      "balance_residual": 3.197442310920451e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "structured",
+      "backend": "jax.numpy",
+      "max_relative_error": 9.948884069068668e-15,
+      "balance_residual": 3.197442310920451e-14,
+      "balance_passed": true,
+      "ok": true
+     }
+    ]
+   },
+   "JAX float32": {
+    "ok": true,
+    "records": [
+     {
+      "fixture": "early",
+      "evaluator": "flat",
+      "backend": "jax.numpy",
+      "max_relative_error": 7.468352832496262e-07,
+      "balance_residual": 8.58306884765625e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "early",
+      "evaluator": "structured",
+      "backend": "jax.numpy",
+      "max_relative_error": 7.468352832496262e-07,
+      "balance_residual": 8.58306884765625e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "flat",
+      "backend": "jax.numpy",
+      "max_relative_error": 4.688195934814836e-06,
+      "balance_residual": 9.5367431640625e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "structured",
+      "backend": "jax.numpy",
+      "max_relative_error": 4.688195934814836e-06,
+      "balance_residual": 9.5367431640625e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "flat",
+      "backend": "jax.numpy",
+      "max_relative_error": 4.497549170963146e-06,
+      "balance_residual": 1.55717134475708e-05,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "structured",
+      "backend": "jax.numpy",
+      "max_relative_error": 4.497549170963146e-06,
+      "balance_residual": 1.55717134475708e-05,
+      "balance_passed": true,
+      "ok": true
+     }
+    ]
+   },
+   "PyTorch float64": {
+    "ok": true,
+    "records": [
+     {
+      "fixture": "early",
+      "evaluator": "flat",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 1.9734424828244643e-15,
+      "balance_residual": 2.4868995751603507e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "early",
+      "evaluator": "structured",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 1.9734424828244643e-15,
+      "balance_residual": 2.4868995751603507e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "flat",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 2.191662936844947e-15,
+      "balance_residual": 2.1316282072803006e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "structured",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 2.191662936844947e-15,
+      "balance_residual": 2.1316282072803006e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "flat",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 9.948884069068668e-15,
+      "balance_residual": 3.197442310920451e-14,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "structured",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 9.948884069068668e-15,
+      "balance_residual": 3.197442310920451e-14,
+      "balance_passed": true,
+      "ok": true
+     }
+    ]
+   },
+   "PyTorch float32": {
+    "ok": true,
+    "records": [
+     {
+      "fixture": "early",
+      "evaluator": "flat",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 7.468352832496262e-07,
+      "balance_residual": 8.463859558105469e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "early",
+      "evaluator": "structured",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 7.468352832496262e-07,
+      "balance_residual": 8.463859558105469e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "flat",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 4.688195934814836e-06,
+      "balance_residual": 9.5367431640625e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "peak",
+      "evaluator": "structured",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 4.688195934814836e-06,
+      "balance_residual": 9.5367431640625e-06,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "flat",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 4.497549170963146e-06,
+      "balance_residual": 1.55717134475708e-05,
+      "balance_passed": true,
+      "ok": true
+     },
+     {
+      "fixture": "late",
+      "evaluator": "structured",
+      "backend": "array_api_compat.torch",
+      "max_relative_error": 4.497549170963146e-06,
+      "balance_residual": 1.55717134475708e-05,
+      "balance_passed": true,
+      "ok": true
+     }
+    ]
+   }
+  },
+  "transposed_numpy_float64": {
+   "ok": false,
+   "records": [
+    {
+     "fixture": "early",
+     "evaluator": "flat",
+     "backend": "array_api_compat.numpy",
+     "max_relative_error": 0.6965134314344005,
+     "balance_residual": 3.197442310920451e-14,
+     "balance_passed": true,
+     "ok": false
+    },
+    {
+     "fixture": "early",
+     "evaluator": "structured",
+     "backend": "array_api_compat.numpy",
+     "max_relative_error": 0.6965134314344005,
+     "balance_residual": 3.197442310920451e-14,
+     "balance_passed": true,
+     "ok": false
+    },
+    {
+     "fixture": "peak",
+     "evaluator": "flat",
+     "backend": "array_api_compat.numpy",
+     "max_relative_error": 15.923320678557157,
+     "balance_residual": 2.1316282072803006e-14,
+     "balance_passed": true,
+     "ok": false
+    },
+    {
+     "fixture": "peak",
+     "evaluator": "structured",
+     "backend": "array_api_compat.numpy",
+     "max_relative_error": 15.923320678557157,
+     "balance_residual": 2.1316282072803006e-14,
+     "balance_passed": true,
+     "ok": false
+    },
+    {
+     "fixture": "late",
+     "evaluator": "flat",
+     "backend": "array_api_compat.numpy",
+     "max_relative_error": 0.16766334814800812,
+     "balance_residual": 3.197442310920451e-14,
+     "balance_passed": true,
+     "ok": false
+    },
+    {
+     "fixture": "late",
+     "evaluator": "structured",
+     "backend": "array_api_compat.numpy",
+     "max_relative_error": 0.16766334814800812,
+     "balance_residual": 3.197442310920451e-14,
+     "balance_passed": true,
+     "ok": false
+    }
+   ]
+  }
  },
  "machine": {
   "platform": "Linux-6.17.0-1033-oem-x86_64-with-glibc2.39",

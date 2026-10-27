@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_sha256": "7151273d96fa95078287972dd29d4756e446c1f44db96406203cd664c5e93370",
+  "source_sha256": "5ca0118a1235b25b086d5db9ee6a335629848c7fa28f8ad5e1c50e0749dd6903",
   "packages": {
     "op-system": "0.10.0",
     "op-engine": "0.9.1",
@@ -29,6 +29,9 @@
     "stack_steady_states.svg": "324fe9a3494734f9b73cecfd53f00092043b5921ac7d537bce0e3066d5ac0eef",
     "stack_steady_states.pdf": "07590bb9b2790826502c8a347d9619727bac00bf0dcb63f1266571b9cbeadd86",
     "stack_steady_states.png": "735b945a92c815632c1af7825e5bc29b481a0b7f79e8db36b7b786946573b759",
-    "stack_data.json": "d439776676a5e1c3b7efca2189fc250210dc4cbb20a436342f8799409f185aa5"
+    "stack_qualification.svg": "0b142dd449135da4762639b741336dae462178932593e03fe82080f70002451a",
+    "stack_qualification.pdf": "ed5672ac0af545c4c87d46b1e744a069a404ca50e6eba01a031c464a323d201c",
+    "stack_qualification.png": "b9ec16faa62e6c654fa66a68785c960cbb972168a459edf5727a0e495566fd2d",
+    "stack_data.json": "48a24fd76ac27d5b576bf7eba52c2b5557d582c9d3a230b558e68c7a2f9fb384"
   }
 }

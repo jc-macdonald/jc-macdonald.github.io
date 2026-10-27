@@ -33,3 +33,8 @@ assets/img/research/stack/provenance.json
 assets/img/research/published/*.svg
 assets/img/research/published/published_data.json
 assets/img/research/published/provenance.json
+
+# Operational projections retain byte-level provenance; regenerate with Python.
+assets/img/research/operational/*.svg
+assets/img/research/operational/operational_data.json
+assets/img/research/operational/provenance.json

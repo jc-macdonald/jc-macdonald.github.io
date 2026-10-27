@@ -249,6 +249,7 @@ jekyll-minifier:
       "assets/img/research/previews/*",
       "assets/img/research/stack/*",
       "assets/img/research/published/*",
+      "assets/img/research/operational/*",
     ]
 
 # -----------------------------------------------------------------------------

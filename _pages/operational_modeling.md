@@ -6,7 +6,7 @@ permalink: /operational-modeling/
 description: My contributions to infectious disease scenario projections, vaccination studies and the software used to run them.
 nav: true
 nav_order: 3
-last_modified_at: 2026-10-23
+last_modified_at: 2026-10-26
 ---
 
 ## Scenario Modeling Hubs
@@ -22,6 +22,11 @@ Lead model developer for ACCIDDA's influenza scenario projections.
 - **2026/27 operational round.** Supervising an undergraduate student on revisions to the ACCIDDA flu model.
 - **2025/26 operational round.** Led revisions to the ACCIDDA flu model.
 - **2024/25 operational round.** Initial model development and pipeline integration.
+
+<figure>
+  <img src="/assets/img/research/operational/flu_scenario_projections.svg" alt="Two panels. Panel a shows projected weekly influenza hospitalizations in the United States over 43 weeks from August 2025 under three vaccination scenarios, with the no-vaccination scenario highest. Panel b shows box plots of season hospitalizations averted relative to no vaccination under usual and low coverage; both are positive, and usual coverage averts more. Details follow." width="720" height="317" loading="lazy">
+  <figcaption>ACCIDDA's projections for Round 1 of the 2025–26 Flu Scenario Modeling Hub, plotted from the team's public submission. The round asked how vaccination would affect the coming season under three scenarios: business-as-usual coverage (A), low coverage (B) and a counterfactual with no vaccination (C). (a) Projected weekly influenza hospitalizations in the United States for 43 weeks from 10 August 2025: the median across 600 trajectories per scenario and the 5th to 95th percentile band. (b) Season hospitalizations averted relative to no vaccination, computed for each trajectory, since the hub pairs trajectories across scenarios. The medians are about 127 000 under usual coverage and 96 000 under low coverage; boxes show the interquartile range and whiskers extend to 1.5 times that range. These are one team's projections, conditional on the scenario assumptions. They are not forecasts, not the hub's multi-model ensemble and not an evaluation against the observed season. <a href="/figures/#operational-projections">Summary tables, source and provenance</a>.</figcaption>
+</figure>
 
 [Hub repository](https://github.com/midas-network/flu-scenario-modeling-hub) · [Round results and reports](https://scenariomodelinghub.org/)
 

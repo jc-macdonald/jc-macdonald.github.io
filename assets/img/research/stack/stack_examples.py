@@ -60,7 +60,13 @@ from op_engine import (
 )
 from op_engine.core_solver import RunConfig
 from op_engine.model_core import ModelCoreOptions
-from op_system import compile_spec
+from op_system import (
+    InvariantCheck,
+    QualificationConfig,
+    QualificationFixture,
+    compile_spec,
+    qualify_rhs,
+)
 from scipy.integrate import solve_ivp
 
 jax.config.update("jax_enable_x64", True)
@@ -179,6 +185,18 @@ DESCRIPTIONS = {
         "A diagram of equilibrium x against a forcing parameter a: an upper and a lower branch of "
         "stable states from the vectorized solves, a dashed unstable branch from the cubic's roots, "
         "and a bounded shaded interval of a in which both stable states exist.",
+    ),
+    "stack_qualification": (
+        "A structured model checked against independently written equations",
+        "Panel a: largest relative disagreement between a compiled age-by-place model and "
+        "separately written cell-by-cell equations, on log axes, for NumPy, JAX and PyTorch in "
+        "float64 and float32, with one marker per test state and evaluator layout; float64 values "
+        "lie between about ten to the minus fifteen and ten to the minus fourteen and float32 "
+        "values between about ten to the minus six and five times ten to the minus six, with "
+        "machine epsilon lines for reference. Panel b: two checks on the model as written and on a copy "
+        "with its contact matrix indexed the wrong way round. Both pass the population balance "
+        "check, with residuals near ten to the minus fourteen; only the copy with the transposed "
+        "matrix fails the comparison with independent equations, with disagreement above one.",
     ),
 }
 
@@ -777,6 +795,195 @@ def steady_state_branches():
     }
 
 
+# An age-by-place SIR model with mixing inside each place and movement between
+# places. C[source, target] is asymmetric, so indexing it the wrong way round
+# changes the model while every population total is still conserved.
+QUAL_AGES = ["child", "adult", "older"]
+QUAL_PLACES = ["p1", "p2", "p3", "p4"]
+QUAL_C = np.array([[6.0, 3.0, 0.8], [1.5, 4.0, 1.2], [0.6, 2.0, 2.5]])
+QUAL_PARAMS = {"beta": 0.05, "gamma": 0.2}
+
+
+def structured_spec(contact):
+    """Age-by-place SIR specification; ``contact`` is the contact-matrix reference."""
+    move = "apply_along(M[place:q,place] * {X}[place:q,age], place=q, kernel=sum) - out[place] * {X}[place,age]"
+    return {
+        "kind": "expr",
+        "axes": [{"name": "place", "coords": QUAL_PLACES}, {"name": "age", "coords": QUAL_AGES}],
+        "state": ["S[place,age]", "I[place,age]", "R[place,age]"],
+        "aliases": {
+            "N[place,age]": "S[place,age] + I[place,age] + R[place,age]",
+            "foi[place,age]": (
+                f"beta * apply_along({contact} * I[place,age:s] / N[place,age:s], age=s, kernel=sum)"
+            ),
+            "out[place]": "apply_along(M[place,place:q], place=q, kernel=sum)",
+        },
+        "equations": {
+            "S[place,age]": "-foi[place,age] * S[place,age] + " + move.format(X="S"),
+            "I[place,age]": "foi[place,age] * S[place,age] - gamma * I[place,age] + "
+            + move.format(X="I"),
+            "R[place,age]": "gamma * I[place,age] + " + move.format(X="R"),
+        },
+    }
+
+
+def cellwise_reference(t, state, params):
+    """The same model written cell by cell in host floating point, not from compiler output."""
+    s, i, r = (np.asarray(state[k], dtype=float) for k in ("S", "I", "R"))
+    c, m = np.asarray(params["C"], dtype=float), np.asarray(params["M"], dtype=float)
+    beta, gamma = float(params["beta"]), float(params["gamma"])
+    ds, di, dr = np.zeros_like(s), np.zeros_like(i), np.zeros_like(r)
+    places, ages = s.shape
+    for p in range(places):
+        for a in range(ages):
+            foi = sum(
+                beta * c[src, a] * i[p, src] / (s[p, src] + i[p, src] + r[p, src])
+                for src in range(ages)
+            )
+            infection, recovery = foi * s[p, a], gamma * i[p, a]
+            ds[p, a] -= infection
+            di[p, a] += infection - recovery
+            dr[p, a] += recovery
+            for q in range(places):
+                for x, dx in ((s, ds), (i, di), (r, dr)):
+                    dx[p, a] += m[q, p] * x[q, a] - m[p, q] * x[p, a]
+    return {"S": ds, "I": di, "R": dr}
+
+
+def age_balance(t, state, derivative, params):
+    """Residual of the per-age total over places and compartments; zero for a closed model."""
+    total = sum(np.asarray(derivative[k], dtype=float) for k in ("S", "I", "R"))
+    return total.sum(axis=0)
+
+
+def qualification_report():
+    """qualify_rhs on a structured model under three array libraries and two precisions.
+
+    A copy whose contact matrix is indexed the wrong way round still conserves every
+    population total, so a balance check passes; the comparison with independently
+    written equations is what flags it.
+    """
+    rng = np.random.default_rng(SEED)
+    movement = rng.uniform(0.0, 0.05, (len(QUAL_PLACES), len(QUAL_PLACES)))
+    np.fill_diagonal(movement, 0.0)
+    shape = (len(QUAL_PLACES), len(QUAL_AGES))
+    states = {
+        "early": (rng.uniform(800, 1000, shape), rng.uniform(0, 5, shape), np.zeros(shape)),
+        "peak": (rng.uniform(200, 600, shape), rng.uniform(100, 300, shape), rng.uniform(100, 500, shape)),
+        "late": (rng.uniform(50, 150, shape), rng.uniform(0, 10, shape), rng.uniform(700, 900, shape)),
+    }
+    correct = compile_spec(structured_spec("C[age:s,age]"))
+    transposed = compile_spec(structured_spec("C[age,age:s]"))
+    configs = {
+        "float64": (QualificationConfig(), 1e-9),
+        "float32": (QualificationConfig(rtol=1e-5, atol=1e-4), 1e-3),
+    }
+    converters = {"NumPy": np.asarray, "JAX": jnp.asarray, "PyTorch": torch.as_tensor}
+
+    def run(compiled, library, precision):
+        dtype = np.float64 if precision == "float64" else np.float32
+        convert = converters[library]
+        config, balance_atol = configs[precision]
+        values = {**QUAL_PARAMS, "C": QUAL_C, "M": movement}
+        fixtures = [
+            QualificationFixture(
+                name,
+                {k: convert(np.asarray(v, dtype)) for k, v in zip(("S", "I", "R"), arrays, strict=True)},
+                {k: convert(np.asarray(v, dtype)) for k, v in values.items()},
+            )
+            for name, arrays in states.items()
+        ]
+        balance = InvariantCheck(
+            "per-age total", age_balance, "Closed model: no births, deaths or external sources",
+            atol=balance_atol,
+        )
+        report = qualify_rhs(
+            compiled, fixtures, cellwise_reference, evaluators=("flat", "structured"),
+            config=config, invariants=(balance,),
+        ).to_dict()
+        records = [
+            {
+                "fixture": rec["fixture"],
+                "evaluator": rec["evaluator"],
+                "backend": rec["backend"],
+                "max_relative_error": max(arr["max_relative_error"] for arr in rec["arrays"]),
+                "balance_residual": rec["invariants"][0]["max_abs_error"],
+                "balance_passed": rec["invariants"][0]["passed"],
+                "ok": rec["ok"],
+            }
+            for rec in report["fixtures"]
+        ]
+        return {"ok": report["ok"], "records": records}
+
+    results = {f"{lib} {prec}": run(correct, lib, prec) for lib in converters for prec in configs}
+    wrong = run(transposed, "NumPy", "float64")
+    for name, result in results.items():
+        assert result["ok"], name
+        assert len(result["records"]) == 2 * len(states), name
+    assert not wrong["ok"]
+    assert all(rec["balance_passed"] for rec in wrong["records"])
+    assert min(rec["max_relative_error"] for rec in wrong["records"]) > 1e-2
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.4), layout="constrained")
+    libraries = list(converters)
+    floor = 1e-17
+    for x, library in enumerate(libraries):
+        for off, precision, color in ((-0.17, "float64", TEAL), (0.17, "float32", RED)):
+            records = results[f"{library} {precision}"]["records"]
+            spread = np.linspace(-0.1, 0.1, len(records))
+            for k, rec in enumerate(records):
+                axes[0].plot(
+                    x + off + spread[k], max(rec["max_relative_error"], floor), "o", color=color,
+                    mfc="white" if precision == "float64" else color, ms=6,
+                    label=precision if (x == 0 and k == 0) else None,
+                )
+    for dtype, color, ls, label in (
+        (np.float64, TEAL, ":", "Machine epsilon, float64"),
+        (np.float32, RED, "-.", "Machine epsilon, float32"),
+    ):
+        axes[0].axhline(np.finfo(dtype).eps, color=color, ls=ls, lw=1.4, label=label)
+    axes[0].set_yscale("log")
+    axes[0].set(
+        xticks=range(len(libraries)), xticklabels=libraries, ylim=(floor / 2, 1e-3),
+        ylabel="Largest relative disagreement",
+    )
+    axes[0].legend(ncol=2, loc="upper center", bbox_to_anchor=(0.5, -0.14), fontsize=10)
+
+    checks = [("balance_residual", "Population\nbalance", 1e-9), ("max_relative_error", "Independent\nequations", 1e-7)]
+    w = 0.36
+    for off, label, color, hatch, source in (
+        (-w / 2, "Contact matrix as written", TEAL, None, results["NumPy float64"]),
+        (w / 2, "Contact matrix transposed", RED, "//", wrong),
+    ):
+        vals = [max(max(rec[key] for rec in source["records"]), floor) for key, _, _ in checks]
+        axes[1].bar(np.arange(len(checks)) + off, vals, w, color=color, hatch=hatch, edgecolor="white", label=label)
+    for x, (_, _, tol) in enumerate(checks):
+        axes[1].plot([x - 0.45, x + 0.45], [tol, tol], color=CHARCOAL, ls="--", lw=1.4)
+    axes[1].plot([], [], color=CHARCOAL, ls="--", lw=1.4, label="Pass threshold")
+    axes[1].set_yscale("log")
+    axes[1].set(
+        xticks=range(len(checks)), xticklabels=[name for _, name, _ in checks], ylim=(floor / 2, 1e2),
+        ylabel="Largest check value",
+    )
+    axes[1].legend(ncol=1, loc="upper center", bbox_to_anchor=(0.5, -0.24), fontsize=10)
+    letter_panels(axes)
+    export(fig, "stack_qualification")
+    return {
+        "spec": structured_spec("C[age:s,age]"),
+        "transposed_contact": "C[age,age:s]",
+        "params": QUAL_PARAMS,
+        "C": QUAL_C.tolist(),
+        "M": movement.tolist(),
+        "states": {k: [np.asarray(v).tolist() for v in arrays] for k, arrays in states.items()},
+        "tolerances": {
+            prec: {"rtol": cfg.rtol, "atol": cfg.atol, "balance_atol": atol}
+            for prec, (cfg, atol) in configs.items()
+        },
+        "results": results,
+        "transposed_numpy_float64": wrong,
+    }
+
+
 FIGURES = [
     "stack_backend_parity",
     "stack_batched_ensemble",
@@ -784,6 +991,7 @@ FIGURES = [
     "stack_spec_to_ssa",
     "stack_spatial_convergence",
     "stack_steady_states",
+    "stack_qualification",
 ]
 
 
@@ -808,6 +1016,7 @@ def generate(output):
         "spec_to_ssa": deterministic_and_stochastic(),
         "spatial_convergence": spatial_convergence(),
         "steady_states": steady_state_branches(),
+        "qualification": qualification_report(),
         "machine": {
             "platform": platform.platform(),
             "python": platform.python_version(),
@@ -881,10 +1090,18 @@ def check():
     close(("steady_states", "lower"), atol=1e-8)
     close(("steady_states", "upper_converged"), exact=True)
     close(("steady_states", "lower_converged"), exact=True)
+    for name, result in fresh["qualification"]["results"].items():
+        close(("qualification", "results", name, "ok"), exact=True)
+        atol = 1e-12 if name.endswith("float64") else 1e-5
+        for k, rec in enumerate(result["records"]):
+            for field in ("max_relative_error", "balance_residual"):
+                close(("qualification", "results", name, "records", k, field), rtol=0, atol=atol)
+    for k, _ in enumerate(fresh["qualification"]["transposed_numpy_float64"]["records"]):
+        close(("qualification", "transposed_numpy_float64", "records", k, "max_relative_error"), rtol=1e-9)
     print(
         f"Verified {len(manifest['files_sha256'])} stack artifacts; recomputed and compared "
         "trajectories, errors, ensemble grid and quantiles, gradient curve and finite differences, "
-        "SSA path and count hashes, spatial errors and steady-state branches"
+        "SSA path and count hashes, spatial errors, steady-state branches and qualification reports"
     )
 
 

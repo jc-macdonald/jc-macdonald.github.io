@@ -9,7 +9,7 @@ user_agent = "Mozilla/5.0 (compatible; research-site-link-checker)"
 # These publishers reject automated landing-page requests (403). Check each
 # exact DOI's registration instead; new/misspelled DOIs still fail normally.
 remap = [
-  '^https://doi\.org/(10\.1086/730703|10\.1098/rsos\.210227)$ https://api.crossref.org/works/$1',
+  '^https://doi\.org/(10\.1086/730703|10\.1098/rsos\.210227|10\.1093/oxfordjournals\.molbev\.a004030)$ https://api.crossref.org/works/$1',
 ]
 # Exact profile/landing pages require authentication or block automated clients.
 # Review manually when changing these targets; never exempt entire hosts.

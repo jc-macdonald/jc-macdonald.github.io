@@ -22,6 +22,6 @@ Numerical consumers choose spatial discretization and time or event integration.
 
 {% include figure.liquid path="assets/img/research/stack/stack_backend_parity.svg" class="img-fluid rounded" zoomable=true alt="Two-panel synthetic chemostat example comparing trajectories with an adaptive reference and showing final errors under NumPy, JAX and PyTorch at two precisions." caption="One compiled specification under NumPy, JAX and PyTorch. The same method performs the same arithmetic in each namespace, so the error against an adaptive reference is bit-identical across array libraries at each precision in this run. Synthetic model, assumed parameters." %}
 
-[What this figure supports and its limits](/projects/#op-stack-design-and-verification-examples) · [Computed spatial example, inputs and checks](/software-examples/#spatial-diffusion)
+[What this figure supports and its limits](/software-examples/#op-stack-design-and-verification) · [Computed spatial example, inputs and checks](/software-examples/#spatial-diffusion)
 
 [Method diagram (SVG)](/assets/img/research/op_system_slide.svg) · [Vector PDF](/assets/img/research/op_system_slide.pdf) · [All figure sources and downloads](/figures/)

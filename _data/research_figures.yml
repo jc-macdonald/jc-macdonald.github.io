@@ -70,6 +70,12 @@ published_recomputations:
     description: The closed forms of Macdonald et al. (2021) for final size and peak outbreak size, the closed form at each of the 55 state and territorial jurisdictions' published parameters, and the model solved for 400 days with each jurisdiction's published initial infections and fatigue rate.
     width: 720
     height: 403
+  - name: ehs_delta_scores
+    title: Tree-likeness of three cultural classes
+    alt: Two panels showing per-culture delta scores for religion, social organisation and subsistence, recomputed from released distance matrices, and the recomputed scores against the released SplitsTree output.
+    description: δ-scores of Macdonald et al. (2024) recomputed from the released Austronesian cultural distance matrices; class means are 0.32, 0.25 and 0.22, as in the paper, and every culture agrees with the released SplitsTree output.
+    width: 720
+    height: 331
 illustrations:
   - name: optimal_design
     title: Observation-design tradeoffs
@@ -77,16 +83,6 @@ illustrations:
   - name: structural_fidelity_comparison
     title: Constraint checks for predictions
     description: Two constructed prevalence curves compared with a stated upper bound over the plotted horizon.
-model_computations:
-  - name: siwr_reservoir_speed
-    title: One reproduction number, two transmission routes
-    description: Epidemic curves at a fixed reproduction number for three route splits, under a slow and a fast environmental reservoir. Assumed parameters.
-  - name: record_type_precision
-    title: Growth-rate precision from two kinds of record
-    description: Standard error of the growth rate from an environmental signal and from reported counts as the record lengthens. Assumed values, checked by simulation.
-  - name: rk4_known_solution
-    title: Truncation and round-off against a known solution
-    description: Fixed-step Runge-Kutta error against a closed-form solution in float32 and float64, showing the truncation slope and the round-off floor.
 stack:
   - name: stack_backend_parity
     title: One compiled model, three array libraries
@@ -124,3 +120,16 @@ stack:
     description: Pseudo-transient steady-state solves mapped over 121 parameter values recover both stable branches of a bistable cubic; converged states lie within one millionth of the polynomial roots.
     width: 720
     height: 442
+  - name: stack_qualification
+    title: A compiled model checked against independent equations
+    alt: Two-panel check of an age-by-place model against independently written equations under NumPy, JAX and PyTorch, and a transposed contact matrix that passes a balance check but fails the comparison.
+    description: OP System's qualification report on an age-by-place model under three array libraries and two precisions; a copy with its contact matrix indexed the wrong way round conserves every total but fails the comparison with independently written equations.
+    width: 720
+    height: 317
+operational:
+  - name: flu_scenario_projections
+    title: ACCIDDA's 2025–26 influenza scenario projections
+    alt: Two panels showing projected weekly United States influenza hospitalizations under three vaccination scenarios and season hospitalizations averted relative to no vaccination.
+    description: Plotted from ACCIDDA's public submission to Round 1 of the 2025–26 Flu Scenario Modeling Hub. Scenario projections from one team's model, not forecasts, not the hub ensemble and not an evaluation against observed data.
+    width: 720
+    height: 317

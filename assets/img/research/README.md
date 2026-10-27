@@ -6,9 +6,9 @@ and a commit-pinned public op_infer calibration fixture. They retain numerical
 inputs, source identity and verification records.
 
 The website uses SVG exports. Ten architecture/method schematics have editable
-TikZ sources in [`tikz/`](tikz/); six numerical figures (two constructed
-illustrations, one computation from a published model and three small model
-computations) use [`gen_research_figures.py`](gen_research_figures.py).
+TikZ sources in [`tikz/`](tikz/); three numerical figures (two constructed
+illustrations and one computation from a published model) use
+[`gen_research_figures.py`](gen_research_figures.py).
 Figures carry axis labels and legends only; the setting, assumptions and
 attribution belong in the page caption beside the figure. Every figure also has a
 vector PDF for papers/slides and a PNG at its original URL for compatibility.
@@ -89,25 +89,16 @@ claims aligned with the linked package capability guides and page text:
 - `op_infer_normal_sbc` is a public synthetic software fixture imported from an
   exact op_infer commit. Its 64-replicate SBC bank is explicitly underpowered;
   the plot is not evidence of calibration or an application result.
+- `npzd_hysteresis` recomputes the rescaled NPZD model of Macdonald and
+  Gulbudak (2023) with the paper's parameters. On 26 October 2026 these were
+  checked against the paper's public MATLAB code
+  ([NPZBifurcationAndBlooms](https://github.com/jc-macdonald/NPZBifurcationAndBlooms),
+  `NewModel/BifurcationDiagramsNewModel.m`). Every shared parameter value and
+  each right-hand-side term agree, and that code's zooplankton persistence
+  formula gives the threshold 2.4036 at a half-saturation of 10, as plotted.
 - `optimal_design` uses synthetic candidate costs `[1, 2.1, 3, 3.7, 5.4]` and
   utilities `[0.28, 0.45, 0.43, 0.72, 0.80]`. These are illustrative inputs.
   Design C is dominated; D maximizes utility under the declared cost limit of 4.
-- `siwr_reservoir_speed` recomputes the fast-reservoir limit of the
-  susceptible-infectious-reservoir model (Tien and Earn 2010; Eisenberg,
-  Robertson and Tien 2013) with assumed parameters: at fixed R0 the route
-  split changes the epidemic curve only when the reservoir decays slowly. No
-  inference is performed.
-- `record_type_precision` compares the standard error of a growth-rate
-  estimate from a log-linear environmental signal (ordinary least squares,
-  checked by simulation) and from Poisson counts (large-sample
-  Poisson-regression variance) as the record lengthens. It is an illustrative
-  calculation from standard estimator theory, not a published result; the
-  caption must say so. Detection time is not compared.
-- `rk4_known_solution` runs fixed-step RK4 on logistic growth in float32 and
-  float64 and plots the error against the closed-form solution: slope minus
-  four from truncation, then a round-off floor. It is plain NumPy and makes no
-  claim about any package; it illustrates checking against a known solution
-  (Roache 2002) rather than against another solver.
 - `structural_fidelity_comparison` constructs two sigmoid trajectories against
   an upper prevalence bound over the plotted horizon. A curve remaining below
   the bound on this interval does not establish how it was constructed or how

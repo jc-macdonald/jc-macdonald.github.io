@@ -48,6 +48,8 @@ STRAIN_STYLE = {
     "SAT2": (TEAL, "--", "s"),
     "SAT3": (GOLD, "-.", "^"),
 }
+# Display names follow Macdonald et al. (2024); the released tables use SAT1, SAT2, SAT3.
+STRAIN_LABELS = {"SAT1": "SAT-1", "SAT2": "SAT-2", "SAT3": "SAT-3"}
 SVG_NS = "http://www.w3.org/2000/svg"
 ET.register_namespace("", SVG_NS)
 ET.register_namespace("xlink", "http://www.w3.org/1999/xlink")
@@ -71,14 +73,14 @@ plt.rcParams.update(
 DESCRIPTIONS = {
     "fmdv_within_host": (
         "Within-host foot-and-mouth disease virus dynamics by strain, recomputed",
-        "Panel a: log10 viral load over 30 days for SAT1, SAT2 and SAT3, recomputed from the "
-        "published within-host model at each strain's median parameters; SAT1 peaks highest "
-        "and earliest, SAT2 lowest, SAT3 latest. Panel b: the adaptive immune response over the "
-        "same period; in this median-parameter simulation SAT1 rises first, SAT2 next, and SAT3 "
+        "Panel a: log10 viral load over 30 days for SAT-1, SAT-2 and SAT-3, recomputed from the "
+        "published within-host model at each strain's median parameters; SAT-1 peaks highest "
+        "and earliest, SAT-2 lowest, SAT-3 latest. Panel b: the adaptive immune response over the "
+        "same period; in this median-parameter simulation SAT-1 rises first, SAT-2 next, and SAT-3 "
         "rises last to the lowest plateau. "
         "Panel c: the strain-level transmission rate against the median host replication rate, "
         "with the host range as a horizontal bar, for the three strains; both increase from "
-        "SAT3 to SAT2 to SAT1. Panel d: per-host infectious period against adaptive activation "
+        "SAT-3 to SAT-2 to SAT-1. Panel d: per-host infectious period against adaptive activation "
         "rate from the paper's host table, decreasing with activation rate.",
     ),
     "covid_lockdown_factor": (
@@ -91,6 +93,14 @@ DESCRIPTIONS = {
         "published initial infections with its published fatigue rate; the filled marker is never "
         "below the open one. Triangles identify fatigue half-lives under 15 days. Panel b: the "
         "same for peak outbreak size, the maximum of I over N.",
+    ),
+    "ehs_delta_scores": (
+        "Tree-likeness of three Austronesian cultural classes, recomputed",
+        "Panel a: per-culture delta scores, recomputed from the released cultural distance "
+        "matrices, for religion, social organisation and subsistence, shown as box plots with "
+        "the individual cultures and a bar at each class mean; religion has the highest scores "
+        "and subsistence the lowest. Panel b: the recomputed delta score of each culture against "
+        "the SplitsTree output released with the paper; the points lie on the line of equality.",
     ),
 }
 
@@ -211,8 +221,8 @@ def fmdv_within_host():
     fig, axes = plt.subplots(2, 2, figsize=(10, 8.4), layout="constrained")
     for strain in strains:
         color, ls, marker = STRAIN_STYLE[strain]
-        axes[0, 0].plot(times, curves[strain][1], color=color, ls=ls, lw=2.2, label=strain)
-        axes[0, 1].plot(times, curves[strain][2], color=color, ls=ls, lw=2.2, label=strain)
+        axes[0, 0].plot(times, curves[strain][1], color=color, ls=ls, lw=2.2, label=STRAIN_LABELS[strain])
+        axes[0, 1].plot(times, curves[strain][2], color=color, ls=ls, lw=2.2, label=STRAIN_LABELS[strain])
     axes[0, 0].set(xlabel="Days since infection", ylabel="Virus, log$_{10}$ copies per mL", ylim=(0, 9))
     axes[0, 1].set(xlabel="Days since infection", ylabel="Adaptive response, log$_{10}$ titre")
     axes[0, 0].legend(title="Strain, median parameters", loc="upper right", fontsize=11, title_fontsize=11)
@@ -220,9 +230,9 @@ def fmdv_within_host():
         color, _, marker = STRAIN_STYLE[strain]
         lo, hi = strain_r_range[strain]
         axes[1, 0].plot([lo, hi], [strain_beta[strain]] * 2, color=color, lw=1.6, alpha=0.7)
-        axes[1, 0].plot(strain_r[strain], strain_beta[strain], marker, color=color, ms=10, mec="white", label=strain)
+        axes[1, 0].plot(strain_r[strain], strain_beta[strain], marker, color=color, ms=10, mec="white", label=STRAIN_LABELS[strain])
         sel = host_strain == strain
-        axes[1, 1].plot(activation[sel], infectious[sel], marker, color=color, ms=8, mec="white", label=strain)
+        axes[1, 1].plot(activation[sel], infectious[sel], marker, color=color, ms=8, mec="white", label=STRAIN_LABELS[strain])
     axes[1, 0].set(
         xlabel="Replication rate $r$ (per day), host median and range",
         ylabel="Transmission rate $\\beta$ (per day)",
@@ -375,11 +385,122 @@ def covid_lockdown_factor():
     }
 
 
-FIGURES = ["fmdv_within_host", "covid_lockdown_factor"]
+# --------------------------------------------------------------------------- EHS
+# Macdonald, Blanco-Portillo, Feldman and Ram 2024, Evolutionary Human Sciences 6:e51,
+# doi 10.1017/ehs.2024.45. Delta scores (Holland et al. 2002) of the pairwise cultural
+# distance matrices released in yoavram-lab/Cultural-Clusters-and-Networks (dist/*.dist,
+# commit eee7c25). For a quartet whose three pairings have distance sums
+# s1 <= s2 <= s3, delta = (s3 - s2)/(s3 - s1), and zero when s3 = s1. A culture's
+# score is the mean over all quartets that contain it. The SplitsTree output released
+# in the same repository (csv/delta_*.csv) is the independent check.
+EHS_CLASSES = (
+    ("Religion", "rel", RED, "o"),
+    ("Social organisation", "kin", BLUE, "s"),
+    ("Subsistence", "sub", GOLD, "^"),
+)
+EHS_PAPER_MEANS = {"rel": 0.32, "kin": 0.25, "sub": 0.22}  # Figure 2a of the paper
+
+
+def read_distances(name):
+    lines = (HERE / name).read_text().split("\n")
+    n = int(lines[0])
+    names = [line.split()[0] for line in lines[1 : n + 1]]
+    matrix = np.array([[float(x) for x in line.split()[1:]] for line in lines[1 : n + 1]])
+    assert matrix.shape == (n, n) and np.allclose(matrix, matrix.T)
+    return names, matrix
+
+
+def quartet_delta(distances):
+    """Mean delta score over all quartets containing each taxon."""
+    n = len(distances)
+    total, count = np.zeros(n), np.zeros(n)
+    k_all, l_all = np.triu_indices(n, 1)
+    for i in range(n - 3):
+        for j in range(i + 1, n - 2):
+            keep = k_all > j
+            k, l = k_all[keep], l_all[keep]
+            sums = np.sort(
+                np.stack(
+                    [
+                        distances[i, j] + distances[k, l],
+                        distances[i, k] + distances[j, l],
+                        distances[i, l] + distances[j, k],
+                    ]
+                ),
+                axis=0,
+            )
+            spread = sums[2] - sums[0]
+            delta = np.where(spread > 0, (sums[2] - sums[1]) / np.where(spread > 0, spread, 1.0), 0.0)
+            for index in (i, j):
+                total[index] += delta.sum()
+                count[index] += delta.size
+            for index in (k, l):
+                np.add.at(total, index, delta)
+                np.add.at(count, index, 1)
+    return total / count
+
+
+def ehs_delta_scores():
+    results = {}
+    for label, key, _, _ in EHS_CLASSES:
+        names, distances = read_distances(f"macdonald2024_ehs_{key}_distances.dist")
+        delta = quartet_delta(distances)
+        released = {
+            row["Taxon"]: float(row["Delta Score "])
+            for row in read_csv(f"macdonald2024_ehs_{key}_delta_splitstree.csv")
+        }
+        assert set(released) == set(names), key
+        released_aligned = np.array([released[name] for name in names])
+        assert np.max(np.abs(delta - released_aligned)) < 1e-3, key
+        assert round(float(delta.mean()), 2) == EHS_PAPER_MEANS[key], (key, delta.mean())
+        results[key] = {
+            "label": label,
+            "cultures": names,
+            "delta": delta.tolist(),
+            "delta_splitstree": released_aligned.tolist(),
+            "mean": float(delta.mean()),
+            "max_abs_difference_from_splitstree": float(np.max(np.abs(delta - released_aligned))),
+        }
+    assert results["rel"]["mean"] > results["kin"]["mean"] > results["sub"]["mean"]
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.6), layout="constrained")
+    rng = np.random.default_rng(20241206)
+    for x, (label, key, color, marker) in enumerate(EHS_CLASSES):
+        values = np.array(results[key]["delta"])
+        axes[0].boxplot(
+            values, positions=[x], widths=0.55, showfliers=False,
+            medianprops={"color": CHARCOAL}, boxprops={"color": GREY}, whiskerprops={"color": GREY},
+            capprops={"color": GREY},
+        )
+        axes[0].plot(x + rng.uniform(-0.2, 0.2, values.size), values, marker, color=color, ms=4, alpha=0.55)
+        axes[0].plot([x - 0.3, x + 0.3], [values.mean()] * 2, color=color, lw=3)
+        axes[1].plot(results[key]["delta_splitstree"], values, marker, color=color, ms=5, alpha=0.7, label=label)
+    axes[0].plot([], [], color=GREY, lw=3, label="Class mean")
+    axes[0].set(
+        xticks=range(len(EHS_CLASSES)), xticklabels=[label.replace(" ", "\n") for label, *_ in EHS_CLASSES],
+        ylabel="$\\delta$-score per culture",
+    )
+    axes[0].legend(loc="upper right", fontsize=11)
+    lo = min(min(r["delta"]) for r in results.values()) - 0.02
+    hi = max(max(r["delta"]) for r in results.values()) + 0.02
+    axes[1].plot([lo, hi], [lo, hi], color=CHARCOAL, ls=":", lw=1.4, label="Equality")
+    axes[1].set(
+        xlim=(lo, hi), ylim=(lo, hi), aspect="equal",
+        xlabel="$\\delta$-score, released SplitsTree output", ylabel="$\\delta$-score, recomputed",
+    )
+    axes[1].legend(loc="upper left", fontsize=11)
+    letter_panels(axes)
+    export(fig, "ehs_delta_scores")
+    return results
+
+
+FIGURES = ["fmdv_within_host", "covid_lockdown_factor", "ehs_delta_scores"]
 INPUTS = [
     "macdonald2024_amnat_strain_means.csv",
     "macdonald2024_amnat_host_table.csv",
     "macdonald2021_rsos_table2.csv",
+    *(f"macdonald2024_ehs_{key}_distances.dist" for _, key, _, _ in EHS_CLASSES),
+    *(f"macdonald2024_ehs_{key}_delta_splitstree.csv" for _, key, _, _ in EHS_CLASSES),
 ]
 
 
@@ -390,7 +511,11 @@ def digest(path):
 def generate(output):
     global OUTPUT
     OUTPUT = Path(output)
-    data = {"fmdv_within_host": fmdv_within_host(), "covid_lockdown_factor": covid_lockdown_factor()}
+    data = {
+        "fmdv_within_host": fmdv_within_host(),
+        "covid_lockdown_factor": covid_lockdown_factor(),
+        "ehs_delta_scores": ehs_delta_scores(),
+    }
     (OUTPUT / "published_data.json").write_text(json.dumps(data, indent=1) + "\n")
     files = {}
     for name in FIGURES:
@@ -426,6 +551,11 @@ def check():
         np.testing.assert_allclose(
             [p[key] for p in fresh["covid_lockdown_factor"]["jurisdictions"]],
             [p[key] for p in committed["covid_lockdown_factor"]["jurisdictions"]], rtol=1e-8,
+        )
+    for _, key, _, _ in EHS_CLASSES:
+        assert fresh["ehs_delta_scores"][key]["cultures"] == committed["ehs_delta_scores"][key]["cultures"]
+        np.testing.assert_allclose(
+            fresh["ehs_delta_scores"][key]["delta"], committed["ehs_delta_scores"][key]["delta"], rtol=1e-12
         )
     print(f"Verified {len(manifest['files_sha256'])} published-model artifacts and recomputed references")
 
