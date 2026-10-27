@@ -8,7 +8,7 @@ img_alt: Independent stochastic transfer paths with a pointwise 5th–95th perce
 importance: 2
 category: "Released software"
 github: https://github.com/ACCIDDA/op_engine
-last_modified_at: 2026-10-23
+last_modified_at: 2026-10-26
 ---
 
 **OP Engine** is a general-purpose numerical core for models that change over time and space, including systems with random events. It supports partial differential equations (PDEs) with spatial or trait structure, nonlocal interactions, compartmental models, ordinary differential equations (ODEs) and stochastic reaction networks. These interfaces are not specific to public health; current examples span epidemiological and biogeochemical systems, and other domains can supply the same model contracts.
@@ -22,8 +22,8 @@ Its methods include explicit, implicit-explicit (IMEX) and implicit integration,
 
 Supported backends and derivatives depend on the method and precision; {% assign qualification_docs = release.docs_url | replace: 'capabilities/', 'backend-qualification/' %}see the [qualification matrix]({{ qualification_docs }}). Spatial and temporal accuracy require separate checks. Derivatives through frozen-schedule replay hold step-size decisions fixed and are conditional on the recorded mesh.
 
-{% include figure.liquid path="assets/img/research/computed/stochastic_ensemble.svg" class="img-fluid rounded" zoomable=true alt="512 independent exact stochastic transfer simulations, their empirical mean and pointwise 5th–95th percentile range, and the final distribution alongside analytic mean and binomial references. Synthetic demonstration." caption="512 independent stochastic transfer runs, with analytic mean and final-distribution references. The shaded range describes variation across runs." %}
+{% include figure.liquid path="assets/img/research/stack/stack_spec_to_ssa.svg" class="img-fluid rounded" zoomable=true alt="Two panels: infectious hosts over time in a 400-host model with waning immunity, showing a percentile band across 256 exact stochastic paths, their median, and the deterministic solution of the same specification; and the mean cumulative infection, recovery and waning events per path from retained firing counts." caption="One transition specification run as an ODE and as 256 exact stochastic paths with retained event counts. Population is conserved and the state equals initial state plus stoichiometry times counts on every path. Illustrative parameters." %}
 
-[Computed example, inputs and checks](/software-examples/#stochastic-transfers)
+[What this figure supports and its limits](/software-examples/#op-stack-design-and-verification) · [Computed stochastic example, inputs and checks](/software-examples/#stochastic-transfers)
 
 [Method diagram (SVG)](/assets/img/research/op_engine_slide.svg) · [Vector PDF](/assets/img/research/op_engine_slide.pdf) · [All figure sources and downloads](/figures/)

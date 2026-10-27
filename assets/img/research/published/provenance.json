@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "source_sha256": "6255927e09b903d8cfe7d64817c2e0f7b159156a50bb4b625af98d29527a0ee7",
+  "inputs_sha256": {
+    "macdonald2024_amnat_strain_means.csv": "d1ab5f00a568fb134acda65ffc1bddf3645f0c78f78098c465617ef22b84405f",
+    "macdonald2024_amnat_host_table.csv": "9c10c20a434c5e5b186f7614b46d3e1956d345bbdcd3c751a02db84c852533a9",
+    "macdonald2021_rsos_table2.csv": "5178d83c13b20d23f61fbfa0db4a0488581db444d40e049bd2e1aa60fd3d9583",
+    "macdonald2024_ehs_rel_distances.dist": "cad38e7c32431edd744aaba9c92b541859be8c7288bc9cea5275ae9d6d8525aa",
+    "macdonald2024_ehs_kin_distances.dist": "094200c27b039ad67535613107a4e73e203805e2611219c256b9f9e4a9298cfd",
+    "macdonald2024_ehs_sub_distances.dist": "52d463fe6e0867c403d76cee767e05f3c7eba28b4468147e21431e66f880878a",
+    "macdonald2024_ehs_rel_delta_splitstree.csv": "c9e54981886f7a16a356b815d5347220a61623673e5d208cee602955310b4fd4",
+    "macdonald2024_ehs_kin_delta_splitstree.csv": "0a38b8e4a102f8b947c98b9daeaec73bcf56b37c9f42142b3e2fa384253c3283",
+    "macdonald2024_ehs_sub_delta_splitstree.csv": "1542967477d431dc2063c682c7f913e5fb89a558f4d9a530ef0c10561635f825"
+  },
+  "files_sha256": {
+    "fmdv_within_host.svg": "b114e80a81c6e78c32666479421f5304a0ba5a0238514400f2ee0a0679a4ce83",
+    "fmdv_within_host.pdf": "e1a0100164e3883dd02c3980b02ca0286e9984ff6e755df5c57ed7c60e490dcc",
+    "fmdv_within_host.png": "ee9a41539b3199d50e534ec220af68e4a5c58742a4aa65553fc8943e14ba006b",
+    "covid_lockdown_factor.svg": "c93d80472b97343eea3b1d8c924d91694317768fed37568f2a948c19720211e1",
+    "covid_lockdown_factor.pdf": "ca95e9e8ef0b672b3402d3c37e8581d1f5bc94a6e8fab236383a5901bf3194f9",
+    "covid_lockdown_factor.png": "f21e7d64c59a131e7e5ae65f9d2ec0bb866cf9b6204c8ec8e526ea22d2bf9599",
+    "ehs_delta_scores.svg": "2c087783d623dbbcb06f08e38c0e5966064d048231dccfa75fec62cf3f660615",
+    "ehs_delta_scores.pdf": "ff0603beb70efbd4be94add95fc5062a5ef6b9875f86eec9e3be42cec0cd7f27",
+    "ehs_delta_scores.png": "37256584e8614f459768f8c1b4c4bba205fe50409b7f4bd7a230ae32215e409e",
+    "published_data.json": "3730e7910430ff842a787e420ece0ca5e95bfd2e75242c3d33f2f676fdb6fc3f"
+  }
+}

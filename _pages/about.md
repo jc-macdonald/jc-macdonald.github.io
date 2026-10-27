@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: Assistant Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
-last_modified_at: 2026-10-24
+last_modified_at: 2026-10-26
 
 profile:
   align: right
@@ -47,9 +47,19 @@ Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, wor
 
 My research asks three questions, studied in systems that include foot-and-mouth disease in African buffalo, Crimean-Congo hemorrhagic fever in livestock and wildlife, and human cultural transmission. [The research page](/projects/) describes each system.
 
-- **How do processes within hosts shape transmission and persistence?** My buffalo studies link virus growth and immune response to transmission between animals.
+- **How do processes within hosts shape transmission and persistence?** My buffalo studies link virus growth and immune response to transmission between animals for three strains of the SAT serotypes of foot-and-mouth disease virus. SAT-1 was reported for the first time in nine countries from Egypt to Mongolia in 2025 and 2026 ([WOAH](https://www.woah.org/en/article/the-spread-of-fmd-to-new-areas-is-concerning-but-consequences-could-be-worse/)).
 - **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction; the published work so far concerns cultural variation across geography and language, and the rest is collaborative work in progress.
 - **How should we measure, vaccinate and decide under uncertainty?** I address this through surveillance, vaccination and scenario modeling.
+
+## Currently
+
+As of October 2026:
+
+- Collaborative modeling of Crimean-Congo hemorrhagic fever transmission between livestock and wildlife, and of the measurements that would inform its surveillance.
+- Development and release of the [OP stack](/projects/#how-the-op-stack-compares) for model specification, simulation and replicated study comparison.
+- Scenario modeling for respiratory viruses with ACCIDDA ([modeling in practice](/operational-modeling/)).
+
+I welcome enquiries from field, laboratory and public-health partners about study and surveillance design, and about applying the OP stack to a new system. I work mainly in Python (NumPy, JAX, PyTorch) and Julia.
 
 ## Selected publications
 
@@ -61,15 +71,15 @@ My research asks three questions, studied in systems that include foot-and-mouth
 
 My current methods research asks how measurements and scientific assumptions affect what we can learn about a system.
 
-- **[Structural scores](/projects/current_analyses/#structural-scores-and-scientific-prediction).** Reporting whether predictions satisfy stated scientific constraints, including checks made before the predicted outcome is observed.
 - **[Inference and calibration](/projects/inference_calibration/).** Estimating unknown model quantities and assessing fitting procedures with simulated data. The op_infer source is public; application materials remain private. Its current development and release status is maintained on the project page.
 - **[Incomplete data and latent structure](/projects/pp_eigentest/).** Investigating how many patterns can be distinguished from noise in incomplete data, building on [VBPCApy](/projects/vbpca_py/) and a [2024 preprint](https://arxiv.org/abs/2409.12129).
+- **[Constraint checks for predictions](/projects/current_analyses/#constraint-checks-for-predictions).** Reporting whether a prediction satisfies stated scientific constraints. This is now being folded into the validation layer of the software rather than developed as a separate method.
 
 Current [public- and global-health application studies](/projects/current_analyses/#application-studies) address dengue within-host dynamics, observation noise, outbreak vaccination and Crimean-Congo hemorrhagic fever surveillance. These studies apply the methods above; they do not define the methods' scope. The summaries describe ongoing questions; public papers and artifacts are linked as they become available.
 
 ## Software
 
-I build reusable, cross-domain tools spanning model specification, simulation, inference, calibration and validation, observation and experimental design, and comparison of decisions under scientific and resource constraints. Projects use the pieces they need. OP System and OP Engine support spatial fields, nonlocal interactions, compartmental dynamics and stochastic reactions.
+I build reusable, cross-domain tools spanning model specification, simulation, inference, calibration and validation, observation and experimental design, and comparison of decisions under scientific and resource constraints. Projects use the pieces they need. OP System and OP Engine support spatial fields, nonlocal interactions, compartmental dynamics and stochastic reactions. The stack brings to Python the separation of model specification from numerical method that odin2 and dust2 provide in R and that Catalyst provides in Julia. A specification is compiled once, and the array library (NumPy, JAX or PyTorch) is chosen when the model is called; model authors can check a compiled model against equations they write independently. The same specifications run in operational scenario projections and in research analyses ([how the stack compares](/projects/#how-the-op-stack-compares)).
 
 <div class="research-preview-grid">
   <figure>

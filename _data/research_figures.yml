@@ -57,6 +57,25 @@ published_models:
   - name: npzd_hysteresis
     title: Forward hysteresis in an NPZD model
     description: Equilibria of the rescaled nutrient-phytoplankton-zooplankton-detritus (NPZD) model of Macdonald and Gulbudak (2023), recomputed with parameters from the paper, with two simulations in the bistable range that differ only in initial zooplankton and reach different stable states.
+published_recomputations:
+  - name: fmdv_within_host
+    title: Within-host FMDV dynamics by strain
+    alt: Four panels recomputed from the published within-host foot-and-mouth disease model, showing viral load and adaptive response by strain and the links to transmission rate and infectious period.
+    description: The within-host model of Macdonald et al. (2024) at each strain's median released parameters, with the strain transmission rate against replication rate and per-host infectious period against adaptive activation rate from the released host table.
+    width: 720
+    height: 605
+  - name: covid_lockdown_factor
+    title: Lockdown factor and outbreak size
+    alt: Two panels on log axes showing the closed-form scaling of final size and peak with the lockdown rate factor, with each jurisdiction's closed form and fatigue-adjusted model outcome.
+    description: The closed forms of Macdonald et al. (2021) for final size and peak outbreak size, the closed form at each of the 55 state and territorial jurisdictions' published parameters, and the model solved for 400 days with each jurisdiction's published initial infections and fatigue rate.
+    width: 720
+    height: 403
+  - name: ehs_delta_scores
+    title: Tree-likeness of three cultural classes
+    alt: Two panels showing per-culture delta scores for religion, social organisation and subsistence, recomputed from released distance matrices, and the recomputed scores against the released SplitsTree output.
+    description: δ-scores of Macdonald et al. (2024) recomputed from the released Austronesian cultural distance matrices; class means are 0.32, 0.25 and 0.22, as in the paper, and every culture agrees with the released SplitsTree output.
+    width: 720
+    height: 331
 illustrations:
   - name: optimal_design
     title: Observation-design tradeoffs
@@ -64,3 +83,53 @@ illustrations:
   - name: structural_fidelity_comparison
     title: Constraint checks for predictions
     description: Two constructed prevalence curves compared with a stated upper bound over the plotted horizon.
+stack:
+  - name: stack_backend_parity
+    title: One compiled model, three array libraries
+    alt: Two-panel synthetic chemostat example comparing trajectories with an adaptive reference and showing final errors under NumPy, JAX and PyTorch at two precisions.
+    description: A chemostat specification compiled once and integrated under NumPy, JAX and PyTorch in float64 and float32; the error against an adaptive reference agrees to the displayed digits across namespaces at each precision in this recorded run.
+    width: 720
+    height: 317
+  - name: stack_batched_ensemble
+    title: A parameter ensemble by vmap
+    alt: Two-panel synthetic chemostat ensemble showing a two-parameter grid of final producer values and the median and percentile band over time.
+    description: A 45 by 45 grid over two parameters evaluated by one vectorized call to the same compiled evaluator, with the ensemble band over time and a separately computed NumPy run at the nominal parameters.
+    width: 720
+    height: 317
+  - name: stack_gradient
+    title: A derivative through the solver
+    alt: Two-panel derivative check showing a model output with its local autodiff tangent, and finite-difference disagreement against step size.
+    description: A model output differentiated with respect to a parameter by autodiff through 400 fixed Runge-Kutta steps; central finite differences of the same discrete calculation approach the autodiff value with slope 2 before round-off.
+    width: 720
+    height: 317
+  - name: stack_spec_to_ssa
+    title: One specification, deterministic and exact stochastic draws
+    alt: Two-panel synthetic SIRS example comparing deterministic prevalence with 256 direct-SSA paths and showing mean cumulative event counts.
+    description: A susceptible-infectious-recovered model with waning run as an ODE and as 256 direct-SSA paths from one specification with a replicate axis the compiler verifies; population and event-count identities hold exactly on every path.
+    width: 720
+    height: 331
+  - name: stack_spatial_convergence
+    title: Spatial convergence to an analytic solution
+    alt: Two-panel heat-equation verification comparing a 16-interval finite-difference solution with the analytic solution and showing maximum error over five meshes.
+    description: A supplied finite-difference heat operator compiled as a named-axis contraction converges to the closed-form solution with fitted order 2.00 over five meshes.
+    width: 720
+    height: 317
+  - name: stack_steady_states
+    title: Equilibria by vectorized steady-state solves
+    alt: Cubic-model bifurcation diagram showing two stable branches from vectorized solves, the unstable branch from the polynomial roots, and the interval with two stable states.
+    description: Pseudo-transient steady-state solves mapped over 121 parameter values recover both stable branches of a bistable cubic; converged states lie within one millionth of the polynomial roots.
+    width: 720
+    height: 442
+  - name: stack_qualification
+    title: A compiled model checked against independent equations
+    alt: Two-panel check of an age-by-place model against independently written equations under NumPy, JAX and PyTorch, and a transposed contact matrix that passes a balance check but fails the comparison.
+    description: OP System's qualification report on an age-by-place model under three array libraries and two precisions; a copy with its contact matrix indexed the wrong way round conserves every total but fails the comparison with independently written equations.
+    width: 720
+    height: 317
+operational:
+  - name: flu_scenario_projections
+    title: ACCIDDA's 2025–26 influenza scenario projections
+    alt: Two panels showing projected weekly United States influenza hospitalizations under three vaccination scenarios and season hospitalizations averted relative to no vaccination.
+    description: Plotted from ACCIDDA's public submission to Round 1 of the 2025–26 Flu Scenario Modeling Hub. Scenario projections from one team's model, not forecasts, not the hub ensemble and not an evaluation against observed data.
+    width: 720
+    height: 317

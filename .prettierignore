@@ -23,3 +23,18 @@ assets/img/research/computed/provenance.json
 assets/img/research/computed/op_infer_normal_sbc/**
 assets/img/research/previews/*.svg
 assets/img/research/previews/provenance.json
+
+# OP stack demonstrations retain byte-level provenance; regenerate with Python.
+assets/img/research/stack/*.svg
+assets/img/research/stack/stack_data.json
+assets/img/research/stack/provenance.json
+
+# Published-model recomputations retain byte-level provenance; regenerate with Python.
+assets/img/research/published/*.svg
+assets/img/research/published/published_data.json
+assets/img/research/published/provenance.json
+
+# Operational projections retain byte-level provenance; regenerate with Python.
+assets/img/research/operational/*.svg
+assets/img/research/operational/operational_data.json
+assets/img/research/operational/provenance.json

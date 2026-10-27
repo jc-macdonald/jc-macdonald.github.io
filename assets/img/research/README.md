@@ -8,7 +8,9 @@ inputs, source identity and verification records.
 The website uses SVG exports. Ten architecture/method schematics have editable
 TikZ sources in [`tikz/`](tikz/); three numerical figures (two constructed
 illustrations and one computation from a published model) use
-[`gen_research_figures.py`](gen_research_figures.py). Every figure also has a
+[`gen_research_figures.py`](gen_research_figures.py).
+Figures carry axis labels and legends only; the setting, assumptions and
+attribution belong in the page caption beside the figure. Every figure also has a
 vector PDF for papers/slides and a PNG at its original URL for compatibility.
 The [figure gallery](https://jcmacdonald.dev/figures/) links the exports and sources.
 
@@ -87,6 +89,13 @@ claims aligned with the linked package capability guides and page text:
 - `op_infer_normal_sbc` is a public synthetic software fixture imported from an
   exact op_infer commit. Its 64-replicate SBC bank is explicitly underpowered;
   the plot is not evidence of calibration or an application result.
+- `npzd_hysteresis` recomputes the rescaled NPZD model of Macdonald and
+  Gulbudak (2023) with the paper's parameters. On 26 October 2026 these were
+  checked against the paper's public MATLAB code
+  ([NPZBifurcationAndBlooms](https://github.com/jc-macdonald/NPZBifurcationAndBlooms),
+  `NewModel/BifurcationDiagramsNewModel.m`). Every shared parameter value and
+  each right-hand-side term agree, and that code's zooplankton persistence
+  formula gives the threshold 2.4036 at a half-saturation of 10, as plotted.
 - `optimal_design` uses synthetic candidate costs `[1, 2.1, 3, 3.7, 5.4]` and
   utilities `[0.28, 0.45, 0.43, 0.72, 0.80]`. These are illustrative inputs.
   Design C is dominated; D maximizes utility under the declared cost limit of 4.

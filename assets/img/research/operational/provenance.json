@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "hub": {
+    "source_file": "model-output/ACCIDDA-FlepiMoP/2025-08-10-ACCIDDA-FlepiMoP.gz.parquet",
+    "source_sha256": "c2f029c6eb2a7a573e8dcfa4cf54036193018b8447fa8c1c11c986457d73004e"
+  },
+  "source_sha256": "41eb17fbe9e79cb36dad2af78286b9b6cda98b216d7eae740ac5942cba63f00b",
+  "inputs_sha256": {
+    "flu_2025_26_round1_us_weekly_quantiles.csv": "96eb703a2fb609207ba7ad328a6a0fb85122a93049efce84dfe2ba171b4a2114",
+    "flu_2025_26_round1_us_season_totals.csv": "029fa8e614a8c594cd64d9276d598c00300806221c6fddc590eed6b206e370b6"
+  },
+  "files_sha256": {
+    "flu_scenario_projections.svg": "9cd27bc69a28d2bb3f5092f33f229fc8278f550c7b100230ae53b90fddd68b9f",
+    "flu_scenario_projections.pdf": "9727556bec7547926f6184547156c693fe7c8fcea9898ddb7eb081ad8915c7b8",
+    "flu_scenario_projections.png": "aa16e14464a2f3baa7ff99550371f87dccb42050f8fa0058f3937e988e2aba4b",
+    "operational_data.json": "95c32f38e213835e1ee2f5583d560da2107ff5723bf6fa8222bfc0ca40434cc7"
+  }
+}
