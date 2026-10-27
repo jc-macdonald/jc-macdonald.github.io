@@ -8,7 +8,7 @@ description: Computed examples, method diagrams and editable sources for researc
 nav: false
 ---
 
-The computed figures below use public synthetic data. Four use released
+The computed figures below use public synthetic data. Five use released
 software; the op_infer fixture is imported from a pinned public pre-alpha
 commit and does not imply a release. Each links to its assumptions, checks and
 full multi-panel version. The method diagrams, four published-model computations,

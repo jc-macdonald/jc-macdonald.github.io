@@ -5,12 +5,12 @@ title: Computed software examples
 permalink: /software-examples/
 description: Checked synthetic demonstrations from released packages and public pre-alpha op_infer.
 nav: false
-last_modified_at: 2026-10-26
+last_modified_at: 2026-10-27
 design_comparison: true
 ---
 
-The first four examples use released versions of OP System, OP Engine,
-trade-study and VBPCApy. The fifth is an imported, commit-pinned artifact from
+The first five examples use released versions of OP System, OP Engine,
+trade-study and VBPCApy. The sixth is an imported, commit-pinned artifact from
 public pre-alpha op_infer; it does not imply a package release. A final section
 shows design and verification examples for OP System and OP Engine.
 All data are synthetic. The plots show computations rather than findings from
@@ -28,6 +28,7 @@ an application study; their captions state the assumptions and what is checked.
   <a href="#stochastic-transfers">Stochastic transfers</a>
   <a href="#replicated-designs">Design comparison</a>
   <a href="#incomplete-data">Incomplete data</a>
+  <a href="#archetypes-from-incomplete-categorical-data">Archetypes</a>
   <a href="#inference-calibration">Inference calibration</a>
   <a href="#op-stack-design-and-verification">OP stack design and verification</a>
 </nav>
@@ -95,6 +96,31 @@ about 0.22 for this seeded example; the generating noise standard deviation is
 the rank and assessing uncertainty calibration require separate studies.
 
 [SVG](/assets/img/research/computed/incomplete_reconstruction.svg) · [PDF](/assets/img/research/computed/incomplete_reconstruction.pdf)
+
+## Archetypes from incomplete categorical data
+
+This example follows the steps of the
+[2024 cultural-transmission paper](/publications/#macdonald2024austronesian)
+on synthetic data. Each of 150 samples is a mixture of three archetypes, drawn
+from Dirichlet weights, and has 24 categorical variables with three levels;
+about 30% of the variables are unobserved. VBPCApy's
+`MissingAwareOneHotEncoder` codes each variable as indicator columns and leaves
+an unobserved variable missing rather than setting it to zero. A two-component
+VBPCA model is fitted to the observed indicators, and archetypal analysis
+(Mørup and Hansen 2012) is applied to its reconstruction.
+
+{% include figure.liquid path="assets/img/research/computed/archetype_recovery.svg" class="img-fluid rounded" zoomable=true alt="Three panels. The first shows the one-hot encoded data for 60 samples with unobserved variables marked. The second shows recovered archetype memberships in a triangle, coloured by each sample's dominant generating archetype. The third shows recovered against generating memberships, close to the line of equality." caption="Left: missing-aware one-hot encoding of the first 60 samples; unobserved variables are marked. Middle: archetype memberships recovered from the VBPCA reconstruction, in a triangle whose corners are the three archetypes. Right: recovered against generating memberships." %}
+
+The recovered memberships correlate with the generating memberships at 0.89,
+0.92 and 0.89 for the three archetypes, with mean absolute error 0.10. With
+every variable observed, the same analysis gives 0.94, 0.95 and 0.94, so the
+missing entries cost some precision. Recovery is also limited by drawing one
+level per variable. The numbers of components and archetypes are supplied;
+choosing them requires separate checks. The archetypal analysis is written in
+the script, because the `py_pcha` release used in the paper does not run under
+NumPy 2.
+
+[SVG](/assets/img/research/computed/archetype_recovery.svg) · [PDF](/assets/img/research/computed/archetype_recovery.pdf)
 
 ## Inference calibration
 
