@@ -18,5 +18,10 @@
     "name": "incomplete_reconstruction",
     "title": "VBPCA reconstruction from incomplete synthetic data",
     "description": "A synthetic two-pattern signal, noisy observed entries with unobserved cells in gray, and a VBPCA reconstruction. Held-out observations are excluded from fitting. This illustration does not establish rank selection or uncertainty calibration."
+  },
+  {
+    "name": "archetype_recovery",
+    "title": "Archetypes from incomplete categorical data with VBPCApy",
+    "description": "Synthetic categorical data generated from three archetypes, with 30 percent of entries unobserved. Panel a: the missing-aware one-hot encoding, with unobserved variables marked. Panel b: archetype memberships recovered from the VBPCA reconstruction, plotted in a triangle and coloured by each sample's dominant generating archetype. Panel c: recovered against generating memberships, close to the line of equality. Synthetic data; the component and archetype counts are supplied."
   }
 ]
