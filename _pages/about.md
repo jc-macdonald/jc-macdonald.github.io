@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-My overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. My established work addresses within- and between-host dynamics and cultural transmission, and landscape-scale questions are a developing direction. I build mechanistic models, inference methods and open research software for these questions and for decisions under uncertainty. Applications include infectious disease, public and global health and ecology. I also develop methods for incomplete multivariate data. Developing work includes scientific machine learning and the design of monitoring programs and studies with field and domain partners.
+My overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. My established work addresses multiscale infection dynamics, linking viral growth and immune responses within hosts to transmission between hosts, and cultural transmission. Landscape-scale questions are a developing direction. I build mechanistic models, inference methods and open research software for these questions and for decisions under uncertainty. Applications include infectious disease, public and global health and ecology. I also develop methods for incomplete multivariate data. Developing work includes scientific machine learning, the identifiability of models that couple biological scales, and the design of experiments, monitoring programs and studies with field, laboratory and domain partners.
 
 I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With the [Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA)](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on foot-and-mouth disease in African buffalo and Crimean-Congo hemorrhagic fever in livestock and wildlife, including transmission between species and surveillance design.
 
@@ -58,8 +58,9 @@ As of October 2026:
 - Collaborative modeling of Crimean-Congo hemorrhagic fever transmission between livestock and wildlife, and of the measurements that would inform its surveillance.
 - Development and release of the [OP stack](/projects/#how-the-op-stack-compares) for model specification, simulation and replicated study comparison.
 - Scenario modeling for respiratory viruses with ACCIDDA ([modeling in practice](/operational-modeling/)).
+- Multiscale immune systems modeling as a 2027 Scholar of the [Center of Excellence for Multiscale Immune Systems Modeling](https://immunescale.org/) at Duke University.
 
-I welcome enquiries from field, laboratory and public-health partners about study and surveillance design, and about applying the OP stack to a new system. I work mainly in Python (NumPy, JAX, PyTorch) and Julia.
+I welcome enquiries from field, laboratory and public-health partners about study, experiment and surveillance design, and about applying the OP stack to a new system. I work mainly in Python (NumPy, JAX, PyTorch) and Julia.
 
 ## Selected publications
 
