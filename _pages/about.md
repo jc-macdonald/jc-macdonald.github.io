@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: Assistant Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
-last_modified_at: 2026-10-26
+last_modified_at: 2026-10-28
 
 profile:
   align: right
@@ -65,7 +65,7 @@ I welcome enquiries from field, laboratory and public-health partners about stud
 
 {% include selected_papers.liquid %}
 
-[All publications, preprints and publicly listed manuscripts under review](/publications/)
+[All publications, accepted papers and preprints](/publications/)
 
 ## Research in progress
 
