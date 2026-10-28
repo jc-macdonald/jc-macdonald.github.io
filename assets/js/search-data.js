@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "Publications",
-          description: "Journal articles, preprints and publicly listed manuscripts under review, with citation details and source links.",
+          description: "Journal articles, accepted papers and preprints, with citation details and source links.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -67,7 +67,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "Academic curriculum vitae. Last substantively reviewed 22 October 2026.",
+          description: "Academic curriculum vitae. Last substantively reviewed 28 October 2026.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
