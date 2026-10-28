@@ -6,7 +6,7 @@ permalink: /projects/
 description: The questions and study systems I work on, and the models and software I build to study them.
 nav: true
 nav_order: 4
-last_modified_at: 2026-10-26
+last_modified_at: 2026-10-28
 display_categories: ["Released software", "Research in progress", "Collaborative infrastructure"]
 horizontal: false
 ---
@@ -15,8 +15,9 @@ I study how ecological and landscape change influences the movement and
 connectivity of hosts, pathogens and cultural traits, and through them the
 persistence and evolution of structured populations. The overarching interest is
 landscape and metapopulation eco-evolutionary dynamics. My established work
-addresses within- and between-host dynamics and cultural transmission, and
-landscape-scale questions are a developing direction. Models, inference methods
+addresses multiscale infection dynamics, linking viral growth and immune
+responses within hosts to transmission between hosts, and cultural
+transmission. Landscape-scale questions are a developing direction. Models, inference methods
 and software are my tools for these questions, and they apply beyond these
 systems.
 

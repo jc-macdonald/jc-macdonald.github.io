@@ -15,27 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist whose overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. Established work addresses within- and between-host dynamics, including viral and immunological models from within-host to population scale, and cultural transmission; landscape-scale questions are a developing direction. Builds mechanistic models, inference methods and research software. Applications include infectious disease, public and global health and ecology; methods work also addresses incomplete data. Developing work includes scientific machine learning and the design of monitoring programs and studies with field and domain partners."
-
-    Research Themes:
-      - label: Within individuals
-        details: "Viral growth, immune response and antibody kinetics and their consequences for transmission (foot-and-mouth disease, dengue; Crimean-Congo hemorrhagic fever in progress)."
-
-      - label: Across populations
-        details: "Published work on cultural variation across geography and language. Developing: how landscape change, movement and contact shape spread, persistence and divergence."
-
-      - label: Decisions
-        details: "Surveillance and control decisions for livestock and wildlife disease, vaccination and scenario modeling under uncertainty, and study-design comparison."
-
-    Study Systems:
-      - label: Foot-and-mouth disease virus in African buffalo
-        details: "Within-host model (first author) and carrier-transmission model (co-author); senior personnel on a multi-institution project."
-
-      - label: Crimean-Congo hemorrhagic fever virus in livestock and wildlife
-        details: "Collaborative transmission models and surveillance design."
-
-      - label: Human cultural transmission
-        details: "Networks and clusters of cultural traits across Austronesian-speaking societies; methods for incomplete cultural data."
+      - "Computational scientist whose overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. Established work addresses multiscale infection dynamics, linking viral growth and immune responses within hosts to transmission between hosts, and cultural transmission; landscape-scale questions are a developing direction. Builds mechanistic models, inference methods and research software. Applications include infectious disease, public and global health and ecology; methods work also addresses incomplete data. Developing work includes scientific machine learning, the identifiability of models that couple biological scales, and the design of experiments, monitoring programs and studies with field, laboratory and domain partners."
 
     Appointments:
       - company: Johns Hopkins Bloomberg School of Public Health
@@ -90,6 +70,44 @@ cv:
         start_date: 2008
         end_date: 2013
         location: Greensboro, North Carolina, USA
+
+    Honors, Awards and Fellowships:
+      - name: MISM Scholar
+        date: 2027
+        summary: "Center of Excellence for Multiscale Immune Systems Modeling (MISM), Duke University; NIAID-funded. Competitive one-year program for early-stage investigators in infectious and immune-mediated disease (up to five scholars per cycle), with mentorship from MISM investigators and monthly training in collaboration between experimental and computational scientists."
+
+      - name: Zuckerman STEM Leadership Postdoctoral Fellowship
+        start_date: 2022
+        end_date: 2024
+        summary: "Competitive postdoctoral fellowship, Tel Aviv University (School of Zoology)."
+
+      - name: Travel Awards
+        start_date: 2019
+        end_date: 2022
+        summary: "SIAM, Society for Mathematical Biology, and University of Louisiana Graduate Research Association"
+
+      - name: Rhodes Outstanding Graduate Assistant Award
+        date: 2021
+        summary: "Department of Mathematics, University of Louisiana at Lafayette. Awarded to two graduate students annually (approximately 50 graduate students total)."
+
+      - name: Outstanding Contributed Talk Award (Mathematical Epidemiology)
+        date: 2021
+        summary: "Society for Mathematical Biology Annual Meeting"
+
+      - name: Three Minute Thesis Competition, Finalist
+        date: 2019
+        summary: "Louisiana Sea Grant"
+
+    Accepted Papers:
+      - title: "Multi-Model Insights into Racial and Ethnic Heterogeneities in Early COVID-19 Transmission and Severity in the U.S."
+        authors:
+          - S.J. Bents
+          - S.L. Larsen
+          - S. Jung
+          - E. Howerton
+          - "et al., including ***J.C. Macdonald***"
+        journal: "American Journal of Epidemiology, to appear"
+        date: 2026
 
     Published Papers:
       - title: "An Immuno-Epidemiological Model of Foot-and-Mouth Disease (FMD) in the African Buffalo Population with Carrier Transmission"
@@ -156,17 +174,6 @@ cv:
         doi: 10.1098/rsos.210227
         date: 2021
 
-    Papers Under Review:
-      - title: "Multi-Model Insights into Racial and Ethnic Heterogeneities in Early COVID-19 Transmission and Severity in the U.S."
-        authors:
-          - S.J. Bents
-          - S.L. Larsen
-          - S. Jung
-          - E. Howerton
-          - "et al., including ***J.C. Macdonald***"
-        journal: "American Journal of Epidemiology; revision submitted"
-        date: 2026
-
     Preprints:
       - title: "Robust parameterization of a viral-immune kinetics model for sequential Dengue virus (DENV) infections with Antibody-Dependent Enhancement (ADE)"
         authors:
@@ -187,31 +194,34 @@ cv:
         highlights:
           - "Software: [pp-eigentest project summary](https://jcmacdonald.dev/projects/pp_eigentest/) · [VBPCApy](https://github.com/yoavram-lab/VBPCApy)"
 
-    Operational Modeling and Policy Support:
-      - name: Diphtheria Outbreak-Response Vaccination Modeling
-        start_date: 2026
-        end_date: present
-        summary: "Johns Hopkins IVAC. Lead modeler for multi-country, district-level transmission analyses comparing outbreak-response vaccination strategies across diverse diphtheria risk settings. Partner-specific policy processes and working materials remain private. Implemented with op_system, FlepiMoP2, JAX, and Diffrax."
+    "Research Support -- Active":
+      - name: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
+        start_date: 2025
+        end_date: 2028
+        summary: "**Collaborator.** Model parameterization, data analysis, and advice on mathematical and statistical methods. Quiescence to emergence: Does nairovirus diversity loss increase disease transmission, severity and the risk of emergence? US PIs: Brianna Beechler, Anna Jolles, Cameron Browne, and Hayriye Gulbudak; linked UKRI award BB/Z516934/1 with Emma Thomson, Teresa Lambe, Roman Biek, and Georgina Limon-Vega."
 
-      - name: COVID-19 Scenario Modeling Hub
+      - name: "USDA-ARS Cooperative Agreement (3022-32000-021-018-S)"
         start_date: 2025
         end_date: present
-        summary: "ACCIDDA. Led the Round 20 (2026–27) submission, including rebuilding and migrating the legacy model to op_system and FlepiMoP2, model development and calibration, scenario production, quality assurance, and hub submission. Previously contributed data wrangling and data assimilation to the Hub's health-heterogeneities scientific round."
+        summary: "**Collaborator.** Models of transmission between species, surveillance design, and statistical advice. Investigating the Epidemiology of Crimean-Congo Hemorrhagic Fever Virus (CCHFV) in an Endemic Setting: Uganda. PIs: Bree Beechler and Anna Jolles (Oregon State University)."
         highlights:
-          - "[COVID-19 Scenario Modeling Hub](https://covid19scenariomodelinghub.org/)"
-          - "[Submission repository](https://github.com/midas-network/covid19-scenario-modeling-hub)"
+          - "[USDA-ARS project record](https://www.ars.usda.gov/research/project?accnNo=447701)"
 
-      - name: Flu Scenario Modeling Hub
-        start_date: 2024
+      - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
+        start_date: 2023
         end_date: present
-        summary: "ACCIDDA. Lead Model Developer across the 2024/25, 2025/26, and 2026/27 seasons. Set up the ACCIDDA flu model and operational pipeline (2024/25). Work with external modeling packages informed contributions to FlepiMoP2 (2025/26). Supervising an undergraduate student on revisions to the flu model for the 2026/27 round."
-        highlights:
-          - "[Submission repository](https://github.com/midas-network/flu-scenario-modeling-hub)"
+        summary: "**Operational modeling, forecasting pipelines, and computational infrastructure.** Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA), an Insight Net center. Directors: Justin Lessler, Kimberly Powers, and Shaun Truelove."
 
-      - name: Hib Vaccination Modeling
-        start_date: 2026
-        end_date: present
-        summary: "ACCIDDA. Technical supervisor for PhD students implementing an age- and immune-status-structured Haemophilus influenzae type b (Hib) model to evaluate long-running vaccination programs in a partner-defined population. Public descriptions remain general pending approval from participating organizations."
+      - name: "NSF EEID / UKRI UK--US Collaboration Grant"
+        start_date: 2022
+        end_date: 2027
+        summary: "**Senior Personnel (from 2024).** Model development and parameterization of within-host viral and immune dynamics. Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. Consortium-wide project budget: $4.05M over five years; this is not an amount directly controlled by me. PIs: Brianna Beechler, Roman Biek, Hayriye Gulbudak, Erin Gorsich, Simon Gubbins, Anna Jolles, and Jan Medlock."
+
+    "Research Support -- Completed":
+      - name: "Zuckerman Postdoctoral Scholarship"
+        start_date: 2022
+        end_date: 2024
+        summary: "**Principal Investigator.** Co-evolution of Cultural and Genetic Traits. Competitive postdoctoral fellowship; authored and defended the proposal. Total fellowship award: $120K."
 
     "Research Software -- Lead Developer":
       - name: "OP System (Operator-Partitioned System)"
@@ -280,44 +290,31 @@ cv:
         end_date: 2025
         summary: "Hopkins IDD / ACCIDDA. Developed simulation and statistical inference components for operational influenza modeling. Performance profiling and vectorized backend work informed subsequent pipeline development."
 
-    "Research Support -- Active":
-      - name: "USDA-NIFA AFRI US--UK Collaboration (Award #1032897)"
-        start_date: 2025
-        end_date: 2028
-        summary: "**Collaborator.** Model parameterization, data analysis, and advice on mathematical and statistical methods. Quiescence to emergence: Does nairovirus diversity loss increase disease transmission, severity and the risk of emergence? US PIs: Brianna Beechler, Anna Jolles, Cameron Browne, and Hayriye Gulbudak; linked UKRI award BB/Z516934/1 with Emma Thomson, Teresa Lambe, Roman Biek, and Georgina Limon-Vega."
+    Operational Modeling and Policy Support:
+      - name: Diphtheria Outbreak-Response Vaccination Modeling
+        start_date: 2026
+        end_date: present
+        summary: "Johns Hopkins IVAC. Lead modeler for multi-country, district-level transmission analyses comparing outbreak-response vaccination strategies across diverse diphtheria risk settings. Partner-specific policy processes and working materials remain private. Implemented with op_system, FlepiMoP2, JAX, and Diffrax."
 
-      - name: "USDA-ARS Cooperative Agreement (3022-32000-021-018-S)"
+      - name: COVID-19 Scenario Modeling Hub
         start_date: 2025
         end_date: present
-        summary: "**Collaborator.** Models of transmission between species, surveillance design, and statistical advice. Investigating the Epidemiology of Crimean-Congo Hemorrhagic Fever Virus (CCHFV) in an Endemic Setting: Uganda. PIs: Bree Beechler and Anna Jolles (Oregon State University)."
+        summary: "ACCIDDA. Led the Round 20 (2026–27) submission, including rebuilding and migrating the legacy model to op_system and FlepiMoP2, model development and calibration, scenario production, quality assurance, and hub submission. Previously contributed data wrangling and data assimilation to the Hub's health-heterogeneities scientific round."
         highlights:
-          - "[USDA-ARS project record](https://www.ars.usda.gov/research/project?accnNo=447701)"
+          - "[COVID-19 Scenario Modeling Hub](https://covid19scenariomodelinghub.org/)"
+          - "[Submission repository](https://github.com/midas-network/covid19-scenario-modeling-hub)"
 
-      - name: "CDC-RFA-FT-23-0069 (NU38FT000012)"
-        start_date: 2023
+      - name: Flu Scenario Modeling Hub
+        start_date: 2024
         end_date: present
-        summary: "**Operational modeling, forecasting pipelines, and computational infrastructure.** Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA), an Insight Net center. Directors: Justin Lessler, Kimberly Powers, and Shaun Truelove."
+        summary: "ACCIDDA. Lead Model Developer across the 2024/25, 2025/26, and 2026/27 seasons. Set up the ACCIDDA flu model and operational pipeline (2024/25). Work with external modeling packages informed contributions to FlepiMoP2 (2025/26). Supervising an undergraduate student on revisions to the flu model for the 2026/27 round."
+        highlights:
+          - "[Submission repository](https://github.com/midas-network/flu-scenario-modeling-hub)"
 
-      - name: "NSF EEID / UKRI UK--US Collaboration Grant"
-        start_date: 2022
-        end_date: 2027
-        summary: "**Senior Personnel (from 2024).** Model development and parameterization of within-host viral and immune dynamics. Multi-scale infection dynamics from cells to landscapes: FMD in African buffalo. Consortium-wide project budget: $4.05M over five years; this is not an amount directly controlled by me. PIs: Brianna Beechler, Roman Biek, Hayriye Gulbudak, Erin Gorsich, Simon Gubbins, Anna Jolles, and Jan Medlock."
-
-    "Research Support -- Completed":
-      - name: "Zuckerman Postdoctoral Scholarship"
-        start_date: 2022
-        end_date: 2024
-        summary: "**Principal Investigator.** Co-evolution of Cultural and Genetic Traits. Competitive postdoctoral fellowship; authored and defended the proposal. Total fellowship award: $120K."
-
-    Computational Expertise:
-      - label: Modeling
-        details: "Mathematical and computational models of changing systems, including viral-immune, spatial, stochastic and compartmental models; machine learning with scientific constraints; multivariate data analysis and dimensionality reduction; stability, bifurcation and sensitivity analysis; parameter identifiability and inverse problems"
-
-      - label: Inference
-        details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; simulation-based calibration, numerical qualification, and model and forecast assessment; proper scoring rules"
-
-      - label: Computing
-        details: "Python, Julia, C++, Stan, R, MATLAB. Scientific computing; high-performance numerical solvers; operator splitting; data pipelines and exploratory analysis; reproducible workflows (Git, CI/CD, containerization)"
+      - name: Hib Vaccination Modeling
+        start_date: 2026
+        end_date: present
+        summary: "ACCIDDA. Technical supervisor for PhD students implementing an age- and immune-status-structured Haemophilus influenzae type b (Hib) model to evaluate long-running vaccination programs in a partner-defined population. Public descriptions remain general pending approval from participating organizations."
 
     Invited Talks and Seminars:
       - name: "Cross-Scale Feedback Motifs: Structure-Preserving Models and Computational Tools for Complex Systems"
@@ -392,31 +389,6 @@ cv:
         date: 2021
         summary: "Society for Mathematical Biology Annual Meeting (virtual); contributed talk"
 
-    Workshop Facilitation:
-      - company: Insight Net Third Annual Meeting
-        position: Tools Workshop Presenter
-        date: 2026-04
-        location: Chapel Hill, North Carolina, USA
-        summary: "Presented FlepiMoP2 and the op_system/op_engine simulation stack at the Insight Net Third Annual Meeting tools workshop, Friday Center, University of North Carolina at Chapel Hill."
-
-      - company: Insight Net Second Tech Transfer Workshop
-        position: Technical Support
-        date: 2026-01
-        location: Chapel Hill, North Carolina, USA
-        summary: "ACCIDDA. Technical support for the Insight Net Second Tech Transfer Workshop at UNC Chapel Hill. Assisted participants with Python package installation and environment setup for Epydemics tools."
-
-      - company: ACCIDDA
-        position: Workshop Facilitator
-        date: 2025-10
-        location: Baltimore, Maryland, USA
-        summary: "Facilitator for the Applied Modeling in Public Health (AMPH) Workshop, October 15--17, 2025, Johns Hopkins Bloomberg School of Public Health."
-
-      - company: ACCIDDA
-        position: Workshop Facilitator
-        date: 2024-08
-        location: Baltimore, Maryland, USA
-        summary: "Facilitator for the Applied Modeling in Public Health (AMPH) Workshop, August 12--15, 2024, Johns Hopkins Bloomberg School of Public Health."
-
     Teaching:
       - company: Johns Hopkins University
         position: Teaching Assistant
@@ -454,13 +426,30 @@ cv:
         date: 2024
         summary: "Tel Aviv University. Supervised undergraduate research project: initial translation of the VBPCApy variational Bayesian PCA codebase from MATLAB to Python."
 
-    Community Outreach:
-      - name: Science communication and research dissemination
-        start_date: 2021
-        end_date: 2022
-        highlights:
-          - "University of Louisiana R1 Showcase: selected to present COVID-19 modeling research at the university-wide showcase (2022)"
-          - "Ocean View United Methodist Church, Oak Island, NC: community discussion on vaccines and COVID-19, with on-site pharmacist for vaccination (2021)"
+    Workshop Facilitation:
+      - company: Insight Net Third Annual Meeting
+        position: Tools Workshop Presenter
+        date: 2026-04
+        location: Chapel Hill, North Carolina, USA
+        summary: "Presented FlepiMoP2 and the op_system/op_engine simulation stack at the Insight Net Third Annual Meeting tools workshop, Friday Center, University of North Carolina at Chapel Hill."
+
+      - company: Insight Net Second Tech Transfer Workshop
+        position: Technical Support
+        date: 2026-01
+        location: Chapel Hill, North Carolina, USA
+        summary: "ACCIDDA. Technical support for the Insight Net Second Tech Transfer Workshop at UNC Chapel Hill. Assisted participants with Python package installation and environment setup for Epydemics tools."
+
+      - company: ACCIDDA
+        position: Workshop Facilitator
+        date: 2025-10
+        location: Baltimore, Maryland, USA
+        summary: "Facilitator for the Applied Modeling in Public Health (AMPH) Workshop, October 15--17, 2025, Johns Hopkins Bloomberg School of Public Health."
+
+      - company: ACCIDDA
+        position: Workshop Facilitator
+        date: 2024-08
+        location: Baltimore, Maryland, USA
+        summary: "Facilitator for the Applied Modeling in Public Health (AMPH) Workshop, August 12--15, 2024, Johns Hopkins Bloomberg School of Public Health."
 
     Professional Service:
       - name: SMB Diversity, Equity, and Inclusion Committee
@@ -493,23 +482,23 @@ cv:
     Journal Reviewing:
       - "**2022--present:** *PLOS ONE*, *Journal of Biological Systems*, *Journal of Biological Dynamics*, *Frontiers in Public Health*, *Frontiers in Veterinary Science*, *Computational and Applied Mathematics*, *Mathematical Biosciences*, *Scientific Reports*, *PLOS Computational Biology*, and *BMC Infectious Diseases*."
 
-    Honors and Awards:
-      - name: Travel Awards
-        start_date: 2019
+    Community Outreach:
+      - name: Science communication and research dissemination
+        start_date: 2021
         end_date: 2022
-        summary: "SIAM, Society for Mathematical Biology, and University of Louisiana Graduate Research Association"
-
-      - name: Rhodes Outstanding Graduate Assistant Award
-        date: 2021
-        summary: "Department of Mathematics, University of Louisiana at Lafayette. Awarded to two graduate students annually (approximately 50 graduate students total)."
-
-      - name: Outstanding Contributed Talk Award (Mathematical Epidemiology)
-        date: 2021
-        summary: "Society for Mathematical Biology Annual Meeting"
-
-      - name: Three Minute Thesis Competition, Finalist
-        date: 2019
-        summary: "Louisiana Sea Grant"
+        highlights:
+          - "University of Louisiana R1 Showcase: selected to present COVID-19 modeling research at the university-wide showcase (2022)"
+          - "Ocean View United Methodist Church, Oak Island, NC: community discussion on vaccines and COVID-19, with on-site pharmacist for vaccination (2021)"
 
     Professional Affiliations:
-      - "Society for Mathematical Biology; Society for Industrial and Applied Mathematics; International Society for Bayesian Analysis; United States Research Software Engineer Association; MIDAS Network; Association for Women in Mathematics; Institute of Industrial and Systems Engineers; Society for Health Systems (SHS/IISE); and Healthcare Information and Management Systems Society (HIMSS)."
+      - "Society for Mathematical Biology; Society for Industrial and Applied Mathematics; International Society for Bayesian Analysis; United States Research Software Engineer Association; MIDAS Network; and Association for Women in Mathematics."
+
+    Computational Expertise:
+      - label: Modeling
+        details: "Mathematical and computational models of changing systems, including viral-immune, spatial, stochastic and compartmental models; machine learning with scientific constraints; multivariate data analysis and dimensionality reduction; stability, bifurcation and sensitivity analysis; parameter identifiability and inverse problems"
+
+      - label: Inference
+        details: "Bayesian hierarchical models; variational and simulation-based inference; data assimilation; uncertainty quantification; simulation-based calibration, numerical qualification, and model and forecast assessment; proper scoring rules"
+
+      - label: Computing
+        details: "Python, Julia, C++, Stan, R, MATLAB. Scientific computing; high-performance numerical solvers; operator splitting; data pipelines and exploratory analysis; reproducible workflows (Git, CI/CD, containerization)"
