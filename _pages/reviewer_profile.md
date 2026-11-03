@@ -13,16 +13,12 @@ last_modified_at: 2026-11-03
 {% assign current_appointment = site.data.cv.cv.sections.Appointments | first %}
 
 I am a computational scientist and {{ current_appointment.position }} at {{
-current_appointment.company }}. I study how processes within hosts shape immune
-response and protection, how they link to transmission between hosts, and how
-movement, contact, and ecological and landscape change shape spread,
-persistence and divergence across populations. My established work addresses
-within- and between-host dynamics and cultural transmission, and landscape-scale
-questions are a developing direction. I build mechanistic models, inference
-methods and research software for these questions and for decisions under
-uncertainty. This page is a concise guide to areas in which I can review
-proposals or contribute to a scientific collaboration; my [full CV](/cv/)
-provides the complete record.
+current_appointment.company }}. My work combines mechanistic models, statistical
+inference and research software across infectious disease, ecology and cultural
+transmission. Established work includes links between within-host infection and
+transmission, cultural variation and operational respiratory-virus scenario
+modeling. This page describes areas in which I can review proposals or
+contribute to a collaboration; my [full CV](/cv/) provides the complete record.
 
 _Last substantively reviewed: 3 November 2026._
 
@@ -44,6 +40,8 @@ _Last substantively reviewed: 3 November 2026._
 
 ### Developing and collaborative areas
 
+- **Longitudinal vaccine-response modeling**, a proposed clinical direction on
+  antibody trajectories and titer prediction, initially in older adults.
 - **Landscape and metapopulation eco-evolutionary models**, asking how
   landscape change, movement and connectivity shape persistence and divergence
   across populations.
@@ -52,9 +50,6 @@ _Last substantively reviewed: 3 November 2026._
 - **Decision-focused observation, monitoring and experimental design**,
   developed jointly with domain and field teams that define the scientific
   decision, feasible measurements and costs.
-
-“Developing” identifies an active methods direction, not a claim of the same
-depth of evidence as the established areas.
 
 ## Selected evidence
 
