@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist whose overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. Established work addresses multiscale infection dynamics, linking viral growth and immune responses within hosts to transmission between hosts, and cultural transmission; landscape-scale questions are a developing direction. Builds mechanistic models, inference methods and research software. Applications include infectious disease, public and global health and ecology; methods work also addresses incomplete data. Developing work includes scientific machine learning, the identifiability of models that couple biological scales, and the design of experiments, monitoring programs and studies with field, laboratory and domain partners."
+      - "Computational scientist studying how processes within hosts shape immune response and protection, how they link to transmission between hosts, and how movement, contact, and ecological and landscape change shape spread, persistence and divergence across populations. Established work addresses multiscale infection dynamics and cultural transmission; landscape-scale questions are a developing direction. Builds mechanistic models, inference methods and research software. Applications span human infectious disease, livestock and wildlife health, public and global health, and ecology; methods work also addresses incomplete data. Developing work includes scientific machine learning, the identifiability of models that couple biological scales, and the design of experiments, monitoring programs and studies with clinical, laboratory, field and domain partners."
 
     Appointments:
       - company: Johns Hopkins Bloomberg School of Public Health
@@ -74,7 +74,7 @@ cv:
     Honors, Awards and Fellowships:
       - name: MISM Scholar
         date: 2027
-        summary: "Center of Excellence for Multiscale Immune Systems Modeling (MISM), Duke University; NIAID-funded. Competitive one-year program for early-stage investigators in infectious and immune-mediated disease (up to five scholars per cycle), with mentorship from MISM investigators and monthly training in collaboration between experimental and computational scientists."
+        summary: "Center of Excellence for Multiscale Immune Systems Modeling (MISM), Duke University; NIAID-funded. Competitive, unpaid, virtual one-year program for early-stage investigators in infectious and immune-mediated disease (up to five scholars per cycle), with mentorship from MISM investigators and monthly training in collaboration between experimental and computational scientists; provides no salary or stipend."
 
       - name: Zuckerman STEM Leadership Postdoctoral Fellowship
         start_date: 2022
