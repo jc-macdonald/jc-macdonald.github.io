@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: Assistant Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
-last_modified_at: 2026-10-28
+last_modified_at: 2026-11-03
 
 profile:
   align: right
@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-My overarching interest is how ecological and landscape change influences the movement and connectivity of hosts, pathogens and cultural traits, and through them the persistence and evolution of structured populations. My established work addresses multiscale infection dynamics, linking viral growth and immune responses within hosts to transmission between hosts, and cultural transmission. Landscape-scale questions are a developing direction. I build mechanistic models, inference methods and open research software for these questions and for decisions under uncertainty. Applications include infectious disease, public and global health and ecology. I also develop methods for incomplete multivariate data. Developing work includes scientific machine learning, the identifiability of models that couple biological scales, and the design of experiments, monitoring programs and studies with field, laboratory and domain partners.
+My research asks how processes within hosts, movement and contact among hosts, and ecological and landscape change shape protection, transmission and persistence across populations. I build mechanistic models, inference methods and open research software for these questions and for decisions under uncertainty. My established work links viral growth and immune responses within hosts to transmission between hosts and examines cultural transmission. Developing work extends the same multiscale approach to longitudinal clinical data, landscape and metapopulation dynamics, and the design of experiments, monitoring programs and studies. Applications span human infectious disease, livestock and wildlife health, public and global health, and ecology. I also develop methods for incomplete multivariate data, scientific machine learning and the identifiability of models that couple biological scales.
 
 I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With the [Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA)](https://accidda.org/), I develop infectious disease models and software for scenario projections and public health planning. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on foot-and-mouth disease in African buffalo and Crimean-Congo hemorrhagic fever in livestock and wildlife, including transmission between species and surveillance design.
 
@@ -45,11 +45,11 @@ Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, wor
 
 ## Research questions
 
-My research asks three questions, studied in systems that include foot-and-mouth disease in African buffalo, Crimean-Congo hemorrhagic fever in livestock and wildlife, and human cultural transmission. [The research page](/projects/) describes each system.
+My research asks three connected questions across human, livestock, wildlife and cultural systems. Current systems include foot-and-mouth disease in African buffalo, Crimean-Congo hemorrhagic fever in livestock and wildlife, and human cultural transmission. A developing clinical direction concerns immune response and protection after influenza vaccination, initially in older adults. [The research page](/projects/) describes the systems and distinguishes published, active and prospective work.
 
-- **How do processes within hosts shape transmission and persistence?** My buffalo studies link virus growth and immune response to transmission between animals for three strains of the SAT serotypes of foot-and-mouth disease virus. SAT-1 was reported for the first time in nine countries from Egypt to Mongolia in 2025 and 2026 ([WOAH](https://www.woah.org/en/article/the-spread-of-fmd-to-new-areas-is-concerning-but-consequences-could-be-worse/)).
+- **How do processes within hosts shape transmission and persistence?** My buffalo studies link virus growth and immune response to transmission between animals for three strains of the SAT serotypes of foot-and-mouth disease virus. SAT-1 was reported for the first time in nine countries from Egypt to Mongolia in 2025 and 2026 ([WOAH](https://www.woah.org/en/article/the-spread-of-fmd-to-new-areas-is-concerning-but-consequences-could-be-worse/)). Developing clinical work asks the corresponding question in people: how immune trajectories after influenza vaccination relate to later infection and, eventually, to transmission models.
 - **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction; the published work so far concerns cultural variation across geography and language, and the rest is collaborative work in progress.
-- **How should we measure, vaccinate and decide under uncertainty?** I address this through surveillance, vaccination and scenario modeling.
+- **How should we measure, vaccinate and decide under uncertainty?** I address this through surveillance, vaccination and scenario modeling. Developing clinical work asks whether repeated immune measurements add information about later infection beyond vaccination and infection history, without treating any assay as protection itself. It also asks how participant and clinician priorities should shape the study and the aggregate results returned.
 
 ## Currently
 
@@ -58,9 +58,10 @@ As of October 2026:
 - Collaborative modeling of Crimean-Congo hemorrhagic fever transmission between livestock and wildlife, and of the measurements that would inform its surveillance.
 - Development and release of the [OP stack](/projects/#how-the-op-stack-compares) for model specification, simulation and replicated study comparison.
 - Scenario modeling for respiratory viruses with ACCIDDA ([modeling in practice](/operational-modeling/)).
-- Multiscale immune systems modeling as a 2027 Scholar of the [Center of Excellence for Multiscale Immune Systems Modeling](https://immunescale.org/) at Duke University.
+- Development of a longitudinal, patient-oriented study of immune response and later infection after influenza vaccination, initially in older adults. This is prospective work; it does not yet report clinical findings.
+- Multiscale immune systems modeling through the unpaid 2027 Scholar program of the [Center of Excellence for Multiscale Immune Systems Modeling](https://immunescale.org/) at Duke University.
 
-I welcome enquiries from field, laboratory and public-health partners about study, experiment and surveillance design, and about applying the OP stack to a new system. I work mainly in Python (NumPy, JAX, PyTorch) and Julia.
+I welcome enquiries from clinical, laboratory, field, animal-health and public-health partners about study, experiment and surveillance design, and about applying the OP stack to a new system. I work mainly in Python (NumPy, JAX, PyTorch) and Julia.
 
 ## Selected publications
 

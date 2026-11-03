@@ -6,31 +6,31 @@ permalink: /projects/
 description: The questions and study systems I work on, and the models and software I build to study them.
 nav: true
 nav_order: 4
-last_modified_at: 2026-10-28
+last_modified_at: 2026-11-03
 display_categories: ["Released software", "Research in progress", "Collaborative infrastructure"]
 horizontal: false
 ---
 
-I study how ecological and landscape change influences the movement and
-connectivity of hosts, pathogens and cultural traits, and through them the
-persistence and evolution of structured populations. The overarching interest is
-landscape and metapopulation eco-evolutionary dynamics. My established work
-addresses multiscale infection dynamics, linking viral growth and immune
-responses within hosts to transmission between hosts, and cultural
-transmission. Landscape-scale questions are a developing direction. Models, inference methods
-and software are my tools for these questions, and they apply beyond these
-systems.
+I study how processes within hosts, movement and contact among hosts, and
+ecological and landscape change shape protection, transmission and persistence
+across populations. My established work links viral growth and immune responses
+within hosts to transmission between hosts and examines cultural transmission.
+Developing directions extend the same multiscale approach to longitudinal
+clinical data and to landscape and metapopulation eco-evolutionary dynamics.
+Mechanistic models, inference methods and open software let me connect
+measurements at one scale to questions and decisions at another, across human,
+livestock and wildlife health and ecology.
 
 <figure>
-  <img src="/assets/img/research/cross_scale_systems.svg" alt="Four study systems arranged by scale, from within individuals to across populations, with published work marked by solid outlines and collaborative or unpublished work by dashed outlines. A chain links ecological and landscape change to movement and contact, connectivity among populations, and persistence, divergence and evolution. The research questions and study systems below describe each cell." width="1100" height="1044" loading="lazy">
-  <figcaption>Study systems arranged by scale. Solid outlines mark systems with a published paper at that scale. Dashed outlines mark collaborative or unpublished work. A blank cell shows no work at that scale. The chain describes the direction of influence that frames the second research question below. <a href="/figures/">Figure downloads and editable source</a>.</figcaption>
+  <img src="/assets/img/research/cross_scale_systems.svg" alt="Four established or active collaborative study systems arranged by scale, from within individuals to across populations, with published work marked by solid outlines and collaborative or unpublished work by dashed outlines. A chain links ecological and landscape change to movement and contact, connectivity among populations, and persistence, divergence and evolution. The research questions and study systems below describe each cell." width="1100" height="1044" loading="lazy">
+  <figcaption>Established and active collaborative study systems arranged by scale. Solid outlines mark systems with a published paper at that scale. Dashed outlines mark collaborative or unpublished work. A blank cell shows no work at that scale. The chain describes the direction of influence that frames the second research question below. The prospective clinical direction described below is not yet shown. <a href="/figures/">Figure downloads and editable source</a>.</figcaption>
 </figure>
 
 ## Research questions
 
-- **How do processes within hosts shape transmission and persistence?** My [buffalo studies](/publications/#macdonald2024fmdv) of three foot-and-mouth disease virus strains (SAT-1, -2 and -3) indicate that viral replication rate correlates with transmission among buffalo and that the adaptive immune activation rate determines the infectious period. A [carrier-transmission model](/publications/#atkins2026fmdcarrier), on which I am a co-author, extends this to persistent infection. As senior personnel on a multi-institution project linking cells to landscapes in African buffalo, I develop and parameterize the within-host models. The SAT serotypes, for which African buffalo are a wildlife host, have recently spread beyond sub-Saharan Africa. SAT-1 was reported for the first time in nine countries from Egypt to Mongolia in 2025 and 2026, including Cyprus, and again in Greece, Lebanon and Türkiye after sixty years ([WOAH, August 2026](https://www.woah.org/en/article/the-spread-of-fmd-to-new-areas-is-concerning-but-consequences-could-be-worse/)). The buffalo estimates describe infection in buffalo; transmission in cattle and small ruminants was not studied. The same within-host-to-population approach underlies my [dengue and Crimean-Congo hemorrhagic fever applications](/projects/current_analyses/#application-studies).
+- **How do processes within hosts shape transmission and persistence?** My [buffalo studies](/publications/#macdonald2024fmdv) of three foot-and-mouth disease virus strains (SAT-1, -2 and -3) indicate that viral replication rate correlates with transmission among buffalo and that the adaptive immune activation rate determines the infectious period. A [carrier-transmission model](/publications/#atkins2026fmdcarrier), on which I am a co-author, extends this to persistent infection. As senior personnel on a multi-institution project linking cells to landscapes in African buffalo, I develop and parameterize the within-host models. The SAT serotypes, for which African buffalo are a wildlife host, have recently spread beyond sub-Saharan Africa. SAT-1 was reported for the first time in nine countries from Egypt to Mongolia in 2025 and 2026, including Cyprus, and again in Greece, Lebanon and Türkiye after sixty years ([WOAH, August 2026](https://www.woah.org/en/article/the-spread-of-fmd-to-new-areas-is-concerning-but-consequences-could-be-worse/)). The buffalo estimates describe infection in buffalo; transmission in cattle and small ruminants was not studied. The same within-host-to-population approach underlies my [dengue and Crimean-Congo hemorrhagic fever applications](/projects/current_analyses/#application-studies). A developing clinical direction asks the corresponding question after influenza vaccination in older adults. Its proposed model treats vaccination and infection as discrete events within continuous immune kinetics, includes short- and longer-lived response components and variation among participants, and separates biological change from differences among assays. This is a planned model structure, not a validated clinical model.
 - **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction. Published work relates [cultural variation to geography and language](/publications/#macdonald2024austronesian) among Austronesian-speaking societies, without modeling landscape change. Collaborative work in progress models Crimean-Congo hemorrhagic fever transmission between livestock and wildlife hosts, and spatial structure is a possible extension if movement data allow. The range of this virus's main vectors is changing. _Hyalomma_ ticks are endemic in, or have been detected at least once in, 40 European countries ([Parvage et al. 2025](https://doi.org/10.1186/s13071-025-07104-3)), and Spain reported two locally acquired human cases by July 2026 ([ECDC](https://cchf-weekly.ecdc.europa.eu/)). A bighorn sheep project asks how immune phenotypes vary among metapopulations.
-- **How should we measure, vaccinate and decide under uncertainty?** For Crimean-Congo hemorrhagic fever, I ask which wildlife and livestock measurements would change a surveillance or control decision, given their field costs. [Modeling in practice](/operational-modeling/) describes outbreak-response vaccination and respiratory-virus scenario work, and [trade-study](/projects/trade_study/) supports comparing study designs.
+- **How should we measure, vaccinate and decide under uncertainty?** For Crimean-Congo hemorrhagic fever, I ask which wildlife and livestock measurements would change a surveillance or control decision, given their field costs. For the developing clinical study, the central question is what repeated immune markers add to prediction of later infection beyond vaccination and infection history and participant characteristics; virus-neutralization measurements would be treated as complementary rather than as protection itself. Participant and clinician input would shape feasible visits and the aggregate results returned. [Modeling in practice](/operational-modeling/) describes outbreak-response vaccination and respiratory-virus scenario work, and [trade-study](/projects/trade_study/) supports comparing study designs.
 
 <figure>
   <img src="/assets/img/research/published/fmdv_within_host.svg" alt="Four panels recomputed from the published within-host foot-and-mouth disease model: viral load and adaptive response over thirty days for three strains at median parameters, strain transmission rate against replication rate, and per-host infectious period against adaptive activation rate. Details follow." width="720" height="605" loading="lazy">
@@ -58,6 +58,7 @@ Earlier work includes a [COVID-19 model of testing, lockdown speed and fatigue a
 
 - **Foot-and-mouth disease virus in African buffalo.** A first-author within-host model and a co-authored carrier-transmission model, developed with collaborators in the Jolles Lab and a multi-institution project.
 - **Crimean-Congo hemorrhagic fever virus in livestock and wildlife.** Collaborative transmission models and surveillance design; modeling in progress.
+- **Influenza vaccination and protection across ages.** A prospective longitudinal clinical direction, beginning with older adults; it does not yet report clinical findings.
 - **Human cultural transmission.** Published analysis of networks and clusters of cultural traits, with a methods [preprint](/publications/#preprints) on incomplete cultural data.
 - **Bighorn sheep immune ecology.** Collaborative analysis in progress.
 
