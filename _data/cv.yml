@@ -452,10 +452,6 @@ cv:
         summary: "Facilitator for the Applied Modeling in Public Health (AMPH) Workshop, August 12--15, 2024, Johns Hopkins Bloomberg School of Public Health."
 
     Professional Service:
-      - name: JHU--WVU Research Collaborative
-        date: 2026
-        summary: "Proposal reviewer for the joint internal seed-funding program of Johns Hopkins University and West Virginia University."
-
       - name: SMB Diversity, Equity, and Inclusion Committee
         start_date: 2023
         end_date: 2025
@@ -482,6 +478,11 @@ cv:
       - name: Secretary, University of Louisiana AMS Graduate Student Chapter
         start_date: 2021
         end_date: 2022
+
+    Grant and Proposal Reviewing:
+      - name: JHU–WVU Research Collaborative
+        date: 2026
+        summary: "Proposal reviewer for the inaugural funding cycle of the joint competitive internal seed-funding program of Johns Hopkins University and West Virginia University."
 
     Journal Reviewing:
       - "**2022--present:** *PLOS ONE*, *Journal of Biological Systems*, *Journal of Biological Dynamics*, *Frontiers in Public Health*, *Frontiers in Veterinary Science*, *Computational and Applied Mathematics*, *Mathematical Biosciences*, *Scientific Reports*, *PLOS Computational Biology*, and *BMC Infectious Diseases*."
