@@ -9,7 +9,7 @@ last_name: Macdonald
 contact_note: >
   Best reached by email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Landscape and metapopulation eco-evolutionary dynamics of hosts, pathogens and cultural traits, studied with mechanistic models, inference and open research software.
+  Mechanistic models, statistical inference and open research software for infection, immune responses, transmission, ecology and cultural evolution.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.

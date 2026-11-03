@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist studying how processes within hosts shape immune response and protection, how they link to transmission between hosts, and how movement, contact, and ecological and landscape change shape spread, persistence and divergence across populations. Established work addresses multiscale infection dynamics and cultural transmission; landscape-scale questions are a developing direction. Builds mechanistic models, inference methods and research software. Applications span human infectious disease, livestock and wildlife health, public and global health, and ecology; methods work also addresses incomplete data. Developing work includes scientific machine learning, the identifiability of models that couple biological scales, and the design of experiments, monitoring programs and studies with clinical, laboratory, field and domain partners."
+      - "Computational scientist studying how infection and immune responses within hosts shape disease outcomes and transmission. Combines mechanistic models, statistical inference and open research software, with published work in infectious disease, ecology and cultural transmission. Current work includes respiratory-virus scenario modeling, animal-health collaborations and methods for incomplete data. A proposed clinical direction studies antibody trajectories after influenza vaccination, initially in older adults; later studies would examine links to infection and protection. Further developing directions include landscape and metapopulation dynamics, scientific machine learning and study design with domain partners."
 
     Appointments:
       - company: Johns Hopkins Bloomberg School of Public Health
