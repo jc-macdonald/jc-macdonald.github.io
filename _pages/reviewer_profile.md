@@ -7,23 +7,24 @@ permalink: /reviewer-profile/
 description: Evidence-linked areas for grant review and scientific collaboration.
 nav: true
 nav_order: 5
-last_modified_at: 2026-10-24
+last_modified_at: 2026-11-03
 ---
 
 {% assign current_appointment = site.data.cv.cv.sections.Appointments | first %}
 
 I am a computational scientist and {{ current_appointment.position }} at {{
-current_appointment.company }}. My overarching interest is how ecological and
-landscape change influences the movement and connectivity of hosts, pathogens
-and cultural traits, and through them the persistence and evolution of
-structured populations. My established work addresses within- and between-host
-dynamics and cultural transmission, and landscape-scale questions are a
-developing direction. I build mechanistic models, inference methods and
-research software for these questions and for decisions under uncertainty. This
-page is a concise guide to areas in which I can review proposals or contribute
-to a scientific collaboration; my [full CV](/cv/) provides the complete record.
+current_appointment.company }}. I study how processes within hosts shape immune
+response and protection, how they link to transmission between hosts, and how
+movement, contact, and ecological and landscape change shape spread,
+persistence and divergence across populations. My established work addresses
+within- and between-host dynamics and cultural transmission, and landscape-scale
+questions are a developing direction. I build mechanistic models, inference
+methods and research software for these questions and for decisions under
+uncertainty. This page is a concise guide to areas in which I can review
+proposals or contribute to a scientific collaboration; my [full CV](/cv/)
+provides the complete record.
 
-_Last substantively reviewed: 24 October 2026._
+_Last substantively reviewed: 3 November 2026._
 
 ## Review areas
 
