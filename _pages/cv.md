@@ -4,8 +4,8 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 6
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 cv_pdf: /assets/pdf/cv.pdf
 cv_format: rendercv
-description: Academic curriculum vitae. Last substantively reviewed 3 November 2026.
+description: Academic curriculum vitae. Last substantively reviewed 4 November 2026.
 ---

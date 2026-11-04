@@ -6,7 +6,7 @@ permalink: /operational-modeling/
 description: My contributions to infectious disease scenario projections, vaccination studies and the software used to run them.
 nav: true
 nav_order: 3
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 ---
 
 ## Scenario Modeling Hubs
@@ -23,12 +23,8 @@ Lead model developer for ACCIDDA's influenza scenario projections.
 - **2025/26 operational round.** Led revisions to the ACCIDDA flu model.
 - **2024/25 operational round.** Initial model development and pipeline integration.
 
-In the current influenza model, vaccine effectiveness and its decline over time
-use the same assumptions across ages, and prior infection does not modify
-vaccine protection. Hospitalization data can constrain projections without
-identifying all underlying immune processes. These model-specific assumptions
-motivate [proposed longitudinal work on antibody responses after vaccination](/projects/#proposed-clinical-direction),
-followed by studies connecting those measurements to protection.
+This work also examines which quantities population surveillance can determine
+and how assumptions affect the interpretation of scenario projections.
 
 <figure>
   <img src="/assets/img/research/operational/flu_scenario_projections.svg" alt="Two panels. Panel a shows projected weekly influenza hospitalizations in the United States over 43 weeks from August 2025 under three vaccination scenarios, with the no-vaccination scenario highest. Panel b shows box plots of season hospitalizations averted relative to no vaccination under usual and low coverage; both are positive, and usual coverage averts more. Details follow." width="720" height="317" loading="lazy">

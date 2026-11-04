@@ -7,7 +7,7 @@ permalink: /reviewer-profile/
 description: Evidence-linked areas for grant review and scientific collaboration.
 nav: true
 nav_order: 5
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 ---
 
 {% assign current_appointment = site.data.cv.cv.sections.Appointments | first %}
@@ -20,7 +20,7 @@ transmission, cultural variation and operational respiratory-virus scenario
 modeling. This page describes areas in which I can review proposals or
 contribute to a collaboration; my [full CV](/cv/) provides the complete record.
 
-_Last substantively reviewed: 3 November 2026._
+_Last substantively reviewed: 4 November 2026._
 
 ## Review areas
 
@@ -40,8 +40,6 @@ _Last substantively reviewed: 3 November 2026._
 
 ### Developing and collaborative areas
 
-- **Longitudinal vaccine-response modeling**, a proposed clinical direction on
-  antibody trajectories and titer prediction, initially in older adults.
 - **Landscape and metapopulation eco-evolutionary models**, asking how
   landscape change, movement and connectivity shape persistence and divergence
   across populations.

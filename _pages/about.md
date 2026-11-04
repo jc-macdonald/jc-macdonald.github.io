@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: Assistant Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 
 profile:
   align: right
@@ -27,11 +27,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I study how infection and immune responses within hosts shape disease outcomes and transmission. My work combines mechanistic models, statistical inference and open research software, with applications in infectious disease, ecology and cultural transmission.
+I study infectious disease, ecological dynamics and cultural transmission using mathematical models, statistical inference and open research software.
 
 I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With the [Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA)](https://accidda.org/), I lead model development for influenza scenario projections and led the 2026/27 COVID-19 submission, alongside software development for public-health modeling. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on foot-and-mouth disease in African buffalo and Crimean-Congo hemorrhagic fever in livestock and wildlife, including transmission between species and surveillance design.
-
-My influenza scenario-modeling work motivates a proposed study of antibody responses after vaccination, initially in older adults. It would estimate how responses rise and decline and test whether the previous season's antibody trajectory improves prediction beyond the current pre-vaccination titer. A small prospective study would evaluate late-season titer prediction and the feasibility of repeated sampling. Later studies would examine how these measurements relate to infection risk and clinical protection, and whether they can inform transmission models.
 
 <p>Email: <a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a> · <a href="https://orcid.org/{{ site.data.socials.orcid_id }}">ORCID</a></p>
 
@@ -53,7 +51,7 @@ Previously, I was a Zuckerman STEM Leadership Fellow at Tel Aviv University, wor
 
 ## Research questions
 
-These questions connect work in human, livestock, wildlife and cultural systems. [The research page](/projects/) describes the published studies, current collaborations and proposed clinical direction.
+These questions connect work in human, livestock, wildlife and cultural systems. [The research page](/projects/) describes the published studies and current research interests.
 
 - **How do processes within hosts shape transmission and persistence?** My buffalo studies link virus growth and immune response to transmission between animals for three strains of the SAT serotypes of foot-and-mouth disease virus.
 - **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction; the published work so far concerns cultural variation across geography and language, and the rest is collaborative work in progress.
@@ -66,7 +64,7 @@ As of November 2026:
 - Collaborative modeling of Crimean-Congo hemorrhagic fever transmission between livestock and wildlife, and of the measurements that would inform its surveillance.
 - Development and release of the [OP stack](/projects/#how-the-op-stack-compares) for model specification, simulation and replicated study comparison.
 - Scenario modeling for respiratory viruses with ACCIDDA ([modeling in practice](/operational-modeling/)).
-- Multiscale immune systems modeling through the unpaid 2027 Scholar program of the [Center of Excellence for Multiscale Immune Systems Modeling](https://immunescale.org/) at Duke University.
+- Selected for the 2027 Scholars Program of Duke University's [Center of Excellence for Multiscale Immune Systems Modeling](https://immunescale.org/).
 
 I welcome enquiries from clinical, laboratory, field, animal-health and public-health partners about study, experiment and surveillance design, and about applying the OP stack to a new system. I work mainly in Python (NumPy, JAX, PyTorch) and Julia.
 
