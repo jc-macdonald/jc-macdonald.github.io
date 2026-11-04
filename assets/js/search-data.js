@@ -67,7 +67,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "Academic curriculum vitae. Last substantively reviewed 3 November 2026.",
+          description: "Academic curriculum vitae. Last substantively reviewed 4 November 2026.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
