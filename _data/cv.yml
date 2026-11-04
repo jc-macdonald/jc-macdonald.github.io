@@ -15,7 +15,7 @@ cv:
 
   sections:
     Research Profile:
-      - "Computational scientist studying how infection and immune responses within hosts shape disease outcomes and transmission. Combines mechanistic models, statistical inference and open research software, with published work in infectious disease, ecology and cultural transmission. Current work includes respiratory-virus scenario modeling, animal-health collaborations and methods for incomplete data. A proposed clinical direction studies antibody trajectories after influenza vaccination, initially in older adults; later studies would examine links to infection and protection. Further developing directions include landscape and metapopulation dynamics, scientific machine learning and study design with domain partners."
+      - "Mathematical and computational research in infectious disease, ecology and cultural transmission, combining mechanistic models, statistical inference and open research software. Current work includes respiratory-virus scenario modeling, animal-health collaborations, methods for incomplete data and study design with domain partners."
 
     Appointments:
       - company: Johns Hopkins Bloomberg School of Public Health
@@ -74,7 +74,7 @@ cv:
     Honors, Awards and Fellowships:
       - name: MISM Scholar
         date: 2027
-        summary: "Center of Excellence for Multiscale Immune Systems Modeling (MISM), Duke University; NIAID-funded. Competitive, unpaid, virtual one-year program for early-stage investigators in infectious and immune-mediated disease (up to five scholars per cycle), with mentorship from MISM investigators and monthly training in collaboration between experimental and computational scientists; provides no salary or stipend."
+        summary: "Center of Excellence for Multiscale Immune Systems Modeling, Duke University. One-year virtual Scholars Program with mentorship and interdisciplinary research training."
 
       - name: Zuckerman STEM Leadership Postdoctoral Fellowship
         start_date: 2022

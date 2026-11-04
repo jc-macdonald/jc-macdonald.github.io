@@ -6,7 +6,7 @@ permalink: /projects/
 description: The questions and study systems I work on, and the models and software I build to study them.
 nav: true
 nav_order: 4
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 display_categories: ["Released software", "Research in progress", "Collaborative infrastructure"]
 horizontal: false
 ---
@@ -15,13 +15,11 @@ My research combines mechanistic models, statistical inference and open software
 across infectious disease, ecology and cultural transmission. Published work
 links viral growth and immune responses within hosts to transmission between
 hosts, examines cultural variation and studies ecological dynamics. Current
-collaborations address animal health and surveillance; developing directions
-include longitudinal clinical research, landscape and metapopulation dynamics,
-and study design.
+collaborations address animal health, surveillance and study design.
 
 <figure>
   <img src="/assets/img/research/cross_scale_systems.svg" alt="Four established or active collaborative study systems arranged by scale, from within individuals to across populations, with published work marked by solid outlines and collaborative or unpublished work by dashed outlines. A chain links ecological and landscape change to movement and contact, connectivity among populations, and persistence, divergence and evolution. The research questions and study systems below describe each cell." width="1100" height="1044" loading="lazy">
-  <figcaption>Established and active collaborative study systems arranged by scale. Solid outlines mark systems with a published paper at that scale. Dashed outlines mark collaborative or unpublished work. A blank cell shows no work at that scale. The chain describes the direction of influence that frames the second research question below. The proposed clinical direction described below is not yet shown. <a href="/figures/">Figure downloads and editable source</a>.</figcaption>
+  <figcaption>Established and active collaborative study systems arranged by scale. Solid outlines mark systems with a published paper at that scale. Dashed outlines mark collaborative or unpublished work. A blank cell shows no work at that scale. The chain describes the direction of influence that frames the second research question below. <a href="/figures/">Figure downloads and editable source</a>.</figcaption>
 </figure>
 
 ## Research questions
@@ -29,24 +27,6 @@ and study design.
 - **How do processes within hosts shape transmission and persistence?** My [buffalo studies](/publications/#macdonald2024fmdv) of three foot-and-mouth disease virus strains (SAT-1, -2 and -3) indicate that viral replication rate correlates with transmission among buffalo and that the adaptive immune activation rate determines the infectious period. A [carrier-transmission model](/publications/#atkins2026fmdcarrier), on which I am a co-author, extends this to persistent infection. As senior personnel on a multi-institution project linking cells to landscapes in African buffalo, I develop and parameterize the within-host models. The SAT serotypes, for which African buffalo are a wildlife host, have recently spread beyond sub-Saharan Africa. SAT-1 was reported for the first time in nine countries from Egypt to Mongolia in 2025 and 2026, including Cyprus, and again in Greece, Lebanon and Türkiye after sixty years ([WOAH, August 2026](https://www.woah.org/en/article/the-spread-of-fmd-to-new-areas-is-concerning-but-consequences-could-be-worse/)). The buffalo estimates describe infection in buffalo; transmission in cattle and small ruminants was not studied. Related work models [viral and antibody dynamics during sequential dengue infections and transmission among livestock and wildlife hosts for Crimean-Congo hemorrhagic fever](/projects/current_analyses/#application-studies).
 - **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction. Published work relates [cultural variation to geography and language](/publications/#macdonald2024austronesian) among Austronesian-speaking societies, without modeling landscape change. Collaborative work in progress models Crimean-Congo hemorrhagic fever transmission between livestock and wildlife hosts, and spatial structure is a possible extension if movement data allow. The range of this virus's main vectors is changing. _Hyalomma_ ticks are endemic in, or have been detected at least once in, 40 European countries ([Parvage et al. 2025](https://doi.org/10.1186/s13071-025-07104-3)), and Spain reported two locally acquired human cases by July 2026 ([ECDC](https://cchf-weekly.ecdc.europa.eu/)). A bighorn sheep project asks how immune phenotypes vary among metapopulations.
 - **How should we measure, vaccinate and decide under uncertainty?** For Crimean-Congo hemorrhagic fever, I ask which wildlife and livestock measurements would change a surveillance or control decision, given their field costs. [Modeling in practice](/operational-modeling/) describes outbreak-response vaccination and respiratory-virus scenario work, and [trade-study](/projects/trade_study/) supports comparing study designs.
-
-### Proposed clinical direction
-
-Influenza scenario modeling motivates a proposed study of antibody responses
-after vaccination, initially in older adults. It would estimate how responses
-rise and decline and test whether the previous season's antibody trajectory
-improves prediction beyond the current pre-vaccination titer. The primary
-measure would be the hemagglutination-inhibition (HAI) titer, which measures
-antibody activity against a tested influenza virus. Vaccination history and complementary immune
-measurements would be secondary analyses where the available data support those
-comparisons. A small prospective study would evaluate late-season titer
-prediction and the feasibility of repeated sampling, with participant and
-clinician input on visits and aggregate results.
-
-These antibody measurements do not by themselves establish clinical protection.
-Larger follow-on studies would examine how these measurements relate to
-infection risk and clinical protection, broaden the age and exposure histories
-studied, and assess whether the measurements can inform transmission models.
 
 <figure>
   <img src="/assets/img/research/published/fmdv_within_host.svg" alt="Four panels recomputed from the published within-host foot-and-mouth disease model: viral load and adaptive response over thirty days for three strains at median parameters, strain transmission rate against replication rate, and per-host infectious period against adaptive activation rate. Details follow." width="720" height="605" loading="lazy">
@@ -74,9 +54,16 @@ Earlier work includes a [COVID-19 model of testing, lockdown speed and fatigue a
 
 - **Foot-and-mouth disease virus in African buffalo.** A first-author within-host model and a co-authored carrier-transmission model, developed with collaborators in the Jolles Lab and a multi-institution project.
 - **Crimean-Congo hemorrhagic fever virus in livestock and wildlife.** Collaborative transmission models and surveillance design; modeling in progress.
-- **Influenza vaccination in older adults.** Proposed longitudinal study of antibody trajectories and titer prediction, described above.
 - **Human cultural transmission.** Published analysis of networks and clusters of cultural traits, with a methods [preprint](/publications/#preprints) on incomplete cultural data.
 - **Bighorn sheep immune ecology.** Collaborative analysis in progress.
+
+### Proposed clinical direction
+
+I am interested in how antibody responses to influenza vaccination vary across
+individuals and seasons, particularly in older adults. This developing work would
+connect longitudinal immune measurements with questions raised by population
+scenario modeling, with an initial focus on how antibody responses rise and
+decline over time.
 
 ## Methods and software
 
