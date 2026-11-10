@@ -6,7 +6,7 @@ permalink: /projects/
 description: The questions and study systems I work on, and the models and software I build to study them.
 nav: true
 nav_order: 4
-last_modified_at: 2026-11-04
+last_modified_at: 2026-11-09
 display_categories: ["Released software", "Research in progress", "Collaborative infrastructure"]
 horizontal: false
 ---
@@ -26,7 +26,7 @@ collaborations address animal health, surveillance and study design.
 
 - **How do processes within hosts shape transmission and persistence?** My [buffalo studies](/publications/#macdonald2024fmdv) of three foot-and-mouth disease virus strains (SAT-1, -2 and -3) indicate that viral replication rate correlates with transmission among buffalo and that the adaptive immune activation rate determines the infectious period. A [carrier-transmission model](/publications/#atkins2026fmdcarrier), on which I am a co-author, extends this to persistent infection. As senior personnel on a multi-institution project linking cells to landscapes in African buffalo, I develop and parameterize the within-host models. The SAT serotypes, for which African buffalo are a wildlife host, have recently spread beyond sub-Saharan Africa. SAT-1 was reported for the first time in nine countries from Egypt to Mongolia in 2025 and 2026, including Cyprus, and again in Greece, Lebanon and Türkiye after sixty years ([WOAH, August 2026](https://www.woah.org/en/article/the-spread-of-fmd-to-new-areas-is-concerning-but-consequences-could-be-worse/)). The buffalo estimates describe infection in buffalo; transmission in cattle and small ruminants was not studied. Related work models [viral and antibody dynamics during sequential dengue infections and transmission among livestock and wildlife hosts for Crimean-Congo hemorrhagic fever](/projects/current_analyses/#application-studies).
 - **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction. Published work relates [cultural variation to geography and language](/publications/#macdonald2024austronesian) among Austronesian-speaking societies, without modeling landscape change. Collaborative work in progress models Crimean-Congo hemorrhagic fever transmission between livestock and wildlife hosts, and spatial structure is a possible extension if movement data allow. The range of this virus's main vectors is changing. _Hyalomma_ ticks are endemic in, or have been detected at least once in, 40 European countries ([Parvage et al. 2025](https://doi.org/10.1186/s13071-025-07104-3)), and Spain reported two locally acquired human cases by July 2026 ([ECDC](https://cchf-weekly.ecdc.europa.eu/)). A bighorn sheep project asks how immune phenotypes vary among metapopulations.
-- **How should we measure, vaccinate and decide under uncertainty?** For Crimean-Congo hemorrhagic fever, I ask which wildlife and livestock measurements would change a surveillance or control decision, given their field costs. [Modeling in practice](/operational-modeling/) describes outbreak-response vaccination and respiratory-virus scenario work, and [trade-study](/projects/trade_study/) supports comparing study designs.
+- **How should we measure, vaccinate and decide under uncertainty?** For Crimean-Congo hemorrhagic fever, I ask which wildlife and livestock measurements would change a surveillance or control decision, given their field costs. In the published foot-and-mouth disease work and the dengue preprint, the related question is which within-host measurements distinguish competing immune explanations. [Modeling in practice](/operational-modeling/) describes outbreak-response vaccination and respiratory-virus scenario work, and [trade-study](/projects/trade_study/) supports comparing study designs.
 
 <figure>
   <img src="/assets/img/research/published/fmdv_within_host.svg" alt="Four panels recomputed from the published within-host foot-and-mouth disease model: viral load and adaptive response over thirty days for three strains at median parameters, strain transmission rate against replication rate, and per-host infectious period against adaptive activation rate. Details follow." width="720" height="605" loading="lazy">
@@ -57,13 +57,12 @@ Earlier work includes a [COVID-19 model of testing, lockdown speed and fatigue a
 - **Human cultural transmission.** Published analysis of networks and clusters of cultural traits, with a methods [preprint](/publications/#preprints) on incomplete cultural data.
 - **Bighorn sheep immune ecology.** Collaborative analysis in progress.
 
-### Proposed clinical direction
+### Developing interest
 
 I am interested in how antibody responses to influenza vaccination vary across
-individuals and seasons, particularly in older adults. This developing work would
-connect longitudinal immune measurements with questions raised by population
-scenario modeling, with an initial focus on how antibody responses rise and
-decline over time.
+individuals and seasons, particularly in older adults, and in connecting
+longitudinal immune measurements with questions raised by population scenario
+modeling.
 
 ## Methods and software
 

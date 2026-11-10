@@ -7,7 +7,7 @@ permalink: /reviewer-profile/
 description: Evidence-linked areas for grant review and scientific collaboration.
 nav: true
 nav_order: 5
-last_modified_at: 2026-11-04
+last_modified_at: 2026-11-09
 ---
 
 {% assign current_appointment = site.data.cv.cv.sections.Appointments | first %}
@@ -20,7 +20,7 @@ transmission, cultural variation and operational respiratory-virus scenario
 modeling. This page describes areas in which I can review proposals or
 contribute to a collaboration; my [full CV](/cv/) provides the complete record.
 
-_Last substantively reviewed: 4 November 2026._
+_Last substantively reviewed: 9 November 2026._
 
 ## Review areas
 
@@ -65,11 +65,11 @@ _Last substantively reviewed: 4 November 2026._
 
 ## Scope
 
-My role is mathematical, statistical and computational. Collaborations on
-monitoring or instrument settings require domain partners to define feasible
-protocols, calibration procedures and field constraints. I do not present
-clinical trial conduct, wet-laboratory virology, wildlife field sampling or
-oceanographic instrument engineering as independent areas of expertise.
+My role is mathematical, statistical and computational: model specification,
+inference and calibration, simulation, study and surveillance design, and
+research software. Collaborations on monitoring or instrument settings work best
+when domain partners define feasible protocols, calibration procedures and field
+constraints.
 
 For a review request or an initial collaboration discussion, please include the
 scientific area, decision or review criterion, expected time commitment and any
