@@ -7,7 +7,7 @@ permalink: /reviewer-profile/
 description: Evidence-linked areas for grant review and scientific collaboration.
 nav: true
 nav_order: 5
-last_modified_at: 2026-11-04
+last_modified_at: 2026-11-09
 ---
 
 {% assign current_appointment = site.data.cv.cv.sections.Appointments | first %}
@@ -20,7 +20,7 @@ transmission, cultural variation and operational respiratory-virus scenario
 modeling. This page describes areas in which I can review proposals or
 contribute to a collaboration; my [full CV](/cv/) provides the complete record.
 
-_Last substantively reviewed: 4 November 2026._
+_Last substantively reviewed: 9 November 2026._
 
 ## Review areas
 
