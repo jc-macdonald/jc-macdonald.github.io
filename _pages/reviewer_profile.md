@@ -65,11 +65,11 @@ _Last substantively reviewed: 4 November 2026._
 
 ## Scope
 
-My role is mathematical, statistical and computational. Collaborations on
-monitoring or instrument settings require domain partners to define feasible
-protocols, calibration procedures and field constraints. I do not present
-clinical trial conduct, wet-laboratory virology, wildlife field sampling or
-oceanographic instrument engineering as independent areas of expertise.
+My role is mathematical, statistical and computational: model specification,
+inference and calibration, simulation, study and surveillance design, and
+research software. Collaborations on monitoring or instrument settings work best
+when domain partners define feasible protocols, calibration procedures and field
+constraints.
 
 For a review request or an initial collaboration discussion, please include the
 scientific area, decision or review criterion, expected time commitment and any

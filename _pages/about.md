@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: Assistant Scientist · <a href='https://publichealth.jhu.edu/'>Johns Hopkins Bloomberg School of Public Health</a>
-last_modified_at: 2026-11-04
+last_modified_at: 2026-11-09
 
 profile:
   align: right
@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I study infectious disease, ecological dynamics and cultural transmission using mathematical models, statistical inference and open research software.
+I study infectious disease, ecological dynamics and cultural transmission using mathematical models, statistical inference and open research software, including how immune responses within hosts shape infection and transmission.
 
 I am an Assistant Scientist at the [International Vaccine Access Center](https://publichealth.jhu.edu/ivac), Johns Hopkins Bloomberg School of Public Health. With the [Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA)](https://accidda.org/), I lead model development for influenza scenario projections and led the 2026/27 COVID-19 submission, alongside software development for public-health modeling. I also collaborate with the [Jolles Lab](https://sites.google.com/view/jolles-lab/home) on foot-and-mouth disease in African buffalo and Crimean-Congo hemorrhagic fever in livestock and wildlife, including transmission between species and surveillance design.
 
@@ -55,7 +55,7 @@ These questions connect work in human, livestock, wildlife and cultural systems.
 
 - **How do processes within hosts shape transmission and persistence?** My buffalo studies link virus growth and immune response to transmission between animals for three strains of the SAT serotypes of foot-and-mouth disease virus.
 - **How do landscape, movement and contact shape spread, persistence and divergence across populations?** This is a developing direction; the published work so far concerns cultural variation across geography and language, and the rest is collaborative work in progress.
-- **How should we measure, vaccinate and decide under uncertainty?** I address this through surveillance, vaccination and scenario modeling.
+- **How should we measure, vaccinate and decide under uncertainty?** I address this through surveillance, vaccination and scenario modeling, and by asking which measurements can distinguish competing explanations of immune and epidemiological dynamics.
 
 ## Currently
 
@@ -76,7 +76,7 @@ My current methods research asks how measurements and scientific assumptions aff
 - **[Incomplete data and latent structure](/projects/pp_eigentest/).** Investigating how many patterns can be distinguished from noise in incomplete data, building on [VBPCApy](/projects/vbpca_py/) and a [2024 preprint](https://arxiv.org/abs/2409.12129).
 - **[Constraint checks for predictions](/projects/current_analyses/#constraint-checks-for-predictions).** Reporting whether a prediction satisfies stated scientific constraints. This is now being folded into the validation layer of the software rather than developed as a separate method.
 
-Current [public- and global-health application studies](/projects/current_analyses/#application-studies) address dengue within-host dynamics, observation noise, outbreak vaccination and Crimean-Congo hemorrhagic fever surveillance. These studies apply the methods above; they do not define the methods' scope. The summaries describe ongoing questions; public papers and artifacts are linked as they become available.
+[Application studies](/projects/current_analyses/#application-studies) in progress apply these methods to public- and global-health questions; public papers and artifacts are linked as they become available.
 
 ## Software
 
